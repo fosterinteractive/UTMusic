@@ -11,26 +11,118 @@
         {
             "type": "path",
             "url": "upstream-configuration"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/fosterinteractive/adminspring-theme"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/fosterinteractive/mainspring-theme"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/fosterinteractive/mainspring-profile"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/fosterinteractive/accessible-mega-menu"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/fosterinteractive/social_lite"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor/link",
+                "version": "4.16.2",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/link/releases/link_4.16.2.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor/fakeobjects",
+                "version": "4.16.2",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.16.2.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor/a11ychecker",
+                "version": "1.1.0",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/a11ychecker/releases/a11ychecker_1.1.0.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
         "pantheon-upstreams/upstream-configuration": "dev-main",
+        "ckeditor/fakeobjects": "4.16.2",
+        "ckeditor/link": "4.16.2",
         "composer/installers": "^1.9",
+        "drupal/console": "^1",
         "drupal/core-composer-scaffold": "^9.2",
         "drupal/core-recommended": "^9.2",
+        "fosterinteractive/accessible-mega-menu": "1.2",
+        "fosterinteractive/adminspring-theme": "9.1.0",
+        "fosterinteractive/mainspring-theme": "dev-sg10.x",
+        "fosterinteractive/mainspring-profile": "dev-sg10.x",
         "pantheon-systems/drupal-integrations": "^9",
+        "mnsami/composer-custom-directory-installer": "^2.0",
+        "oomphinc/composer-installers-extender": "^2.0",
+        "rvtraveller/qs-composer-installer": "^1.1",
+        "topfloor/composer-cleanup-vcs-dirs": "^1",
+        "wikimedia/composer-merge-plugin": "2.0.1",
         "cweagans/composer-patches": "^1.7",
-        "drush/drush": "^11 || ^12"
+        "drush/drush": "^10 || ^11 || ^12"
     },
     "require-dev": {
-        "drupal/core-dev": "^9.2"
+        "drupal/core-dev": "^9.2",
+        "behat/behat": "^3.1",
+        "behat/mink": "^1.7",
+        "behat/mink-extension": "^2.2",
+        "behat/mink-goutte-driver": "^1.2",
+        "drupal/drupal-extension": "^4.1",
+        "drush-ops/behat-drush-endpoint": "^0.0.4",
+        "jcalderonzumba/gastonjs": "^1.0.2",
+        "jcalderonzumba/mink-phantomjs-driver": "^0.3.1",
+        "mikey179/vfsstream": "^1.2",
+        "pantheon-systems/quicksilver-pushback": "^2",
+        "phpunit/phpunit": "^6.5 || ^8.5 || ^9"
     },
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
+        "merge-plugin": {
+            "include": [
+              "web/modules/contrib/ckwordcount/composer.libraries.json"
+            ]
+        },
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
         "drupal-scaffold": {
             "locations": {
                 "web-root": "./web"
@@ -39,12 +131,19 @@
             "file-mapping": {
                 "[project-root]/.editorconfig": false,
                 "[project-root]/pantheon.upstream.yml": false,
-                "[project-root]/.gitattributes": false
+                "[project-root]/.gitattributes": false,
+                "[web-root]/themes/adminspring-theme/adminspring.info.yml": "assets/adminspring.info.yml"
             }
         },
         "installer-paths": {
             "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset",
+                "harvesthq/chosen",
+                "w8tcha/ckeditor-wordcount-plugin"
+            ],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
