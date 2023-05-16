@@ -30,10 +30,6 @@
         },
         {
             "type": "vcs",
-            "url": "https://github.com/fosterinteractive/accessible-mega-menu"
-        },
-        {
-            "type": "vcs",
             "url": "https://github.com/fosterinteractive/social_lite"
         },
         {
@@ -81,10 +77,9 @@
         "drupal/console": "^1",
         "drupal/core-composer-scaffold": "^9.2",
         "drupal/core-recommended": "^9.2",
-        "fosterinteractive/accessible-mega-menu": "1.2",
-        "fosterinteractive/adminspring-theme": "9.1.0",
-        "fosterinteractive/mainspring-theme": "dev-sg10.x",
-        "fosterinteractive/mainspring-profile": "dev-sg10.x",
+        "fosterinteractive/adminspring-theme": "dev-10.0.x-dev",
+        "fosterinteractive/mainspring-theme": "dev-10.x-dev",
+        "fosterinteractive/mainspring-profile": "dev-10.x-dev",
         "pantheon-systems/drupal-integrations": "^9",
         "mnsami/composer-custom-directory-installer": "^2.0",
         "oomphinc/composer-installers-extender": "^2.0",
@@ -146,16 +141,26 @@
             ],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "web/themes/{$name}": ["type:drupal-theme"],
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
             "web/modules/custom/{$name}": ["type:drupal-custom-module"],
             "web/profiles/custom/{$name}": ["type:drupal-custom-profile"],
-            "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
             "web/private/scripts/quicksilver/{$name}/": ["type:quicksilver-script"]
         },
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
             "drupal/core": "-p2"
+        },
+        "patches": {
+            "drupal/layout_paragraphs_restriction": {
+              "3229861 - Layout Paragraphs 2.x compatibility": "https://www.drupal.org/files/issues/2022-10-03/entity_type_bundle_info-3229861-5.patch"
+            },
+            "drupal/focal_point": {
+              "2906631 - After changing focal point, image doesn't change until you click preview": "https://www.drupal.org/files/issues/2022-06-10/2906631-12_0.patch"
+            },
+            "drupal/admin_toolbar": {
+              "3286466 - Tabbing order does not satisfy 508 accessibility requirements": "https://www.drupal.org/files/issues/2023-05-11/tab_order_chevrons-3286466-24.patch"
+            }
         },
         "enable-patching": true
     },
