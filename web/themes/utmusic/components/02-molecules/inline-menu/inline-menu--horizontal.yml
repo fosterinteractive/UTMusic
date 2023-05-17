@@ -1,0 +1,19 @@
+variation: 'horizontal'
+body: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>'
+title: "Education & Programming"
+inline_menu_icon: 
+inline_menu_icon_size: 
+inline_menu_icon_color: 
+links:
+  0:
+    item_url: "/"
+    item_text: "Postgraduate Medical Education"
+  1:
+    item_url: "/"
+    item_text: "Continuing Professional Development"
+  2:
+    item_url: "/"
+    item_text: "MD Program Admissions"
+  3:
+    item_url: "/"
+    item_text: "Graduate Programs Admissions"

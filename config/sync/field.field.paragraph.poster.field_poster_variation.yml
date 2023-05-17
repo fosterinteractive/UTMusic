@@ -1,0 +1,21 @@
+uuid: a958ed7a-6a27-4366-bd17-4147bd5da795
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_poster_variation
+    - paragraphs.paragraphs_type.poster
+  module:
+    - options
+id: paragraph.poster.field_poster_variation
+field_name: field_poster_variation
+entity_type: paragraph
+bundle: poster
+label: Variation
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

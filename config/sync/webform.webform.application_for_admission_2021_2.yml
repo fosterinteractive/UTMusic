@@ -1,0 +1,794 @@
+uuid: f43eb1ad-dd1f-4fce-97a5-7fc6e7fbbf8b
+langcode: en
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: application_for_admission_2021_2
+title: 'Application Form'
+description: ''
+category: ''
+elements: |-
+  page_2:
+    '#type': webform_wizard_page
+    '#title': 'Personal Info'
+    '#next_button_label': 'Next Page'
+    have_you_ever_applied_to_any_university_of_toronto_programs_befo:
+      '#type': checkbox
+      '#title': 'Have you ever applied to any University of Toronto programs before (including TYP)?'
+    flexbox:
+      '#type': webform_flexbox
+      '#states':
+        visible:
+          ':input[name="have_you_ever_applied_to_any_university_of_toronto_programs_befo"]':
+            checked: true
+      program_to_which_applied:
+        '#type': textfield
+        '#title': 'Program to which applied'
+      year:
+        '#type': textfield
+        '#title': Year
+    flexbox_26:
+      '#type': webform_flexbox
+      title_:
+        '#type': webform_select_other
+        '#title': 'Title:'
+        '#options':
+          Miss.: Miss.
+          Ms.: Ms.
+          Mrs.: Mrs.
+          Mr.: Mr.
+        '#required': true
+      last_name_:
+        '#type': textfield
+        '#title': 'Last Name:'
+        '#required': true
+    flexbox_02:
+      '#type': webform_flexbox
+      first_and_middle_names_s_:
+        '#type': textfield
+        '#title': 'First and Middle Names(s)'
+        '#required': true
+      previous_name_if_applicable_:
+        '#type': textfield
+        '#title': 'Previous Name:'
+        '#description': '(if applicable)'
+        '#description_display': after
+    flexbox_03:
+      '#type': webform_flexbox
+      gender:
+        '#type': webform_select_other
+        '#title': Gender
+        '#options':
+          Female: Female
+          Male: Male
+        '#options_display': side_by_side
+        '#required': true
+      date_of_birth_:
+        '#type': date
+        '#title': 'Date of Birth:'
+        '#required': true
+        '#date_date_format': ''
+      marital_status_:
+        '#type': select
+        '#title': 'Marital Status:'
+        '#options':
+          Single: Single
+          Widowed: Widowed
+          Married: Married
+          Divorced: Divorced
+          'Common Law': 'Common Law'
+          Separated: Separated
+        '#options_display': two_columns
+        '#required': true
+    flexbox_04:
+      '#type': webform_flexbox
+      '#align_items': center
+      do_you_have_any_children_1:
+        '#type': checkbox
+        '#title': 'Do you have any children?'
+      if_yes_how_many_:
+        '#type': textfield
+        '#title': 'How many?'
+        '#states':
+          visible:
+            ':input[name="do_you_have_any_children_"]':
+              checked: true
+          invisible:
+            ':input[name="do_you_have_any_children_1"]':
+              unchecked: true
+      please_list_their_ages_:
+        '#type': textfield
+        '#title': 'Please list their ages:'
+        '#states':
+          visible:
+            ':input[name="do_you_have_any_children_1"]':
+              checked: true
+    flexbox_27:
+      '#type': webform_flexbox
+      first_language_:
+        '#type': webform_select_other
+        '#title': 'First Language:'
+        '#options':
+          English: English
+          French: French
+        '#options_display': side_by_side
+        '#other__placeholder': 'Please specify'
+        '#required': true
+      status_in_canada_:
+        '#type': webform_select_other
+        '#title': 'Status in Canada:'
+        '#options':
+          'Canadian Citizen': 'Canadian Citizen'
+          'Convention Refugee': 'Convention Refugee'
+          'Permanent Resident': 'Permanent Resident'
+          'Student Visa': 'Student Visa'
+        '#options_display': three_columns
+        '#other__placeholder': 'Please specify'
+        '#required': true
+    markup_02:
+      '#type': webform_markup
+      '#markup': '<p>If you are not a Canadian Citizen, please complete the following information:&nbsp;</p>'
+    flexbox_05:
+      '#type': webform_flexbox
+      '#align_items': center
+      country_of_citizenship:
+        '#type': textfield
+        '#title': 'Country of Citizenship'
+      date_of_entry_into_canada:
+        '#type': date
+        '#title': 'Date of Entry into Canada'
+        '#date_date_format': ''
+  page_3_address_and_contact_info:
+    '#type': webform_wizard_page
+    '#title': Contact
+    '#next_button_label': 'Next Page'
+    flexbox_29:
+      '#type': webform_flexbox
+      apartment_no_:
+        '#type': textfield
+        '#title': 'Apartment No.'
+      street:
+        '#type': textfield
+        '#title': Street
+        '#description': 'Including number eg. 49 St. George St.'
+        '#description_display': after
+        '#required': true
+      city:
+        '#type': textfield
+        '#title': City
+        '#required': true
+    flexbox_30:
+      '#type': webform_flexbox
+      province_state:
+        '#type': textfield
+        '#title': Province/State
+      country:
+        '#type': textfield
+        '#title': Country
+        '#required': true
+      postal_code:
+        '#type': textfield
+        '#title': 'Postal Code'
+        '#required': true
+    flexbox_06:
+      '#type': webform_flexbox
+      home_phone:
+        '#type': tel
+        '#title': 'Home Phone'
+      cell_phone:
+        '#type': tel
+        '#title': 'Cell Phone'
+        '#required': true
+    flexbox_07:
+      '#type': webform_flexbox
+      email_address:
+        '#type': email
+        '#title': 'Email Address'
+        '#required': true
+      fax_number:
+        '#type': tel
+        '#title': 'Fax Number'
+    place_or_places_of_residence_in_the_past_three_years_if_differen:
+      '#type': textarea
+      '#title': 'Place or places of residence in the past three years (if different from above):'
+  education_background:
+    '#type': webform_wizard_page
+    '#title': Education
+    '#next_button_label': 'Next Page'
+    name_and_location_of_school_you_were_attending_when_you_first_le:
+      '#type': textfield
+      '#title': 'Name and location of school you were attending when you first left school:'
+      '#required': true
+    flexbox_08:
+      '#type': webform_flexbox
+      markup_03:
+        '#type': webform_markup
+        '#markup': 'Dates attended:'
+      start_date:
+        '#type': date
+        '#title': 'Start Date'
+        '#title_display': after
+        '#date_date_format': ''
+        '#required': true
+      end_date:
+        '#type': date
+        '#title': 'End Date'
+        '#title_display': after
+        '#date_date_format': ''
+        '#required': true
+      grade_form_at_time_of_leaving:
+        '#type': textfield
+        '#title': 'Grade/form at time of leaving'
+        '#title_display': after
+        '#required': true
+    flexbox_09:
+      '#type': webform_flexbox
+      '#align_items': center
+      type_of_program_:
+        '#type': webform_select_other
+        '#title': 'Type of Program:'
+        '#options':
+          Academic: Academic
+          Commercial: Commercial
+          Technical: Technical
+        '#other__placeholder': 'Please specify'
+        '#required': true
+      highest_grade_form_completed:
+        '#type': textfield
+        '#title': 'Highest grade/form completed'
+        '#title_display': before
+        '#required': true
+      number_of_credits_completed_at_leaving:
+        '#type': textfield
+        '#title': 'Number of credits completed at leaving'
+        '#title_display': before
+        '#required': true
+    flexbox_10:
+      '#type': webform_flexbox
+    reason_for_leaving_:
+      '#type': textarea
+      '#title': 'Reason for leaving:'
+      '#required': true
+    total_number_of_ontario_secondary_school_credits_earned_:
+      '#type': textfield
+      '#title': 'Total number of Ontario Secondary School Credits Earned:'
+    processed_text_07:
+      '#type': processed_text
+      '#text': |
+        <p>If you attended school outside of Canada please any applicable board exams below:</p>
+        
+      '#format': rich_text
+    flexbox_11:
+      '#type': webform_flexbox
+      markup_04:
+        '#type': webform_markup
+        '#markup': '<p>Number of Board Exams passed (if applicable):&nbsp;</p>'
+      cxc:
+        '#type': textfield
+        '#title': CXC
+        '#title_display': after
+      o_level:
+        '#type': textfield
+        '#title': O-Level
+        '#title_display': after
+      a_level:
+        '#type': textfield
+        '#title': A-Level
+        '#title_display': after
+    horizontal_rule_03:
+      '#type': webform_horizontal_rule
+    flexbox_12:
+      '#type': webform_flexbox
+      have_you_ever_attended_a_university_access_course_e_g_academic_b:
+        '#type': checkbox
+        '#title': 'Have you ever attended a university access course (e.g. Academic Bridging Program)?'
+      if_yes_to_above_please_specify_where_and_when_:
+        '#type': textfield
+        '#title': 'Please specify where and when:'
+        '#states':
+          visible:
+            ':input[name="have_you_ever_applied_to_any_university_of_toronto_programs_befo"]':
+              checked: true
+          invisible:
+            ':input[name="have_you_ever_attended_a_university_access_course_e_g_academic_b"]':
+              unchecked: true
+    please_list_your_career_goals_:
+      '#type': textarea
+      '#title': 'Please list your career goals:'
+      '#required': true
+  employment_history:
+    '#type': webform_wizard_page
+    '#title': History
+    '#next_button_label': 'Next Page'
+    flexbox_13:
+      '#type': webform_flexbox
+      name_of_most_recent_or_present_employer_:
+        '#type': textfield
+        '#title': 'Name of Most Recent (or Present) Employer:'
+        '#required': true
+      address_:
+        '#type': textfield
+        '#title': 'Address:'
+        '#required': true
+    flexbox_14:
+      '#type': webform_flexbox
+      job_title_:
+        '#type': textfield
+        '#title': 'Job Title:'
+        '#required': true
+      length_of_employment_:
+        '#type': textfield
+        '#title': 'Length of Employment:'
+        '#required': true
+      date_of_departure:
+        '#type': date
+        '#title': 'Date of Departure'
+        '#description': '<p>Skip if still employed&nbsp;</p>'
+        '#description_display': after
+        '#date_date_format': ''
+    reason_for_leaving_if_applicable_:
+      '#type': textarea
+      '#title': 'Reason for Leaving (if applicable):'
+    horizontal_rule_01:
+      '#type': webform_horizontal_rule
+    flexbox_15:
+      '#type': webform_flexbox
+    name_of_previous_employer_:
+      '#type': textfield
+      '#title': 'Name of Previous Employer:'
+    previous_employer_address_:
+      '#type': textfield
+      '#title': 'Previous Employer Address:'
+    flexbox_16:
+      '#type': webform_flexbox
+      '#align_items': center
+      previous_job_title_:
+        '#type': textfield
+        '#title': 'Previous Job Title:'
+      previous_length_of_employment_:
+        '#type': textfield
+        '#title': 'Previous Length of Employment:'
+      previous_date_of_departure:
+        '#type': date
+        '#title': 'Previous Date of Departure'
+        '#description': '<p>Skip if still employed&nbsp;</p>'
+        '#description_display': tooltip
+        '#date_date_format': ''
+    previous_reason_for_leaving_:
+      '#type': textarea
+      '#title': 'Previous Reason for Leaving:'
+    horizontal_rule_02:
+      '#type': webform_horizontal_rule
+    processed_text:
+      '#type': processed_text
+      '#text': |
+        <h3 class="a-heading__h3">References</h3>
+        
+        <p>Please list two people, other than relatives, who are familiar with your background, for example, a counsellor, teacher or work supervisor, who will be supplying letters of reference (one academic and one personal) in support of your application.&nbsp;</p>
+        
+      '#format': rich_text
+    processed_text_01:
+      '#type': processed_text
+      '#text': |
+        <h4 class="a-heading__h4">Reference 1</h4>
+        
+      '#format': rich_text
+    flexbox_17:
+      '#type': webform_flexbox
+      last_name:
+        '#type': textfield
+        '#title': 'Last Name'
+        '#required': true
+      first_name:
+        '#type': textfield
+        '#title': 'First Name'
+        '#required': true
+    flexbox_18:
+      '#type': webform_flexbox
+      address_ref_1:
+        '#type': textfield
+        '#title': Address
+        '#required': true
+      phone_number_ref_1:
+        '#type': tel
+        '#title': 'Phone Number'
+        '#required': true
+    position_and_connection_to_you_ref_1:
+      '#type': textfield
+      '#title': 'Position and Connection to you'
+      '#required': true
+    processed_text_02:
+      '#type': processed_text
+      '#text': |
+        <h4 class="a-heading__h4">Reference 2</h4>
+        
+      '#format': rich_text
+    flexbox_19:
+      '#type': webform_flexbox
+      last_name_ref_2:
+        '#type': textfield
+        '#title': 'Last Name'
+        '#required': true
+      first_name_ref_2:
+        '#type': textfield
+        '#title': 'First Name'
+        '#required': true
+    flexbox_20:
+      '#type': webform_flexbox
+      address_ref_2:
+        '#type': textfield
+        '#title': Address
+        '#required': true
+      phone_number_ref_2:
+        '#type': tel
+        '#title': 'Phone Number'
+        '#required': true
+    position_and_connection_to_you_ref_2:
+      '#type': textfield
+      '#title': 'Position and connection to you'
+      '#required': true
+  disability_next_of_kin:
+    '#type': webform_wizard_page
+    '#title': 'Ability & Emerg'
+    '#next_button_label': 'Final Page'
+    do_you_have_documented_disability_:
+      '#type': radios
+      '#title': 'Do you have documented disability?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+      '#options_display': side_by_side
+      '#required': true
+    do_you_suspect_that_you_may_have_learning_or_other_form_of_disab:
+      '#type': radios
+      '#title': 'Do you suspect that you may have learning or other form of disability?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+      '#options_display': side_by_side
+      '#required': true
+    description_of_disabilities:
+      '#type': textarea
+      '#title': 'Description of Disabilities'
+      '#description': 'If you answered &lsquo;yes&rsquo; to either one of the questions above, please provide detailed information here. Be sure to include detailed information about any support/accommodations that you would require in order to participate in the Transitional Year Programme.&nbsp;'
+      '#states':
+        visible:
+          - ':input[name="do_you_have_documented_disability_"]':
+              value: 'Yes'
+          - or
+          - ':input[name="do_you_suspect_that_you_may_have_learning_or_other_form_of_disab"]':
+              value: 'Yes'
+    processed_text_03:
+      '#type': processed_text
+      '#text': |
+        <h2 class="a-heading__h2">Next of Kin</h2>
+        
+      '#format': rich_text
+    flexbox_21:
+      '#type': webform_flexbox
+      last_name_next_of_kin:
+        '#type': textfield
+        '#title': 'Last Name'
+        '#required': true
+      first_name_next_of_kin:
+        '#type': textfield
+        '#title': 'First Name'
+        '#required': true
+    address_next_of_kin:
+      '#type': webform_address
+      '#title': Address
+      '#address__title': 'Apt. No.'
+      '#address_2__title': Street
+      '#required': true
+    flexbox_22:
+      '#type': webform_flexbox
+      primary_phone_next_of_kin:
+        '#type': tel
+        '#title': 'Primary Phone'
+        '#required': true
+      other_phone_next_of_kin:
+        '#type': tel
+        '#title': 'Other Phone'
+        '#required': true
+    processed_text_04:
+      '#type': processed_text
+      '#text': |
+        <h2 class="a-heading__h2">Emergency Contact</h2>
+        
+      '#format': rich_text
+    check_here_if_same_as_next_of_kin:
+      '#type': checkbox
+      '#title': 'Check here if same as Next of Kin'
+      '#help': 'If different please proceed with completing the following section'
+    relationship_to_you:
+      '#type': textfield
+      '#title': 'Relationship to you'
+      '#states':
+        invisible:
+          ':input[name="check_here_if_same_as_next_of_kin"]':
+            checked: true
+    flexbox_23:
+      '#type': webform_flexbox
+      '#states':
+        invisible:
+          ':input[name="check_here_if_same_as_next_of_kin"]':
+            checked: true
+      last_name_emerg_contact:
+        '#type': textfield
+        '#title': 'Last Name'
+      first_name_emerg_contact:
+        '#type': textfield
+        '#title': 'First Name'
+    address__emerg_contact:
+      '#type': webform_address
+      '#title': 'Address:'
+      '#states':
+        invisible:
+          ':input[name="check_here_if_same_as_next_of_kin"]':
+            checked: true
+    flexbox_24:
+      '#type': webform_flexbox
+      '#states':
+        invisible:
+          ':input[name="check_here_if_same_as_next_of_kin"]':
+            checked: true
+      primary_phone_emerg_contact:
+        '#type': tel
+        '#title': 'Primary Phone'
+      other_phone_emerg_contact:
+        '#type': tel
+        '#title': 'Other Phone'
+    do_you_authorize_this_person_to_make_inquiries_regarding_your_ap:
+      '#type': radios
+      '#title': 'Do you authorize this person to make inquiries regarding your application?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+      '#options_display': side_by_side
+      '#required': true
+  authorization_submission:
+    '#type': webform_wizard_page
+    '#title': Authorization
+    processed_text_06:
+      '#type': processed_text
+      '#text': |
+        <h3 class="a-heading__h3">Please upload all the required documents below:</h3>
+        
+      '#format': rich_text
+    flexbox_28:
+      '#type': webform_flexbox
+      personal_statement:
+        '#type': webform_document_file
+        '#title': 'Personal Statement'
+        '#description': 'Please upload your personal statement'
+        '#required': true
+      transcripts:
+        '#type': webform_document_file
+        '#title': Transcripts
+        '#multiple': true
+        '#description': 'Please upload all applicable transcripts'
+        '#required': true
+      proof_of_canadian_status:
+        '#type': webform_document_file
+        '#title': 'Proof of Canadian Status'
+        '#description': 'Please upload your proof of Canadian status'
+        '#required': true
+    how_did_you_hear_about_us_:
+      '#type': webform_checkboxes_other
+      '#title': 'How did you hear about us? '
+      '#options':
+        'Info/Recruitment  Session': 'Info/Recruitment  Session'
+        'Brochure/Flyer ': 'Brochure/Flyer '
+        Referral: Referral
+        Internet: Internet
+        'Sway Magazine': 'Sway Magazine'
+        'Youth Centre': 'Youth Centre'
+        'Community Centre': 'Community Centre'
+        Metro: Metro
+    processed_text_05:
+      '#type': processed_text
+      '#text': |
+        <h2 class="a-heading__h2">Applicant Declaration</h2>
+        
+        <p>I hereby certify that all statements and material filed in support of this application are true, correct and complete. I further certify that the name which I use in this application is the complete name by which I am legally and correctly known. I understand that this name will be officially recognized in the academic records of the University and that it will not be changed in these records without a formal verification. I understand that if the University finds information to the contrary of what has been filed, my admission or registration in the University may be rescinded and cancelled after notice in writing to me at my address.&nbsp;</p>
+        
+      '#format': rich_text
+    flexbox_25:
+      '#type': webform_flexbox
+      signature_of_applicant:
+        '#type': webform_signature
+        '#title': 'Signature of Applicant'
+        '#required': true
+      date_signed:
+        '#type': date
+        '#title': 'Date Signed'
+        '#date_date_format': ''
+        '#required': true
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: inline
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: 'Thank you for submitting your application, we will be in touch about next steps.'
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }

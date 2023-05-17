@@ -1,0 +1,26 @@
+uuid: d9ebf93e-c9bc-4c01-a325-dd3fd06cf850
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ed_notice_published_date
+    - node.type.ed_notice
+  module:
+    - datetime
+_core:
+  default_config_hash: hH70xmebwFrcOmdDvpVBVNNHNzB9zFJ-q1QuS-y_P2Q
+id: node.ed_notice.field_ed_notice_published_date
+field_name: field_ed_notice_published_date
+entity_type: node
+bundle: ed_notice
+label: 'Maintenance Notice Published Date'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

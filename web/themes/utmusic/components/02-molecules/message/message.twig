@@ -1,0 +1,54 @@
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+{% set message_icon_size = 'small' %}
+
+<div class="m-message{{ variation }}">
+  {% if message_icon %}
+    <div class="m-message{{ variation }}__icon">
+      {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+        directory: directory,
+        icon: message_icon,
+        size: message_icon_size,
+        color: message_icon_color,
+        icon_file_type: icon_file_type,
+        } only
+      %}
+    </div>
+  {% endif %}
+
+  <div class="m-message{{ variation }}__content">
+    {% if title %}
+      <div class="m-message{{ variation }}__title">
+        {% include "@atoms/text/headings/heading.twig" with {
+            html_element: 'h3',
+            appearance: 'h5',
+            text: title,
+          } only
+        %}
+      </div>
+    {% endif %}
+
+    {% if date_string %}
+      <div class="m-message{{ variation }}__date">
+        {{ date_string|raw }}
+      </div>
+    {% endif %}
+
+    {% if text %}
+      <div class="m-message{{ variation }}__text">
+        {{ text }}
+      </div>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,22 @@
+uuid: 2c6d3bad-c666-4564-8840-d6ef98dc9697
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: field_ed_image_image
+_core:
+  default_config_hash: K3fBePuCLJl_Ocja6efbFTqz0juEgVmxJP0kiio65mg
+id: ed_image
+label: Image
+description: 'Use local images for reusable media.'
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_ed_image_image
+field_map:
+  width: field_ed_image_width
+  height: field_ed_image_height

@@ -1,0 +1,26 @@
+uuid: e7a6b73e-4fa5-42a3-b961-e28ea652fdfa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_poster_title_prefix
+    - paragraphs.paragraphs_type.poster
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
+id: paragraph.poster.field_poster_title_prefix
+field_name: field_poster_title_prefix
+entity_type: paragraph
+bundle: poster
+label: 'Title Prefix'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

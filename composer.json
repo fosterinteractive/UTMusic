@@ -22,10 +22,6 @@
         },
         {
             "type": "vcs",
-            "url": "https://github.com/fosterinteractive/mainspring-theme"
-        },
-        {
-            "type": "vcs",
             "url": "https://github.com/fosterinteractive/mainspring-profile"
         },
         {
@@ -77,8 +73,9 @@
         "drupal/console": "^1",
         "drupal/core-composer-scaffold": "^9.2",
         "drupal/core-recommended": "^9.2",
+        "drupal/content_synchronizer": "^3.1",
+        "drupal/media_entity_soundcloud": "^3.0",
         "fosterinteractive/adminspring-theme": "dev-10.0.x-dev",
-        "fosterinteractive/mainspring-theme": "dev-10.x-dev",
         "fosterinteractive/mainspring-profile": "dev-10.x-dev",
         "pantheon-systems/drupal-integrations": "^9",
         "mnsami/composer-custom-directory-installer": "^2.0",

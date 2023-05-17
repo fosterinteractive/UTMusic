@@ -1,0 +1,9 @@
+{% set classes = [
+    required ? 'm-label--is-required' : 'm-label',
+    title_display == 'invisible' ? 'u-visually--hidden',
+    required ? 'js-form-required',
+  ]
+%}
+{% if title is not empty or required %}
+  <label{{ attributes.addClass(classes) }}>{{ title }}{% if required %}<span>*</span>{% endif %}</label>
+{% endif %}

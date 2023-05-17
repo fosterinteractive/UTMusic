@@ -1,0 +1,15 @@
+
+/* 
+ * CKeditor 
+ *
+ */
+
+/* Adjust the size for the style panel */
+.cke_combo__styles .cke_combo_button .cke_combo_text {
+    width: 125px !important;
+  }
+  
+  .cke_combopanel__styles {
+    width: 350px !important;
+  }
+  

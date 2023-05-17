@@ -1,0 +1,39 @@
+@use 'sass:math';
+
+svg {
+  // Render art on partial pixels
+  transform-style: preserve-3d;
+
+  // Note in 2023 - Not sure if this is needed
+  //
+  // Fix for Edge not bubbling up events on clicking the use in an svg.
+  // https://connect.microsoft.com/IE/feedback/details/796745/mouse-events-are-not-delivered-at-all-anymore-when-inside-an-svg-a-use-is-removed-from-the-dom
+  // use {
+  //   pointer-events: none;
+  // }
+}
+
+// Scale in proportion, fluid width SVGs (scale like images)
+// Allowing fully fluid SVG's that behave like images (scaling in proportion)
+// Based on https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css
+
+%a-svg__wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+}
+
+// The Actual SVG is absolutely positioned on the Wrapper
+%a-svg__core,
+.a-svg__core {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Demo art in PL
+.a-svg--demo {
+  @include svg-wrapper(600,600); 
+}

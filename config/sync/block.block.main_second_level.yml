@@ -1,0 +1,33 @@
+uuid: 373ed847-5607-4741-a1a5-d525aeb4470c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - utmusic
+_core:
+  default_config_hash: COooqb-RnVoQ0f9nA2Bzth9gtvNO2Pn8vklBQKQfLw4
+id: main_second_level
+theme: utmusic
+region: hidden
+weight: 0
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Main Second Level Navigation'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 2
+  depth: 3
+  expand_all_items: true
+  parent: 'main:'
+  suggestion: main_second_level
+visibility: {  }

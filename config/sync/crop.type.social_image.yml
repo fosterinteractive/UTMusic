@@ -1,0 +1,14 @@
+uuid: 96f66a47-e229-4fd3-aa9a-cdd0926b7a22
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: QkRCCuiDTVVVaSaAD4eIU7kSiZVazQlAWTSvdccZuhc
+label: 'Social Image'
+id: social_image
+description: 'Crop used for social images. Ideal size 1200×1200px @ 100% quality.'
+aspect_ratio: '1:1'
+soft_limit_width: 1200
+soft_limit_height: 1200
+hard_limit_width: 612
+hard_limit_height: 612

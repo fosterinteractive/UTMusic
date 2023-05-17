@@ -1,0 +1,27 @@
+uuid: a6c0d361-29f9-41bb-a347-8daf25c47b2a
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_quote_source_type
+field_name: field_quote_source_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: mentor
+      label: Mentor
+    -
+      value: participant
+      label: Participant
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

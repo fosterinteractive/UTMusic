@@ -1,0 +1,12 @@
+uuid: b90c77d1-4c0d-425b-84a5-a0814a6433f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: 1InwADEszMC8QCG4FanuUwagaAJsw1Wtg-s4pwf9Ij4
+id: media.poster
+label: Poster
+targetEntityType: media
+cache: true

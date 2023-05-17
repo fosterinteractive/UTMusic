@@ -1,0 +1,41 @@
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+{% set icon_size = icon_size|default('small') %}
+
+{% if image %}
+  <div class="m-image{{ variation }} {% if icon %}has-icon has-icon--{{ icon_alignment }}{% endif %}">
+    <div class="m-image__image {% if variation %}m-image{{ variation }}__image{% endif %}">
+      {{ image }}
+    </div>
+
+    {% if variation == '--brush-shadow' %}
+      <div class="m-image__shadow"> 
+        {# Here is fake element with background-image: url('brush-shadow.svg') #}
+      </div>
+    {% endif %}
+
+    {% if icon %}
+      <div class="m-image__icon--{{ icon_alignment }}">
+        {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+          directory: directory,
+          base_class: 'a-icon',
+          icon_file_type: icon_file_type,
+          icon: icon,
+          size: icon_size, 
+          } only
+        %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

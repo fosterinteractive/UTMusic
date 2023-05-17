@@ -1,0 +1,38 @@
+.m-listing-item--jobs {
+  position: relative;
+  border: 1px solid palette(grey, 500);
+  border-radius: rem(8px);
+  padding: ru(1);
+  color: var(--c-text);
+}
+
+.m-listing-item--jobs__feature {
+  display: inline-block;
+  margin-bottom: ru(0.5);
+  border: 1px solid palette(grey, 500);
+  border-radius: rem(16px);
+  padding: rem(3px) ru(1);
+  background-color: palette(yellow, 900);
+  color: palette(black);
+
+  @include breakpoint($bp-tablet) {
+    position: absolute;
+    top: ru(1);
+    right: ru(1);
+    margin-bottom: 0;
+  }
+}
+
+.m-listing-item--jobs__date {
+  color: palette(grey, 500);
+}
+
+.m-listing-item--jobs__title {
+  h2 a {
+    color: var(--c-heading) !important;
+
+    svg {
+      fill: var(--c-heading) !important;
+    }
+  } 
+}

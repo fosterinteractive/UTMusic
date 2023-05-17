@@ -1,0 +1,47 @@
+.u-readmore__link-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.u-readmore__link {
+  @extend %a-button--secondary;
+ 
+  &:before {
+    display: inline-block;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(0deg, palette(white), palette(white) ru(0.25), rgba(255, 255, 255, 0));
+    width: 100%;
+    height: ru(5);
+    content: '';
+    pointer-events: none;
+  }
+
+  &[data-clicked="true"] {
+    margin-top: ru(1);
+  }
+
+  &[data-clicked="true"]::before {
+    background: none;
+  }
+}
+
+
+/// inline 'read-more' button
+// Make content block and all children paragraphs inline
+.js-read-smore-inline,
+.js-read-smore-inline p {
+  display: inline;
+}
+
+.u-readmore--inline__link-wrap {
+  margin-bottom: ru(1);
+  display: inline;
+}
+
+.u-readmore--inline__link {
+  @extend %a-link;
+}

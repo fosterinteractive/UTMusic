@@ -1,0 +1,130 @@
+// See https://css-tricks.com/complete-guide-table-element/ for everything related to tables
+%a-table,
+.a-table,
+table {
+  display: block;
+  margin-top: ru(1);
+  margin-bottom: ru(1);
+
+  background:
+  /* Left start and right start 'inside' container colors (they overlap the shadows). */
+  linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0)),
+  linear-gradient(-90deg, white 0%, rgba(255, 255, 255, 0)) 100% 0,
+  /* Left and right scroll shadows. */
+  radial-gradient(
+    farthest-side at 0% 50%,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0)
+  ),
+  radial-gradient(
+    farthest-side at 100% 50%,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0)
+  ) 100% 0%;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 100px 100%, 100px 100%, 14px 100%, 14px 100%;
+  width: 100%;
+  max-width: 100%; // Fix to stop tables with fixed width from overlapping mobile menu.
+  height: 100%;
+  border-collapse: separate;
+  background-attachment: local, local, scroll, scroll;
+  -webkit-overflow-scrolling: touch;
+
+  @media screen and (-ms-high-contrast: active) {
+    background: none; // FF & Edge's high contrast does show the background image, so we hide it.
+  }
+  overflow-x: auto;
+}
+
+
+// Default table that fills container
+.a-table--content-columns {
+  display: table;
+}
+
+// Columns each have the same width regardless of columns
+.a-table--equal-columns {
+  display: table;
+  table-layout: fixed;
+}
+
+table a {
+  @extend %a-link;
+}
+
+table caption {
+  @extend %a-heading__h3;
+  text-align: left;
+}
+
+%a-table__cell--core {
+  @extend %a-type--xsmall;
+  border: 1px solid palette(grey, 900);
+  padding: ru(0.5) ru(0.25);
+}
+
+// Header Cell
+%a-table__th,
+th {
+  @extend %a-table__cell--core;
+  border-width: 0 0 2px 0;
+  border-color: palette(blue, 400);
+  vertical-align: bottom;
+  text-align: left;
+  color: palette(grey, 200);
+
+  &:not(:last-child) {
+    border-right-color: palette(white);
+  }
+
+  // Override the th cell appering in tbody (These are normally created in ckeditor)
+  tbody & {
+    border-width: 0 2px 0 0;
+    border-color: palette(blue, 400);
+
+    &:not(:last-child) {
+      border-right-color: palette(blue, 400);
+    }
+
+    &:first-of-type {
+      border-top: 1px solid palette(grey, 900);
+    }
+
+    &:last-of-type {
+      border-bottom: 1px solid palette(grey, 900);
+    }
+  }
+}
+
+// Default Cells
+%a-table__td,
+td {
+  @extend %a-table__cell--core;
+  vertical-align: top;
+
+  &:first-child {
+    border-left-width: 2px;
+  }
+
+  &:last-child {
+    border-right-width: 2px;
+  }
+}
+
+// Rows and Cells Styles
+%a-table__tr,
+tr {
+
+  &:nth-child(even) {
+    background-color: rgba(228, 231, 235, 0.2);
+  }
+
+  &:last-child {
+    border-bottom: 2px solid palette(grey, 900);
+  }
+}
+
+.a-table__col--narrow {
+  width: 10%;
+}

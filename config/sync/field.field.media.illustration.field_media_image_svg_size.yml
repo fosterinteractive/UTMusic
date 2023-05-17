@@ -1,0 +1,23 @@
+uuid: 5e39fc8e-985c-4be9-8f30-36e6c7cbc9a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_image_svg_size
+    - media.type.illustration
+  module:
+    - options
+id: media.illustration.field_media_image_svg_size
+field_name: field_media_image_svg_size
+entity_type: media
+bundle: illustration
+label: 'SVG size'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: medium
+default_value_callback: ''
+settings: {  }
+field_type: list_string

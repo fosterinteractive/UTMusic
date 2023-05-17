@@ -1,0 +1,47 @@
+select {
+  border-image: none;
+  // background-image: url("./svg-src/svg-art/ico-chevron-down--red-minified.svg");
+  // Minfied with https://vecta.io/nano
+  // URL encoded with https://yoksel.github.io/url-encoder/
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" xmlns:v="https://vecta.io/nano"%3E%3Cpath d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0h0z" fill="%23d32a32"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right ru(0.75) center;
+  background-size: ru(0.75) ru(0.75);
+  padding-right: ru(2);
+  cursor: pointer;
+  appearance: none;
+}
+
+%m-select,
+.m-select {
+
+  &.is-invalid,
+  &.error {
+    border-color: palette(red);
+  }
+}
+
+.m-select__icon-wrapper {
+  position: relative;
+
+  &:hover,
+  &:active,
+  &:focus {
+    .m-select__icon {
+      color: palette(red);
+    }
+  }
+
+  .m-select__icon {
+    position: absolute;
+    top: 50%;
+    left: rem(12px);
+    color: palette(grey, 500);
+    transition: color 0.25s cubic-bezier(0.1, 0.96, 0.56, 1);
+    transform: translateY(-50%);
+  }
+
+  .m-select {
+    padding-left: ru(1.25);  
+  }
+}

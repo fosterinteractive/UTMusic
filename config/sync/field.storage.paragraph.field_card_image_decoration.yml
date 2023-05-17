@@ -1,0 +1,36 @@
+uuid: 50134024-7432-40f5-a957-af0d0df5565d
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_card_image_decoration
+field_name: field_card_image_decoration
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: rounded-corners
+      label: 'Rounded Corners'
+    -
+      value: rounded-corners-shadow
+      label: 'Rounded corners with Shadow'
+    -
+      value: brush1
+      label: 'Brush Strokes 1'
+    -
+      value: brush2
+      label: 'Brush Strokes 2'
+    -
+      value: brush-shadow
+      label: 'Brush Strokes with Yellow Shadow'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

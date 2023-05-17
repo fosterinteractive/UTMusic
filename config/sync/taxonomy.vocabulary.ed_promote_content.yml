@@ -1,0 +1,10 @@
+uuid: a891102c-5dc6-4271-9b09-04282e680330
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: WT6ipkg7etVX-jGmwEEyOgv5xtDRL7Sk7d52J9no570
+name: 'Promote Content'
+vid: ed_promote_content
+description: ''
+weight: 0

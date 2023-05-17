@@ -1,0 +1,11 @@
+{% extends "@utilities/pl_container/pl_container.twig" %}
+
+{% block pl_content %}
+
+<div class="l-flex{{ flex_variation }}{% if flex_wrapper_variation %} l-flex__wrapper{{ flex_wrapper_variation }}{% endif %}">
+  {% for row in rows %}
+    {{ row.content }}
+  {% endfor %}
+</div>
+
+{% endblock pl_content %}

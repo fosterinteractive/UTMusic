@@ -1,0 +1,16 @@
+uuid: 375e22a6-c0a4-41fa-bd00-02bce0f53909
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: yojhz3Z-fo0-F4TMvIDgPSAXn5X7KFOA9KknWe_itGY
+id: node__ed_event
+label: 'Content: Event'
+tags:
+  title: '[node:field_ed_event_meta_title] | [site:name]'
+  description: '[node:field_ed_event_meta_desc]'
+  og_type: article
+  og_image_url: '[node:field_ed_event_meta_image:entity:field_ed_image_image:social_image:url]'
+  og_url: '[current-page:url:absolute]'
+  og_description: '[node:field_ed_event_meta_desc]'
+  og_title: '[node:field_ed_event_meta_title]'

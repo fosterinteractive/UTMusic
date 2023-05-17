@@ -1,0 +1,7 @@
+name: 'Mainspring Theme Automatic Meta Title'
+description: 'Automatically generate a meta title for full page content.'
+package: 'Custom'
+type: module
+core: 8.x
+version: '1.0.0'
+core_version_requirement: ^8 || ^9

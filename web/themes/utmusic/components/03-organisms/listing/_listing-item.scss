@@ -1,0 +1,139 @@
+%m-listing-item,
+.m-listing-item {
+  display: flex;
+  flex-direction: column;
+  border: rem(1px) solid var(--c-listing-item--border);
+  border-radius: rem(10px);
+  overflow: hidden;
+
+  @include breakpoint($bp-tablet) {
+    flex-direction: row;
+  }
+}
+
+%m-listing-item__img,
+.m-listing-item__img {
+  width: 100%;
+
+  @include breakpoint($bp-tablet) {
+    width: 50%;
+  }
+
+  .m-image {
+    height: 100%;
+    width: 100%;
+
+    // for drupal admin preview form
+    .field, 
+    article {
+      height: 100%;
+      width: 100%;
+    }
+    // end for drupal admin preview form
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .m-image__icon--left {
+      z-index: 1;
+    }
+  }
+
+
+  picture {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.m-listing-item__icon {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  color: var(--c-listing-item--border);
+}
+
+%m-listing-item__content,
+.m-listing-item__content {
+  padding: var(--spacer) var(--spacer) rem(40px);
+  width: 100%;
+}
+
+%m-listing-item__text,
+.m-listing-item__text {
+  @extend %u-remove-child--margin-top-bottom;
+
+  margin-bottom: ru(0.75);
+}
+
+// %m-listing-item__date,
+// .m-listing-item__date {
+//   margin-top: ru(0.5);
+//   margin-bottom: ru(0.5);
+//   text-transform: uppercase;
+//   color: palette(grey, 200);
+// }
+
+// .m-listing-item--teaser__date {
+//   @extend %a-type--small;
+
+//   margin-bottom: ru(0.5);
+// }
+
+// .m-listing-item--teaser__status {
+//   @extend %a-type--small;
+
+//   margin-bottom: 0;
+//   text-transform: capitalize;
+// }
+
+// .m-listing-item__desc {
+//   font-weight: 700;
+// }
+
+
+
+
+/**
+ * Condensed Variation
+ */
+// .m-listing-item--condensed {
+//   @extend %u-remove-child--margin-top-bottom;
+
+//   &.has-img {
+//     @include breakpoint($bp-tablet) {
+//       display: flex;
+//     }
+//   }
+// }
+
+// .m-listing-item--condensed__content {
+//   @extend %m-listing-item__content;
+// }
+
+// .m-listing-item--condensed__tags {
+//   @extend %m-listing-item__tags;
+// }
+
+// .m-listing-item--condensed__text {
+//   @extend %u-remove-child--margin-top-bottom;
+
+//   margin-bottom: ru(0.75);
+
+//   .m-text {
+//     max-width: ru(35);
+//   }
+// }
+
+// .m-listing-item--condensed__date {
+//   @extend %m-listing-item__date;
+//   color: palette(grey, 200);
+//   color: var(--text-color);
+// }
+
+// .m-listing-item--condensed__img {
+//   @extend %m-listing-item__img;
+// }

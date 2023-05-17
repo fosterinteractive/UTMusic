@@ -1,0 +1,125 @@
+
+%m-message__core { 
+  display: flex;
+  gap: var(--spacer);
+  align-items: center;
+  padding: ru(0.5);
+  color: var(--c-text);
+
+  .m-message--medium__title h3 {
+    color: currentColor;
+  }
+}
+
+.m-message {
+  @extend %m-message__core;
+
+  border-left: rem(8px) solid palette(grey);
+  border-color: palette(grey, 900);
+  background-color: palette(grey, 900);
+
+  p {
+    color: palette(grey, 200);
+  }
+}
+
+%m-message--low,
+.m-message--low {
+  @extend %m-message__core;
+
+  border-left: rem(8px) solid palette(green);
+  border-color: palette(green, 300);
+  background-color: palette(green, 900);
+  color: palette(green, 100);
+
+  p {
+    color: palette(green, 100);
+  }
+}
+
+%m-message--medium,
+.m-message--medium {
+  @extend %m-message__core;
+
+  border-left: rem(8px) solid palette(yellow);
+  border-color: palette(yellow);
+  background-color: palette(yellow, 900);
+  color: palette(grey, 200);
+
+  
+
+  p {
+    color: palette(grey, 200);
+  }
+}
+
+%m-message--high,
+.m-message--high {
+  @extend %m-message__core;
+
+  border-left: rem(8px) solid palette(red);
+  border-color: palette(red, 600);
+  background-color: palette(red, 900);
+  color: palette(red, 200);
+
+  p {
+    color: palette(red, 200);
+  }
+}
+
+.m-message__text {
+  @extend %a-type--xsmall;
+}
+
+.m-message__date {
+  margin-bottom: ru(0.5);
+}
+
+.m-message__icon {
+  margin-right: ru(0.5);
+
+  .a-icon {
+    color: var(--c-heading);
+  }
+}
+
+
+
+// See http://refills.bourbon.io/components/#flashes.
+$statuses: (
+  // 'warning': #f9fb93,
+  // 'error': #fbe3e4,
+  // 'status': #cfefc2,
+  'warning',
+  'error',
+  'status',
+) !default;
+
+@each $status-type in $statuses {
+  .m-message--#{$status-type} {
+    display: block;
+    margin-bottom: var(--spacer);
+    padding: var(--spacer);
+
+    a {
+      text-decoration: underline;
+    }
+
+    .placeholder {
+      font-weight: 700;
+      font-style: normal;
+    }
+  }
+}
+
+.m-message--status {
+  @extend %m-message--low;
+}
+
+.m-message--warning {
+  @extend %m-message--medium;
+}
+
+.m-message--error {
+  @extend %m-message--high;
+}

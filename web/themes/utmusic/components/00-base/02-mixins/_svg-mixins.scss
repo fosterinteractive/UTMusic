@@ -1,0 +1,21 @@
+@use 'sass:math';
+
+// SVG Wrapper.
+// Apply this mixin to the svg's wrapper element. The padding applied by the mixin will allow it to scale.
+//
+// @example scss - Basic Usage Sass
+//   .my-svg-wrapper {
+//     @include svg-wrapper(300/121)
+//   }
+//
+// @param {string} $width, $height - Used to calculate aspect ratio of svg canvas size
+@mixin svg-wrapper($width, $height) {
+  padding-bottom: math.div($height, $width) * 100%;
+  position: relative;
+  width: 100%;
+  height: 0;
+
+  > svg {
+      @extend %a-svg__core;
+  }
+}

@@ -1,0 +1,31 @@
+.m-breadcrumbs {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  font-size: rem(14px);
+  text-overflow: ellipsis;
+}
+
+.m-breadcrumbs__item {
+  display: inline;
+  min-width: rem(30px);
+}
+
+.m-breadcrumbs__link {
+  color: var(--c-link);
+
+  &:link,
+  &:visited {
+    text-decoration: underline;
+  }
+  
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+}
+
+.m-breadcrumbs__label {
+  color: var(--c-text);
+}

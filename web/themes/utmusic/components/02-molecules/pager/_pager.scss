@@ -1,0 +1,187 @@
+.m-pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: ru(1);
+  margin-bottom: ru(1);
+  padding-bottom: ru(0.5);
+
+  @include breakpoint($bp-tablet-small) {
+    flex-wrap: nowrap;
+  }
+}
+
+// Each part of the pager is wrapped in a group that
+// is vertically centered for small screens
+%m-pager__group-core {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+
+  // Reserve space for buttons regardless of whether
+  // They render to maintain spacing / Centering of UI
+  flex-basis: ru(3.25);
+
+  @include breakpoint($bp-phone-large) {
+    flex-wrap: nowrap;
+    flex-basis: ru(4.25);
+  }
+}
+
+.m-pager__group-backwards {
+  @extend %m-pager__group-core;
+
+  justify-content: flex-start;
+  order: 2;
+
+  @include breakpoint($bp-tablet-small) {
+    order: 1;
+  }
+}
+
+.m-pager__group-forwards {
+  @extend %m-pager__group-core;
+
+  justify-content: flex-end;
+  order: 3;
+}
+
+// Styles for buttons (prev, next, first, last).
+%m-pager__btn-core {
+  @extend %u-animate-background-color;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: rem(7px);
+  background: var(--c-pager--btn); 
+  width: rem(60px);
+  height: rem(40px);
+  border: rem(1px) solid var(--c-pager--btn-border);
+
+  svg {
+    height: rem(25px);
+    fill: var(--c-pager--btn-svg);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: var(--c-pager--btn--hover);
+
+    svg {
+      fill: var(--c-pager--btn-svg--hover);
+    }
+  }
+}
+
+.m-pager__btn-prev,
+.m-pager__btn-next,
+.m-pager__btn-first,
+.m-pager__btn-last {
+  @extend %m-pager__btn-core;
+}
+
+.m-pager__btn-first {
+  margin-right: ru(0.75);
+}
+
+.m-pager__btn-last {
+  margin-left: ru(0.75);
+}
+
+// Pages List. Will Shrink, but not grow. On small screens
+.m-pager__items-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  // align-items: self-end;
+  order: 1;
+  flex-shrink: 1;
+  margin-right: ru(0.25);
+  margin-bottom: ru(1);
+  margin-left: ru(0.25);
+  width: 100%;
+
+  @include breakpoint($bp-phone-large) {
+    margin-right: ru(0.5);
+    margin-left: ru(0.5);
+  }
+
+  @include breakpoint($bp-tablet-small) {
+    flex-wrap: wrap;
+    order: 2;
+    margin-bottom: 0;
+    width: auto;
+  }
+}
+
+.m-pager__items {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacer);
+
+  @include breakpoint($bp-tablet-small) {
+    flex-wrap: wrap;
+  }
+}
+
+%m-pager--btn-spacing {
+  display: block;
+  margin-right: ru(0.1);
+  margin-left: ru(0.1);
+  padding: ru(0.25) ru(0.75);
+  min-width: ru(1.5);
+  text-align: center;
+}
+
+// Styles for pages.
+.m-pager__item a {
+  @extend %m-pager--btn-spacing;
+  @extend %u-animate-border-color;
+
+  color: var(--c-pager--item-text);
+  text-decoration: none;
+  border: rem(1px) solid var(--c-pager--item-border);
+  background-color: var(--c-pager--item-bg);
+  border-radius: rem(7px);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--c-pager--item-bg--hover);
+    color: var(--c-pager--item-text--hover);
+  }
+}
+
+// Active page.
+%m-pager__btn--is-active {
+  @extend %m-pager--btn-spacing;
+
+  background-color: var(--c-pager--item-active-bg);
+  border-radius: rem(7px);
+  color: var( --c-pager--item-active-text);
+  cursor: default;
+  text-decoration: none;
+}
+
+.m-pager__item-is-active a,
+.m-pager__item-is-active span {
+  @extend %m-pager__btn--is-active;
+}
+
+.m-pager__item-prev--ellipsis,
+.m-pager__item-next--ellipsis {
+  @extend %m-pager--btn-spacing;
+
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0;
+  min-width: 0;
+  color: var(--c-pager--item-text);
+}

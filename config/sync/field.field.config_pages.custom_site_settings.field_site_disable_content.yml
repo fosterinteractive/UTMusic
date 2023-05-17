@@ -1,0 +1,21 @@
+uuid: 3a0e36f6-2afc-464f-9bd0-bb1ff09494e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.custom_site_settings
+    - field.storage.config_pages.field_site_disable_content
+  module:
+    - options
+id: config_pages.custom_site_settings.field_site_disable_content
+field_name: field_site_disable_content
+entity_type: config_pages
+bundle: custom_site_settings
+label: 'Disable Content'
+description: 'Disable the content that should not be available on the site.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

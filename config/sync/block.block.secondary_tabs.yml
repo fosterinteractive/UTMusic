@@ -1,0 +1,22 @@
+uuid: 699e1028-30f5-4eeb-8785-eeea51f77320
+langcode: en
+status: true
+dependencies:
+  theme:
+    - adminspring
+_core:
+  default_config_hash: 5V7qbfhqP5fuZJVW2AUyfn8OgqM_9WmawBs-w8v_c74
+id: secondary_tabs
+theme: adminspring
+region: pre_content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary Tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

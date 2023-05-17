@@ -1,0 +1,36 @@
+items:
+  pages:
+    1:
+      href: '#'
+    2:
+      href: '#'
+    3:
+      href: '#'
+    4:
+      href: '#'
+    5:
+      href: '#'
+    6:
+      href: '#'
+    7:
+      href: '#'
+    8:
+      href: '#'
+
+  previous: true
+  first: true
+  next: true
+  last: true
+
+current: 4
+
+prev_icon: 'angle-left'
+next_icon: 'angle-right'
+
+first_page_icon: 'angles-left'
+last_page_icon: 'angles-right'
+
+show_first_last_btn: true
+
+ellipses:
+  next: true

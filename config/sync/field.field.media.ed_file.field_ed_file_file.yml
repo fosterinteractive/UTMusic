@@ -1,0 +1,29 @@
+uuid: c444bd20-62ec-4cfd-a472-0198e1917336
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_ed_file_file
+    - media.type.ed_file
+  module:
+    - file
+_core:
+  default_config_hash: 79ZfEkHkjzRmi58v21_sMxiGxIil9h6O7cJYa8Md-i8
+id: media.ed_file.field_ed_file_file
+field_name: field_ed_file_file
+entity_type: media
+bundle: ed_file
+label: File
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: assets/files
+  file_extensions: 'txt doc docx pdf'
+  max_filesize: ''
+  description_field: true
+field_type: file

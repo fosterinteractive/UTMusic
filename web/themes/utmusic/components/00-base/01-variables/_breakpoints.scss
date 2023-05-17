@@ -1,0 +1,29 @@
+////
+/// Global Breakpoints
+///
+
+// Breakpoint mixin settings to force units to ems
+// (See breakpoint-sass library)
+@include bkpt-set('to ems', true);
+@include bkpt-set('no query fallbacks', true);
+
+/// After smallest (default) breakpoint, add some padding to outer margins
+$bp-phone-large: 390px;
+
+/// Smaller tables
+$bp-tablet-small: 600px;
+
+/// Classic ipad portrait px size
+$bp-tablet: 768px;
+
+/// Full Nav appears
+$bp-full-nav: 900px;
+
+/// Small laptop/desktop or landscape tablet displays
+$bp-large: 1024px;
+
+/// Widest text content will expand to
+$bp-max: 1147px;
+
+/// Widest huge banner images will scale to
+$bp-banner-max: 1660px;

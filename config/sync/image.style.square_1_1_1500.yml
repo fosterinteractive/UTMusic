@@ -1,0 +1,33 @@
+uuid: aa727565-615d-4e38-ac3f-0a510fb8958e
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+    - image_effects
+    - image_style_quality
+_core:
+  default_config_hash: t-t4YkuuHvxBRdj0ebkQV4LG8Y8t8RsLq32m-DG3KB8
+name: square_1_1_1500
+label: 'Square 1:1 - (1500 @ 50%)'
+effects:
+  4e754a56-19e9-480a-a691-25120936cb95:
+    uuid: 4e754a56-19e9-480a-a691-25120936cb95
+    id: focal_point_scale_and_crop
+    weight: -10
+    data:
+      width: 1500
+      height: 1500
+      crop_type: focal_point
+  f272297f-111d-42df-bec0-a7b17eccd759:
+    uuid: f272297f-111d-42df-bec0-a7b17eccd759
+    id: image_style_quality
+    weight: -8
+    data:
+      quality: 50
+  74b26afb-9b47-4183-8642-1781db5fb80c:
+    uuid: 74b26afb-9b47-4183-8642-1781db5fb80c
+    id: image_effects_interlace
+    weight: -9
+    data:
+      type: Plane

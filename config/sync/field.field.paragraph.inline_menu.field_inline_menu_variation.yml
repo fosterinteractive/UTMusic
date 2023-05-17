@@ -1,0 +1,21 @@
+uuid: 7af82f24-985e-493d-81ca-f23ff63a879d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_inline_menu_variation
+    - paragraphs.paragraphs_type.inline_menu
+  module:
+    - options
+id: paragraph.inline_menu.field_inline_menu_variation
+field_name: field_inline_menu_variation
+entity_type: paragraph
+bundle: inline_menu
+label: Variation
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

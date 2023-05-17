@@ -1,0 +1,22 @@
+uuid: 142337b5-a353-4238-918e-8db2529f7155
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - utmusic
+_core:
+  default_config_hash: Wdg5DsLZvXT9SMXsLasnktsdG7ZYIS9EnSX4dU95S5A
+id: messages
+theme: utmusic
+region: hidden
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

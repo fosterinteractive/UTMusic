@@ -1,0 +1,22 @@
+uuid: 4b58ce23-5bcc-4aee-847a-cf2fed56a3eb
+langcode: en
+status: true
+dependencies:
+  theme:
+    - utmusic
+_core:
+  default_config_hash: N6HoXsIKE3T1lx3zOgDfLhIjcvTyputmwoFAcKoI9Zs
+id: tabs
+theme: utmusic
+region: hidden
+weight: 1
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

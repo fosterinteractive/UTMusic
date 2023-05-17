@@ -1,0 +1,35 @@
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+{% if url %}
+  <a class="m-logos-item__wrapper" href="{{ url }}" id="{{ id }}" aria-label="{{ aria_label }}" tabindex="-1" target="_blank">
+{% endif %} 
+
+  {% if image or title %}
+    <div class="m-logos-item{{ variation }}">
+    
+      {% if image %}
+        <div class="m-logos-item__image {% if variation %}m-logos-item{{ variation }}__image{% endif %}">
+          {{ image }}
+        </div>
+      {% else %}
+        <div class="m-logos-item__title"> 
+          {{ title }}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+{% if url %}
+  </a>
+{% endif %}

@@ -1,0 +1,35 @@
+uuid: 497d894c-b3eb-47dc-b9bf-7f6ddf5138b0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: zSK6zqTcI-GJERHYWBo8yXU0RJAlCoZU2b8ZupZo8no
+id: node.field_ed_notice_severity
+field_name: field_ed_notice_severity
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Low
+      label: Low
+    -
+      value: Medium
+      label: Medium
+    -
+      value: High
+      label: High
+    -
+      value: Notice
+      label: Notice
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

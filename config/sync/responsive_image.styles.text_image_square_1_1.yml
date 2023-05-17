@@ -1,0 +1,39 @@
+uuid: 8fdeff9e-4c03-4fc4-bff6-0b4bdd6fee3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.square_1_1_1200
+    - image.style.square_1_1_1500
+    - image.style.square_1_1_1800
+    - image.style.square_1_1_200
+    - image.style.square_1_1_2000
+    - image.style.square_1_1_2500
+    - image.style.square_1_1_2800
+    - image.style.square_1_1_3000
+    - image.style.square_1_1_400
+    - image.style.square_1_1_600
+    - image.style.square_1_1_900
+id: text_image_square_1_1
+label: 'Text & Image Square 1:1'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width:1280px) 280px, (min-width:600px) 20vw, calc(100vw - 40px)'
+      sizes_image_styles:
+        - square_1_1_1200
+        - square_1_1_1500
+        - square_1_1_1800
+        - square_1_1_200
+        - square_1_1_2000
+        - square_1_1_2500
+        - square_1_1_2800
+        - square_1_1_3000
+        - square_1_1_400
+        - square_1_1_600
+        - square_1_1_900
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: square_1_1_600

@@ -1,0 +1,29 @@
+uuid: e3c85211-4144-4a05-87be-23e603343a48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_news_promote_filter
+    - paragraphs.paragraphs_type.news_summary_list_dynamic
+    - taxonomy.vocabulary.ed_promote_content
+id: paragraph.news_summary_list_dynamic.field_news_promote_filter
+field_name: field_news_promote_filter
+entity_type: paragraph
+bundle: news_summary_list_dynamic
+label: 'Promote Filter'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ed_promote_content: ed_promote_content
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

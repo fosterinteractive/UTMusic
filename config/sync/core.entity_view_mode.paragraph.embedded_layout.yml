@@ -1,0 +1,12 @@
+uuid: e354a197-df45-4684-9d6b-dbddef9439ac
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: kvUsjE-8WKqVM5YSdT--7cAOe628PrYRl3Ciga-3GaE
+id: paragraph.embedded_layout
+label: 'Embedded Layout'
+targetEntityType: paragraph
+cache: true

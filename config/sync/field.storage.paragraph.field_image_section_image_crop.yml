@@ -1,0 +1,39 @@
+uuid: caea5f4e-1ecc-4180-8547-5697babc273f
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_image_section_image_crop
+field_name: field_image_section_image_crop
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: landscape_2_1
+      label: 'Landscape (2:1)'
+    -
+      value: landscape_3_2
+      label: 'Landscape (3:2)'
+    -
+      value: landscape_4_3
+      label: 'Landscape (4:3)'
+    -
+      value: square_1_1
+      label: 'Square (1:1)'
+    -
+      value: portrait_1_2
+      label: 'Portrait (1:2)'
+    -
+      value: portrait_3_4
+      label: 'Portrait (3:4)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

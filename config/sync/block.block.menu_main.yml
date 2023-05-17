@@ -1,0 +1,31 @@
+uuid: 07d7d4a3-8997-4e41-b029-5ec2d67e8de1
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - utmusic
+id: menu_main
+theme: utmusic
+region: hidden
+weight: 0
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Main Menu'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 2
+  expand_all_items: true
+  parent: 'main:'
+  suggestion: main
+visibility: {  }

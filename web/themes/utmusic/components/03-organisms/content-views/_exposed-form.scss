@@ -1,0 +1,98 @@
+.m-exposed-form__wrapper {
+  // background-color: var(--c-section-background);
+  // width: 100vw;
+  // position: relative;
+  // left: 50%;
+  // right: 50%;
+  // margin-left: -50vw;
+  // margin-right: -50vw;
+  // padding: var(--spacer);
+  // margin-bottom: rem(84px);
+  // position: relative;
+
+  // &::before {
+  //   content: '';
+  //   height: 0.85rem;
+  //   width: 100%;
+  //   position: absolute;
+  //   left: 0;
+  //   bottom: 99%;
+  //   background-color: var(--c-section-background);
+  // }
+
+
+  @include breakpoint($bp-phone-large) {
+    padding: 0;
+  }
+
+  form {
+    margin: 0 auto;
+    width: 100%;
+
+    // @include breakpoint($bp-phone-large) {
+    //   max-width: $bp-phone-large;
+    // }
+
+    // @include breakpoint($bp-tablet-small) {
+    //   max-width: $bp-tablet-small;
+    // }
+    
+    // @include breakpoint($bp-tablet) {
+    //   max-width: $bp-tablet;
+    // }
+
+    // @include breakpoint($bp-full-nav) {
+    //   max-width: $bp-full-nav;
+    // }
+
+    // @include breakpoint($bp-large) {
+    //   max-width: $bp-large;
+    // }
+
+    // @include breakpoint($bp-max) {
+    //   max-width: $bp-max;
+    // }
+  }
+}
+
+// .stories--views-exposed-form,
+// .jobs--views-exposed-form,
+// .events--views-exposed-form {
+//   form {
+//     justify-content: flex-start !important;
+//     gap: var(--spacer);
+//   }
+
+//   .select2 {
+//     width: 100% !important;
+//   }
+
+//   .form-actions {
+//     width: 100% !important;
+//   }
+
+//   .l-form-item--textfield {
+//     width: 100% !important;
+//   }
+// }
+
+
+// .stories--views-exposed-form {
+  
+//   form {
+//     padding: 0;
+//   }
+// }
+
+
+// a11y aria for announcements after applying exposed filters 
+.offscreen {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}

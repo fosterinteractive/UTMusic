@@ -1,0 +1,87 @@
+.m-form-item--radio {
+  position: relative;
+  margin-bottom: ru(0.25);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+%m-form-item--radio__label,
+.m-form-item--radio label {
+  margin-bottom: 0;
+
+  .required.error & {
+    color: palette(red);
+  }
+}
+
+.m-input-radio {
+  // display: none;
+  position: absolute; // take it out of document flow
+  opacity: 0; // hide it
+
+  &:focus {
+    + label:before {
+      outline: 2px solid palette(blue, 400);
+      outline-offset: 2px;
+    }
+  }
+}
+
+.m-input-radio + label {
+  display: flex;
+  position: relative;
+  align-items: center;
+  cursor: pointer;
+}
+
+// Box.
+.m-input-radio + label:before {
+  display: inline-block;
+  margin-right: rem(10px);
+  border: 1px solid palette(black);
+  border-radius: 100%;
+  background: palette(white);
+  min-width: 16px;
+  height: 16px;
+  vertical-align: text-top;
+  content: '';
+}
+
+%m-input-radio__error--before,
+.m-input-radio.error + label:before {
+  border: 1px solid palette(red);
+}
+
+// Disabled state label.
+.m-input-radio:disabled + label {
+  color: palette(grey);
+  cursor: auto;
+}
+
+// Disabled box.
+.m-input-radio:disabled + label:before {
+  border-color: palette(grey);
+  color: palette(grey);
+}
+
+// Checkmark.
+.m-input-radio + label:after {
+  position: absolute;
+  left: 2px;
+  opacity: 0;
+  border-radius: 100%;
+  background: palette(blue);
+  width: 12px;
+  height: 12px;
+  content: '';
+  transform: scale(0);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+// Box checked.
+.m-input-radio:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}

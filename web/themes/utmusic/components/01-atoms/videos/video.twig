@@ -1,0 +1,61 @@
+{#
+/**
+ * Available variables:
+ * - video__base_class - the base classname
+ * - video_content - the content of the video (typically an iframe)
+ *   the "|raw" filter is applied so that the iframe is rendered instead
+ *   of simply passing the iframe as plain text.
+ *
+ * Available blocks:
+ * - video_content - used to replace the content of the video with something other than the typical iframe
+ *   for example: to insert an html5 video component
+ */
+#}
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+
+<div class="m-video">
+  {% if title %}
+    <div class="m-video__title">
+      {% include "@atoms/text/headings/heading.twig" with {
+          directory: directory,
+          html_element: 'h2',
+          appearance: 'h2',
+          text: title,
+        } only
+      %}
+    </div>
+  {% endif %}
+
+  {% if video %}
+    <div class="m-video__video">
+      {% if video__type == 'embed' %}
+        {{ video|raw }}
+      {% elseif video__type == 'html5' %}
+        <video>
+          {% for video__url in video__urls %}
+            <source src="{{ video__url }}" type="video/mp4">
+          {% endfor %}
+          {{ "Your browser does not support the video tag."|t }}
+        </video>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if description %}
+    <div class="m-video__description s-wysiwyg">
+      {{ description }}
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,82 @@
+// "RU" is short hand for "Rhythm Unit"
+//
+// Simple vertical rhythm function returns a calc unit that is a
+// fraction of the line-height of the body font. This is useful for maintaining a
+// vertical rhythm in your layouts. Typically using round fractions or
+// mutlipliers (1/4, 1/2, 1, 1.5, 2).
+//
+// Use for padding inside boxes, gutters in grid layouts, etc.
+// See https://dev.to/adrianbdesigns/mastering-css-vertical-rhythm-om9
+//
+//
+// Basic Usage Sass
+//   .my-module {
+//     padding: ru(1) ru(2);
+//   }
+//
+// Basic Usage CSS Output
+//
+//   // Assuming these default values
+//   $base-line-height: 24px
+//   $base-font-size: 16px
+//
+//   Assuming the --spacer css custom property is set
+//   var(--spacer): 1.5rem; // 24px / 16px * 1 rem
+//
+//   .my-module {
+//     padding: var(--spacer) calc(var(--spacer) * 2); // 24px 48px
+//   }
+//
+//
+// Usage to offset for a 1px border (2px total for top and bottom borders)
+//
+//   .my-module-with-borders {
+//     border: 1px solid black;
+//     padding: ru(1, -2px) ru(2);
+//   }
+//
+// Basic Usage CSS Output
+//
+//    .my-module-with-borders
+//      padding: calc(var(--spacer) * 1 - 2px) calc(var(--spacer) * 2); // 24px 48px
+//    }
+//
+// Requirements (See base/variables/typography.scss)
+// $base-line-height,
+// $base-font-size,
+// var(--spacer), -- This can be changed with a breakpoint to globally change the spacing
+//
+// Paramaters:
+// $rhythm-units [1] - units of spacing of "line-height"
+// $offset [null] - if you have vertical borders you can set the offset to compensate for them
+
+@function ru($rhythm-units: 1, $offset: null) {
+  // Validate @offset value if included
+  @if $offset != null {
+    @if type-of($offset) != 'number' or unitless($offset) {
+      @error '"#{$offset}" is not a valid $offset value. Number with unit expected; Eg. ru(1, -2px)';
+    }
+  }
+
+  @if type-of($rhythm-units) != 'number' or not unitless($rhythm-units) {
+    @error '"#{$rhythm-units}" is not a valid $rhythm-units value. Unitless number expected; Eg ru(0.5)';
+  } @else {
+    // Just return the --spacer if there's nothing to calculate
+    @if $rhythm-units == 1 and $offset == null {
+      @return var(--spacer);
+    }
+
+    // No offset needed
+    @if $rhythm-units != 1 and $offset == null {
+      @return calc(var(--spacer) * $rhythm-units);
+
+      // offset and spacer
+    } @else {
+      @return calc(var(--spacer) * $rhythm-units + $offset);
+    }
+  }
+}
+
+@function spacer($rhythm-units: 1, $offset: null) {
+  @return ru($rhythm-units, $offset);
+}

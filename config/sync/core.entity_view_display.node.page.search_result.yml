@@ -1,0 +1,40 @@
+uuid: bc305349-670d-4cf8-81d6-420f68bc222c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.page.field_page_admin_help_seo
+    - field.field.node.page.field_page_admin_help_social
+    - field.field.node.page.field_page_header
+    - field.field.node.page.field_page_meta_description
+    - field.field.node.page.field_page_meta_image
+    - field.field.node.page.field_page_meta_title
+    - field.field.node.page.field_page_section
+    - node.type.page
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.page.search_result
+targetEntityType: node
+bundle: page
+mode: search_result
+content:
+  search_api_excerpt:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_page_admin_help_seo: true
+  field_page_admin_help_social: true
+  field_page_header: true
+  field_page_meta_description: true
+  field_page_meta_image: true
+  field_page_meta_title: true
+  field_page_section: true
+  links: true

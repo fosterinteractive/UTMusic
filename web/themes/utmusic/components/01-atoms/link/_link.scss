@@ -1,0 +1,119 @@
+// Standard inline text link
+%a-link,
+.a-link {
+  
+  &:link,
+  &:visited {
+    text-decoration: underline;
+    text-decoration-color: var(--c-link-decoration);
+    // text-decoration-thickness: 1px; 
+    color: var(--c-link);
+    transition: color 0.2s ease-in-out, text-decoration-color 0.1s ease-in-out;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: palette(grey, 500);
+    text-decoration-color: var(--c-link-decoration--active);
+    color: var(--c-link--active);
+  }
+}
+
+// %a-external-link {
+//   &[href^='http']:after {
+
+//     display: inline-block;
+//     margin-left: 4px;
+//     background-image: url('./svg/svg-art/external-link-square-alt.svg');
+//     background-image: var(--link-icon-external);
+//     background-repeat: no-repeat;
+//     background-size: contain;
+//     width: 0.75em;
+//     height: 0.75em;
+//     white-space: nowrap;
+//     content: '';
+//     background-position-y: 1px;
+//   }
+// }
+
+
+
+
+%a-link--icon-core {
+  // @extend %a-type--small;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease-in-out, text-decoration-color 0.1s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+// Link icon on left (Default Position)
+%a-link--icon,
+.a-link--icon {
+  @extend %a-link--icon-core;
+  // @extend %a-link--medium-icon-size;
+
+  .a-icon,
+  .a-icon--sm {
+    order: -1;
+    margin-right: ru(0.5);
+    border-radius: 50%;
+    background-color: palette(green);
+    padding: 0;
+    color: palette(white);
+  }
+
+
+
+  &:hover,
+  &:focus,
+  &:active {
+
+    .a-icon,
+    .a-icon--sml {
+      // background-color: palette(teal, 200);
+    }
+  }
+}
+
+
+%a-link--icon-right,
+.a-link--icon-right {
+  @extend %a-link--icon-core;
+  // @extend %a-link--grey-with-green-icon;
+  // @extend %a-link--medium-icon-size;
+
+  // .a-icon--sml {
+  //   margin-left: ru(0.5);
+  // }
+}
+
+
+// Link Text Icon 
+
+%a-link--text-icon,
+.a-link--text-icon {
+  @extend %a-link;
+  // @extend %a-type--small;
+  // @extend %a-link--small-icon-size;
+
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+}
+
+

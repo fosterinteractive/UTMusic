@@ -1,0 +1,26 @@
+uuid: 7bf83336-53f4-488b-b01e-2de25ccebd8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_inline_menu_title
+    - paragraphs.paragraphs_type.inline_menu
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
+id: paragraph.inline_menu.field_inline_menu_title
+field_name: field_inline_menu_title
+entity_type: paragraph
+bundle: inline_menu
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

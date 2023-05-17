@@ -1,0 +1,7 @@
+.m-textarea {
+
+  &.required.error {
+    border-width: 1px;
+    border-color: palette(red);
+  }
+}

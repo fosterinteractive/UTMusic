@@ -1,0 +1,96 @@
+{# If no actual heading text was passed along, this component should not render. #}
+{% if text %}
+  
+  {# Set base class for this element of a-heading other components may extend the base class 
+  if they have unique title styles. Eg. a-title #}
+  {% set base_class = base_class|default('a-heading') %}
+
+  {# Set the HTML element for the heading, typipcally H1-H4 or div #}
+  {% set html_element = html_element|default('h2') %}
+  {% set alignment = alignment|default('left') %}
+
+  {# Default appearance matches the html_element #}
+  {% set appearance = appearance|default(html_element)|lower %}
+
+  {# Set the appearance as a sub element if a-headings  #}
+  {% if appearance starts with '__' %}
+  {# Do nothing #}
+  {% else %}
+    {% set appearance = '__' ~ appearance|lower %}
+  {% endif %}
+
+  {# Set default icon for headings with links #}
+  {% set icon = icon|default('angle-right') %}
+
+  {# heading id used for aria roles or anchor links. not rendered by default and  #}
+  <{{ html_element }}
+    class="{{ base_class }}{{ appearance }} a-heading--{{ alignment }}
+      {% if url %} has-link {% endif %}
+      {% if visually_hidden == 'hidden'%} u-visually--hidden{% endif %}
+    "
+    {% if id and not url %}
+    id="{{ id }}"
+    {% endif %}
+  >
+
+    {# headings with links render with Arrow Icons on right
+    parent_url is passed to heading component when the title is inside
+    an a tag or form element an needs the arrow without a matching <a> tag #}
+      {% if url %}
+
+      {# To keep icon inline with element required slicing the last work off the array and appending the icon to it see
+      https://craftcms.stackexchange.com/questions/15201/howscan-i-output-only-the-first-word-of-the-title-of-an-entry-in-a-template #}
+  
+      {# Split title into 2 strings.
+      Then wrap the end word + symbol so they don't line-break #}
+      {% set text_last_word = text|split(' ')|slice(-1, 1)|join %}
+      
+      {# // There appears to be a bug in twig.js so the negative slice isn't working so we'll
+      calculate the lenghts and subtract 1 to trim it #}
+      {# {% set text_words_without_last = text|split(' ')|slice(0, -1)|join(' ') %} #}
+  
+      {% set text_word_count = text|split(' ')|length %}
+      {% set text_words_without_last = text|split(' ')|slice(0, text_word_count - 1)|join(' ') %} 
+
+      {% if url %}
+        {# Create a tag + optional id #}
+        <a href="{{ url }}"
+
+          {% if id and url %}
+            id="{{ id }}"
+          {% endif %}
+  
+          {% if data_attribute %}
+            {{ data_attribute|raw }}
+          {% endif %}
+        >
+      {% endif %}
+  
+      {{ text_words_without_last|raw }}
+  
+        <span class="{{ base_class }}__last-word">{{ text_last_word|raw }}
+          {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+              directory: directory,
+              icon: icon,
+              size: 'inline',
+            } only
+          %}
+        </span>
+  
+        {% if hidden_text %}
+          <span class="u-visually--hidden">{{hidden_text}}</span>
+        {% endif %}
+  
+        {% if url %}
+          </a>
+        {% endif %}
+  
+      {% else %}
+        {{ text }}
+      {% endif %}
+
+
+
+  </{{ html_element }}>
+
+{% endif %}

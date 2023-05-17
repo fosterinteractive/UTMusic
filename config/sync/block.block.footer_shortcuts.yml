@@ -1,0 +1,33 @@
+uuid: 92b69e04-2e82-42a4-98af-fb93f2558ff8
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.header-shortcuts
+  module:
+    - menu_block
+  theme:
+    - utmusic
+_core:
+  default_config_hash: iuuFzKh08bY4sMZ3v_Gsf5B4WX_XExHBVx7hKWoUKcw
+id: footer_shortcuts
+theme: utmusic
+region: hidden
+weight: 0
+provider: null
+plugin: 'menu_block:header-shortcuts'
+settings:
+  id: 'menu_block:header-shortcuts'
+  label: 'Footer Shortcuts'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 1
+  expand_all_items: false
+  parent: 'header-shortcuts:'
+  suggestion: footer_shortcuts
+visibility: {  }

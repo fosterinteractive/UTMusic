@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Theme override to display primary and secondary local tasks.
+ *
+ * Available variables:
+ * - primary: HTML list items representing primary tasks.
+ * - secondary: HTML list items representing secondary tasks.
+ *
+ * Each item in these variables (primary and secondary) can be individually
+ * themed in menu-local-task.html.twig.
+ */
+#}
+
+{# Component Library Specific (javascript version) #}
+{% if not primary %}
+{# {{ attach_library('emulsify/tabs') }} #}
+  <div id="m-tabs" class="m-tabs no-js">
+    <ul class="m-tabs__nav">
+
+      {% for key, tab in tabs %}
+        {% include "@molecules/tabs/tab.twig" with {
+          tab_link: "#tab-" ~ key,
+          tab_text: tab.tab_text,
+        } %}
+      {% endfor %}
+
+    </ul>
+    
+    {% for key, tab in tabs %}
+      <div class="m-tabs__tab{% if key == 0 %} is-active{% endif %}">
+        <div id="tab-{{ key }}" class="m-tabs__content">
+          <p>{{ tab.tab_content }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}

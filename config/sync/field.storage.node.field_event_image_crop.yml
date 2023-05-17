@@ -1,0 +1,39 @@
+uuid: f500e85c-257b-4f82-b66f-d63447ec0351
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_event_image_crop
+field_name: field_event_image_crop
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: landscape_2_1
+      label: 'Landscape (2:1)'
+    -
+      value: landscape_3_2
+      label: 'Landscape (3:2)'
+    -
+      value: landscape_4_3
+      label: 'Landscape (4:3)'
+    -
+      value: square_1_1
+      label: 'Square (1:1)'
+    -
+      value: portrait_1_2
+      label: 'Portrait (1:2)'
+    -
+      value: portrait_3_4
+      label: 'Portrait (3:4)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

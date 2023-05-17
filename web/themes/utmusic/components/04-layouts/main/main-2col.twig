@@ -1,0 +1,38 @@
+<div class="l-main-2col">
+
+  {% block main_prefix %}
+    {{ hero_banner }}
+  {% endblock main_prefix %}
+
+  <div class="l-main-2col__content-wrapper">
+  
+    <div class="l-main-2col__aside" data-sticky-sidebar-container>
+      <div data-sticky-sidebar-sidebar>
+        <div data-sticky-sidebar-inner>
+          {{ sidenav }}
+        </div>
+      </div>
+    </div>
+
+    {% if moderation %}
+      <div class="l-main-2col__moderation">
+        {{ moderation }}
+      </div>
+    {% endif %}
+
+    {# Main Content #}
+    <div class="l-main-2col__content">
+
+      {% block main_content %}
+        {{ content }}
+      {% endblock main_content %}
+    </div>
+
+  </div> 
+
+  {# Has to go outside of the main content to spand full width #}
+  {% block main_suffix %}
+    {{ main_suffix }}
+  {% endblock main_suffix %}
+ 
+</div>

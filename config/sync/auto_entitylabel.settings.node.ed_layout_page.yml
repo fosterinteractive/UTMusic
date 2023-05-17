@@ -1,0 +1,8 @@
+_core:
+  default_config_hash: vfm1SHNAHhfSuFSkuFUtJqbYW5HXu_r1i6a7VenuREQ
+status: 1
+pattern: '[node:field_ed_layout_page_title]'
+escape: false
+dependencies:
+  config:
+    - node.type.ed_layout_page

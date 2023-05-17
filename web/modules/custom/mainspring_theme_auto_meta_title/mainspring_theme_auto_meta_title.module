@@ -1,0 +1,92 @@
+<?php
+
+/**
+ * @file
+ * Automatically generate a meta title.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_entity_presave().
+ *
+ * Set the meta title to the node title if it is not set.
+ */
+function mainspring_theme_auto_meta_title_entity_presave(EntityInterface $entity) {
+  if ($entity instanceof NodeInterface) {
+    // Get the auto title fields needed from the node.
+    $fields = _mainspring_theme_auto_meta_title_get_fields($entity);
+
+    // Use either the default of prefixed fields to set the meta title.
+    if (isset($fields['meta_title'])) {
+      $meta_title = $fields['meta_title'];
+      // Get Value of title field.
+      $title_value = $entity->getTitle();
+
+      
+
+      // If the meta title field is empty.
+      if ($entity->{$meta_title}->isEmpty()) {
+        // Assign the title value to the meta title.
+        $entity->{$meta_title}->value = $title_value;
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_prepare_form().
+ */
+function mainspring_theme_auto_meta_title_entity_prepare_form(EntityInterface $entity, $operation, FormStateInterface $form_state) {
+  if ($entity instanceof NodeInterface) {
+    // Get the auto title fields needed from the node.
+    $fields = _mainspring_theme_auto_meta_title_get_fields($entity);
+
+    // Use either the default of prefixed fields to set the meta title.
+    if (isset($fields['meta_title'])) {
+      $meta_title = $fields['meta_title'];
+      // Get the node title and meta title values.
+      $title_value = $entity->getTitle();
+      $meta_title_value = $entity->{$meta_title}->value;
+
+      // If the node title and meta title are the same set the meta title to
+      // empty.
+      if ($title_value == $meta_title_value) {
+        $entity->{$meta_title}->value = '';
+      }
+    }
+  }
+}
+
+/**
+ * Determines fields to use for auto meta title.
+ *
+ * Check if the node contains certain field titles and meta titles that will
+ * be used to generate an auto meta title.
+ *
+ * @param object $entity
+ *   An node object.
+ */
+function _mainspring_theme_auto_meta_title_get_fields($entity) {
+  // Node type. e.g. news, page.
+  $type = $entity->getType();
+  // Storage array for field names.
+  $fields = [];
+  // Default fields to test if available.
+  $default_meta_title = 'field_meta_title';
+  // Prefixed fields to test if available.
+  $prefixed_meta_title = 'field_page_meta_title';
+  // Check for a title and meta title field on this node. If they are
+  // available use them for the auto title.
+  if ($entity->hasField($default_meta_title)) {
+    $fields['meta_title'] = $default_meta_title;
+  }
+  // Check if there are prefixed titles and use them.
+  elseif ($entity->hasField($prefixed_meta_title)) {
+    $fields['meta_title'] = $prefixed_meta_title;
+  }
+
+  return $fields;
+}

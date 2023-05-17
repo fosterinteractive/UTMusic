@@ -1,0 +1,42 @@
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %}
+
+{% endif %}
+
+<table class="a-table{{ variation }}">
+	{% if caption %}
+		<caption>
+			{{ caption }}
+		</caption>
+	{% endif %}
+
+	{% if header is not empty %}
+		<thead>
+			<tr>
+				{% for col in header %}
+					<th scope="col">
+						{{ col.title }}
+					</th>
+				{% endfor %}
+			</tr>
+		</thead>
+	{% endif %}
+
+	<tbody>
+		{% for row in rows %}
+			<tr>
+				{% for col in row %}
+					<td class="s-wysiwyg">
+						{{ col.content }}
+					</td>
+				{% endfor %}
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>

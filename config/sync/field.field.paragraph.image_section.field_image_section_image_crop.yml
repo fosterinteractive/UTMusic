@@ -1,0 +1,21 @@
+uuid: 70411ef1-6c67-46ff-ab25-3d8a495dbe85
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_section_image_crop
+    - paragraphs.paragraphs_type.image_section
+  module:
+    - options
+id: paragraph.image_section.field_image_section_image_crop
+field_name: field_image_section_image_crop
+entity_type: paragraph
+bundle: image_section
+label: 'Image Crop'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

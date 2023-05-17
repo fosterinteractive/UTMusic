@@ -1,0 +1,218 @@
+uuid: feb41fa7-3c01-407c-8e6c-4ef52486dce5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card.field_card_button_aria_label
+    - field.field.paragraph.card.field_card_button_label
+    - field.field.paragraph.card.field_card_button_url
+    - field.field.paragraph.card.field_card_decoration
+    - field.field.paragraph.card.field_card_description
+    - field.field.paragraph.card.field_card_illustration
+    - field.field.paragraph.card.field_card_illustration_size
+    - field.field.paragraph.card.field_card_image
+    - field.field.paragraph.card.field_card_image_contextual
+    - field.field.paragraph.card.field_card_image_crop
+    - field.field.paragraph.card.field_card_image_decoration
+    - field.field.paragraph.card.field_card_title
+    - field.field.paragraph.card.field_card_title_appearance
+    - field.field.paragraph.card.field_card_title_html_element
+    - field.field.paragraph.card.field_card_title_position
+    - field.field.paragraph.card.field_card_variation
+    - paragraphs.paragraphs_type.card
+  module:
+    - allowed_formats
+    - field_group
+    - link
+    - media_library
+    - media_library_edit
+    - media_library_media_modify
+    - text
+third_party_settings:
+  field_group:
+    group_image_type:
+      children:
+        - field_card_image_contextual
+        - field_card_image_decoration
+      label: 'Image Type'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
+    group_illustration:
+      children:
+        - field_card_illustration
+        - field_card_illustration_size
+      label: Illustration
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
+    group_title:
+      children:
+        - field_card_title
+        - field_card_title_position
+        - field_card_title_html_element
+        - field_card_title_appearance
+      label: Title
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
+    group_button:
+      children:
+        - field_card_button_label
+        - field_card_button_url
+        - field_card_button_aria_label
+      label: Button
+      region: content
+      parent_name: ''
+      weight: 6
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+id: paragraph.card.default
+targetEntityType: paragraph
+bundle: card
+mode: default
+content:
+  field_card_button_aria_label:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_card_button_label:
+    type: text_textfield
+    weight: 9
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+  field_card_button_url:
+    type: link_default
+    weight: 10
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_card_decoration:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_card_description:
+    type: text_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_card_illustration:
+    type: media_library_widget
+    weight: 8
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
+  field_card_illustration_size:
+    type: options_select
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_card_image_contextual:
+    type: media_library_media_modify_widget
+    weight: 12
+    region: content
+    settings:
+      media_types: {  }
+      form_mode: crop_widget_mode
+      check_selected: false
+      replace_checkbox_by_order_indicator: false
+      multi_edit_on_create: true
+      no_edit_on_create: false
+    third_party_settings: {  }
+  field_card_image_decoration:
+    type: options_select
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_card_title:
+    type: text_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+  field_card_title_appearance:
+    type: options_select
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_card_title_html_element:
+    type: options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_card_title_position:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_card_variation:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_card_image: true
+  field_card_image_crop: true
+  status: true

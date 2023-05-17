@@ -1,0 +1,212 @@
+uuid: 0706111b-1cc9-4d61-9f2a-284d6b6bdf00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.field_page_admin_help_seo
+    - field.field.node.page.field_page_admin_help_social
+    - field.field.node.page.field_page_header
+    - field.field.node.page.field_page_meta_description
+    - field.field.node.page.field_page_meta_image
+    - field.field.node.page.field_page_meta_title
+    - field.field.node.page.field_page_section
+    - node.type.page
+  module:
+    - field_group
+    - hide_revision_field
+    - layout_paragraphs
+    - markup
+    - media_library
+    - media_library_edit
+    - paragraphs
+    - path
+third_party_settings:
+  field_group:
+    group_header:
+      children:
+        - field_page_header
+      label: Header
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        description: ''
+        required_fields: true
+    group_search_engines_social_shar:
+      children:
+        - group_tip_search_engine_optimiza
+        - group_tip_social_media_sharing
+        - field_page_meta_title
+        - field_page_meta_description
+        - field_page_meta_image
+      label: 'Search Engines & Social Share (Advanced)'
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
+    group_tip_search_engine_optimiza:
+      children:
+        - field_page_admin_help_seo
+      label: 'Tip: Search Engine Optimization (SEO)'
+      region: content
+      parent_name: group_search_engines_social_shar
+      weight: 19
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
+    group_tip_social_media_sharing:
+      children:
+        - field_page_admin_help_social
+      label: 'Tip: Social Media Sharing'
+      region: content
+      parent_name: group_search_engines_social_shar
+      weight: 20
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: false
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_page_admin_help_seo:
+    type: markup
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_page_admin_help_social:
+    type: markup
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_page_header:
+    type: entity_reference_paragraphs
+    weight: 1
+    region: content
+    settings:
+      title: Header
+      title_plural: Headers
+      edit_mode: preview
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: header
+    third_party_settings: {  }
+  field_page_meta_description:
+    type: string_textarea
+    weight: 22
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_page_meta_image:
+    type: media_library_widget
+    weight: 23
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
+  field_page_meta_title:
+    type: string_textfield
+    weight: 21
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_page_section:
+    type: layout_paragraphs
+    weight: 2
+    region: content
+    settings:
+      preview_view_mode: preview
+      nesting_depth: 0
+      require_layouts: 1
+      empty_message: ''
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  revision_log:
+    type: hide_revision_field_log_widget
+    weight: 8
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+      show: true
+      default: ''
+      permission_based: false
+      allow_user_settings: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 4
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  promote: true
+  sticky: true
+  title: true

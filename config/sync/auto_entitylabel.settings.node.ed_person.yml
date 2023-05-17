@@ -1,0 +1,9 @@
+_core:
+  default_config_hash: gZ5nQIM3tyHq7Ei2uyNbZFL8bqNt8v-gB5yW6KCYy-k
+status: 1
+pattern: '[node:field_ed_person_display_name]'
+escape: false
+dependencies:
+  config:
+    - node.type.ed_person
+new_entity_action: 1

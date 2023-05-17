@@ -1,0 +1,23 @@
+uuid: 5a54e2dc-8ba1-414b-a6e9-7affe433edbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.events_full_list_dynamic.field_events_full_list_status
+    - paragraphs.paragraphs_type.events_full_list_dynamic
+  module:
+    - options
+id: paragraph.events_full_list_dynamic.default
+targetEntityType: paragraph
+bundle: events_full_list_dynamic
+mode: default
+content:
+  field_events_full_list_status:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,22 @@
+uuid: 365a9bc3-ee06-4961-bd71-24b4303b12cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - adminspring
+_core:
+  default_config_hash: EkQmtDRAtuKfROu3dpkKeT2_aknnuoPJh1khDjMSAqQ
+id: adminspring_messages
+theme: adminspring
+region: content
+weight: -1
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

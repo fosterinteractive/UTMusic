@@ -1,0 +1,32 @@
+uuid: 3edc9e9d-727b-4d70-a8ac-0ee3323fd897
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.news_summary_list_dynamic.field_news_category
+    - field.field.paragraph.news_summary_list_dynamic.field_news_number_of_items
+    - field.field.paragraph.news_summary_list_dynamic.field_news_offset
+    - field.field.paragraph.news_summary_list_dynamic.field_news_other_number_of_items
+    - field.field.paragraph.news_summary_list_dynamic.field_news_promote_filter
+    - field.field.paragraph.news_summary_list_dynamic.field_news_title
+    - paragraphs.paragraphs_type.news_summary_list_dynamic
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.news_summary_list_dynamic.preview
+targetEntityType: paragraph
+bundle: news_summary_list_dynamic
+mode: preview
+content: {  }
+hidden:
+  field_news_category: true
+  field_news_number_of_items: true
+  field_news_offset: true
+  field_news_other_number_of_items: true
+  field_news_promote_filter: true
+  field_news_title: true
+  search_api_excerpt: true

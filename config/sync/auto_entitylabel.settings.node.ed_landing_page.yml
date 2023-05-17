@@ -1,0 +1,10 @@
+status: 1
+pattern: '[node:field_ed_landing_page_banner:entity:field_ed_hero_banner_title]'
+escape: false
+preserve_titles: false
+save: false
+chunk: 50
+dependencies:
+  config:
+    - node.type.ed_landing_page
+new_entity_action: 1

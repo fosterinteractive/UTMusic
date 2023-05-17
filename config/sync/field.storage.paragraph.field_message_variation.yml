@@ -1,0 +1,33 @@
+uuid: 80334320-444a-4e8a-a175-eb081ca94411
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_message_variation
+field_name: field_message_variation
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'null'
+      label: 'Default (Grey)'
+    -
+      value: low
+      label: 'Low (Green)'
+    -
+      value: medium
+      label: 'Medium (Yellow)'
+    -
+      value: high
+      label: 'High (Red)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

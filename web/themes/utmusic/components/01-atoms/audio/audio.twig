@@ -1,0 +1,61 @@
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+<div class="m-audio{{ variation }}">
+  {% if title %}
+    <div class="m-audio__title">
+      {% include "@atoms/text/headings/heading.twig" with {
+          directory: directory,
+          html_element: 'h2',
+          appearance: 'h2',
+          text: title,
+        } only
+      %}
+    </div>
+  {% endif %}
+
+  {% if audio %}
+    <div class="m-audio__audio">
+      {% for item in audio %}
+        <div class="m-audio__item">
+          {# {% if item.track_title is not empty %}
+            {% include "@atoms/text/headings/heading.twig" with {
+                directory: directory,
+                html_element: 'h2',
+                appearance: 'h5',
+                text: item.track_title,
+              } only
+            %}
+          {% endif %} #}
+
+          <div class="m-audio__item-track">
+            {{ item.track }}
+          </div>
+        </div>
+      {% endfor %}
+
+      {% if storybook_demo %}
+        <div class="m-audio__item-track">
+          {{ audio|raw }}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if description %}
+    <div class="m-audio__description s-wysiwyg">
+      {{ description }}
+    </div>
+  {% endif %}
+  
+</div>

@@ -1,0 +1,23 @@
+uuid: 4917a28e-f354-4c75-894e-9a4566284882
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: gEJlqfSlaMsQ_P2dp8bPq8zDgtF396-wRsnsP1-5qBw
+label: Content
+id: content
+description: 'Linking to entities that have full page displays like pages or articles.'
+matchers:
+  1343a5c0-400e-4512-ad06-2b6e1be5d0c9:
+    id: 'entity:node'
+    uuid: 1343a5c0-400e-4512-ad06-2b6e1be5d0c9
+    settings:
+      metadata: '[node:url:path]'
+      bundles: {  }
+      group_by_bundle: true
+      substitution_type: canonical
+      limit: 100
+      include_unpublished: true
+    weight: 0

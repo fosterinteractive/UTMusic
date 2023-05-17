@@ -1,0 +1,212 @@
+// All the palettes below are intended to have black on the colour and tested for a11y.
+
+// Global Defaults Theme Colors
+
+// Not that for CSS Vars in dart sass it needs to be evaulated. 
+// See https://sass-lang.com/documentation/breaking-changes/css-vars
+
+// Dark Text on a light background
+:root,
+%theme--light-bg,
+.theme--light-bg,
+.adminspring-theme {
+  
+  // @atoms/button
+  --c-button: #{palette(yellow)};
+  --c-button--active: #{palette(black)};
+  --c-button-border: #{palette(black)};
+  --c-button-border--active: #{palette(black)};
+  --c-button-text: #{palette(black)};
+  --c-button-text--active: #{palette(yellow)};
+
+  --c-button--secondary: #{palette(grey, 900)};
+  --c-button-border--secondary: #{palette(grey, 900)};
+  --c-button--secondary--active: #{palette(grey, 200)};
+  --c-button-text--secondary: #{palette(grey, 200)};
+  --c-button-text--secondary--active: #{palette(grey, 900)};
+
+  // @atoms/pill
+  --c-chip: #{palette(grey, 200)};
+  --c-chip--active: #{palette(grey, 200)};
+  --c-chip-border: #{palette(grey, 900)};
+  --c-chip-border--active: #{palette(grey, 900)};
+  --c-chip-background: #{palette(grey, 900)};
+  --c-chip-background--active: #{palette(grey, 900)};
+
+
+  // @atoms/image
+  --c-image-caption-text: #{palette(grey, 200)};
+
+  // @atoms/link
+  --c-link: #{palette(blue)};
+  --c-link--active: #{palette(blue, 400)};
+  --c-link-decoration: #{palette(blue, 400)};
+  --c-link-decoration--active: #{palette(blue, 400)};
+  // --c-link-icon-external, url('./svg/svg-art/external-link-square-alt.svg')};
+  // --c-link-background--active, rgba(#{palette(grey, 500), 0.15)};
+
+  // @atoms/lists
+  --c-list-bullet: #{palette(blue, 400)};
+
+  // @atoms/table
+
+
+  // @atoms/text
+  --c-text: #{palette(black)};
+  --c-heading: #{palette(black)};
+  --c-heading-link: #{palette(blue, 400)};
+  --c-heading-link--active: #{palette(blue, 400)};
+  --c-heading-link-icon: #{palette(red)};
+
+  // @molecules/inline-menu
+  --c-inline-menu-text: #{palette(grey, 200)};
+  --c-inline-menu-text--active: #{palette(red)};
+  --c-inline-menu-line: #{palette(blue, 400)};
+  --c-inline-menu-line--active: #{palette(red)};
+
+  // @molecules/quote
+  --c-quote: #{palette(black)};
+  --c-quote--suorce-type: #{palette(yellow)};
+  --c-quote--suorce-type--bg: #{palette(black)};
+
+  // @molecules/card
+  --c-card--horizontal-background: #{palette(yellow, 900)};
+  --c-card--horizontal-text: #{palette(black)};
+  --c-card-background: #{palette(white)};
+  --c-card-border: #{palette(black)};
+  --c-card-icon-background: #{palette(yellow)};
+  --c-card-title: #{palette(black)};
+  --c-card-title--active: #{palette(black)};
+  --c-card--bordered-title: #{palette(black)};
+  --c-card--bordered-title--active: #{palette(black)};
+  --c-card--bordered-text: #{palette(black)};
+  --c-card--image-highlight-below-text: #{palette(black)};
+  --c-card--image-highlight-below-bg: #{palette(yellow)};
+  --c-card--illustration: #{palette(black)};
+  --c-card--image-text:  #{palette(black)};
+
+  // @organisms/listing
+  --c-listing-item--border: #{palette(black)};
+
+
+  //pager
+  --c-pager--btn: #{palette(yellow)};
+  --c-pager--btn--hover: #{palette(black)};
+  --c-pager--btn-border: #{palette(black)};
+  --c-pager--btn-svg: #{palette(black)};
+  --c-pager--btn-svg--hover: #{palette(yellow)};
+  --c-pager--item-active-text: #{palette(white)};
+  --c-pager--item-active-bg: #{palette(black)};
+  --c-pager--item-text: #{palette(black)};
+  --c-pager--item-text--hover: #{palette(white)};
+  --c-pager--item-bg: #{palette(yellow, 900)};
+  --c-pager--item-bg--hover: #{palette(black)};
+  --c-pager--item-border: #{palette(black)};
+}
+
+// Light text on a dark background
+%theme--dark-bg,
+.theme--dark-bg {
+
+  // a-type
+  --c-text: #{palette(white)};
+  --c-heading: #{palette(white)};
+  --c-heading-link: #{palette(grey, 900)};
+  --c-heading-link--active: #{palette(white)};
+  --c-heading-link-icon: #{palette(red)};
+
+  // a-img  
+  --c-image-caption-text: #{palette(grey, 200)};
+
+  // a-link
+  --c-link: #{palette(grey, 900)};
+  --c-link--active: #{palette(white)};
+  --c-link-decoration: #{palette(blue, 400)};
+  --c-link-decoration--active: #{palette(white)};
+  // --link-icon-external, url('./svg/svg-art/external-link-square-alt-white.svg')};
+
+   // @atoms/button
+  --c-button: #{palette(yellow)};
+  --c-button--active: #{palette(black)};
+  --c-button-border: #{palette(black)};
+  --c-button-border--active: #{palette(yellow)};
+  --c-button-text: #{palette(black)};
+  --c-button-text--active: #{palette(yellow)};
+
+
+  --c-button--secondary: #{palette(grey, 900)};
+  --c-button-border--secondary: #{palette(grey, 900)};
+  --c-button--secondary--active: #{palette(grey, 200)};
+  --c-button-text--secondary: #{palette(grey, 200)};
+  --c-button-text--secondary--active: #{palette(grey, 900)};
+
+  // a-list
+  --c-list-bullet: #{palette(blue, 400)};
+
+  // Inline menu.
+  --c-inline-menu-text: #{palette(grey, 900)};
+  --c-inline-menu-text--active: #{palette(white)};
+  --c-inline-menu-line: #{palette(yellow, 700)};
+  --c-inline-menu-line--active: #{palette(white)};
+
+  // @molecules/quote
+  --c-quote: #{palette(white)};
+  --c-quote--suorce-type: #{palette(yellow)};
+
+  // @molecules/card
+  --c-card--horizontal-background: #{palette(white)};
+  --c-card--horizontal-text: #{palette(black)};
+  --c-card--bordered-illustration: #{palette(black)};
+  --c-card-background: #{palette(white)};
+  --c-card-border: #{palette(white)};
+  --c-card-text: #{palette(white)};
+  --c-card-title: #{palette(white)};
+  --c-card-title--active: #{palette(yellow)};
+  --c-card--bordered-title: #{palette(black)};
+  --c-card--bordered-title--active: #{palette(black)};
+  --c-card--bordered-text: #{palette(black)};
+  --c-card--image-text: #{palette(yellow)};
+  --c-card--illustration: #{palette(white)};
+
+
+  // Follow Us.
+  --follow-us-title-color: #{palette(white)};
+
+  // @organisms/listing
+  --c-listing-item--border: #{palette(white)};
+
+  //pager
+  --c-pager--btn: #{palette(yellow)};
+  --c-pager--btn--hover: #{palette(black)};
+  --c-pager--btn-border: #{palette(black)};
+  --c-pager--btn-svg: #{palette(black)};
+  --c-pager--btn-svg--hover: #{palette(yellow)};
+  --c-pager--item-active-text: #{palette(black)};
+  --c-pager--item-active-bg: #{palette(yellow)};
+  --c-pager--item-text: #{palette(black)};
+  --c-pager--item-text--hover: #{palette(black)};
+  --c-pager--item-bg: #{palette(white)};
+  --c-pager--item-bg--hover: #{palette(yellow, 900)};
+  --c-pager--item-border: #{palette(black)};
+}
+
+.theme--white-bg {
+  @extend %theme--light-bg;
+  // Section Background
+  --c-section-background: #{palette(white)};
+}
+
+
+.theme--light-yellow-bg {
+  @extend %theme--light-bg;
+  // Section Background
+  --c-section-background: #{palette(yellow, 900)};
+}
+
+
+
+.theme--black-bg {
+  @extend %theme--dark-bg;
+  // Section Background
+  --c-section-background: #{palette(black)};
+}

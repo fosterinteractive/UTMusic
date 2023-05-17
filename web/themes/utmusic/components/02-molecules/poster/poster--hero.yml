@@ -1,0 +1,12 @@
+variation: hero
+poster_layout:
+image: '<img width="1600" height="400" src="https://source.unsplash.com/X0OoHrPvgXE/1600x400"/>'
+content_image: '<img src="https://source.unsplash.com/FpDGCjoW_S4/300x300" />'
+title: 'Poster Title  Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+title_prefix: 'Title Prefix is here'
+summary: 'Poster Body Cras ut orci a turpis hendrerit elementum.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut orci a turpis hendrerit elementum.'
+link_url: '#'
+link_text: 
+button_aria_label: Optional text read aloud by screen readers
+button_aria_labelledby:
+contextual_links:

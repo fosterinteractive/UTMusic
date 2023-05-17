@@ -1,0 +1,66 @@
+- text: H1 large - The quick brown fox jumps over the lazy dog.
+  html_element: h1-large
+  appearance: 
+  url: 
+  icon:
+  id: 
+- text: H1 - The quick brown fox jumps over the lazy dog.
+  html_element: h1
+  appearance: 
+  url: 
+  icon:
+  id: 
+- text: H1 with link - The quick brown fox jumps over the lazy dog.
+  html_element:
+  appearance:
+  url: https://example.com
+  icon: 
+  id:
+- text: H2 - The quick brown fox jumps over the lazy dog.
+  html_element: h2
+  appearance: h2
+  url: 
+  icon: 
+  id:
+- text: H2 with link - The quick brown fox jumps over the lazy dog.
+  html_element: 
+  appearance: 
+  url: https://example.com
+  icon: 
+  id:
+- text: H3 - The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+  html_element: h3
+  appearance: 
+  url: 
+  icon: 
+  id:
+- text: H2 with H3 appearance, link and a custom icon  - The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+  html_element: h2
+  appearance: h3
+  url: https://example.com
+  icon: angle-down
+  id:
+- text: H4 - The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+  html_element: h4
+  appearance: 
+  url: 
+  icon: 
+  id:
+- text: H4 with link - The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+  html_element: h4
+  appearance: 
+  url: https://example.com
+  icon: 
+  id:
+- text: H5 - The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+  html_element: h5
+  appearance: 
+  url: 
+  icon: 
+  id:
+- text: DIV with an H5 appearance and link- The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+  html_element: div
+  appearance: h5
+  url: https://example.com
+  icon: 
+  id:

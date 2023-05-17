@@ -1,0 +1,16 @@
+uuid: 1daff99d-1a63-4b42-8a71-2e05c2016dcc
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: VPs022aEhCXSkgsxdk7oQ5KDYsd607LP-nT0zCm99-I
+id: node__ed_page
+label: 'Content: Page'
+tags:
+  title: '[node:field_ed_page_meta_title] | [site:name]'
+  description: '[node:field_ed_page_meta_desc]'
+  og_type: article
+  og_image_url: '[node:field_ed_page_meta_image:entity:field_ed_image_image:social_image:url]'
+  og_url: '[current-page:url:absolute]'
+  og_description: '[node:field_ed_page_meta_desc]'
+  og_title: '[node:field_ed_page_meta_title]'

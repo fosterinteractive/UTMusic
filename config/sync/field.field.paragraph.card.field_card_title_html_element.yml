@@ -1,0 +1,23 @@
+uuid: 45cd0e3a-0867-4fb7-9693-61107fc67bba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card_title_html_element
+    - paragraphs.paragraphs_type.card
+  module:
+    - options
+id: paragraph.card.field_card_title_html_element
+field_name: field_card_title_html_element
+entity_type: paragraph
+bundle: card
+label: 'Title wrapper [html element]'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: h2
+default_value_callback: ''
+settings: {  }
+field_type: list_string

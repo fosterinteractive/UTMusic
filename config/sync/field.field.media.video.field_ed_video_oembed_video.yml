@@ -1,0 +1,21 @@
+uuid: 5e674bae-008f-499f-8a29-cb60d273472c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_ed_video_oembed_video
+    - media.type.video
+_core:
+  default_config_hash: 4gLfnwKPICBfXbwSoUR9jmVmZmc49HaiD-3hOq69alA
+id: media.video.field_ed_video_oembed_video
+field_name: field_ed_video_oembed_video
+entity_type: media
+bundle: video
+label: 'Remote video URL'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

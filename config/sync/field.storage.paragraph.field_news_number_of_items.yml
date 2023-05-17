@@ -1,0 +1,33 @@
+uuid: e58e1f0e-3ee4-4583-bef5-6b8ba34898b3
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_news_number_of_items
+field_name: field_news_number_of_items
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '2'
+      label: 'Display 2 items'
+    -
+      value: '4'
+      label: 'Display 4 items'
+    -
+      value: '6'
+      label: 'Display 6 items'
+    -
+      value: other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

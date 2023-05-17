@@ -1,0 +1,26 @@
+uuid: c13d7135-ab49-4110-abb4-778c55c3e9e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_news_title
+    - paragraphs.paragraphs_type.news_summary_list_dynamic
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+id: paragraph.news_summary_list_dynamic.field_news_title
+field_name: field_news_title
+entity_type: paragraph
+bundle: news_summary_list_dynamic
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

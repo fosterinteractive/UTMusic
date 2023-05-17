@@ -1,0 +1,27 @@
+{% if sb_class %}
+  <input class="m-input" type="text" id="textfield_input" name="textfield_input" value="" size="60" maxlength="128" placeholder="Placeholder for textfield" required="required" aria-required="">
+  
+  {# is-invalid #}
+  <input class="m-input--is-required required error m-input" type="text" id="textfield_input" name="textfield_input" size="60" maxlength="128" placeholder="Pa-input for is-invalid jyjy" required="required" aria-required="">
+
+  {# Submit (Input Button) #}
+  <input class="m-input-submit" type="submit" id="submit_input" name="submit_input" value="Submit (Input Button)">
+
+  {% else %}
+    {% set input_type = attributes.getIterator().type.__toString() %}
+
+    {% if input_type == 'text' or input_type == 'email' or input_type == 'tel' %}
+      {% set classes = ['m-input'] %}
+    {% else %}
+      {% set classes = ['m-input-' ~ input_type] %}
+    {% endif %}
+
+    {% if icon_name %}
+    <div class="m-input--{{ icon_name }}__wrapper m-input__icon-wrapper">
+      <i class="m-input__icon fas fa-{{ icon_name }}"></i>
+    {% endif %}
+      <input {{ attributes }} />{{ children }}
+    {% if icon_name %}
+    </div>
+    {% endif %}
+{% endif %}

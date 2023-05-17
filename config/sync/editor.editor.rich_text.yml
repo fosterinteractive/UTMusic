@@ -1,0 +1,88 @@
+uuid: 2c05c7fa-37ed-4b1b-a48c-c5e1e61e2601
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.rich_text
+  module:
+    - ckeditor
+_core:
+  default_config_hash: fWdSKw-6uOe02g_IWdcOzq0vIyH_bQLuWidRdC8SKns
+format: rich_text
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Styles
+          items:
+            - Styles
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - Underline
+            - Superscript
+            - Subscript
+            - RemoveFormat
+        -
+          name: Alignment
+          items:
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+            - Link
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+            - Outdent
+            - Indent
+        -
+          name: Media
+          items:
+            - SpecialChar
+            - HorizontalRule
+            - Table
+        -
+          name: Tools
+          items:
+            - PasteFromWord
+            - Source
+            - ShowBlocks
+            - Maximize
+  plugins:
+    stylescombo:
+      styles: "h2.a-heading__h2|Heading 2 \r\nh3.a-heading__h3|Heading 3\r\nh4.a-heading__h4|Heading 4\r\np|Paragraph\r\np.a-type--small|P (Small)\r\np.a-type--large|P (Large)\r\np.a-type--xlarge|P (x large)"
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: default
+    wordcount:
+      enable: true
+      show_remaining: false
+      show_paragraphs: false
+      show_word_count: true
+      show_char_count: false
+      count_bytes: false
+      count_spaces: false
+      count_html: 0
+      count_line_breaks: false
+      max_words: -1
+      max_chars: -1
+      hard_limit: 1
+image_upload:
+  status: true
+  scheme: public
+  directory: assets/inline-images
+  max_size: '20 MB'
+  max_dimensions:
+    width: 3000
+    height: 3000

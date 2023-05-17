@@ -1,0 +1,102 @@
+@use 'sass:math';
+//// Grid & Layout
+/// @group base-grid
+
+/// Default Gutter
+// $gutter: ru(1.25) !default; 
+/////// Storybook has an error with ru(1.25)
+$gutter: rem(30px) !default;
+
+/// Default Gutter
+$gutter-px: $base-line-height * 1.25;
+/// Default Gutter
+$half-gutter: math.div($gutter , 2) !default;
+/// Global Grid Column
+$total-cols: 12 !default; 
+
+// Global Gutter Count
+$total-gutters: $total-cols - 1; // Total gutters are equal to the total columns minus 1
+// Total Gutter Width
+$total-gutter-width: $total-gutters * $gutter; //Total width taken by gutters (357.5px)
+// Max width - Only used to calculate the max width of the grid and 
+// takes into account the number of gutters
+// The result of adding "$total-gutter-width" and "$max-width" is the same as "$bp-banner-max"
+// (357.5+842.5=1200)
+$max-width: rem($bp-banner-max) - $total-gutter-width; // (842.5px);
+// Used in min-max css grid sizes
+$max-col-width: math.div($max-width, $total-cols);
+
+
+/// Grid calculator
+/// Renders a calc() that matches a grid with flexible columns and fixed gutters.
+/// By Default if $number-gutter is not defined is will be $cols - 1
+/// Use the Total Cols when you're sizing an element inside a parent grid
+/// 
+/// @param {interger} $cols - Number of columbns
+/// @param {interger} $number-gutter - If not defined will be $cols - 1
+/// @param {interger} $total-cols - Total number of columns used to calculate
+/// @param {interger} $gutter-width - Size of 1 gutter (assumed to be fixed unit)
+@function grid-calc($cols, $number-gutter: null, $total-cols: 12, $gutter-width: $gutter) {
+
+
+  // Check $cols variable is unitless
+  @if (not(unitless($cols))) {
+    @error '$cols value must be unitless';
+    // check that the number of columns is not null or
+  } @else if ($cols == null or $cols == 0) {
+    @error '$cols value is required';
+  }
+
+  // if $number-gutter is not null (not default)
+  // check that it is unitless
+  @if ($number-gutter != null) {
+    @if (not(unitless($number-gutter))) {
+      @error '$number-gutter value must be unitless';
+    }
+  }
+
+  // check $total-cols is unitless
+  @if (not(unitless($total-cols))) {
+    @error '$total-cols value must be unitless';
+  }
+
+  // Check Gutter has no unit, pass to rhyth-unit ru() function
+  @if (unitless($gutter-width) and $gutter-width != 0) {
+    $gutter-width: ru($gutter-width);
+  }
+
+  // Total number of gutters
+  $total-gutters: $total-cols - 1;
+  // Width of single column is total width
+  // minus the width of all the gutters combined divided by
+  // the total number of columns
+  $col-width: calc((100% - #{$gutter-width} * #{$total-gutters}) / #{$total-cols});
+
+  // if number of gutters is null and cols is greater than 1
+  // return number of columns + gutters between them
+  @if ($number-gutter == null and $cols > 1) {
+    $local-gutters: $cols - 1;
+    // We have to use the full definition of the $col-width calc for this to work in IE. IE 11 does not support calc inside a calc.
+    // see https://codepen.io/zachhanding/post/nested-calc-functions-and-ie11
+    @return calc(#{$cols} * (100% - #{$gutter-width} * #{$total-gutters}) / #{$total-cols} + #{$gutter-width * $local-gutters});
+    // if number of gutter is null and cols is 1
+    // return single column
+  } @else if ($number-gutter == null and $cols == 1) {
+    @return #{$col-width};
+    // if number of gutter is 0
+    // return width of number of columns without gutters
+  } @else if ($number-gutter == 0) {
+    // We have to use the full definition of the $col-width calc for this to work in IE. IE 11 does not support calc inside a calc.
+    // see https://codepen.io/zachhanding/post/nested-calc-functions-and-ie11
+    @return calc(#{$cols} * (100% - #{$gutter-width} * #{$total-gutters}) / #{$total-cols});
+    // if number of gutters and number of cols
+    // return number of cols + number of gutters
+  } @else {
+    // We have to use the full definition of the $col-width calc for this to work in IE. IE 11 does not support calc inside a calc.
+    // see https://codepen.io/zachhanding/post/nested-calc-functions-and-ie11
+    @return calc(#{$cols} * (100% - #{$gutter-width} * #{$total-gutters}) / #{$total-cols} + #{$gutter-width * $number-gutter});
+  }
+}
+
+
+

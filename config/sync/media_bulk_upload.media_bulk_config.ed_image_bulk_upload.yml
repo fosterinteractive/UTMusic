@@ -1,0 +1,16 @@
+uuid: 87d0a3ea-5a9f-42bb-a09c-f10e60c66d24
+langcode: en
+status: true
+dependencies: {  }
+id: ed_image_bulk_upload
+label: 'Image Bulk Upload'
+media_types:
+  ed_image: ed_image
+  ed_file: 0
+  ed_gallery_image: 0
+  ed_instagram_post: 0
+  ed_tweet: 0
+  video: 0
+form_mode: media_library
+show_alt: null
+show_title: null

@@ -1,0 +1,10 @@
+uuid: 2e32f96c-40d1-4f2f-8a50-20f0429a0742
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1ffPspWCVuDVRVUCis_Eb6n8pvtLbN5N8_sKeVCdoRY
+name: 'Event Category'
+vid: ed_event_category
+description: ''
+weight: 0

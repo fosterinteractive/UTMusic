@@ -1,0 +1,20 @@
+uuid: e5e49bca-36e5-4163-9a04-e5782a2567d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.ed_notice
+_core:
+  default_config_hash: ZXa9oS-A33E2qPkQy1yDhIDi5tTswNHLIHbFoJ8zZZE
+id: node.ed_notice.title
+field_name: title
+entity_type: node
+bundle: ed_notice
+label: 'Maintenance Notice'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

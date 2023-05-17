@@ -1,0 +1,135 @@
+// p and other type elements will have a "double space" at the bottom relative to the line height
+%a-type__core {
+  margin-top: 0;
+  // margin-bottom: $base-line-height * 1em;
+  color: var(--c-text);
+  font-weight: 400;
+  font-style: normal;
+}
+
+p {
+  @extend %a-type__core;
+}
+
+%a-type--xxsmall,
+.a-type--xxsmall {
+  font-size: rem(12px);
+}
+
+%a-type--xsmall,
+.a-type--xsmall {
+  font-size: rem(14px);
+}
+
+%a-type--small,
+.a-type--small {
+  font-size: rem(16px);
+}
+
+
+%a-type--xmedium,
+.a-type--xmedium {
+  font-size: rem(18px);
+}
+
+%a-type--medium,
+.a-type--medium {
+  font-size: rem(20px);
+}
+
+$font-sizes--medium: (
+  null: (20px, $base-line-height)
+);
+
+%a-type--large,
+.a-type--large {
+  font-size: rem(22px);
+
+  // @include breakpoint($bp-type-large) {
+  //   font-size: rfs(26px);
+  // }
+}
+
+%a-type--xlarge,
+.a-type--xlarge {
+  font-size: rem(25px);
+}
+
+%a-type--xxlarge,
+.a-type--xxlarge {
+  font-size: rem(28px);
+
+  // @include breakpoint($bp-type-large) {
+  //   font-size: rfs(32px);
+  // }
+}
+
+%a-type--huge,
+.a-type--huge {
+  // @extend %a-heading__h1-large;
+  width: 100%;
+  margin-bottom: ru(1);
+  line-height: 1.25; // Relative line height needed for rfs() function
+  color: var(--c-heading);
+  font-weight: 700;
+  font-family: $title-font-family;
+
+  @include rfs(85px);
+  font-weight: 900;
+
+  u {
+    text-decoration: none;
+    background: linear-gradient(0deg, rgba(255,242,0,0) 10px, rgba(255, 242, 0, 1) 10px, rgba(255, 242, 0, 1) 28px, rgba(255,242,0,0) 28px);
+  }
+
+  .theme--black-bg u {
+    text-decoration: none;
+    background: linear-gradient(0deg, rgba(255,242,0,0) 10px, rgba(255, 242, 0, 0.7) 10px, rgba(255, 242, 0, 0.7) 28px, rgba(255,242,0,0) 28px);
+  }
+}
+
+%a-type--italic,
+.a-type--italic {
+  font-style: italic;
+}
+
+%a-type--center,
+.a-type--center {
+  text-align: center;
+}
+
+%a-type--no-trailer,
+.a-type--no-trailer {
+  margin-bottom: 0;
+}
+
+%a-type__hr,
+hr {
+  clear: both;
+  margin: ru(1) 0;
+  border: 0;
+  background-color: palette(grey, 200);
+  height: 1px;
+  font-size: 0;
+}
+
+%a-type__sub-sup,
+sub,
+sup {
+  @extend %a-type--xsmall;
+
+  display: inline-block;
+  line-height: 1.5;
+}
+
+%a-type--button {
+  font-family: $title-font-family;
+  font-weight: bold;
+  font-size: rem(25px);
+}
+
+%a-type--headings,
+.a-type--headings {
+  font-family: $title-font-family;
+  font-weight: bold;
+}

@@ -1,0 +1,86 @@
+{# Set default poster class - 'm-poster' #}
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+<div class="m-poster{{ variation }}{{ poster_layout }}">
+  {% if image %}
+    <div class="m-poster{{ variation }}__image">
+      {{ image }}
+    </div>
+  {% endif %}
+
+  <div class="m-poster{{ variation }}__content">
+    {% if content_image is not empty %}
+      <div class="m-poster{{ variation }}__content-image">
+        {{ content_image }}
+      </div>
+    {% endif %}
+
+    {% if title or summary or link_text %}
+      <div class="m-poster{{ variation }}__content-body">
+        {% if title %}
+          <div class="m-poster{{ variation }}__title">
+            {% if title_prefix %} 
+              <div class="m-poster{{ variation }}__title-prefix">
+                {{ title_prefix }}
+              </div>
+            {% endif %}
+
+            {# Hero variation is used on landing pages and has huge title text #}
+            {% if variation == '--hero' %}
+              {% include "@atoms/text/headings/heading.twig" with {
+                  html_element: 'h1',
+                  appearance: 'h1',
+                  text: title,
+                } only
+              %}
+              {# <h1 class="m-poster{{ variation }}__h1">{{ title }}</h1> #}
+                {# The poster is inline content #}
+            {% else %}
+              {% include "@atoms/text/headings/heading.twig" with {
+                  html_element: 'h3',
+                  appearance: 'h3',
+                  text: title,
+                } only
+              %}
+            {% endif %}
+
+          </div>
+        {% endif %}
+
+        {% if summary %}
+          <div class="m-poster{{ variation }}__summary">
+            {{ summary }}
+          </div>
+        {% endif %}
+
+        {% if link_url and link_text %}
+          <div class="m-poster{{ variation }}__button">
+            {% include "@atoms/button/button.twig" with {
+                variation: '',
+                url: link_url,
+                label: link_text,
+                aria_label: button_aria_label,
+                aria_labelledby: button_aria_labelledby
+              } only
+            %}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if contextual_links %}
+    {{ contextual_links }}
+  {% endif %}
+</div>

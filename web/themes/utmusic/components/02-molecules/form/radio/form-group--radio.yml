@@ -1,0 +1,102 @@
+pl_class: 'pl__wrapper--xsml'
+name: 'radio-group'
+required: true
+classes: 'is-invalid'
+attributes:
+  Attribute():
+    class: []
+legend:
+  title: 'Title of the radio group'
+  attributes:
+    Attribute():
+      class: []
+legend_span:
+  attributes:
+    Attribute():
+      class: []
+legend_span_classes: 'legend_span_class'
+children:
+  join():
+    - include():
+        pattern: molecules-form-item--radio
+        with:
+          label:
+            include():
+              pattern: molecules-label
+              with:
+                title: 'Radio One'
+                attributes:
+                  Attribute():
+                    for: 'radio_one'
+                    class: ['m-label--is-required']
+          children:
+            include():
+              pattern: molecules-input
+              with:
+                attributes:
+                  Attribute():
+                    required: 'required'
+                    aria-required: true
+                    type: 'radio'
+                    id: 'radio_one'
+                    name: 'radio_group'
+                pl_class: ''
+          pl_class: ''
+    - include():
+        pattern: molecules-form-item--radio
+        with:
+          label:
+            include():
+              pattern: molecules-label
+              with:
+                title: 'Radio Two'
+                attributes:
+                  Attribute():
+                    for: 'radio_two'
+                    class: ['m-label--is-required']
+          children:
+            include():
+              pattern: molecules-input
+              with:
+                attributes:
+                  Attribute():
+                    required: 'required'
+                    aria-required: true
+                    type: 'radio'
+                    id: 'radio_two'
+                    name: 'radio_group'
+                pl_class: ''
+          pl_class: ''
+    - include():
+        pattern: molecules-form-item--radio
+        with:
+          label:
+            include():
+              pattern: molecules-label
+              with:
+                title: 'Radio Three is a very long radio button so we can demonstrate text wrapping'
+                attributes:
+                  Attribute():
+                    for: 'radio_three'
+                    class: ['m-label--is-required']
+          children:
+            include():
+              pattern: molecules-input
+              with:
+                attributes:
+                  Attribute():
+                    required: required
+                    aria-required: true
+                    type: radio
+                    id: radio_three
+                    name: radio_group
+                pl_class: ''
+          pl_class: ''
+description:
+  content: 'This is the description of a radio group.'
+  attributes:
+    Attribute():
+      class: []
+gentle_form:
+  required: 'This field is required.'
+

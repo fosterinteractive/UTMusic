@@ -16,6 +16,9 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  */
 include __DIR__ . "/settings.pantheon.php";
 
+
+$settings['config_sync_directory'] = dirname(DRUPAL_ROOT) . '/config/sync';
+
 /**
  * Skipping permissions hardening will make scaffolding
  * work better, but will also raise a warning when you

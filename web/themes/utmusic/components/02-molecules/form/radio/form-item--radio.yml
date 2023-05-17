@@ -1,0 +1,28 @@
+pl_class: 'pl__wrapper'
+name: 'radio_option'
+attributes:
+  Attribute():
+    class: []
+label_display: 'after'
+label:
+  include():
+    pattern: molecules-label
+    with:
+      title: 'Radio One'
+      attributes:
+        Attribute():
+          for: 'radio_one'
+          class: ['m-label--is-required']
+children:
+  include():
+    pattern: molecules-input
+    with:
+      attributes:
+        Attribute():
+          required: 'required'
+          aria-required: true
+          type: 'radio'
+          id: 'radio_one'
+          name: 'radio one'
+          value: 1
+      pl_class: ''

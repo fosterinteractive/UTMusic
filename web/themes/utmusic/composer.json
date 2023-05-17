@@ -1,0 +1,34 @@
+{
+  "name": "fosterinteractive/mainspring-theme",
+  "description": "Project template for Drupal 10 themes",
+  "type": "drupal-theme",
+  "license": "MIT",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "require": {},
+  "require-dev": {},
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "pre-install-cmd": [],
+    "pre-update-cmd": [],
+    "post-install-cmd": [],
+    "post-update-cmd": []
+  },
+  "extra": {
+    "installer-types" : ["bower-asset", "npm-asset"],
+    "installer-paths": {
+      "js/vendor/{$name}/": [
+        "type:npm-asset",
+        "type:bower-asset"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true
+  }
+}

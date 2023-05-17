@@ -1,0 +1,29 @@
+uuid: aacc0ae4-6129-4bfa-a580-83194fa4d8d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_poster_large_bg_image
+    - media.type.ed_image
+    - paragraphs.paragraphs_type.poster
+id: paragraph.poster.field_poster_large_bg_image
+field_name: field_poster_large_bg_image
+entity_type: paragraph
+bundle: poster
+label: 'Large Background Image'
+description: 'Image will be cropped to an aspect ratio of 2:1. Position the "focal point" to adjust the cropping'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      ed_image: ed_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

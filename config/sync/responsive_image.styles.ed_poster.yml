@@ -1,0 +1,41 @@
+uuid: 5d1c4b68-77ad-4bed-ba38-8df9a07de717
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.landscape_2_1_1200
+    - image.style.landscape_2_1_1500
+    - image.style.landscape_2_1_1800
+    - image.style.landscape_2_1_200
+    - image.style.landscape_2_1_2000
+    - image.style.landscape_2_1_2500
+    - image.style.landscape_2_1_2800
+    - image.style.landscape_2_1_3000
+    - image.style.landscape_2_1_400
+    - image.style.landscape_2_1_600
+    - image.style.landscape_2_1_900
+_core:
+  default_config_hash: ThXA2GtCtLCLVyVqA7zH9SFd2LVo7pv8HcuORohNXSM
+id: ed_poster
+label: Poster
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - landscape_2_1_1200
+        - landscape_2_1_1500
+        - landscape_2_1_1800
+        - landscape_2_1_200
+        - landscape_2_1_2000
+        - landscape_2_1_2500
+        - landscape_2_1_2800
+        - landscape_2_1_3000
+        - landscape_2_1_400
+        - landscape_2_1_600
+        - landscape_2_1_900
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: landscape_2_1_1200

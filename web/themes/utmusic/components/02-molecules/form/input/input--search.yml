@@ -1,0 +1,13 @@
+icon_name: search
+attributes:
+  Attribute():
+    class: ['m-input']
+    type: text
+    id: textfield_input
+    name: textfield_input
+    value: ""
+    size: 60
+    maxlength: 128
+    placeholder: Placeholder for textfield
+    required: required
+    aria-required: true

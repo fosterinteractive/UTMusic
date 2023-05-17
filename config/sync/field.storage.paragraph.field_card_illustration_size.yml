@@ -1,0 +1,36 @@
+uuid: 2486129d-e89c-4e10-8049-23024b67e9c3
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_card_illustration_size
+field_name: field_card_illustration_size
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: xlarge
+      label: 'Extra Large'
+    -
+      value: large
+      label: Large
+    -
+      value: medium
+      label: Medium
+    -
+      value: small
+      label: Small
+    -
+      value: xsmall
+      label: 'Extra Small'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

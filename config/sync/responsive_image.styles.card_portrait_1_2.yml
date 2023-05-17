@@ -1,0 +1,33 @@
+uuid: 7fa4a31c-7c42-488b-8905-28642d1e9f85
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.portrait_1_2_1200
+    - image.style.portrait_1_2_1500
+    - image.style.portrait_1_2_1800
+    - image.style.portrait_1_2_200
+    - image.style.portrait_1_2_400
+    - image.style.portrait_1_2_600
+    - image.style.portrait_1_2_900
+_core:
+  default_config_hash: uI3fuKUVUWwe7ZIHUyuQoGNXr6t4YjsGFI-GLjfb2jQ
+id: card_portrait_1_2
+label: 'Card Portrait 1:2'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width:1280px) 372px, (min-width:900px) calc(33vw - 40px), (min-width:600px) calc(50vw - 40px), calc(100vw - 40px)'
+      sizes_image_styles:
+        - portrait_1_2_1200
+        - portrait_1_2_1500
+        - portrait_1_2_1800
+        - portrait_1_2_200
+        - portrait_1_2_400
+        - portrait_1_2_600
+        - portrait_1_2_900
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: portrait_1_2_600

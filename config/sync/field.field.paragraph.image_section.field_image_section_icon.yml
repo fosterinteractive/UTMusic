@@ -1,0 +1,29 @@
+uuid: 684b2170-e586-4f19-bc08-69835281e1bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_section_icon
+    - media.type.illustration
+    - paragraphs.paragraphs_type.image_section
+id: paragraph.image_section.field_image_section_icon
+field_name: field_image_section_icon
+entity_type: paragraph
+bundle: image_section
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      illustration: illustration
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

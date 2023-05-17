@@ -1,0 +1,167 @@
+%l-flex__core {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacer);
+
+  // Flex layout breaks the UI in Paragraphs Layouts. Exclude the toggle button
+  > *:not(.layout-paragraphs-add-content__toggle) {
+    margin-top: $half-gutter;
+    margin-bottom: $half-gutter;
+    width: 100%;
+  }
+}
+
+%l-flex,
+.l-flex,
+.l-flex--1col {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+
+  > * {
+    margin-top: $half-gutter;
+    margin-bottom: $half-gutter;
+    width: 100%;
+  }
+
+  .lpb-btn--add {
+    margin: 0;
+    width: 24px;
+  }
+}
+
+%l-flex--nowrap,
+.l-flex--nowrap {
+  @extend %l-flex__core;
+  flex-wrap: wrap;
+  
+  @include breakpoint ($bp-full-nav) {
+    flex-wrap: nowrap;
+  }
+}
+
+%l-flex--2col,
+.l-flex--2col {
+  @extend %l-flex__core;
+  justify-content: space-between;
+
+  @include breakpoint ($bp-tablet-small) {
+
+    > *:not(.layout-paragraphs-add-content__toggle) {
+      // at small sizes the grid gap is 1/2 gutter
+      // 2 columns w/ 1 gutter (half size) 
+      width: calc(50% - #{$half-gutter} / 2);
+    }
+  }
+  @include breakpoint ($bp-full-nav) {
+    
+    > *:not(.layout-paragraphs-add-content__toggle) {
+      // at bp-full-nav sizes the grid gap is 1 gutter
+      // 2 columns w/ 1 gutter 
+      width: calc(50% - #{$gutter} / 2);
+    }
+  }
+}
+
+%l-flex--3col,
+.l-flex--3col {
+  @extend %l-flex__core;
+  justify-content: space-between;
+
+
+
+  @include breakpoint ($bp-tablet-small) {
+
+    > *:not(.layout-paragraphs-add-content__toggle) {
+      // at small sizes the grid gap is 1/2 gutter
+      // 2 columns w/ 1 gutter (half size) 
+      width: calc(50% - #{$half-gutter} / 2);
+    }
+  }
+
+  @include breakpoint ($bp-full-nav) {
+
+    // To allow the space between layout to work (so it can work in IE 11) an empty after is added to "hold the space"
+    // See https://stackoverflow.com/questions/18744164/flex-box-align-last-row-to-grid
+    &::after {
+      width: calc(33.33333% - #{$gutter} * 2 / 3);
+      content: '';
+    }
+
+    > *:not(.layout-paragraphs-add-content__toggle) {
+      // at bp-full-nav sizes the grid gap is 1 gutter
+      // 2 columns w/ 1 gutter 
+      width: calc(33.33333% - #{$gutter} * 2 / 3);
+    }
+  }
+}
+
+%l-flex--3col-1to3,
+.l-flex--3col-1to3 {
+  @extend %l-flex__core;
+  justify-content: space-between;
+
+  @include breakpoint ($bp-tablet-small) {
+    // To allow the space between layout to work (so it can work in IE 11) an empty after is added to "hold the space"
+    // See https://stackoverflow.com/questions/18744164/flex-box-align-last-row-to-grid
+    &::after {
+      width: calc(33.33333% - #{$half-gutter} * 2 / 3);
+      content: '';
+    }
+
+    > *:not(.layout-paragraphs-add-content__toggle) {
+      // at bp-full-nav sizes the grid gap is 1 gutter
+      // 2 columns w/ 1 gutter 
+      width: calc(33.33333% - #{$half-gutter} * 2 / 3);
+    }
+  }
+
+  @include breakpoint ($bp-full-nav) {
+
+    // To allow the space between layout to work (so it can work in IE 11) an empty after is added to "hold the space"
+    // See https://stackoverflow.com/questions/18744164/flex-box-align-last-row-to-grid
+    &::after {
+      width: calc(33.33333% - #{$gutter} * 2 / 3);
+      content: '';
+    }
+
+    > *:not(.layout-paragraphs-add-content__toggle) {
+      // at bp-full-nav sizes the grid gap is 1 gutter
+      // 2 columns w/ 1 gutter 
+      width: calc(33.33333% - #{$gutter} * 2 / 3);
+    }
+  }
+}
+
+%l-flex--4col,
+.l-flex--4col {
+  @extend %l-flex__core;
+  justify-content: space-between;
+
+  @include breakpoint ($bp-tablet-small) {
+
+    > *:not(.layout-paragraphs-add-content__toggle) {
+      width: calc(50% - #{$gutter} / 2);
+    }
+  }
+
+
+  @include breakpoint ($bp-full-nav) {
+    &::after {
+      width: calc(25% - #{$gutter} * 3 / 4);
+      content: '';
+    }
+
+    // Further hackery to allow the bottom row to space as expected from left to right
+    &::before {
+      order: 10000000;
+      width: calc(25% - #{$gutter} * 3 / 4);
+      content: '';
+    }
+
+
+    > *:not(.layout-paragraphs-add-content__toggle) {
+      width: calc(25% - #{$gutter} * 3 / 4);
+    }
+  }
+}

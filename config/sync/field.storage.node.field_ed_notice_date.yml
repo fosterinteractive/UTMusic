@@ -1,0 +1,23 @@
+uuid: 043f6b82-2ae1-402c-b1b1-507c827288c8
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime_range
+    - node
+_core:
+  default_config_hash: WB2t930dF5ii1L4XjVUe15PpuEyIYGljhpHrg4LNPYc
+id: node.field_ed_notice_date
+field_name: field_ed_notice_date
+entity_type: node
+type: daterange
+settings:
+  datetime_type: datetime
+  optional_end_date: false
+module: datetime_range
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

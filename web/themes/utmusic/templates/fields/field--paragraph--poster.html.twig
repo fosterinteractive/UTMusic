@@ -1,0 +1,100 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * Instead of overriding the theming for all fields, you can also just override
+ * theming for a subset of fields using
+ * @link themeable Theme hook suggestions. @endlink For example,
+ * here are some theme hook suggestions that can be used for a field_foo field
+ * on an article node type:
+ * - field--node--field-foo--article.html.twig
+ * - field--node--field-foo.html.twig
+ * - field--node--article.html.twig
+ * - field--field-foo.html.twig
+ * - field--text-with-summary.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @see template_preprocess_field()
+ */
+#}
+
+{# Remove div on all fields if the attributes are empty #}
+
+{% if label_hidden %}
+  {% if multiple %}
+    {% if attributes.lenght > 0 %} {# Wrapper Attr !empty ? #}
+      <div{{ attributes }}>
+    {% endif %}
+
+        {% for item in items %}
+          {% if attributes.lenght > 0 %} {# Item Attr !empty? #}
+            <div{{ item.attributes }}>{% if element_wrap %}<{{element_wrap}}>{% endif %}{{ item.content }}{% if element_wrap %}</{{element_wrap}}>{% endif %}</div>
+          {% else %}
+            {% if element_wrap %}<{{element_wrap}}>{% endif %}{{ item.content }}{% if element_wrap %}</{{element_wrap}}>{% endif %}
+          {% endif %}
+        {% endfor %}
+
+    {% if attributes.lenght > 0 %} {# Wrapper Attr !empty ? #}
+      </div>
+    {% endif %}
+
+  {% else %} {# not mutiple #}
+    {% for item in items %}
+
+      {% if attributes.lenght > 0 %} {# Item Attr !empty? #}
+      <div{{ attributes }}>{% if element_wrap %}<{{element_wrap}}>{% endif %}{{ item.content }}{% if element_wrap %}</{{element_wrap}}>{% endif %}</div>
+      {% else %}
+        {% if element_wrap %}<{{element_wrap}}>{% endif %}{{ item.content }}{% if element_wrap %}</{{element_wrap}}>{% endif %}
+      {% endif %}
+
+    {% endfor %}
+  {% endif %}
+
+{% else %} {# Label Not Hidden #}
+
+  {% if attributes.lenght > 0 %} {# Wrapper Attr !empty ? #}
+  <div{{ attributes }}>
+  {% endif %}
+
+    <div{{ title_attributes }}>{{ label }}</div>
+
+    {% if multiple %}
+      <div>
+    {% endif %}
+
+    {% for item in items %}
+      {% if attributes.lenght > 0 %} {# Item Attr !empty? #}
+      <div{{ item.attributes }}>{% if element_wrap %}<{{element_wrap}}>{% endif %}{{ item.content }}{% if element_wrap %}</{{element_wrap}}>{% endif %}</div>
+      {% else %}
+      {% if element_wrap %}<{{element_wrap}}>{% endif %}{{ item.content }}{% if element_wrap %}</{{element_wrap}}>{% endif %}
+      {% endif %}
+    {% endfor %}
+
+    {% if multiple %}
+      </div>
+    {% endif %}
+
+  {% if attributes.lenght > 0 %} {# Wrapper Attr !empty ? #}
+  </div>
+  {% endif %}
+
+{% endif %}

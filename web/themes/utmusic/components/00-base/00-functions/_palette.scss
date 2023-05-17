@@ -1,0 +1,107 @@
+// Color Palette Function to group related shades more easily.
+// Stores colors in easy to remember array names.
+//
+// Based on http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+//
+// @requires {map} $palettes - Map of all colour palettes & tones
+// @param {map} $palette - A Palette of related color tones
+// @param {string} $tone - Shade variation of Base Color
+// @example Color Palette Map
+// $palettes: (
+//   blue: (
+//     base: rgb(42, 40, 80),
+//     light: rgb(51, 46, 140),
+//     dark: rgb(40, 38, 65)
+//   ),
+//   grey: (
+//     base:  #999999,
+//     dark: #666666
+//   )
+// )
+// @example Usage
+// a {
+//   color: palette(blue);
+//
+//   &:hover {
+//     color: palette(blue, 400);
+//   }
+// }
+//
+// @group base-color
+
+@use 'sass:meta';
+@use 'sass:map';
+
+@function palette($palette, $tone: null) {
+  $palette: meta.inspect($palette);
+
+  // Check to see if the color palette doesn"t exist
+  @if map-has-key($palettes, $palette) == false {
+    $palette-values: map.keys($palettes);
+    $error-message: '"#{$palette}" is not a color palette. Valid palettes are: #{$palette-values}';
+    @error $error-message;
+  }
+
+  ///
+  // Base Tone Error checking / Assignment
+  //
+  // Check to see if there"s a base tone for the palette
+  @if map-has-key(map.get($palettes, $palette), 'base') {
+    $base-tone: map.get(map.get($palettes, $palette), 'base');
+    $valid-tone-values: map.keys(map.get($palettes, $palette));
+
+    // Loop though valid tones and check to see if there"s a match
+    $base-tone-exists: false;
+
+    @each $tone in $valid-tone-values {
+      @if $base-tone == $tone {
+        $base-tone-exists: true;
+      }
+    }
+
+    @if $base-tone-exists == false {
+      $error-message: 'Palette "#{$palette}" does not have a tone matching defined base tone "#{$base-tone}"';
+      @error $error-message;
+    }
+
+    //Check to see if tone is Default
+    @if $tone == null {
+      //Assign base tone as tone value
+      $tone: $base-tone;
+    }
+  } @else {
+    $valid-tone-values: map.keys(map.get($palettes, $palette));
+    $error-message: 'Palette "#{$palette}" does not have a base tone defined';
+    @error $error-message;
+  }
+
+  // Return the color if tone exists
+  @if map-has-key(map.get($palettes, $palette), $tone) {
+    $color: map.get(map.get($palettes, $palette), $tone);
+
+    @return (#{$color});
+
+    // Return Error of valid tones is tone doesn"t exist
+  } @else {
+    $valid-tone-values: map.keys(map.get($palettes, $palette));
+    $error-message: "'#{$tone}' is not a tone in '#{$palette}' palette. Valid tones are: #{$valid-tone-values}";
+    @error $error-message;
+  }
+}
+
+// Example Defaults
+$palettes: (
+  'black': (
+    'base': 200,
+    200: hsl(210deg, 24%, 16%),
+  ),
+  'white': (
+    'base': 1000,
+    1000: hsl(216deg, 33%, 97%),
+  ),
+  'grey': (
+    'base': 500,
+    500: hsl(211deg, 10%, 53%),
+    800: hsl(210deg, 16%, 82%),
+  ),
+) !default;

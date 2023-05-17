@@ -1,0 +1,26 @@
+uuid: 6deadcfc-4a58-42e7-a364-8c585db39b44
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_title
+    - node.type.news
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+id: node.news.field_news_title
+field_name: field_news_title
+entity_type: node
+bundle: news
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

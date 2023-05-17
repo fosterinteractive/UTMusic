@@ -1,0 +1,8 @@
+title: 'Video html5'
+description: 'Storybook is a tool for UI development. It makes development faster and easier by isolating components. This allows you to work on one component at a time. You can develop entire UIs without needing to start up a complex dev stack, force certain data into your database, or navigate around your application.'
+video: true
+video__type: 'html5'
+# Add remote or locally hosted MP4, WebM, or OGG files.
+video__urls:
+  - 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'
+  - 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-webm-file.webm'

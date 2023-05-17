@@ -1,0 +1,44 @@
+%a-chip,
+.a-chip {
+  // @extend %u-animate-background-color;
+  // @extend %u-remove-child--margin-top-bottom;
+  @extend %a-type--xxsmall;
+
+  display: inline-block;
+  margin-bottom: ru(0.25);
+  border: rem(1px) solid  var(--c-chip-border);
+  border-radius: rem(20px);
+  padding: ru(0.25) ru(0.5);
+  color: var(--c-chip);
+  line-height: 1rem;
+}
+
+%a-chip--link,
+.a-chip--link {
+  @extend %a-chip;
+  background-color: var(--c-chip-background);
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: rem(1px) solid  var(--c-chip-border--active);
+    background-color: var( --c-chip-background--active);
+    color: var(--c-chip--active);
+  }
+}
+
+.a-chip--icon {
+  @extend %a-chip;
+  @extend %a-chip--link;
+  display: flex;
+  align-items: center;
+
+  svg {
+    display: block;
+    margin-left: rem(8px);
+    width: rem(14px);
+    height: rem(14px);
+    fill: currentColor;
+  }
+}

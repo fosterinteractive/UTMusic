@@ -1,0 +1,31 @@
+uuid: d12bc95b-5a71-4705-a925-7f05b1e63b2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.header-shortcuts
+  module:
+    - menu_block
+  theme:
+    - utmusic
+id: menu_mobile_shortcuts
+theme: utmusic
+region: hidden
+weight: 0
+provider: null
+plugin: 'menu_block:header-shortcuts'
+settings:
+  id: 'menu_block:header-shortcuts'
+  label: 'Mobile Shortcuts'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 1
+  expand_all_items: true
+  parent: 'header-shortcuts:'
+  suggestion: mobile_shortcuts
+visibility: {  }

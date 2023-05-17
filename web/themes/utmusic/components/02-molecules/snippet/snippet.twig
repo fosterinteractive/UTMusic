@@ -1,0 +1,32 @@
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+<div class="m-snippet{{ variation }}">
+  <div class="m-snippet__title">
+    {% include "@atoms/text/headings/heading.twig" with {
+        html_element: 'h2',
+        appearance: 'h4',
+        text: title,
+        id: id,
+        url: url
+      } only
+    %}
+  </div>
+
+  {% if summary %}
+    <div class="m-snippet__summary">
+      {{ summary }}
+    </div>
+  {% endif %}
+</div>
+

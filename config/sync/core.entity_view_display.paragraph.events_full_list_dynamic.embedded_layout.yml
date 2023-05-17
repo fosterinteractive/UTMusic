@@ -1,0 +1,22 @@
+uuid: 822365f0-8369-4135-8eea-280850fdcf23
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.embedded_layout
+    - field.field.paragraph.events_full_list_dynamic.field_events_full_list_status
+    - paragraphs.paragraphs_type.events_full_list_dynamic
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.events_full_list_dynamic.embedded_layout
+targetEntityType: paragraph
+bundle: events_full_list_dynamic
+mode: embedded_layout
+content: {  }
+hidden:
+  field_events_full_list_status: true
+  search_api_excerpt: true

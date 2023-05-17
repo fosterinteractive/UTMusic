@@ -1,0 +1,32 @@
+uuid: 71095915-6df0-4481-9e24-4f30b177459e
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.simple_text
+  module:
+    - ckeditor
+_core:
+  default_config_hash: TYbW8584G63ff829_GvDFU0OHLZHqS5Co2GEDF0ukbo
+format: simple_text
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - Superscript
+            - Subscript
+  plugins: {  }
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

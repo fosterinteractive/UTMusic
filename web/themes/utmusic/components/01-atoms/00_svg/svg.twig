@@ -1,0 +1,18 @@
+{# Set default svg class - 'a-svg' #}
+{% set base_class = base_class|default('a-svg') %}
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+<div class="{{ base_class }}{{ variation }}">
+  {{ svg }}
+</div>

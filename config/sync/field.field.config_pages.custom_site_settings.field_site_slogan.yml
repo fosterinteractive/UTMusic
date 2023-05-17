@@ -1,0 +1,27 @@
+uuid: 31bd6a30-db0f-49d9-baa3-6acc04053761
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.custom_site_settings
+    - field.storage.config_pages.field_site_slogan
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+      - raw_html
+id: config_pages.custom_site_settings.field_site_slogan
+field_name: field_site_slogan
+entity_type: config_pages
+bundle: custom_site_settings
+label: Slogan
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

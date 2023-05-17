@@ -1,0 +1,33 @@
+uuid: 25617e05-f886-4bc0-a824-5feb37628f73
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: dAQ3rd2Ogpu9NMcyyrkyzkygj6CtjFQ4Hpn5BXLg1Dg
+label: Default
+id: default
+description: 'Linking to content that has full page displays and media files (Typically PDF''s)'
+matchers:
+  556010a3-e317-48b3-b4ed-854c10f4b950:
+    id: 'entity:node'
+    uuid: 556010a3-e317-48b3-b4ed-854c10f4b950
+    settings:
+      metadata: '[node:url:path]'
+      bundles: {  }
+      group_by_bundle: true
+      substitution_type: canonical
+      limit: 100
+      include_unpublished: true
+    weight: 0
+  6c4f6078-0608-4c45-8448-3ae0ee34bc55:
+    id: 'entity:media'
+    uuid: 6c4f6078-0608-4c45-8448-3ae0ee34bc55
+    settings:
+      metadata: '[media:revision_created]'
+      bundles: {  }
+      group_by_bundle: true
+      substitution_type: media_download
+      limit: 20
+    weight: 0

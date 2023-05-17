@@ -1,0 +1,13 @@
+_core:
+  default_config_hash: nP9smPhTOWgQB30IS4c3A3ng_L30hKNPWDge_6WsdMg
+settings:
+  library_url: libraries/cropper/dist/cropper.min.js
+  css_url: libraries/cropper/dist/cropper.min.css
+  crop_preview_image_style: crop_thumbnail
+  crop_list: {  }
+  crop_types_required: {  }
+  warn_multiple_usages: true
+  show_default_crop: true
+  show_crop_area: true
+  notify_apply: false
+  notify_update: true

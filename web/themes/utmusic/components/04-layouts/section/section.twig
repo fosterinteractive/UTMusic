@@ -1,0 +1,168 @@
+{#
+/**
+ * @file
+ * Layout builder section for a layouts with 1 to 4 "drag and drop" Zones
+ *
+ *
+ * Available variables:
+ * - layout: Defines the css grid to position zone(s) in the section
+ * - theme: Controlls the colour palette and appearance of the components inside this section
+ * - zone_1_child_layout: Controll the layout inside this zone. Typically flex or grid layouts inside the zone. Eg. l-flex--2col
+ * - zone_2_child_layout: Controll the layout inside this zone. Typically flex or grid layouts inside the zone. Eg. l-flex--2col
+ * - zone_3_child_layout: Controll the layout inside this zone. Typically flex or grid layouts inside the zone. Eg. l-flex--2col
+ * - zone_4_child_layout: Controll the layout inside this zone. Typically flex or grid layouts inside the zone. Eg. l-flex--2col
+ * - zone_1_child_extra_class: Controll the layout execptions inside this zone.Eg. extra vertical padding or vertical alignment
+ * - zone_2_child_extra_class: Controll the layout execptions inside this zone.Eg. extra vertical padding or vertical alignment
+ * - zone_3_child_extra_class: Controll the layout execptions inside this zone.Eg. extra vertical padding or vertical alignment
+ * - zone_4_child_extra_class: Controll the layout execptions inside this zone.Eg. extra vertical padding or vertical alignment
+ * - zone_1_child_extra_attr: Control any special attributes Eg. javascript tags
+ * - zone_2_child_extra_attr: Control any special attributes Eg. javascript tags
+ * - zone_3_child_extra_attr: Control any special attributes Eg. javascript tags
+ * - zone_4_child_extra_attr: Control any special attributes Eg. javascript tags
+ * - demo_class_section: Class for Pattern Lab previews to limit the width of the container. Eg. storybook-section__demo--red
+ * - demo_class_zone: Class for each zone so you can see the layout. storybook-section__demo--greenn
+ *
+ * Layout Builder Generated Variables  
+ * - region_attributes.zone1: Comes from Drupal core layout builder. Required for contextual menus in admin UI to function.
+ * - region_attributes.zone2: Comes from Drupal core layout builder. Required for contextual menus in admin UI to function.
+ * - region_attributes.zone3: Comes from Drupal core layout builder. Required for contextual menus in admin UI to function.
+ * - region_attributes.zone4: Comes from Drupal core layout builder. Required for contextual menus in admin UI to function.
+ * - content.zone1: Content dragged in layout builder zone 1.
+ * - content.zone2: Content dragged in layout builder zone 2.
+ * - content.zone3: Content dragged in layout builder zone 3.
+ * - content.zone4: Content dragged in layout builder zone 4.
+/*
+#}
+
+
+{% if layout is not empty %}
+  {# Add BEM variation '--' prefix if missing #}
+  {% if layout starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set layout = '--' ~ layout %}
+  {% endif %}
+{% endif %}
+
+
+{% if vertical_alignment is not empty %}
+  {# Add BEM variation '--' prefix if missing #}
+  {% if vertical_alignment starts with 'l-section-vertical-alignment--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set vertical_alignment = 'l-section-vertical-alignment--' ~ vertical_alignment %}
+  {% endif %}
+{% endif %}
+
+
+{% if theme is not empty %}
+  {# Add BEM variation '--' prefix if missing #}
+  {% if theme starts with 'theme--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set theme = 'theme--' ~ theme %}
+  {% endif %}
+
+  {# Set the default white background theme #}
+  {% else %}
+    {% set theme = 'theme--white-bg' %}
+{% endif %}
+
+
+{% if spacing_top is not empty %}
+  {# Add BEM variation '--' prefix if missing #}
+  {% if spacing_top starts with 'l-section-spacing-top--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set spacing_top = 'l-section-spacing-top--' ~ spacing_top %}
+  {% endif %}
+{% endif %}
+
+{% if spacing_bottom is not empty %}
+  {# Add BEM variation '--' prefix if missing #}
+  {% if spacing_bottom starts with 'l-section-spacing-bottom--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set spacing_bottom = 'l-section-spacing-bottom--' ~ spacing_bottom %}
+  {% endif %}
+{% endif %}
+
+
+{# All child zone layouts default to a 1 column flex layout #}
+{% set zone_1_child_layout = zone_1_child_layout|default('l-flex') %}
+{% set zone_2_child_layout = zone_2_child_layout|default('l-flex') %}
+{% set zone_3_child_layout = zone_3_child_layout|default('l-flex') %}
+{% set zone_4_child_layout = zone_4_child_layout|default('l-flex') %}
+
+{% set demo_class_section = 'storybook-section__demo--blue' %}
+
+{% set html_element = html_element|default('div') %}
+{% set html_element_child = html_element == 'div' ? 'div' : 'li' %}
+
+{# Outer Wrapper for the l-section #}
+<{{ html_element }} class="l-section{{ layout }} {{ theme }} {{ spacing_top }} {{ spacing_bottom }} {{ extra_class }} {{ demo_class_section }}" {% if id %} id="{{ id }}" {% endif %}>
+
+  {% if content.zone1 %}
+    {# Include zone1 markup #}
+    {% include "@layouts/section/section__zone.twig" with {
+        html_element_child: html_element_child,
+        zone_child_layout: zone_1_child_layout,
+        zone_child_extra_class: zone_1_child_extra_class,
+        zone_child_extra_attr: zone_1_child_extra_attr,
+        demo_class_zone: demo_class_zone,
+        region_attributes: region_attributes.zone1,
+        vertical_alignment: vertical_alignment,
+        content: content.zone1,
+        zone: 1,
+      }
+    %}
+  {% endif %}
+
+  {% if content.zone2 %}
+    {# Include zone2 markup #}
+    {% include "@layouts/section/section__zone.twig" with {
+        html_element_child: html_element_child,
+        zone_child_layout: zone_2_child_layout,
+        zone_child_extra_class: zone_2_child_extra_class,
+        zone_child_extra_attr: zone_2_child_extra_attr,
+        zone_demo_class: zone_2_demo_class,
+        region_attributes: region_attributes.zone2,
+        section_vertical_alignment: section_vertical_alignment,
+        content: content.zone2,
+        zone: 2,
+      }
+    %}
+  {% endif %}
+
+  {% if content.zone3 %}
+    {# Include zone3 markup #}
+    {% include "@layouts/section/section__zone.twig" with {
+        zone_child_layout: zone_3_child_layout,
+        zone_child_extra_class: zone_3_child_extra_class,
+        zone_child_extra_attr: zone_3_child_extra_attr,
+        zone_demo_class: zone_3_demo_class,
+        region_attributes: region_attributes.zone3,
+        section_vertical_alignment: section_vertical_alignment,
+        content: content.zone3,
+        zone: 3,
+      }
+    %}
+  {% endif %}
+
+  {% if content.zone4 %}
+    {# Include zone4 markup #}
+    {% include "@layouts/section/section__zone.twig" with {
+        zone_child_layout: zone_4_child_layout,
+        zone_child_extra_class: zone_4_child_extra_class,
+        zone_child_extra_attr: zone_4_child_extra_attr,
+        zone_demo_class: zone_4_demo_class,
+        region_attributes: region_attributes.zone4,
+        section_vertical_alignment: section_vertical_alignment,
+        content: content.zone4,
+        zone: 4,
+      }
+    %}
+  {% endif %}
+
+{# Outer wrapper for l-section #}
+</{{ html_element }}>

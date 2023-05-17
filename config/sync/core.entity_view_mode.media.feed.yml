@@ -1,0 +1,10 @@
+uuid: bfebd54c-f0cd-4312-84a9-f9f157414e0e
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.feed
+label: Feed
+targetEntityType: media
+cache: true

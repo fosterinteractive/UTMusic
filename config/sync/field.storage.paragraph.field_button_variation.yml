@@ -1,0 +1,27 @@
+uuid: 29f3536c-f93c-47f7-ac8e-f7681e2f11f3
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_button_variation
+field_name: field_button_variation
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'null'
+      label: Primary
+    -
+      value: secondary
+      label: Secondary
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

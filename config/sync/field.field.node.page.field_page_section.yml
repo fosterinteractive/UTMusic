@@ -1,0 +1,118 @@
+uuid: 15d5188c-f911-4676-97ac-b549a8927cb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_section
+    - node.type.page
+    - paragraphs.paragraphs_type.button
+    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.events_full_list_dynamic
+    - paragraphs.paragraphs_type.events_summary_list_dynamic
+    - paragraphs.paragraphs_type.image_section
+    - paragraphs.paragraphs_type.inline_menu
+    - paragraphs.paragraphs_type.message
+    - paragraphs.paragraphs_type.news_full_list_dynamic
+    - paragraphs.paragraphs_type.news_summary_list_dynamic
+    - paragraphs.paragraphs_type.poster
+    - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.section_title
+    - paragraphs.paragraphs_type.soundcloud
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.video
+  module:
+    - entity_reference_revisions
+id: node.page.field_page_section
+field_name: field_page_section
+entity_type: node
+bundle: page
+label: 'Main Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      section: section
+      section_title: section_title
+      text: text
+      image_section: image_section
+      quote: quote
+      message: message
+      button: button
+      card: card
+      poster: poster
+      inline_menu: inline_menu
+      news_full_list_dynamic: news_full_list_dynamic
+      news_summary_list_dynamic: news_summary_list_dynamic
+      events_full_list_dynamic: events_full_list_dynamic
+      events_summary_list_dynamic: events_summary_list_dynamic
+      soundcloud: soundcloud
+      video: video
+    negate: 0
+    target_bundles_drag_drop:
+      button:
+        weight: -35
+        enabled: true
+      card:
+        weight: -34
+        enabled: true
+      ed_event_dynamic_block_past:
+        weight: -27
+        enabled: true
+      ed_event_dynamic_block_upcoming:
+        weight: -26
+        enabled: true
+      ed_i_accordion:
+        weight: -22
+        enabled: false
+      events_full_list_dynamic:
+        weight: -29
+        enabled: true
+      events_summary_list_dynamic:
+        weight: -28
+        enabled: true
+      header:
+        weight: -23
+        enabled: false
+      image_section:
+        weight: -38
+        enabled: true
+      inline_menu:
+        weight: -32
+        enabled: true
+      message:
+        weight: -36
+        enabled: true
+      news_full_list_dynamic:
+        weight: -31
+        enabled: true
+      news_summary_list_dynamic:
+        weight: -30
+        enabled: true
+      poster:
+        weight: -33
+        enabled: true
+      quote:
+        weight: -37
+        enabled: true
+      section:
+        weight: -41
+        enabled: true
+      section_title:
+        weight: -40
+        enabled: true
+      soundcloud:
+        weight: -25
+        enabled: true
+      text:
+        weight: -39
+        enabled: true
+      video:
+        weight: -24
+        enabled: true
+field_type: entity_reference_revisions

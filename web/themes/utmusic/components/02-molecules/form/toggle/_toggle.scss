@@ -1,0 +1,102 @@
+$toggle-ball: 26px;
+$toggle-spacing: 4px;
+$toggle-width: $toggle-ball * 2 + $toggle-spacing * 2;
+$toggle-height: $toggle-ball + $toggle-spacing * 2;
+
+.m-toggle__title {
+  @extend %m-label;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.m-toggle__interface {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.m-toggle__prefix {
+  margin-right: ru(0.5);
+  font-weight: 700;
+}
+
+.m-toggle__suffix {
+  margin-left: ru(0.5);
+  font-weight: 700;
+}
+
+%m-toggle__description,
+.m-toggle__description {
+  flex-shrink: 0;
+  margin-top: ru(0.5);
+  width: 100%;
+}
+
+.m-toggle__description--before {
+  @extend %m-toggle__description;
+  margin-top: 0;
+  margin-bottom: ru(0.5);
+}
+
+.m-toggle__button {
+  display: inline-block;
+  position: relative;
+  width: rem($toggle-width);
+  height: rem($toggle-height);
+}
+
+.m-toggle__button label {
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  text-indent: 100%;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.m-toggle__button input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.m-toggle__slider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: em($toggle-height);
+  background-color: palette(grey, 900);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.m-toggle__slider:before {
+  position: absolute;
+  bottom: rem($toggle-spacing);
+  left: rem($toggle-spacing);
+  border-radius: 50%;
+  background-color: palette(white);
+  width: rem($toggle-ball);
+  height: rem($toggle-ball);
+  content: '';
+  transition: 0.4s;
+}
+
+input:checked + .m-toggle__slider {
+  background-color: palette(green, 300);
+}
+
+input:focus + .m-toggle__slider {
+  box-shadow: 0 0 1px palette(black);
+}
+
+input:checked + .m-toggle__slider:before {
+  transform: translateX(rem($toggle-ball));
+}

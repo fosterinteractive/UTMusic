@@ -1,0 +1,21 @@
+uuid: b625e5f1-62f8-4096-afaa-8ad71a0fa78a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card_image_decoration
+    - paragraphs.paragraphs_type.card
+  module:
+    - options
+id: paragraph.card.field_card_image_decoration
+field_name: field_card_image_decoration
+entity_type: paragraph
+bundle: card
+label: 'Image Decoration'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

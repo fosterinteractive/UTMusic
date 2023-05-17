@@ -1,0 +1,12 @@
+variation: ''
+id: 'card-nid-1'
+image: "<img src='https://picsum.photos/id/57/700/700' alt='alt text example'/>"
+image_variation: brush-shadow
+illustration: hands
+illustration_size: medium
+title: 'Amazing Planet Earth'
+description: 'A commitment to serve an average of one hour per month for three months.'
+link_url: '#'
+link_label: Apply now
+card_decoration: bordered
+title_appearance: h4

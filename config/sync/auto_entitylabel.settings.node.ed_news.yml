@@ -1,0 +1,9 @@
+_core:
+  default_config_hash: 4F63M3sP_c4ouSlJnLbXlOAXSAJxuviMhuyYe1Ikf_o
+status: 1
+pattern: '[node:field_ed_news_title]'
+escape: false
+dependencies:
+  config:
+    - node.type.ed_news
+new_entity_action: 1

@@ -1,0 +1,137 @@
+%m-form-group__description,
+.m-form-group__description {
+  @extend %a-type--xsmall;
+  color: palette(grey);
+}
+
+%m-form-fieldset,
+.m-form-fieldset {
+  margin-bottom: ru(1.75);
+
+  .m-form-item--checkbox,
+  .m-form-item--radio {
+
+    .l-form-item {
+      margin: 0;
+    }
+  }
+
+  &.required.error {
+    border-left: 2px solid palette(red);
+    padding-left: rem(20px);
+  }
+
+  // Styling for radio buttons that look like regular buttons
+  // Used in related resources view
+  .m-form-radio-group--buttons & {
+    margin-bottom: 0;
+
+    .m-form-item--radio {
+
+      .l-form-item {
+        display: inline-block;
+        flex-grow: 1;
+        flex-shrink: 1;
+        margin-bottom: ru(0.25);
+        width: auto;
+
+        @include breakpoint($bp-tablet-small) {
+          margin: 0 ru(0.25);
+
+          &:first-of-type {
+            margin-left: 0;
+          }
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    .form-radios {
+      display: flex;
+      flex-direction: column;
+
+      @include breakpoint($bp-tablet-small) {
+        flex-direction: row;
+      }
+    }
+
+    .form-radio {
+      display: none;
+
+      &:checked + .m-label {
+        border-color: palette(grey, 900);
+        background-color: palette(blue, 400);
+      }
+    }
+
+    .m-label {
+      width: 100%;
+    }
+  }
+}
+
+.m-form-fieldset__legend {
+  @extend %a-type--medium;
+
+  margin-bottom: ru(0.5);
+  color: palette(blue);
+
+  .required.error & {
+    margin: 0;
+    color: palette(red);
+  }
+}
+
+.m-form-fieldset__errors {
+  margin-bottom: ru(0.5);
+  color: palette(red);
+}
+
+.m-form-item--error-message,
+.form-item--error-message {
+  @extend %a-type--xsmall;
+
+  color: palette(red);
+}
+
+.m-form-element__prefix {
+  display: block;
+  margin-bottom: ru(0.25);
+}
+
+.m-form-element__description {
+  @extend %a-type--xsmall;
+
+  margin-top: ru(0.25);
+}
+
+.m-form-actions {
+  margin-top: ru(1);
+  margin-bottom: ru(1);
+}
+
+// Admin UI Paragraph Buttons override
+// Used for Banner and Call to Actions 
+// (any single paragraph that is not part of the main body of content) in CTs
+.m-form-top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .dropbutton__toggle {
+    background-color: #d4d4d8;
+  }
+
+  .button--small {
+    padding: 2px 15px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .paragraph-type-title {
+    font-weight: 700;
+  }
+}

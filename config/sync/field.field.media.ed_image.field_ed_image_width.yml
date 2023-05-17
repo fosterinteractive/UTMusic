@@ -1,0 +1,25 @@
+uuid: 3f531470-858e-4e21-a709-7de2ff9673a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_ed_image_width
+    - media.type.ed_image
+_core:
+  default_config_hash: XxQ_WI6T7bd1GFYVKMsVBNi854c8UrxPOIJBwQcxbGQ
+id: media.ed_image.field_ed_image_width
+field_name: field_ed_image_width
+entity_type: media
+bundle: ed_image
+label: Width
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: px
+field_type: integer

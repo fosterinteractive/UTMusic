@@ -1,0 +1,11 @@
+/// Custom CSS properties Mixin
+/// Workaround  until bug allowing custom css properties is sass-lint is fixed
+/// 
+/// See https://github.com/sasstools/sass-lint/issues/1161
+/// @group base
+
+@mixin root-prop($prop: null, $value: null) {
+  @if ($prop and $value) {
+    #{$prop}: $value;
+  }
+}

@@ -1,0 +1,178 @@
+// Heading Classes
+@use 'sass:math';
+
+// Heading h2 / h3 are inline headings appearing in content normally part of WYSWIYG
+// Title classes are generally used for h1 text blocks (see title section below)
+
+%heading--core {
+  width: 100%;
+  margin-bottom: ru(1);
+  line-height: 1.25; // Relative line height needed for rfs() function
+  color: var(--c-heading);
+  font-weight: 700;
+  font-family: $title-font-family;
+
+  a {
+    &:link,
+    &:visited {
+      display: inline;
+      color: var(--c-heading-link);
+      text-decoration: none;
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+      color: var(--c-heading-link--active);
+      transition: transform 0.2s ease-in-out;
+      text-decoration: underline;
+
+      .a-icon--inline {
+        transform: translateX(0.25em);
+      }
+    }
+
+    // See related styles in @atoms/icon/icon.scss
+    .a-icon--inline {
+      fill: var(--c-heading-link-icon);
+      line-height: inherit;
+      transform: translateX(0);
+      transition: transform 0.15s ease-in-out;
+    }
+  }
+
+  u {
+    display: inline;
+    background: linear-gradient(0deg, rgba(255,242,0,0) 5px, rgba(255, 242, 0, 1) 5px, rgba(255, 242, 0, 1) 20px, rgba(255,242,0,0) 20px);
+    text-decoration: none;
+
+    .theme--black-bg & {
+      background: linear-gradient(0deg, rgba(255,242,0,0) -5px, rgba(100, 100, 100, 1) -5px, rgba(100, 100, 100, 1) 15px, rgba(255,242,0,0) 15px);
+    }
+  }
+}
+
+// Wrap the last work with a span to position & create padding for icon
+.a-heading__last-word {
+  padding-right: 0.5em; // Needs padding to "hold space" for the arrow animation
+  white-space: nowrap;
+
+  svg {
+    height: 1em;
+    width: 1em;
+    vertical-align: middle;
+  }
+}
+
+// Add an icon (right chevron by default) when a heading is a link
+
+.a-heading__h1-large,
+%a-heading__h1-large {
+  @extend %heading--core;
+  @include rfs(85px);
+  font-weight: 900;
+
+  u {
+    background: linear-gradient(0deg, rgba(255,242,0,0) 10px, rgba(255, 242, 0, 1) 10px, rgba(255, 242, 0, 1) 28px, rgba(255,242,0,0) 28px);
+  }
+
+  .theme--black-bg u {
+    background: linear-gradient(0deg, rgba(255,242,0,0) 10px, rgba(255, 242, 0, 0.7) 10px, rgba(255, 242, 0, 0.7) 28px, rgba(255,242,0,0) 28px);
+  }
+}
+
+.a-heading__h1,
+%a-heading__h1 {
+  @extend %heading--core;
+  @include rfs(50px);
+  font-weight: 900;
+}
+
+.a-heading__h2,
+%a-heading__h2 {
+  @extend %heading--core;
+  @include rfs(40px);
+}
+
+.a-heading__h3,
+%a-heading__h3 {
+  @extend %heading--core;
+  @include rfs(32px);
+}
+
+%a-heading-indicator {
+  letter-spacing: 0.29em;
+  text-transform: uppercase;
+}
+
+.a-heading__h3-indicator,
+%a-heading__h3-indicator {
+  @extend %a-heading__h3;
+  @extend %a-heading-indicator;
+}
+
+.a-heading__h4,
+%a-heading__h4 {
+  @extend %heading--core;
+  @include rfs(25px);
+}
+
+.a-heading__h4-indicator {
+  @extend %a-heading__h4;
+  @extend %a-heading-indicator;
+}
+
+
+.a-heading__h5,
+%a-heading__h5 {
+  @extend %heading--core;
+  @include rfs(21px);
+}
+
+.a-heading__h5-indicator {
+  @extend %a-heading__h5;
+  @extend %a-heading-indicator;
+}
+
+.a-heading__h6,
+%a-heading__h6 {
+  @extend %heading--core;
+  @include rfs(16px);
+}
+
+.a-heading--left,
+.a-heading--left a {
+  text-align: left;
+}
+
+.a-heading--right,
+.a-heading--right a {
+  text-align: right;
+}
+
+.a-heading--center,
+.a-heading--center a {
+  text-align: center;
+}
+
+
+// Titles are serif fonts used for special circumstances
+// %title--core {
+//   color: var(--c-heading);
+//   font-family: $title-font-family;
+//   font-weight: 700;
+//   font-style: normal;
+// }
+
+// // Title Classes
+// .a-heading__t1,
+// %a-heading__t1 {
+//   @extend %title--core;
+//   @include rfs(60px);
+// }
+
+// .a-heading__t2,
+// %a-heading__t2 {
+//   @extend %title--core;
+//   @include rfs(38px);
+// }

@@ -1,0 +1,154 @@
+// Logo, Mobile menu toggle
+.o-header__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding: rem(35px);
+  max-width: $bp-max;
+
+  @include breakpoint($bp-full-nav) {
+    align-items: center;
+    justify-content: center;
+    padding: rem(25px);
+  }
+
+  @include breakpoint($bp-max + $gutter-px) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.o-header__logo {
+  width: 75%;
+  max-width: rem(170px);
+  
+  @include breakpoint($bp-full-nav) {
+    max-width: rem(333px);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: rem(98px);
+  }
+}
+
+.o-header__menu-main {
+  display: none;
+
+  @include breakpoint($bp-full-nav) {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+.l-page__menu-main-wrapper {
+  display: none;
+  background: palette(black);
+  color: palette(white);
+
+  @include breakpoint($bp-full-nav) {
+    display: block;
+  }
+}
+
+.l-page__menu-main {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: $bp-max;
+}
+
+.o-header__language-and-mobile-btn-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+// Mobile menu triger button.
+.o-header__mobile-btn-menu-triger {
+  height: rem(62px);
+  margin-left: rem(15px);
+
+  a {
+    padding: 0;
+    background: 0;
+    border: 0;
+    font-size: rem(62px);
+    line-height: 0;
+    color: palette(black);
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: 0;
+    }
+  }
+
+  @include breakpoint($bp-full-nav) {
+    display: none;
+  }
+}
+
+// Language.
+.language-switcher-language-url {
+  align-self: center;
+
+  @include breakpoint($bp-full-nav) {
+    align-self: flex-end;
+  }
+}
+
+.language-switcher-language-url .links {
+  display: flex;
+  margin-left: rem(30px);
+
+  li {
+    position: relative;
+    margin-right: rem(10px);
+
+    &:after {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -9px;
+      color: palette(black);
+      content: '/';
+    }
+
+    &:last-child:after {
+      display: none;
+    }
+  }
+
+  a {
+    color: palette(black);
+    font-size: rem(18px);
+
+    font-family: $title-font-family;
+    font-weight: 700;
+    text-decoration: none;
+    
+    &.is-active,
+    &:hover,
+    &:focus,
+    &:active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    @include breakpoint($bp-full-nav) {
+      font-size: rem(25px);
+    }
+  }
+}
+
+.language-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: rem(23px);
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  @include breakpoint($bp-full-nav) {
+    width: rem(32px);
+  }
+}

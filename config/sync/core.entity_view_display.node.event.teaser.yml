@@ -1,0 +1,51 @@
+uuid: 42690ba4-0750-4b59-9389-b18c1c2975ee
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.field_event_body
+    - field.field.node.event.field_event_category
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_image_crop
+    - field.field.node.event.field_event_link
+    - field.field.node.event.field_event_location
+    - field.field.node.event.field_event_promote
+    - field.field.node.event.field_event_summary
+    - field.field.node.event.field_event_title
+    - field.field.node.event.field_page_admin_help_seo
+    - field.field.node.event.field_page_admin_help_social
+    - field.field.node.event.field_page_meta_description
+    - field.field.node.event.field_page_meta_image
+    - field.field.node.event.field_page_meta_title
+    - node.type.event
+  module:
+    - user
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_event_body: true
+  field_event_category: true
+  field_event_date: true
+  field_event_image: true
+  field_event_image_crop: true
+  field_event_link: true
+  field_event_location: true
+  field_event_promote: true
+  field_event_summary: true
+  field_event_title: true
+  field_page_admin_help_seo: true
+  field_page_admin_help_social: true
+  field_page_meta_description: true
+  field_page_meta_image: true
+  field_page_meta_title: true
+  search_api_excerpt: true

@@ -1,0 +1,41 @@
+uuid: ddaa33db-08b1-4725-aa2c-86436ebafa1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.square_1_1_1200
+    - image.style.square_1_1_1500
+    - image.style.square_1_1_1800
+    - image.style.square_1_1_200
+    - image.style.square_1_1_2000
+    - image.style.square_1_1_2500
+    - image.style.square_1_1_2800
+    - image.style.square_1_1_3000
+    - image.style.square_1_1_400
+    - image.style.square_1_1_600
+    - image.style.square_1_1_900
+_core:
+  default_config_hash: Ny81MUj_MntOBTM-M_X2nn8PkDPbvxeeotbMKtXb9T0
+id: text_image_featured_square_1_1
+label: 'Text & Image Featured Square 1:1'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width:1280px) 600px, (min-width:900px) calc(50vw - 40px), calc(100vw - 40px)'
+      sizes_image_styles:
+        - square_1_1_1200
+        - square_1_1_1500
+        - square_1_1_1800
+        - square_1_1_200
+        - square_1_1_2000
+        - square_1_1_2500
+        - square_1_1_2800
+        - square_1_1_3000
+        - square_1_1_400
+        - square_1_1_600
+        - square_1_1_900
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: square_1_1_600

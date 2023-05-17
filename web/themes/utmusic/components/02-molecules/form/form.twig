@@ -1,0 +1,23 @@
+{% extends "@utilities/pl_container/pl_container.twig" %}
+
+{% block pl_content %}
+
+  <div class="m-form">
+    {% if title %}
+      <div class="m-form__title">
+        {% include "@atoms/00-type/00-heading.twig"
+          with {
+            text: title,
+            level: '2',
+            variation: 'h2'
+          } only
+        %}
+      </div>
+    {% endif %}
+
+    <div class="m-form__form">
+      {{ form }}
+    </div>
+  </div>
+
+{% endblock pl_content %}

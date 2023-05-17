@@ -1,0 +1,11 @@
+attributes:
+  Attribute():
+    class: ['m-input--is-required required error']
+    type: text
+    id: textfield_input
+    name: textfield_input
+    size: 60
+    maxlength: 128
+    placeholder: Pa-input for is-invalid jyjy
+    required: required
+    aria-required: true

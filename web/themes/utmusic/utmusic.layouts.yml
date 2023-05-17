@@ -1,0 +1,500 @@
+#### Column Layouts #####
+full_1_col:
+  label: '1 Column'
+  category: 'Section Columns'
+  path: templates/section
+  template: section
+  classes:
+    section_layout:
+      label: 'Content Width'
+      multiple: false
+      required: true
+      default: '[10]'
+      options:
+        '[6]': '[6] of 12 columns Wide'
+        '[8]': '[8] of 12 columns Wide'
+        '[10]': '[10] of 12 columns Wide'
+        '[12]': '[12] of 12 columns Wide'
+        'none': 'Stretch 100% wide'
+      description: 'Select the width for this section.'
+    theme:
+      label: 'Background Color'
+      multiple: false
+      required: true
+      default: 'white-bg'
+      options:
+        'white-bg': 'White Background'
+        'black-bg': 'Black Background'
+        'light-yellow-bg': 'Light Yellow Background'
+      description: 'Select the background color for this section.'
+    spacing_top:
+      label: 'Vertical Top Spacing'
+      multiple: false
+      required: true
+      default: 'medium'
+      options:
+        'none': 'No Space'
+        'small': 'Small'
+        'medium': 'Medium'
+        'large': 'Large'
+      description: 'Select the vertical spacing at the top of the section'
+    spacing_bottom:
+      label: 'Vertical Bottom Spacing'
+      multiple: false
+      required: true
+      default: 'medium'
+      options:
+        'none': 'No Space'
+        'small': 'Small'
+        'medium': 'Medium'
+        'large': 'Large'
+      description: 'Select the vertical spacing at the bottom of the section'
+  default_region: zone1
+  icon_map:
+    - [zone1]
+  regions:
+    zone1:
+      label: Zone 1
+
+#### 2 Column Layouts #####
+full_2_col:
+  label: '2 Column'
+  category: 'Section Columns'
+  path: templates/section
+  template: section
+  classes:
+    section_layout:
+      label: 'Content Width'
+      multiple: false
+      required: true
+      default: '[6|6]'
+      options:
+        '[4|4]': '[4|4] of 12 columns Wide'
+        '[5|5]': '[5|5] of 12 columns Wide'
+        '[6|6]': '[6|6] of 12 columns Wide'
+        '[7|5]': '[7|5] of 12 columns Wide'
+        '[5|7]': '[5|7] of 12 columns Wide' 
+        '[8|4]': '[8|4] of 12 columns Wide' 
+        '[4|8]': '[4|8] of 12 columns Wide' 
+    vertical_alignment:
+      label: 'Vertical Alignment'
+      multiple: false
+      required: true
+      default: 'none'
+      options:
+        'none': 'None'
+        'top': 'Top'
+        'center': 'Center'
+        'stretch': 'Stretch'
+      description: 'Alignment across columns (not all components can strech in height)'
+    theme:
+      label: 'Background Color'
+      multiple: false
+      required: true
+      default: 'white-bg'
+      options:
+        'white-bg': 'White Background'
+        'black-bg': 'Black Background'
+        'light-yellow-bg': 'Light Yellow Background'
+      description: 'Select the background color for this section.'
+    spacing_top:
+      label: 'Vertical Top Spacing'
+      multiple: false
+      required: true
+      default: 'medium'
+      options:
+        'none': 'No Space'
+        'small': 'Small'
+        'medium': 'Medium'
+        'large': 'Large'
+      description: 'Select the vertical spacing at the top of the section'
+    spacing_bottom:
+      label: 'Vertical Bottom Spacing'
+      multiple: false
+      required: true
+      default: 'medium'
+      options:
+        'none': 'No Space'
+        'small': 'Small'
+        'medium': 'Medium'
+        'large': 'Large'
+      description: 'Select the vertical spacing at the bottom of the section'
+  default_region: zone1
+  icon_map:
+    - [zone1, zone2]
+  regions:
+    zone1:
+      label: Zone 1
+    zone2:
+      label: Zone 2
+
+
+#### 3 Column Layouts #####
+full_3_col:
+  label: '3 Column'
+  category: 'Section Columns'
+  path: templates/section
+  template: section
+  classes:
+    section_layout:
+      label: 'Content Width'
+      multiple: false
+      required: true
+      default: '[4|4|4]'
+      options:
+        '[4|4|4]': '[4|4|4] of 12 columns Wide'
+    vertical_alignment:
+      label: 'Vertical Alignment'
+      multiple: false
+      required: true
+      default: 'none'
+      options:
+        'none': 'None'
+        'top': 'Top'
+        'center': 'Center'
+        'stretch': 'Stretch'
+      description: 'Alignment across columns (not all components can strech in height)'
+    theme:
+      label: 'Background Color'
+      multiple: false
+      required: true
+      default: 'white-bg'
+      options:
+        'white-bg': 'White Background'
+        'black-bg': 'Black Background'
+        'light-yellow-bg': 'Light Yellow Background'
+      description: 'Select the background color for this section.'
+    spacing_top:
+      label: 'Vertical Top Spacing'
+      multiple: false
+      required: true
+      default: 'medium'
+      options:
+        'none': 'No Space'
+        'small': 'Small'
+        'medium': 'Medium'
+        'large': 'Large'
+      description: 'Select the vertical spacing at the top of the section'
+    spacing_bottom:
+      label: 'Vertical Bottom Spacing'
+      multiple: false
+      required: true
+      default: 'medium'
+      options:
+        'none': 'No Space'
+        'small': 'Small'
+        'medium': 'Medium'
+        'large': 'Large'
+      description: 'Select the vertical spacing at the bottom of the section'
+  default_region: zone1
+  icon_map:
+    - [zone1, zone2, zone3]
+  regions:
+    zone1:
+      label: Zone 1
+    zone2:
+      label: Zone 2
+    zone3:
+      label: Zone 3
+
+#### 4 Column Layouts #####
+full_4_col:
+  label: '4 Column'
+  category: 'Section Columns'
+  path: templates/section
+  template: section
+  classes:
+    section_layout:
+      label: 'Content Width'
+      multiple: false
+      required: true
+      default: '[3|3|3|3]'
+      options:
+        '[3|3|3|3]': '[3|3|3|3] of 12 columns Wide'
+    vertical_alignment:
+      label: 'Vertical Alignment'
+      multiple: false
+      required: true
+      default: 'none'
+      options:
+        'none': 'None'
+        'top': 'Top'
+        'center': 'Center'
+        'stretch': 'Stretch'
+      description: 'Alignment across columns (not all components can strech in height)'
+    theme:
+      label: 'Background Color'
+      multiple: false
+      required: true
+      default: 'white-bg'
+      options:
+        'white-bg': 'White Background'
+        'black-bg': 'Black Background'
+        'light-yellow-bg': 'Light Yellow Background'
+      description: 'Select the background color for this section.'
+    spacing_top:
+      label: 'Vertical Top Spacing'
+      multiple: false
+      required: true
+      default: 'medium'
+      options:
+        'none': 'No Space'
+        'small': 'Small'
+        'medium': 'Medium'
+        'large': 'Large'
+      description: 'Select the vertical spacing at the top of the section'
+    spacing_bottom:
+      label: 'Vertical Bottom Spacing'
+      multiple: false
+      required: true
+      default: 'medium'
+      options:
+        'none': 'No Space'
+        'small': 'Small'
+        'medium': 'Medium'
+        'large': 'Large'
+      description: 'Select the vertical spacing at the bottom of the section'
+  default_region: zone1
+  icon_map:
+    - [zone1, zone2, zone3, zone4]
+  regions:
+    zone1:
+      label: Zone 1
+    zone2:
+      label: Zone 2
+    zone3:
+      label: Zone 3
+    zone4:
+      label: Zone 4
+
+
+#### Grid Layouts #####
+full_grid_2col:
+  label: 'Grid 2 Columns'
+  category: 'Section Grids'
+  path: templates/section
+  template: grid-2cols-section
+  classes:
+    section_html_element:
+      label: 'Section wrapper [html element]'
+      multiple: false
+      required: true
+      default: 'div'
+      options:
+        'div': 'Default <div>'
+        'ul': 'Unordered List <ul>'
+      description: 'Select the wrapper element for this section.'
+    section_layout:
+      label: 'Content Width'
+      multiple: false
+      required: true
+      default: '[10]'
+      options:
+        '[6]': '[6] of 12 columns Wide'
+        '[8]': '[8] of 12 columns Wide'
+        '[10]': '[10] of 12 columns Wide'
+        '[12]': '[12] of 12 columns Wide'
+      description: 'Select the outer width for this section.'
+    vertical_alignment:
+      label: 'Vertical Alignment'
+      multiple: false
+      required: true
+      default: 'none'
+      options:
+        'none': 'None'
+        'stretch': 'Stretch'
+        'center': 'Center'
+      description: 'Alignment across columns (not all components can strech in height)'
+    theme:
+      label: 'Background Color'
+      multiple: false
+      required: true
+      default: 'white-bg'
+      options:
+        'white-bg': 'White Background'
+        'black-bg': 'Black Background'
+        'light-yellow-bg': 'Light Yellow Background'
+      description: 'Select the background color for this section.'
+    spacing_top:
+      label: 'Vertical Top Spacing'
+      multiple: false
+      required: true
+      default: 'medium'
+      options:
+        'none': 'No Space'
+        'small': 'Small'
+        'medium': 'Medium'
+        'large': 'Large'
+      description: 'Select the vertical spacing at the top of the section'
+    spacing_bottom:
+      label: 'Vertical Bottom Spacing'
+      multiple: false
+      required: true
+      default: 'medium'
+      options:
+        'none': 'No Space'
+        'small': 'Small'
+        'medium': 'Medium'
+        'large': 'Large'
+      description: 'Select the vertical spacing at the bottom of the section'
+  default_region: zone1
+  icon_map:
+    - [zone1, zone2]
+    - [zone3, zone4]
+    - [zone5, zone6]
+  regions:
+    zone1:
+      label: Zone 1
+
+
+full_grid_3col:
+  label: 'Grid 3 Columns'
+  category: 'Section Grids'
+  path: templates/section
+  template: grid-3cols-section
+  classes:
+    section_html_element:
+      label: 'Section wrapper [html element]'
+      multiple: false
+      required: true
+      default: 'div'
+      options:
+        'div': 'Default <div>'
+        'ul': 'Unordered List <ul>'
+      description: 'Select the wrapper element for this section.'
+    section_layout:
+      label: 'Content Width'
+      multiple: false
+      required: true
+      default: '[10]'
+      options:
+        '[8]': '[8] of 12 columns Wide'
+        '[10]': '[10] of 12 columns Wide'
+        '[12]': '[12] of 12 columns Wide'
+      description: 'Select the outer width for this section.'
+    vertical_alignment:
+      label: 'Vertical Alignment'
+      multiple: false
+      required: true
+      default: 'none'
+      options:
+        'none': 'None'
+        'stretch': 'Stretch'
+        'center': 'Center'
+      description: 'Alignment across columns (not all components can strech in height)'
+    theme:
+      label: 'Background Color'
+      multiple: false
+      required: true
+      default: 'white-bg'
+      options:
+        'white-bg': 'White Background'
+        'black-bg': 'Black Background'
+        'light-yellow-bg': 'Light Yellow Background'
+      description: 'Select the background color for this section.'
+    spacing_top:
+      label: 'Vertical Top Spacing'
+      multiple: false
+      required: true
+      default: 'medium'
+      options:
+        'none': 'No Space'
+        'small': 'Small'
+        'medium': 'Medium'
+        'large': 'Large'
+      description: 'Select the vertical spacing at the top of the section'
+    spacing_bottom:
+      label: 'Vertical Bottom Spacing'
+      multiple: false
+      required: true
+      default: 'medium'
+      options:
+        'none': 'No Space'
+        'small': 'Small'
+        'medium': 'Medium'
+        'large': 'Large'
+      description: 'Select the vertical spacing at the bottom of the section'
+  default_region: zone1
+  icon_map:
+    - [zone1, zone2, zone3]
+    - [zone4, zone5, zone6]
+    - [zone7, zone8, zone9]
+  regions:
+    zone1:
+      label: Zone 1
+
+
+full_grid_4col:
+  label: 'Grid 4 Columns'
+  category: 'Section Grids'
+  path: templates/section
+  template: grid-4cols-section
+  classes:
+    section_html_element:
+      label: 'Section wrapper [html element]'
+      multiple: false
+      required: true
+      default: 'div'
+      options:
+        'div': 'Default <div>'
+        'ul': 'Unordered List <ul>'
+      description: 'Select the wrapper element for this section.'
+    section_layout:
+      label: 'Content Width'
+      multiple: false
+      required: true
+      default: '[10]'
+      options:
+        '[10]': '[10] of 12 columns Wide'
+        '[12]': '[12] of 12 columns Wide'
+      description: 'Select the outer width for this section.'
+    vertical_alignment:
+      label: 'Vertical Alignment'
+      multiple: false
+      required: true
+      default: 'none'
+      options:
+        'none': 'None'
+        'stretch': 'Stretch'
+        'center': 'Center'
+      description: 'Alignment across columns (not all components can strech in height)'
+    theme:
+      label: 'Background Color'
+      multiple: false
+      required: true
+      default: 'white-bg'
+      options:
+        'white-bg': 'White Background'
+        'black-bg': 'Black Background'
+        'light-yellow-bg': 'Light Yellow Background'
+      description: 'Select the background color for this section.'
+    spacing_top:
+      label: 'Vertical Top Spacing'
+      multiple: false
+      required: true
+      default: 'medium'
+      options:
+        'none': 'No Space'
+        'small': 'Small'
+        'medium': 'Medium'
+        'large': 'Large'
+      description: 'Select the vertical spacing at the top of the section'
+    spacing_bottom:
+      label: 'Vertical Bottom Spacing'
+      multiple: false
+      required: true
+      default: 'medium'
+      options:
+        'none': 'No Space'
+        'small': 'Small'
+        'medium': 'Medium'
+        'large': 'Large'
+      description: 'Select the vertical spacing at the bottom of the section'
+  default_region: zone1
+  icon_map:
+    - [zone1, zone2, zone3, zone4]
+    - [zone5, zone6, zone7, zone8]
+    - [zone9, zone10, zone11, zone12]
+  regions:
+    zone1:
+      label: Zone 1

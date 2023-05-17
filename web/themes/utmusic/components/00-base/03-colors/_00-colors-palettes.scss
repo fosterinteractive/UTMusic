@@ -1,0 +1,67 @@
+// Color Palette Maps
+// Sass Export Function requires all colors and map keys to be wrapped in quotes
+// Each palette has a special "base" key which maps to a tone's name 100, 600, etc.
+
+// Name the colors based on the HSL "Lightness" value. 52.5% = 500 round or adjust as needed
+// https://convertacolor.com/
+
+// To convert RGBA to RGB use https://borderleft.com/toolbox/rgba/
+
+$palettes: (
+  'black': (
+    'base': 000,
+    //#000000
+    000: hsl(0deg, 0%, 0%),
+  ),
+  'white': (
+    'base': 1000,
+    1000: hsl(0deg, 0%, 100%),
+  ),
+  'grey': (
+    'base': 500,
+    // mainspring-theme Dark Grey #383838
+    200: hsl(0deg ,0%, 22%),
+    // #818181
+    500: hsl(0deg, 0%, 50.6%),  
+    // mainspring-theme Light Grey - #E6E6E6
+    900: hsl(0deg, 0%, 90.2%),
+  ),
+  'blue': (
+    'base': 400,
+    // mainspring-theme Blue #003CD7
+    400: hsl(223.3deg ,100%, 42.2%)
+  ),
+  'green': (
+    'base': 300,
+    // #002F1F
+    100: hsl(159.6deg, 100%, 9.2%),
+    // #00AF95
+    300: hsl(171.1deg, 100%, 34.3%),
+    // #55C2B9
+    500: hsl(175deg, 47.2%, 54.7%),
+    // #DDF0EE
+    900: hsl(173.7deg, 38.8%, 90.4%),
+  ),
+  'red': (
+    'base': 600,
+    // #510000
+    200: hsl(0deg, 100%, 15.9%),
+    // mainspring-theme Red - #D32A32
+    600: hsl(0,100%,62.5%),
+    // #FCE7E5
+    900: hsl(5.2deg, 79.3%, 94.3%),
+  ),
+  'yellow': (
+    'base': 600,
+    500: hsl(45.6, 100%, 50%),
+    // mainspring-theme Yellow - #FFF200
+    600: hsl(56.9deg, 100%, 50%),
+    // mainspring-theme Yellow - 50% opacity #fff980
+    700: hsl(57.2deg, 100%, 75.1%),
+    // mainspring-theme Yellow - 20% opacity #fffccc
+    900: hsl(56.5deg, 100%, 90%),
+  ),
+);
+
+/// Debug Colors
+$debug-colors: rgb(0, 0, 160), rgb(160, 0, 0), rgb(0, 160, 0) !global;

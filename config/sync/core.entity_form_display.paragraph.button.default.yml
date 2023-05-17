@@ -1,0 +1,83 @@
+uuid: 082a5276-94ef-4c11-a8a4-36da82efb333
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.button.field_button_alignment
+    - field.field.paragraph.button.field_button_aria_label
+    - field.field.paragraph.button.field_button_label
+    - field.field.paragraph.button.field_button_target
+    - field.field.paragraph.button.field_button_url
+    - field.field.paragraph.button.field_button_variation
+    - paragraphs.paragraphs_type.button
+  module:
+    - field_group
+    - link
+third_party_settings:
+  field_group:
+    group_settings:
+      children:
+        - field_button_aria_label
+        - field_button_target
+      label: 'Advanced Settings'
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+id: paragraph.button.default
+targetEntityType: paragraph
+bundle: button
+mode: default
+content:
+  field_button_alignment:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_button_aria_label:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_button_label:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_button_target:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_button_url:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_button_variation:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{# {% set layout_variation = layout_variation|default('l-flex') %} #}
+{# {% set main_layout_classes = 'm-exposed-form__wrapper l-section--[12] theme--black-bg l-section-spacing-top--small l-section-spacing-bottom--small' %} #}
+
+{% if exposed_form_type == 'views-exposed-form-stories-full-list-default' %}
+  {% set main_layout_classes = '' %}
+{% endif %}
+  
+
+<div class='{{ additional_class }} {{ main_layout_classes }}'>
+  <form{{ attributes.addClass('l-section__zone-1' ~ ' ' ~ layout_variation ) }}>
+    {{ children }}
+  </form>
+</div>
+
+{{attach_library('utmusic/announcement')}}

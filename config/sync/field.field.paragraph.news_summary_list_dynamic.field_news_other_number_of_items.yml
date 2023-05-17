@@ -1,0 +1,23 @@
+uuid: d4d38815-5912-49a2-96f6-d0722a8f8b44
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_news_other_number_of_items
+    - paragraphs.paragraphs_type.news_summary_list_dynamic
+id: paragraph.news_summary_list_dynamic.field_news_other_number_of_items
+field_name: field_news_other_number_of_items
+entity_type: paragraph
+bundle: news_summary_list_dynamic
+label: 'Other Number of Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

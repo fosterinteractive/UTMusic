@@ -1,0 +1,23 @@
+uuid: 878a4c1f-ba09-4423-98c7-2a0bcf0d74a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card_title_position
+    - paragraphs.paragraphs_type.card
+  module:
+    - options
+id: paragraph.card.field_card_title_position
+field_name: field_card_title_position
+entity_type: paragraph
+bundle: card
+label: 'Title Position'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: below
+default_value_callback: ''
+settings: {  }
+field_type: list_string

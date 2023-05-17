@@ -1,0 +1,33 @@
+uuid: 74d40337-3a96-4993-8345-fcba89140f22
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+    - image_effects
+    - image_style_quality
+_core:
+  default_config_hash: yEtCfsfAKBz7bTj1u4GeUpms7LEP3n4XBJoJ7xGqWCY
+name: portrait_3_4_1800
+label: 'Portrait 3:4 - (1800 @ 45%)'
+effects:
+  a3cb44d8-4a8c-43c1-992f-e6cb1633a137:
+    uuid: a3cb44d8-4a8c-43c1-992f-e6cb1633a137
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1800
+      height: 2400
+      crop_type: focal_point
+  9c23ebdd-e7d8-45e6-88a5-93df24645261:
+    uuid: 9c23ebdd-e7d8-45e6-88a5-93df24645261
+    id: image_effects_interlace
+    weight: 2
+    data:
+      type: Plane
+  b6ad6a27-5d58-4b46-8723-68ee760d2523:
+    uuid: b6ad6a27-5d58-4b46-8723-68ee760d2523
+    id: image_style_quality
+    weight: 3
+    data:
+      quality: 45

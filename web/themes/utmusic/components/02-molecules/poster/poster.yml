@@ -1,0 +1,12 @@
+variation:
+poster_layout:
+image: '<img src="https://source.unsplash.com/X0OoHrPvgXE/1600x500"/>'
+content_image: '<img src="https://source.unsplash.com/FpDGCjoW_S4/300x300" />'
+title: 'Poster Title  Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+title_prefix:
+summary: <p>Poster Body Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut orci a turpis hendrerit elementum.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut orci a turpis hendrerit elementum.</p>
+link_url: '#'
+link_text: 'Poster Button'
+button_aria_label: Optional text read aloud by screen readers
+button_aria_labelledby:
+contextual_links:

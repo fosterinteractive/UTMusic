@@ -1,0 +1,128 @@
+{% set decoration_color = decoration_color|default('') %}
+
+{% if decoration_color is not empty %}
+
+  {# Add BEM decoration_color '--' prefix if missing #}
+  {% if decoration_color starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set decoration_color = '--' ~ decoration_color %}
+  {% endif %} 
+
+{% endif %}
+
+
+<div class="o-hero-media--image-right">
+
+  {% if hero_image %}
+    <div class="o-hero-media__image--image-right">
+      {{ hero_image }}
+    </div>
+  {% endif %}
+
+  <div class="o-hero-media__event-text--image-right-wrapper">
+
+    <div class="o-hero-media__text--image-right">
+      {% if title_prefix or title %}
+        <h1 class="a-heading__h1-large">
+          {% if title_prefix %}
+            <span class='o-hero-media__title-prefix--image-right'>{{ title_prefix }}</span>
+          {% endif %}
+          <span class='o-hero-media__title'>{{ title }}</span>
+        </h1>
+      {% endif %}
+
+      {% if sub_title %}
+        <div class="o-hero-media__event-subtitle">
+          {{ sub_title }}
+        </div>
+      {% endif %}
+
+      {# ToDo - Review if we need sumary #}
+      {# {% if summary %}
+        <div class="o-hero-media__event-summary">
+          {{ summary }}
+        </div>
+      {% endif %} #}
+
+      <div class="o-hero-media__event-registration">
+        {# {{'Registration is required'|t}} #}
+        {% include "@atoms/text/headings/heading.twig" with {
+          html_element: 'p',
+          appearance: 'h5',
+          text: 'Registration is required'|t,
+          url: false,
+          id: false,
+          } only
+        %}
+      </div>
+
+      <div class="o-hero-media__event-information-wraper">
+        {% if date %}
+          <div class="o-hero-media__event-information">
+            <span class='o-hero-media__event-information-label'>{{ 'Date'|t }}</span>
+            <span class='o-hero-media__event-information-label-details'>{{ date }}</span>
+          </div>
+        {% endif %}
+        {% if start_time %}
+          <div class="o-hero-media__event-information">
+            <span class='o-hero-media__event-information-label'>{{ 'Time'|t }}</span>
+            <span class='o-hero-media__event-information-label-details'>{{ start_time }}{% if end_time%}&nbsp;-&nbsp;{{end_time}}{% endif %}{% if timezone %}&nbsp;{{timezone}}{% endif %}</span>
+          </div>
+        {% endif %}
+        {% if event_type %}
+          <div class="o-hero-media__event-information">
+            <span class='o-hero-media__event-information-label'>{{ 'Event Type'|t }}</span>
+            <span class='o-hero-media__event-information-label-details'>{{ event_type }}</span>
+          </div>
+        {% endif %}
+        {% if program_type %}
+          <div class="o-hero-media__event-information">
+            <span class='o-hero-media__event-information-label'>{{ 'Program Type'|t }}</span>
+            <span class='o-hero-media__event-information-label-details'>{{ program_type }}</span>
+          </div>
+        {% endif %}
+        {% if address %}
+          <div class="o-hero-media__event-information">
+            <span class='o-hero-media__event-information-label'>{{ 'Address'|t }}</span>
+            <span class='o-hero-media__event-information-label-details--address'>{{ address }}</span>
+          </div>
+        {% endif %}
+        
+
+        {% if register_link_url_primary %}
+          <div class="o-hero-media__event-information-register-btn">
+            {% include "@atoms/button/button.twig" with {
+                url: register_link_url_primary,
+                label: register_link_text_primary,
+                aria_label: button_aria_label_primary,
+                aria_labelledby: button_aria_labelledby_primary
+              } only
+            %}
+          </div>
+        {% endif %}
+
+        {% if register_link_url_secondary %}
+          <div class="o-hero-media__event-information-register-btn">
+            {% include "@atoms/button/button.twig" with {
+                url: register_link_url_secondary,
+                label: register_link_text_secondary,
+                aria_label: button_aria_label_secondary,
+                aria_labelledby: button_aria_labelledby_secondary
+              } only
+            %}
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+
+  <div class="l-section__decoration-top o-hero-media__decoration{{ decoration_color }}">
+    {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+      directory: directory,
+      icon: 'brush1',
+      base_class: 'l-section__decoration-svg',
+    } only %}
+  </div>
+</div>

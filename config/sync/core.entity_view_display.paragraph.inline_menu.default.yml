@@ -1,0 +1,70 @@
+uuid: ab860848-e6b0-467f-a99f-274c26a907ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.inline_menu.field_inline_menu_description
+    - field.field.paragraph.inline_menu.field_inline_menu_icon
+    - field.field.paragraph.inline_menu.field_inline_menu_icon_size
+    - field.field.paragraph.inline_menu.field_inline_menu_links
+    - field.field.paragraph.inline_menu.field_inline_menu_title
+    - field.field.paragraph.inline_menu.field_inline_menu_variation
+    - paragraphs.paragraphs_type.inline_menu
+  module:
+    - link
+    - options
+    - text
+id: paragraph.inline_menu.default
+targetEntityType: paragraph
+bundle: inline_menu
+mode: default
+content:
+  field_inline_menu_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_inline_menu_icon:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_inline_menu_icon_size:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_inline_menu_links:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_inline_menu_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_inline_menu_variation:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

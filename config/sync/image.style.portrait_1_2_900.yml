@@ -1,0 +1,33 @@
+uuid: 793da9cc-a601-425d-a2d4-851a9603a21a
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+    - image_effects
+    - image_style_quality
+_core:
+  default_config_hash: '-p15KO54_fEqQUQcEe5THss75pwSaRMpsweul42VaK8'
+name: portrait_1_2_900
+label: 'Portrait 1:2 - (900 @ 70%)'
+effects:
+  82ac4558-7137-4ec3-8982-b4c2701dc7f5:
+    uuid: 82ac4558-7137-4ec3-8982-b4c2701dc7f5
+    id: focal_point_scale_and_crop
+    weight: -10
+    data:
+      width: 900
+      height: 1800
+      crop_type: focal_point
+  3c1c6203-6378-478d-b2fe-45c77f36b033:
+    uuid: 3c1c6203-6378-478d-b2fe-45c77f36b033
+    id: image_style_quality
+    weight: -8
+    data:
+      quality: 70
+  30aedc90-dde7-4f5c-8dd2-1d7e1d54e52c:
+    uuid: 30aedc90-dde7-4f5c-8dd2-1d7e1d54e52c
+    id: image_effects_interlace
+    weight: -9
+    data:
+      type: Plane

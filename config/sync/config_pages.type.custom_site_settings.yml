@@ -1,0 +1,17 @@
+uuid: 566352f2-aaf5-4409-87aa-326d5ef73ca3
+langcode: en
+status: true
+dependencies: {  }
+id: custom_site_settings
+label: 'Custom Site Settings'
+token: false
+context:
+  show_warning: true
+  group:
+    language: false
+  fallback:
+    language: ''
+menu:
+  path: /admin/config/system/custom-site-settings
+  weight: 0
+  description: 'Personalized Drupal site settings'

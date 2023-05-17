@@ -1,0 +1,22 @@
+uuid: 6a1ef095-387a-4fc4-aee8-6667ca01f71b
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+_core:
+  default_config_hash: r4v6tU4sSWFR8Xk-aSM1uj_L5C1fF0TWFqKUw1zAm08
+id: node.field_ed_notice_published_date
+field_name: field_ed_notice_published_date
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

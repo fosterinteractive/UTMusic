@@ -1,0 +1,23 @@
+uuid: 4f42606b-2d5a-4dd3-bc80-6185570e7dcc
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: LOAdjeNIAmU8nCmynwf_ZcDjLhurUAwRVtgnQ3pNnpg
+id: media.field_ed_instagram_post_author
+field_name: field_ed_instagram_post_author
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

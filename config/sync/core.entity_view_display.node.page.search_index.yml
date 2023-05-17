@@ -1,0 +1,36 @@
+uuid: 969f8790-d47a-4c43-bddf-b02c42a82d06
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.page.field_page_admin_help_seo
+    - field.field.node.page.field_page_admin_help_social
+    - field.field.node.page.field_page_header
+    - field.field.node.page.field_page_meta_description
+    - field.field.node.page.field_page_meta_image
+    - field.field.node.page.field_page_meta_title
+    - field.field.node.page.field_page_section
+    - node.type.page
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.page.search_index
+targetEntityType: node
+bundle: page
+mode: search_index
+content: {  }
+hidden:
+  field_page_admin_help_seo: true
+  field_page_admin_help_social: true
+  field_page_header: true
+  field_page_meta_description: true
+  field_page_meta_image: true
+  field_page_meta_title: true
+  field_page_section: true
+  links: true
+  search_api_excerpt: true

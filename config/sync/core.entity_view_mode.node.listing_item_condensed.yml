@@ -1,0 +1,12 @@
+uuid: 0e7cbaea-3d82-4c31-83f0-77093f49936d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: NLkMkHbDfoccm4xQ77ho07adNi6hIZflerv2mX-znXg
+id: node.listing_item_condensed
+label: 'Listing Item Condensed'
+targetEntityType: node
+cache: true

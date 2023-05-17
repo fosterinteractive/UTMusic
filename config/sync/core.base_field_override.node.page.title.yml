@@ -1,0 +1,18 @@
+uuid: 8607cffc-86a4-4bb9-879f-d2a1637c77b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.page
+id: node.page.title
+field_name: title
+entity_type: node
+bundle: page
+label: 'Drupal Label (Auto Hidden)'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

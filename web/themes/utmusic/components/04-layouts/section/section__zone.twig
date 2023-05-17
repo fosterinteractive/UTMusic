@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * 
+ * Zone 1 - Content Area
+ * 
+ * Include content for zone 1 in all l-section-zone-X layouts
+ *
+ * @see l-section-1.twig
+ *
+ * Inherited variables:
+ * - section_variation: Controlls apperance and vertical spacing above and below this section. Default value is l-section-bg.
+ * - section_theme: Controlls the colour palette and appearance of the components inside this section
+ * - section_layout: Defines the css grid to position zone(s) in the section
+ * - zone_1_child_layout: Controll the layout inside this zone. Typically flex or grid layouts inside the zone. Eg. l-flex--2col
+ * - zone_1_child_extra_class: Controll the layout execptions inside this zone.Eg. extra vertical padding or vertical alignment
+ * - pl_class: Class for Pattern Lab previews to limit the width of the container. Eg. pl-outline--red
+ * - pl_zone: Class for each zone so you can see the layout. Eg. pl-layout-debug--green
+ *
+ * Layout Builder Generated Variables  
+ * - region_attributes.zone1: Comes from Drupal core layout builder. Required for contextual menus in admin UI to function.
+ * - content.zone1: Content dragged in layout builder zone 1.
+/*
+#}
+{% set html_element_child = html_element_child|default('div') %}
+
+{# Zone is displayed in the front end so attributes are empty #}
+{% if region_attributes is empty %}
+  <{{ html_element_child }} class="l-section__zone-{{ zone }} {{ zone_child_layout }} {{ zone_child_extra_class }} {{ vertical_alignment }} {{ demo_class_zone }}" {{ zone_child_extra_attr }} >   
+    {% if content %}
+      {{ content }}
+    {% endif %}
+  </{{ html_element_child }}>
+
+{# Zone is displayed in the layout buider UI attributes will have contextual links#}
+{% else %}
+  <{{ html_element_child }} class="l-section__zone-{{ zone }}">
+    {% if content %}
+      {# Adds Markup with attributes wrapper to allow contextual menus in layout builder editor UI #} 
+      <div {{ region_attributes.addClass(zone_child_layout, zone_child_extra_class, vertical_alignment) }} {{ zone_child_extra_attr }}>
+        {{ content }}
+      </div>
+    {% endif %}
+  </{{ html_element_child }}>
+{% endif %}

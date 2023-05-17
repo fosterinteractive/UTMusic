@@ -1,0 +1,330 @@
+<?php
+
+/**
+ * @file
+ * Custom administration overrides.
+ *
+ * This file contains some default administration overrides that have to do with
+ * EDpack modules that have been installed. It is intended as a starter module
+ * and can be modified to adapt to the websites needs.
+ *
+ * It can be renamed before installing to your_project_admin.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements template_preprocess_page().
+ */
+function custom_admin_preprocess_html(&$variables) {
+  $logged_in = \Drupal::currentUser()->isAuthenticated();
+
+  if ($logged_in == TRUE) {
+    if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+      $variables['html_attributes']->addClass('is-loggedin');  
+    }
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function custom_admin_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'custom_admin/custom_admin';
+}
+
+/**
+ * Implements hook_editor_js_settings_alter().
+ */
+function custom_admin_editor_js_settings_alter(array &$settings) {
+  // Enable the showblocks button setting by default
+  foreach (array_keys($settings['editor']['formats']) as $text_format_id) {
+    if ($settings['editor']['formats'][$text_format_id]['editor'] === 'ckeditor') {
+      $settings['editor']['formats'][$text_format_id]['editorSettings']['startupOutlineBlocks'] = TRUE;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view().
+ */
+function custom_admin_preprocess_views_view(&$variables) {
+  $view = $variables['view'];
+  $view_id = $variables['id'];
+
+  $tag_storage = $view->storage->get('tag');
+  $is_embeddable_list = !empty($tag_storage) && strpos($tag_storage, 'embeddable_list');
+
+  if ($is_embeddable_list === TRUE) {
+    $active_theme = \Drupal::service('theme.manager')->getActiveTheme();
+    // Need to remove the form element from views that are displayed in the
+    // backend to avoid issues with loading a form in a form.
+    if ($active_theme->getName() == 'adminspring') {
+      if (isset($variables['exposed']['#theme_wrappers'][0])) {
+        $variables['exposed']['#theme_wrappers'][0] = 'container';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$form_state, $context) {
+  if (isset($element['#paragraph_type'])) {
+    $paragraph_type = isset($element['#paragraph_type']) ? $element['#paragraph_type'] : FALSE;
+
+    // Hero banner
+    // Check if the paragraph type is 'header' and the '#parents' element is set in the element.
+    if ($paragraph_type === 'header' && isset($element['subform']['#parents'])) {
+
+      // Define an array of parent fields to check.
+      $parent_fields = ['field_page_header'];
+
+      // Initialize the parent field variable to NULL.
+      $parent_field = NULL;
+
+      // Loop through each parent field and check if it is present in the '#parents' element.
+      foreach ($parent_fields as $field_name) {
+        if (in_array($field_name, $element['subform']['#parents'], TRUE)) {
+          $parent_field = $field_name;
+          break; // Once we find the parent field, we can exit the loop.
+        }
+      }
+
+      // If the parent field is found, set the 'visible' state of the 'field_header_image' element.
+      if ($parent_field !== NULL) {
+
+        // Get the parent paragraph delta.
+        $parent_delta = $element['subform']['field_header_style']['widget']['#parents'][1];
+
+        // Set the 'visible' state of the 'field_header_image' element based on the value of the 'field_header_style' element.
+        $element['subform']['field_header_image']['#states'] = [
+          'visible' => [
+            ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => [
+              '!value' => 'text',
+            ],
+          ],
+        ];
+      }
+    }
+
+    // If this is a dynamic news block paragraph.
+    if ($paragraph_type == 'news_summary_list_dynamic') {
+      // Check if the form as number of items field.
+      if (isset($element['subform']['field_news_number_of_items'])) {
+        // Get parent paragraph delta.
+        $parent_delta = $element['subform']['field_news_number_of_items']['widget']['#parents'][1];
+
+        // Show field "Other Number of Items" if field "Number of Items" is set
+        // to "Other".
+        $element['subform']['field_news_other_number_of_items']['#states'] = [
+          'visible' => [
+            ':input[name="field_page_section[' . $parent_delta . '][subform][field_news_number_of_items]"]' => [
+              'value' => 'other',
+            ],
+          ],
+        ];
+
+        // Set field "Other Number of Items" to required is field "Number of
+        // Items" is set to "Other".
+        $element['subform']['field_news_other_number_of_items']['widget'][0]['value']['#states'] = [
+          'required' => [
+            ':input[name="field_page_section[' . $parent_delta . '][subform][field_ed_news_number_of_items]"]' => [
+              'value' => 'other',
+            ],
+          ],
+        ];
+      }
+    }
+
+    // If these are the dynamic events blocks we want to change the states based
+    // on the input values.
+    if (
+      $paragraph_type == 'ed_event_dynamic_block_upcoming' ||
+      $paragraph_type == 'ed_event_dynamic_block_past'
+    ) {
+      // Checkout if the subform as the number of items field.
+      if (isset($element['subform']['field_ed_event_num_items'])) {
+        // Get parent paragraph delta.
+        $parent_delta = $element['subform']['field_ed_event_num_items']['widget']['#parents'][1];
+
+        // Show field "Other Number of Items" if field "Number of Items" is set
+        // to "Other".
+        $element['subform']['field_ed_event_other_num_items']['#states'] = [
+          'visible' => [
+            ':input[name="field_ed_page_body[' . $parent_delta . '][subform][field_ed_event_num_items]"]' => [
+              'value' => 'other',
+            ],
+          ],
+        ];
+
+        // Set field "Other Number of Items" to required is field "Number of
+        // Items" is set to "Other".
+        $element['subform']['field_ed_event_other_num_items']['widget'][0]['value']['#states'] = [
+          'required' => [
+            ':input[name="field_ed_page_body[' . $parent_delta . '][subform][field_ed_event_num_items]"]' => [
+              'value' => 'other',
+            ],
+          ],
+        ];
+      }
+    }
+  }
+
+  /** @var \Drupal\Core\Field\FieldDefinitionInterface $field_definition */
+
+  $field_definition = $context['items']->getFieldDefinition();
+  $entity_type = $field_definition->getTargetEntityTypeId();
+  $bundle = $field_definition->getTargetBundle();
+  $field_name = $context['items']->getName();
+
+  if($bundle == 'news_summary_list_dynamic') {
+    if ($field_name == 'field_news_other_number_of_items') {
+      $element['value']['#states'] = [
+        'visible' => [
+          ':input[name="field_news_number_of_items"]' => [
+            'value' => 'other',
+          ],
+        ],
+      ];
+    }
+  }
+
+  if ($bundle == 'card') {
+    if ($field_name == 'field_card_decoration') {
+      $element['#states'] = [
+        '!visible' => [
+          ':input[name="field_card_variation"]' => [
+            'value' => 'horizontal',
+          ],
+        ],
+      ];
+    }
+
+    if ($field_name == 'field_card_title_position') {
+      $element['#states'] = [
+        'visible' => [
+          ':input[name="field_card_variation"]' => [
+            'value' => 'image',
+          ],
+        ],
+      ];
+    }
+
+    if ($field_name == 'field_card_image') {
+      $element['#states'] = [
+        '!visible' => [
+          [':input[name="field_card_variation"]' => ['value' => 'horizontal'],],
+          'or',
+          [':input[name="field_card_variation"]' => ['value' => 'illustration'],]
+        ],
+      ];
+    }
+   
+    if ($field_name == 'field_card_image_crop') {
+      $element['#states'] = [
+        '!visible' => [
+          [':input[name="field_card_variation"]' => ['value' => 'horizontal'],],
+          'or',
+          [':input[name="field_card_variation"]' => ['value' => 'illustration'],]
+        ],
+      ];
+    }
+
+    if ($field_name == 'field_card_image_decoration') {
+      $element['#states'] = [
+        '!visible' => [
+          [':input[name="field_card_variation"]' => ['value' => 'horizontal'],],
+          'or',
+          [':input[name="field_card_variation"]' => ['value' => 'illustration'],]
+        ],
+      ];
+    }
+
+    if ($field_name == 'field_card_illustration_size') {
+      $element['#states'] = [
+        'visible' => [
+          ':input[name="field_card_variation"]' => [
+            'value' => 'illustration',
+          ],
+        ],
+      ];
+    }
+
+    if ($field_name == 'field_card_illustration') {
+      $element['#states'] = [
+        '!visible' => [
+          ':input[name="field_card_variation"]' => [
+            'value' => 'image',
+          ],
+        ],
+      ];
+    }
+
+    if ($field_name == 'field_card_button_url') {
+      $element['uri']['#states'] = [
+        '!visible' => [
+          ':input[name="field_card_variation"]' => [
+            'value' => 'horizontal',
+          ],
+        ],
+      ];
+    }
+
+    if ($field_name == 'field_card_button_label') {
+      $element['#states'] = [
+        '!visible' => [
+          ':input[name="field_card_variation"]' => [
+            'value' => 'horizontal',
+          ],
+        ],
+      ];
+    }
+
+    if ($field_name == 'field_card_button_aria_label') {
+      $element['value']['#states'] = [
+        '!visible' => [
+          ':input[name="field_card_variation"]' => [
+            'value' => 'horizontal',
+          ],
+        ],
+      ];
+    }
+
+    if ($field_name == 'field_card_description') {
+      $element['value']['#states'] = [
+        '!visible' => [
+          ':input[name="field_card_variation"]' => [
+            'value' => 'image',
+          ],
+        ],
+      ];
+    }
+  }
+}
+
+
+/**
+ * Implements hook_form_NODE_form_alter().
+ */
+function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  // The "Event" add and edit forms.
+  if ($form_id == 'node_event_form' || $form_id == 'node_event_edit_form' ) {
+
+    // Show the "Zoom Link" field if the "Event Type" field is set to virtual.
+    $form['field_event_zoom_link']['#states'] = [
+      'visible' => [
+        ':input[name="field_event_type"]' => ['value' => 'virtual'],
+      ],
+    ];
+
+    // Show the "Address" field if the "Event Type" field is set to in-person.
+    $form['field_event_address']['#states'] = [
+      'visible' => [
+        ':input[name="field_event_type"]' => ['value' => 'in-person'],
+      ],
+    ];
+  }
+}

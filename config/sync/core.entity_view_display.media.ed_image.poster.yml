@@ -1,0 +1,39 @@
+uuid: 0272df43-2d42-49ca-8032-f695dc5ee933
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.poster
+    - field.field.media.ed_image.field_ed_image_height
+    - field.field.media.ed_image.field_ed_image_image
+    - field.field.media.ed_image.field_ed_image_width
+    - media.type.ed_image
+    - responsive_image.styles.ed_poster
+  module:
+    - responsive_image
+_core:
+  default_config_hash: GII4v_ntEAqC2TqJNeSjyTDttxmGxH0CScRF98MmUjM
+id: media.ed_image.poster
+targetEntityType: media
+bundle: ed_image
+mode: poster
+content:
+  field_ed_image_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: ed_poster
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_ed_image_height: true
+  field_ed_image_width: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

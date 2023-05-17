@@ -1,0 +1,29 @@
+uuid: 435fe6ff-0be1-47d3-b777-437205912828
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.content_header_1024_670_80
+    - image.style.content_header_1280_670_80
+    - image.style.content_header_1792_938_80
+    - image.style.content_header_2560_1340_75
+    - image.style.content_header_430_670_90
+    - image.style.content_header_769_670_85
+id: content_header
+label: 'Content Header'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - content_header_1024_670_80
+        - content_header_1280_670_80
+        - content_header_1792_938_80
+        - content_header_2560_1340_75
+        - content_header_430_670_90
+        - content_header_769_670_85
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: content_header_430_670_90

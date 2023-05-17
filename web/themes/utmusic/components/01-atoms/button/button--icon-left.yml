@@ -1,0 +1,9 @@
+label: Icon on left
+variation: icon-left
+html_element: a
+url: 'http://example.com'
+id: 
+target: 
+aria_label: 
+aria_labelledby:
+icon: phone

@@ -1,0 +1,39 @@
+uuid: 10c5d518-7dd7-4922-94bf-5d88b7556d65
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.landscape_2_1_1200
+    - image.style.landscape_2_1_1500
+    - image.style.landscape_2_1_1800
+    - image.style.landscape_2_1_200
+    - image.style.landscape_2_1_2000
+    - image.style.landscape_2_1_2500
+    - image.style.landscape_2_1_2800
+    - image.style.landscape_2_1_3000
+    - image.style.landscape_2_1_400
+    - image.style.landscape_2_1_600
+    - image.style.landscape_2_1_900
+id: text_image_landscape_2_1
+label: 'Text & Image Landscape 2:1'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width:1280px) 280px, (min-width:600px) 20vw, calc(100vw - 40px)'
+      sizes_image_styles:
+        - landscape_2_1_1200
+        - landscape_2_1_1500
+        - landscape_2_1_1800
+        - landscape_2_1_200
+        - landscape_2_1_2000
+        - landscape_2_1_2500
+        - landscape_2_1_2800
+        - landscape_2_1_3000
+        - landscape_2_1_400
+        - landscape_2_1_600
+        - landscape_2_1_900
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: landscape_2_1_600

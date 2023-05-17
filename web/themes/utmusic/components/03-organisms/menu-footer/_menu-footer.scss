@@ -1,0 +1,47 @@
+.m-menu-footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: rem(25px);
+
+  @include breakpoint($bp-tablet-small) {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @include breakpoint($bp-full-nav) {
+    justify-content: flex-start;
+    gap: rem(38px);
+  }
+}
+
+.m-menu-footer__item {
+  display: block;
+  position: relative;
+}
+
+.m-menu-footer__link {
+  font-size: rem(25px);
+  color: palette(white);
+  text-decoration: none;
+
+  @include breakpoint($bp-full-nav) {
+    font-size: rem(20px); 
+  }
+
+  @include breakpoint($bp-large) {
+    font-size: rem(25px);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+    color: palette(yellow, 600);
+  }
+
+  &.is-active {
+    color: palette(yellow, 500);
+  }
+}
+

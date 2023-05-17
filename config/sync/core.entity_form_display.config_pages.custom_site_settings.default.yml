@@ -1,0 +1,214 @@
+uuid: 3101c9dd-56b6-4e61-86eb-e7d0a84761b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.custom_site_settings
+    - field.field.config_pages.custom_site_settings.field_events_listing_link
+    - field.field.config_pages.custom_site_settings.field_events_past_listing_link
+    - field.field.config_pages.custom_site_settings.field_news_listing_link
+    - field.field.config_pages.custom_site_settings.field_site_disable_content
+    - field.field.config_pages.custom_site_settings.field_site_facebook
+    - field.field.config_pages.custom_site_settings.field_site_footer
+    - field.field.config_pages.custom_site_settings.field_site_instagram
+    - field.field.config_pages.custom_site_settings.field_site_linkedin
+    - field.field.config_pages.custom_site_settings.field_site_logo
+    - field.field.config_pages.custom_site_settings.field_site_slogan
+    - field.field.config_pages.custom_site_settings.field_site_twitter
+    - field.field.config_pages.custom_site_settings.field_site_youtube
+    - image.style.thumbnail
+  module:
+    - field_group
+    - link
+    - linkit
+    - svg_image
+    - text
+third_party_settings:
+  field_group:
+    group_general:
+      children:
+        - field_site_id
+        - field_site_slogan
+        - field_site_logo
+        - field_site_footer
+      label: General
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: details
+      format_settings:
+        classes: ''
+        id: ''
+        open: true
+        description: ''
+        required_fields: false
+    group_news:
+      children:
+        - field_news_listing_link
+      label: News
+      region: content
+      parent_name: group_content_type_settings
+      weight: 5
+      format_type: details
+      format_settings:
+        classes: ''
+        id: ''
+        open: true
+        description: ''
+        required_fields: false
+    group_events:
+      children:
+        - field_events_listing_link
+        - field_events_past_listing_link
+      label: Events
+      region: content
+      parent_name: group_content_type_settings
+      weight: 4
+      format_type: details
+      format_settings:
+        classes: ''
+        id: ''
+        open: true
+        description: ''
+        required_fields: false
+    group_social_media:
+      children:
+        - field_site_facebook
+        - field_site_linkedin
+        - field_site_twitter
+        - field_site_youtube
+        - field_site_instagram
+      label: 'Social Media'
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: details
+      format_settings:
+        classes: ''
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
+    group_content_type_settings:
+      children:
+        - field_site_disable_content
+        - group_events
+        - group_news
+      label: 'Content Type Settings'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        classes: ''
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
+id: config_pages.custom_site_settings.default
+targetEntityType: config_pages
+bundle: custom_site_settings
+mode: default
+content:
+  field_events_listing_link:
+    type: linkit
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      linkit_profile: content
+    third_party_settings: {  }
+  field_events_past_listing_link:
+    type: linkit
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      linkit_profile: content
+    third_party_settings: {  }
+  field_news_listing_link:
+    type: linkit
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      linkit_profile: content
+    third_party_settings: {  }
+  field_site_disable_content:
+    type: options_buttons
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_site_facebook:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_site_footer:
+    type: text_textarea
+    weight: 4
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+  field_site_instagram:
+    type: link_default
+    weight: 9
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_site_linkedin:
+    type: link_default
+    weight: 6
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_site_logo:
+    type: image_image
+    weight: 3
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_site_slogan:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_site_twitter:
+    type: link_default
+    weight: 7
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_site_youtube:
+    type: link_default
+    weight: 8
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  label: true

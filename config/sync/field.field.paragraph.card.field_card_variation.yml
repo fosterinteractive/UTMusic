@@ -1,0 +1,23 @@
+uuid: de88f214-d18a-48fb-b11a-d8a9d3303be6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card_variation
+    - paragraphs.paragraphs_type.card
+  module:
+    - options
+id: paragraph.card.field_card_variation
+field_name: field_card_variation
+entity_type: paragraph
+bundle: card
+label: 'Card Type'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: image
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,25 @@
+uuid: cf000a74-bb81-4408-b650-7bd0de6206b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_ed_image_height
+    - media.type.ed_image
+_core:
+  default_config_hash: U5ZtWRPborfo3YQmcmwQpGIWK8iTq2cpiWMwYenkfzY
+id: media.ed_image.field_ed_image_height
+field_name: field_ed_image_height
+entity_type: media
+bundle: ed_image
+label: Height
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: px
+field_type: integer

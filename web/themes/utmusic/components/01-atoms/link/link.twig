@@ -1,0 +1,15 @@
+{# Set default link class - 'a-link' #}
+{% set base_class = base_class|default('a-link') %}
+
+{% include '@atoms/button/button.twig' with {
+    base_class: base_class,
+    label: label,
+    variation: variation,
+    html_element: html_element,
+    url: url,
+    id: id,
+    target: target,
+    aria_label: aria_label,
+    aria_labelledby: aria_labelledby,
+  } only
+%}

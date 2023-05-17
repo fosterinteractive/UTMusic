@@ -1,0 +1,13 @@
+uuid: 4794ac1a-4a29-4433-a38d-5b34100c19f2
+langcode: en
+status: true
+dependencies: {  }
+id: illustration
+label: Illustration
+description: 'Use local SVG for reusable media.'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+field_map: {  }

@@ -1,0 +1,77 @@
+uuid: c559289e-5693-46bb-b048-6b24ef443a4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.listing_item_condensed
+    - field.field.node.news.field_news_body
+    - field.field.node.news.field_news_category
+    - field.field.node.news.field_news_date
+    - field.field.node.news.field_news_image
+    - field.field.node.news.field_news_image_landscape
+    - field.field.node.news.field_news_promote
+    - field.field.node.news.field_news_summary
+    - field.field.node.news.field_news_title
+    - field.field.node.news.field_page_admin_help_seo
+    - field.field.node.news.field_page_admin_help_social
+    - field.field.node.news.field_page_meta_description
+    - field.field.node.news.field_page_meta_image
+    - field.field.node.news.field_page_meta_title
+    - node.type.news
+  module:
+    - datetime
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.news.listing_item_condensed
+targetEntityType: node
+bundle: news
+mode: listing_item_condensed
+content:
+  field_news_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_news_date:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: America/Toronto
+      date_format: 'F j, Y'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_news_summary:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_news_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_news_body: true
+  field_news_image: true
+  field_news_image_landscape: true
+  field_news_promote: true
+  field_page_admin_help_seo: true
+  field_page_admin_help_social: true
+  field_page_meta_description: true
+  field_page_meta_image: true
+  field_page_meta_title: true
+  links: true
+  search_api_excerpt: true

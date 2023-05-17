@@ -1,0 +1,17 @@
+header:
+  - title: 'Col 1'
+  - title: 'Col 2'
+  - title: 'Col 3'
+rows:
+  - 
+    - content: '' 
+    - content: <a href="#" alt="Read more about Regulations for student attendance and guidelines for absences from mandatory activities">Regulations for student attendance and guidelines for absences from mandatory activities</a>
+    - content: 'last 3 col row 1'
+  -
+    - content: 'Desc for row 2 col 1'  
+    - content: <a href="#" alt="Read more about Regulations for student attendance and guidelines for absences from mandatory activities">Regulations for student attendance and guidelines for absences from mandatory activities</a>
+    - content: 'last 3 col row 2 - Donecseodioduiullavitaeelitliberpharetraaugue. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis.'
+  -
+    - content: 'Desc for row 3 col 1'  
+    - content: Donecseodioduiullavitaeelitliberpharetraaugue. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis.
+    - content: 'last 3 col row 3'

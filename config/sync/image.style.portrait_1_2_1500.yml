@@ -1,0 +1,33 @@
+uuid: 687a9810-3b88-4441-87d1-ef50f1218a41
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+    - image_effects
+    - image_style_quality
+_core:
+  default_config_hash: ely1aR90rvA12LbhB9DwR9Ik2Www7YoJTiVj8lSGTmk
+name: portrait_1_2_1500
+label: 'Portrait 1:2 - (1500 @ 50%)'
+effects:
+  08cdf0fd-b3d6-43fd-a2dd-65bc82b1284e:
+    uuid: 08cdf0fd-b3d6-43fd-a2dd-65bc82b1284e
+    id: focal_point_scale_and_crop
+    weight: -10
+    data:
+      width: 1500
+      height: 3000
+      crop_type: focal_point
+  728544e6-3385-4ec5-9669-161a5bf8e4db:
+    uuid: 728544e6-3385-4ec5-9669-161a5bf8e4db
+    id: image_style_quality
+    weight: -8
+    data:
+      quality: 50
+  306c277e-819a-471f-bafe-f7dfbc6ab898:
+    uuid: 306c277e-819a-471f-bafe-f7dfbc6ab898
+    id: image_effects_interlace
+    weight: -9
+    data:
+      type: Plane

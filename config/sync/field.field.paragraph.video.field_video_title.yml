@@ -1,0 +1,26 @@
+uuid: beef1f9c-9cee-41bb-9669-62c16ca2e256
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video_title
+    - paragraphs.paragraphs_type.video
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+id: paragraph.video.field_video_title
+field_name: field_video_title
+entity_type: paragraph
+bundle: video
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

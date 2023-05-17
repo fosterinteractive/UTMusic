@@ -1,0 +1,9 @@
+variation: ordered-alpha
+html_element: ol
+items:
+  - content: No Wrapping p tags - Lorem Pharetra Venenatis
+  - content: <p>Paragraph Wrapper vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. </p>
+  - content: <p>Nested Unordered list with p tag wrappers</p><ul class="a-list--unordered"><li>Morbi leo risus, porta ac consectetur </li><li>Ac, vestibulum at eros.</li><li> Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. </li></ul>
+  - content: Lorem Pharetra Venenatis
+  - content: Nested ordered list <ol class="a-list--ordered"><li>Morbi leo risus, porta ac consectetur </li><li>Ac, vestibulum at eros.</li><li> Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. </li></ol>
+  - content: Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.

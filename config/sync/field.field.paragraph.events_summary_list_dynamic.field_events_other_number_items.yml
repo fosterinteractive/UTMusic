@@ -1,0 +1,23 @@
+uuid: f4104f5f-2eff-4415-a780-57f2535c41f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_events_other_number_items
+    - paragraphs.paragraphs_type.events_summary_list_dynamic
+id: paragraph.events_summary_list_dynamic.field_events_other_number_items
+field_name: field_events_other_number_items
+entity_type: paragraph
+bundle: events_summary_list_dynamic
+label: 'Other Number of Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

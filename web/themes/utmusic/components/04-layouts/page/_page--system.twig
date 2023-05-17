@@ -1,0 +1,24 @@
+{% extends '@layouts/page/page.twig' %}
+
+{% block page_content %}
+
+  {# Set system_content to Load Content in a 1 column main wrapper #}
+
+  {% set system_content %}
+  <div class="l-page--system__wrapper">
+    <div class="l-page--system">
+      {# System Content  #}
+      {{ content }}
+    </div>
+  </div>
+  {% endset %}
+
+  {% include "@layouts/main/main.twig"
+    with {
+      title: content_title,
+      hero_banner: hero_banner,
+      content: system_content,
+    }
+  %}
+
+{% endblock %}

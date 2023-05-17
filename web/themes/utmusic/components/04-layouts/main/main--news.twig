@@ -1,0 +1,31 @@
+{% embed "@layouts/main/main.twig" %}
+
+  {% block content_single_page %}
+    <div class="l-main--story">
+      <div class="l-section-bg l-section--[8] l-section-spacing-top--medium l-section-spacing-bottom--small">
+        <div class="l-section__zone-1">
+
+          {% if title %}
+            {% include "@atoms/text/headings/heading.twig" with {
+                directory: directory,
+                html_element: 'h1',
+                appearance: 'h2',
+                text: title,
+                url: false,
+                id: id,
+                alignment: 'center',
+              } only
+            %}
+          {% endif %}
+      
+        </div>
+      </div>
+          
+      {% if content %}
+        {{ content }}
+      {% endif %}
+    </div>
+
+  {% endblock content_single_page %}
+
+{% endembed %}

@@ -1,0 +1,170 @@
+.o-footer {
+  border-top: rem(1px) solid palette(white);
+  background-color: palette(black);
+  color: palette(white);
+}
+
+.o-footer__top,
+.o-footer__bottom {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $half-gutter;
+  padding-left: $half-gutter;
+
+  @include breakpoint($bp-phone-large) {
+    padding-right: $gutter;
+    padding-left: $gutter;
+    max-width: $bp-banner-max;
+  }
+
+  // Remove gutter when there's not any need as we're now at max-width + the width of the gutter.
+  // @todo - Aidan note - Removed gutter... Should be OK?
+  // @include breakpoint($bp-banner-max + $gutter-px) {
+  @include breakpoint($bp-banner-max) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+// top container.
+.o-footer__top-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: rem(40px);
+  padding-bottom: rem(40px);
+  align-items: center;
+  border-bottom: 1px solid palette(white);
+
+  @include breakpoint($bp-full-nav) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.o-footer__menu {
+  margin-bottom: ru(1);
+
+  @include breakpoint($bp-full-nav) {
+    margin-bottom: 0;
+  }
+}
+
+// logo.
+.o-footer__logo {
+  width: 75%;
+  max-width: rem(218px);
+  padding: rem(5px);
+  border: 2px solid transparent;
+  transition: background-color 0.3s;
+  margin-bottom: rem(30px);
+
+  @include breakpoint($bp-full-nav) {
+    margin-bottom: 0;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: 2px solid white;
+    border-radius: rem(10px);
+  }
+  
+  .m-logo {
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+    }
+  }
+
+  @include breakpoint($bp-full-nav) {
+    margin-right: ru(0.5);
+  }
+}
+
+// bottom container.
+.o-footer__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: rem(35px);
+  padding-bottom: rem(40px);
+  gap: rem(43px);
+
+  @include breakpoint($bp-full-nav) {
+    padding-top: rem(17px);
+    padding-bottom: rem(47px);
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: rem(30px);
+  }
+}
+
+// social.
+.o-footer__social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(37px);
+  
+  @include breakpoint($bp-tablet-small) {
+    justify-content: flex-end;
+  }
+
+  .a-button--icon  {
+    margin: 0;
+    color: palette(white);
+    transition: color 0.2s ease-in-out;
+    background: transparent;
+    border: 0;
+    font-size: rem(38px);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: palette(yellow, 600);
+      
+      .a-button--icon__icon  {
+        border: 2px solid palette(white);
+        border-radius: 50%;
+        padding: 2px;
+      }
+    }
+  }
+
+  .a-button--icon__icon  {
+    border: 2px solid transparent;
+  }
+
+  .a-button--icon   {
+    padding: 0;
+  }
+
+  .a-btn__text {
+    display: none;
+  }
+}
+
+.o-footer__content {
+  @extend %u-remove-child--margin-top-bottom;
+
+  & > * {
+    color: palette(white);
+  }
+}
+
+.o-footer__legal {
+  text-align: center;
+  order: 1;
+  font-size: rem(25px);
+
+  @include breakpoint($bp-full-nav) {
+    text-align: left;
+    font-size: rem(20px); 
+    order: 0;
+  }
+
+  @include breakpoint($bp-large) {
+    font-size: rem(25px);
+  }
+}

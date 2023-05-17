@@ -1,0 +1,26 @@
+uuid: 59ee640f-6497-42c3-b240-7a64b0d58c8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_poster_link_text
+    - paragraphs.paragraphs_type.poster
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
+id: paragraph.poster.field_poster_link_text
+field_name: field_poster_link_text
+entity_type: paragraph
+bundle: poster
+label: 'Link Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

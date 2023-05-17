@@ -1,0 +1,29 @@
+// Base font size
+$base-font-size: 18px;
+
+// Base line height
+$base-line-height: 24px;
+
+// Setup default spacing unit in rems
+$base-line-height-rem: rem($base-line-height);
+
+// Base line weigh
+$base-font-weigh: 400;
+
+:root {
+  --spacer: #{$base-line-height-rem * 0.6666};
+
+  @include breakpoint($bp-full-nav) {
+    --spacer: #{$base-line-height-rem};
+  }
+}
+
+/// Base Font Family
+
+/* stylelint-disable-next-line value-keyword-case */
+$base-font-family: 'Lato', sans-serif;
+
+/// Title Font Family
+
+/* stylelint-disable-next-line value-keyword-case */
+$title-font-family: 'Roboto Slab', sans-serif;

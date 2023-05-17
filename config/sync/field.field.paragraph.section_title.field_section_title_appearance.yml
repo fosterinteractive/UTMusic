@@ -1,0 +1,21 @@
+uuid: 53925577-4414-4236-9281-ed4a902e98a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_title_appearance
+    - paragraphs.paragraphs_type.section_title
+  module:
+    - options
+id: paragraph.section_title.field_section_title_appearance
+field_name: field_section_title_appearance
+entity_type: paragraph
+bundle: section_title
+label: 'Text Appearance'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

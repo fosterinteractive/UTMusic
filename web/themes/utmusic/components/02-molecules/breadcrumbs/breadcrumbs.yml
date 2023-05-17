@@ -1,0 +1,13 @@
+breadcrumbs:
+  1:
+    url: "/"
+    text: "Home"
+  2:
+    url: "/"
+    text: "2nd Level"
+  3:
+    url: "/"
+    text: "3rd Level"
+  4:
+    url: "/"
+    text: "4rd Level"

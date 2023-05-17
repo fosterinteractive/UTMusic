@@ -1,0 +1,78 @@
+pl_class: 'pl__wrapper--xsml'
+required: true
+attributes:
+  Attribute():
+    class: []
+legend:
+  title: 'Title of the checkbox group'
+  attributes:
+    Attribute():
+      class: []
+legend_span:
+  attributes:
+    Attribute():
+      class: []
+legend_span_classes: 'legend_span_class'
+children:
+  join():
+    - include():
+        pattern: 'molecules-form-item--checkbox'
+        with:
+          pl_class: ''
+    - include():
+        pattern: 'molecules-form-item--checkbox'
+        with:
+          label:
+            include():
+              pattern: molecules-label
+              with:
+                title: 'Checkbox Two'
+                attributes:
+                  Attribute():
+                    for: 'checkox_two'
+                    class: ['m-label--is-required']
+          children:
+            include():
+              pattern: molecules-input
+              with:
+                attributes:
+                  Attribute():
+                    required: 'required'
+                    aria-required: true
+                    type: 'checkbox'
+                    id: 'checkox_two'
+                    name: 'checkox_two'
+                    value: 'Checkbox Two'
+                pl_class: ''
+          pl_class: ''
+    - include():
+        pattern: 'molecules-form-item--checkbox'
+        with:
+          label:
+            include():
+              pattern: molecules-label
+              with:
+                title: 'Checkbox Three is very long to demonstrate text wrapping.'
+                attributes:
+                  Attribute():
+                    for: 'checkox_three'
+                    class: ['m-label--is-required']
+          children:
+            include():
+              pattern: molecules-input
+              with:
+                attributes:
+                  Attribute():
+                    required: 'required'
+                    aria-required: true
+                    type: 'checkbox'
+                    id: 'checkox_three'
+                    name: 'checkox_three'
+                    value: 'Checkbox Three'
+                pl_class: ''
+          pl_class: ''
+description:
+  content: 'This is the description of a checkbox group'
+  attributes:
+    Attribute():
+      class: []

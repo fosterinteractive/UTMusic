@@ -1,0 +1,48 @@
+
+{# We use the "administrative Label" to write an ID for anchor tags #}
+{% set anchor_id = settings['label']|trim|striptags|lower|replace({' ': ''}) %}
+
+{# Get Layout section settings from layout classes contrib module #}
+{% set section_classes = settings.additional.classes %}
+
+{# Field values for string 'none' and set it to '' becuase the layout.yml 
+can't have a empty value #}
+
+{% if section_classes.section_html_element != 'none' %}
+  {% set section_html_element = section_classes.section_html_element %}
+{% endif %}
+
+{% if section_classes.section_layout != 'none' %}
+  {% set section_layout = section_classes.section_layout %}
+{% endif %}
+
+{% if section_classes.vertical_alignment != 'none' %}
+  {% set vertical_alignment = section_classes.vertical_alignment %}
+{% endif %}
+
+{% if section_classes.spacing_top != 'none' %}
+  {% set spacing_top = section_classes.spacing_top %}
+{% endif %}
+
+{% if section_classes.spacing_bottom != 'none' %}
+  {% set spacing_bottom = section_classes.spacing_bottom %}
+{% endif %} 
+
+
+{% include "@layouts/section/section.twig" with {
+    layout: section_layout,
+    html_element: section_html_element,
+    vertical_alignment: vertical_alignment,
+    theme: section_classes.theme,
+    spacing_top: spacing_top,
+    spacing_bottom: spacing_bottom,
+    region_attributes: region_attributes, 
+    zone_1_child_layout: zone_1_child_layout,
+    zone_2_child_layout: zone_2_child_layout,
+    zone_3_child_layout: zone_3_child_layout,
+    zone_4_child_layout: zone_4_child_layout,
+    content: content,
+    anchor_id: anchor_id,
+    contextual_links: contextual_links,
+  }
+%}

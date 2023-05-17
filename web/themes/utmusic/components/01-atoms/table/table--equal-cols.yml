@@ -1,0 +1,19 @@
+header:
+  - title: 'Col 1'
+  - title: 'Col 2'
+  - title: 'Col 3'
+rows:
+  - 
+    - content: 'Desc for row 1 col 1 ' 
+    - content: ' '
+    - content: 'last 3 col row 1'
+  - 
+    - content: 'Desc for row 1 col 1 ' 
+    - content: ' '
+    - content: 'last 3 col row 1'
+  - 
+    - content: 'Desc for row 1 col 1 ' 
+    - content: ' '
+    - content: 'last 3 col row 1'
+ 
+variation: equal-columns

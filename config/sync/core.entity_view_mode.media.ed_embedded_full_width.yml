@@ -1,0 +1,12 @@
+uuid: 3e9d5fd4-50dc-478a-ba36-ca2811463f6e
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: SLSYe_QW3LBZO3JgZlOTPW-c2jN6s5vj74Xt4vsejLk
+id: media.ed_embedded_full_width
+label: 'Embedded (Full Width)'
+targetEntityType: media
+cache: true

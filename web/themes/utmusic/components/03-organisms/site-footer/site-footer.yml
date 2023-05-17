@@ -1,0 +1,24 @@
+year: '2023'
+footer_content: "<p><strong>Faculty of Medicine</strong></p>
+          <p>1 King's College Circle, <br>
+          Medical Sciences Building, <br>
+          Room 2109 <br>
+          Toronto, ON. M5S 1A8 <br>
+          Tel: 416-978-6585</p>"
+footer_menu:
+  join():
+    - include():
+        pattern: 'molecules-menu-footer'
+        with:
+          pl_class: ''
+footer_shortcuts:
+  join():
+    - include():
+        pattern: 'molecules-footer-shortcuts'
+        with:
+          pl_class: ''
+site_facebook: '#'
+site_linkedin: '#'
+site_twitter: '#'
+site_youtube: '#'
+site_instagram: '#'

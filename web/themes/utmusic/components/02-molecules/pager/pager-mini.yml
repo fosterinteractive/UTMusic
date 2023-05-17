@@ -1,0 +1,8 @@
+items:
+  next: true
+
+  pages:
+    1:
+      href: '#'
+
+current: 1

@@ -1,0 +1,33 @@
+uuid: 65a72c2f-37c0-45d6-9577-a4ba6e8d78f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_card_variation
+field_name: field_card_variation
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: illustration
+      label: Illustration
+    -
+      value: image
+      label: 'Large Image'
+    -
+      value: image-icon
+      label: 'Image w/ Yellow Icon Overlay'
+    -
+      value: horizontal
+      label: 'Horizontal Card w/ Large Icon on Left'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

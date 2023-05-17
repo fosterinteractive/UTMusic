@@ -1,0 +1,19 @@
+uuid: bc35b463-a6e6-496f-abcd-ddac997cb1f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_button_aria_label
+    - paragraphs.paragraphs_type.button
+id: paragraph.button.field_button_aria_label
+field_name: field_button_aria_label
+entity_type: paragraph
+bundle: button
+label: 'Accessibility Label'
+description: 'Read aloud by screen readers instead of the visually displayed <b>Label</b>.<br> <i> Use when the button''s label is ambiguous if read aloud.  Eg “Read more” ...(about what?)</i>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

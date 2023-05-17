@@ -1,0 +1,37 @@
+uuid: 25080702-673f-4c9b-8f99-f10b561e0d6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.portrait_3_4_1200
+    - image.style.portrait_3_4_1500
+    - image.style.portrait_3_4_1800
+    - image.style.portrait_3_4_200
+    - image.style.portrait_3_4_2000
+    - image.style.portrait_3_4_2500
+    - image.style.portrait_3_4_400
+    - image.style.portrait_3_4_600
+    - image.style.portrait_3_4_900
+_core:
+  default_config_hash: HqXzi0Iw4XrP-crL7JmZAAzcYcd-vOCPkPmLbGFxT_I
+id: text_image_featured_portrait_3_4
+label: 'Text & Image Featured Portrait 3:4'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width:1280px) 600px, (min-width:900px) calc(50vw - 40px), calc(100vw - 40px)'
+      sizes_image_styles:
+        - portrait_3_4_1200
+        - portrait_3_4_1500
+        - portrait_3_4_1800
+        - portrait_3_4_200
+        - portrait_3_4_2000
+        - portrait_3_4_2500
+        - portrait_3_4_400
+        - portrait_3_4_600
+        - portrait_3_4_900
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: portrait_3_4_600

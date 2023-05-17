@@ -1,0 +1,14 @@
+{# To use dynamic settings use variables instead of hardcoded values #}
+{# Dynamic Variables:
+   width: value in px or %
+   height: value in px or %
+   show_controls: True/False
+   show_marker: true/false
+   type: roadmap, satellite, hybrid, terrain
+#}
+{% if lon is not empty and lat is not empty %}
+  <section class="google-map-field">
+    <h2 class="u-visually--hidden">{% if name %}{{ name }}{% else %}{{ 'Google map'|t }}{% endif %}</h2>
+    <div class="map-container" style="width:100%;height:200px;" data-controls-show="false" data-marker-show="true" data-type="roadmap" data-lat="{{ lat }}" data-lon="{{ lon }}" data-zoom="{{ zoom }}"></div>
+  </section>
+{% endif %}

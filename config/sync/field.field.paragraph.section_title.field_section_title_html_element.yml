@@ -1,0 +1,21 @@
+uuid: 951196b2-aafa-4835-9f39-0814ddbf98bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_title_html_element
+    - paragraphs.paragraphs_type.section_title
+  module:
+    - options
+id: paragraph.section_title.field_section_title_html_element
+field_name: field_section_title_html_element
+entity_type: paragraph
+bundle: section_title
+label: 'Header Structure'
+description: 'HTML Element'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

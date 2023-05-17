@@ -1,0 +1,289 @@
+// Layouts for content sections
+@use 'sass:math';
+
+$total-cols: 12;
+
+// Each of the 12 column's max width is:
+// $bp-max breakpoint - the gutters in the middle (11 x gutter width)
+// Divided by the # of columns
+$max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
+
+
+%l-section {
+
+  // Before psuedo element hold the background color for the theme
+  &:before {
+    display: block;
+    grid-column: alpha / omega;
+    grid-row: 2 / span 1;
+    background-color: var(--c-section-background);
+    content:'';
+  }
+
+  @include breakpoint($bp-tablet) {
+    display: grid;
+    grid-template-columns: [alpha] 1fr repeat(12, [col] minmax(1px, $max-col-width)) 1fr [omega];
+    grid-column-gap: var(--spacer);
+  }
+
+}
+
+.l-page--system__wrapper {
+  @extend %l-section;
+  padding-top: $spacing-medium;
+  padding-bottom: $spacing-medium;
+}
+
+.l-page--system {
+  @extend %l-section__child;
+  grid-column: 2/ span 12;
+}
+
+// Borderless (Not extending %l-section as it doesn't need grid)
+// .l-section {
+  
+// }
+
+
+.l-section--\[12\] {
+  @extend %l-section;
+  
+
+  @include breakpoint($bp-tablet){
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+
+.l-section--\[10\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet){
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha x1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 x2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[8\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet){
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha x1 x1 z1 z1 z1 z1 z1 z1 z1 z1 x2 x2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[6\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet){
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha x1 x1 x1 z1 z1 z1 z1 z1 z1 x2 x2 x2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+//for Thank you (Confirmation) page
+.l-section--\[10\|2\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 x1 x1 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+
+.l-section--\[6\|6\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[5\|5\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha alpha z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 omega omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[4\|4\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha alpha alpha z1 z1 z1 z1 z2 z2 z2 z2 omega omega omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+
+
+.l-section--\[7\|5\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-phone-large){
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[5\|7\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-phone-large){
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+
+.l-section--\[8\|4\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-phone-large){
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[4\|8\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-phone-large){
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 z2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[4\|4\|4\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-phone-large){
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z1 z2 z2 z2 z2 z3 z3 z3 z3 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[3\|3\|3\|3\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-phone-large){
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z2 z2 z2 z3 z3 z3 z4 z4 z4 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+
+
+
+%l-section__child {
+  // Set vertical spacing for elements when stacked in grid
+
+  // Adminspring / Paragraphs layouts child div needs to scale to the height of the parent
+  // Assumes dragula library is enabled 
+  > .is-dragula-enabled {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  @include breakpoint(1px $bp-tablet) {
+    padding-right: var(--spacer);
+    padding-bottom: var(--spacer);
+    padding-left: var(--spacer);
+  }
+}
+
+
+.l-section__zone-1 {
+  @extend %l-section__child;
+  background-color: var(--c-section-background);
+  grid-area: z1;
+}
+
+.l-section__zone-2 {
+  @extend %l-section__child;
+  background-color: var(--c-section-background);
+  grid-area: z2;
+}
+
+.l-section__zone-3 {
+  @extend %l-section__child;
+  background-color: var(--c-section-background);
+  grid-area: z3;
+}
+
+.l-section__zone-4 {
+  @extend %l-section__child;
+  background-color: var(--c-section-background);
+  grid-area: z4;
+}
+
+// Brush Stroke Decoration
+.l-section__decoration-top {
+  @include svg-wrapper(1280,71); 
+  grid-area: h1;
+  filter: drop-shadow(0px -7px 3px rgb(0 0 0 / 0.05));
+
+  svg {
+    top: rem(1px);
+  }
+}
+
+.l-section__decoration-svg {
+  fill: var(--c-section-background);
+}
+
+.l-section__decoration-svg--bottom {
+  fill: var(--c-section-background);
+  transform: scale(1, -1);
+  transform-origin: center;
+  filter: drop-shadow(0px -7px 3px rgb(0 0 0 / 0.05));
+}
+
+
+.l-section__decoration-bottom {
+  @include svg-wrapper(1280,72); 
+  grid-area: f1;
+
+  svg {
+    top: rem(-1px);
+  }
+}
+
+.light-yellow-decoration-bg {
+  background-color: palette(yellow, 900);
+  filter: none;
+}

@@ -1,0 +1,20 @@
+uuid: ee9d4ba6-a6ca-41d2-87ad-8081c6081b7a
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.field_ed_video_height
+field_name: field_ed_video_height
+entity_type: media
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

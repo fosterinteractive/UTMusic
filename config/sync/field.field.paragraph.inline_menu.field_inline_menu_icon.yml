@@ -1,0 +1,26 @@
+uuid: b03b6945-7cf9-4798-8f0a-6f43014ad3b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_inline_menu_icon
+    - paragraphs.paragraphs_type.inline_menu
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
+id: paragraph.inline_menu.field_inline_menu_icon
+field_name: field_inline_menu_icon
+entity_type: paragraph
+bundle: inline_menu
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

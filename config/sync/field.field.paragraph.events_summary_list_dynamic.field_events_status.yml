@@ -1,0 +1,21 @@
+uuid: d49b3d96-f98c-4fe4-834e-2caa07a793ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_events_status
+    - paragraphs.paragraphs_type.events_summary_list_dynamic
+  module:
+    - options
+id: paragraph.events_summary_list_dynamic.field_events_status
+field_name: field_events_status
+entity_type: paragraph
+bundle: events_summary_list_dynamic
+label: 'Events Status'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

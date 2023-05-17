@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6edbcce0094a36487eca7e7f70ef1cc7",
+    "content-hash": "cae5994772b26d960c7db6c7af301084",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -247,6 +247,80 @@
                 "url": "https://download.ckeditor.com/link/releases/link_4.16.2.zip"
             },
             "type": "drupal-library"
+        },
+        {
+            "name": "cocur/slugify",
+            "version": "v4.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cocur/slugify.git",
+                "reference": "652234ef5f1be844a2ae1c36ad1b4c88b05160f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cocur/slugify/zipball/652234ef5f1be844a2ae1c36ad1b4c88b05160f9",
+                "reference": "652234ef5f1be844a2ae1c36ad1b4c88b05160f9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": "^7.1 || ~8.0.0 || ~8.1.0 || ~8.2.0"
+            },
+            "conflict": {
+                "symfony/config": "<3.4 || >=4,<4.3",
+                "symfony/dependency-injection": "<3.4 || >=4,<4.3",
+                "symfony/http-kernel": "<3.4 || >=4,<4.3",
+                "twig/twig": "<2.12.1"
+            },
+            "require-dev": {
+                "laravel/framework": "^5.0|^6.0|^7.0|^8.0",
+                "latte/latte": "~2.2",
+                "league/container": "^2.2.0",
+                "mikey179/vfsstream": "~1.6.8",
+                "mockery/mockery": "^1.3",
+                "nette/di": "~2.4",
+                "pimple/pimple": "~1.1",
+                "plumphp/plum": "~0.1",
+                "symfony/config": "^3.4 || ^4.3 || ^5.0 || ^6.0",
+                "symfony/dependency-injection": "^3.4 || ^4.3 || ^5.0 || ^6.0",
+                "symfony/http-kernel": "^3.4 || ^4.3 || ^5.0 || ^6.0",
+                "symfony/phpunit-bridge": "^5.4 || ^6.0",
+                "twig/twig": "^2.12.1 || ~3.0",
+                "zendframework/zend-modulemanager": "~2.2",
+                "zendframework/zend-servicemanager": "~2.2",
+                "zendframework/zend-view": "~2.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cocur\\Slugify\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Florian Eckerstorfer",
+                    "email": "florian@eckerstorfer.co",
+                    "homepage": "https://florian.ec"
+                },
+                {
+                    "name": "Ivo Bathke",
+                    "email": "ivo.bathke@gmail.com"
+                }
+            ],
+            "description": "Converts a string into a slug.",
+            "keywords": [
+                "slug",
+                "slugify"
+            ],
+            "support": {
+                "issues": "https://github.com/cocur/slugify/issues",
+                "source": "https://github.com/cocur/slugify/tree/v4.3.0"
+            },
+            "time": "2022-12-07T19:48:48+00:00"
         },
         {
             "name": "composer/installers",
@@ -4003,6 +4077,65 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/content_moderation_notifications",
                 "issues": "https://www.drupal.org/project/issues/content_moderation_notifications"
+            }
+        },
+        {
+            "name": "drupal/content_synchronizer",
+            "version": "3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/content_synchronizer.git",
+                "reference": "3.1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/content_synchronizer-3.1.1.zip",
+                "reference": "3.1.1",
+                "shasum": "2d026e2e1074addb1b7c21008b44fd497555852a"
+            },
+            "require": {
+                "cocur/slugify": ">=2",
+                "drupal/core": "^8.8 || ^9",
+                "php": ">=7.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.1.1",
+                    "datestamp": "1640958307",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "DrDam",
+                    "homepage": "https://www.drupal.org/user/1555440"
+                },
+                {
+                    "name": "tsecher",
+                    "homepage": "https://www.drupal.org/user/3543500"
+                }
+            ],
+            "description": "Content Synchronizer",
+            "homepage": "https://www.drupal.org/project/content_synchronizer",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/test",
+                "issues": "https://www.drupal.org/project/issues/content_synchronizer"
             }
         },
         {
@@ -8134,6 +8267,72 @@
             }
         },
         {
+            "name": "drupal/media_entity_soundcloud",
+            "version": "3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/media_entity_soundcloud.git",
+                "reference": "3.1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/media_entity_soundcloud-3.1.1.zip",
+                "reference": "3.1.1",
+                "shasum": "565bba7f8505c5330f52abc147b48e2bedd4e988"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.1.1",
+                    "datestamp": "1664452204",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\media_entity_soundcloud\\": "src/"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "arshadcn",
+                    "homepage": "https://www.drupal.org/user/571032"
+                },
+                {
+                    "name": "dawehner",
+                    "homepage": "https://www.drupal.org/user/99340"
+                },
+                {
+                    "name": "jcisio",
+                    "homepage": "https://www.drupal.org/user/210762"
+                },
+                {
+                    "name": "Rajeshreeputra",
+                    "homepage": "https://www.drupal.org/user/3418561"
+                },
+                {
+                    "name": "shadcn",
+                    "homepage": "https://www.drupal.org/user/571032"
+                }
+            ],
+            "description": "Soundcloud integration for the Media Entity module",
+            "homepage": "https://drupal.org/project/media_entity_soundcloud",
+            "support": {
+                "source": "https://git.drupalcode.org/project/media_entity_soundcloud",
+                "issues": "https://drupal.org/project/issues/media_entity_soundcloud"
+            }
+        },
+        {
             "name": "drupal/media_entity_twitter",
             "version": "2.9.0",
             "source": {
@@ -12041,12 +12240,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:fosterinteractive/adminspring-theme.git",
-                "reference": "4380915c007e8f0af1e801ed075db6ce81b7dd55"
+                "reference": "4c1266c46f64137dbe2675c39c564aec510ece4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fosterinteractive/adminspring-theme/zipball/4380915c007e8f0af1e801ed075db6ce81b7dd55",
-                "reference": "4380915c007e8f0af1e801ed075db6ce81b7dd55",
+                "url": "https://api.github.com/repos/fosterinteractive/adminspring-theme/zipball/4c1266c46f64137dbe2675c39c564aec510ece4a",
+                "reference": "4c1266c46f64137dbe2675c39c564aec510ece4a",
                 "shasum": ""
             },
             "type": "drupal-theme",
@@ -12055,7 +12254,7 @@
                 "source": "https://github.com/fosterinteractive/adminspring-theme/tree/kate-dev",
                 "issues": "https://github.com/fosterinteractive/adminspring-theme/issues"
             },
-            "time": "2023-05-10T15:53:39+00:00"
+            "time": "2023-05-17T15:43:47+00:00"
         },
         {
             "name": "fosterinteractive/mainspring-profile",
@@ -12295,49 +12494,6 @@
                 "issues": "https://github.com/fosterinteractive/mainspring-profile/issues"
             },
             "time": "2023-05-12T02:07:18+00:00"
-        },
-        {
-            "name": "fosterinteractive/mainspring-theme",
-            "version": "dev-10.x-dev",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:fosterinteractive/mainspring-theme.git",
-                "reference": "8979ed67c3a2ac4419abdf1d2b63ad446b839867"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fosterinteractive/mainspring-theme/zipball/8979ed67c3a2ac4419abdf1d2b63ad446b839867",
-                "reference": "8979ed67c3a2ac4419abdf1d2b63ad446b839867",
-                "shasum": ""
-            },
-            "type": "drupal-theme",
-            "extra": {
-                "installer-types": [
-                    "bower-asset",
-                    "npm-asset"
-                ],
-                "installer-paths": {
-                    "js/vendor/{$name}/": [
-                        "type:npm-asset",
-                        "type:bower-asset"
-                    ]
-                }
-            },
-            "scripts": {
-                "pre-install-cmd": [],
-                "pre-update-cmd": [],
-                "post-install-cmd": [],
-                "post-update-cmd": []
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Project template for Drupal 10 themes",
-            "support": {
-                "source": "https://github.com/fosterinteractive/mainspring-theme/tree/10.x-dev",
-                "issues": "https://github.com/fosterinteractive/mainspring-theme/issues"
-            },
-            "time": "2023-05-12T20:30:14+00:00"
         },
         {
             "name": "fosterinteractive/social_lite",
@@ -13967,16 +14123,16 @@
         },
         {
             "name": "pantheon-systems/drupal-integrations",
-            "version": "9.0.4",
+            "version": "9.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pantheon-systems/drupal-integrations.git",
-                "reference": "7e04867c1d9c9153fc077194f7fd53eb26a9cd1d"
+                "reference": "f0bd10f93b326d759dd3bbdcbff13f6cd13c0c8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/drupal-integrations/zipball/7e04867c1d9c9153fc077194f7fd53eb26a9cd1d",
-                "reference": "7e04867c1d9c9153fc077194f7fd53eb26a9cd1d",
+                "url": "https://api.github.com/repos/pantheon-systems/drupal-integrations/zipball/f0bd10f93b326d759dd3bbdcbff13f6cd13c0c8f",
+                "reference": "f0bd10f93b326d759dd3bbdcbff13f6cd13c0c8f",
                 "shasum": ""
             },
             "conflict": {
@@ -14004,9 +14160,9 @@
             "description": "Add this project to any Drupal distribution based on drupal/core-composer-scaffold to enable it for use on Pantheon.",
             "support": {
                 "issues": "https://github.com/pantheon-systems/drupal-integrations/issues",
-                "source": "https://github.com/pantheon-systems/drupal-integrations/tree/9.0.4"
+                "source": "https://github.com/pantheon-systems/drupal-integrations/tree/9.0.5"
             },
-            "time": "2022-11-30T23:22:43+00:00"
+            "time": "2023-05-17T17:44:50+00:00"
         },
         {
             "name": "pantheon-upstreams/upstream-configuration",
@@ -23329,7 +23485,6 @@
     "stability-flags": {
         "pantheon-upstreams/upstream-configuration": 20,
         "fosterinteractive/adminspring-theme": 20,
-        "fosterinteractive/mainspring-theme": 20,
         "fosterinteractive/mainspring-profile": 20
     },
     "prefer-stable": true,

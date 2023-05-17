@@ -1,0 +1,41 @@
+uuid: 5027490b-9117-4d5a-b4ca-158bd54aa5c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.soundcloud.field_soundcloud_summary
+    - field.field.paragraph.soundcloud.field_soundcloud_title
+    - field.field.paragraph.soundcloud.field_soundcloud_track
+    - paragraphs.paragraphs_type.soundcloud
+  module:
+    - text
+id: paragraph.soundcloud.default
+targetEntityType: paragraph
+bundle: soundcloud
+mode: default
+content:
+  field_soundcloud_summary:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_soundcloud_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_soundcloud_track:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

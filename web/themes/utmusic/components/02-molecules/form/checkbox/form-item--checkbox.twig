@@ -1,0 +1,34 @@
+<div{{ attributes.addClass(classes).addClass('m-form-item--checkbox') }} data-states-for="{{ name }}">
+
+  {% if label_display in ['before', 'invisible'] %}
+    {{ label }}
+  {% endif %}
+
+  {% if prefix is not empty %}
+    <span class="m-form-item__prefix">{{ prefix }}</span>
+  {% endif %}
+
+  {% if description_display == 'before' and description.content %}
+    <div{{ description.attributes.addClass('m-form-item__description') }}>
+      {{ description.content }}
+    </div>
+  {% endif %}
+
+  {% if children %}
+    {{ children }}
+  {% endif %}
+
+  {% if suffix is not empty %}
+    <span class="m-form-item__suffix">{{ suffix }}</span>
+  {% endif %}
+
+  {% if label_display == 'after' %}
+    {{ label }}
+  {% endif %}
+
+  {% if description_display in ['after', 'invisible'] and description.content %}
+    <div{{ description.attributes.addClass(description_classes).addClass('m-form-item__description') }}>
+      {{ description.content }}
+    </div>
+  {% endif %}
+</div>

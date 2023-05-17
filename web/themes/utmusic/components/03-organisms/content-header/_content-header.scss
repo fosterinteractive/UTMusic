@@ -1,0 +1,275 @@
+// Core icon.
+%o-hero-media__icon-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: rem(69px);
+  height: rem(69px);
+  border-radius: 50%;
+  background-color: rgba(255, 242, 0, 0.5);
+
+  padding: rem(13px);
+  overflow: hidden;
+  margin-top: rem(50px);
+}
+
+// Core text.
+%o-hero-media__text-core {
+  // grid-area: 1 / 1;
+
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $half-gutter;
+  padding-left: $half-gutter;
+  width: 100%;
+
+  @include breakpoint($bp-phone-large) {
+    padding-right: $gutter;
+    padding-left: $gutter;
+    max-width: $bp-banner-max;
+  }
+
+  // Remove gutter when there's not any need as we're now at max-width + the width of the gutter.
+  // @todo - Aidan note - Removed gutter... Should be OK?
+  // @include breakpoint($bp-banner-max + $gutter-px) {
+  @include breakpoint($bp-banner-max) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+// Core image.
+%o-hero-media__image-core {
+  position: relative;
+  // grid-area: 1 / 1;
+
+  img {
+    height: 100%;
+    object-fit: cover
+  }
+
+  picture {
+    height: 100%;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+}
+
+// Core image title-prefix.
+%o-hero-media__title-prefix-core {
+  @extend %a-heading__h3-indicator;
+
+  display: flex;
+  flex-direction: column;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    max-width: rem(480px);
+    width: 100%;
+    height: 1px;
+    background-color: palette(black);
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: rem(300px);
+    margin-top: rem(10px);
+  }
+}
+
+.o-hero-media__title {
+  display: block;
+}
+
+
+// Variations - Image on Right.
+.o-hero-media--image-right {
+  @include breakpoint($bp-full-nav) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+.o-hero-media__image--image-right {
+  @extend %o-hero-media__image-core;
+
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -70px;
+    left: 0;
+    right: 0;
+    height: 70px;
+    width: 100%;
+    box-shadow: 0 0 60px 70px palette(white);
+  }
+  
+  @include breakpoint($bp-full-nav) {
+    &:before {
+      background: linear-gradient(88.19deg, palette(white) 49.66%, rgba(255, 255, 255, 0) 91.58%);
+    }
+
+    &:after {
+      display: none;
+    }
+
+    grid-area: 1 / 1;
+
+    picture {
+      width: 77%;
+      margin-left: auto;
+    }
+  }
+}
+
+.o-hero-media__text--image-right-wrapper {
+  @extend %o-hero-media__text-core;
+
+  padding-top: 40px;
+  margin-bottom: 40px;
+
+  @include breakpoint($bp-full-nav) {
+    grid-area: 1 / 1;
+    padding-top: 80px;
+    margin-bottom: 70px;
+  }
+}
+
+.o-hero-media__text--image-right {
+  text-align: center;
+  max-width: rem(720px);
+
+  @include breakpoint($bp-full-nav) {
+    text-align: left;
+  }
+}
+
+.o-hero-media__title-prefix--image-right {
+  @extend %o-hero-media__title-prefix-core;
+
+  @include breakpoint($bp-full-nav) {
+    align-items: flex-start;
+  }
+
+  @include breakpoint($bp-full-nav) {
+    &:after {
+      margin-left: 0;
+    }
+  }
+}
+
+.o-hero-media__icon-arrow--image-right {
+  @extend %o-hero-media__icon-arrow;
+
+  margin-left: auto;
+  margin-right: auto;
+  
+  @include breakpoint($bp-full-nav) {
+    margin-left: 0;
+  }
+}
+
+
+// Variations - Image overlay.
+.o-hero-media--image-overlay {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.o-hero-media__image--image-overlay {
+  @extend %o-hero-media__image-core;
+
+  grid-area: 1 / 1;
+
+  &:before {
+    background: radial-gradient(131.58% 86.55% at 50% 50.08%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+}
+
+.o-hero-media__text--image-overlay-wrapper {
+  @extend %o-hero-media__text-core;
+
+  grid-area: 1 / 1;
+  align-items: center;
+  text-align: center;
+  padding-top: rem(170px);
+  padding-bottom: rem(170px);
+
+  @include breakpoint($bp-full-nav) {
+    padding-top: rem(125px);
+    padding-top: rem(160px);
+  }
+}
+
+.o-hero-media__title-prefix--image-overlay {
+  @extend %o-hero-media__title-prefix-core;
+
+  align-items: center;
+}
+
+.o-hero-media__icon-arrow--image-overlay {
+  @extend %o-hero-media__icon-arrow;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.o-hero-media__text--text-wrapper {
+  @extend %o-hero-media__text-core;
+
+  align-items: center;
+  text-align: center;
+
+  padding-top: rem(90px);
+  padding-bottom: rem(110px);
+}
+
+.o-hero-media__title-prefix--text {
+  @extend %o-hero-media__title-prefix-core;
+
+  align-items: center;
+}
+
+.o-hero-media__icon-arrow--text {
+  @extend %o-hero-media__icon-arrow;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Decoration.
+%o-hero-media__decoration-core {
+  grid-area: 1/1;
+  z-index: 1;
+  align-self: end;
+}
+
+div.o-hero-media__decoration--white {
+  @extend %o-hero-media__decoration-core;
+
+  --c-section-background: #{palette(white)};
+}
+
+div.o-hero-media__decoration--black {
+  @extend %o-hero-media__decoration-core;
+
+  --c-section-background: #{palette(black)};
+}

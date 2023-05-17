@@ -1,0 +1,43 @@
+///
+/// # Mixin for development only.
+/// Creates a highly visisble background fill & outline and on an element.
+/// Each @include on an element increments though the an array $debug-colors.
+///
+/// Useful for positioning layouts and components while doing front end work.
+///
+/// "DBL" is short hand for "__D__ e __B__ ug __L__ ayout"
+/// @example scss - Basic Usage Sass
+///   .my-module {
+///     @include dbl();
+///   }
+///
+/// @example scss - Basic Usage CSS Output
+///   .my-module {
+///     outline: 2px dashed #a00000;
+///     background-color: rgba(160, 0, 0, 0.5);
+///   }
+/// @group base
+
+@use 'sass:list';
+
+@mixin debug-layout($i: $debug-count) {
+  @include dbl($i: $debug-count);
+}
+
+@mixin dbl($i: $debug-count) {
+  $color: list.nth($debug-colors, $i);
+
+  outline: 2px dashed $color;
+  background-color: rgba($color, 0.5);
+
+  @if $i < length($debug-colors) {
+    $debug-count: $i + 1;
+  } @else {
+    $debug-count: 1;
+  }
+}
+
+$debug-count: 1 !default;
+
+// scss-lint:disable ColorVariable
+$debug-colors: rgb(160, 0, 0), rgb(0, 160, 0), rgb(0, 0, 160) !default;

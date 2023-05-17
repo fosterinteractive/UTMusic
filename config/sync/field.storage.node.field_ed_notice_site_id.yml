@@ -1,0 +1,23 @@
+uuid: 71e5f147-79e7-45e7-a50c-d38b0762e028
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: mro4PhDzdfV8FrJ3BdxRAjJrUaFw-J6Tom2TZ8M3WHI
+id: node.field_ed_notice_site_id
+field_name: field_ed_notice_site_id
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

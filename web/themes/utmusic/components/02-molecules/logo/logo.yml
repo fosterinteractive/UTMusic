@@ -1,0 +1,11 @@
+url: 'http://example.com'
+variation:
+logo_aria_label:
+logo_alt:
+width:
+height: 
+logo_image_src: 
+logo_icon: 'logo'
+logo_icon_size: 'large'
+logo_icon_color:
+logo_icon_a11y_label:

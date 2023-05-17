@@ -1,0 +1,25 @@
+
+{% spaceless %}
+
+  {% if icon_name %}
+  <div class="m-select--{{ icon_name }}__wrapper m-select__icon-wrapper">
+    <i class="m-select__icon fas fa-{{ icon_name }}"></i>
+  {% endif %}
+
+    <select{{ attributes.addClass('m-select', classes) }}  {% if sb_class %}class="m-select"{% endif %}>
+      {% for option in options %}
+        {% if option.type == 'optgroup' %}
+          <optgroup label="{{ option.label }}">
+            {% for sub_option in option.options %}
+              <option value="{{ sub_option.value }}"{{ sub_option.selected ? ' selected="selected"' }}>{{ sub_option.label }}</option>
+            {% endfor %}
+          </optgroup>
+        {% elseif option.type == 'option' %}
+          <option value="{{ option.value }}"{{ option.selected ? ' selected="selected"' }}>{{ option.label }}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+  {% if icon_name %}
+  </div>
+  {% endif %}
+{% endspaceless %}

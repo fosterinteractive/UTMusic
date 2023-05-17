@@ -1,0 +1,23 @@
+uuid: f34f6bba-1a46-43ac-9701-b7982ed0ba74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ed_notice_date
+    - node.type.ed_notice
+  module:
+    - datetime_range
+_core:
+  default_config_hash: HtEZDwpuple9URWSJnz0Ze7egbTbv5j5Xwa7REbC3Qw
+id: node.ed_notice.field_ed_notice_date
+field_name: field_ed_notice_date
+entity_type: node
+bundle: ed_notice
+label: 'Maintenance Date'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

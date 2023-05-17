@@ -1,0 +1,31 @@
+uuid: b057395c-7848-4a9b-a3ef-dbfdfe767fe9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_image_landscape
+    - media.type.ed_image
+    - node.type.news
+  module:
+    - media_library_media_modify
+id: node.news.field_news_image_landscape
+field_name: field_news_image_landscape
+entity_type: node
+bundle: news
+label: 'Image Landscape'
+description: 'Choose image from Media library and then press "edit" button for specifying its alternative text and crop shape, then press save '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      ed_image: ed_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_entity_modify

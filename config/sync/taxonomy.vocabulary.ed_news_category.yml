@@ -1,0 +1,10 @@
+uuid: 8fd63b8f-0d48-4172-bc17-903d11e8847a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: nl_X4z7wvyQiilq9FmCIDod02mIZujPplaAbKKTVTUc
+name: 'News Category'
+vid: ed_news_category
+description: ''
+weight: 0

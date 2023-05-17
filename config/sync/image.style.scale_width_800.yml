@@ -1,0 +1,32 @@
+uuid: bbd56562-f45e-4af1-a1ef-a721126b0fec
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+    - image_style_quality
+_core:
+  default_config_hash: '-uCeDrf0Zl3zMR__4B44ee8mkO_FiLtrQ2zd3KcIZ7k'
+name: scale_width_800
+label: 'Scale Width (800 @ 80%)'
+effects:
+  b032230f-f69c-4246-95f1-8a0334deda57:
+    uuid: b032230f-f69c-4246-95f1-8a0334deda57
+    id: image_scale
+    weight: -10
+    data:
+      width: 800
+      height: null
+      upscale: false
+  f2a3c629-fdd0-4129-83b5-7fc29e3abea5:
+    uuid: f2a3c629-fdd0-4129-83b5-7fc29e3abea5
+    id: image_style_quality
+    weight: -8
+    data:
+      quality: 80
+  9558ac12-f4ed-4b24-ae56-b4947cb438cd:
+    uuid: 9558ac12-f4ed-4b24-ae56-b4947cb438cd
+    id: image_effects_interlace
+    weight: -9
+    data:
+      type: Plane

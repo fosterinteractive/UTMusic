@@ -1,0 +1,23 @@
+uuid: 5bfb6114-e4eb-4051-85e4-bbf9a5a289f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.custom_site_settings
+    - field.storage.config_pages.field_news_listing_link
+  module:
+    - link
+id: config_pages.custom_site_settings.field_news_listing_link
+field_name: field_news_listing_link
+entity_type: config_pages
+bundle: custom_site_settings
+label: 'Full Page News Listing Link'
+description: 'This link will be used in news blocks to point to the main news listing on a site.  News blocks will add a "See All News" at the end of the listing that will point to this path. If left empty no button will be added to the end of a news listing.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

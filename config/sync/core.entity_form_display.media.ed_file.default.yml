@@ -1,0 +1,31 @@
+uuid: 61ca1958-1f77-4885-ad5e-64739cbd547d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.ed_file.field_ed_file_file
+    - media.type.ed_file
+  module:
+    - file
+_core:
+  default_config_hash: RfCx21gPetAbRcriKa4J-gRngKDVKKEcffFH49m8vzI
+id: media.ed_file.default
+targetEntityType: media
+bundle: ed_file
+mode: default
+content:
+  field_ed_file_file:
+    type: file_generic
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  name: true
+  path: true
+  revision_log_message: true
+  status: true
+  uid: true

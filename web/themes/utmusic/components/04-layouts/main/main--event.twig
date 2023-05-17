@@ -1,0 +1,88 @@
+{% embed "@layouts/main/main.twig" %}
+
+  {% block content_single_page %}
+    <div class="l-main--event">
+
+      
+
+      {# Main content of the page - usually body field #}
+      {# <div class="l-section--[12] theme--white-bg l-section-spacing-top--small l-section-spacing-bottom--small">
+        <div class="l-section__zone-1 l-flex">    #}
+          {% include "@organisms/content-header-event/content-header-event.twig" with {
+              directory: directory,
+              hero_image: image,
+              title_prefix: series,
+              title: title,
+              sub_title: sub_title,
+              summary: "This is the summary",
+              icon: 'arrow-down',
+              date: date,
+              start_time: start_time,
+              end_time: end_time,
+              timezone: timezone,
+              event_type: event_type,
+              program_type: program_type,
+              address: address,
+              register_link_url_primary: reg_btn_url,
+              register_link_text_primary: reg_btn_text,
+              register_link_url_secondary: reg_sec_btn_url,
+              register_link_text_secondary: reg_sec_btn_text, 
+            } only
+          %}
+        {# </div>
+      </div> #}
+
+      {% if content %}
+        <div class="l-section--[12] theme--white-bg l-section-spacing-top--small l-section-spacing-bottom--small">
+          <div class="l-section__zone-1 l-flex">
+            <div class="l-main--event__overview">
+              <h2 class="a-heading__h2">{{'Event Overview'|t}}</h2>
+              {{ content }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if series_overview %}
+        <div class="l-section--[12] theme--light-yellow-bg l-section-spacing-top--small l-section-spacing-bottom--small">
+          <div class="l-section__zone-1 l-flex">   
+            <div class="l-main--event__series-overview">
+              <h2 class="a-heading__h2">{{'Series Overview'|t}}</h2>
+              {{ series_overview }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if related_events %}
+      <div class="l-section--[12] theme--black-bg l-section-spacing-top--small l-section-spacing-bottom--small   ">
+        <div class="l-section__zone-1 l-flex">  
+          <div class="l-main--event__overview">
+            <h2 class="a-heading__h2">{{'Other Events in the Series'|t}}</h2>
+            {{ related_events }}
+          </div> 
+        </div>
+      </div>
+      {% endif %}
+
+      {% if see_more_link %}
+        <div class="l-section--[12] theme--white-bg l-section-spacing-top--small l-section-spacing-bottom--small">
+          <div class="l-section__zone-1 l-flex">   
+            <div class="l-main--event__cta">
+              <h2 class="a-heading__h1">{{'Want to see more upcoming events?'|t}}</h2>
+              {% include "@atoms/button/button.twig" with {
+                  url: see_more_link,
+                  label: 'See more events'|t,
+                  aria_label: button_aria_label,
+                  aria_labelledby: button_aria_labelledby
+                } only
+              %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+    </div>
+  {% endblock content_single_page %}
+  
+{% endembed %}

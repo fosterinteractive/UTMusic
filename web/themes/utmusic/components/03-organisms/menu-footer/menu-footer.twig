@@ -1,0 +1,65 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+
+{% if sb_class %}
+  <div class="{{ sb_class }}">
+    <nav class="m-menu-mobile" id="menu-mobile" role="navigation" aria-labelledby="mobile-nav" data-menu-mobile>
+      <h2 class="u-visually--hidden" id="mobile-nav">{{ 'Mobile navigation'|t }}</h2>
+{% endif %}
+
+
+{% import _self as menus %}
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul{{ attributes.addClass('m-menu-footer') }} role="menu">
+    {% else %}
+      <ul>
+    {% endif %}
+    {% for item in items %}
+      {% set classes = [
+          'm-menu-footer__item',
+          item.in_active_trail == TRUE ? 'is-active',
+        ]
+      %}
+
+      <li{{ item.attributes.addClass(classes) }} {{ item.attributes.setAttribute('aria-label', item.title) }} {% if item.in_active_trail == TRUE %}{{ item.attributes.setAttribute("aria-current", "page") }}{% endif %} role="menuitem">
+        {{ link(item.title, item.url, { 'class' : ['m-menu-footer__link', item.in_active_trail == TRUE ? 'is-active']}) }}
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+{% if sb_class %}
+    </nav>
+  </div>
+{% endif %}

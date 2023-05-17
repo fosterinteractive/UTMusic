@@ -1,0 +1,96 @@
+{# Set default listing class - 'o-listing' #}
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+{% if storybook_demo %}
+  {% set directory = directory %}
+{% else %}
+  {% set directory =  'themes/mainspring' %}
+{% endif %}
+
+
+<div class="m-listing-item{{ variation }}{% if event_status %} is{{event_status}}{% endif %}">
+
+  <div class="m-listing-item{{ variation }}__img">
+    {# if there is an image - create content wrapper #}
+    {% if image %}
+      {{image}}
+    {% else %}
+      <div class="m-listing-item{{ variation }}__icon">
+        {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+            directory: directory,
+            base_class: 'a-icon',
+            icon: 'calendar',
+            size: 'xlarge', 
+          } only
+        %}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="m-listing-item{{ variation }}__content">
+    {% if status_text %}
+      <div class="m-listing-item{{ variation }}__status">
+        {{status_text}}
+      </div>
+    {% endif %}
+
+    <div class="m-listing-item{{ variation }}__title">
+      {% include "@atoms/text/headings/heading.twig" with {
+          html_element: 'h2',
+          appearance: 'h2',
+          text: title,          
+        } only
+      %}
+    </div>
+
+    <div class="m-listing-item{{ variation }}__info">
+      {% if date %}{{date}}{% endif %}{% if start_time %}&nbsp;@&nbsp;{{start_time}} to {{end_time}}{% if timezone %}&nbsp;{{timezone}}{%endif %}{% endif %}{% if location %}&nbsp;|&nbsp;{{location}}{% endif %}
+    </div>
+
+    {% if desc %}
+      <div class="m-listing-item{{ variation }}__desc">{{desc}}</div>
+    {% endif %}
+
+
+    {% if url and link_text %}
+      <div class="m-listing-item{{ variation }}__button">
+        {% set link_type = link_type|default('button') %}
+
+        {% if link_type == 'button' %}
+          {% include "@atoms/button/button.twig" with {
+              label: link_text,
+              html_element: 'a',
+              variation: '',
+              url: url,
+              id: 'event-listing-item-'|t ~ id,
+              target: '',
+              aria_label: title,
+              aria_labelledby: '',
+              alignment: ''
+            } only
+          %}
+        {% elseif link_type == 'text' %}
+          {% include "@atoms/link/link.twig" with {
+              label: link_text,
+              url: url,
+              id: 'node-listing-item-' ~ id,
+            } only
+          %}
+        {% endif %}
+      </div>
+    {% endif %}
+
+  </div>
+
+</div>

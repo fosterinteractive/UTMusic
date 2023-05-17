@@ -1,0 +1,22 @@
+uuid: 5479e384-af53-4e5d-ab9c-dac7d72f0262
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_lite
+  theme:
+    - utmusic
+_core:
+  default_config_hash: RiCl-CL-Ka5IDLYMwPbOncXKbrzDF0MBPq_JRLqENzk
+id: sociallite
+theme: utmusic
+region: hidden
+weight: 0
+provider: null
+plugin: social_lite
+settings:
+  id: social_lite
+  label: 'Social Lite'
+  label_display: '0'
+  provider: social_lite
+visibility: {  }

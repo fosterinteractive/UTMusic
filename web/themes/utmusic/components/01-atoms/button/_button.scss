@@ -1,0 +1,208 @@
+// Buttons have containing boxes and are applied to <a> <button> and <input type=button>
+// See "a-links" for elements  that appear like text links without a containing element
+
+// Core Button
+%a-button--core {
+  @extend %a-type--button;
+
+  display: inline-block;
+  border: 1px solid transparent;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  appearance: none;
+  border-radius: rem(10px);
+}
+
+// Default Padding (Medium)
+%a-button--padding {
+  padding: rem(10px) rem(25px);
+}
+
+%a-button--small-width {
+  width: fit-content !important;
+}
+
+// %a-button--small-padding {
+//   padding: ru(0.25);
+// }
+
+// %a-button--large-padding {
+//   padding: ru(1) ru(1.5);
+// }
+
+// Default Style and Icons with text
+%a-button {
+  border: 1px solid var(--c-button-border);
+  background-color: var(--c-button);
+  color: var(--c-button-text);
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: var(--c-button-border--active);
+    background-color: var(--c-button--active);
+    color: var(--c-button-text--active);
+  }
+}
+
+// Secondary Button Style
+%a-button--secondary {
+  border: 1px solid var(--c-button-border--secondary);
+  background-color: var(--c-button--secondary);
+  color: var(--c-button-text--secondary);
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: var(--c-button-border--secondary);
+    background-color: var(--c-button--secondary--active);
+    color: var(--c-button-text--secondary--active);
+  }
+}
+
+// Icon Button Style (No visible text)
+%a-button--icon {
+  border: 1px solid var(--c-button-border--secondary);
+  background-color: var(--c-button--secondary);
+  color: var(--c-button-text--secondary);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--c-button--secondary--active);
+    color: var(--c-button-tex--secondary--active);
+  }
+}
+
+%a-button,
+.a-button {
+  @extend %a-button--core;
+  @extend %a-button--padding;
+  @extend %a-button;
+  @extend %a-button--small-width;
+}
+
+%a-button--secondary,
+.a-button--secondary {
+  @extend %a-button--core;
+  @extend %a-button--padding;
+  @extend %a-button--secondary;
+  @extend %a-button--small-width;
+}
+
+%a-button__icon--core {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: bottom;
+  fill: currentColor;
+}
+
+.a-button--icon-right {
+  @extend %a-button--core;
+  @extend %a-button--padding;
+  @extend %a-button;
+}
+
+.a-button--icon-right__icon {
+  @extend %a-button__icon--core;
+  margin-left: ru(0.5);
+}
+
+.a-button--icon-left {
+  @extend %a-button--core;
+  @extend %a-button--padding;
+  @extend %a-button;
+}
+
+.a-button--icon-left__icon {
+  @extend %a-button__icon--core;
+  margin-right: ru(0.5);
+}
+
+.a-button--icon {
+  @extend %a-button--core;
+  @extend %a-button--icon;
+  padding: ru(0.5);
+}
+
+.a-button--icon__icon {
+  @extend %a-button__icon--core;
+}
+
+.a-button--circle {
+  @extend %a-button--core;
+  // @extend %a-button--icon;
+  @extend %a-button;
+
+  padding: ru(0.55) ru(0.7);
+  border-radius: 50%;
+}
+
+.a-button--circle__icon {
+  @extend %a-button__icon--core;
+}
+
+// button position
+.a-button--right {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.a-button--left {
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.a-button--center {
+  display: block;
+  margin: 0 auto;
+}
+
+// Text Button appear visually like a-links
+// They are used when text buttons appear next to buttons to allow them align vertically
+
+// %a-button--link,
+// .a-button--link {
+//   @extend %a-button--core;
+//   @extend %a-button--padding;
+//   @extend %a-link;
+// }
+
+// NOT our domain, nor #, nor starts with slash
+// Update with the domain for the site.
+//   &:not([href^='example_url']):not([href^='#']):not([href^='/']) {
+//     .a-button__icon {
+//       display: block;
+//     }
+//   }
+// }
+
+// @todo - Preview clips icon in PL on chrome
+// .a-button--external-link {
+//   @extend %a-button--link;
+
+//   .a-button__icon {
+//     display: none;
+//   }
+
+//   &:not([href^='example_url']):not([href^='#']):not([href^='/']) {
+
+//     .a-button__icon {
+//       display: block;
+//     }
+//   }
+// }
+
+// .a-button--full-width {
+//   @extend %a-button--core;
+//   @extend %a-button--primary;
+//   @extend %a-button--padding;
+
+//   width: 100%;
+// }

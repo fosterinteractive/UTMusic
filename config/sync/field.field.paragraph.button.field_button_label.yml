@@ -1,0 +1,19 @@
+uuid: 07a3b69f-491e-4c80-9454-86f5a3c25f13
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_button_label
+    - paragraphs.paragraphs_type.button
+id: paragraph.button.field_button_label
+field_name: field_button_label
+entity_type: paragraph
+bundle: button
+label: Label
+description: 'Visually displayed text'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

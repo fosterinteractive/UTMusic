@@ -1,0 +1,63 @@
+uuid: a9ef59e3-884a-47ae-9a44-296a62f600d1
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_quote_source_location
+field_name: field_quote_source_location
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: blank
+      label: Blank
+    -
+      value: ab
+      label: Alberta
+    -
+      value: nl
+      label: 'Newfoundland and Labrador'
+    -
+      value: pe
+      label: 'Prince Edward Island'
+    -
+      value: nb
+      label: 'New Brunswick'
+    -
+      value: 'on'
+      label: Ontario
+    -
+      value: mb
+      label: Manitoba
+    -
+      value: sk
+      label: Saskatchewan
+    -
+      value: bc
+      label: 'British Columbia'
+    -
+      value: yt
+      label: Yukon
+    -
+      value: nt
+      label: 'Northwest Territories'
+    -
+      value: nu
+      label: Nunavut
+    -
+      value: ns
+      label: 'Nova Scotia'
+    -
+      value: qc
+      label: Quebec
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

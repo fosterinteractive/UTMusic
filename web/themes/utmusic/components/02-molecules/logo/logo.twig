@@ -1,0 +1,63 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ *
+ * @ingroup themeable
+ */
+#}
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+{% if logo_alt starts with 'Home' %}
+  {# Do nothing #}
+{% else %}
+  {% set logo_alt = logo_alt ~ ' Home'|default('Home Page') %}
+{% endif %}
+
+{% if url %}
+  <a class="m-logo{{ variation }}" href="{{ url }}" aria-label="{{ logo_aria_label }}">
+{% endif %}
+
+  {# If using image logo #}
+  {% if variation == '--image' %}
+    <img class="m-logo{{ variation }}__img" src="{{ logo_image_src }}" alt="{{ logo_alt|t }}"
+      {% if width %} width="{{ width }}"{% endif %}
+      {% if height %} height="{{ height }}" {% endif %}
+    />
+      
+  {% elseif logo_icon %}
+    {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+      directory: directory,
+      icon: logo_icon,
+      size: logo_icon_size,
+      color: logo_icon_color,
+      a11y_label: logo_icon_a11y_label,
+      base_class: 'l-section__decoration-svg',
+      } only
+    %}
+  {% else %}
+    {{ logo_image }}
+  {% endif %}
+
+{% if url %}
+  </a>
+{% endif %}

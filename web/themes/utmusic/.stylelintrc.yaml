@@ -1,0 +1,326 @@
+extends:
+  - stylelint-config-standard-scss
+  - stylelint-config-prettier
+plugins:
+  - stylelint-scss
+  - stylelint-order
+  # - stylelint-selector-bem-pattern
+
+defaultSeverity: "warning"
+
+rules:
+
+  # Stylelint Scss Rules - https://github.com/stylelint-scss/stylelint-scss 
+  # Recommended rules
+  at-rule-no-unknown: null
+  scss/at-rule-no-unknown: true
+  scss/at-import-partial-extension: always
+  
+  scss/double-slash-comment-empty-line-before: 
+    - "always"
+    - "ignore":
+      - "between-comments"
+      - "inside-block"
+  # scss/at-if-closing-brace-newline-after: "always-last-in-chain"
+  
+  #TODO - Fix to match our css naming patterns (using the BEM filter or Regex)
+  scss/percent-placeholder-pattern: null
+  selector-class-pattern: null
+  
+  # Bem naming plugin rules - https://github.com/simonsmith/stylelint-selector-bem-pattern 
+  # Which is a a wrapper for https://github.com/postcss/postcss-bem-linter
+  
+  #TODO plugin doesn't appear to work...
+  
+  # plugin/selector-bem-pattern:
+  #   preset: 'bem'
+  #   componentName: "[A-Z]+"
+  #   componentSelectors:
+  #     initial: "^\\.{componentName}(?:-[a-z]+)?$"
+  #     combined: "^\\.combined-{componentName}-[a-z]+$"
+  #   utilitySelectors: "^\\.util-[a-z]+$"
+  
+  # Foster Interactive Defaults
+  declaration-block-no-redundant-longhand-properties: null
+  alpha-value-notation: "number"
+  # used mainly for hsl(234, 50%, 50%) numbers.
+  color-function-notation: "legacy"
+  string-quotes: "single"
+
+  
+  # These are the rules that shipped with the starter project this was built from
+  
+  
+  
+  # Wrap lines greater than 120 characters
+  max-line-length: 120
+  # Override stylelint-config-standard - we only use CSS comments for annotations that don't warrant an empty line
+  comment-empty-line-before: null
+  # Follow best practices
+  font-family-name-quotes: always-where-recommended
+  # https://stackoverflow.com/a/34383157/467582
+  function-url-quotes: always
+  # https://www.w3.org/TR/selectors/#attribute-selectors
+  # http://stackoverflow.com/q/3851091
+  selector-attribute-quotes: always
+
+
+  order/order:
+    - - type: at-rule
+        hasBlock: false
+      - custom-properties
+      - declarations
+    - unspecified: ignore
+      disableFix: true
+  # https://github.com/sasstools/sass-lint/blob/develop/lib/config/property-sort-orders/smacss.yml
+  order/properties-order:
+    - display
+    - position
+    - grid-template-columns
+    - grid-template-rows
+    - grid-template-areas
+    - grid-template
+    - grid-auto-columns
+    - grid-auto-rows
+    - grid-auto-flow
+    - grid
+    - grid-column-start
+    - grid-row-start
+    - grid-column-end
+    - grid-row-end
+    - grid-column
+    - grid-row
+    - grid-area
+    - grid-column-gap
+    - grid-row-gap
+    - grid-gap
+    - flex-flow
+    - flex-direction
+    - flex-wrap
+    - justify-content
+    - align-items
+    - align-content
+    - order
+    - flex
+    - flex-grow
+    - flex-shrink
+    - flex-basis
+    - align-self
+    - top
+    - right
+    - bottom
+    - left
+    - float
+    - clear
+    - visibility
+    - opacity
+    - z-index
+    - overflow
+    - clip
+    - margin
+    - margin-top
+    - margin-right
+    - margin-bottom
+    - margin-left
+    - outline
+    - border
+    - border-top
+    - border-right
+    - border-bottom
+    - border-left
+    - border-width
+    - border-top-width
+    - border-right-width
+    - border-bottom-width
+    - border-left-width
+    - border-style
+    - border-top-style
+    - border-right-style
+    - border-bottom-style
+    - border-left-style
+    - border-color
+    - border-top-color
+    - border-right-color
+    - border-bottom-color
+    - border-left-color
+    - border-radius
+    - border-top-right-radius
+    - border-bottom-right-radius
+    - border-bottom-left-radius
+    - border-top-left-radius
+    - border-image
+    - background
+    - background-color
+    - background-image
+    - background-repeat
+    - background-position
+    - background-size
+    - padding
+    - padding-top
+    - padding-right
+    - padding-bottom
+    - padding-left
+    - width
+    - min-width
+    - max-width
+    - height
+    - min-height
+    - max-height
+    - vertical-align
+    - text-align
+    - text-indent
+    - text-transform
+    - text-decoration
+    - text-decoration-color
+    - line-height
+    - word-spacing
+    - letter-spacing
+    - white-space
+    - color
+    - font
+    - font-family
+    - font-size
+    - font-weight
+    - cursor
+    - list-style
+    - caption-side
+    - table-layout
+    - border-collapse
+    - border-spacing
+    - empty-cells
+    - content
+    - quotes
+
+  declaration-property-unit-allowed-list:
+    - font-size:
+        - px
+    - ignore:
+        - inside-function
+      
+  # The following prefix rules are enabled since we use autoprefixer
+  at-rule-no-vendor-prefix: true
+  media-feature-name-no-vendor-prefix: true
+  selector-no-vendor-prefix: true
+  value-no-vendor-prefix: true
+  # Usually if you're nesting past 3 levels deep there's a problem
+  max-nesting-depth: 2
+  # Because we adhere to BEM we can limit the amount of necessary compound selectors. Most should
+  # just be 1 level selector. However, modifiers can introduce an additional compound selector.
+  # Furthermore, generic qualifying selectors (e.g. `[dir="rtl"]`) can introduce yet another level.
+  selector-max-compound-selectors: 4
+  # For specificity: disallow IDs (0). Allow for complex combinations of classes, pseudo-classes,
+  # attribute modifiers based on selector-max-compound-selectors, plus an addition for
+  # pseudo-classes (4). Allow for pseudo-elements (1).
+  selector-max-specificity: 0,4,1
+  # at-rule-no-unknown:
+  #   - true
+  #   - ignoreAtRules:
+  #       - at-root
+  #       - content
+  #       - each
+  #       - else
+  #       - error
+  #       - for
+  #       - forward
+  #       - function
+  #       - include
+  #       - if
+  #       - mixin
+  #       - return
+  #       - use
+  #       - warn
+  # Disallow "@extend" in scss.
+  # http://csswizardry.com/2016/02/mixins-better-for-performance/
+  # http://vanseodesign.com/css/sass-mixin-or-extend/
+  # Besides performance, @extend actually *changes* the selector precedence by creating a compound
+  # selector, which can lead to ambiguous results.
+  at-rule-disallowed-list:
+
+  # Extremely useful for typos, and anything emergent can be ignored by this rule
+  property-no-unknown:
+    - true
+    - ignoreProperties:
+        - contain
+  # There is no reason that a specific ID would be needed for UI components
+  selector-max-id: 0
+  # Qualifying types are not needed when using a naming system like BEM
+  selector-no-qualifying-type: true
+  # In general, we should not be modifying elements within our components, since we can't
+  # predict the use cases in which users would add a certain type of element into a component.
+  selector-max-type:
+    - 0
+    - ignoreTypes:
+        - /fieldset/
+        - /img/
+  # Styles for components should never need the universal selector.
+  selector-max-universal: 0
+  # Ensure any defined symbols are prefixed with "brand-" OR "u-"
+  # custom-media-pattern: ^tdbc-.+
+  # custom-property-pattern: ^tdbc-.+
+  # selector-class-pattern:
+  #   - ^tdbc-.+
+  #   - resolveNestedSelectors: true
+  # selector-id-pattern: ^tdbc-.+
+  # Names are more semantic than numbers
+  # font-weight-notation: named-where-possible
+
+  # http://www.paulirish.com/2010/the-protocol-relative-url/
+  # function-url-no-scheme-relative: true
+ 
+  # TODO: and FIXME: warnings are super useful because they remind us that we should address these
+  # within our codebase
+  comment-word-disallowed-list:
+    - - /^TODO:/
+      - /^FIXME:/
+    - severity: warning
+
+
+  # Part of google's style guide
+  # number-leading-zero: always
+  # at-rule-empty-line-before:
+  #   - always
+  #   - except:
+  #       - blockless-after-blockless
+  #       - first-nested
+  #     ignore:
+  #       - after-comment
+  #     ignoreAtRules:
+  #       - else
+  # declaration-empty-line-before:
+  #   - always
+  #   - except:
+  #       - after-declaration
+  #       - first-nested
+  #     ignore:
+  #       - after-comment
+  # block-closing-brace-newline-after:
+  #   - always
+  #   - ignoreAtRules:
+  #       - if
+  #       - else
+
+  # SCSS naming patterns, just like our CSS conventions above.
+  # (note for $-vars we use a leading underscore for "private" variables)
+  # scss/dollar-variable-pattern:
+  #   - ^_?tdbc-.+
+  #   - ignore: local
+  # scss/at-function-pattern: ^tdbc-.+
+  # scss/at-mixin-pattern: ^tdbc-.+
+  # Prevents unneeded nesting selectors
+  
+  # scss/selector-no-redundant-nesting-selector: true
+
+  # Since leading underscores are not needed, they can be omitted
+  
+  # scss/at-import-no-partial-leading-underscore: true
+  
+  # Since mixins are explicit (`@include`) and parens are unnecessary for argumentless mixins, they
+  # can be omitted.
+
+  # scss/at-else-closing-brace-newline-after: always-last-in-chain
+  # scss/at-else-closing-brace-space-after: always-intermediate
+  # scss/at-else-empty-line-before: never
+  # scss/at-if-closing-brace-newline-after: always-last-in-chain
+  # scss/at-if-closing-brace-space-after: always-intermediate
+
+

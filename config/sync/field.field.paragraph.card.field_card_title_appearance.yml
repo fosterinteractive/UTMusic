@@ -1,0 +1,23 @@
+uuid: c5bf1e38-c8e2-407b-9138-a395390a9cfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card_title_appearance
+    - paragraphs.paragraphs_type.card
+  module:
+    - options
+id: paragraph.card.field_card_title_appearance
+field_name: field_card_title_appearance
+entity_type: paragraph
+bundle: card
+label: 'Title Appearance'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: h3
+default_value_callback: ''
+settings: {  }
+field_type: list_string

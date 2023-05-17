@@ -1,0 +1,42 @@
+@use 'sass:math';
+@use "sass:list";
+
+%m-quote,
+.m-quote {
+  margin-right: 0;
+  margin-left: 0;
+  padding-top:   list.slash(var(--spacer), 2);
+  padding-bottom:   list.slash(var(--spacer), 2);
+
+  @include breakpoint ($bp-tablet-small) {
+    padding-top:  var(--spacer);
+    padding-bottom:  var(--spacer);
+  }
+}
+
+.m-quote__body {
+  @extend %a-heading__h2;
+  @extend %u-remove-child--margin-top-bottom;
+  
+  color: var(--c-quote)
+}
+
+.m-quote__source {
+  @extend %a-type__core;
+  // line-height: 1.25;
+}
+
+.m-quote__source-name {
+  @extend %a-type--xlarge;
+  margin-bottom:  rem(12px);
+  color: var(--c-quote);
+}
+
+.m-quote__source-type {
+  @extend %a-type--medium;
+  @extend %a-type--italic;
+  
+  color: var(--c-quote--suorce-type);
+  background-color: var(--c-quote--suorce-type--bg);
+  width: fit-content;
+}

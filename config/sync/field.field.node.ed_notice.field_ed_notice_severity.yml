@@ -1,0 +1,23 @@
+uuid: 5ea2e564-4f66-44fd-bec5-661b1f9d1933
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ed_notice_severity
+    - node.type.ed_notice
+  module:
+    - options
+_core:
+  default_config_hash: H6u6evZIceqakvNyY_yx01srTospBX-k_uSHSlMsSAQ
+id: node.ed_notice.field_ed_notice_severity
+field_name: field_ed_notice_severity
+entity_type: node
+bundle: ed_notice
+label: 'Maintenance Notice Severity'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,5 @@
+image: "<img src='https://picsum.photos/id/84/1200/700' alt='alt text example'/>"
+variation: 'rounded-corners'
+icon: hands
+icon_alignment: right
+icon_size: medium

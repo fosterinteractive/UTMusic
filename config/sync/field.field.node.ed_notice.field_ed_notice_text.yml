@@ -1,0 +1,28 @@
+uuid: 04d6a070-9f4d-4c37-9770-d8588083d193
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ed_notice_text
+    - node.type.ed_notice
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - rich_text
+_core:
+  default_config_hash: vYYaqYIhT5DgFCJAVMa40BTGUBs0UZ-EIliEdvcJS-0
+id: node.ed_notice.field_ed_notice_text
+field_name: field_ed_notice_text
+entity_type: node
+bundle: ed_notice
+label: 'Maintenance Notice Text'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

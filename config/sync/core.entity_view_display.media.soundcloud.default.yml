@@ -1,0 +1,44 @@
+uuid: b4dba64b-2c31-4d38-9ef1-15faee79e6a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.soundcloud.field_media_soundcloud
+    - media.type.soundcloud
+  module:
+    - media_entity_soundcloud
+id: media.soundcloud.default
+targetEntityType: media
+bundle: soundcloud
+mode: default
+content:
+  field_media_soundcloud:
+    type: soundcloud_embed
+    label: hidden
+    settings:
+      type: classic
+      width: 100%
+      height: '100'
+      color: '#ff5500'
+      options:
+        auto_play: '0'
+        hide_related: hide_related
+        show_artwork: '0'
+        show_playcount: '0'
+        show_comments: '0'
+        show_user: '0'
+        show_reposts: '0'
+        download: '0'
+        buying: '0'
+        sharing: '0'
+        show_teaser: '0'
+        single_active: '0'
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

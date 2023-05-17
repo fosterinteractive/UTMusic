@@ -1,0 +1,39 @@
+{# By Default Chip is just a text label when there is no variation #}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %}
+
+{% endif %}
+
+{# Link Variation Eg Tag links to list of items w/ Tag #}
+{% if variation == '--link'%}
+  <a class="a-chip{{ variation }}" href="{{ url }}"{% if aria_label %} aria-label="{{ aria_label }}"{% endif %}>
+    {{ text }}
+  </a>
+
+{% elseif variation == '--icon' %}
+  <button class="a-chip{{ variation }}" {{ attributes }}{% if aria_label %} aria-label="{{ aria_label }}"{% endif %}>
+    {{ text }}
+
+    {% if icon %}
+      {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+        directory: directory,
+        base_class: 'a-icon',
+        icon: icon,
+        } only
+      %}
+    {% endif %}
+  </button>
+
+{# Assumes Basic Div if no variation declared #}
+{% else %}
+  <div class="a-chip{{ variation }}"{% if aria_label %} aria-label="{{ aria_label }}"{% endif %}>
+    {{ text }}
+  </div>
+{% endif %}

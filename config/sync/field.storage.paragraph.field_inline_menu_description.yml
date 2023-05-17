@@ -1,0 +1,19 @@
+uuid: 57b3b3da-d217-496e-94d3-c24b3531f8f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_inline_menu_description
+field_name: field_inline_menu_description
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+uuid: d8dd9575-47b0-40ca-ae2e-b4878ffb7530
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.field_news_image
+field_name: field_news_image
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

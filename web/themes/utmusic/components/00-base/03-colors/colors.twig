@@ -1,0 +1,44 @@
+
+{# Print out each palette #}
+
+{% for palette_name, palette in palettes %}
+<div class="storybook-colors__palette">
+
+  <p class="storybook-colors__palette-title">{{ palette_name }}</p>
+  
+  {# We need to to loop thought and find the base tone #}
+  {% set base_tone = Null %}
+  {% for tone_name, tone_value in palette %}
+    {% if tone_name == "base" %}
+      {% set base_tone = tone_value %}
+    {% endif %}
+  {% endfor %}
+
+  <ul class="storybook-colors__swatches">
+    {% for tone_name, tone_value in palette %}
+      
+    {# Don't print out a swatch for the base tone item in the color list, instead we'll add some label the swatch that matches this tone #}
+      {% if tone_name != 'base' %}  
+        <li class="storybook-colors__swatch{% if base_tone == tone_name %}--base{% endif %}">
+          <div class="storybook-colors__color" style="background: {{ tone_value }};"></div>
+          <div class="storybook-colors__info">
+            <span>{{ tone_value }}</span> <br/>
+            <code class="storybook-colors__function">
+            {# If this is the base tone write out an extra function call #}
+
+            {% if base_tone == tone_name %}
+              palette({{ palette_name }})<br/>
+            {% endif %}
+
+            
+            palette({{ palette_name }}, {{ tone_name }})
+            </code>
+          </div>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}
+
+

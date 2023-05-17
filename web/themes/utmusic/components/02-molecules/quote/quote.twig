@@ -1,0 +1,41 @@
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+{% set location = location == "Blank" ? false : location %}
+
+{% if text %}
+  <blockquote class="m-quote{{ variation }}">
+    {% if text %}
+      <div class="m-quote{{ variation }}__body">
+        {{ text }}
+      </div>
+    {% endif %}
+
+    {% if source_name or location or source_type %} 
+      <cite class="m-quote{{ variation }}__source">
+        {% if source_name %}
+          <div class="m-quote{{ variation }}__source-name">
+            {{" – "}}{{ source_name }}{% if location %}{{','}} {{ location }}{% endif %} 
+          </div>
+        {% endif %}
+        
+        {% if source_type %}
+          <div class="m-quote{{ variation }}__source-type">
+            {{ "Come to Work"|t }} {{ source_type }} 
+          </div>
+        {% endif %}
+      </cite>
+    {% endif %}
+  </blockquote>
+{% endif %}
+

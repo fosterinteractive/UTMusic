@@ -1,0 +1,70 @@
+{% embed "@layouts/main/main.twig" %}
+
+  {% block content_single_page %}
+  <div class="l-main--event-confirmation">
+    <div class="l-section-bg l-section--[10|2] l-section-spacing-top--medium l-section-spacing-bottom--medium">
+      <div class="l-section__zone-1">
+
+        <h1 class="a-heading__h1-large">{% trans %}Hi, {{ first_name }}{% endtrans %}</h1>
+
+        {% if (registration_type == 'event' and in_series) or registration_type == 'series' %}
+          {% set event_info %}
+            {% if past_events_in_series == total_events_in_series %}
+              {{ 'All events have passed.'|t }}
+            {% elseif upcoming_events_in_series == total_events_in_series %}
+              {% trans %}{{ upcoming_events_in_series }} are upcoming.{% endtrans %}
+            {% elseif past_events_in_series == 1 and upcoming_events_in_series == 1 %}
+              {% trans %}{{ past_events_in_series }} event has passed, and {{ upcoming_events_in_series }} is upcoming.{% endtrans %}
+            {% elseif past_events_in_series == 1 %}
+              {% trans %}{{ past_events_in_series }} event has passed, and {{ upcoming_events_in_series }} are upcoming.{% endtrans %}
+            {% elseif upcoming_events_in_series == 1 %}
+              {% trans %}{{ past_events_in_series }} events have passed, and {{ upcoming_events_in_series }} is upcoming.{% endtrans %}
+            {% else %}
+              {% trans %}{{ past_events_in_series }} events have passed, and {{ upcoming_events_in_series }} are upcoming.{% endtrans %}
+            {% endif %}
+          {% endset %}
+        {% endif %}
+
+        {% if registration_type == 'event' %}
+          {% if in_series %}
+            <h2 class="a-heading__h1">{% trans %}Thanks for registering for {{ title }} in the {{ series_title }}.{% endtrans %}</h2>
+
+            <p class="a-heading__h5">{% trans %}You registered for event {{ event_position_in_series }} of {{ total_events_in_series }} in the series.{% endtrans %}</p>
+
+            <p>{{ event_info }}</p>
+          {% else %}
+            <h2 class="a-heading__h1">{% trans %}Thanks for registering for {% endtrans %}<u>{{ title }}</u>.</h2>
+          {% endif %}
+
+          <div><p>{% if date %}{{date}}{% endif %}{% if start_time %}&nbsp;@&nbsp;{{start_time}} {{'to'|t}} {{end_time}}{% if timezone %}&nbsp;{{timezone}}{%endif %}{% endif %}{% if location %}&nbsp;|&nbsp;{{location}}{% endif %} | {{ event_type }}</p></div>
+          <br />
+
+          <div><a class="a-button" href="{{ calendar_link }}">{{ 'Save event to my calendar'|t }}</a></div>
+
+        {% elseif registration_type == 'series' %}
+          <h2 class="a-heading__h1">{% trans %}Thanks for registering for all upcoming events in the {{ title }}.{% endtrans %}</h2>
+
+          <p class="a-heading__h5">{% trans %}There are {{ total_events_in_series }} events in this series.{% endtrans %}</p>
+
+          <p>{{ event_info }}</p>
+          <br />
+
+          <div><a class="a-button" href="{{ calendar_link }}" download>{{ 'Save all events to my calendar'|t }}</a></div>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if related_events %}
+      <div class="l-section--[12] theme--black-bg l-section-spacing-top--small l-section-spacing-bottom--small   ">
+        <div class="l-section__zone-1 l-flex">  
+          <div class="l-main--event__overview">
+            <h2 class="a-heading__h2">{{'Events in the Series'|t}}</h2>
+            {{ related_events }}
+          </div> 
+        </div>
+      </div>
+    {% endif %}
+  </div>
+      
+  {% endblock content_single_page %}
+{% endembed %}

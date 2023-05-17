@@ -1,0 +1,18 @@
+uuid: b98e4e31-b368-40ac-81da-3244c7e71ca0
+langcode: en
+status: true
+dependencies:
+  theme:
+    - adminspring
+id: pagetitle
+theme: adminspring
+region: header
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

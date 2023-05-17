@@ -1,0 +1,31 @@
+sb_class: 'sb'
+
+attributes:
+  Attribute():
+    class: []
+items:
+- title: "Events"
+  url: "<nolink>"
+  attributes:
+    Attribute():
+      class: []
+- title: "News"
+  url: "#"
+  attributes:
+    Attribute():
+      class: []
+- title: "Resources"
+  url: "#"
+  attributes:
+    Attribute():
+      class: []
+- title: "Members"
+  url: "#"
+  attributes:
+    Attribute():
+      class: []
+- title: "Contact"
+  url: "#"
+  attributes:
+    Attribute():
+      class: []

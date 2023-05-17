@@ -1,0 +1,29 @@
+uuid: 7a1d8463-62d4-4a3d-b5e9-8a687ca68b59
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card_illustration
+    - media.type.illustration
+    - paragraphs.paragraphs_type.card
+id: paragraph.card.field_card_illustration
+field_name: field_card_illustration
+entity_type: paragraph
+bundle: card
+label: Illustration
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      illustration: illustration
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

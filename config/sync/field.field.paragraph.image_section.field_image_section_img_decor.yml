@@ -1,0 +1,21 @@
+uuid: b0560c85-da67-45e4-9344-5f333f8a2dc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_section_img_decor
+    - paragraphs.paragraphs_type.image_section
+  module:
+    - options
+id: paragraph.image_section.field_image_section_img_decor
+field_name: field_image_section_img_decor
+entity_type: paragraph
+bundle: image_section
+label: 'Image Decoration'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

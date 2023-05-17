@@ -1,0 +1,12 @@
+_core:
+  default_config_hash: k6DfidthCLJivD1c2ilsumJxvy0diUjar993dGm6tTw
+status: 1
+pattern: '[node:field_ed_page_banner:entity:field_ed_hero_banner_title]'
+escape: false
+preserve_titles: false
+save: false
+chunk: 50
+dependencies:
+  config:
+    - node.type.ed_page
+new_entity_action: 1

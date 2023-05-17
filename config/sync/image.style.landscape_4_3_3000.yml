@@ -1,0 +1,33 @@
+uuid: c0b28816-35ae-4e3a-882e-13aea1cfe535
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+    - image_effects
+    - image_style_quality
+_core:
+  default_config_hash: j8c5r3skVcEU3Buox929qFPqUelBVbJaR0gt7k2oBaQ
+name: landscape_4_3_3000
+label: 'Landscape 4:3 - (3000 @ 35%)'
+effects:
+  b17e434c-ffe6-4437-8c4e-86efa0474826:
+    uuid: b17e434c-ffe6-4437-8c4e-86efa0474826
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 3000
+      height: 2250
+      crop_type: focal_point
+  c6460d6e-3df4-4b44-a570-173ff1eef174:
+    uuid: c6460d6e-3df4-4b44-a570-173ff1eef174
+    id: image_effects_interlace
+    weight: 2
+    data:
+      type: Plane
+  13ee7be1-4187-4409-be88-def1026c47b9:
+    uuid: 13ee7be1-4187-4409-be88-def1026c47b9
+    id: image_style_quality
+    weight: 3
+    data:
+      quality: 35

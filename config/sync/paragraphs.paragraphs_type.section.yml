@@ -1,0 +1,22 @@
+uuid: fe359705-f638-4111-834f-a9d8618a9a2f
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+id: section
+label: Section
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  layout_paragraphs:
+    enabled: true
+    available_layouts:
+      full_1_col: '1 Column'
+      full_2_col: '2 Column'
+      full_3_col: '3 Column'
+      full_4_col: '4 Column'
+      full_grid_2col: 'Grid 2 Columns'
+      full_grid_3col: 'Grid 3 Columns'
+      full_grid_4col: 'Grid 4 Columns'

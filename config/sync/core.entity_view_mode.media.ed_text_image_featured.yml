@@ -1,0 +1,12 @@
+uuid: 24646140-a922-4df0-ba05-b287d0b89e57
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: n-gQQwyeARxnqt-N0PJNgfMnkXisH37kymyEBRwjsTM
+id: media.ed_text_image_featured
+label: 'Text & Image Featured'
+targetEntityType: media
+cache: true

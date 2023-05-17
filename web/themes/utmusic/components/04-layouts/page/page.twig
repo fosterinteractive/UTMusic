@@ -1,0 +1,73 @@
+<div class="l-page">
+
+  <div class="l-page__header">
+    {% include "@organisms/site-header/site-header.twig"
+      with {
+        directory: directory,
+        logo_image_url: logo_image_url,
+        logo_image_width: logo_image_width,
+        logo_image_height: logo_image_height,
+        front_page: front_page,
+        site_name: site_name,
+        language_selector: language_selector,
+        lang: lang,
+      } only
+    %}
+  </div>
+
+  <div class="l-page__menu-main-wrapper">
+    <div class="l-page__menu-main">
+      {{ menu_main }}
+    </div>
+  </div>
+
+  <div class="l-page__menu-mega">
+    {{ menu_mega }}
+  </div>
+
+  {# {% if breadcrumbs is not empty %}
+    {{ breadcrumbs }}
+  {% endif %} #}
+
+  {{ messages }}
+
+  {% if tabs is not empty %}
+    <div class="l-page__utilities-tabs">
+      {{ tabs }}
+    </div>
+  {% endif %}
+
+  <main id="main-content" aria-label="Content" class="l-page__main{% if has_banner %} has-banner{% endif %}">
+  {# <main aria-label="Content" class="l-page__main{% if has_banner %} has-banner{% endif %}"> #}
+
+  {# link is in html.html.twig #}
+    {% block page_content %}
+      {{ content }}
+    {% endblock page_content %}
+  </main>
+
+  <div class="l-page__footer">
+    {% include "@organisms/site-footer/site-footer.twig" with {
+        directory: directory,
+        footer_content: site_footer,
+        year: footer_year,
+        footer_menu: footer_menu,
+        footer_shortcuts: footer_shortcuts,
+        site_facebook: site_facebook,
+        site_linkedin: site_linkedin,
+        site_twitter: site_twitter,
+        site_youtube: site_youtube,
+        site_instagram: site_instagram,
+
+        lang: lang,
+
+        front_page: front_page,
+        site_name: site_name,
+      } only
+    %}
+    {# footer_shortcuts: footer_shortcuts, #}
+
+  </div>
+</div>
+
+{{ menu_mobile }}

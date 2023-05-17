@@ -1,0 +1,20 @@
+uuid: 6eaccde0-8391-4899-8077-1e6e0361648e
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_inline_menu_icon
+field_name: field_inline_menu_icon
+entity_type: paragraph
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

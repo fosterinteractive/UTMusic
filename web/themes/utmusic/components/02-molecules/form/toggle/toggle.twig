@@ -1,0 +1,50 @@
+{% if pl_class %}
+  <div class="{{ pl_class }}">
+{% endif %}
+
+<div{{ attributes.addClass(classes).addClass('m-toggle') }}>
+
+  {% if title %}
+    <span class="m-toggle__title" aria-hidden="true">{{ title }}</span>
+  {% endif %}
+
+  {% if description_display == 'before' and description.content %}
+    <div{{ description.attributes.addClass('m-toggle__description--before') }}>
+      {{ description.content }}
+    </div>
+  {% endif %}
+
+  <div class="m-toggle__interface">
+    {% if prefix is not empty %}
+      <span class="m-toggle__prefix">{{ prefix }}</span>
+    {% endif %}
+
+    <div class="m-toggle__button">
+      {{ label }}
+
+      {{ children }}
+
+      <span class="m-toggle__slider"></span>
+    </div>
+
+    {% if suffix is not empty %}
+      <span class="m-toggle__suffix">{{ suffix }}</span>
+    {% endif %}
+  </div>
+  
+  {% if errors %}
+    <div class="m-form-item--error-message">
+      {{ errors }}
+    </div>
+  {% endif %}
+
+  {% if description_display in ['after', 'invisible'] and description.content %}
+    <div{{ description.attributes.addClass('m-toggle__description') }}>
+      {{ description.content }}
+    </div>
+  {% endif %}
+</div>
+
+{% if pl_class %}
+  </div>
+{% endif %}

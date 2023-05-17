@@ -1,0 +1,20 @@
+uuid: 92fdf3d3-70ad-4541-96d1-0a9c8ea62745
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.field_soundcloud_track
+field_name: field_soundcloud_track
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,102 @@
+uuid: 6ec81554-798c-4075-9f57-9065796bdc1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.listing_item
+    - field.field.node.event.field_event_body
+    - field.field.node.event.field_event_category
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_image_crop
+    - field.field.node.event.field_event_link
+    - field.field.node.event.field_event_location
+    - field.field.node.event.field_event_promote
+    - field.field.node.event.field_event_summary
+    - field.field.node.event.field_event_title
+    - field.field.node.event.field_page_admin_help_seo
+    - field.field.node.event.field_page_admin_help_social
+    - field.field.node.event.field_page_meta_description
+    - field.field.node.event.field_page_meta_image
+    - field.field.node.event.field_page_meta_title
+    - node.type.event
+  module:
+    - datetime_range
+    - layout_builder
+    - link
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.event.listing_item
+targetEntityType: node
+bundle: event
+mode: listing_item
+content:
+  field_event_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_event_date:
+    type: daterange_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: html_date
+      separator: '-'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_event_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: ed_card
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_event_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_event_summary:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_event_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_event_body: true
+  field_event_image_crop: true
+  field_event_location: true
+  field_event_promote: true
+  field_page_admin_help_seo: true
+  field_page_admin_help_social: true
+  field_page_meta_description: true
+  field_page_meta_image: true
+  field_page_meta_title: true
+  links: true
+  search_api_excerpt: true

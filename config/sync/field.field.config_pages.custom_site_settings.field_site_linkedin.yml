@@ -1,0 +1,23 @@
+uuid: 6fd1147d-aeba-4ec7-94e5-df7e18234cc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.custom_site_settings
+    - field.storage.config_pages.field_site_linkedin
+  module:
+    - link
+id: config_pages.custom_site_settings.field_site_linkedin
+field_name: field_site_linkedin
+entity_type: config_pages
+bundle: custom_site_settings
+label: Linkedin
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

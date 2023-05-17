@@ -1,0 +1,22 @@
+uuid: 45902cca-f9ee-42e0-932a-4d81c7efbfa2
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - adminspring
+_core:
+  default_config_hash: vh3qF7XZjClZ40FntXtZXkRIiWbOUkp6tEZhmtEhA5Q
+id: mainpagecontent
+theme: adminspring
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,12 @@
+uuid: 508d6672-f651-45d4-ae54-3ff2badc1a70
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: yYOkjg1KiKgFRDUzRpUBVerjunR6Q5pHCJv8tuAIyrU
+id: media.ed_card
+label: Card
+targetEntityType: media
+cache: true

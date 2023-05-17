@@ -1,0 +1,31 @@
+uuid: 4856ccfd-893d-4f7f-9894-35e04ff1ef43
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.portrait_1_2_1200
+    - image.style.portrait_1_2_1500
+    - image.style.portrait_1_2_1800
+    - image.style.portrait_1_2_200
+    - image.style.portrait_1_2_400
+    - image.style.portrait_1_2_600
+    - image.style.portrait_1_2_900
+id: text_image_portrait_1_2
+label: 'Text & Image Portrait 1:2'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width:1280px) 280px, (min-width:600px) 20vw, calc(100vw - 40px)'
+      sizes_image_styles:
+        - portrait_1_2_1200
+        - portrait_1_2_1500
+        - portrait_1_2_1800
+        - portrait_1_2_200
+        - portrait_1_2_400
+        - portrait_1_2_600
+        - portrait_1_2_900
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: portrait_1_2_600

@@ -1,0 +1,96 @@
+uuid: fe161041-f659-4096-8d27-71aa364d1f6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.news.field_news_body
+    - field.field.node.news.field_news_category
+    - field.field.node.news.field_news_date
+    - field.field.node.news.field_news_image
+    - field.field.node.news.field_news_image_landscape
+    - field.field.node.news.field_news_promote
+    - field.field.node.news.field_news_summary
+    - field.field.node.news.field_news_title
+    - field.field.node.news.field_page_admin_help_seo
+    - field.field.node.news.field_page_admin_help_social
+    - field.field.node.news.field_page_meta_description
+    - field.field.node.news.field_page_meta_image
+    - field.field.node.news.field_page_meta_title
+    - node.type.news
+  module:
+    - datetime
+    - layout_builder
+    - layout_paragraphs
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.news.full
+targetEntityType: node
+bundle: news
+mode: full
+content:
+  field_news_body:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_news_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_news_date:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: America/Toronto
+      date_format: 'F j, Y'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_news_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: ed_embedded_full_width
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_news_image_landscape:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: test_
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_news_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_news_promote: true
+  field_news_summary: true
+  field_page_admin_help_seo: true
+  field_page_admin_help_social: true
+  field_page_meta_description: true
+  field_page_meta_image: true
+  field_page_meta_title: true
+  links: true
+  search_api_excerpt: true

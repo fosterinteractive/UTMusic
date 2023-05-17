@@ -1,0 +1,43 @@
+uuid: 8c0820e8-233b-4daf-b24c-8aa0b0d493f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.scale_width_1000
+    - image.style.scale_width_1250
+    - image.style.scale_width_1500
+    - image.style.scale_width_1750
+    - image.style.scale_width_200
+    - image.style.scale_width_2000
+    - image.style.scale_width_2500
+    - image.style.scale_width_3000
+    - image.style.scale_width_400
+    - image.style.scale_width_500
+    - image.style.scale_width_600
+    - image.style.scale_width_800
+_core:
+  default_config_hash: ztjQ8WxPzLuDqqF6Z8R9fq_ipRkP3wt_-nIb2m5Ml7k
+id: ed_full_width
+label: 'Full Width (100% width of Content Column)'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - scale_width_1000
+        - scale_width_1250
+        - scale_width_1500
+        - scale_width_1750
+        - scale_width_200
+        - scale_width_2000
+        - scale_width_2500
+        - scale_width_3000
+        - scale_width_400
+        - scale_width_500
+        - scale_width_600
+        - scale_width_800
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: scale_width_1000

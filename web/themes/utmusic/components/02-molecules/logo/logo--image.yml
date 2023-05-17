@@ -1,0 +1,11 @@
+url: 'http://example.com'
+variation: image
+logo_aria_label:
+logo_alt: 'Home Page'
+width: 500
+height: 100
+logo_image_src: 'https://placeimg.com/1200/200/tech'
+logo_icon: 
+logo_icon_size: 
+logo_icon_color:
+logo_icon_a11y_label:

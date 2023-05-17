@@ -1,0 +1,10 @@
+uuid: c1290743-a437-4a18-9c2a-ce7fc28530a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.content_header
+label: 'Content Header'
+targetEntityType: media
+cache: true

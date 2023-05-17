@@ -1,0 +1,26 @@
+uuid: 0309f19a-ba19-422e-a05f-7902e4568786
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_header_title
+    - paragraphs.paragraphs_type.header
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - rich_text
+id: paragraph.header.field_header_title
+field_name: field_header_title
+entity_type: paragraph
+bundle: header
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

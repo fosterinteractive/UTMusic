@@ -1,0 +1,23 @@
+uuid: abf68082-04d5-44f5-9619-339ed5835783
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_poster_link_url
+    - paragraphs.paragraphs_type.poster
+  module:
+    - link
+id: paragraph.poster.field_poster_link_url
+field_name: field_poster_link_url
+entity_type: paragraph
+bundle: poster
+label: 'Link URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

@@ -1,0 +1,24 @@
+uuid: d9d34d64-069b-4f54-b5a4-ff0eade60a4e
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+    - image_style_quality
+name: content_header_2560_1340_75
+label: 'Content Header (2560/1340 @75%)'
+effects:
+  00fa1a94-eb79-4522-bf49-9ec70028d423:
+    uuid: 00fa1a94-eb79-4522-bf49-9ec70028d423
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 2560
+      height: 1340
+      crop_type: focal_point
+  33cda1f6-dd0e-452b-9235-50c25b256273:
+    uuid: 33cda1f6-dd0e-452b-9235-50c25b256273
+    id: image_style_quality
+    weight: 2
+    data:
+      quality: 75

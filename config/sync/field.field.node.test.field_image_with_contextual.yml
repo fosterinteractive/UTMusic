@@ -1,0 +1,31 @@
+uuid: 5fd96b41-159d-41c8-9de5-54ea8f9dfc3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_with_contextual
+    - media.type.ed_image
+    - node.type.test
+  module:
+    - media_library_media_modify
+id: node.test.field_image_with_contextual
+field_name: field_image_with_contextual
+entity_type: node
+bundle: test
+label: 'Image with contextual'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      ed_image: ed_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_entity_modify

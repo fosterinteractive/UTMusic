@@ -1,0 +1,10 @@
+attributes:
+  Attribute():
+    class: ['m-textarea']
+    placeholder: Placeholder for textfield jyjy
+    id: textarea_input
+    value: ""
+    rows: 10
+    required: required
+    aria-required: true
+pl_class: pl__wrapper--med-no-padding

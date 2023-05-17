@@ -1,0 +1,583 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Pattern Lab theme.
+ */
+
+use Drupal\block\Entity\Block;
+use Drupal\config_pages\Entity\ConfigPages;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\file\Entity\File;
+use Drupal\node\NodeInterface;
+use Drupal\views\Views;
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\date_all_day\Utility\DateRangeAllDayHelper;
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
+use \Drupal\node\Entity\Node;
+
+/**
+ * Implements template_preprocess().
+ */
+function utmusic_preprocess(&$variables, $hook) {
+  // Add base_path variable to all template files.
+  $variables['base_path'] = base_path();
+
+  // Custom site configuration.
+  $custom_site_settings = ConfigPages::config('custom_site_settings');
+
+  // Add cache clear if the custom site config page is updated.
+  if (!empty($custom_site_settings)) {
+    $variables['#cache']['tags'][] = 'config_pages:' . $custom_site_settings->id();
+  }
+
+  $current_language = \Drupal::languageManager()
+  ->getCurrentLanguage()
+  ->getId();
+
+  $variables['current_language'] = $current_language;
+}
+
+/**
+ * Implements template_preprocess_page().
+ */
+function utmusic_preprocess_html(&$variables) {
+  // Load the site name out of configuration.
+  $config = \Drupal::config('system.site');
+  // Custom site configuration.
+  $custom_site_settings = ConfigPages::config('custom_site_settings');
+
+  // Site Custom Script.
+  $variables['site_custom_script'] = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_custom_scripts') && !$custom_site_settings->get('field_site_custom_scripts')->isEmpty() ? $custom_site_settings->get('field_site_custom_scripts')->first()->getValue()['value'] : NULL;
+}
+
+/**
+ * Implements template_preprocess_page().
+ */
+function utmusic_preprocess_page(&$variables) {
+
+  // Load the site name out of configuration.
+  $config = \Drupal::config('system.site');
+  $variables['site_name'] = $config->get('name');
+
+  // Custom site configuration.
+  $custom_site_settings = ConfigPages::config('custom_site_settings');
+
+  $variables['site_logo_image_url'] = NULL;
+  $variables['site_logo_image_width'] = NULL;
+  $variables['site_logo_image_height'] = NULL;
+  if (!empty($custom_site_settings) && $custom_site_settings->hasField('field_site_logo') && !$custom_site_settings->get('field_site_logo')->isEmpty()) {
+    $image_values = $custom_site_settings->get('field_site_logo')->first()->getValue();
+    $fid = $image_values['target_id'];
+    $file = File::load($fid);
+    $variables['site_logo_image_url'] = $file->createFileUrl();
+    $variables['site_logo_image_width'] = $image_values['width'];
+    $variables['site_logo_image_height'] = $image_values['height'];
+  }
+
+  // Custom site slogan.
+  $variables['site_slogan'] = NULL;
+  $site_slogan = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_slogan') && !$custom_site_settings->get('field_site_slogan')->isEmpty() ? $custom_site_settings->get('field_site_slogan')->first()->getValue() : NULL;
+  if ($site_slogan) {
+    $variables['site_slogan'] = [
+      '#type' => 'processed_text',
+      '#text' => $site_slogan['value'],
+      '#format' => $site_slogan['format'],
+    ];
+  }
+
+  // Custom site footer text.
+  $variables['site_footer'] = NULL;
+  $site_footer = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_footer') && !$custom_site_settings->get('field_site_footer')->isEmpty() ? $custom_site_settings->get('field_site_footer')->first()->getValue() : NULL;
+  if ($site_footer) {
+    $variables['site_footer'] = [
+      '#type' => 'processed_text',
+      '#text' => $site_footer['value'],
+      '#format' => $site_footer['format'],
+    ];
+  }
+
+  // Site Facebook URL.
+  $variables['site_facebook'] = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_facebook') && !$custom_site_settings->get('field_site_facebook')->isEmpty() ? $custom_site_settings->get('field_site_facebook')->getString() : NULL;
+  // Site Linkedin URL.
+  $variables['site_linkedin'] = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_linkedin') && !$custom_site_settings->get('field_site_linkedin')->isEmpty() ? $custom_site_settings->get('field_site_linkedin')->getString() : NULL;
+  // Site Twitter URL.
+  $variables['site_twitter'] = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_twitter') && !$custom_site_settings->get('field_site_twitter')->isEmpty() ? $custom_site_settings->get('field_site_twitter')->getString() : NULL;
+  // Site Youtube URL.
+  $variables['site_youtube'] = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_youtube') && !$custom_site_settings->get('field_site_youtube')->isEmpty() ? $custom_site_settings->get('field_site_youtube')->getString() : NULL;
+  // Site Instagram URL.
+  $variables['site_instagram'] = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_instagram') && !$custom_site_settings->get('field_site_instagram')->isEmpty() ? $custom_site_settings->get('field_site_instagram')->getString() : NULL;
+}
+
+/**
+ * Implements template_preprocess_image().
+ */
+function utmusic_preprocess_image(&$variables) {
+  // Checks for data-load attr.
+  if (isset($variables['attributes']['data-load'])) {
+    // Check if the lazyload should be done with tiny-slider.
+    if ($variables['attributes']['data-load'] == 'tiny_slider') {
+      // Attaches tiny_slider "tinyslider.js" library.
+      $variables['#attached']['library'][] = 'utmusic/tiny_slider';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function utmusic_preprocess_paragraph(array &$variables) {
+  $paragraph = $variables['paragraph'];
+  $paragraph_type = $paragraph->getType();
+  $paragraph_view_mode = $variables['view_mode'];
+
+  // Dynamic block paragraphs.
+  $dynamic_block_paragraphs = [
+    'news_summary_list_dynamic' => ['type' => 'news'],
+    'events_summary_list_dynamic' => ['type' => 'event'],
+    'ed_twitter_stream' => ['type' => 'twitter_stream']
+  ];
+
+  if (isset($dynamic_block_paragraphs[$paragraph_type])) {
+    $type = $dynamic_block_paragraphs[$paragraph_type]['type'];
+    // Map the fields for the paragraphs.
+    $field_mapping = [
+      'news' => [
+        'title' => 'field_news_title',
+        'contextual' => 'field_news_category',
+        'number_items' => 'field_news_number_of_items',
+        'number_other_items' => 'field_news_other_number_of_items',
+        'promote' => NULL,
+        'offset' => NULL,
+      ],
+      'event' => [
+        'title' => 'field_events_title',
+        'contextual' => 'field_events_category',
+        'number_items' => 'field_events_number_of_items',
+        'number_other_items' => 'field_events_other_number_items',
+        'promote' => 'field_events_promote',
+        'offset' => 'field_events_offset',
+      ],
+      'twitter_stream' => [
+        'title' => NULL,
+        'contextual' => NULL,
+        'number_items' => 'field_ed_twitter_stream_num_item',
+        'number_other_items' => 'field_ed__twitter_stream_other',
+        'promote' => NULL,
+        'follow_url' => NULL,
+        'offset' => NULL,
+      ]
+    ];
+
+    // Set the dynamic title for the view.
+    $dynamic_title = $paragraph->hasField($field_mapping[$type]['title']) && !$paragraph->{$field_mapping[$type]['title']}->isEmpty() ? $paragraph->{$field_mapping[$type]['title']}->value : '';
+
+    //Set the offset.
+    $offset = $paragraph->hasField($field_mapping[$type]['offset']) && !$paragraph->{$field_mapping[$type]['offset']}->isEmpty() ? $paragraph->{$field_mapping[$type]['offset']}->value : NULL;
+
+    // Set the contextual filters.
+    $category_tags = $paragraph->hasField($field_mapping[$type]['contextual']) && !$paragraph->{$field_mapping[$type]['contextual']}->isEmpty() ? $paragraph->{$field_mapping[$type]['contextual']}->getValue() : NULL;
+
+    // Set the number of items.
+    $number_items_value = $paragraph->hasField($field_mapping[$type]['number_items']) && !$paragraph->{$field_mapping[$type]['number_items']}->isEmpty() ? $paragraph->{$field_mapping[$type]['number_items']}->value : NULL;
+    $other_number_items_value = $paragraph->hasField($field_mapping[$type]['number_other_items']) && !$paragraph->{$field_mapping[$type]['number_other_items']}->isEmpty() ? $paragraph->{$field_mapping[$type]['number_other_items']}->value : NULL;
+
+    // Set the promote
+    $promote = !empty($field_mapping[$type]['promote']) && $paragraph->hasField($field_mapping[$type]['promote']) && !$paragraph->{$field_mapping[$type]['promote']}->isEmpty() ? $paragraph->{$field_mapping[$type]['promote']}->target_id : NULL;
+
+    // Check if contextual filters has atleast 1 filter picked.
+    $categories = NULL;
+    $category_ids = '';
+    if ($category_tags) {
+      // Generate a contextual filter string to use in views.
+      foreach ($category_tags as $tag) {
+        $id = $tag['target_id'];
+        $category_ids .= $id . '+';
+      }
+      // Remove the last + from the string.
+      $categories = substr($category_ids, 0, -1);
+    }
+
+    // Determine the number of news items to display.
+    $number_items = 0;
+    if ($number_items_value && $number_items_value == 'other') {
+      $number_items = $other_number_items_value;
+    }
+    elseif ($number_items_value) {
+      $number_items = $number_items_value;
+    }
+
+    if (in_array($paragraph_view_mode, ['preview', 'full', 'default'])) {
+      // Creates render variables to use in template.
+      if ($paragraph_type == 'news_summary_list_dynamic') {
+        $variables['content']['news_summary_list'] = utmusic_return_rendered_view('news_full_list', 'news_summary_list', $number_items, $categories, NULL, $dynamic_title, NULL);
+      }
+      elseif ($paragraph_type == 'events_summary_list_dynamic') {
+        $variables['content']['events_summary_list_past'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_upcoming', $number_items, $categories, $promote, $dynamic_title, $offset);
+        $variables['content']['events_summary_list_upcoming'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_upcoming', $number_items, $categories, $promote, $dynamic_title, $offset);
+      }
+    }
+  }
+
+
+  if ($paragraph_type == "logos_group" ) {
+
+    $label_expand = $variables['content']['field_logo_group_button_label'][0]['#text'];
+    $label_collapse = $variables['content']['field_logo_group_btn_label_coll'][0]['#text'];
+
+    $aria_label_expand = $variables['content']['field_logo_group_btn_aria_label'][0]['#text'] ?? FALSE;
+    $aria_label_collapse = $variables['content']['field_logo_grp_btn_aria_collap'][0]['#text'] ?? FALSE;
+
+    $variables['#attached']['drupalSettings']['logogroup']['readmore'] = [
+      'label_expand' => $label_expand,
+      'label_collapse' => $label_collapse,
+      'aria_label_expand' => $aria_label_expand,
+      'aria_label_collapse' => $aria_label_collapse
+    ];
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function utmusic_preprocess_node(array &$variables) {
+  // Get Node.
+  $node = $variables['node'];    
+  // Get Node Type.
+  $node_type = $node->getType();
+  // Get Node View.
+  $node_view_mode = $variables['view_mode'];
+  // Get Node ID.
+  $node_id = $node->id();
+
+  // If event CT.
+  if ($node_type == 'event') {
+    // Check if date field exists.
+    // Get Node 
+    $node = $variables['node'];     
+    
+    $node_route = \Drupal::routeMatch()->getParameter('node');
+    if ($node_route instanceof \Drupal\node\NodeInterface) {
+      // You can get nid and anything else you need from the node object.
+      $variables['current_id'] = $node_route->id();
+    }
+
+    $lang_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $list_node = Node::load(17)->getTranslation($lang_code)->toArray();
+
+    $variables['lang_code'] = $lang_code;
+    $variables['event_list_path'] = $list_node['path'][0]['alias'];
+
+    // check if date field exists
+    if (!empty($variables['elements']['field_event_date'])) { 
+      $formatter = \Drupal::service('date.formatter');
+      $date_now = new DateTime();
+
+      $event_date_values = $variables['elements']['field_event_date']['#object']->get('field_event_date')->getValue()[0];
+      $date_start = $event_date_values['value'];
+      $date_end = $event_date_values['end_value'];
+
+      // Check if there is an end date
+      if ($date_end == NULL) {
+        // If there is not end date - make end date equal to start date
+        $date_end = $date_start;
+      }
+
+      $end_date_object = new DateTime($date_end);
+      $variables['is_past_event'] = 0;
+      if ($end_date_object < $date_now) {
+        $variables['is_past_event'] = 1;
+      }
+      
+      // If the start and end date are equal
+      if ($date_start == $date_end) {
+        // set end_time null (won't show)
+        $variables['end_time'] = NULL;
+      } else {
+        // Set end_time
+        $end_time = strtotime($date_end.' UTC');
+        $variables['end_time'] = $formatter->format($end_time, 'custom', 'g:ia');
+      }
+      
+      // Determine if the event is all day or not.
+      $variables['all_day'] = FALSE;
+      if (empty($node->field_event_date->end_value)) {
+        $variables['all_day'] = TRUE;
+        // set start_time null (won't show)
+        $variables['start_time'] = NULL;
+      }
+      elseif (!empty($node->field_event_date->value) && !empty($node->field_event_date->end_value)) {
+        // Set start_time
+        $start_time = strtotime($date_start.' UTC');
+        $variables['start_time'] = $formatter->format($start_time, 'custom', 'g:ia');
+
+        $item = [
+          'value' => new DrupalDateTime($node->field_event_date->value, DateTimeItemInterface::STORAGE_TIMEZONE),
+          'end_value' => new DrupalDateTime($node->field_event_date->end_value, DateTimeItemInterface::STORAGE_TIMEZONE)
+        ];
+        $variables['all_day'] = DateRangeAllDayHelper::isAllDay($item);
+      }
+    }
+
+    if (in_array($node_view_mode, ['full', 'event_confirmation'])) {
+      // If this event is part of a series we need to determine it's number in
+      // the series which should be determined chronological.
+      $variables['total_events_in_series'] = NULL;
+      $variables['event_position_in_series'] = NULL;
+      if (!$node->field_event_series->isEmpty()) {
+        $langcode = $node->language()->getId();
+        $series_id = $node->field_event_series->target_id;
+        $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+        // Get all events in this series.
+        $nids = $node_storage->getQuery()
+          ->condition('type', 'event')
+          ->condition('status', 1)
+          ->condition('field_event_series', $series_id)
+          ->condition('langcode', $langcode, '=')
+          ->sort('field_event_date.value', 'ASC')
+          ->sort('nid', 'ASC')
+          ->execute();
+        // Get the count of all the events.
+        $variables['total_events_in_series'] = count($nids);
+        // Loop through the event ids to find what position this current event is
+        // in the list of series.
+        $position = 0;
+        $i = 1;
+        foreach ($nids as $id) {
+          if ($node_id == $id) {
+            $position = $i;
+            break;
+          }
+          $i++;
+        }
+        // Add the postion as a varaiable.
+        $variables['event_position_in_series'] = $position;
+      }
+    }
+  }
+  // Event series.
+  if ($node_type == 'event_series') {
+
+    if ($node_view_mode == 'event_confirmation') {
+      $langcode = $node->language()->getId();
+      $node_storage = \Drupal::entityTypeManager()->getStorage('node');
+      // Get all events in this series.
+      $nids = $node_storage->getQuery()
+        ->condition('type', 'event')
+        ->condition('status', 1)
+        ->condition('field_event_series', $node_id)
+        ->condition('langcode', $langcode, '=')
+        ->sort('field_event_date.value', 'ASC')
+        ->sort('nid', 'ASC')
+        ->execute();
+      // Get the count of all the events.
+      $variables['total_events_in_series'] = count($nids);
+    }
+  }
+
+  // Event confirmation used on event and event series.
+  if ($node_view_mode == 'event_confirmation') {
+    $first_name = \Drupal::request()->query->get('first_name');
+    $variables['first_name'] = $first_name;
+    $variables['upcoming_events_in_series'] = 0;
+    // Need to get the current date in drupals storage format so we can filter
+    // events that have expired.
+    $date = new DrupalDateTime('now');
+    $date->setTimezone(new \DateTimezone(DateTimeItemInterface::STORAGE_TIMEZONE));
+    $formatted = $date->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT);
+    // Query event nodes which are in this series which have not yet expired
+    // sorted chronologically.
+    $series_id = NULL;
+    if ($node_type == 'event_series') {
+      $series_id = $node_id;
+    }
+    else {
+      if (!$node->field_event_series->isEmpty()) {
+        $series_id = $node->field_event_series->target_id;
+      }
+    }
+
+    if ($series_id) {
+      $langcode = $node->language()->getId();
+      $nids = $node_storage->getQuery()
+        ->condition('type', 'event')
+        ->condition('status', 1)
+        ->condition('field_event_series', $series_id)
+        ->condition('field_sales_force_id', NULL, 'IS NOT NULL')
+        ->condition('field_event_date.value', $formatted, '>=')
+        ->condition('langcode', $langcode, '=')
+        ->sort('field_event_date.value', 'ASC')
+        ->execute();
+
+      $variables['upcoming_events_in_series'] = empty($nids) ? 0 : count($nids);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_views().
+ */
+function utmusic_preprocess_views_view_unformatted(array &$variables) {
+  $view = $variables['view'];
+  $view_id = $view->id();
+
+  $dynamic_blocks = [
+    'news_summary_list' => 'field_news_listing_link',
+    'ed_dynamic_events_upcoming' => 'field_events_listing_link',
+    'ed_dynamic_events_past' => 'field_events_past_listing_link',
+  ];
+  // Generate the dynamic blocks See All buttons at the bottom of the list.
+  // We are using config pages custom config to allow the links to be
+  // customizable by the end user instead of hardcoding their values.
+  if (isset($dynamic_blocks[$view_id])) {
+    // Custom site configuration.
+    $custom_site_settings = ConfigPages::config('custom_site_settings');
+    $field = $dynamic_blocks[$view_id];
+
+    $variables['view_all_link_title'] = NULL;
+    $variables['view_all_link_url'] = NULL;
+    $link = !empty($custom_site_settings) && !$custom_site_settings->get($field)->isEmpty() ? $custom_site_settings->get($field)->first() : NULL;
+
+    // If there is a link set in the custom site settings get the title and the
+    // URL.
+    if (!empty($link)) {
+      $values = $link->getValue();
+
+      $variables['view_all_link_title'] = !empty($values['title']) ? $values['title'] : NULL;
+
+      $url = $link->getUrl();
+      // If there is a category set for the argument then use that to pass to
+      // the full listing page.
+      if (
+        !$url->isExternal() &&
+        $url->isRouted() &&
+        !empty($view->args[0]) &&
+        $view->args[0] != 'all'
+      ) {
+        $categories = explode('+', $view->args[0]);
+        // Only append the category if it's one item otherwise show all.
+        if (count($categories) == 1) {
+          $url->setRouteParameter('category', $view->args[0]);
+        }
+      }
+      $variables['view_all_link_url'] = $url->toString();
+    }
+  }
+}
+
+/**
+ * Renders a view.
+ *
+ * used to render a view allowing us to pass contextual arguments to the view.
+ */
+function utmusic_return_rendered_view($view, $display, $items, $categories, $promote, $title, $offset) {
+  // Get View, set number of items to display and filters.
+  $filtered_view = Views::getView($view);
+  $filtered_view->setDisplay($display);
+  $filtered_view->setItemsPerPage($items);
+  $filtered_view->setArguments([$categories, $promote, $title]);
+  $filtered_view->setOffset($offset);
+  
+  // Render filtered view.
+  $render_view = $filtered_view->render();
+
+  return $render_view;
+}
+
+
+/**
+ * Returns the current node.
+ *
+ * Supports the standard node page, node previews and revisions. Use this
+ * function instead of the node available in preprocess_page or preprocess_node
+ * as this will return return the correct node when viewing a node, revision or
+ * preview.
+ *
+ * @return \Drupal\node\NodeInterface
+ *   The node.
+ */
+function utmusic_get_node_from_route() {
+  $node = NULL;
+
+  if (\Drupal::routeMatch()->getParameter('node_revision')) {
+    return \Drupal::routeMatch()->getParameter('node_revision');
+  }
+
+  if (\Drupal::routeMatch()->getParameter('node')) {
+    return \Drupal::routeMatch()->getParameter('node');
+  }
+
+  if (\Drupal::routeMatch()->getParameter('node_preview')) {
+    return \Drupal::routeMatch()->getParameter('node_preview');
+  }
+
+  return $node;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function utmusic_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+  $suggestions = menu_block_theme_suggestions_menu($variables);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Exposed Views Filters Form.
+ */
+function utmusic_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // View 'jobs_full_list' - aply 'select2_all' module 
+  $form['job_title']['#placeholder'] = t('Search jobs...');
+  $form['job_title']['#attributes']['class'][] = 'm-input m-input--search';
+
+  $form['job_location']['#options']['All'] = t('All');
+  // $form['job_location']['#select2'] = ['allowClear' => FALSE];
+  $form['job_location']['#attributes']['class'][] = 'm-input';
+
+  $form['job_company']['#options']['All'] = t('All');
+  // $form['job_company']['#select2'] = ['allowClear' => FALSE];
+  $form['job_company']['#attributes']['class'][] = 'm-input';
+
+  // View 'events_full_list' - aply 'select2_all' module 
+  $form['event_type']['#options']['All'] = t('All');
+  // $form['event_type']['#select2'] = ['allowClear' => FALSE];
+  $form['event_type']['#attributes']['class'][] = 'm-input';
+
+  $form['location']['#options']['All'] = t('All');
+  // $form['location']['#select2'] = ['allowClear' => FALSE];
+  $form['location']['#attributes']['class'][] = 'm-input';
+
+  // View 'news_full_list' - aply 'select2_all' module 
+  $form['news_category']['#options']['All'] = t('All');
+  // $form['news_category']['#select2'] = ['allowClear' => FALSE];
+  $form['news_category']['#attributes']['class'][] = 'm-input';
+
+  if (
+    ($form['#id'] == 'views-exposed-form-events-full-list-block-full-list') 
+    || ($form['#id'] == 'views-exposed-form-jobs-full-list-block-full-list')
+    || ($form['#id'] == 'views-exposed-form-stories-full-list-default')
+    ) {
+    // Change buttons appearance
+    $form['actions']['submit']['#attributes']['class'][] = 'a-button';
+    $form['actions']['reset']['#attributes']['class'][] = 'a-button--secondary';
+
+    if (isset($form['field_event_date_end_value_1'])) {
+      $form['field_event_date_end_value_1']['#type'] = 'select';
+      $form['field_event_date_end_value_1']['#size'] = NULL;
+      $form['field_event_date_end_value_1']['#default_value'] = t('+30 days');
+      $form['field_event_date_end_value_1']['#options'] = [
+        '+30 days' => t('Events within 30 days'),
+        '+2 years' => t('Upcoming Events')
+      ];
+
+      // $form['field_event_date_end_value_1']['#select2'] = ['allowClear' => FALSE];
+      $form['field_event_date_end_value_1']['#attributes']['class'][] = 'm-input';
+    }
+  }
+}
+
+function utmusic_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'form__' . str_replace('-','_', $variables['element']['#id']);
+  $suggestions[] = 'form__' . str_replace('-','_', 'views-exposed-form');
+}

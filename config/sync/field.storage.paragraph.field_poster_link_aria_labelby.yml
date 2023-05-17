@@ -1,0 +1,20 @@
+uuid: cb2ab7a8-5023-4bef-9c1c-87e6bd1f27fd
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_poster_link_aria_labelby
+field_name: field_poster_link_aria_labelby
+entity_type: paragraph
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

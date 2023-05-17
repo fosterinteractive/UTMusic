@@ -1,0 +1,16 @@
+.l-section-vertical-alignment--center {
+  align-items: center;
+  align-content: center;
+
+  .layout-paragraphs-layout-region {
+    align-items: center;
+  }
+}
+
+.l-section-vertical-alignment--top {
+  align-content: flex-start;
+}
+
+.l-section-vertical-alignment--stretch {
+  align-content: stretch;
+}

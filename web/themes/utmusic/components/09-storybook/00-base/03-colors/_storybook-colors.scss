@@ -1,0 +1,110 @@
+//
+.storybook-colors__palette {
+  border-bottom: 1px solid #ddd;
+}
+
+.storybook-colors__palette-title {
+  padding: 0.5rem;
+  text-align: center;
+  text-align: left;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.storybook-colors__swatches {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+%storybook-colors__swatch,
+.storybook-colors__swatch {
+  flex-basis: 200px;
+  margin: 0 0.5rem 0.5rem;
+  border: 1px dashed #ddd;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.storybook-colors__swatch--base {
+  @extend %storybook-colors__swatch;
+
+  border: 1px solid #aaa;
+}
+
+.storybook-colors__info {
+  font-size: 80%;
+}
+
+.storybook-colors__color {
+  display: block;
+  margin-bottom: 0.3em;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  height: 4em;
+}
+
+.sg-label {
+  line-height: 1;
+  font-size: 90%;
+}
+
+// @use 'colors-used' as *;
+
+// // These styles only affect the colors "Usage" page in the component library
+// .cl-colors {
+//   padding: 1rem;
+// }
+
+// .cl-colors__list {
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin: 0 0 2rem;
+//   padding: 0;
+// }
+
+// .cl-colors__item {
+//   display: flex;
+//   justify-content: center;
+//   align-items: flex-end;
+//   flex: 1 1 20%;
+//   padding: 1rem 2rem;
+//   min-width: 150px;
+//   min-height: 150px;
+//   list-style: none;
+//   transition: all 0.4s;
+// }
+
+// Dynamically set swatch text color based on the lightness of the background color
+// @function set-color(
+//   $color,
+//   $text-primary: accent-high,
+//   $text-secondary: muted
+// ) {
+//   @if  lightness($color) > 50 {
+//     @return clr($text-primary);
+//   } @else {
+//     @return clr($text-secondary);
+//   }
+// }
+
+// Style default color swatches
+// @each $name, $color in $defaultColors {
+//   .cl-colors__item--default {
+//     &-#{$name} {
+//       background-color: clr($name);
+//       color: set-color($color);
+//     }
+//   }
+// }
+
+// Style dark color swatches
+// @each $name, $color in $darkColors {
+//   .cl-colors__item--dark {
+//     &-#{$name} {
+//       background-color: clr($name);
+//       color: set-color($color, muted, accent-high);
+//     }
+//   }
+// }

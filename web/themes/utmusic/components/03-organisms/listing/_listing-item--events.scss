@@ -1,0 +1,313 @@
+.m-listing-item--events {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid palette(grey, 500);
+  border-radius: 5px;
+  overflow: hidden;
+
+  &.isdefault {
+    background-color: palette(white);
+  }
+
+  &.ispast {
+    background-color: palette(grey,900);
+  }
+
+  &.iscurrent {
+    background-color: palette(yellow,900);
+  }
+
+  @include breakpoint($bp-tablet) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
+.m-listing-item--events__img {
+  margin-bottom: ru(1);
+
+  @include breakpoint($bp-tablet) {
+    margin-bottom: 0;
+    width: 50%;
+  }
+
+  picture {
+    height: 100%;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.m-listing-item--events__icon {
+  display: flex;
+  background-color: palette(yellow, 900);
+  width: 100%;
+  height: 100%;
+  padding: ru(1.49) ru(2.5);
+
+  svg {
+    margin: auto;
+    fill: palette(black);
+  }
+}
+
+.m-listing-item--events__content {
+  padding: ru(1) ru(2);
+
+  @include breakpoint($bp-tablet) {
+    width: 75%;
+  }
+}
+
+.m-listing-item--events__status {
+  font-weight: bold;
+}
+
+.m-listing-item--events__title {
+  h2 {
+    margin: 0;
+    color: palette(black);
+  }
+}
+
+.m-listing-item--events__info {
+  margin-top: ru(0.25);
+}
+
+.m-listing-item--events__desc {
+  @extend %a-type--xlarge;
+  @extend %u-remove-child--margin-top-bottom;
+
+  margin-top: ru(1);
+  margin-bottom: ru(0.5);
+}
+
+.m-listing-item--events__button {
+  // @extend %a-button;
+
+  margin-top: ru(1);
+
+  .a-link {
+    text-decoration-color: palette(blue,400);
+    color: palette(blue);
+    
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: palette(grey, 500);
+      text-decoration-color: palette(blue,400);
+      color: palette(blue,400);
+    }
+  }
+}
+
+
+// .m-listing-item--events {
+//   @extend %m-listing-item;
+//   // @extend %u-clearfix;
+
+//   @include breakpoint($bp-tablet) {
+//     display: flex;
+//   }
+// }
+
+// .m-listing-item--events__wrapper {
+//   @extend %m-listing-item__content;
+
+//   @include breakpoint($bp-full-nav) {
+//     display: flex;
+//   }
+// }
+
+// .m-listing-item--events__img {
+//   @extend %m-listing-item__img;
+// }
+
+// .m-listing-item--events__date {
+//   flex-shrink: 0;
+//   margin-right: ru(1);
+//   width: ru(3.25);
+
+//   &.has-img {
+//     margin-bottom: rem(10px);
+//   }
+// }
+
+// .m-listing-item--events__title {
+//   @extend %m-listing-item__title;
+// }
+
+// .m-listing-item--events__content {
+//   width: 100%;
+
+//   @include breakpoint($bp-tablet) {
+//     display: flex;
+//     flex-direction: column;
+//   }
+// }
+
+// .m-listing-item--events__tags {
+//   margin-bottom: ru(0.5);
+// }
+
+// .m-listing-item--events__text {
+//   @extend %m-listing-item__text;
+// }
+
+// /**
+//  * Condensed Variation
+//  */
+// .m-listing-item--events-condensed {
+//   @include breakpoint($bp-tablet) {
+//     display: flex;
+//   }
+// }
+
+// .m-listing-item--events-condensed__wrapper {
+//   @extend %m-listing-item__content;
+
+//   @include breakpoint($bp-full-nav) {
+//     display: flex;
+//   }
+// }
+
+// .m-listing-item--events-condensed__img {
+//   @extend %m-listing-item__img;
+// }
+
+// .m-listing-item--events-condensed__date {
+//   flex-shrink: 0;
+//   margin-right: ru(1);
+//   margin-bottom: ru(1);
+
+//   @include breakpoint($bp-tablet) {
+//     margin-bottom: 0;
+//   }
+// }
+
+// .m-listing-item--events-condensed__tags {
+//   margin-bottom: ru(0.5);
+// }
+
+// .m-listing-item--events-condensed__text {
+//   @extend %m-listing-item__text;
+
+//   .s-wysiwyg {
+//     color: palette(grey, 200);
+//     color: var(--text-color);
+//   }
+// }
+
+// //Data Variations
+// %m-listing-item__calendar-date__flex {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// %m-listing-item__calendar-date,
+// .m-listing-item__calendar-date {
+//   @extend %m-listing-item__calendar-date__flex;
+
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   align-items: center;
+//   border-radius: 50%;
+//   background-color: palette(white);
+//   width: ru(3.5);
+//   height: ru(3.5);
+//   text-align: center;
+//   line-height: 1;
+//   color: palette(blue);
+// }
+
+// .m-listing-item__calendar-date__month,
+// .m-listing-item__calendar-date-blue__month {
+//   @extend %a-type--small;
+
+//   margin-bottom: 0;
+// }
+
+// .m-listing-item__calendar-date__year {
+//   margin-top: ru(0.25);
+//   margin-bottom: 0;
+// }
+
+// .m-listing-item__calendar-date__start-day,
+// .m-listing-item__calendar-date-blue__start-day,
+// .m-listing-item__calendar-date__start-day-range,
+// .m-listing-item__calendar-date-blue__start-day-range {
+//   @extend %m-listing-item__calendar-date__flex;
+
+//   align-items: center;
+//   max-width: 100%;
+
+//   .m-listing-item__calendar-date__day,
+//   .m-listing-item__calendar-date-blue__day {
+//     @extend %a-type--large;
+//     display: block;
+//     margin-bottom: ru(0.25);
+//     margin-bottom: ru(0.1);
+//     font-weight: 800;
+//   }
+// }
+
+// %m-listing-item__calendar-date__year {
+//   margin-top: ru(0.5);
+//   margin: 2px 0;
+//   font-size: rem(12px);
+
+//   .m-listing-item__calendar-date-blue__month,
+//   .m-listing-item__calendar-date__month {
+//     font-size: rem(12px);
+//   }
+// }
+
+// .m-listing-item__calendar-date-blue__start-year-range,
+// .m-listing-item__calendar-date__start-year-range {
+//   @extend %m-listing-item__calendar-date__year;
+// }
+
+// .m-listing-item__calendar-date-blue__end-year-range,
+// .m-listing-item__calendar-date__end-year-range {
+//   @extend %m-listing-item__calendar-date__year;
+// }
+
+// .a-date-to {
+//   @extend %m-listing-item__calendar-date__year;
+// }
+
+// .m-listing-item__calendar-date,
+// .m-listing-item__calendar-date-blue {
+//   @extend %m-listing-item__calendar-date__flex;
+//   @extend %m-listing-item__calendar-date;
+// }
+
+// .m-listing-item__calendar-date-blue {
+//   background-color: palette(grey, 900);
+// }
+
+// .m-listing-item__calendar-date--1day,
+// .m-listing-item__calendar-date--multi-day {
+//   @extend %a-type--small;
+//   margin-bottom: rem(3px);
+//   font-weight: 700;
+// }
+
+// .m-listing-item__calendar-date--multi-year {
+//   @extend %a-type--xxsmall;
+// }
+
+// .m-listing-item__calendar-date__dash {
+//   line-height: ru(0.125);
+//   margin-top: rem(4px);
+//   margin-bottom: rem(7px);
+// }
+
+// .m-listing-item__calendar-date--multi-month {
+//   @extend %a-type--small;
+// }

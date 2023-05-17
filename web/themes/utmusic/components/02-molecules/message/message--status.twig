@@ -1,0 +1,59 @@
+{#
+/**
+ * @file
+ * Theme override for status messages.
+ *
+ * Displays status, error, and warning messages, grouped by type.
+ *
+ * An invisible heading identifies the messages for assistive technology.
+ * Sighted users see a colored box. See http://www.w3.org/TR/WCAG-TECHS/H69.html
+ * for info.
+ *
+ * Add an ARIA label to the contentinfo area so that assistive technology
+ * user agents will better describe this landmark.
+ *
+ * Available variables:
+ * - message_list: List of messages to be displayed, grouped by variation.
+ * - status_headings: List of all status variations.
+ * - display: (optional) May have a value of 'status' or 'error' when only
+ *   displaying messages of that specific variation.
+ * - attributes: HTML attributes for the element, including:
+ *   - class: HTML classes.
+ */
+#}
+
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+{% for variation, messages in message_list %}
+  <div role="contentinfo" aria-label="{{ status_headings[variation] }}"{{ attributes|without('role', 'aria-label') }}>
+    {% if variation == 'error' %}
+      <div role="alert">
+    {% endif %}
+      {% if status_headings[variation] %}
+        <h2 class="visually-hidden">{{ status_headings[variation] }}</h2>
+      {% endif %}
+      {% if messages|length > 1 or demo_storybook %}
+        <ul>
+          {% for message in messages %}
+            <li class="m-message--{{ variation }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <span class="m-message--{{ variation }}">{{ messages|first }}</span>
+      {% endif %}
+    {% if variation == 'error' %}
+      </div>
+    {% endif %}
+  </div>
+{% endfor %}

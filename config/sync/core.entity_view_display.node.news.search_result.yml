@@ -1,0 +1,52 @@
+uuid: 2b5f13e5-b280-4314-9fa5-63efa56f312b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.news.field_news_body
+    - field.field.node.news.field_news_category
+    - field.field.node.news.field_news_date
+    - field.field.node.news.field_news_image
+    - field.field.node.news.field_news_image_landscape
+    - field.field.node.news.field_news_promote
+    - field.field.node.news.field_news_summary
+    - field.field.node.news.field_news_title
+    - field.field.node.news.field_page_admin_help_seo
+    - field.field.node.news.field_page_admin_help_social
+    - field.field.node.news.field_page_meta_description
+    - field.field.node.news.field_page_meta_image
+    - field.field.node.news.field_page_meta_title
+    - node.type.news
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.news.search_result
+targetEntityType: node
+bundle: news
+mode: search_result
+content:
+  search_api_excerpt:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_news_body: true
+  field_news_category: true
+  field_news_date: true
+  field_news_image: true
+  field_news_image_landscape: true
+  field_news_promote: true
+  field_news_summary: true
+  field_news_title: true
+  field_page_admin_help_seo: true
+  field_page_admin_help_social: true
+  field_page_meta_description: true
+  field_page_meta_image: true
+  field_page_meta_title: true
+  links: true

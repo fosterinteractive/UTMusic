@@ -1,0 +1,16 @@
+<li class="m-breadcrumbs__item">
+
+  {# If there is a value for the URL  #}
+  {% if url %}
+    <a class="m-breadcrumbs__link" href="{{ url }}">{{ text }}</a>
+  {% else %}
+    {# Print a span label #}
+    <span class="m-breadcrumbs__label">{{ text }}</span>
+  {% endif %}
+
+  {% if not loop.last %}
+    {# Use non-breaking space so if can't wrap #}
+    {{ "&nbsp;/&nbsp;" }}
+  {% endif %}
+
+</li>

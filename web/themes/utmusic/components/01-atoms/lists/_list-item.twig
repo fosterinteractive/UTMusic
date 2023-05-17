@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Theme override for a single local action link.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper element.
+ * - link: A rendered link element.
+ *
+ * @see template_preprocess_menu_local_action()
+ */
+#}
+
+{% set item_attributes = item_attributes|default({}) %}
+
+<li class="a-list__item" {{ add_attributes(list__item__attributes) }}>
+  {% if list_label %}
+    <strong>
+      {{ list_label }}
+    </strong> 
+  {% endif %}
+  
+  {{ list_item }}
+</li>

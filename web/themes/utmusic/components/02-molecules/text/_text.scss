@@ -1,0 +1,7 @@
+.m-text {
+  width: 100%;
+}
+
+.m-text__content {
+  @extend %u-remove-child--margin-top-bottom;
+}

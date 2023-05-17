@@ -1,0 +1,18 @@
+uuid: 5893b8f8-5564-4059-b377-ae2c47ecdd2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news
+id: node.news.title
+field_name: title
+entity_type: node
+bundle: news
+label: 'Drupal Label (Auto Hidden)'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

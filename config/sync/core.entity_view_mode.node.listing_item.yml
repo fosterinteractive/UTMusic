@@ -1,0 +1,12 @@
+uuid: df143cf4-71d1-414d-9449-b669340cc2da
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: Uc0uYTh7-LkWoQgyTBCh2mg6x2KDamlxnczI-7EJ5ZI
+id: node.listing_item
+label: 'Listing Item'
+targetEntityType: node
+cache: true

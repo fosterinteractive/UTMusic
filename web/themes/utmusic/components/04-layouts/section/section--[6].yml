@@ -1,0 +1,8 @@
+layout: '[6]'
+spacing_top: small
+spacing_bottom: small
+theme: 
+demo_class_section: storybook-section__demo--blue
+demo_class_zone: storybook-section__demo--red
+content:
+  zone1: '<div class="storybook-section__demo--red"><p> CONTENT OF ZONE 1 <br/> Item 1A </p></div> <div class="storybook-section__demo--red"><p> CONTENT OF ZONE 1 <br/><br/><br/> Item 1B  </p></div>'

@@ -1,0 +1,31 @@
+uuid: 2883d322-8ae5-4605-9123-4ba433781101
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - menu_block
+  theme:
+    - utmusic
+id: menu_footer
+theme: utmusic
+region: hidden
+weight: 0
+provider: null
+plugin: 'menu_block:footer'
+settings:
+  id: 'menu_block:footer'
+  label: 'Footer Menu'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: true
+  parent: 'footer:'
+  suggestion: footer
+visibility: {  }

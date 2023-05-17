@@ -1,0 +1,33 @@
+pl_class: 'pl__wrapper'
+attributes:
+  Attribute():
+    class: []
+title: 'Contextual links'
+prefix: 'Off'
+label:
+  include():
+    pattern: molecules-label
+    with:
+      title: 'Contextual links'
+      attributes:
+        Attribute():
+          for: 'toggle'
+          class: ['m-label']
+description_display: 'after'
+description:
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  attributes:
+    Attribute():
+      class: []
+children:
+  include():
+    pattern: molecules-input
+    with:
+      attributes:
+        Attribute():
+          type: 'checkbox'
+          id: 'toggle'
+          name: 'toggle'
+      pl_class: ''
+suffix: 'On'
+errors: ''

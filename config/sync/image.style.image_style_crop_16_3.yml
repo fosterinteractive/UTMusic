@@ -1,0 +1,18 @@
+uuid: 112ef8df-b27d-409f-a151-d49520098a17
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.crop_16_3
+  module:
+    - crop
+name: image_style_crop_16_3
+label: 'Image Style Crop 16:3'
+effects:
+  ab060f09-7c6e-43ed-b5f3-fa1fc1a080b8:
+    uuid: ab060f09-7c6e-43ed-b5f3-fa1fc1a080b8
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: crop_16_3
+      automatic_crop_provider: null

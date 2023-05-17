@@ -1,0 +1,43 @@
+uuid: 5c43b232-3e54-43ff-bc76-79481abbab0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.ed_card
+    - field.field.media.ed_image.field_ed_image_height
+    - field.field.media.ed_image.field_ed_image_image
+    - field.field.media.ed_image.field_ed_image_width
+    - image.style.image_style_crop_1_1
+    - media.type.ed_image
+  module:
+    - svg_image
+_core:
+  default_config_hash: LOYWdfNU_b3M2V6-t1GETC6P1nO7l5rdTMeWB3SUFp8
+id: media.ed_image.ed_card
+targetEntityType: media
+bundle: ed_image
+mode: ed_card
+content:
+  field_ed_image_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: image_style_crop_1_1
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_ed_image_height: true
+  field_ed_image_width: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

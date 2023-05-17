@@ -1,0 +1,24 @@
+{# See http://web-accessibility.carnegiemuseums.org/code/accordions/ #}
+
+{% set aria_expanded = "false" %}
+    
+{% set aria_label =  aria_expanded == "false" ? aria_label_expand : aria_label_collapse %}
+{% set label =  aria_expanded == "false" ? label_expand : label_collapse %}
+
+<div class="m-logos-group-wrapper">
+  <div class="m-logos-group">
+
+    <div class="showmore_trigger">
+      <button id='button-show-more'  aria-label="{{ aria_label }}" aria-expanded="{{ aria_expanded }}" class="button--show-more more" aria-controls="content-logos-group" >
+        {{ label }}
+      </button> 
+    </div>
+
+    <div class="m-logos-group__showmore_content">
+      <div aria-hidden="true" id="content-logos-group" class="m-logos-group__wrapper l-flex--4col">
+        {{ items }}
+      </div>
+    </div>
+
+  </div>
+</div> 

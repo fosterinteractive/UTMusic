@@ -1,0 +1,47 @@
+uuid: 75508776-79d7-47ae-a76e-0127dd74e582
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.ed_image.field_ed_image_height
+    - field.field.media.ed_image.field_ed_image_image
+    - field.field.media.ed_image.field_ed_image_width
+    - image.style.large
+    - media.type.ed_image
+  module:
+    - focal_point
+_core:
+  default_config_hash: 8ahUZ70uejpw3anSs-Th3shS6-ucGQtytAU3mKQ4S2c
+id: media.ed_image.media_library
+targetEntityType: media
+bundle: ed_image
+mode: media_library
+content:
+  field_ed_image_image:
+    type: image_focal_point
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: large
+      preview_link: true
+      offsets: '50,50'
+      preview_link_modal: false
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_ed_image_height: true
+  field_ed_image_width: true
+  path: true
+  revision_log_message: true
+  status: true
+  uid: true

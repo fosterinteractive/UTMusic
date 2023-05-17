@@ -1,0 +1,28 @@
+uuid: 7df37978-5df4-471e-bb13-736736884d65
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.social_image
+  module:
+    - crop
+_core:
+  default_config_hash: Z2rgzLnUqOEhaAAwJP-HVu3V8JEy6HtJ4hihHv1m8gw
+name: social_image
+label: 'Social Image'
+effects:
+  0ef4f2bd-3aa1-4fa1-a89b-64c5a508c5fe:
+    uuid: 0ef4f2bd-3aa1-4fa1-a89b-64c5a508c5fe
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: social_image
+      automatic_crop_provider: null
+  5c944b44-cc06-43ea-8410-375304146ba3:
+    uuid: 5c944b44-cc06-43ea-8410-375304146ba3
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 612
+      height: 612
+      anchor: center-center

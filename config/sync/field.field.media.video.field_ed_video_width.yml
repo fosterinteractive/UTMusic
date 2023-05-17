@@ -1,0 +1,23 @@
+uuid: 30b095c4-270c-4f00-9e68-88310349a31f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_ed_video_width
+    - media.type.video
+id: media.video.field_ed_video_width
+field_name: field_ed_video_width
+entity_type: media
+bundle: video
+label: 'Video Width'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: px
+field_type: integer

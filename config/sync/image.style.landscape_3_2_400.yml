@@ -1,0 +1,33 @@
+uuid: 4e5d8226-6487-4d0d-863a-4265043ba9e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+    - image_effects
+    - image_style_quality
+_core:
+  default_config_hash: AMvKn64Ty37_3ecmsM2VdTj2cNiWh5dxhcpBUhM5x-k
+name: landscape_3_2_400
+label: 'Landscape 3:2 - (400 @ 80%)'
+effects:
+  3fb8364e-76b0-4c65-b8c5-7dd9e9468d90:
+    uuid: 3fb8364e-76b0-4c65-b8c5-7dd9e9468d90
+    id: image_style_quality
+    weight: -8
+    data:
+      quality: 80
+  df44eb3b-4b0c-4831-995a-be8c06e2d9b7:
+    uuid: df44eb3b-4b0c-4831-995a-be8c06e2d9b7
+    id: focal_point_scale_and_crop
+    weight: -10
+    data:
+      width: 400
+      height: 267
+      crop_type: focal_point
+  0754826c-aa3b-4ea0-8a79-c03e71a5294b:
+    uuid: 0754826c-aa3b-4ea0-8a79-c03e71a5294b
+    id: image_effects_interlace
+    weight: -9
+    data:
+      type: Plane

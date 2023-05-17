@@ -1,0 +1,27 @@
+uuid: 6990dd8e-57f3-46f8-91d6-c753a8821246
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_inline_menu_variation
+field_name: field_inline_menu_variation
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'null'
+      label: 'Default[Expanded 2col]'
+    -
+      value: horizontal
+      label: Horizontal
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

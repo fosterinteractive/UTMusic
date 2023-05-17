@@ -1,0 +1,56 @@
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+{% set title_html_element = title_html_element|default('h2') %}
+{% set illustration_size = 'medium' %}
+
+<div class="m-card{{ variation }} contextual-region">
+  {% if illustration %}
+    <div class="m-card{{ variation }}__icon">
+      {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+        directory: directory,
+        base_class: 'a-icon',
+        icon_file_type: illustration_file_type,
+        icon: illustration,
+        size: illustration_size, 
+        } only
+      %}
+    </div>
+  {% endif %}
+
+  <div class="m-card{{ variation }}__background"></div>
+
+  <div class="m-card{{ variation }}__main">
+
+    {% if title %}
+      <div class="m-card{{ variation }}__title">
+        {% include "@atoms/text/headings/heading.twig" with {
+            directory: directory,
+            html_element: title_html_element,
+            appearance: 'h3',
+            text: title,
+            url: link_url,
+            id: id,
+          } only
+        %}
+      </div>
+    {% endif %}
+
+    {% if description %}
+      <div class="m-card{{ variation }}__description s-wysiwyg">
+        {{ description }}
+      </div>
+    {% endif %}
+  </div>
+
+</div>

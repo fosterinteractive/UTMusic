@@ -1,0 +1,10 @@
+uuid: d6142cb6-3ed7-4314-9d04-c765410a4c55
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: kmxEtKVehCdFK0DlcdfnFOle_baANK9OmsJdM3uxATI
+name: 'Profile Type'
+vid: ed_profile_type
+description: ''
+weight: 0

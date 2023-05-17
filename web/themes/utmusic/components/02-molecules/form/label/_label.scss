@@ -1,0 +1,29 @@
+.m-form-group__label {
+  margin-bottom: ru(0.5);
+  color: palette(grey, 200);
+  color: var(--c-text);
+}
+
+%m-label,
+.m-label {
+  // @extend %a-type--small;
+  display: inline-block;
+  margin-bottom: ru(0.25);
+  color: palette(grey, 200);
+  color: var(--c-text);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+%m-label--is-required,
+.m-label--is-required {
+  @extend %m-label;
+
+  > span:not(.webform-element-help) {
+    // @extend %a-type--small;
+
+    color: palette(red);
+  }
+}

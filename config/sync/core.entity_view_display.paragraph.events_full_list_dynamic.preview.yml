@@ -1,0 +1,22 @@
+uuid: 5dd72c2f-ab4d-4716-a8e1-285bb2dd1787
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.events_full_list_dynamic.field_events_full_list_status
+    - paragraphs.paragraphs_type.events_full_list_dynamic
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.events_full_list_dynamic.preview
+targetEntityType: paragraph
+bundle: events_full_list_dynamic
+mode: preview
+content: {  }
+hidden:
+  field_events_full_list_status: true
+  search_api_excerpt: true

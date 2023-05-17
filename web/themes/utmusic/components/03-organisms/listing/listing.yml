@@ -1,0 +1,27 @@
+storybook_demo: true
+variation: ''
+listing_layout:
+title: Listing  Title
+listing_items:
+  - variation: 
+    title: 'Listing Item Reg (News)'
+    url: '#'
+    id: ''
+    date_string: 'May 24, 2022'
+    tags:
+      - 'topic 1'
+      - 'topic 2'
+    text: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes</p>'
+    image:  
+  - variation:  
+    title: 'Listing Item Reg (News)'
+    url: '#'
+    id: ''
+    date_string: 'May 24, 2022'
+    tags:
+      - 'topic 1'
+      - 'topic 2'
+    text: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes</p>'
+    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2076&q=80" />'
+listing_button_url: '#'
+listing_button_text: 'View more items'

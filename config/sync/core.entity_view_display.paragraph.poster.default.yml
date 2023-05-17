@@ -1,0 +1,106 @@
+uuid: a936590c-1629-4429-bb77-dd2071536f56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.poster.field_poster_content_image
+    - field.field.paragraph.poster.field_poster_large_bg_image
+    - field.field.paragraph.poster.field_poster_link_aria_label
+    - field.field.paragraph.poster.field_poster_link_aria_labelby
+    - field.field.paragraph.poster.field_poster_link_text
+    - field.field.paragraph.poster.field_poster_link_url
+    - field.field.paragraph.poster.field_poster_summary
+    - field.field.paragraph.poster.field_poster_title
+    - field.field.paragraph.poster.field_poster_title_prefix
+    - field.field.paragraph.poster.field_poster_variation
+    - paragraphs.paragraphs_type.poster
+  module:
+    - link
+    - options
+    - text
+id: paragraph.poster.default
+targetEntityType: paragraph
+bundle: poster
+mode: default
+content:
+  field_poster_content_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: ed_embedded_full_width
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_poster_large_bg_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: poster
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_poster_link_aria_label:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_poster_link_aria_labelby:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_poster_link_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_poster_link_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_poster_summary:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_poster_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_poster_title_prefix:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_poster_variation:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

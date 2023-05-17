@@ -1,0 +1,9 @@
+{% if pl_class %}
+  <div class="{{ pl_class }}">
+{% endif %}
+
+<textarea {{ attributes.addClass('m-textarea', classes) }}>{{ value }}</textarea>
+
+{% if pl_class %}
+  </div>
+{% endif %}

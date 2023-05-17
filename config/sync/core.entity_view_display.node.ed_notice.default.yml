@@ -1,0 +1,68 @@
+uuid: 853f7611-eae9-40c4-82d0-5c9e622761d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.ed_notice.field_ed_notice_date
+    - field.field.node.ed_notice.field_ed_notice_published_date
+    - field.field.node.ed_notice.field_ed_notice_severity
+    - field.field.node.ed_notice.field_ed_notice_site_id
+    - field.field.node.ed_notice.field_ed_notice_text
+    - node.type.ed_notice
+  module:
+    - datetime
+    - datetime_range
+    - options
+    - text
+    - user
+_core:
+  default_config_hash: iPCcsAxW40xb0R6ITgI724nLQQ9gDgq_rri7zO1D6Pw
+id: node.ed_notice.default
+targetEntityType: node
+bundle: ed_notice
+mode: default
+content:
+  field_ed_notice_date:
+    type: daterange_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: html_date
+      separator: '-'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_ed_notice_published_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: html_date
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_ed_notice_severity:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_ed_notice_site_id:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_ed_notice_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  links: true
+  search_api_excerpt: true

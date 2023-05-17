@@ -1,0 +1,31 @@
+uuid: d08cfe8e-97f1-4bae-b5b1-34d86f0f0d33
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card_image_contextual
+    - media.type.ed_image
+    - paragraphs.paragraphs_type.card
+  module:
+    - media_library_media_modify
+id: paragraph.card.field_card_image_contextual
+field_name: field_card_image_contextual
+entity_type: paragraph
+bundle: card
+label: 'Image Contextual'
+description: 'Choose image from Media library and then press "edit" button for specifying its alternative text and crop shape, then press save '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      ed_image: ed_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_entity_modify

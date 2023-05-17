@@ -1,0 +1,13 @@
+.m-snippet {
+  margin-bottom: ru(0.5);
+  border-bottom: 1px solid palette(grey, 900);
+  padding-bottom: ru(0.5);
+}
+
+.m-snippet__title {
+  margin-bottom: ru(1);
+}
+
+.m-snippet__summary {
+  @extend %a-type--xsmall;
+}

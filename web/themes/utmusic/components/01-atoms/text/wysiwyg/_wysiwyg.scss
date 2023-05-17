@@ -1,0 +1,103 @@
+// WYSIWYG / User Content
+// CKEDITOR's Default iframe class for the editor.
+
+// Default WYSWYG Styles
+// All the styles get a default assignment with a not exception
+// To allow class styles to override these defaults
+
+%s-wysiwyg__typography {
+  @extend %u-remove-child--margin-top-bottom;
+  color: palette(grey);
+  color: var(--text-color);
+
+
+  ul:not([class]) {
+    @extend %a-list--unordered;
+  }
+
+  ol:not([class]) {
+    @extend %a-list--ordered;
+  }
+
+  h2:not([class]) {
+    @extend %a-heading__h2;
+  }
+
+  h3:not([class]) {
+    @extend %a-heading__h3;
+  }
+
+  h4:not([class]) {
+    @extend %a-heading__h4;
+  }
+
+  a:not([class]) {
+    @extend %a-link;
+  }
+
+  // text align options
+  .text-align-center {
+    text-align: center;
+  }
+
+  .text-align-right {
+    text-align: right;
+  }
+}
+
+%s-wysiwyg,
+.s-wysiwyg,
+.cke_editable { // sass-lint:disable-line class-name-format
+  @extend %s-wysiwyg__typography;
+  // @extend %s-wysiwyg__image;
+}
+
+// Author CKEditor UX improvements
+//sass-lint:disable class-name-format
+.cke_editable {
+  display: block;
+  padding: ru(1);
+}
+
+
+.cke_editable drupal-media[data-align=center] {
+  display: block;
+}
+
+// Link with icon.
+%link--icon {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: rem(10px);
+
+  &:before {
+    display: inline-block;
+    margin-right: rem(12px);
+    border-radius: 50%;
+    background-color: palette(grey);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: rem(20px);
+    width: rem(34px);
+    min-width: rem(34px);
+    height: rem(34px);
+    min-height: rem(34px);
+    content: '';
+  }
+}
+
+.a-link--tel {
+  @extend %link--icon;
+
+  &:before {
+    background-image: url('./svg/svg-art/phone-alt.svg');
+  }
+}
+
+.a-link--email {
+  @extend %link--icon;
+
+  &:before {
+    background-image: url('./svg/svg-art/mail.svg');
+  }
+}

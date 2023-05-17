@@ -1,0 +1,21 @@
+uuid: 492e97a1-cc5d-4114-8410-da90324c5488
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - media_library_media_modify
+    - node
+id: node.field_news_image_landscape
+field_name: field_news_image_landscape
+entity_type: node
+type: entity_reference_entity_modify
+settings:
+  target_type: media
+module: media_library_media_modify
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

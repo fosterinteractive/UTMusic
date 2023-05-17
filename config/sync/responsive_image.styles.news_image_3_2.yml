@@ -1,0 +1,39 @@
+uuid: 708011f2-b7f6-46ec-acae-05b28e0f7d6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.landscape_3_2_1200
+    - image.style.landscape_3_2_1500
+    - image.style.landscape_3_2_1800
+    - image.style.landscape_3_2_200
+    - image.style.landscape_3_2_2000
+    - image.style.landscape_3_2_2500
+    - image.style.landscape_3_2_2800
+    - image.style.landscape_3_2_3000
+    - image.style.landscape_3_2_400
+    - image.style.landscape_3_2_600
+    - image.style.landscape_3_2_860
+id: news_image_3_2
+label: 'News Image 3:2'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - landscape_3_2_1200
+        - landscape_3_2_1500
+        - landscape_3_2_1800
+        - landscape_3_2_200
+        - landscape_3_2_2000
+        - landscape_3_2_2500
+        - landscape_3_2_2800
+        - landscape_3_2_3000
+        - landscape_3_2_400
+        - landscape_3_2_600
+        - landscape_3_2_860
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: landscape_3_2_1200

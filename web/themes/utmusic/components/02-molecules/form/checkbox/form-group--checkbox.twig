@@ -1,0 +1,51 @@
+{% if pl_class %}
+  <div class="{{ pl_class }}">
+{% endif %}
+
+{%
+  set classes = [
+    'js-form-item',
+    'form-item',
+    'js-form-wrapper',
+    'form-wrapper',
+    'm-form-group',
+  ]
+%}
+
+<fieldset{{ attributes.addClass(classes) }}>
+
+  {#  Always wrap fieldset legends in a SPAN for CSS positioning. #}
+  {% if required %}
+    {% set label_class = 'm-label--is-required' %}
+  {% else %}
+    {% set label_class = 'm-label' %}
+  {% endif %}
+
+  <legend{{ legend.attributes.addClass('m-form-group__label') }}>
+    <span{{ legend_span.attributes.addClass(label_class, legend_span_classes) }}>{{ legend.title }}{% if required %}<span>*</span>{% endif %}</span>
+  </legend>
+
+  <div class="m-form-group__wrapper">
+    {% if prefix %}
+      <span class="m-form-group__prefix">{{ prefix }}</span>
+    {% endif %}
+
+    {% if children %}
+      <div class="m-form-group__elements">
+        {{ children }}
+      </div>
+    {% endif %}
+
+    {% if suffix %}
+      <span class="m-form-group__suffix">{{ suffix }}</span>
+    {% endif %}
+
+    {% if description.content %}
+      <div{{ description.attributes.addClass('m-form-group__description') }}>{{ description.content }}</div>
+    {% endif %}
+  </div>
+</fieldset>
+
+{% if pl_class %}
+  </div>
+{% endif %}

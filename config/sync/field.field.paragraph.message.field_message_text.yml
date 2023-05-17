@@ -1,0 +1,26 @@
+uuid: 8dda3333-a4ac-4dd0-95ac-1577c8c394d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_message_text
+    - paragraphs.paragraphs_type.message
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - rich_text
+id: paragraph.message.field_message_text
+field_name: field_message_text
+entity_type: paragraph
+bundle: message
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

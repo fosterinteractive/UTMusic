@@ -1,0 +1,19 @@
+uuid: 312e6380-1e8b-4bab-84ca-2f3baad0cc78
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_news_summary
+field_name: field_news_summary
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

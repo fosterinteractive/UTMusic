@@ -1,0 +1,16 @@
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %}
+
+{% endif %}
+
+<div class="s-wysiwyg{{ variation }}">
+  {{ content }}
+</div>
+
+

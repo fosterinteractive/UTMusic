@@ -1,0 +1,5 @@
+image: "<img src='https://picsum.photos/id/43/1200/700' alt='alt text example'/>"
+variation: 'rounded-corners'
+icon: briefcase
+icon_alignment: false
+icon_size: false

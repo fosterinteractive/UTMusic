@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+{% include "@molecules/breadcrumbs/breadcrumbs.twig"
+  with {
+    id: id,
+    breadcrumbs: breadcrumb,
+  } only
+%}

@@ -1,0 +1,168 @@
+// Palette Options.
+%m-inline-menu-color,
+.m-inline-menu {
+  color: palette(grey, 200);
+  color: var(--c-text);
+
+  .m-inline-menu__title > * {
+    color: palette(grey, 200);
+    color: var(--c-text);
+  }
+
+  .m-inline-menu__body > * {
+    color: palette(grey, 200);
+    color: var(--c-text);
+  }
+
+  .m-inline-menu__links {
+    @include linear-gradient-border(palette(blue, 400));
+    @include linear-gradient-border(var(--c-inline-menu-line));
+  }
+
+  .m-inline-menu__link {
+    @include linear-gradient-animation-border(palette(red), palette(blue, 400));
+    @include linear-gradient-animation-border(var(--c-inline-menu-line--active), var(--c-inline-menu-line));
+    color: palette(grey, 200);
+    color: var(--c-inline-menu-text);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: palette(red);
+      color: var(--c-inline-menu-text--active);
+    }
+  }
+}
+
+// Layout Variations
+.m-inline-menu  {
+  padding-top:  var(--spacer);
+  padding-bottom:  var(--spacer);
+
+  @include breakpoint($bp-full-nav) {
+    display: flex;
+  }
+}
+
+
+%m-inline-menu__title,
+.m-inline-menu__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: ru(1);
+
+  h2 {
+    margin-bottom: 0;
+    width: 85%;
+  }
+}
+
+%m-inline-menu__icon,
+.m-inline-menu__icon {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  z-index: 1;
+  margin-right: ru(0.5);
+  border-radius: 50%;
+}
+
+.m-inline-menu--horizontal  {
+  @extend %m-inline-menu-color;
+  padding-top:  var(--spacer);
+  padding-bottom:  var(--spacer);
+}
+
+// Title & Body wrapper
+%m-inline-menu__text--core {
+  @extend %a-type--xsmall;
+  // @extend %u-remove-child--margin-top-bottom ;
+  margin-bottom: ru(0.75);
+}
+
+.m-inline-menu__text {
+  @extend %m-inline-menu__text--core;
+
+  @include breakpoint($bp-full-nav) {
+    margin-bottom: 0;
+    padding-right: calc(2/12 * 100%);
+    width: calc(7/12 * 100%);
+  }
+}
+
+.m-inline-menu--horizontal__text {
+  @extend %m-inline-menu__text--core;
+
+  @include breakpoint($bp-tablet) {
+    width: 80%;
+  }
+
+  @include breakpoint($bp-large) {
+    width: 60%;
+  }
+}
+
+// Links wrapper.
+.m-inline-menu__links {
+  align-self: flex-start;
+  
+  @include breakpoint($bp-full-nav) {
+    // width: calc(5/12 * 100%);
+  }
+}
+
+.m-inline-menu--horizontal__links {
+  align-self: flex-start;
+
+  @include breakpoint($bp-tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-image: none;
+  }
+}
+
+.m-inline-menu__item {
+  &:first-child a {
+    margin-top: 0;
+  }
+
+  &:last-child a {
+    margin-bottom: 0;
+  }
+}
+
+.m-inline-menu--horizontal__item {
+  @include breakpoint($bp-tablet) {
+    width: 50%;
+  }
+  
+  @include breakpoint($bp-full-nav) {
+    width: 33.333%;
+  }
+
+  @include breakpoint($bp-large) {
+    width: 25%;
+  }
+}
+
+// Links 
+.m-inline-menu__link {
+  display: inline-block;
+  margin-top: ru(0.25);
+  margin-bottom: ru(0.25);
+  padding-top: ru(0.15);
+  padding-bottom: ru(0.15);
+  padding-left: ru(0.75);
+
+  .m-inline-menu--horizontal & {
+
+    @include breakpoint($bp-tablet) {
+      margin-top: 0;
+      margin-right: ru(1);
+      margin-bottom: 0;
+      background-size: rem(3px) 0%, rem(3px) rem(50px);
+      padding: ru(0.75) 0 ru(0.75) ru(0.5);
+    }
+  }
+}

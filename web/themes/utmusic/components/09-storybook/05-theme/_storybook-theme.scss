@@ -1,0 +1,24 @@
+//dark theme rewriting
+
+.theme--light-bg .sb-show-main {
+  background: #fff !important ;
+  transition: background-color 0.3s;
+}
+
+
+.theme--dark-bg {
+  .sb-show-main {
+    color: #fff;
+    background-color: #000 !important ;
+    transition: background-color 0.3s;
+  }
+
+  .sbdocs {
+    color: #fff;
+    background-color: #000;
+  }
+
+  .sbdocs-title {
+    color: #fff;
+  }
+}

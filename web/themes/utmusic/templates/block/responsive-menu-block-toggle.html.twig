@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Template to output the menu toggle icon (burger).
+ */
+#}
+
+{# Original Markup From Responsive Menu Contrib Module#}
+
+{# <a id="toggle-icon" class="toggle responsive-menu-toggle-icon" title="Menu" href="#off-canvas">
+  <span class="icon"></span><span class="label">{{ 'Menu'|t }}</span>
+</a>
+#}
+
+
+
+{% include '@atoms/button/button.twig' with {
+    base_class: 'a-button',
+    label: link_label,
+    variation: 'icon',
+    html_element: 'a',
+    id: 'toggle-icon',
+    icon: 'hamburger',
+    url: link_url,
+    aria_label: aria_label,
+    alignment: 'center',
+  } only
+%}
+
+
+

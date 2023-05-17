@@ -1,0 +1,28 @@
+name: checkox_one
+attributes:
+  Attribute():
+    class: []
+label_display: 'after'
+prefix: ''
+suffix: ''
+label:
+  include():
+    pattern: molecules-label
+    with:
+      title: 'Checkbox One'
+      attributes:
+        Attribute():
+          for: 'checkox_one'
+          class: ['m-label--is-required']
+children:
+  include():
+    pattern: molecules-input
+    with:
+      attributes:
+        Attribute():
+          required: 'required'
+          aria-required: true
+          type: 'checkbox'
+          id: 'checkox_one'
+          name: 'checkox_one'
+          value: 'Checkbox One'

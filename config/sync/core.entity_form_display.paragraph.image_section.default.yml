@@ -1,0 +1,94 @@
+uuid: eab827dc-c457-4759-ba4f-7a23829a6652
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_section.field_image_section_icon
+    - field.field.paragraph.image_section.field_image_section_icon_align
+    - field.field.paragraph.image_section.field_image_section_image
+    - field.field.paragraph.image_section.field_image_section_image_crop
+    - field.field.paragraph.image_section.field_image_section_img_decor
+    - paragraphs.paragraphs_type.image_section
+  module:
+    - field_group
+    - media_library
+    - media_library_edit
+third_party_settings:
+  field_group:
+    group_icon:
+      children:
+        - field_image_section_icon
+        - field_image_section_icon_align
+      label: Icon
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
+    group_image:
+      children:
+        - field_image_section_image
+        - field_image_section_image_crop
+        - field_image_section_img_decor
+      label: Image
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
+id: paragraph.image_section.default
+targetEntityType: paragraph
+bundle: image_section
+mode: default
+content:
+  field_image_section_icon:
+    type: media_library_widget
+    weight: 2
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
+  field_image_section_icon_align:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image_section_image:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
+  field_image_section_image_crop:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image_section_img_decor:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

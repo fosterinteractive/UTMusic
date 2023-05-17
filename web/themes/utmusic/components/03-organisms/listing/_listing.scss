@@ -1,0 +1,71 @@
+@use 'sass:math';
+@use "sass:list";
+
+// Add bottom spacing to the last item or button in the layout
+%o-listing,
+.o-listing {
+  margin-top: list.slash(var(--spacer), 2);
+  margin-bottom: var(--spacer);
+}
+
+// Add bottom spacing to the last item or button in the layout
+.o-listing--narrow {
+  @extend %o-listing;
+}
+
+
+.o-listing__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.o-listing__title {
+  margin-right: ru(0.5);
+
+  @include breakpoint($bp-large) {
+    margin-bottom: var(--spacer);
+  }
+}
+
+.o-listing__items {
+  gap: var(--spacer);
+}
+
+// See all button.
+.o-listing__button {
+  margin-top: calc(var(--spacer)*2);
+
+  @include breakpoint($bp-large) {
+    margin-bottom: var(--spacer);
+    text-align: right;
+  }
+}
+
+.o-listing-text {
+  margin-bottom: 0;
+
+  a {
+    padding-left: ru(0.25);
+    font-weight: normal;
+  }
+
+  .a-heading__icon {
+    fill: palette(blue);
+  }
+
+  .a-heading__last-word {
+    padding-right: 0;
+  }
+
+  .l-section-bg--blue & {
+    a {
+      color: palette(white);
+    }
+
+    .a-heading__icon {
+      fill: palette(blue);
+    }
+  }
+}

@@ -1,0 +1,34 @@
+uuid: 583bd122-fd3a-4359-8527-217ad4393b02
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.crop_16_3
+    - crop.type.crop_1_1
+    - crop.type.free_crop
+  module:
+    - crop
+name: combo_crop
+label: 'Combo Crop Style'
+effects:
+  678c9e7b-05a0-43f1-9a20-a104649790bb:
+    uuid: 678c9e7b-05a0-43f1-9a20-a104649790bb
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: crop_16_3
+      automatic_crop_provider: null
+  f5629d4b-f348-4b3b-a192-27267386678a:
+    uuid: f5629d4b-f348-4b3b-a192-27267386678a
+    id: crop_crop
+    weight: 2
+    data:
+      crop_type: crop_1_1
+      automatic_crop_provider: null
+  0ff830f9-31fc-45de-82e9-b40ec9a94f79:
+    uuid: 0ff830f9-31fc-45de-82e9-b40ec9a94f79
+    id: crop_crop
+    weight: 3
+    data:
+      crop_type: free_crop
+      automatic_crop_provider: null

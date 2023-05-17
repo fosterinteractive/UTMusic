@@ -1,0 +1,125 @@
+.m-menu-mobile {
+  @include root-prop(--mm-color-background, palette(black));
+  @include root-prop(--mm-color-button, palette(black));
+  @include root-prop(--mm-background-button, palette(black));
+  @include root-prop(--mm-color-text, palette(white));
+  @include root-prop(--mm-color-text-dimmed, palette(white));
+
+  &:not(.mm-menu) {
+    display: none;
+  }
+}
+
+.mm-panel {
+  margin-top: rem(50px);
+}
+
+%m-menu-mobile__item {
+  margin-bottom: rem(23px);
+
+  a {
+    font-family: $title-font-family;
+    font-size: rem(45px);
+    line-height: 51px;
+    font-weight: 700;
+    padding: rem(4px) rem(30px)
+  }
+}
+
+// Menu Top Header.
+.mm-navbar .m-menu-mobile__header {
+  display: flex;
+  justify-content: space-between;
+  margin: rem(40px) rem(30px) 0 rem(30px);
+}
+
+// Menu items.
+li.mm-listitem {
+  @extend %m-menu-mobile__item;
+
+  // Active state.
+  &.is-active .mm-listitem__text {
+    color: palette(yellow, 600);
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: palette(yellow, 600);
+      color: palette(black);
+    }
+  }
+
+  // Hover state.
+  .mm-listitem__text:hover {
+    background: palette(yellow, 600);
+    color: palette(black);
+  }
+
+  // Highlighted
+  &.m-menu-mobile__item-highlighted .mm-listitem__text {
+    background-color: palette(yellow, 600);
+    color: palette(black);
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: palette(black);
+      color: palette(yellow, 600);
+    }
+
+    &.is-active {
+      background-color: palette(yellow, 500);
+      color: palette(black);
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: palette(black);
+        color: palette(yellow, 500);
+      }
+    }
+  }
+}
+
+// Fix for nav bar when logged in droppping when menu opened.
+// sass-lint:disable class-name-format
+.mm-wrapper_opening .toolbar-bar,
+.mm-wrapper_opened .toolbar-bar  {
+  top: -39px;
+}
+// sass-lint:enable class-name-format
+
+// Overriding to avoid the double border.
+.m-menu-mobile__item--section {
+  border: 0;
+}
+
+// Close buttons.
+%m-menu-mobile__core {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: rem(62px);
+  height: rem(62px);
+  color: palette(white);
+  padding: 0;
+  cursor: pointer;
+  background-color: palette(black);
+
+  svg {
+    font-size: rem(62px);
+  }
+}
+
+.m-menu-mobile__btn-close {
+  @extend %m-menu-mobile__core;
+  border: 0;
+}
+
+.m-menu-mobile__close {
+  margin-left: auto;
+}
+
+.mm-listview {
+  margin-top: rem(10px) !important;
+}

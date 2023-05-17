@@ -1,0 +1,71 @@
+uuid: f2208986-0cda-4092-9631-8441b5f66691
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.button.field_button_alignment
+    - field.field.paragraph.button.field_button_aria_label
+    - field.field.paragraph.button.field_button_label
+    - field.field.paragraph.button.field_button_target
+    - field.field.paragraph.button.field_button_url
+    - field.field.paragraph.button.field_button_variation
+    - paragraphs.paragraphs_type.button
+  module:
+    - link
+    - options
+id: paragraph.button.default
+targetEntityType: paragraph
+bundle: button
+mode: default
+content:
+  field_button_alignment:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_button_aria_label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_button_label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_button_target:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_button_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_button_variation:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

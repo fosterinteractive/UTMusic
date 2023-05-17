@@ -1,0 +1,123 @@
+// Styles for select after using select2_all module in Drupal
+.select2-selection--single {
+  display: flex !important;
+  position: relative;
+  align-items: center;
+  border-radius: unset !important;
+  height: rem(50px) !important;
+}
+
+.select2 {
+  min-width: fit-content !important;
+}
+
+.select2-selection__rendered {
+  padding-right: ru(2) !important;
+  white-space: pre-wrap !important;
+}
+
+.select2-selection {
+  border-radius: rem(10px) !important;
+  padding: rem(25px);
+  min-height: rem(75px) !important;
+  height: fit-content !important;
+}
+
+.select2-selection__arrow {
+  top: 15% !important;
+  right: 0 !important;
+
+  // We use flag !important for rewriting default styles for select
+  b {
+    position: static !important;
+    margin: 0 !important;
+    border: unset;
+    border-width: unset !important;
+    border-style: unset !important;
+    border-color: transparent !important;
+  }
+
+  b::after {
+    position: absolute;
+    right: 0;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDQ4IiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDQ0OCA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik00NDEuOSAxNjcuM0w0MjIuMSAxNDcuNUM0MTcuNCAxNDIuOCA0MDkuOCAxNDIuOCA0MDUuMSAxNDcuNUwyMjQgMzI4LjJMNDIuOSAxNDcuNUMzOC4yIDE0Mi44IDMwLjYgMTQyLjggMjUuOSAxNDcuNUw2LjEgMTY3LjNDMS40IDE3MiAxLjQgMTc5LjYgNi4xIDE4NC4zTDIxNS41IDM5My43QzIyMC4yIDM5OC40IDIyNy44IDM5OC40IDIzMi41IDM5My43TDQ0MS45IDE4NC4zQzQ0Ni42IDE3OS42IDQ0Ni42IDE3MiA0NDEuOSAxNjcuM1YxNjcuM1oiIGZpbGw9IiM5QzlCOUIiLz4KPC9zdmc+Cg==');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    width: rem(30px);
+    height: rem(26px);
+    content: '';
+    transition: 0.2s ease-in-out;
+    transform: translate(-50%, 50%);
+
+    @media (prefers-reduced-motion) {
+      transition: none; 
+    }
+  }
+}
+
+.select2-container--open {
+.select2-selection__arrow b::after {
+    transform: translate(-50%, 50%) rotate(180deg);
+    transition: 0.2s ease-in-out;
+      
+    @media (prefers-reduced-motion) {
+      transition: none; 
+    }
+  }
+}
+
+.select2-dropdown {
+  border-radius: rem(10px) !important;
+  border: none !important;
+}
+
+.select2-search--dropdown {
+  display: none !important;
+}
+
+.select2-results__option {
+  color: palette(grey, 200) !important;
+  padding: rem(20px) rem(25px);
+  border: rem(1px) solid palette(grey, 200) !important;
+
+  &:first-child {
+    border-radius: rem(10px) rem(10px) 0 0 !important;
+    border-top: none !important;
+  }
+
+  &:last-child {
+    border-radius: 0 0 rem(10px) rem(10px) !important;
+    border-bottom: none !important;
+  }
+}
+
+.select2-results__option.select2-results__option--highlighted {
+  border-radius: 0 !important;
+
+  &:first-child {
+    border-radius: rem(10px) rem(10px) 0 0 !important;
+  }
+
+  &:last-child {
+    border-radius: 0 0 rem(10px) rem(10px) !important;
+    background-color: palette(white);
+  }
+}
+
+.select2-results__option--highlighted {
+  background-color: palette(yellow, 900) !important;
+  color: palette(grey, 200) !important;
+  font-weight: bold !important;
+}
+  
+.select2-container--default {
+  .select2-results {
+    >.select2-results__options {
+      border-top: 0.04rem solid #383838;
+      border-bottom: 0.04rem solid #383838;
+      border-radius: rem(12px);
+      max-height: rem(250px) !important;
+    }
+  }
+}

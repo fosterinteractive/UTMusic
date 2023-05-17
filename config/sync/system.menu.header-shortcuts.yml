@@ -1,0 +1,10 @@
+uuid: 1aaa9c20-c3b5-43f7-bf61-f255f1fe2ef1
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: L_ssq7x897rfA42bPpiuvm3tlNV9S5NL4mT6UP0xvmw
+id: header-shortcuts
+label: 'Shortcuts Menu'
+description: 'Header Shortcuts'
+locked: false

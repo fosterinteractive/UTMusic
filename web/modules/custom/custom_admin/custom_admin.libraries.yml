@@ -1,0 +1,5 @@
+custom_admin:
+  version: VERSION
+  css:
+    theme:
+      css/custom_admin.css: { every_page: 1 }

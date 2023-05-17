@@ -1,0 +1,26 @@
+uuid: 449b6f2c-3c46-479f-b0b3-9029a8b9fdb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_inline_menu_description
+    - paragraphs.paragraphs_type.inline_menu
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - rich_text
+id: paragraph.inline_menu.field_inline_menu_description
+field_name: field_inline_menu_description
+entity_type: paragraph
+bundle: inline_menu
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

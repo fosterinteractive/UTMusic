@@ -1,0 +1,79 @@
+uuid: a0275559-3eea-4731-bd5b-11f3b025629a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.events_summary_list_dynamic.field_events_category
+    - field.field.paragraph.events_summary_list_dynamic.field_events_number_of_items
+    - field.field.paragraph.events_summary_list_dynamic.field_events_offset
+    - field.field.paragraph.events_summary_list_dynamic.field_events_other_number_items
+    - field.field.paragraph.events_summary_list_dynamic.field_events_promote
+    - field.field.paragraph.events_summary_list_dynamic.field_events_status
+    - field.field.paragraph.events_summary_list_dynamic.field_events_title
+    - paragraphs.paragraphs_type.events_summary_list_dynamic
+  module:
+    - allowed_formats
+    - term_reference_tree
+    - text
+id: paragraph.events_summary_list_dynamic.default
+targetEntityType: paragraph
+bundle: events_summary_list_dynamic
+mode: default
+content:
+  field_events_category:
+    type: term_reference_tree
+    weight: 2
+    region: content
+    settings:
+      start_minimized: true
+      leaves_only: false
+      select_parents: false
+      cascading_selection: 0
+      max_depth: 0
+    third_party_settings: {  }
+  field_events_number_of_items:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_events_offset:
+    type: number
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_events_other_number_items:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_events_promote:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_events_status:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_events_title:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+hidden:
+  created: true
+  status: true

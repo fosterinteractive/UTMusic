@@ -1,0 +1,5 @@
+text: 'Filter Category'
+variation: 'icon'
+url: ''
+icon: 'times-circle-solid'
+aria_label: 'Remove applied filter category'

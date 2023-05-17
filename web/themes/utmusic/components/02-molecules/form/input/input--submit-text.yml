@@ -1,0 +1,7 @@
+attributes:
+  Attribute():
+    class: ['m-input-submit']
+    type: submit
+    id: submit_input
+    name: submit_input
+    value: "Submit (Input Button)"

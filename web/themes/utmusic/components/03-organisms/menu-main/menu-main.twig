@@ -1,0 +1,82 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+
+
+{% if sb_class %}
+  <div class="{{ sb_class }}">
+    {# include <nav> element in pl. We do this here as drupal has another template file where the <nav> included #}
+    <nav class="m-menu-main" role="navigation" aria-labelledby="main-nav" data-menu-main>
+      <h2 class="u-visually--hidden" id="main-nav">Main navigation</h2>
+{% endif %}
+
+{% import _self as menus %}
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 1) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    <ul class="{{ 'm-menu-main__list--level-' ~ menu_level }}{% if menu_level == 1 %} js-menu-main__list{% endif %}" role="menu">
+
+    {% for item in items %}
+      {% set classes = [
+          'm-menu-main__item--level-' ~ menu_level,
+          item.in_active_trail == TRUE ? 'is-active',
+          menu_level == 1 ? 'js-menu-main__item',
+          item.content.field_highlight_menu_item[0]['#markup'] == 'True' ? 'm-menu-main__item-highlighted',
+        ]
+      %}
+      <li{{ item.attributes.addClass(classes) }}{% if item.in_active_trail == TRUE %}{{ item.attributes.setAttribute("aria-current", "page") }}{% endif %} role="menuitem">
+        {% set link_classes = [
+            'm-menu-main__link--level-' ~ menu_level,
+          ]
+        %}
+
+        {% if item.url == '<nolink>' or (item.url.isRouted() and item.url.getRouteName == '<nolink>') %}
+          <button class="{{ 'm-menu-main__link--level-' ~ menu_level }}{% if item.in_active_trail == TRUE %} is-active{% endif %}">{{ item.title }}</button>
+        {% else %}
+          {{ link(item.title, item.url, { 'class' : link_classes}) }}
+        {% endif %}
+
+        {% if item.below %}
+          {% if  menu_level == 1 %}
+            <div class="m-menu-main__panel js-menu-main__panel">
+          {% endif %}
+
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+
+          {% if menu_level == 1 %}
+            </div>
+          {% endif %}
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+{% if sb_class %}
+    </nav>
+  </div>
+{% endif %}

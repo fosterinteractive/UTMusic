@@ -1,0 +1,16 @@
+uuid: ae55b8c1-0ee3-4ee8-854a-2f6fba00e716
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: a0HDdbyJ2_UQr_LYSrgt6bId312vDUfaipanGvPqrVE
+id: node__ed_layout_page
+label: 'Content: Advanced Page'
+tags:
+  title: '[node:field_ed_layout_page_meta_title] | [site:name]'
+  description: '[node:field_ed_layout_page_meta_desc]'
+  og_type: article
+  og_image: 'node:field_ed_layout_page_meta_image:entity:field_ed_image_image:social_image:url'
+  og_url: '[current-page:url:absolute]'
+  og_description: '[node:field_ed_layout_page_meta_desc]'
+  og_title: '[node:field_ed_layout_page_meta_title]'

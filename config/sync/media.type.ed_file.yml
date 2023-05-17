@@ -1,0 +1,21 @@
+uuid: 9232f806-b7e4-4256-bc1a-ca617bd129f8
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: _none
+_core:
+  default_config_hash: xcxOT9S6ZzlBw0_TMKiYsZit0GjWcwWDguzQ2xQ_f4Y
+id: ed_file
+label: File
+description: 'Use local files for reusable media.'
+source: file
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_ed_file_file
+field_map:
+  name: name

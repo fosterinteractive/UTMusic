@@ -1,0 +1,19 @@
+logo_image_url: 'https://placeholder.pics/svg/400x200'
+logo_width: 400 
+logo_height: 200
+parent_site_url: 'https://oise.utoronto.ca'
+parent_site_label: 'Visit oise.utoronto.ca'
+front_page: "#"
+slogan: 'Optional Sub Title or Slogan - Lorum Ipsum Delorum'
+header_shortcuts:
+  join():
+    - molecules-header-shortcuts
+responsive_menu_mobile_icon:
+  join():
+     - include():
+        pattern: 'atoms-button'
+        with:
+          url: '#off-canvas'
+          variation: '--icon-square'
+          svg: 'ico-drawer'
+          id: 'toggle-icon'

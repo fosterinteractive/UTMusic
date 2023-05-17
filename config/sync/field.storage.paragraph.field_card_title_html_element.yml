@@ -1,0 +1,30 @@
+uuid: 1fb5143d-65db-4dd2-9abe-12e76872858a
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_card_title_html_element
+field_name: field_card_title_html_element
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: h2
+      label: 'H2 (default)'
+    -
+      value: h3
+      label: H3
+    -
+      value: span
+      label: 'Span element'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,9 @@
+_core:
+  default_config_hash: 9eLO93swo51KS2Og6gEhXNPlSy2D0VkSn5yyXQ_S9-Q
+status: 1
+pattern: '[node:field_ed_event_title]'
+escape: false
+dependencies:
+  config:
+    - node.type.ed_event
+new_entity_action: 1

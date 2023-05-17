@@ -1,0 +1,33 @@
+uuid: 76f8e154-d02c-4cbc-92c6-b8789cb1aad6
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_events_number_of_items
+field_name: field_events_number_of_items
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '2'
+      label: 'Display 2 items'
+    -
+      value: '4'
+      label: 'Display 4 items'
+    -
+      value: '6'
+      label: 'Display 6 items'
+    -
+      value: other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

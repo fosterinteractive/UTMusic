@@ -1,0 +1,23 @@
+uuid: 03962813-a8f1-46ca-bab3-31c608c490c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_events_offset
+    - paragraphs.paragraphs_type.events_summary_list_dynamic
+id: paragraph.events_summary_list_dynamic.field_events_offset
+field_name: field_events_offset
+entity_type: paragraph
+bundle: events_summary_list_dynamic
+label: Offset
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

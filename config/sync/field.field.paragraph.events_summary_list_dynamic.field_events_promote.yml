@@ -1,0 +1,29 @@
+uuid: 325d4fba-f96c-4c0f-a453-d61ca753837c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_events_promote
+    - paragraphs.paragraphs_type.events_summary_list_dynamic
+    - taxonomy.vocabulary.ed_promote_content
+id: paragraph.events_summary_list_dynamic.field_events_promote
+field_name: field_events_promote
+entity_type: paragraph
+bundle: events_summary_list_dynamic
+label: Promote
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ed_promote_content: ed_promote_content
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -3,17 +3,17 @@ type: theme
 description: Admin content editing theme based off of mainspring theme.
 core: 8.x
 core_version_requirement: ^8 || ^9
-base theme: mainspring_theme
+base theme: utmusic
 
 libraries:
   - adminspring/global
   - claro/global-styling
 
 libraries-override:
-  mainspring_theme/global:
+  utmusic/global:
     css:
       theme:
-        assets/style.css: /themes/mainspring-theme/assets/adminspring-style.css
+        assets/style.css: /themes/utmusic/assets/adminspring-style.css
   system/base:
     css:
       component:

@@ -1,0 +1,19 @@
+uuid: 06a39da3-16ac-4152-a938-67fab3b4af8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_meta_description
+    - node.type.page
+id: node.page.field_page_meta_description
+field_name: field_page_meta_description
+entity_type: node
+bundle: page
+label: 'Meta Description'
+description: '<b>Optional:</b> Create a custom <i>Meta Description</i> tag for the page. 100 to 150 characters recommended.  See <a href="https://moz.com/learn/seo/meta-description" target="_blank">Meta Description </a>for more details.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,22 @@
+{# Set default list html_element - ul #}
+{% set html_element = html_element|default('ul') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %}
+
+{% endif %}
+
+<{{ html_element }} class="a-list{{ variation }}">
+  {% for item in items %}
+    {% include "@atoms/lists/_list-item.twig" with {
+        list_item: item.content,
+      } 
+    %}
+  {% endfor %}
+</{{ html_element }}>

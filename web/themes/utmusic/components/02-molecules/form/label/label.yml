@@ -1,0 +1,4 @@
+title: 'Default label'
+attributes:
+  Attribute():
+    class: ['m-label']

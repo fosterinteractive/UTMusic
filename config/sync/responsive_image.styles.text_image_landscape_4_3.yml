@@ -1,0 +1,39 @@
+uuid: 2e3eee6e-f33e-4f96-bba4-ac9a0980d2a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.landscape_4_3_1200
+    - image.style.landscape_4_3_1500
+    - image.style.landscape_4_3_1800
+    - image.style.landscape_4_3_200
+    - image.style.landscape_4_3_2000
+    - image.style.landscape_4_3_2500
+    - image.style.landscape_4_3_2800
+    - image.style.landscape_4_3_3000
+    - image.style.landscape_4_3_400
+    - image.style.landscape_4_3_600
+    - image.style.landscape_4_3_900
+id: text_image_landscape_4_3
+label: 'Text & Image Landscape 4:3'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width:1280px) 280px, (min-width:600px) 20vw, calc(100vw - 40px)'
+      sizes_image_styles:
+        - landscape_4_3_1200
+        - landscape_4_3_1500
+        - landscape_4_3_1800
+        - landscape_4_3_200
+        - landscape_4_3_2000
+        - landscape_4_3_2500
+        - landscape_4_3_2800
+        - landscape_4_3_3000
+        - landscape_4_3_400
+        - landscape_4_3_600
+        - landscape_4_3_900
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: landscape_4_3_600

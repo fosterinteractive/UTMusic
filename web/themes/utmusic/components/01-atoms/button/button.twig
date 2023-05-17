@@ -1,0 +1,93 @@
+{# Set default button class - Also used by atoms/links 'a-link' #}
+{% set base_class = base_class|default('a-button') %}
+{% set alignment = alignment|default('left') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %}
+
+  
+  {# Set default icon all icon variations #}
+  {% if variation == '--icon' or variation == '--icon-left' or variation == '--icon-right' or variation == '--circle' %} 
+    {% set icon = icon|default('up-right-from-square-solid') %}
+  {% endif %}   
+
+{% endif %}
+
+{# Component can be either <a> (default) or <button> #}
+{% set html_element = html_element|default('a') %}
+
+<{{ html_element }}
+  
+  {# href for <a> #}
+  {% if url and html_element == 'a' %}
+    href="{{ url }}"
+  {% endif %}
+
+  {% if id %}
+    id="{{ id }}"
+  {% endif %}
+
+  {% if target %}
+    target="{{ target }}"
+  {% endif %}
+
+  {# Class #}
+  class="{{ base_class }}{{ variation }} {{ extra_classes }} a-button--{{ alignment }}"
+
+  {% if data_attribute %}
+    {{ data_attribute|raw }}
+  {% endif %}
+
+  {# Optional Arial Label for ambigious links "read more" with a Heading near it in the DOM #}
+
+  {% if aria_label %}
+    aria-label="{{ aria_label }}"
+  {% endif %} 
+
+  {# Optional Arial Label by for amigious links like "read more" with a Heading near it in the DOM #}
+  {% if aria_labelledby %}
+    aria-labelledby="{{ aria_labelledby }}"
+  {% endif %}> 
+  {# Close Tag  <a> or <button> #}
+
+  {# If variation is --icon left attach svg icon before label #}
+  {% if variation == '--icon-left' %}
+    {% if icon %}
+      {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+        directory: directory,
+        icon: icon,
+        base_class: 'a-button' ~ variation ~ '__icon',
+      } only %}
+    {% endif %}
+  {% endif %}
+
+  {# --icon variation is the button + icon without visible text. Label is visually hidden #}
+  {% if variation != '--icon' and variation != '--circle' %}
+    {{ label }}
+  {% else %} 
+    <div class="u-visually--hidden">{{ label }}</div>
+  {% endif %}
+
+
+  {# If variation is --icon or --icon-right attach svg icon before label #}
+  {% if variation == '--icon-right' or variation == '--icon' or variation == '--circle' %}
+    {% if icon %}
+      {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+        directory: directory,
+        icon: icon,
+        base_class: 'a-button' ~ variation ~ '__icon',
+      } only
+    %}
+    {% endif %}
+  {% endif %}
+        
+
+
+</{{ html_element }}>
+

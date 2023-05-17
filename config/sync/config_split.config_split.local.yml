@@ -1,0 +1,19 @@
+uuid: fc216f00-162c-4994-8ec8-13ef53c88dcc
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: 4C1BlrlvHRZqsbseJVFhU221lKVSiJ280IhINuHL0cA
+id: local
+label: Local
+description: ''
+weight: 0
+stackable: false
+storage: folder
+folder: ../config/local
+module:
+  devel: 0
+  devel_kint_extras: 0
+theme: {  }
+complete_list: {  }
+partial_list: {  }

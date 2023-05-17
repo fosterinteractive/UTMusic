@@ -1,0 +1,15 @@
+test_form.test_form_elements:
+  path: '/test-form/elements'
+  defaults:
+    _title: 'Test Form Elements'
+    _form: '\Drupal\test_form\Form\TestFormElements'
+  requirements:
+    _permission: 'access content'
+
+test_form.test_form_layout:
+  path: '/test-form/layout'
+  defaults:
+    _title: 'Test Form Layout'
+    _form: '\Drupal\test_form\Form\TestFormLayout'
+  requirements:
+    _permission: 'access content'

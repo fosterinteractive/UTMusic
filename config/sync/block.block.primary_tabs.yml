@@ -1,0 +1,22 @@
+uuid: d181eed4-3bf5-4f55-84ab-b90e597e5e07
+langcode: en
+status: true
+dependencies:
+  theme:
+    - adminspring
+_core:
+  default_config_hash: sNYxAEBvnlNYN6LdGIxcG1LrwQi_0eAk2TgGcYVMhxs
+id: primary_tabs
+theme: adminspring
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary Tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

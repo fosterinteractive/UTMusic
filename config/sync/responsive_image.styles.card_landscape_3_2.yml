@@ -1,0 +1,41 @@
+uuid: 7c6c30e3-19f5-4f4d-9a4a-d956bb2e868e
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.landscape_3_2_1200
+    - image.style.landscape_3_2_1500
+    - image.style.landscape_3_2_1800
+    - image.style.landscape_3_2_200
+    - image.style.landscape_3_2_2000
+    - image.style.landscape_3_2_2500
+    - image.style.landscape_3_2_2800
+    - image.style.landscape_3_2_3000
+    - image.style.landscape_3_2_400
+    - image.style.landscape_3_2_600
+    - image.style.landscape_3_2_860
+_core:
+  default_config_hash: Qyc41bCflRxbp6X2nNp717cNR2oXP1fel_0o_ubxBis
+id: card_landscape_3_2
+label: 'Card Landscape 3:2'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width:1280px) 372px, (min-width:900px) calc(33vw - 40px), (min-width:600px) calc(50vw - 40px), calc(100vw - 40px)'
+      sizes_image_styles:
+        - landscape_3_2_1200
+        - landscape_3_2_1500
+        - landscape_3_2_1800
+        - landscape_3_2_200
+        - landscape_3_2_2000
+        - landscape_3_2_2500
+        - landscape_3_2_2800
+        - landscape_3_2_3000
+        - landscape_3_2_400
+        - landscape_3_2_600
+        - landscape_3_2_860
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: landscape_3_2_600

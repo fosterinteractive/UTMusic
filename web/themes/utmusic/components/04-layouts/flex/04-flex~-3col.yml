@@ -1,0 +1,44 @@
+pl_grid: true
+pl_class: 'pl__wrapper--lrg-no-padding pl-outline--red'
+flex_variation: '--3col'
+rows:
+  - content:
+      join():
+        - include():
+            pattern: molecules-card
+            with:
+              pl_class: ''
+  - content:
+      join():
+        - include():
+            pattern: molecules-card
+            with:
+              pl_class: ''
+              image: '<img src="https://source.unsplash.com/dZ_RWzk5sSA/300x200" />'
+              title: 'Card With A Very Long Title Which Should Wrap Lines'
+              body: '<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p><p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>'
+              link_url: '#'
+              link_text: 'Learn More'
+  - content:
+      join():
+        - include():
+            pattern: molecules-card
+            with:
+              pl_class: ''
+  - content:
+      join():
+        - include():
+            pattern: molecules-card
+            with:
+              pl_class: ''
+              image: '<img src="https://source.unsplash.com/dZ_RWzk5sSA/300x200" />'
+              title: 'Card With A Very Long Title Which Should Wrap Lines'
+              body: '<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p><p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>'
+              link_url: '#'
+              link_text: 'Learn More'
+  - content:
+      join():
+        - include():
+            pattern: molecules-card
+            with:
+              pl_class: ''

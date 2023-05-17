@@ -1,0 +1,32 @@
+// Converts units from pixels to EMs
+//
+// Example Sass Usage
+//   .my-module {
+//     font-size: em(24px);
+//   }
+//
+// Example CSS Output
+//   .my-module {
+//     font-size: 1.5em;
+//   }
+
+@use 'sass:math';
+
+@function em($px, $base: $base-font-size) {
+  @return math.div($px, $base) * 1em;
+}
+
+// Converts units from pixels to REMs
+// Example Sass Usage
+//   .my-module {
+//     font-size: rem(24px);
+//   }
+//
+// Example CSS Output
+//   .my-module {
+//     font-size: 1.5rem;
+//   }
+
+@function rem($px, $base: $base-font-size) {
+  @return math.div($px, $base) * 1rem;
+}

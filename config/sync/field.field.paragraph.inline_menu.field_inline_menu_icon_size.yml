@@ -1,0 +1,21 @@
+uuid: c0741f82-2ebb-45c4-9b42-5b85de8f9693
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_inline_menu_icon_size
+    - paragraphs.paragraphs_type.inline_menu
+  module:
+    - options
+id: paragraph.inline_menu.field_inline_menu_icon_size
+field_name: field_inline_menu_icon_size
+entity_type: paragraph
+bundle: inline_menu
+label: 'Icon Size'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

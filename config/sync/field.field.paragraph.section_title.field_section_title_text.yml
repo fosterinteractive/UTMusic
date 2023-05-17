@@ -1,0 +1,26 @@
+uuid: f7a93357-31ab-4420-8bc3-d8edf621c90c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_title_text
+    - paragraphs.paragraphs_type.section_title
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - rich_text
+id: paragraph.section_title.field_section_title_text
+field_name: field_section_title_text
+entity_type: paragraph
+bundle: section_title
+label: 'Title Text'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

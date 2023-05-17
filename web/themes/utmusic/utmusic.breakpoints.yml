@@ -1,0 +1,19 @@
+utmusic.small:
+  label: small
+  mediaQuery: '(min-width: 0px)'
+  weight: 0
+
+utmusic.medium:
+  label: medium
+  mediaQuery: '(min-width: 900px)'
+  weight: 1
+
+utmusic.large:
+  label: large
+  mediaQuery: '(min-width: 1200px)'
+  weight: 2
+
+utmusic.huge:
+  label: huge
+  mediaQuery: '(min-width: 1460px)'
+  weight: 3

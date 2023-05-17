@@ -1,0 +1,146 @@
+.a-list__item,
+%a-list__item {
+  @extend %a-type__core;
+
+  padding-left: 0;
+}
+
+%a-list--unordered,
+.a-list--unordered {
+  margin-top: ru(0.5);
+  margin-bottom: ru(0.5);
+  padding-left: 0;
+  list-style-type: none;
+
+  li {
+    @extend %a-list__item;
+    
+    position: relative;
+    margin-bottom: ru(0.5);
+    margin-left: ru(1);
+    break-inside: avoid;
+    page-break-inside: avoid;
+
+    &:last-child {
+      margin-bottom: ru(1);
+    }
+
+    ol {
+
+      > li {
+        margin-left: ru(0.75);
+        padding-left: ru(0.25);
+      }
+
+      > li:before {
+        content: '';
+      }
+    }
+  }
+
+  li:before {
+    position: absolute;
+    top: 0;
+    left: ru(-1);
+    content: '\2022 '; // Bullet symbol
+  }
+}
+
+%a-list--unordered-2col,
+.a-list--unordered-2col {
+  @extend %a-list--unordered;
+
+  @include breakpoint($bp-tablet-small) {
+    column-count: 2;
+    column-gap: ru(0.5);
+  }
+
+  > li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+
+
+%a-list--ordered,
+.a-list--ordered {
+  margin-top: ru(0.5);
+  margin-bottom: ru(0.5);
+  padding-left: 0;
+  counter-reset: list;
+
+  > li {
+    @extend %a-type__core;
+    position: relative;
+    margin-bottom: ru(0.5);
+    margin-left: ru(1.25);
+    list-style: decimal;
+    break-inside: avoid;
+    page-break-inside: avoid;
+
+    ol,
+    ul {
+      margin-top: ru(0.5);
+      margin-bottom: ru(0.5);
+      padding-left: ru(1);
+
+      li {
+        margin-left: ru(0.75);
+        padding-left: ru(0.25);
+        list-style: inherit;
+      }
+    }
+  }
+}
+
+%a-list--ordered-decimal,
+.a-list--ordered-decimal {
+  @extend %a-list--ordered;
+
+  > li {
+    list-style-type: decimal;
+
+    .a-list--ordered-roman > li {
+      list-style-type: upper-roman;
+    }
+
+    .a-list--ordered-alpha > li {
+      list-style-type: upper-alpha;
+    }
+  }
+}
+
+%a-list--ordered-roman,
+.a-list--ordered-roman {
+  @extend %a-list--ordered;
+
+  > li {
+    list-style-type: upper-roman;
+
+    .a-list--ordered-alpha > li {
+      list-style-type: upper-alpha;
+    }
+
+    .a-list--ordered-decimal > li {
+      list-style-type: decimal;
+    }
+  }
+}
+
+%a-list--ordered-alpha,
+.a-list--ordered-alpha {
+  @extend %a-list--ordered;
+
+  > li {
+    list-style-type: upper-alpha;
+
+    .a-list--ordered-decimal > li {
+      list-style-type: decimal;
+    }
+
+    .a-list--ordered-roman > li {
+      list-style-type: upper-roman;
+    }
+  }
+}

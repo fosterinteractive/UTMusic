@@ -1,0 +1,103 @@
+// New general styles for form-managed-file.
+.form-managed-file {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+// File area.
+.file-drop-area {
+  display: flex;
+  position: relative;
+  align-items: center;
+  border: rem(2px) dashed palette(blue, 400);
+  border-radius: 4px;
+  padding: rem(10px);
+  width: 100%;
+  max-width: 100%;
+  transition: 0.2s;
+
+  &.is-active,
+  &:hover {
+    border: rem(2px) dashed palette(blue, 400);
+    background-color: palette(green);
+  }
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .form-managed-file.error & {
+    border: rem(1px) dashed palette(red, 600);
+  }
+
+  @include breakpoint($bp-tablet-small) {
+    margin-right: rem(10px);
+    padding: rem(25px);
+    max-width: rem(450px);
+  }
+}
+
+// Message inside file-drop-area.
+.file-drop-area__fake-btn {
+  @extend %a-type--small;
+  flex-shrink: 0;
+  margin-right: rem(5px);
+  margin-left: 0;
+}
+
+// Message inside file-drop-area.
+.file-drop-area__file-msg {
+  @extend %a-type--xsmall;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// File name after upload.
+.m-form-element--webform-document-file,
+.m-form-element--webform-image-file {
+  border-top: rem(2px) solid palette(blue, 400);
+  border-bottom: rem(2px) solid palette(blue, 400);
+
+  &.l-form-item {
+    margin-top: rem(30px);
+    margin-bottom: rem(30px);
+    padding-top: rem(15px);
+    padding-bottom: rem(15px);
+  }
+
+  .file {
+    @extend %a-type--xsmall;
+
+    display: flex;
+    align-items: center;
+    border: rem(2px) solid palette(blue, 400);
+    border-radius: 4px;
+    background-color: palette(green);
+    padding: rem(10px);
+
+    @include breakpoint($bp-tablet-small) {
+      padding: rem(25px);
+      max-width: rem(450px);
+    }
+  }
+
+  .file a {
+    @extend %a-link;
+  }
+
+  .m-input-submit {
+    margin-top: rem(15px);
+  }
+}

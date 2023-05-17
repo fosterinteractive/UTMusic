@@ -1,0 +1,80 @@
+{# Set default hero class - 'o-hero' #}
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+{% set decoration_color = decoration_color|default('') %}
+
+{% if decoration_color is not empty %}
+
+  {# Add BEM decoration_color '--' prefix if missing #}
+  {% if decoration_color starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set decoration_color = '--' ~ decoration_color %}
+  {% endif %} 
+
+{% endif %}
+
+
+<div class="o-hero-media{{ variation }}">
+
+  {% if hero_image %}
+    <div class="{% if variation %}o-hero-media__image{{ variation }}{% endif %}">
+      {{ hero_image }}
+    </div>
+  {% endif %}
+
+  <div class="{% if variation %}o-hero-media__text{{ variation }}-wrapper{% endif %}">
+
+    <div class="{% if variation %}o-hero-media__text{{ variation }}{% endif %}">
+      {% if title_prefix or title %}
+        <h1 class="a-heading__h1-large">
+          {% if title_prefix %}
+            <span class='{% if variation %}o-hero-media__title-prefix{{ variation }}{% endif %}'>{{ title_prefix }}</span>
+          {% endif %}
+          
+          {% if title %}
+            <span class='o-hero-media__title'>{{ title }}</span>
+          {% endif %}
+        </h1>
+      {% endif %}
+
+      {% if summary %}
+        <div class="o-hero__summary">
+          {{ summary }}
+        </div>
+      {% endif %}
+
+      <div class="{% if variation %}o-hero-media__icon-arrow{{ variation }}{% endif %}">
+        {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+          directory: directory,
+          base_class: 'a-icon-arrow',
+          icon: 'arrow-down',
+          icon_file_type: icon_file_type,
+          size: icon_size,
+          } only
+        %}
+      </div>
+
+    </div>
+  </div>
+
+  <div class="l-section__decoration-top o-hero-media__decoration{{ decoration_color }}">
+    {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+      directory: directory,
+      icon: 'brush1',
+      base_class: 'l-section__decoration-svg',
+    } only %}
+  </div>
+
+</div>

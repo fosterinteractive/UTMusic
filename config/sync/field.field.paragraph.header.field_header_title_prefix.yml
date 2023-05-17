@@ -1,0 +1,26 @@
+uuid: 586437cd-4371-4d76-b7c2-7255b3b865cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_header_title_prefix
+    - paragraphs.paragraphs_type.header
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+id: paragraph.header.field_header_title_prefix
+field_name: field_header_title_prefix
+entity_type: paragraph
+bundle: header
+label: 'Title Prefix'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
