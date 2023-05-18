@@ -40,7 +40,6 @@ class ComposerScripts {
     if (file_exists($file)) {
       error_log("found file");
       $composerJsonContents = file_get_contents($file);
-      print_r($composerJsonContents);
 
       // We will only set the root version if it has not already been overriden
       if (!getenv('COMPOSER_AUTH')) {
