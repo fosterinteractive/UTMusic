@@ -148,9 +148,13 @@
         "enable-patching": true
     },
     "autoload": {
-        "classmap": ["upstream-configuration/scripts/ComposerScripts.php"]
+        "classmap": [
+            "upstream-configuration/scripts/ComposerScripts.php",
+            "scripts/composer"
+        ]
     },
     "scripts": {
+        "pre-install-cmd": ["ComposerAuth\\ComposerScripts::addComposerAuth"],
         "pre-update-cmd": ["DrupalComposerManaged\\ComposerScripts::preUpdate"],
         "post-update-cmd": ["DrupalComposerManaged\\ComposerScripts::postUpdate"]
     },
