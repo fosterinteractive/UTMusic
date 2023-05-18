@@ -155,7 +155,10 @@
     },
     "scripts": {
         "pre-install-cmd": ["ComposerAuth\\ComposerScripts::addComposerAuth"],
-        "pre-update-cmd": ["DrupalComposerManaged\\ComposerScripts::preUpdate"],
+        "pre-update-cmd": [
+            "DrupalComposerManaged\\ComposerScripts::preUpdate",
+            "ComposerAuth\\ComposerScripts::addComposerAuth"
+        ],
         "post-update-cmd": ["DrupalComposerManaged\\ComposerScripts::postUpdate"]
     },
     "config": {
