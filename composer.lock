@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cae5994772b26d960c7db6c7af301084",
+    "content-hash": "69eb0ec8d89c16bf1acccbd6f61363fd",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -8267,72 +8267,6 @@
             }
         },
         {
-            "name": "drupal/media_entity_soundcloud",
-            "version": "3.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/media_entity_soundcloud.git",
-                "reference": "3.1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/media_entity_soundcloud-3.1.1.zip",
-                "reference": "3.1.1",
-                "shasum": "565bba7f8505c5330f52abc147b48e2bedd4e988"
-            },
-            "require": {
-                "drupal/core": "^9.3 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "3.1.1",
-                    "datestamp": "1664452204",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Drupal\\media_entity_soundcloud\\": "src/"
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "arshadcn",
-                    "homepage": "https://www.drupal.org/user/571032"
-                },
-                {
-                    "name": "dawehner",
-                    "homepage": "https://www.drupal.org/user/99340"
-                },
-                {
-                    "name": "jcisio",
-                    "homepage": "https://www.drupal.org/user/210762"
-                },
-                {
-                    "name": "Rajeshreeputra",
-                    "homepage": "https://www.drupal.org/user/3418561"
-                },
-                {
-                    "name": "shadcn",
-                    "homepage": "https://www.drupal.org/user/571032"
-                }
-            ],
-            "description": "Soundcloud integration for the Media Entity module",
-            "homepage": "https://drupal.org/project/media_entity_soundcloud",
-            "support": {
-                "source": "https://git.drupalcode.org/project/media_entity_soundcloud",
-                "issues": "https://drupal.org/project/issues/media_entity_soundcloud"
-            }
-        },
-        {
             "name": "drupal/media_entity_twitter",
             "version": "2.9.0",
             "source": {
@@ -9786,6 +9720,60 @@
             "homepage": "https://www.drupal.org/project/reroute_email",
             "support": {
                 "source": "https://git.drupalcode.org/project/reroute_email"
+            }
+        },
+        {
+            "name": "drupal/responsive_favicons",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/responsive_favicons.git",
+                "reference": "2.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/responsive_favicons-2.0.1.zip",
+                "reference": "2.0.1",
+                "shasum": "d42db3b36422cdd915f03089900b4a2408535a80"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.1",
+                    "datestamp": "1682129244",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "liuba",
+                    "homepage": "https://www.drupal.org/user/318617"
+                },
+                {
+                    "name": "wiifm",
+                    "homepage": "https://www.drupal.org/user/358731"
+                }
+            ],
+            "description": "Add responsive favicons to your site based on the code from http://realfavicongenerator.net/",
+            "homepage": "https://www.drupal.org/project/responsive_favicons",
+            "keywords": [
+                "Drupal",
+                "Favicon",
+                "realfavicongenerator"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/responsive_favicons",
+                "issues": "https://www.drupal.org/project/issues/responsive_favicons"
             }
         },
         {
@@ -12262,12 +12250,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:fosterinteractive/mainspring-profile.git",
-                "reference": "6d2dc0289300fe5dd367653015fbf146d571cedd"
+                "reference": "d78bda772b9f580f0b6aa8d6f681740f95899382"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fosterinteractive/mainspring-profile/zipball/6d2dc0289300fe5dd367653015fbf146d571cedd",
-                "reference": "6d2dc0289300fe5dd367653015fbf146d571cedd",
+                "url": "https://api.github.com/repos/fosterinteractive/mainspring-profile/zipball/d78bda772b9f580f0b6aa8d6f681740f95899382",
+                "reference": "d78bda772b9f580f0b6aa8d6f681740f95899382",
                 "shasum": ""
             },
             "require": {
@@ -12296,6 +12284,7 @@
                 "drupal/config_split": "2.0.0-rc4",
                 "drupal/config_update": "1.7",
                 "drupal/content_moderation_notifications": "3.5",
+                "drupal/content_synchronizer": "3.1.1",
                 "drupal/core-composer-scaffold": "9.5.8",
                 "drupal/core-recommended": "9.5.8",
                 "drupal/crop": "2.3",
@@ -12379,6 +12368,7 @@
                 "drupal/replicate": "1.2",
                 "drupal/replicate_ui": "1.1",
                 "drupal/reroute_email": "2.2.0",
+                "drupal/responsive_favicons": "2.0.1",
                 "drupal/role_delegation": "1.2",
                 "drupal/search_api": "1.29",
                 "drupal/sendgrid_integration": "1.7",
@@ -12490,10 +12480,10 @@
             },
             "description": "MS profile",
             "support": {
-                "source": "https://github.com/fosterinteractive/mainspring-profile/tree/kate-dev-new",
+                "source": "https://github.com/fosterinteractive/mainspring-profile/tree/10.x-dev",
                 "issues": "https://github.com/fosterinteractive/mainspring-profile/issues"
             },
-            "time": "2023-05-12T02:07:18+00:00"
+            "time": "2023-05-17T22:04:21+00:00"
         },
         {
             "name": "fosterinteractive/social_lite",
@@ -13850,16 +13840,16 @@
         },
         {
             "name": "mglaman/phpstan-drupal",
-            "version": "1.1.32",
+            "version": "1.1.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mglaman/phpstan-drupal.git",
-                "reference": "d8a70aca702df6fcb95a50afffbe3c0ea407ad93"
+                "reference": "42d594e70ea0e6b75662d35f302814558e05ac2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/d8a70aca702df6fcb95a50afffbe3c0ea407ad93",
-                "reference": "d8a70aca702df6fcb95a50afffbe3c0ea407ad93",
+                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/42d594e70ea0e6b75662d35f302814558e05ac2e",
+                "reference": "42d594e70ea0e6b75662d35f302814558e05ac2e",
                 "shasum": ""
             },
             "require": {
@@ -13934,7 +13924,7 @@
             "description": "Drupal extension and rules for PHPStan",
             "support": {
                 "issues": "https://github.com/mglaman/phpstan-drupal/issues",
-                "source": "https://github.com/mglaman/phpstan-drupal/tree/1.1.32"
+                "source": "https://github.com/mglaman/phpstan-drupal/tree/1.1.33"
             },
             "funding": [
                 {
@@ -13950,7 +13940,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-05-10T20:44:42+00:00"
+            "time": "2023-05-17T21:43:58+00:00"
         },
         {
             "name": "mnsami/composer-custom-directory-installer",
