@@ -74,7 +74,6 @@
         "drupal/core-composer-scaffold": "^9.5",
         "drupal/core-recommended": "^9.5",
         "fosterinteractive/adminspring-theme": "dev-10.0.x-dev",
-        "fosterinteractive/mainspring-profile": "dev-10.x-dev",
         "pantheon-systems/drupal-integrations": "^9",
         "mnsami/composer-custom-directory-installer": "^2.0",
         "oomphinc/composer-installers-extender": "^2.0",
@@ -146,17 +145,6 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
-        "patches": {
-            "drupal/layout_paragraphs_restriction": {
-              "3229861 - Layout Paragraphs 2.x compatibility": "https://www.drupal.org/files/issues/2022-10-03/entity_type_bundle_info-3229861-5.patch"
-            },
-            "drupal/focal_point": {
-              "2906631 - After changing focal point, image doesn't change until you click preview": "https://www.drupal.org/files/issues/2022-06-10/2906631-12_0.patch"
-            },
-            "drupal/admin_toolbar": {
-              "3286466 - Tabbing order does not satisfy 508 accessibility requirements": "https://www.drupal.org/files/issues/2023-05-11/tab_order_chevrons-3286466-24.patch"
-            }
-        },
         "enable-patching": true
     },
     "autoload": {
@@ -177,7 +165,13 @@
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "mnsami/composer-custom-directory-installer": true,
+            "wikimedia/composer-merge-plugin": true,
+            "drupal/console-extend-plugin": true,
+            "oomphinc/composer-installers-extender": true,
+            "rvtraveller/qs-composer-installer": true,
+            "topfloor/composer-cleanup-vcs-dirs": true
         }
     }
 }
