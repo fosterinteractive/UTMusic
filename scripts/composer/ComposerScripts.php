@@ -9,6 +9,8 @@
 
 namespace ComposerAuth;
 
+use Composer\Script\Event;
+
 /**
  * Implementation for Composer scripts and Composer hooks.
  */
@@ -34,18 +36,17 @@ class ComposerScripts {
    */
   public static function addComposerAuth(Event $event) {
     $file = "/files/private/auth.json";
+    error_log("Running");
     if (file_exists($file)) {
+      error_log("found file");
       $composerJsonContents = file_get_contents($file);
+      print_r($composerJsonContents);
 
       // We will only set the root version if it has not already been overriden
       if (!getenv('COMPOSER_AUTH')) {
 
         putenv("COMPOSER_AUTH=$composerJsonContents");
 
-        $myfile = fopen("/files/private/newfile.txt", "w") or die("Unable to open file!");
-        $txt = "John Doe\n";
-        fwrite($myfile, $txt);
-        fclose($myfile);
       }
     }
   }
