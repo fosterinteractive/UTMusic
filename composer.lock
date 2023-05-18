@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "db141f20744421b7c8866723917364a3",
+    "content-hash": "61af01ef8ad893f91a7353584b859d25",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2436,6 +2436,28 @@
                 "source": "https://github.com/enlightn/security-checker/tree/v1.10.0"
             },
             "time": "2022-02-21T22:40:16+00:00"
+        },
+        {
+            "name": "fosterinteractive/adminspring-theme",
+            "version": "dev-10.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:fosterinteractive/adminspring-theme.git",
+                "reference": "4c1266c46f64137dbe2675c39c564aec510ece4a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fosterinteractive/adminspring-theme/zipball/4c1266c46f64137dbe2675c39c564aec510ece4a",
+                "reference": "4c1266c46f64137dbe2675c39c564aec510ece4a",
+                "shasum": ""
+            },
+            "type": "drupal-theme",
+            "description": "Admin Content Editor Theme based on Claro",
+            "support": {
+                "source": "https://github.com/fosterinteractive/adminspring-theme/tree/kate-dev",
+                "issues": "https://github.com/fosterinteractive/adminspring-theme/issues"
+            },
+            "time": "2023-05-17T15:43:47+00:00"
         },
         {
             "name": "grasmash/expander",
@@ -12418,7 +12440,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "pantheon-upstreams/upstream-configuration": 20
+        "pantheon-upstreams/upstream-configuration": 20,
+        "fosterinteractive/adminspring-theme": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

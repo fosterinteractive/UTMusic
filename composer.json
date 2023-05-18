@@ -73,6 +73,7 @@
         "drupal/console": "^1",
         "drupal/core-composer-scaffold": "^9.5",
         "drupal/core-recommended": "^9.5",
+        "fosterinteractive/adminspring-theme": "dev-10.0.x-dev",
         "pantheon-systems/drupal-integrations": "^9",
         "mnsami/composer-custom-directory-installer": "^2.0",
         "oomphinc/composer-installers-extender": "^2.0",
