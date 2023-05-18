@@ -35,7 +35,7 @@ class ComposerScripts {
    * @see https://github.com/composer/composer/blob/main/doc/articles/troubleshooting.md#dependencies-on-the-root-package
    */
   public static function addComposerAuth(Event $event) {
-    $file = "/files/private/auth.json";
+    $file = "web/sites/default/files/private/auth.json";
     error_log("Running");
     if (file_exists($file)) {
       error_log("found file");
