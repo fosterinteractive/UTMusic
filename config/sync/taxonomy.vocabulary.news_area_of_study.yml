@@ -1,0 +1,8 @@
+uuid: 759b2924-f806-447c-b1fe-9700992e31ab
+langcode: en
+status: true
+dependencies: {  }
+name: 'Area of Study'
+vid: news_area_of_study
+description: ''
+weight: 0
