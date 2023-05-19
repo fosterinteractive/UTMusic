@@ -1,0 +1,18 @@
+uuid: d5e2e3e4-5756-4692-b3fa-fce36984feb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.crop_landscape
+  module:
+    - crop
+name: image_style_crop_landscape
+label: 'Image Style Crop Landscape'
+effects:
+  4540c5a0-f26d-44c5-a4b3-24239d75a452:
+    uuid: 4540c5a0-f26d-44c5-a4b3-24239d75a452
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: crop_landscape
+      automatic_crop_provider: null

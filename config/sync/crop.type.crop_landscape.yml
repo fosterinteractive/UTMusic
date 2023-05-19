@@ -1,0 +1,12 @@
+uuid: 89ac385d-8b02-4f95-97c1-1ceb1344500f
+langcode: en
+status: true
+dependencies: {  }
+label: 'Crop Landscape'
+id: crop_landscape
+description: ''
+aspect_ratio: '4:3'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null
