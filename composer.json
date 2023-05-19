@@ -171,6 +171,9 @@
             },
             "drupal/focal_point": {
                 "2906631 - After changing focal point, image doesn't change until you click preview": "https://www.drupal.org/files/issues/2022-06-10/2906631-12_0.patch"
+            },
+            "drupal/hide_revision_field": {
+                "3260101 - [PHP8.1] Deprecated function: unserialize(): Passing null to parameter #1 ($data) of type string is deprecated": "https://www.drupal.org/files/issues/2022-01-24/3260101-2.patch"
             }
         },
         "enable-patching": true
