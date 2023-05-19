@@ -1,0 +1,23 @@
+uuid: cf44f4d7-f24f-4dda-85a3-ee8bfb94f254
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_header_variation
+    - node.type.news
+  module:
+    - options
+id: node.news.field_news_header_variation
+field_name: field_news_header_variation
+entity_type: node
+bundle: news
+label: Variation
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: text
+default_value_callback: ''
+settings: {  }
+field_type: list_string

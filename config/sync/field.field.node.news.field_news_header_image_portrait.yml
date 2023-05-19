@@ -1,19 +1,19 @@
-uuid: b057395c-7848-4a9b-a3ef-dbfdfe767fe9
+uuid: 9a8a48c4-5187-4441-a8ad-21092d179b19
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_news_image_landscape
+    - field.storage.node.field_news_header_image_portrait
     - media.type.ed_image
     - node.type.news
   module:
     - media_library_media_modify
-id: node.news.field_news_image_landscape
-field_name: field_news_image_landscape
+id: node.news.field_news_header_image_portrait
+field_name: field_news_header_image_portrait
 entity_type: node
 bundle: news
-label: 'Image Landscape'
-description: 'Choose image from Media library and then press "edit" button for specifying its alternative text and crop Landscape shape, then press save '
+label: 'Image Portrait'
+description: 'Choose image from Media library and then press "edit" button for specifying its alternative text and crop Portrait shape, then press save '
 required: false
 translatable: false
 default_value: {  }

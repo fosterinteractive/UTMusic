@@ -1,9 +1,9 @@
-uuid: b3e3b8c3-394c-47ab-834f-72f3b0fcb8c3
+uuid: a8dcad9f-6e96-441e-9b98-d8d46e82468f
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_form_mode.media.crop_widget_mode
+    - core.entity_form_mode.media.contextual_crop_portrait
     - field.field.media.ed_image.field_ed_image_height
     - field.field.media.ed_image.field_ed_image_image
     - field.field.media.ed_image.field_ed_image_width
@@ -13,10 +13,10 @@ dependencies:
     - image_widget_crop
 _core:
   default_config_hash: zEhdY05QJj_PfdQgQ98By6Slvnm8RTco7VAQwLXE1JA
-id: media.ed_image.crop_widget_mode
+id: media.ed_image.contextual_crop_portrait
 targetEntityType: media
 bundle: ed_image
-mode: crop_widget_mode
+mode: contextual_crop_portrait
 content:
   field_ed_image_image:
     type: image_widget_crop
@@ -27,7 +27,7 @@ content:
       preview_image_style: large
       crop_preview_image_style: crop_thumbnail
       crop_list:
-        - crop_landscape
+        - crop_portrait
       crop_types_required: {  }
       warn_multiple_usages: true
       show_crop_area: true

@@ -1,0 +1,26 @@
+uuid: 1a73ac2f-e9e3-446c-a9b0-e3bd407a5be8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_header_title_prefix
+    - node.type.news
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+id: node.news.field_news_header_title_prefix
+field_name: field_news_header_title_prefix
+entity_type: node
+bundle: news
+label: 'Title Prefix'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

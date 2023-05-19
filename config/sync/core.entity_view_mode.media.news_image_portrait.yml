@@ -1,0 +1,10 @@
+uuid: 5bb909b9-84f7-4249-916f-1207aa278454
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.news_image_portrait
+label: 'News Image Portrait'
+targetEntityType: media
+cache: true

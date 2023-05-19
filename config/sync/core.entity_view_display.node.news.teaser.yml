@@ -4,13 +4,18 @@ status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.news.field_news_area_study
     - field.field.node.news.field_news_body
     - field.field.node.news.field_news_category
     - field.field.node.news.field_news_date
+    - field.field.node.news.field_news_header_author
+    - field.field.node.news.field_news_header_image_portrait
+    - field.field.node.news.field_news_header_title_prefix
+    - field.field.node.news.field_news_header_variation
+    - field.field.node.news.field_news_header_video
     - field.field.node.news.field_news_image
     - field.field.node.news.field_news_image_landscape
     - field.field.node.news.field_news_promote
-    - field.field.node.news.field_news_summary
     - field.field.node.news.field_news_title
     - field.field.node.news.field_page_admin_help_seo
     - field.field.node.news.field_page_admin_help_social
@@ -31,13 +36,18 @@ content:
     weight: 100
     region: content
 hidden:
+  field_news_area_study: true
   field_news_body: true
   field_news_category: true
   field_news_date: true
+  field_news_header_author: true
+  field_news_header_image_portrait: true
+  field_news_header_title_prefix: true
+  field_news_header_variation: true
+  field_news_header_video: true
   field_news_image: true
   field_news_image_landscape: true
   field_news_promote: true
-  field_news_summary: true
   field_news_title: true
   field_page_admin_help_seo: true
   field_page_admin_help_social: true

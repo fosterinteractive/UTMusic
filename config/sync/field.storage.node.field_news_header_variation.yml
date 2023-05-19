@@ -1,0 +1,33 @@
+uuid: 5120921f-84e3-499f-8e7f-23172d884193
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_news_header_variation
+field_name: field_news_header_variation
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: text
+      label: 'Text Only'
+    -
+      value: landscape
+      label: 'Landscape Image'
+    -
+      value: portrait
+      label: 'Portrait Image'
+    -
+      value: video
+      label: Video
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

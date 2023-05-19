@@ -1,0 +1,10 @@
+uuid: e56a25e0-c79f-4395-afdd-0ac8337211da
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.news_image_landscape
+label: 'News Image Landscape'
+targetEntityType: media
+cache: true

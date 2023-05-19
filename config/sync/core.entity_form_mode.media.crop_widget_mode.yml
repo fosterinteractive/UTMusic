@@ -5,6 +5,6 @@ dependencies:
   module:
     - media
 id: media.crop_widget_mode
-label: 'Contextual Crop'
+label: 'Contextual Crop Landscape'
 targetEntityType: media
 cache: true

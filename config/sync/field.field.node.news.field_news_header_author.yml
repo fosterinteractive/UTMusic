@@ -1,0 +1,26 @@
+uuid: 6b1e3a0d-0f49-4ce7-811d-1a93a89e86f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_header_author
+    - node.type.news
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+id: node.news.field_news_header_author
+field_name: field_news_header_author
+entity_type: node
+bundle: news
+label: 'Authored by'
+description: 'Eg By Samatha Wong'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

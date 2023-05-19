@@ -1,0 +1,21 @@
+uuid: f73616e0-41de-4c92-b5a9-3a969aadf809
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - media_library_media_modify
+    - node
+id: node.field_news_header_image_portrait
+field_name: field_news_header_image_portrait
+entity_type: node
+type: entity_reference_entity_modify
+settings:
+  target_type: media
+module: media_library_media_modify
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

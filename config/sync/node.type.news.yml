@@ -8,7 +8,7 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: News
+name: 'News (Article)'
 type: news
 description: ''
 help: ''
