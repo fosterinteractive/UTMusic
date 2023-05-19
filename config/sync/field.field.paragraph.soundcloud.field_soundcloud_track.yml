@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_soundcloud_track
-    - media.type.soundcloud
     - paragraphs.paragraphs_type.soundcloud
 id: paragraph.soundcloud.field_soundcloud_track
 field_name: field_soundcloud_track
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:media'
   handler_settings:
-    target_bundles:
-      soundcloud: soundcloud
+    target_bundles: {  }
     sort:
       field: _none
       direction: ASC

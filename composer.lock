@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "078e8d415247dd9a66ce31b5a0c49925",
+    "content-hash": "256fe03d18407c9e81477d9007715b68",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -7927,6 +7927,63 @@
             ],
             "support": {
                 "source": "https://git.drupalcode.org/project/media_contextual_crop"
+            }
+        },
+        {
+            "name": "drupal/media_contextual_crop_embed",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/media_contextual_crop_embed.git",
+                "reference": "1.2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/media_contextual_crop_embed-1.2.1.zip",
+                "reference": "1.2.1",
+                "shasum": "32ce27e94635ad76501cdc73a49649fb6dcb8c86"
+            },
+            "require": {
+                "composer/installers": "^1.9 || ^2.0",
+                "cweagans/composer-patches": "^1.7",
+                "drupal/core": "^9.4 || ^10",
+                "drupal/media_contextual_crop": "^1.1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.2.1",
+                    "datestamp": "1683897411",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "enable-patching": true,
+                "patches": {
+                    "drupal/core": {
+                        "Add multi_crop_embed filter as managing media_embed": "https://www.drupal.org/files/issues/2022-10-10/patch_media_lib.patch",
+                        "#2925890 Invalid config structures can result in exceptions when saving a config entity ": "https://git.drupalcode.org/issue/drupal-2925890/-/commit/dd25ae3a1bb58995a7ee87aeb754aff48cdfc943.diff"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "DrDam",
+                    "homepage": "https://www.drupal.org/user/1555440"
+                }
+            ],
+            "description": "An implementation of media_contextual_crop API for media_embed",
+            "homepage": "https://www.drupal.org/project/media_contextual_crop_embed",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/media_contextual_crop_embed"
             }
         },
         {
