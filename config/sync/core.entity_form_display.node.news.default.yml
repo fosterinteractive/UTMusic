@@ -8,12 +8,12 @@ dependencies:
     - field.field.node.news.field_news_category
     - field.field.node.news.field_news_date
     - field.field.node.news.field_news_header_author
+    - field.field.node.news.field_news_header_image_landscap
     - field.field.node.news.field_news_header_image_portrait
     - field.field.node.news.field_news_header_title_prefix
     - field.field.node.news.field_news_header_variation
     - field.field.node.news.field_news_header_video
     - field.field.node.news.field_news_image
-    - field.field.node.news.field_news_image_landscape
     - field.field.node.news.field_news_promote
     - field.field.node.news.field_news_title
     - field.field.node.news.field_page_admin_help_seo
@@ -42,7 +42,7 @@ third_party_settings:
         - field_news_header_variation
         - field_news_header_title_prefix
         - field_news_title
-        - field_news_image_landscape
+        - field_news_header_image_landscap
         - field_news_header_image_portrait
         - field_news_header_video
         - field_news_header_author
@@ -198,13 +198,13 @@ content:
     third_party_settings: {  }
   field_news_date:
     type: datetime_default
-    weight: 34
+    weight: 35
     region: content
     settings: {  }
     third_party_settings: {  }
   field_news_header_author:
     type: text_textfield
-    weight: 33
+    weight: 34
     region: content
     settings:
       size: 60
@@ -213,13 +213,25 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
-  field_news_header_image_portrait:
+  field_news_header_image_landscap:
     type: media_library_media_modify_widget
-    weight: 31
+    weight: 30
     region: content
     settings:
       media_types: {  }
       form_mode: crop_widget_mode
+      check_selected: false
+      replace_checkbox_by_order_indicator: false
+      multi_edit_on_create: true
+      no_edit_on_create: false
+    third_party_settings: {  }
+  field_news_header_image_portrait:
+    type: media_library_media_modify_widget
+    weight: 32
+    region: content
+    settings:
+      media_types: {  }
+      form_mode: contextual_crop_portrait
       check_selected: false
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: true
@@ -244,7 +256,7 @@ content:
     third_party_settings: {  }
   field_news_header_video:
     type: media_library_widget
-    weight: 32
+    weight: 33
     region: content
     settings:
       media_types: {  }
@@ -260,18 +272,6 @@ content:
     third_party_settings:
       media_library_edit:
         show_edit: '1'
-  field_news_image_landscape:
-    type: media_library_media_modify_widget
-    weight: 30
-    region: content
-    settings:
-      media_types: {  }
-      form_mode: crop_widget_mode
-      check_selected: false
-      replace_checkbox_by_order_indicator: false
-      multi_edit_on_create: true
-      no_edit_on_create: false
-    third_party_settings: {  }
   field_news_promote:
     type: options_select
     weight: 20

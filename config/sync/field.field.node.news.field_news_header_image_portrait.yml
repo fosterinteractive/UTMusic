@@ -12,7 +12,7 @@ id: node.news.field_news_header_image_portrait
 field_name: field_news_header_image_portrait
 entity_type: node
 bundle: news
-label: 'Image Portrait'
+label: Image
 description: 'Choose image from Media library and then press "edit" button for specifying its alternative text and crop Portrait shape, then press save '
 required: false
 translatable: false

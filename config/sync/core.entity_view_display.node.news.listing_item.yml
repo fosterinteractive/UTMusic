@@ -9,12 +9,12 @@ dependencies:
     - field.field.node.news.field_news_category
     - field.field.node.news.field_news_date
     - field.field.node.news.field_news_header_author
+    - field.field.node.news.field_news_header_image_landscap
     - field.field.node.news.field_news_header_image_portrait
     - field.field.node.news.field_news_header_title_prefix
     - field.field.node.news.field_news_header_variation
     - field.field.node.news.field_news_header_video
     - field.field.node.news.field_news_image
-    - field.field.node.news.field_news_image_landscape
     - field.field.node.news.field_news_promote
     - field.field.node.news.field_news_title
     - field.field.node.news.field_page_admin_help_seo
@@ -62,6 +62,15 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_news_header_image_landscap:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: news_image_landscape
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_news_header_image_portrait:
     type: entity_reference_entity_view
     label: hidden
@@ -79,15 +88,6 @@ content:
       link: false
     third_party_settings: {  }
     weight: 4
-    region: content
-  field_news_image_landscape:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: news_image_landscape
-      link: false
-    third_party_settings: {  }
-    weight: 6
     region: content
   field_news_title:
     type: text_default

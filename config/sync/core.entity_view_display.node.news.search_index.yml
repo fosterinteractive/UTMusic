@@ -9,12 +9,12 @@ dependencies:
     - field.field.node.news.field_news_category
     - field.field.node.news.field_news_date
     - field.field.node.news.field_news_header_author
+    - field.field.node.news.field_news_header_image_landscap
     - field.field.node.news.field_news_header_image_portrait
     - field.field.node.news.field_news_header_title_prefix
     - field.field.node.news.field_news_header_variation
     - field.field.node.news.field_news_header_video
     - field.field.node.news.field_news_image
-    - field.field.node.news.field_news_image_landscape
     - field.field.node.news.field_news_promote
     - field.field.node.news.field_news_title
     - field.field.node.news.field_page_admin_help_seo
@@ -41,12 +41,12 @@ hidden:
   field_news_category: true
   field_news_date: true
   field_news_header_author: true
+  field_news_header_image_landscap: true
   field_news_header_image_portrait: true
   field_news_header_title_prefix: true
   field_news_header_variation: true
   field_news_header_video: true
   field_news_image: true
-  field_news_image_landscape: true
   field_news_promote: true
   field_news_title: true
   field_page_admin_help_seo: true

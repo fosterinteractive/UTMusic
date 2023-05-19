@@ -1,4 +1,4 @@
-uuid: 492e97a1-cc5d-4114-8410-da90324c5488
+uuid: 7ac1cb82-60bc-409f-9308-c5c685a918b6
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - media
     - media_library_media_modify
     - node
-id: node.field_news_image_landscape
-field_name: field_news_image_landscape
+id: node.field_news_header_image_landscap
+field_name: field_news_header_image_landscap
 entity_type: node
 type: entity_reference_entity_modify
 settings:

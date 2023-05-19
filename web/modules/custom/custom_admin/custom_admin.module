@@ -310,21 +310,29 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
  */
 function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
-  // The "Event" add and edit forms.
-  if ($form_id == 'node_event_form' || $form_id == 'node_event_edit_form' ) {
+  // The "news" add and edit forms.
+  if ($form_id == 'node_news_form' || $form_id == 'node_news_edit_form' ) {
 
-    // Show the "Zoom Link" field if the "Event Type" field is set to virtual.
-    $form['field_event_zoom_link']['#states'] = [
+    // Show "Image Landscape" field if the "variation" field is set to landscape.
+    $form['field_news_header_image_landscap']['#states'] = [
       'visible' => [
-        ':input[name="field_event_type"]' => ['value' => 'virtual'],
+        ':input[name="field_news_header_variation"]' => ['value' => 'landscape'],
       ],
     ];
 
-    // Show the "Address" field if the "Event Type" field is set to in-person.
-    $form['field_event_address']['#states'] = [
+    // Show "Image Portrait" field if the "variation" field is set to portrait.
+    $form['field_news_header_image_portrait']['#states'] = [
       'visible' => [
-        ':input[name="field_event_type"]' => ['value' => 'in-person'],
+        ':input[name="field_news_header_variation"]' => ['value' => 'portrait'],
       ],
     ];
+
+    // Show "Video" field if the "variation" field is set to video.
+    $form['field_news_header_video']['#states'] = [
+      'visible' => [
+        ':input[name="field_news_header_variation"]' => ['value' => 'video'],
+      ],
+    ];
+   
   }
 }
