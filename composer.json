@@ -73,9 +73,10 @@
         "drupal/console": "^1",
         "drupal/core-composer-scaffold": "^9.2",
         "drupal/core-recommended": "^9.2",
-        "drupal/media_contextual_crop_embed": "^1.2",
+        "drupal/media_contextual_crop_embed": "1.2.1",
         "fosterinteractive/adminspring-theme": "dev-10.0.x-dev",
         "fosterinteractive/mainspring-profile": "dev-10.x-dev",
+        "fosterinteractive/social_lite": "2.0.0",
         "pantheon-systems/drupal-integrations": "^9",
         "mnsami/composer-custom-directory-installer": "^2.0",
         "oomphinc/composer-installers-extender": "^2.0",
@@ -202,7 +203,13 @@
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "mnsami/composer-custom-directory-installer": true,
+            "wikimedia/composer-merge-plugin": true,
+            "drupal/console-extend-plugin": true,
+            "oomphinc/composer-installers-extender": true,
+            "rvtraveller/qs-composer-installer": true,
+            "topfloor/composer-cleanup-vcs-dirs": true
         }
     }
 }
