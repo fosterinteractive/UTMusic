@@ -31,12 +31,9 @@ global:
 #     //use.typekit.net/txu0qxj.js: { every_page: true }
 
 mmenu:
-  css:
-    component:
-      dist/css/07-vendor/libraries/mmenu/mmenu.css: {}
   js:
-    dist/js/07-vendor/libraries/mmenu/mmenu.js: {}
-    dist/js/07-vendor/libraries/mmenu.config.js: {}
+    js/libraries/mmenu/mmenu.js: {}
+    js/libraries/mmenu.config.js: {}
 
 read-more:
   license:
@@ -49,34 +46,34 @@ announcement:
   js:
     js/exposed-filters-a11y.js: {}
 
-# foundation_core:
-#   version: 6.7.4
-#   # css:
-#   #   base:
-#   #     js/vendor/foundation/dist/css/foundation.min.css: { minified: true }
-#   js:
-#     dist/js/07-vendor/libraries/foundation/dist/js/plugins/foundation.core.min.js: { minified: true }
-#     dist/js/07-vendor/libraries/foundation/dist/js/plugins/foundation.util.keyboard.min.js: { minified: true }
-#     dist/js/07-vendor/libraries/foundation/dist/js/plugins/foundation.util.box.min.js: { minified: true }
-#     dist/js/07-vendor/libraries/foundation/dist/js/plugins/foundation.util.nest.min.js: { minified: true }
-#     dist/js/07-vendor/libraries/foundation/dist/js/plugins/foundation.util.touch.min.js: { minified: true }
-#     dist/js/07-vendor/libraries/foundation/dist/js/plugins/foundation.util.triggers.min.js: { minified: true }
-#   dependencies:
-#   - core/jquery
+foundation_core:
+  version: 6.7.4
+  # css:
+  #   base:
+  #     js/vendor/foundation/dist/css/foundation.min.css: { minified: true }
+  js:
+    js/libraries/foundation/dist/js/plugins/foundation.core.min.js: { minified: true }
+    js/libraries/foundation/dist/js/plugins/foundation.util.keyboard.min.js: { minified: true }
+    js/libraries/foundation/dist/js/plugins/foundation.util.box.min.js: { minified: true }
+    js/libraries/foundation/dist/js/plugins/foundation.util.nest.min.js: { minified: true }
+    js/libraries/foundation/dist/js/plugins/foundation.util.touch.min.js: { minified: true }
+    js/libraries/foundation/dist/js/plugins/foundation.util.triggers.min.js: { minified: true }
+  dependencies:
+  - core/jquery
 
-# foundation_dropdown_menu:
-#   js:
-#     dist/js/07-vendor/libraries/foundation/dist/js/plugins/foundation.dropdownMenu.min.js: { minified: true }
-#     dist/js/07-vendor/libraries/foundation.config.js: {}
-#   dependencies:
-#   - munk/foundation_core
+foundation_dropdown_menu:
+  js:
+    js/libraries/foundation/dist/js/plugins/foundation.dropdownMenu.min.js: { minified: true }
+    js/libraries/foundation.config.js: {}
+  dependencies:
+  - utmusic/foundation_core
 
-# foundation_dropdown:
-#   js:
-#     dist/js/07-vendor/libraries/foundation/dist/js/plugins/foundation.dropdown.min.js: { minified: true }
-#     js/munk.foundation.config.js: {}
-#   dependencies:
-#   - munk/foundation_core
+foundation_dropdown:
+  js:
+    js/libraries/foundation/dist/js/plugins/foundation.dropdown.min.js: { minified: true }
+    js/libraries/foundation.config.js: {}
+  dependencies:
+  - utmusic/foundation_core
 
 # COMPONENT_NAME:
 #   css:

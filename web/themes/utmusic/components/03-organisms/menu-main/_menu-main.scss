@@ -1,6 +1,5 @@
 .m-menu-main__list--level-1 {
   display: flex;
-  justify-content: space-between;
   position: relative;
   margin-top: 0;
   margin-right: 0;
@@ -17,65 +16,83 @@
 }
 
 .m-menu-main__link--level-1 {
+  // @extend %a-external-link;
   display: flex;
   align-items: center;
-  padding: rem(10px) rem(15px);
+  padding: ru(0.5) ru(0.5);
   height: 100%;
   text-align: center;
   text-transform: uppercase;
-  color: palette(white);
+  color: palette(blue);
   font-family: $title-font-family;
-  font-size: rem(16px);
+  font-size: rem(18px);
   font-weight: 700;
   transition: background-color 0.2s;
-  text-decoration: none;
 
   @include breakpoint($bp-large) {
-    font-size: rem(18px);
-    padding: rem(15px) rem(25px);
+    padding: ru(0.5) ru(0.75);
+  }
+
+  @include breakpoint($bp-max) {
+    font-size: rem(20px);
+  }
+
+  &[href^='http']:after {
+    // background-image: url('./svg/svg-art/external-link-square-alt.svg');
   }
 
   &:hover,
   &:focus,
   &:active {
-    background-color: palette(yellow, 600);
-    color: palette(black);
-  }
+    background-color: palette(blue);
+    color: palette(white);
 
-  &.is-active {
-    color: palette(yellow, 600);
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: palette(yellow, 600);
-      color: palette(black);
-    }
-  }
-
-  // Highlighted
-  .m-menu-main__item-highlighted & {
-    background-color: palette(yellow, 600);
-    color: palette(black);
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: palette(black);
-      color: palette(yellow, 600);
-    }
-
-    &.is-active {
-      background-color: palette(yellow, 500);
-      color: palette(black);
-
-      &:hover,
-      &:focus,
-      &:active {
-        background-color: palette(black);
-        color: palette(yellow, 500);
-      }
+    &[href^='http']:after {
+      // background-image: url('./svg/svg-art/external-link-square-alt-white.svg');
     }
   }
 }
 
+.m-menu-main__panel {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 10;
+  overflow: hidden;
+  border-top: 4px solid palette(blue);
+  background-color: palette(grey, 1000);
+  padding: ru(0.5) 0;
+  width: ru(9);
+  box-shadow: 0 3px 2px 1px  rgba(0, 0, 0, 0.05);
+
+  &.is-open {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 250ms ease, visibility 0s linear 0s;
+  }
+}
+
+.m-menu-main__link--level-2 {
+  // @extend %a-external-link;
+  display: block;
+  position: relative;
+  padding: ru(0.333333) ru(1);
+  text-transform: none;
+  color: palette(blue);
+  font-size: rem(16px);
+  transition: background-color 0.2s;
+
+  &[href^='http']:after {
+    // background-image: url('./svg/svg-art/external-link-square-alt.svg');
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: palette(white);
+    color: palette(blue);
+  }
+}

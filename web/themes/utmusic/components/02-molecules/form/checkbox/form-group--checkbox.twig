@@ -1,18 +1,4 @@
-{% if pl_class %}
-  <div class="{{ pl_class }}">
-{% endif %}
-
-{%
-  set classes = [
-    'js-form-item',
-    'form-item',
-    'js-form-wrapper',
-    'form-wrapper',
-    'm-form-group',
-  ]
-%}
-
-<fieldset{{ attributes.addClass(classes) }}>
+<fieldset{{ attributes.addClass('m-form-group', classes) }}>
 
   {#  Always wrap fieldset legends in a SPAN for CSS positioning. #}
   {% if required %}
@@ -45,7 +31,3 @@
     {% endif %}
   </div>
 </fieldset>
-
-{% if pl_class %}
-  </div>
-{% endif %}

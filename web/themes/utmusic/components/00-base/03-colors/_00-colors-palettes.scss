@@ -4,14 +4,13 @@
 
 // Name the colors based on the HSL "Lightness" value. 52.5% = 500 round or adjust as needed
 // https://convertacolor.com/
-
-// To convert RGBA to RGB use https://borderleft.com/toolbox/rgba/
-
 $palettes: (
   'black': (
-    'base': 000,
-    //#000000
+    'base': 100,
+    100: hsl(285deg, 0%, 13%),
+    //#222222
     000: hsl(0deg, 0%, 0%),
+    //#000000
   ),
   'white': (
     'base': 1000,
@@ -19,47 +18,84 @@ $palettes: (
   ),
   'grey': (
     'base': 500,
-    // mainspring-theme Dark Grey #383838
-    200: hsl(0deg ,0%, 22%),
+    200: hsl(209deg, 20%, 25%),
+    // #323F4B
+    300: hsl(209deg, 18%, 30%),
+    // #3E4C59
+    400: hsl(201.5deg, 18%, 42.5%),
+    // #597280
+    500: hsl(0deg, 0%, 50.6%),
     // #818181
-    500: hsl(0deg, 0%, 50.6%),  
-    // mainspring-theme Light Grey - #E6E6E6
-    900: hsl(0deg, 0%, 90.2%),
+    600: hsl(211deg, 13%, 65%),
+    // #9AA5B1
+    700: hsl(0deg, 0%, 73.3%),
+    // #BBBBBB
+    800: hsl(210deg, 16%, 82%),
+    // #CBD2D9
+    900: hsl(214deg, 15%, 91%),
+    // #E4E7EB
+    1000: hsl(216deg, 33%, 97%),
+    // #F5F7FA
   ),
   'blue': (
-    'base': 400,
-    // mainspring-theme Blue #003CD7
-    400: hsl(223.3deg ,100%, 42.2%)
+    'base': 200,
+    100: hsl(226.2deg, 66.1%, 11.6%),
+    // #0A1331
+    200: hsl(213.6deg, 100%, 17.8%),
+    // #25355A
+    400: hsl(216.4deg, 28.6%, 38.4%),
+    // #465C7E
+    500: hsl(212.7deg, 28.7%, 54.9%),
+    // #6B89AD
+    700: hsl(207.7deg, 42.6%, 76.1%),
+    // #A8C4DC
+    900: hsl(211.6deg, 51.4%, 92.7%),
+    // #E3ECF6
   ),
   'green': (
     'base': 300,
-    // #002F1F
     100: hsl(159.6deg, 100%, 9.2%),
-    // #00AF95
+    // #002F1F
+    200: hsl(167.3deg, 100%, 17.6%),
+    // 005A47
     300: hsl(171.1deg, 100%, 34.3%),
-    // #55C2B9
+    // #00AF95
     500: hsl(175deg, 47.2%, 54.7%),
-    // #DDF0EE
+    // #55C2B9
+    700: hsl(180deg, 42.6%, 73.3%),
+    // #9ED8D8
     900: hsl(173.7deg, 38.8%, 90.4%),
+    // #DDF0EE
   ),
   'red': (
-    'base': 600,
-    // #510000
+    'base': 500,
     200: hsl(0deg, 100%, 15.9%),
-    // mainspring-theme Red - #D32A32
-    600: hsl(0,100%,62.5%),
-    // #FCE7E5
+    // #510000
+    400: hsl(359.6deg, 70.7%, 37.5%),
+    // #A31C1D
+    500: hsl(357.2deg, 66.8%, 49.6%),
+    // #D32A32
+    600: hsl(4.9deg, 81.1%, 64.7%),
+    // #EE685C
+    800: hsl(5.6deg, 78.9%, 81.4%),
+    // F5B1AA
     900: hsl(5.2deg, 79.3%, 94.3%),
+    // #FCE7E5
   ),
   'yellow': (
-    'base': 600,
-    500: hsl(45.6, 100%, 50%),
-    // mainspring-theme Yellow - #FFF200
-    600: hsl(56.9deg, 100%, 50%),
-    // mainspring-theme Yellow - 50% opacity #fff980
-    700: hsl(57.2deg, 100%, 75.1%),
-    // mainspring-theme Yellow - 20% opacity #fffccc
-    900: hsl(56.5deg, 100%, 90%),
+    'base': 700,
+    200: hsl(37.6deg, 100%, 17.8%),
+    // #5B3900
+    400: hsl(41.5deg, 61.9%, 41.2%),
+    // #AA8228
+    600: hsl(52deg, 93%, 60.6%),
+    // #F8DF3D
+    700: hsl(49.6deg, 100%, 73.9%),
+    // #FFE87A
+    800: hsl(48.1deg, 100%, 84.1%),
+    // #FFEFAE
+    900: hsl(45.7deg, 100%, 95.9%),
+    // #FFF5D1
   ),
 );
 

@@ -1,28 +1,27 @@
 .m-menu-mobile {
-  @include root-prop(--mm-color-background, palette(black));
-  @include root-prop(--mm-color-button, palette(black));
-  @include root-prop(--mm-background-button, palette(black));
-  @include root-prop(--mm-color-text, palette(white));
+  @include root-prop(--mm-color-background, palette(white));
+  @include root-prop(--mm-color-button, palette(black, 100));
+  @include root-prop(--mm-background-button, palette(black, 100));
+  @include root-prop(--mm-color-text, palette(blue, 200));
   @include root-prop(--mm-color-text-dimmed, palette(white));
+  @include root-prop(--mm-color-border, palette(grey, 800));
 
   &:not(.mm-menu) {
     display: none;
   }
 }
 
-.mm-panel {
-  margin-top: rem(50px);
-}
-
 %m-menu-mobile__item {
-  margin-bottom: rem(23px);
+  padding: ru(1) 0 ru(0.75);
 
   a {
-    font-family: $title-font-family;
-    font-size: rem(45px);
-    line-height: 51px;
-    font-weight: 700;
-    padding: rem(4px) rem(30px)
+    // @extend %a-external-link;
+    @extend %a-type--small;
+    font-weight: bold;
+
+    // &[href^='http']:after {
+    //   background-image: url('./svg/svg-art/external-link-square-alt-white.svg');
+    // }
   }
 }
 
@@ -30,54 +29,30 @@
 .mm-navbar .m-menu-mobile__header {
   display: flex;
   justify-content: space-between;
-  margin: rem(40px) rem(30px) 0 rem(30px);
+  color: palette(blue, 200);
+}
+
+// Menu header title.
+.mm-navbar__title span {
+  @extend %a-type--small;
+  color: palette(blue, 200);
+  font-weight: bold;
 }
 
 // Menu items.
-li.mm-listitem {
+.mm-listitem {
   @extend %m-menu-mobile__item;
+  border-bottom: 1px solid palette(grey, 700);
+  padding: ru(1) 0 ru(0.75);
 
   // Active state.
   &.is-active .mm-listitem__text {
-    color: palette(yellow, 600);
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: palette(yellow, 600);
-      color: palette(black);
-    }
+    background: palette(grey, 1000);
   }
 
   // Hover state.
   .mm-listitem__text:hover {
-    background: palette(yellow, 600);
-    color: palette(black);
-  }
-
-  // Highlighted
-  &.m-menu-mobile__item-highlighted .mm-listitem__text {
-    background-color: palette(yellow, 600);
-    color: palette(black);
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: palette(black);
-      color: palette(yellow, 600);
-    }
-
-    &.is-active {
-      background-color: palette(yellow, 500);
-      color: palette(black);
-
-      &:hover,
-      &:focus,
-      &:active {
-        background-color: palette(black);
-        color: palette(yellow, 500);
-      }
-    }
+    background: palette(grey, 900);
   }
 }
 
@@ -94,32 +69,82 @@ li.mm-listitem {
   border: 0;
 }
 
-// Close buttons.
+// Shortcuts.
+.m-menu-mobile__shortcuts-wrapper {
+  width: 100%;
+
+  .mm-listview,
+  .mm-listitem {
+    border: 0;
+  }
+
+  .mm-listitem__text {
+    font-weight: normal;
+  }
+}
+
+// Search & Close buttons.
 %m-menu-mobile__core {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: rem(62px);
-  height: rem(62px);
-  color: palette(white);
-  padding: 0;
-  cursor: pointer;
-  background-color: palette(black);
+  width: rem(49px);
+  height: 100%;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: palette(grey, 1000);
+  }
 
   svg {
-    font-size: rem(62px);
+    height: rem(20px);
   }
 }
 
+.m-menu-mobile__search,
+.m-menu-mobile__close {
+  height: 100%;
+}
+
+.m-menu-mobile__btn-search,
 .m-menu-mobile__btn-close {
   @extend %m-menu-mobile__core;
+}
+
+// Overriding to avoid the double border.
+.m-menu-mobile__btn-close {
   border: 0;
 }
 
-.m-menu-mobile__close {
-  margin-left: auto;
+.m-menu-mobile__search {
+  border-right: 1px solid palette(grey, 700);
 }
 
-.mm-listview {
-  margin-top: rem(10px) !important;
+.m-menu-mobile__close {
+  border-left: 1px solid palette(grey, 700);
 }
+
+// Prev & Next button.
+%m-menu-mobile-button__core {
+  background: palette(grey, 1000);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: palette(grey, 900);
+  }
+}
+
+// sass-lint:disable class-name-format
+.mm-btn.mm-btn_next,
+.mm-btn.mm-btn_prev {
+  @extend %m-menu-mobile-button__core;
+}
+// sass-lint:enable class-name-format
+
+// sass-lint:disable class-name-format
+.mm-btn_prev {
+  border-right: 1px solid palette(grey, 700);
+}
+// sass-lint:enable class-name-format

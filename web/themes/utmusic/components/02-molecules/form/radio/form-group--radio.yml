@@ -1,4 +1,3 @@
-pl_class: 'pl__wrapper--xsml'
 name: 'radio-group'
 required: true
 classes: 'is-invalid'
