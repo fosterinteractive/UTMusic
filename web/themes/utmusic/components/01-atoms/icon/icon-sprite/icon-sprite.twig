@@ -1,0 +1,66 @@
+
+{# If `directory` is defined, set the path relative for Drupal.
+ # Otherwise, set the path relative to the Component Library. #}
+
+{# Set default chip class - 'a-chip' #}
+{% set base_class = base_class|default('a-icon') %}
+
+{% if directory %}
+  {% set directory = '/' ~ directory ~ '/dist/' %}
+{% else %}
+  {% set directory = '/' %}
+{% endif %} 
+
+
+{% if size %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if size starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set size = '--' ~ size %}
+  {% endif %}
+
+  {# If not set and this is a default icon atom apply medium size by default #}
+{% elseif base_class ==  'a-icon' %}
+    {% set size = '--medium' ~ size %}
+{% endif %}
+
+{#  
+    We get SVG which coming from Drupal with all its entire html code
+    We wrap it in a <div> parent and restrict max-sizes for its child (svg) in scss
+#}
+{% if icon_file_type == 'image/svg+xml' %}
+  <div class="{{ base_class }}-external{{ size }}"
+  
+  {# if there is not a a11y_label for SVG assume it's visually meaningless and apply aria-hidden #}
+  {% if aria_label is empty %} aria-hidden="true" {% endif %}>
+    {{ icon }}
+          
+    {% if aria_label %}
+      <div class="u-visually--hidden">{{ aria_label|t }}</div>
+    {% endif %}
+
+  </div>
+{% else %}
+
+  {# Below we get any icon as a string from our icon-sprite list #}
+
+  {# Storybook demo color wrapper #}
+  {% if color %} <div style="color:{{ color }};">{% endif %}
+    <svg class="{{ base_class }}{{ size }}"
+
+      {# if there is not a Title for SVG assume it's visually meaningless and apply aria-hidden #}
+      {% if aria_label is empty %}
+        aria-hidden="true"
+      {% endif %}>
+
+      {% if aria_label %}
+        <title>{{ aria_label|t }}</title>
+      {% endif %}
+
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ directory }}icons.svg#{{ icon }}"></use>
+    </svg>
+  {% if color %} </div>{% endif %}
+
+{% endif %}
