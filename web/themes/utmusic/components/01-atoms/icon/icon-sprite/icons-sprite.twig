@@ -1,0 +1,21 @@
+
+<div class="storybook-icons">
+
+  {% for icon in icons %}
+  <div class="storybook-icons__item">
+    {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+        icon: icon,
+        size: size,
+      } only
+    %}
+    <code class="storybook-icons__label">
+      #{{ icon }}
+    </div>
+  </code>
+
+  {% endfor %}
+
+</div>
+
+
+

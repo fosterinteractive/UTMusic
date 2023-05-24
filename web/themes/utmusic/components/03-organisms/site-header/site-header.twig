@@ -1,55 +1,60 @@
 <header class="o-header">
+  <div class="o-header__top">
+    <div class="o-header__top-contain">
+
+      <div class="o-header__shortcuts">
+        {{ header_shortcuts }}
+      </div>
+
+      <div class="o-header__search">
+        {% include '@atoms/button/button.twig' with {
+            variation: 'icon',
+            html_element: 'a',
+            url: '/search',
+            id: 'toggle-icon',
+            aria_label: 'Search this site'|t,
+            icon: 'magnifying-glass',
+          } only
+        %}
+      </div>
+
+    </div>
+  </div>
+
   <div class="o-header__bottom">
+    <div class="o-header__logo">
+      {% include "@molecules/logo/logo.twig" with {
+          directory: directory,
+          logo_icon: 'logo',
+          logo_icon_size: logo_icon_size,
+          logo_icon_color: logo_icon_size,
+          logo_aria_label: 'Mainspring',
 
-    <div class="o-header__logo o-header__logo--{{ lang }}">
-
-      {% if lang == 'en' %}
-
-        {% include "@molecules/logo/logo.twig" with {
-            directory: directory,
-            logo_icon: 'logo',
-            logo_icon_size: logo_icon_size,
-            logo_icon_color: logo_icon_size,
-            logo_aria_label: 'Mainspring',
-
-            url: front_page,
-            site_name: site_name,
-          } only
-        %}
-
-      {% elseif lang == 'fr' %}
-
-        {% include "@molecules/logo/logo.twig" with {
-            directory: directory,
-            logo_icon: 'logo',
-            logo_icon_size: logo_icon_size,
-            logo_icon_color: logo_icon_size,
-            logo_aria_label: "Mainspring FR",
-
-            url: front_page,
-            site_name: site_name,
-          } only
-        %}
-
-      {% endif %}
+          url: front_page,
+          site_name: site_name,
+        } only
+      %}
     </div>
 
     {% if language_selector %}
       <div class="o-header__language-and-mobile-btn-wrapper">
         {{ language_selector }}
+    {% endif %}
 
-        <div class="o-header__mobile-btn-menu-triger">
-          {% include '@atoms/button/button.twig' with {
-              directory: directory,
-              variation: 'icon',
-              html_element: 'a',
-              url: '#menu-mobile',
-              id: 'toggle-icon',
-              aria_label: 'Menu'|t,
-              icon: 'hamburger'
-            } only
-          %}
-        </div>
+      <div class="o-header__mobile-btn-menu-triger">
+        {% include '@atoms/button/button.twig' with {
+            directory: directory,
+            variation: 'icon',
+            html_element: 'a',
+            url: '#menu-mobile',
+            id: 'toggle-icon',
+            aria_label: 'Menu'|t,
+            icon: 'hamburger'
+          } only
+        %}
+      </div>
+
+    {% if language_selector %}
       </div>
     {% endif %}
   </div>

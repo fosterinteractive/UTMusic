@@ -1,8 +1,4 @@
-{% if pl_class %}
-  <div class="{{ pl_class }}">
-{% endif %}
-
-<div{{ attributes.addClass(classes).addClass('m-form-item--radio') }} data-states-for="{{ name }}">
+<div{{ attributes.addClass(classes).addClass('m-form-item--radio-wrapper') }} data-states-for="{{ name }}">
 
   {% if label_display in ['before', 'invisible'] %}
     {{ label }}
@@ -35,7 +31,3 @@
   {% endif %}
 
 </div>
-
-{% if pl_class %}
-  </div>
-{% endif %}

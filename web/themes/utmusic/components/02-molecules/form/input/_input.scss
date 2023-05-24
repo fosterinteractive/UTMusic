@@ -1,31 +1,14 @@
 %m-input,
 .m-input {
-  border-width: rem(1px);
+  border-width: rem(2px);
   border-style: solid;
-  border-color: palette(black);
-  padding: ru(0.5);
-  border-radius: rem(10px);
-  color: palette(grey, 200);
-  height: rem(75px);
+  border-color: palette(grey, 200);
+  appearance: none;
 
   &.required.error {
     border-color: palette(red);
     color: palette(red);
   }
-
-  &::placeholder {
-    color: palette(grey, 200);
-  }
-}
-
-.m-input--search {
-  @extend %m-input;
-
-  width: 100%;
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAxOSAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE3LjI5MTcgMTguNzVMMTAuNzI5MiAxMi4xODc1QzEwLjIwODMgMTIuNjA0MiA5LjYwOTM3IDEyLjkzNCA4LjkzMjI5IDEzLjE3NzFDOC4yNTUyMSAxMy40MjAxIDcuNTM0NzIgMTMuNTQxNyA2Ljc3MDgzIDEzLjU0MTdDNC44Nzg0NyAxMy41NDE3IDMuMjc3MDggMTIuODg2NSAxLjk2NjY3IDExLjU3NkMwLjY1NTU1NiAxMC4yNjQ5IDAgOC42NjMxOSAwIDYuNzcwODNDMCA0Ljg3ODQ3IDAuNjU1NTU2IDMuMjc2NzQgMS45NjY2NyAxLjk2NTYzQzMuMjc3MDggMC42NTUyMDggNC44Nzg0NyAwIDYuNzcwODMgMEM4LjY2MzE5IDAgMTAuMjY0OSAwLjY1NTIwOCAxMS41NzYgMS45NjU2M0MxMi44ODY1IDMuMjc2NzQgMTMuNTQxNyA0Ljg3ODQ3IDEzLjU0MTcgNi43NzA4M0MxMy41NDE3IDcuNTM0NzIgMTMuNDIwMSA4LjI1NTIxIDEzLjE3NzEgOC45MzIyOUMxMi45MzQgOS42MDkzNyAxMi42MDQyIDEwLjIwODMgMTIuMTg3NSAxMC43MjkyTDE4Ljc1IDE3LjI5MTdMMTcuMjkxNyAxOC43NVpNNi43NzA4MyAxMS40NTgzQzguMDcyOTIgMTEuNDU4MyA5LjE3OTg2IDExLjAwMjggMTAuMDkxNyAxMC4wOTE3QzExLjAwMjggOS4xNzk4NiAxMS40NTgzIDguMDcyOTIgMTEuNDU4MyA2Ljc3MDgzQzExLjQ1ODMgNS40Njg3NSAxMS4wMDI4IDQuMzYxODEgMTAuMDkxNyAzLjQ1QzkuMTc5ODYgMi41Mzg4OSA4LjA3MjkyIDIuMDgzMzMgNi43NzA4MyAyLjA4MzMzQzUuNDY4NzUgMi4wODMzMyA0LjM2MTgxIDIuNTM4ODkgMy40NSAzLjQ1QzIuNTM4ODkgNC4zNjE4MSAyLjA4MzMzIDUuNDY4NzUgMi4wODMzMyA2Ljc3MDgzQzIuMDgzMzMgOC4wNzI5MiAyLjUzODg5IDkuMTc5ODYgMy40NSAxMC4wOTE3QzQuMzYxODEgMTEuMDAyOCA1LjQ2ODc1IDExLjQ1ODMgNi43NzA4MyAxMS40NTgzWiIgZmlsbD0iIzM4MzgzOCIvPgo8L3N2Zz4K") !important;
-  background-repeat: no-repeat;
-  background-position: rem(20px) !important;
-  padding-left: ru(2);
 }
 
 %m-input-submit--text,
@@ -41,6 +24,7 @@
   -webkit-appearance: none;
 }
 
+%m-input-submit,
 .m-input-submit {
   @extend %a-button--core;
   @extend %a-button--padding;

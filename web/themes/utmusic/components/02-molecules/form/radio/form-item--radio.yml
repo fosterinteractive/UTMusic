@@ -1,4 +1,3 @@
-pl_class: 'pl__wrapper'
 name: 'radio_option'
 attributes:
   Attribute():
@@ -25,4 +24,3 @@ children:
           id: 'radio_one'
           name: 'radio one'
           value: 1
-      pl_class: ''

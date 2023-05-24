@@ -18,8 +18,6 @@
  *   - in_active_trail: TRUE if the link is in the active trail.
  */
 #}
-
-
 {% if sb_class %}
   <div class="{{ sb_class }}">
     {# include <nav> element in pl. We do this here as drupal has another template file where the <nav> included #}
@@ -37,42 +35,301 @@
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
   {% if items %}
-    <ul class="{{ 'm-menu-main__list--level-' ~ menu_level }}{% if menu_level == 1 %} js-menu-main__list{% endif %}" role="menu">
 
-    {% for item in items %}
-      {% set classes = [
-          'm-menu-main__item--level-' ~ menu_level,
-          item.in_active_trail == TRUE ? 'is-active',
-          menu_level == 1 ? 'js-menu-main__item',
-          item.content.field_highlight_menu_item[0]['#markup'] == 'True' ? 'm-menu-main__item-highlighted',
-        ]
-      %}
-      <li{{ item.attributes.addClass(classes) }}{% if item.in_active_trail == TRUE %}{{ item.attributes.setAttribute("aria-current", "page") }}{% endif %} role="menuitem">
-        {% set link_classes = [
-            'm-menu-main__link--level-' ~ menu_level,
+    {# Level 1 menu items. #}
+    {% if menu_level == 1 %}
+      <ul class="m-menu-main__list--level-1" data-dropdown-menu>
+      {% for item in items %}
+
+        {% set panel_id = 'panel-id-' ~ item.original_link.getDerivativeId() %}
+        {% set classes = [
+            'm-menu-main__item--level-1',
+            item.in_active_trail == TRUE ? 'is-active',
           ]
         %}
 
-        {% if item.url == '<nolink>' or (item.url.isRouted() and item.url.getRouteName == '<nolink>') %}
-          <button class="{{ 'm-menu-main__link--level-' ~ menu_level }}{% if item.in_active_trail == TRUE %} is-active{% endif %}">{{ item.title }}</button>
-        {% else %}
-          {{ link(item.title, item.url, { 'class' : link_classes}) }}
-        {% endif %}
-
-        {% if item.below %}
-          {% if  menu_level == 1 %}
-            <div class="m-menu-main__panel js-menu-main__panel">
+        <li{{ item.attributes.addClass(classes) }}>
+          {# If the menu item doesn't have a route then we generate a button #}
+          {% if item.url == '<nolink>' or (item.url.isRouted() and item.url.getRouteName == '<nolink>') %}
+            <button class="m-menu-main__link--level-1{% if item.in_active_trail == TRUE %} is-active{% endif %}" {% if item.below %}data-toggle="{{ panel_id }}"{% endif %}>{{ item.title }}</button>
+          {% else %}
+            {% set options = {
+              'class': ['m-menu-main__link--level-1'],
+              } 
+            %}
+            {# if there children of this leel 1 item (more links) then the 1st
+            level menu item should be a toggle element. #}
+            {% if item.below %}
+              {% set options = options|merge({'data-toggle': panel_id}) %}
+            {% endif %}
+            {{ link(item.title, item.url, options) }}
           {% endif %}
 
-          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+          {# If there are more menu items below the 1st level menu item then add
+          a menu panel to this menu item #}
+          {% if item.below %}
+            {# Check if pl_active_menu variable is set to true (only used in patternlab to show expanded menus) #}
+            <div class="m-menu-main__panel{% if item.pl_panel_active == true %} is-open{% endif %}" id="{{ panel_id }}" data-dropdown data-close-on-click="true" data-hover="true" data-hover-pane="true">
+              {# Test to see if this 1st level menu item has a feature set on it. #}
+              {% set has_feature = item.content.field_body[0] or item.content.field_title[0] or item.content.field_link[0] %}
+              <div class="m-menu-main__panel-inner{% if has_feature or item.pl_content %} has-feature{% endif %}">
 
-          {% if menu_level == 1 %}
+                {# render the menu items below this level 1 link #}
+                {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+
+                {# Add the feature if there is one for the menu link #}
+                {% if has_feature or item.pl_content %}
+                  <div class="m-menu-main__feature-wrapper">
+                    <div class="m-menu-main__feature-line"></div>
+                    <div class="m-menu-main__feature">
+                      {% set title = item.content.field_title[0] ? item.content.field_title : item.pl_content[0].field_title %}
+                      {% if title %}
+                        <div class="m-menu-main__feature-title">
+                          {{ title }}
+                        </div>
+                      {% endif %}
+
+                      {% set body = item.content.field_body[0] ? item.content.field_body : item.pl_content[0].field_body %}
+                      {% if body %}
+                        <div class="m-menu-main__feature-body">
+                          {{ body }}
+                        </div>
+                      {% endif %}
+
+                      {% set link = item.content.field_link[0] ? item.content.field_link : item.pl_content[0].field_link %}
+                      {% if link %}
+                        <div class="m-menu-main__feature-link">
+                          {% include "@atoms/00-type/00-heading.twig"
+                            with {
+                              text: link[0]['#title'],
+                              url: link[0]['#url'],
+                              level: '3',
+                              variation: 'h3',
+                            } only
+                          %}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endif %}
+
+              </div>
             </div>
           {% endif %}
+        </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+
+    {#
+      Ideal Panel Layout:
+      We want to have the closest equal distribution of links
+      into a 3 column layout that is possible without changing the order of the links as viewed RTL and without breaking up a 2nd level menu item. It is ideal to keep the mega menu panel as short as possible.
+    #}
+    {% if menu_level == 2 %}
+      {# The total amount of level 2 and level 3 links. #}
+      {% set total_links = items|length %}
+      {# A record of the number of links per sections. The total amount of links for a level 2 menu item including its nested links #}
+      {% set section_totals = {} %}
+      {# The total number of links for all level 2 and level 3 #}
+      {% set total = 0 %}
+      {# Loop through the menu items to get a total count of links
+      and determine the amount of links per section. #}
+      {% for key, item in items %}
+        {% set count = 1 %}
+
+        {% if item.below %}
+          {% set count = count + item.below|length %}
         {% endif %}
-      </li>
-    {% endfor %}
-    </ul>
+
+        {% set total = total + count %}
+        {% set section_totals = section_totals|merge({ (key): count }) %}
+      {% endfor %}
+
+      {# The ideal amount of links evenly per column spaced over 3 columns #}
+      {% set column_3_count = (total / 3)|round(0, 'ceil') %}
+      {# columns array will be used to keep track of which level 2
+      items go into which columns #}
+      {% set columns = {} %}
+      {# The ideal amount of links per column in a 2 col display #}
+      {% set column_2_count = 0 %}
+      {# processed_sections array keeps record of which menu items
+      have been used already #}
+      {% set processed_sections = {} %}
+      {# Loop through 3 columns #}
+      {% for col in 1..3 %}
+
+        {% set link_count = 0 %}
+        {# column_section array is used to record a single column #}
+        {% set column_section = {} %}
+        {% for menu_id, count in section_totals %}
+          {# Skip the menu item if it has been processed already #}
+          {% if menu_id not in processed_sections|keys %}
+            {# A flag to indicate if the menu section should be used in this column #}
+            {% set process = false %}
+
+            {# Add a menu section to a column if it has none added so far #}
+            {% if link_count == 0 %}
+              {% set process = true %}
+              {% set link_count = count %}
+            {# Determine if a menu section should be added to a column by calculation #}
+            {% else %}
+              {% set original_count = link_count %}
+              {% set link_count = link_count + count %}
+              {# Column 1 and link_count is less then or equal to our ideal number add the menu section to column 1. #}
+              {% if col == 1 and link_count <= column_3_count %}
+                {% set process = true %}
+              {# Column 2 and link_count is less then or equal to our ideal number add the menu section to column 2. #}
+              {% elseif col == 2 and link_count <= column_2_count %}
+                {% set process = true %}
+              {# Add what's left to column 3. #}
+              {% elseif col == 3 %}
+                {% set process = true %}
+              {% endif %}
+
+              {# Calculate the ideal column 2 count if we are done assigning menu sections to column 1 by using the remainder amount of links #}
+              {% if col == 1 and link_count > column_3_count and column_2_count == 0 %}
+                {% set remainder = total - original_count %}
+                {% set column_2_count = (remainder / 2)|round(0, 'ceil') %}
+              {% endif %}
+            {% endif %}
+
+            {# Add a menu section to a column section if process and marked it in the processed sections array #}
+            {% if process == true %}
+              {% set column_section = column_section|merge({ (menu_id): menu_id }) %}
+              {% set processed_sections = processed_sections|merge({ (menu_id): menu_id }) %}
+            {% endif %}
+
+          {% endif %}
+
+        {% endfor %}
+
+        {# Add a completed column_section to the columns array #}
+        {% set columns = columns|merge([column_section]) %}
+      {% endfor %}
+      
+      {# If there is one level 2 menu section with twice as menu links then all other level 2 menu sections combined we should use 2 columns and split the menu item. #}
+
+      {# The count of links in each column #}
+      {% set columns_count = [] %}
+      {# The column with the most links #}
+      {% set largest_col = '' %}
+      {# The hight single column amount of links #}
+      {% set largest_sum = 0 %}
+      {# Loop through the columns to determine if a single section could be split #}
+      {% for key, column in columns %}
+        {% set count = 0 %}
+        {% set n = key + 1 %}
+        {% for id, col in column %}
+          {% set count = count + section_totals[col] %}
+        {% endfor %}
+        {# Add each columns section count to a columns count, per col. #}
+        {% set columns_count = columns_count|merge([count]) %}
+        {# if this coumn has the most links and is only 1 menu section keep track of the column number and the total amount of links #}
+        {% if count > largest_sum and column|length == 1 %}
+          {% set largest_col = n %}
+          {% set largest_sum = count %}
+        {% endif %}
+
+      {% endfor %}
+
+      {# The total amount of links that are not in the largest column. This would be our new column generated from moving all the rest of the menu sections into 1 column. #}
+      {% set new_column_total = 0 %}
+      {% for key, amount in columns_count %}
+        {% set col = key + 1 %}
+        {# if this is not the larger column add the amount #}
+        {% if col != largest_col %}
+          {% set new_column_total = new_column_total + amount %}
+        {% endif %}
+      {% endfor %}
+
+      {# Indicates if the column should be split #}
+      {% set split = '' %}
+      {# A temporary array for holding the new column needed after
+      moving menu sections #}
+      {% set new_column = {} %}
+      {# if the single biggest column is 2 times greater then our newly determined column then it should be split. #}
+      {% if largest_sum > (new_column_total * 2) %}
+        {% set split = largest_col %}
+
+        {# Merge the 2 columns into a new single column #}
+        {% for key, column in columns %}
+          {% set col_id = key + 1 %}
+          {% for menu_id, col in column %}
+            {% if col_id != largest_col %}
+              {% set new_column = new_column|merge({(menu_id): menu_id}) %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+
+        {# Generate a new columns array based on which was the largest column #}
+        {% if largest_col == 1 %}
+          {% set columns = [columns[largest_col - 1], new_column] %}
+        {% else %}
+          {% set columns = [new_column, columns[largest_col - 1]] %}
+        {% endif %}
+
+      {% endif %}
+
+      <div class="m-menu-main__cols--3">
+        {% for key, column in columns %}
+          {% set col = key + 1 %}
+          {% if split and split == col %}
+            {% set col_variation = '--' ~ split ~ '-split' %}
+          {% elseif split == 1 and col != split %}
+            {% set col_variation = '--3' %}
+          {% else %}
+            {% set col_variation = '--' ~ col %}
+          {% endif %}
+
+          <div class="m-menu-main__col{{ col_variation }}">
+            <ul class="m-menu-main__list--level-2" data-main-menu-component="second-level-list">
+            {% for section in column %}
+              {% set classes = [
+                'm-menu-main__item--level-' ~ menu_level,
+                item.in_active_trail == TRUE ? 'is-active',
+              ]
+            %}
+              <li{{ items[section].attributes.addClass(classes) }}>
+                {% if items[section].url == '<nolink>' or (items[section].url.isRouted() and items[section].url.getRouteName == '<nolink>') %}
+                  {{ link(items[section].title, items[section].url, { 'class' : ['m-menu-main__label--level-2']}) }}
+                {% else %}
+                  {{ link(items[section].title, items[section].url, { 'class' : ['m-menu-main__link--level-2']}) }}
+                {% endif %}
+
+                {% if items[section].below %}
+                  {{ menus.menu_links(items[section].below, attributes, menu_level + 1) }}
+                {% endif %}
+              </li>
+            {% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
+
+    {% endif %}
+
+    {# Menu Level 3 #}
+    {% if menu_level == 3 %}
+      <ul class="m-menu-main__list--level-3" data-main-menu-component="third-level-list">
+      {% for item in items %}
+        {% set classes = [
+            'm-menu-main__item--level-3',
+            item.in_active_trail == TRUE ? 'is-active',
+          ]
+        %}
+
+        <li{{ item.attributes.addClass(classes) }}>
+          {% if item.url == '<nolink>' or (item.url.isRouted() and item.url.getRouteName == '<nolink>') %}
+            {{ link(item.title, item.url, { 'class' : ['m-menu-main__label--level-3']}) }}
+          {% else %}
+            {{ link(item.title, item.url, { 'class' : ['m-menu-main__link--level-3']}) }}
+          {% endif %}
+        </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+
   {% endif %}
 {% endmacro %}
 

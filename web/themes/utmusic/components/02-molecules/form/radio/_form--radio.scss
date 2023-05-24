@@ -1,87 +1,109 @@
-.m-form-item--radio {
-  position: relative;
-  margin-bottom: ru(0.25);
+// // Learn about this technique:
+// // @link https://moderncss.dev/pure-css-custom-styled-radio-buttons/
 
-  &:last-child {
+:root {
+  @include root-prop(--input-radio-color, palette(blue, 500));
+  @include root-prop(--checkmark-color, palette(white));
+}
+
+// Radio group wrapper.
+.m-form-item--radio {
+  margin-bottom: ru(0.2);
+
+  .m-input-radio :last-child {
     margin-bottom: 0;
   }
 }
 
-%m-form-item--radio__label,
-.m-form-item--radio label {
-  margin-bottom: 0;
-
-  .required.error & {
-    color: palette(red);
-  }
+// Radio wrapper.
+.m-form-item--radio-wrapper {
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em; // sass-lint:disable-line no-misspelled-properties
 }
 
+// Radio input.
 .m-input-radio {
-  // display: none;
-  position: absolute; // take it out of document flow
-  opacity: 0; // hide it
-
-  &:focus {
-    + label:before {
-      outline: 2px solid palette(blue, 400);
-      outline-offset: 2px;
-    }
-  }
-}
-
-.m-input-radio + label {
-  display: flex;
-  position: relative;
-  align-items: center;
+  display: grid;
+  margin: 0;
+  border: 0.12em solid currentColor;
+  border-radius: 50%;
+  background-color: palette(white);
+  width: 1.15em;
+  height: 1.15em;
   cursor: pointer;
+
+  // hide defoult checkmark.
+  appearance: none;
+  place-content: center;
+  transform: translateY(-0.075em);
 }
 
-// Box.
-.m-input-radio + label:before {
-  display: inline-block;
-  margin-right: rem(10px);
-  border: 1px solid palette(black);
-  border-radius: 100%;
-  background: palette(white);
-  min-width: 16px;
-  height: 16px;
-  vertical-align: text-top;
-  content: '';
-}
 
-%m-input-radio__error--before,
-.m-input-radio.error + label:before {
-  border: 1px solid palette(red);
-}
-
-// Disabled state label.
-.m-input-radio:disabled + label {
-  color: palette(grey);
-  cursor: auto;
-}
-
-// Disabled box.
-.m-input-radio:disabled + label:before {
-  border-color: palette(grey);
-  color: palette(grey);
-}
-
-// Checkmark.
-.m-input-radio + label:after {
-  position: absolute;
-  left: 2px;
-  opacity: 0;
-  border-radius: 100%;
-  background: palette(blue);
-  width: 12px;
-  height: 12px;
+// Check mark.
+.m-input-radio::before {
+  border-radius: 50%;
+  background-color: var(--input-radio-color);
+  width: 0.65em;
+  height: 0.65em;
   content: '';
   transform: scale(0);
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: 120ms transform ease-in-out;
 }
 
-// Box checked.
-.m-input-radio:checked + label:after {
-  opacity: 1;
+// Check mark (checked).
+.m-input-radio:checked::before {
   transform: scale(1);
+}
+
+// focus state.
+.m-input-radio:focus {
+  outline: rem(2px) solid palette(blue, 500);
+  outline-offset: rem(2px);
+}
+
+// disabled state.
+.m-input-radio:disabled {
+  @include root-prop(--checkmark-color, var(--color-disabled));
+
+  border-color: var(--color-disabled);
+  cursor: not-allowed;
+
+  + label {
+    color: var(--color-disabled);
+    cursor: not-allowed;;
+  }
+}
+
+// error state.
+.m-input-radio.error {
+  border-color: palette(red);
+
+
+  + label {
+    color: palette(red);
+    cursor: not-allowed;;
+  }
+}
+
+// label.
+.m-input-radio + label {
+  padding: 0;
+  cursor: pointer;
+
+  a {
+    @extend %a-link--grey;
+    margin-left: rem(5px);
+  }
+}
+
+.m-form-item--radio .m-form-item__description {
+  margin-top: ru(0.25);
+}
+
+// display side-by-side.
+.webform-options-display-side-by-side.m-form-item--radio {
+  .m-form-item--radio-wrapper {
+    display: inline-grid;
+  }
 }

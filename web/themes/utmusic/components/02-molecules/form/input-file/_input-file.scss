@@ -20,7 +20,7 @@
   &.is-active,
   &:hover {
     border: rem(2px) dashed palette(blue, 400);
-    background-color: palette(green);
+    background-color: palette(grey, 900);
   }
 
   input {
@@ -84,7 +84,7 @@
     align-items: center;
     border: rem(2px) solid palette(blue, 400);
     border-radius: 4px;
-    background-color: palette(green);
+    background-color: palette(grey, 900);
     padding: rem(10px);
 
     @include breakpoint($bp-tablet-small) {

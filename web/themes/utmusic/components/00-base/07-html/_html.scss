@@ -1,0 +1,31 @@
+// HTML / Body
+//
+// Default @viewport for responsive.
+//
+
+@viewport {
+  width: device-width;
+}
+
+html {
+  line-height: $base-line-height;
+  color: palette(black);
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  box-sizing: border-box;
+  text-size-adjust: 100%;
+  font-weight: $base-font-weigh;
+}
+
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: palette(white);
+  height: 100%;
+}

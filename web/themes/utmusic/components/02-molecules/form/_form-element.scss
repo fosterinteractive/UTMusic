@@ -97,6 +97,13 @@
   color: palette(red);
 }
 
+.l-form-item {
+  // Each form items after another form item
+  + .l-form-item {
+    margin-top: ru(1);
+  }
+}
+
 .m-form-element__prefix {
   display: block;
   margin-bottom: ru(0.25);
@@ -108,7 +115,8 @@
   margin-top: ru(0.25);
 }
 
-.m-form-actions {
+.m-form-actions,
+.form-actions {
   margin-top: ru(1);
   margin-bottom: ru(1);
 }

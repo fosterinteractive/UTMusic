@@ -1,0 +1,129 @@
+:root {
+  // font-size & padding
+  @include root-prop(--input-font-size, rem(20px));
+  @include root-prop(--input-line-height, rem(24px));
+  @include root-prop(--input-padding, rem(15px));
+
+  // border
+  @include root-prop(--input-border-width, rem(2px));
+  @include root-prop(--input-border-radius, rem(2px));
+  @include root-prop(--input-border-color, palette(blue, 700));
+  @include root-prop(--input-focus-border-color, palette(blue, 500));
+
+  // disabled
+  @include root-prop(--color-disabled, palette(grey, 500));
+
+  // text color
+  @include root-prop(--input-text-color, palette(grey, 500));
+  @include root-prop(--input-placeholder-text-color, palette(grey, 500));
+
+}
+
+// variable with base input height
+$input-height: calc(var(--input-line-height) + (var(--input-padding) * 2) + (var(--input-border-width) * 2));
+
+/* Form Elements Reset
+--------------------------------------------- */
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0; /* 2 */
+  font: inherit; /* 1 */
+}
+
+input[type='color'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
+select,
+textarea {
+  font-size: var(--input-font-size);
+  border: var(--input-border-width) solid var(--input-border-color);
+  border-radius: var(--input-border-radius);
+  background-color: palette(white);
+  padding: var(--input-padding);
+  width: 100%;
+  line-height: var(--input-line-height);
+  color: var(--input-text-color);
+  transition: border-color 0.3s ease-out, color 0.3s ease 0.5s;
+  -webkit-appearance: none;
+
+  &:disabled {
+    @include root-prop(--input-border-color, var(--color-disabled));
+    @include root-prop(--input-text-color, var(--color-disabled));
+  }
+}
+
+/* Focus Overrides - -https://www.tjvantoll.com/2013/01/28/stop-messing-with-the-browsers-default-focus-outline/ */
+input[type='color']:focus,
+input[type='date']:focus,
+input[type='datetime']:focus,
+input[type='datetime-local']:focus,
+input[type='email']:focus,
+input[type='month']:focus,
+input[type='number']:focus,
+input[type='password']:focus,
+input[type='search']:focus,
+input[type='tel']:focus,
+input[type='text']:focus,
+input[type='time']:focus,
+input[type='url']:focus,
+input[type='week']:focus,
+textarea:focus,
+select:focus {
+  @include root-prop(--input-border-color, var(--input-focus-border-color));
+}
+
+input[type='checkbox'],
+input[type='image'],
+input[type='radio'] {
+
+  & + label {
+    margin-bottom: 0;
+  }
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  color: var(--input-placeholder-text-color);
+}
+
+// Checkboxes & Radios
+input[type='checkbox'],
+input[type='radio'] {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: 1px transparent;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+// Search
+.m-input--search {
+  width: 100%;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iMTkiIHZpZXdCb3g9IjAgMCAxOSAxOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE3LjI5MTcgMTguNzVMMTAuNzI5MiAxMi4xODc1QzEwLjIwODMgMTIuNjA0MiA5LjYwOTM3IDEyLjkzNCA4LjkzMjI5IDEzLjE3NzFDOC4yNTUyMSAxMy40MjAxIDcuNTM0NzIgMTMuNTQxNyA2Ljc3MDgzIDEzLjU0MTdDNC44Nzg0NyAxMy41NDE3IDMuMjc3MDggMTIuODg2NSAxLjk2NjY3IDExLjU3NkMwLjY1NTU1NiAxMC4yNjQ5IDAgOC42NjMxOSAwIDYuNzcwODNDMCA0Ljg3ODQ3IDAuNjU1NTU2IDMuMjc2NzQgMS45NjY2NyAxLjk2NTYzQzMuMjc3MDggMC42NTUyMDggNC44Nzg0NyAwIDYuNzcwODMgMEM4LjY2MzE5IDAgMTAuMjY0OSAwLjY1NTIwOCAxMS41NzYgMS45NjU2M0MxMi44ODY1IDMuMjc2NzQgMTMuNTQxNyA0Ljg3ODQ3IDEzLjU0MTcgNi43NzA4M0MxMy41NDE3IDcuNTM0NzIgMTMuNDIwMSA4LjI1NTIxIDEzLjE3NzEgOC45MzIyOUMxMi45MzQgOS42MDkzNyAxMi42MDQyIDEwLjIwODMgMTIuMTg3NSAxMC43MjkyTDE4Ljc1IDE3LjI5MTdMMTcuMjkxNyAxOC43NVpNNi43NzA4MyAxMS40NTgzQzguMDcyOTIgMTEuNDU4MyA5LjE3OTg2IDExLjAwMjggMTAuMDkxNyAxMC4wOTE3QzExLjAwMjggOS4xNzk4NiAxMS40NTgzIDguMDcyOTIgMTEuNDU4MyA2Ljc3MDgzQzExLjQ1ODMgNS40Njg3NSAxMS4wMDI4IDQuMzYxODEgMTAuMDkxNyAzLjQ1QzkuMTc5ODYgMi41Mzg4OSA4LjA3MjkyIDIuMDgzMzMgNi43NzA4MyAyLjA4MzMzQzUuNDY4NzUgMi4wODMzMyA0LjM2MTgxIDIuNTM4ODkgMy40NSAzLjQ1QzIuNTM4ODkgNC4zNjE4MSAyLjA4MzMzIDUuNDY4NzUgMi4wODMzMyA2Ljc3MDgzQzIuMDgzMzMgOC4wNzI5MiAyLjUzODg5IDkuMTc5ODYgMy40NSAxMC4wOTE3QzQuMzYxODEgMTEuMDAyOCA1LjQ2ODc1IDExLjQ1ODMgNi43NzA4MyAxMS40NTgzWiIgZmlsbD0iIzM4MzgzOCIvPgo8L3N2Zz4K") !important;
+  background-repeat: no-repeat;
+  background-position: rem(20px);
+  padding-left: ru(2);
+}
+
+// Set heigth for input type date (Needed for IOS)
+input[type='date'] {
+  min-height: $input-height;
+}

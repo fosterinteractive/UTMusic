@@ -1,0 +1,281 @@
+// Description.
+.webform-element-description,
+.m-form-group__prefix .description {
+  @extend %a-type--xsmall;
+  color: palette(grey, 500);
+  margin-top: rem(5px);
+  margin-bottom: rem(5px);
+}
+
+// More link.
+.webform-element-more--link {
+  margin-top: rem(10px);
+  margin-bottom: rem(10px);
+
+  a {
+    @extend %a-link--grey;
+  }
+}
+
+// Webform help.
+.webform-element-help {
+  background-color: palette(grey, 500);
+  border-color: palette(grey, 500);
+
+  &:hover {
+    background-color: palette(blue, 500);
+  }
+}
+
+.webform-element-help--title {
+  @extend %a-type--small;
+}
+
+.webform-element-help--content {
+  @extend %a-type--xsmall;
+}
+
+
+.m-status--error .item-list__comma-list {
+  @extend %a-type--xsmall;
+}
+
+
+// Grouped checkboxes and radio.
+.js-webform-radios,
+.js-webform-checkboxes {
+  .js-form-item {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+
+.webform-progress {
+  position: relative;
+  margin-bottom: calc(var(--spacer) * 2);
+}
+
+// Progress bar.
+.webform-progress-tracker {
+  width: 100%;
+
+  &.progress-tracker {
+    margin-top: ru(0.625);
+    margin-bottom: ru(0.625);
+  }
+
+  .progress-step {
+    display: block;
+    position: relative;
+    text-align: center;
+    
+    &.is-complete .progress-marker,
+    .progress-marker {
+      &:after {
+        @extend %a-type--small;
+        background-color: palette(blue, 400);
+        height: rem(10px);
+        top: rem(12px);
+      }
+
+      &:not(.is-active):before {
+        background-color: palette(blue, 500);
+      }
+
+      &:before {
+        @extend %a-type--small;
+        background-color: palette(blue, 500);
+        width: rem(25px);
+        height: rem(25px);
+        top: rem(6px);
+      }
+    }
+
+    %progress-text,
+    .progress-text {
+      color: palette(grey, 500);
+      font-weight: bold;
+      margin-bottom: rem(10px);
+      padding-top: 15px;
+
+      @include breakpoint($bp-tablet) {
+        font-size: rem(18px);
+      }
+    }
+
+    &.is-complete {
+      .progress-marker {
+        &:before {
+          background-color: palette(black);
+        }
+      }
+
+      .progress-text {
+        @extend %progress-text;
+      }
+
+      &:hover {
+        .progress-marker[role="link"]{
+          &:before {
+            background-color: palette(blue, 500);
+          }
+        }
+      }
+    }
+
+    // Active marker.
+    &.is-active,
+    &.is-active:hover {
+      .progress-marker {
+
+        &:before {
+          background-color: palette(blue, 500);
+          width: rem(35px);
+          height: rem(35px);
+          top: 0;
+        }
+      }
+
+      .progress-text {
+        @extend %progress-text;
+      }
+    }
+  }
+}
+
+// Webform Groups
+form {
+  fieldset,
+  .m-form-fieldset {
+    margin-top: rem(40px);
+    margin-bottom: rem(20px);
+
+    legend:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  fieldset:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.webform-confirmation__back {
+  @extend %a-button;
+
+  a {
+    color: palette(white);
+  }
+}
+
+.ui-widget.ui-widget-content {
+  width: 95% !important;
+  max-width: rem(600px);
+  margin-left: auto;
+  margin-right: auto;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+// Events new user signup country.
+.mk-events-new-user-signup__country {
+  @include breakpoint($bp-tablet) {
+    .l-form-item {
+      margin-top: 0;
+      flex: 1;
+    }
+  }
+}
+
+// Button.
+.webform-submission-form {
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacer);
+  }
+
+  .m-input-submit {
+    @extend %m-input-submit;
+  }
+}
+
+%webform-button-core {
+  background-color: transparent;
+  color: var(--heading-color);
+  font-size: rem(22px);
+  padding: 0;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: transparent;
+    color: var(--heading-color);
+  }
+}
+
+%webform-button-icon-core {
+  transition: background 0.2s;
+  background-repeat: no-repeat;
+  background-size: rem(9px);
+}
+
+%webform-button-icon-right {
+  @extend %webform-button-icon-core;
+  background-image: url('./svg/svg-art/chevron-right.svg');
+  background-position: right rem(5px) center;
+  padding-right: rem(20px);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-position: right center;
+  }
+}
+
+%webform-button-icon-left {
+  @extend %webform-button-icon-core;
+  background-image: url('./svg/svg-art/chevron-left.svg');
+  background-position: left rem(5px) center;
+  padding-left: rem(20px);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-position: left center;
+  }
+}
+
+%webform-button-icon-right-white {
+  @extend %webform-button-icon-core;
+  background-image: url('./svg/svg-art/chevron-right-white.svg');
+  background-position: right rem(16px) center;
+  padding-right: rem(35px);
+}
+
+.webform-button--previous {
+  @extend %webform-button-core;
+  @extend %webform-button-icon-left;
+}
+
+.webform-button--next {
+  @extend %webform-button-core;
+  @extend %webform-button-icon-right;
+}
+
+.webform-button--submit {
+  @extend %webform-button-core;
+}
+
+.mk-events-new-user-signup__topics {
+
+  @include breakpoint($bp-tablet) {
+
+    .js-webform-webform-term-checkboxes {
+      column-count: 2;
+      column-gap: rem(15px);
+    }
+  }
+}

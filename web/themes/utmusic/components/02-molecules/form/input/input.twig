@@ -7,21 +7,22 @@
   {# Submit (Input Button) #}
   <input class="m-input-submit" type="submit" id="submit_input" name="submit_input" value="Submit (Input Button)">
 
+{% else %}
+  {% set input_type = attributes.getIterator().type.__toString() %}
+
+  {% if input_type == 'text' or input_type == 'email' or input_type == 'tel' %}
+    {% set classes = ['m-input'] %}
   {% else %}
-    {% set input_type = attributes.getIterator().type.__toString() %}
+    {% set classes = ['m-input-' ~ input_type] %}
+  {% endif %}
 
-    {% if input_type == 'text' or input_type == 'email' or input_type == 'tel' %}
-      {% set classes = ['m-input'] %}
-    {% else %}
-      {% set classes = ['m-input-' ~ input_type] %}
-    {% endif %}
-
-    {% if icon_name %}
+  {% if icon_name %}
     <div class="m-input--{{ icon_name }}__wrapper m-input__icon-wrapper">
       <i class="m-input__icon fas fa-{{ icon_name }}"></i>
-    {% endif %}
-      <input {{ attributes }} />{{ children }}
-    {% if icon_name %}
+      <input {{ attributes.addClass(classes) }} />{{ children }}
     </div>
-    {% endif %}
+  {% else %}
+    <input {{ attributes.addClass(classes) }} />{{ children }}
+  {% endif %}
+
 {% endif %}

@@ -34,18 +34,17 @@
 {% macro menu_links(items, attributes, menu_level, mobile_shortcuts) %}
   {% import _self as menus %}
   {% if items %}
-    <ul class="{{ 'm-menu-mobile__list--level-' ~ menu_level }}" role="menu">
+    <ul class="{{ 'm-menu-mobile__list--level-' ~ menu_level }}">
 
       {% for item in items %}
         {% set classes = [
             'm-menu-mobile__item--level-' ~ menu_level,
             item.in_active_trail == TRUE ? 'is-active',
             item.below ? 'has-submenu',
-            item.content.field_highlight_menu_item[0]['#markup'] == 'True' ? 'm-menu-mobile__item-highlighted',
           ]
         %}
 
-        <li{{ item.attributes.addClass(classes) }} {% if item.in_active_trail == TRUE %}aria-current="page"{% endif %} role="menuitem">
+        <li{{ item.attributes.addClass(classes) }}>
           {% if item.url == '<nolink>' or (item.url.isRouted() and item.url.getRouteName == '<nolink>') %}
             <span class="{{ 'm-menu-mobile__link--level-' ~ menu_level }}{% if item.in_active_trail == TRUE %} is-active{% endif %} is-toggle">{{ item.title }}</span>
           {% else %}
@@ -62,6 +61,15 @@
           {% endif %}
         </li>
       {% endfor %}
+
+      {#
+        Loading custom mobile shortcuts menu in mobile menu for header shortcuts. Edit the /navs/menu-mobile/menu-mobile-footer.twig file.
+      #}
+      <li class="m-menu-mobile__item--section">
+        <div class="m-menu-mobile__shortcuts-wrapper mm-nopanel">
+          {{ mobile_shortcuts }}
+        </div>
+      </li>
 
     </ul>
   {% endif %}

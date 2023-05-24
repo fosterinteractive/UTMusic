@@ -4,9 +4,11 @@
   
   &:link,
   &:visited {
+    @extend %a-external-link;
+    position: relative;
     text-decoration: underline;
     text-decoration-color: var(--c-link-decoration);
-    // text-decoration-thickness: 1px; 
+    text-decoration-thickness: 1px; 
     color: var(--c-link);
     transition: color 0.2s ease-in-out, text-decoration-color 0.1s ease-in-out;
   }
@@ -20,26 +22,36 @@
   }
 }
 
-// %a-external-link {
-//   &[href^='http']:after {
+// need to refactor.
+%a-external-link {
+  &[href^='http']:after {
 
-//     display: inline-block;
-//     margin-left: 4px;
-//     background-image: url('./svg/svg-art/external-link-square-alt.svg');
-//     background-image: var(--link-icon-external);
-//     background-repeat: no-repeat;
-//     background-size: contain;
-//     width: 0.75em;
-//     height: 0.75em;
-//     white-space: nowrap;
-//     content: '';
-//     background-position-y: 1px;
-//   }
-// }
+    display: inline-block;
+    margin-left: 4px;
+    background-image: url('./svg/svg-art/external-link-square-alt.svg');
+    background-image: var(--link-icon-external);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 0.75em;
+    height: 0.75em;
+    white-space: nowrap;
+    content: '';
+    background-position-y: 1px;
+  }
+}
+
+%a-link--grey,
+.a-link--grey {
+  @extend %a-link;
+  @include root-prop(--c-link-decoration, palette(grey, 900));
+  @include root-prop(--c-link, palette(grey, 500));
+  @include root-prop(--c-link-decoration--active, palette(grey));
+  @include root-prop(--c-link--active, palette(grey, 200));
+}
 
 
 
-
+// need to refactor icon functionality.
 %a-link--icon-core {
   // @extend %a-type--small;
   display: flex;
