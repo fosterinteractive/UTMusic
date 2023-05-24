@@ -1,0 +1,137 @@
+%a-icon__core {
+  display: block;
+  fill: currentColor;
+}
+
+//icons for search field
+%a-icon--xxxsmall,
+.a-icon--xxxsmall {
+  @extend %a-icon__core;
+
+  width: rem(20px);
+  height: rem(20px);
+}
+
+//icons in the footer
+%a-icon--xxsmall,
+.a-icon--xxsmall {
+  @extend %a-icon__core;
+
+  width: rem(40px);
+  height: rem(40px);
+}
+
+%a-icon--xsmall,
+.a-icon--xsmall {
+  @extend %a-icon__core;
+
+  width: rem(48px);
+  height: rem(42px);
+}
+
+%a-icon--small,
+.a-icon--small {
+  @extend %a-icon__core;
+
+  width: rem(78px);
+  height: rem(68px);
+}
+
+// Default Size
+%a-icon--medium,
+.a-icon--medium {
+  @extend %a-icon__core;
+
+  width: rem(108px);
+  height: rem(94px);
+}
+
+%a-icon--large,
+.a-icon--large {
+  @extend %a-icon__core;
+
+  width: rem(184px);
+  height: rem(160px);
+}
+
+%a-icon--xlarge,
+.a-icon--xlarge {
+  @extend %a-icon__core;
+
+  width: rem(243px);
+  height: rem(216px);
+}
+
+// Set the Icon size and it will be automatically positioned relative to the inline text
+// Used in @atoms/text/heading/heading.scss
+
+$icon-size: 0.6em;
+
+%a-icon--inline,
+.a-icon--inline {
+  display: inline-block;
+  width: $icon-size;
+  height: $icon-size;
+  vertical-align: bottom;
+  fill: currentColor;
+}
+
+//styles for demo in StoryBook
+.storybook-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(20px);
+}
+
+// Sizes for SVG which is coming from Drupal with all its entire html code
+// We wrap it in a <div> parent and restrict max-sizes for its child (svg)
+
+%a-icon-external-svg {
+  @extend  %a-icon__core;
+}
+
+%a-icon-external--xsmall svg,
+.a-icon-external--xsmall svg {
+  @extend %a-icon-external-svg;
+
+  width: rem(48px);
+  height: rem(42px);
+}
+
+%a-icon-external--small svg,
+.a-icon-external--small svg {
+  @extend %a-icon-external-svg;
+
+  width: rem(78px);
+  height: rem(68px);
+}
+
+// Default Size
+%a-icon-external--medium svg,
+.a-icon-external--medium svg {
+  @extend %a-icon-external-svg;
+
+  width: rem(108px);
+  height: rem(94px);
+}
+
+%a-icon-external--large svg,
+.a-icon-external--large svg {
+  @extend %a-icon-external-svg;
+
+  width: rem(184px);
+  height: rem(160px);
+}
+
+%a-icon-external--xlarge svg,
+.a-icon-external--xlarge svg {
+  @extend %a-icon-external-svg;
+
+  width: rem(243px);
+  height: rem(216px);
+}
+
+//do not show field fith icon-size wich we use as a key to set size for svg
+.a-icon-external--description {
+  display: none;
+}
