@@ -16,7 +16,7 @@
   &:hover,
   &:focus,
   &:active {
-    background-color: palette(grey, 400);
+    background-color: palette(grey, 950);
     text-decoration-color: var(--c-link-decoration--active);
     color: var(--c-link--active);
   }
@@ -28,8 +28,8 @@
 
     display: inline-block;
     margin-left: 4px;
-    background-image: url('./svg/svg-art/external-link-square-alt.svg');
-    background-image: var(--link-icon-external);
+    background-image: url('./b952885a850cf239c88d1348d8f51039.svg');
+    color: var(--c-link-icon-external);
     background-repeat: no-repeat;
     background-size: contain;
     width: 0.75em;
