@@ -2,7 +2,7 @@
 $base-font-size: 18px;
 
 // Base line height
-$base-line-height: 24px;
+$base-line-height: 27px;
 
 // Setup default spacing unit in rems
 $base-line-height-rem: rem($base-line-height);
@@ -14,16 +14,16 @@ $base-font-weigh: 400;
   --spacer: #{$base-line-height-rem * 0.6666};
 
   @include breakpoint($bp-full-nav) {
-    --spacer: #{$base-line-height-rem};
+    --spacer: #{$base-line-height-rem * 1.111};
   }
 }
 
 /// Base Font Family
 
 /* stylelint-disable-next-line value-keyword-case */
-$base-font-family: 'Lato', sans-serif;
+$base-font-family: "trade-gothic-next", sans-serif;
 
 /// Title Font Family
 
 /* stylelint-disable-next-line value-keyword-case */
-$title-font-family: 'Roboto Slab', sans-serif;
+$title-font-family: "trade-gothic-next", sans-serif;
