@@ -2,7 +2,7 @@
 // // @link https://moderncss.dev/pure-css-custom-styled-radio-buttons/
 
 :root {
-  @include root-prop(--input-radio-color, palette(blue, 500));
+  @include root-prop(--input-radio-color, palette(blue, 300));
   @include root-prop(--checkmark-color, palette(white));
 }
 
@@ -58,7 +58,7 @@
 
 // focus state.
 .m-input-radio:focus {
-  outline: rem(2px) solid palette(blue, 500);
+  outline: rem(2px) solid palette(blue, 300);
   outline-offset: rem(2px);
 }
 

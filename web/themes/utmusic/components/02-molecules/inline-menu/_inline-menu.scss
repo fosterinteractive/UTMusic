@@ -1,28 +1,28 @@
 // Palette Options.
 %m-inline-menu-color,
 .m-inline-menu {
-  color: palette(grey, 200);
+  color: palette(grey, 300);
   color: var(--c-text);
 
   .m-inline-menu__title > * {
-    color: palette(grey, 200);
+    color: palette(grey, 300);
     color: var(--c-text);
   }
 
   .m-inline-menu__body > * {
-    color: palette(grey, 200);
+    color: palette(grey, 300);
     color: var(--c-text);
   }
 
   .m-inline-menu__links {
-    @include linear-gradient-border(palette(blue, 400));
+    @include linear-gradient-border(palette(blue, 900));
     @include linear-gradient-border(var(--c-inline-menu-line));
   }
 
   .m-inline-menu__link {
-    @include linear-gradient-animation-border(palette(red), palette(blue, 400));
+    @include linear-gradient-animation-border(palette(red), palette(blue, 900));
     @include linear-gradient-animation-border(var(--c-inline-menu-line--active), var(--c-inline-menu-line));
-    color: palette(grey, 200);
+    color: palette(grey, 300);
     color: var(--c-inline-menu-text);
 
     &:hover,

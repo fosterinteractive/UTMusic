@@ -77,9 +77,9 @@
 }
 
 .select2-results__option {
-  color: palette(grey, 200) !important;
+  color: palette(grey, 300) !important;
   padding: rem(20px) rem(25px);
-  border: rem(1px) solid palette(grey, 200) !important;
+  border: rem(1px) solid palette(grey, 300) !important;
 
   &:first-child {
     border-radius: rem(10px) rem(10px) 0 0 !important;
@@ -107,7 +107,7 @@
 
 .select2-results__option--highlighted {
   background-color: palette(yellow, 900) !important;
-  color: palette(grey, 200) !important;
+  color: palette(grey, 300) !important;
   font-weight: bold !important;
 }
   

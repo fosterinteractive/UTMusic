@@ -69,10 +69,10 @@ table caption {
 th {
   @extend %a-table__cell--core;
   border-width: 0 0 2px 0;
-  border-color: palette(blue, 400);
+  border-color: palette(blue, 900);
   vertical-align: bottom;
   text-align: left;
-  color: palette(grey, 200);
+  color: palette(grey, 300);
 
   &:not(:last-child) {
     border-right-color: palette(white);
@@ -81,10 +81,10 @@ th {
   // Override the th cell appering in tbody (These are normally created in ckeditor)
   tbody & {
     border-width: 0 2px 0 0;
-    border-color: palette(blue, 400);
+    border-color: palette(blue, 900);
 
     &:not(:last-child) {
-      border-right-color: palette(blue, 400);
+      border-right-color: palette(blue, 900);
     }
 
     &:first-of-type {

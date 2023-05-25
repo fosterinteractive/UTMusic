@@ -22,21 +22,21 @@
   padding: ru(0.25) ru(0.75);
   font-size: $base-font-size;
   font-weight: 600;
-  color: palette(grey, 500);
+  color: palette(grey, 400);
   text-decoration: none;
   transition: color 0.2s, border-bottom-color 0.2s;
 
   &:hover,
   &:focus,
   &:active {
-    border-bottom-color: palette(grey, 200);
-    color: palette(grey, 200);
+    border-bottom-color: palette(grey, 300);
+    color: palette(grey, 300);
   }
 }
 
 .m-tabs__item .is-active  {
   border-bottom-color:  #ffc200;
-  color: palette(grey, 200);
+  color: palette(grey, 300);
   cursor: default;
 }
 

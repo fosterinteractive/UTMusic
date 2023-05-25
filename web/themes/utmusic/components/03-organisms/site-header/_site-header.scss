@@ -22,7 +22,7 @@
 .o-header__parent-site-link {
   // @extend %m-menu-header-shortcuts__link;
 
-  border-right: 1px solid palette(blue, 400);
+  border-right: 1px solid palette(blue, 900);
   background-size: 0;
   padding-right: ru(0.5);
   padding-left: ru(0.5);
@@ -49,7 +49,7 @@
   background-color: palette(grey, 900);
 
   &:hover {
-    background-color: palette(grey, 500);
+    background-color: palette(grey, 400);
   }
 
   &:hover .a-btn-icon--sml svg {
@@ -115,8 +115,8 @@
 
 .l-page__menu-main-wrapper {
   display: none;
-  border-top:  1px solid palette(grey, 1000);
-  border-bottom:  1px solid palette(grey, 1000);
+  border-top:  1px solid palette(grey, 950);
+  border-bottom:  1px solid palette(grey, 950);
 
   @include breakpoint($bp-full-nav) {
     display: block;

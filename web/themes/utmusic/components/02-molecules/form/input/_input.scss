@@ -2,7 +2,7 @@
 .m-input {
   border-width: rem(2px);
   border-style: solid;
-  border-color: palette(grey, 200);
+  border-color: palette(grey, 300);
   appearance: none;
 
   &.required.error {
@@ -53,7 +53,7 @@
     position: absolute;
     top: 50%;
     left: rem(12px);
-    color: palette(grey, 500);
+    color: palette(grey, 400);
     transition: color 0.25s cubic-bezier(0.1, 0.96, 0.56, 1);
     transform: translateY(-50%);
   }

@@ -4,7 +4,7 @@
 
 :root {
   @include root-prop(--checkmark-color, palette(white));
-  @include root-prop(--input-checkbox-background, palette(blue, 500));
+  @include root-prop(--input-checkbox-background, palette(blue, 300));
 }
 
 // Checkbox group wrapper.
@@ -65,7 +65,7 @@
 
 // focus state.
 .m-input-checkbox:focus {
-  outline: rem(2px) solid palette(blue, 400);
+  outline: rem(2px) solid palette(blue, 900);
   outline-offset: rem(2px);
 }
 

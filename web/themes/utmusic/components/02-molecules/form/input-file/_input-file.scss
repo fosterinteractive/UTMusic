@@ -10,7 +10,7 @@
   display: flex;
   position: relative;
   align-items: center;
-  border: rem(2px) dashed palette(blue, 400);
+  border: rem(2px) dashed palette(blue, 900);
   border-radius: 4px;
   padding: rem(10px);
   width: 100%;
@@ -19,7 +19,7 @@
 
   &.is-active,
   &:hover {
-    border: rem(2px) dashed palette(blue, 400);
+    border: rem(2px) dashed palette(blue, 900);
     background-color: palette(grey, 900);
   }
 
@@ -67,8 +67,8 @@
 // File name after upload.
 .m-form-element--webform-document-file,
 .m-form-element--webform-image-file {
-  border-top: rem(2px) solid palette(blue, 400);
-  border-bottom: rem(2px) solid palette(blue, 400);
+  border-top: rem(2px) solid palette(blue, 900);
+  border-bottom: rem(2px) solid palette(blue, 900);
 
   &.l-form-item {
     margin-top: rem(30px);
@@ -82,7 +82,7 @@
 
     display: flex;
     align-items: center;
-    border: rem(2px) solid palette(blue, 400);
+    border: rem(2px) solid palette(blue, 900);
     border-radius: 4px;
     background-color: palette(grey, 900);
     padding: rem(10px);

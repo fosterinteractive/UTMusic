@@ -2,7 +2,7 @@
 .webform-element-description,
 .m-form-group__prefix .description {
   @extend %a-type--xsmall;
-  color: palette(grey, 500);
+  color: palette(grey, 400);
   margin-top: rem(5px);
   margin-bottom: rem(5px);
 }
@@ -19,11 +19,11 @@
 
 // Webform help.
 .webform-element-help {
-  background-color: palette(grey, 500);
-  border-color: palette(grey, 500);
+  background-color: palette(grey, 400);
+  border-color: palette(grey, 400);
 
   &:hover {
-    background-color: palette(blue, 500);
+    background-color: palette(blue, 300);
   }
 }
 
@@ -74,18 +74,18 @@
     .progress-marker {
       &:after {
         @extend %a-type--small;
-        background-color: palette(blue, 400);
+        background-color: palette(blue, 900);
         height: rem(10px);
         top: rem(12px);
       }
 
       &:not(.is-active):before {
-        background-color: palette(blue, 500);
+        background-color: palette(blue, 300);
       }
 
       &:before {
         @extend %a-type--small;
-        background-color: palette(blue, 500);
+        background-color: palette(blue, 300);
         width: rem(25px);
         height: rem(25px);
         top: rem(6px);
@@ -94,7 +94,7 @@
 
     %progress-text,
     .progress-text {
-      color: palette(grey, 500);
+      color: palette(grey, 400);
       font-weight: bold;
       margin-bottom: rem(10px);
       padding-top: 15px;
@@ -118,7 +118,7 @@
       &:hover {
         .progress-marker[role="link"]{
           &:before {
-            background-color: palette(blue, 500);
+            background-color: palette(blue, 300);
           }
         }
       }
@@ -130,7 +130,7 @@
       .progress-marker {
 
         &:before {
-          background-color: palette(blue, 500);
+          background-color: palette(blue, 300);
           width: rem(35px);
           height: rem(35px);
           top: 0;

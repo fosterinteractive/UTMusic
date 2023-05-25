@@ -1,7 +1,7 @@
 .m-listing-item--events {
   display: flex;
   flex-direction: column;
-  border: 1px solid palette(grey, 500);
+  border: 1px solid palette(grey, 400);
   border-radius: 5px;
   overflow: hidden;
 
@@ -93,15 +93,15 @@
   margin-top: ru(1);
 
   .a-link {
-    text-decoration-color: palette(blue,400);
+    text-decoration-color: palette(blue, 300);
     color: palette(blue);
     
     &:hover,
     &:focus,
     &:active {
-      background-color: palette(grey, 500);
-      text-decoration-color: palette(blue,400);
-      color: palette(blue,400);
+      background-color: palette(grey, 400);
+      text-decoration-color: palette(blue, 300);
+      color: palette(blue, 300);
     }
   }
 }
@@ -198,7 +198,7 @@
 //   @extend %m-listing-item__text;
 
 //   .s-wysiwyg {
-//     color: palette(grey, 200);
+//     color: palette(grey, 300);
 //     color: var(--text-color);
 //   }
 // }

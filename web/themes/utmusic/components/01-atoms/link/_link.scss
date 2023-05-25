@@ -16,7 +16,7 @@
   &:hover,
   &:focus,
   &:active {
-    background-color: palette(grey, 500);
+    background-color: palette(grey, 400);
     text-decoration-color: var(--c-link-decoration--active);
     color: var(--c-link--active);
   }
@@ -44,9 +44,9 @@
 .a-link--grey {
   @extend %a-link;
   @include root-prop(--c-link-decoration, palette(grey, 900));
-  @include root-prop(--c-link, palette(grey, 500));
+  @include root-prop(--c-link, palette(grey, 400));
   @include root-prop(--c-link-decoration--active, palette(grey));
-  @include root-prop(--c-link--active, palette(grey, 200));
+  @include root-prop(--c-link--active, palette(grey, 300));
 }
 
 

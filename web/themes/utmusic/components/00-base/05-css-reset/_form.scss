@@ -7,15 +7,15 @@
   // border
   @include root-prop(--input-border-width, rem(2px));
   @include root-prop(--input-border-radius, rem(2px));
-  @include root-prop(--input-border-color, palette(blue, 700));
-  @include root-prop(--input-focus-border-color, palette(blue, 500));
+  @include root-prop(--input-border-color, palette(blue, 900));
+  @include root-prop(--input-focus-border-color, palette(blue, 300));
 
   // disabled
-  @include root-prop(--color-disabled, palette(grey, 500));
+  @include root-prop(--color-disabled, palette(grey, 400));
 
   // text color
-  @include root-prop(--input-text-color, palette(grey, 500));
-  @include root-prop(--input-placeholder-text-color, palette(grey, 500));
+  @include root-prop(--input-text-color, palette(grey, 400));
+  @include root-prop(--input-placeholder-text-color, palette(grey, 400));
 
 }
 
