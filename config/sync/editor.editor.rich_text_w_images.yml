@@ -60,7 +60,7 @@ settings:
             - Maximize
   plugins:
     stylescombo:
-      styles: "p|Paragraph\r\np.a-type--small|P (Small)\r\np.a-type--large|P (Large)\r\np.a-type--xlarge|P (x large)\r\nh2.a-heading__h2|Heading 2 \r\nh2.a-heading__h1|Heading 2 - H1 Appearance\r\nh2.a-heading__h3|Heading 2 - H3 Appearance\r\nh3.a-heading__h3|Heading 3\r\nh3.a-heading__h2|Heading 3 - H2 Appearance\r\nh4.a-heading__h4|Heading 4\r\n"
+      styles: "h2.a-heading__h2|Heading 2\r\nh2.a-heading__h1|Heading 2 - H1 Appearance\r\nh2.a-heading__h3|Heading 2 - H3 Appearance \r\nh3.a-heading__h3|Heading 3\r\nh3.a-heading__h2|Heading 3 - H2 Appearance\r\nh4.a-heading__h4|Heading 4\r\np|Paragraph\r\np.a-type--small|P (Small)\r\np.a-type--large|P (Large)\r\np.a-type--xlarge|P (x Large)"
     drupallink:
       linkit_enabled: true
       linkit_profile: default
