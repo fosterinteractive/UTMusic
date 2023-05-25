@@ -39,9 +39,9 @@
 
   // @atoms/link
   --c-link: #{palette(blue)};
-  --c-link--active: #{palette(blue, 900)};
-  --c-link-decoration: #{palette(blue, 900)};
-  --c-link-decoration--active: #{palette(blue, 900)};
+  --c-link--active: #{palette(teal, 300)};
+  // --c-link-decoration: #{palette(blue)};
+  --c-link-decoration--active: #{palette(teal, 300)};
   // --c-link-icon-external, url('./svg/svg-art/external-link-square-alt.svg')};
   // --c-link-background--active, rgba(#{palette(grey, 400), 0.15)};
 
