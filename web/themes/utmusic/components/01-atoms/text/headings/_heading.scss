@@ -40,16 +40,6 @@
       transition: transform 0.15s ease-in-out;
     }
   }
-
-  u {
-    display: inline;
-    background: linear-gradient(0deg, rgba(255,242,0,0) 5px, rgba(255, 242, 0, 1) 5px, rgba(255, 242, 0, 1) 20px, rgba(255,242,0,0) 20px);
-    text-decoration: none;
-
-    .theme--black-bg & {
-      background: linear-gradient(0deg, rgba(255,242,0,0) -5px, rgba(100, 100, 100, 1) -5px, rgba(100, 100, 100, 1) 15px, rgba(255,242,0,0) 15px);
-    }
-  }
 }
 
 // Wrap the last work with a span to position & create padding for icon
