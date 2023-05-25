@@ -11,48 +11,10 @@
 // To generate other optimized Open Source fonts use:
 // https://transfonter.org
 
-
-// Stag Sans Web
-@font-face {
-  font-family: 'Stag Sans Web';
-  src: url('../fonts/stagsans/StagSans-Black-Web.woff2') format('woff2'),
-       url('../fonts/stagsans/StagSans-Black-Web.woff') format('woff');
-  font-weight:  900;
-  font-style:   normal;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: 'Stag Sans Web';
-  src: url('../fonts/stagsans/StagSans-BoldItalic-Web.woff2') format('woff2'),
-       url('../fonts/stagsans/StagSans-BoldItalic-Web.woff') format('woff');
-  font-weight:  700;
-  font-style:   italic;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: 'Stag Sans Web';
-  src: url('../fonts/stagsans/StagSans-Bold-Web.woff2') format('woff2'),
-       url('../fonts/stagsans/StagSans-Bold-Web.woff') format('woff');
-  font-weight:  700;
-  font-style:   normal;
-  font-stretch: normal;
-}
-
-
-// Arial
-@font-face {
-  font-family: 'Arial';
-  font-weight: 400;
-  font-style: normal;
-  src: url('../fonts/arial/arial.ttf') format('truetype');
-}
-
-
-@font-face {
-  font-family: 'Arial';
-  font-weight: 400;
-  font-style:   italic;
-  src: url('../fonts/arial/arial-italic.ttf') format('truetype');
-}
+// // Arial
+// @font-face {
+//   font-family: 'Arial';
+//   font-weight: 400;
+//   font-style: normal;
+//   src: url('../fonts/arial/arial.ttf') format('truetype');
+// }
