@@ -12,7 +12,7 @@
   id: 
 - text: H1 with link - The quick brown fox jumps over the lazy dog.
   html_element:
-  appearance:
+  appearance: h1
   url: https://example.com
   icon: 
   id:
@@ -24,13 +24,13 @@
   id:
 - text: H2 with link - The quick brown fox jumps over the lazy dog.
   html_element: 
-  appearance: 
+  appearance: h2
   url: https://example.com
   icon: 
   id:
 - text: H3 - The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
   html_element: h3
-  appearance: 
+  appearance: h3
   url: 
   icon: 
   id:

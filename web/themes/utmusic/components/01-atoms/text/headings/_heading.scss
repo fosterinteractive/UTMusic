@@ -75,7 +75,18 @@
 %a-heading__h2 {
   @extend %heading--core;
   @include rfs(25px); // for desktop 28px
+  position: relative;
   line-height: 1.14; 
+
+  &::before {
+    position: absolute;
+    display: block;
+    left: -15px;
+    width: 3px;
+    height: 100%;
+    background-color: var(--c-heading-decoration);
+    content: '';
+  }
 }
 
 .a-heading__h3,

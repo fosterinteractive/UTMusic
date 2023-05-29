@@ -56,7 +56,8 @@
   --c-heading: #{palette(black)};
   --c-heading-link: #{palette(teal)};
   --c-heading-link--active: #{palette(blue)};
-  --c-heading-link-icon: #{palette(teal)};
+  // --c-heading-link-icon: #{palette(teal)};
+  --c-heading-decoration: #{palette(teal)};
 
   // @molecules/inline-menu
   --c-inline-menu-text: #{palette(grey, 300)};
