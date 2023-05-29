@@ -37,7 +37,7 @@
  */
 #}
 {% include '@molecules/logo/logos-group.twig' with {
-    directory: 'themes/mainspring-theme',
+    directory: 'themes/utmusic',
     items: content.field_logo_group_items[0] ? content.field_logo_group_items,
     label_expand: content.field_logo_group_button_label[0] ? content.field_logo_group_button_label[0]['#text'],
     aria_label_expand: content.field_logo_group_btn_aria_label[0] ? content.field_logo_group_btn_aria_label[0]['#text'],
@@ -45,4 +45,4 @@
     aria_label_collapse: content.field_logo_grp_btn_aria_collap[0] ? content.field_logo_grp_btn_aria_collap[0]['#text'],
 } %}
 
-{{ attach_library('mainspring-theme/read-more') }}
+{{ attach_library('utmusic/read-more') }}
