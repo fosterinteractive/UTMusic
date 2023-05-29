@@ -7,10 +7,10 @@ _core:
 id: node__ed_news
 label: 'Content: News'
 tags:
-  title: '[node:field_ed_news_meta_title] | [site:name]'
-  description: '[node:field_ed_news_meta_desc]'
+  description: '[node:field_page_meta_desc]'
+  og_description: '[node:field_page_meta_desc]'
+  og_image_url: '[node:field_page_meta_image:entity:field_ed_image_image:social_image:url]'
+  og_title: '[node:field_page_meta_title]'
   og_type: article
-  og_image_url: '[node:field_ed_news_meta_image:entity:field_ed_image_image:social_image:url]'
   og_url: '[current-page:url:absolute]'
-  og_description: '[node:field_ed_news_meta_desc]'
-  og_title: '[node:field_ed_news_meta_title]'
+  title: '[node:field_page_meta_title] | [site:name]'
