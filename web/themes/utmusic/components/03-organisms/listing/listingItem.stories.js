@@ -4,7 +4,7 @@ import listingItemJobs from './listing-item--jobs.twig';
 
 
 import listingItemStoriesData from './listing-item.yml';
-import listingItemCondensedData from './listing-item--condensed.yml';
+import ListingItemRelatedNewsData from './listing-item--related-news.yml';
 
 import listingItemEventsData from './listing-item--events.yml';
 import listingItemEventsCondensedData from './listing-item--events-condensed.yml';
@@ -29,7 +29,7 @@ export default {
 }
 
 export const ListingItemStories = () => listingItem(listingItemStoriesData);
-export const ListingItemNewsCondensed = () => listingItem(listingItemCondensedData);
+export const ListingItemRelatedNews = () => listingItem(ListingItemRelatedNewsData);
 
 export const ListingItemEvents = () => listingItemEvents(listingItemEventsData);
 export const ListingItemEventsCondensed = () => listingItemEvents(listingItemEventsCondensedData);

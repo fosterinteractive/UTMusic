@@ -15,19 +15,7 @@
 {% if storybook_demo %}
   {% set directory = directory %}
 {% else %}
-  {% set directory =  'themes/mainspring' %}
-{% endif %}
-
-{% set illustration = illustration|default('grow_talent') %}
-
-{% if category == 'Talent Pool' %}
-  {% set illustration = 'grow_talent' %}
-{% elseif category == 'Mentorship' %}
-  {% set illustration = 'mentor' %}
-{% elseif category == 'Employment Partners' %}
-  {% set illustration = 'nurture_relationships' %}
-{% elseif category == 'Entrepreneurs' %}
-  {% set illustration = 'foster_innovation' %}
+  {% set directory =  'themes/utmusic' %}
 {% endif %}
 
 <div class="m-listing-item{{ variation }}{% if image %} has-img{% endif %}">
@@ -35,57 +23,44 @@
   {% if image %}
     <div class="m-listing-item{{ variation }}__img">
       {% include "@molecules/image/image.twig" with {
-          directory: directory,
           image: image,
           variation: image_variation,
-          icon_file_type: illustration_file_type,
-          icon: illustration,
-          icon_alignment: 'left',
-          icon_size: 'xsmall'
-        } only
-      %}
-  {% else %}
-    <div class="m-listing-item{{ variation }}__icon">
-      {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
-          directory: directory,
-          base_class: 'a-icon',
-          icon: 'success_achievement',
-          size: 'xlarge', 
         } only
       %}
   {% endif %}
     </div>
 
-  {# if there is an image - create content wrapper #}
-  {# {% if image %} #}
   <div class="m-listing-item{{ variation }}__content has-img">
-  {# {% endif %} #}
 
     <div class="m-listing-item{{ variation }}__title">
       {% include "@atoms/text/headings/heading.twig" with {
-          html_element: 'h2',
-          appearance: 'h6',
-          text: title,          
+          html_element: 'h3',
+          appearance: 'h3',
+          text: title,
+          url: url,          
         } only
       %}
     </div>
 
-    {% if text %}
+    {% if date_string %}
+      <div class="m-listing-item{{ variation }}__date">
+        {{ date_string }}
+      </div>
+    {% endif %}
+
+    {# {% if text %}
       <div class="m-listing-item{{ variation }}__text" data-dotdotdot="elipsis">
         {% include "@molecules/text/text.twig" with {
             body: text,
           } only
         %}
       </div>
-    {% endif %}
+    {% endif %} #}
 
-    {% if url %}
+    {# {% if url %}
       <div class="m-listing-item{{ variation }}__button">
-        {# {% set link_type = link_type|default('button') %} #}
-
         {% set button_label = ('Read more'|t) %}
 
-        {# {% if link_type == 'button' %} #}
           {% include "@atoms/button/button.twig" with {
               label: button_label,
               html_element: 'a',
@@ -97,24 +72,8 @@
               alignment: 'left'
             } only
           %}
-        {# {% elseif link_type == 'text' %}
-          {% include "@atoms/link/link.twig" with {
-              label: link_text,
-              url: url,
-              id: 'my-id',
-            } only
-          %}
-        {% endif %} #}
       </div>
-    {% endif %}
+    {% endif %} #}
 
-  {# If there is an image - close content wrapper #}
-  {# {% if image %} #}
   </div>
-  {# {% endif %} #}
-
-  
-
 </div>
-
-
