@@ -73,11 +73,29 @@
   }
 %} #}
 
+{# Get realted articles #}
+{% set articles = [] %}
+{% if content.field_news_related_articles[0] %}
+  {% set count = content.field_news_related_articles['#items'].getIterator()|length -1 %}
+
+  {% for i in 0..count %}
+    {% set articles = articles|merge([content.field_news_related_articles[i]]) %}
+  {% endfor %}
+{% endif %}
 
 
 {% include "@layouts/main/main--news.twig" with {
     directory: directory,
+    variation: content.field_news_header_variation[0] ? content.field_news_header_variation[0]['#markup'],
+    title_prefix: content.field_news_header_title_prefix[0] ? content.field_news_header_title_prefix[0]['#text'],
     title: content.field_news_title[0] ? content.field_news_title[0]['#text'],
-    content: content,
+    image_landscape: content.field_news_header_image_landscap[0] ? content.field_news_header_image_landscap,
+    image_portrait: content.field_news_header_image_portrait[0] ? content.field_news_header_image_portrait,
+    video: content.field_news_header_video[0] ? content.field_news_header_video,
+    author: content.field_news_header_author[0] ? content.field_news_header_author[0]['#text'],
+    date: content.field_news_date[0] ? content.field_news_date[0]['#markup'],
+    news_category: content.field_news_category[0] ? content.field_news_category,
+    area_study: content.field_news_area_study[0] ? content.field_news_area_study,
+    content: content.field_news_body[0] ? content.field_news_body,
   }
 %}
