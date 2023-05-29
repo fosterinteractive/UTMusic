@@ -1,0 +1,23 @@
+uuid: 5b9077bf-c45d-4f8e-9481-81fc51471835
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_image.field_text_and_image_content
+    - paragraphs.paragraphs_type.text_image
+  module:
+    - text
+id: paragraph.text_image.default
+targetEntityType: paragraph
+bundle: text_image
+mode: default
+content:
+  field_text_and_image_content:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true
