@@ -38,10 +38,10 @@
   --c-image-caption-text: #{palette(grey, 300)};
 
   // @atoms/link
-  --c-link: #{palette(blue)};
-  --c-link--active: #{palette(teal, 300)};
-  // --c-link-decoration: #{palette(blue)};
-  --c-link-decoration--active: #{palette(teal, 300)};
+  --c-link: #{palette(teal)};
+  --c-link--active: #{palette(blue)};
+  --c-link-decoration: #{palette(teal)};
+  --c-link-decoration--active: #{palette(blue)};
   // --c-link-icon-external, url('./svg/svg-art/external-link-square-alt.svg')};
   // --c-link-background--active, rgba(#{palette(grey, 400), 0.15)};
 
@@ -54,8 +54,8 @@
   // @atoms/text
   --c-text: #{palette(black)};
   --c-heading: #{palette(black)};
-  --c-heading-link: #{palette(blue, 900)};
-  --c-heading-link--active: #{palette(blue, 900)};
+  --c-heading-link: #{palette(teal)};
+  --c-heading-link--active: #{palette(blue)};
   --c-heading-link-icon: #{palette(teal)};
 
   // @molecules/inline-menu
