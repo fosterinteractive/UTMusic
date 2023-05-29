@@ -35,7 +35,8 @@
 
 
   // @atoms/image
-  --c-image-caption-text: #{palette(grey, 300)};
+  --c-image-caption-text: #{palette(grey, 400)};
+  --c-figcaptions: #{palette(grey, 400)};
 
   // @atoms/link
   --c-link: #{palette(teal)};
@@ -87,7 +88,8 @@
   --c-card--image-text:  #{palette(black)};
 
   // @organisms/listing
-  --c-listing-item--border: #{palette(black)};
+  --c-listing-item--border: #{palette(teal, 700)};
+  --c-listing-item--date: #{palette(grey, 300)};
 
 
   //pager
@@ -106,108 +108,109 @@
 }
 
 // Light text on a dark background
-%theme--dark-bg,
-.theme--dark-bg {
+// %theme--dark-bg,
+// .theme--dark-bg {
 
-  // a-type
-  --c-text: #{palette(white)};
-  --c-heading: #{palette(white)};
-  --c-heading-link: #{palette(grey, 900)};
-  --c-heading-link--active: #{palette(white)};
-  --c-heading-link-icon: #{palette(teal)};
+//   // a-type
+//   --c-text: #{palette(white)};
+//   --c-heading: #{palette(white)};
+//   --c-heading-link: #{palette(grey, 900)};
+//   --c-heading-link--active: #{palette(white)};
+//   --c-heading-link-icon: #{palette(teal)};
 
-  // a-img  
-  --c-image-caption-text: #{palette(grey, 300)};
+//   // a-img  
+//   --c-image-caption-text: #{palette(grey, 300)};
 
-  // a-link
-  --c-link: #{palette(grey, 900)};
-  --c-link--active: #{palette(white)};
-  --c-link-decoration: #{palette(blue, 900)};
-  --c-link-decoration--active: #{palette(white)};
-  // --link-icon-external, url('./svg/svg-art/external-link-square-alt-white.svg')};
+//   // a-link
+//   --c-link: #{palette(grey, 900)};
+//   --c-link--active: #{palette(white)};
+//   --c-link-decoration: #{palette(blue, 900)};
+//   --c-link-decoration--active: #{palette(white)};
+//   // --link-icon-external, url('./svg/svg-art/external-link-square-alt-white.svg')};
 
-   // @atoms/button
-  --c-button: #{palette(blue)};
-  --c-button--active: #{palette(black)};
-  --c-button-border: #{palette(black)};
-  --c-button-border--active: #{palette(blue)};
-  --c-button-text: #{palette(black)};
-  --c-button-text--active: #{palette(blue)};
-
-
-  --c-button--secondary: #{palette(grey, 900)};
-  --c-button-border--secondary: #{palette(grey, 900)};
-  --c-button--secondary--active: #{palette(grey, 300)};
-  --c-button-text--secondary: #{palette(grey, 300)};
-  --c-button-text--secondary--active: #{palette(grey, 900)};
-
-  // a-list
-  --c-list-bullet: #{palette(blue, 900)};
-
-  // Inline menu.
-  --c-inline-menu-text: #{palette(grey, 900)};
-  --c-inline-menu-text--active: #{palette(white)};
-  --c-inline-menu-line: #{palette(blue, 950)};
-  --c-inline-menu-line--active: #{palette(white)};
-
-  // @molecules/quote
-  --c-quote: #{palette(white)};
-  --c-quote--suorce-type: #{palette(blue)};
-
-  // @molecules/card
-  --c-card--horizontal-background: #{palette(white)};
-  --c-card--horizontal-text: #{palette(black)};
-  --c-card--bordered-illustration: #{palette(black)};
-  --c-card-background: #{palette(white)};
-  --c-card-border: #{palette(white)};
-  --c-card-text: #{palette(white)};
-  --c-card-title: #{palette(white)};
-  --c-card-title--active: #{palette(blue)};
-  --c-card--bordered-title: #{palette(black)};
-  --c-card--bordered-title--active: #{palette(black)};
-  --c-card--bordered-text: #{palette(black)};
-  --c-card--image-text: #{palette(blue)};
-  --c-card--illustration: #{palette(white)};
+//    // @atoms/button
+//   --c-button: #{palette(blue)};
+//   --c-button--active: #{palette(black)};
+//   --c-button-border: #{palette(black)};
+//   --c-button-border--active: #{palette(blue)};
+//   --c-button-text: #{palette(black)};
+//   --c-button-text--active: #{palette(blue)};
 
 
-  // Follow Us.
-  --follow-us-title-color: #{palette(white)};
+//   --c-button--secondary: #{palette(grey, 900)};
+//   --c-button-border--secondary: #{palette(grey, 900)};
+//   --c-button--secondary--active: #{palette(grey, 300)};
+//   --c-button-text--secondary: #{palette(grey, 300)};
+//   --c-button-text--secondary--active: #{palette(grey, 900)};
 
-  // @organisms/listing
-  --c-listing-item--border: #{palette(white)};
+//   // a-list
+//   --c-list-bullet: #{palette(blue, 900)};
 
-  //pager
-  --c-pager--btn: #{palette(blue)};
-  --c-pager--btn--hover: #{palette(black)};
-  --c-pager--btn-border: #{palette(black)};
-  --c-pager--btn-svg: #{palette(black)};
-  --c-pager--btn-svg--hover: #{palette(blue)};
-  --c-pager--item-active-text: #{palette(black)};
-  --c-pager--item-active-bg: #{palette(blue)};
-  --c-pager--item-text: #{palette(black)};
-  --c-pager--item-text--hover: #{palette(black)};
-  --c-pager--item-bg: #{palette(white)};
-  --c-pager--item-bg--hover: #{palette(blue, 900)};
-  --c-pager--item-border: #{palette(black)};
-}
+//   // Inline menu.
+//   --c-inline-menu-text: #{palette(grey, 900)};
+//   --c-inline-menu-text--active: #{palette(white)};
+//   --c-inline-menu-line: #{palette(blue, 950)};
+//   --c-inline-menu-line--active: #{palette(white)};
 
-.theme--white-bg {
-  @extend %theme--light-bg;
-  // Section Background
-  --c-section-background: #{palette(white)};
-}
+//   // @molecules/quote
+//   --c-quote: #{palette(white)};
+//   --c-quote--suorce-type: #{palette(blue)};
+
+//   // @molecules/card
+//   --c-card--horizontal-background: #{palette(white)};
+//   --c-card--horizontal-text: #{palette(black)};
+//   --c-card--bordered-illustration: #{palette(black)};
+//   --c-card-background: #{palette(white)};
+//   --c-card-border: #{palette(white)};
+//   --c-card-text: #{palette(white)};
+//   --c-card-title: #{palette(white)};
+//   --c-card-title--active: #{palette(blue)};
+//   --c-card--bordered-title: #{palette(black)};
+//   --c-card--bordered-title--active: #{palette(black)};
+//   --c-card--bordered-text: #{palette(black)};
+//   --c-card--image-text: #{palette(blue)};
+//   --c-card--illustration: #{palette(white)};
+
+
+//   // Follow Us.
+//   --follow-us-title-color: #{palette(white)};
+
+//   // @organisms/listing
+//   --c-listing-item--border: #{palette(white)};
+
+//   //pager
+//   --c-pager--btn: #{palette(blue)};
+//   --c-pager--btn--hover: #{palette(black)};
+//   --c-pager--btn-border: #{palette(black)};
+//   --c-pager--btn-svg: #{palette(black)};
+//   --c-pager--btn-svg--hover: #{palette(blue)};
+//   --c-pager--item-active-text: #{palette(black)};
+//   --c-pager--item-active-bg: #{palette(blue)};
+//   --c-pager--item-text: #{palette(black)};
+//   --c-pager--item-text--hover: #{palette(black)};
+//   --c-pager--item-bg: #{palette(white)};
+//   --c-pager--item-bg--hover: #{palette(blue, 900)};
+//   --c-pager--item-border: #{palette(black)};
+// }
+
+// .theme--white-bg {
+//   @extend %theme--light-bg;
+//   // Section Background
+//   --c-section-background: #{palette(white)};
+// }
 
 
 .theme--light-blue-bg {
   @extend %theme--light-bg;
   // Section Background
-  --c-section-background: #{palette(blue, 900)};
+  --c-section-background: #{palette(teal, 1000)};
 }
 
 
 
-.theme--black-bg {
-  @extend %theme--dark-bg;
-  // Section Background
-  --c-section-background: #{palette(black)};
-}
+// .theme--black-bg {
+//   @extend %theme--dark-bg;
+//   // Section Background
+//   --c-section-background: #{palette(black)};
+// }
+

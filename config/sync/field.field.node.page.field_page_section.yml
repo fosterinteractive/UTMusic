@@ -20,6 +20,7 @@ dependencies:
     - paragraphs.paragraphs_type.section_title
     - paragraphs.paragraphs_type.soundcloud
     - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.text_image
     - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
@@ -53,6 +54,7 @@ settings:
       events_summary_list_dynamic: events_summary_list_dynamic
       soundcloud: soundcloud
       video: video
+      text_image: text_image
     negate: 0
     target_bundles_drag_drop:
       button:
@@ -61,15 +63,6 @@ settings:
       card:
         weight: -34
         enabled: true
-      ed_event_dynamic_block_past:
-        weight: -27
-        enabled: true
-      ed_event_dynamic_block_upcoming:
-        weight: -26
-        enabled: true
-      ed_i_accordion:
-        weight: -22
-        enabled: false
       events_full_list_dynamic:
         weight: -29
         enabled: true
@@ -111,6 +104,9 @@ settings:
         enabled: true
       text:
         weight: -39
+        enabled: true
+      text_image:
+        weight: 35
         enabled: true
       video:
         weight: -24

@@ -1,9 +1,9 @@
-uuid: c559289e-5693-46bb-b048-6b24ef443a4b
+uuid: 08ceaea7-f079-4ca2-9220-c75a5d913499
 langcode: en
-status: false
+status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.listing_item_condensed
+    - core.entity_view_mode.node.related_news_item
     - field.field.node.news.field_news_area_study
     - field.field.node.news.field_news_body
     - field.field.node.news.field_news_category
@@ -33,31 +33,55 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: node.news.listing_item_condensed
+id: node.news.related_news_item
 targetEntityType: node
 bundle: news
-mode: listing_item_condensed
+mode: related_news_item
 content:
-  field_news_category:
-    type: entity_reference_label
+  field_news_date:
+    type: datetime_default
     label: hidden
     settings:
+      timezone_override: ''
+      format_type: news_date
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_news_header_image_landscap:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: news_image_landscape
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_news_header_image_portrait:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: news_image_portrait
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_news_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: news_image
       link: false
     third_party_settings: {  }
     weight: 3
     region: content
-  field_news_date:
-    type: datetime_custom
-    label: hidden
-    settings:
-      timezone_override: America/Toronto
-      date_format: 'F j, Y'
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_news_title:
     type: text_default
     label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
     settings: {  }
     third_party_settings: {  }
     weight: 0
@@ -65,13 +89,11 @@ content:
 hidden:
   field_news_area_study: true
   field_news_body: true
+  field_news_category: true
   field_news_header_author: true
-  field_news_header_image_landscap: true
-  field_news_header_image_portrait: true
   field_news_header_title_prefix: true
   field_news_header_variation: true
   field_news_header_video: true
-  field_news_image: true
   field_news_promote: true
   field_news_related_articles: true
   field_page_admin_help_seo: true
@@ -79,5 +101,4 @@ hidden:
   field_page_meta_description: true
   field_page_meta_image: true
   field_page_meta_title: true
-  links: true
   search_api_excerpt: true

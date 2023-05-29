@@ -1,28 +1,45 @@
 {% embed "@layouts/main/main.twig" %}
-
+  
   {% block content_single_page %}
-    <div class="l-main--story">
+    <div class="l-main--news">
+      {% if title %}
+        {% include "@atoms/text/headings/heading.twig" with {
+            directory: directory,
+            html_element: 'h1',
+            appearance: 'h1', 
+            text: title,
+            url: false,
+            id: id,
+            alignment: 'center',
+          } only
+        %}
+      {% endif %}
+
       <div class="l-section-bg l-section--[8] l-section-spacing-top--medium l-section-spacing-bottom--small">
         <div class="l-section__zone-1">
-
-          {% if title %}
-            {% include "@atoms/text/headings/heading.twig" with {
-                directory: directory,
-                html_element: 'h1',
-                appearance: 'h2',
-                text: title,
-                url: false,
-                id: id,
-                alignment: 'center',
-              } only
-            %}
+          {% if content %}
+            {{ content }}
           {% endif %}
-      
         </div>
       </div>
-          
-      {% if content %}
-        {{ content }}
+
+      {% if articles %}
+        <div class="l-section-bg l-section--[12] theme--light-blue-bg l-section-spacing-top--medium l-section-spacing-bottom--medium">
+          <div class="l-main--news-related-articles l-section__zone-1">
+            <div class="l-main--news-related-articles__title">
+              {% include "@atoms/text/headings/heading.twig" with {
+                  html_element: 'h2',
+                  appearance: 'h2',
+                  text: 'Related news'|t,
+                } only
+              %}
+            </div>
+             
+            <div class="l-main--news-related-articles__items l-flex--2col">
+              {{ articles }}
+            </div>
+          </div>
+        </div>
       {% endif %}
     </div>
 

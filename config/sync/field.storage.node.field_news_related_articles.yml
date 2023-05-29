@@ -1,0 +1,19 @@
+uuid: eeeb7d9a-868e-4b4e-b283-92ffa9a8a62a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_news_related_articles
+field_name: field_news_related_articles
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 4
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

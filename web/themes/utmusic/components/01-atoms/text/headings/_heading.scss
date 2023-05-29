@@ -6,7 +6,7 @@
 
 %heading--core {
   width: 100%;
-  margin-bottom: ru(1);
+  margin-bottom: calc(var(--spacer) * 1/2);
   line-height: 1.25; // Relative line height needed for rfs() function
   color: var(--c-heading);
   font-weight: 700;
@@ -77,6 +77,7 @@
   @include rfs(25px); // for desktop 28px
   position: relative;
   line-height: 1.14; 
+  margin-left: rem(15px);
 
   &::before {
     position: absolute;
