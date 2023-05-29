@@ -1,0 +1,36 @@
+.cke_widget_image.align-right,
+.align-right {
+  @include breakpoint($bp-tablet-small) {
+    float: right;
+    margin-left: 1.5rem;
+    clear: both;
+    max-width: 30%;  
+  }
+}
+
+.cke_widget_image.align-left,
+.align-left {
+  @include breakpoint($bp-tablet-small) {
+    float: left;
+    margin-right: 1.5rem;
+    clear: both;
+    max-width: 30%;
+  }
+}
+
+.cke_widget_image.align-center,
+.align-center {
+  @include breakpoint($bp-tablet-small) {
+    float: center;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    clear: both;
+    max-width: 100%;
+  }
+}
+
+figcaption {
+  color: var(--c-figcaptions);
+  margin-top: rem(10px);
+  margin-bottom: 1.5rem;
+}

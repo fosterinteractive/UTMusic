@@ -30,9 +30,9 @@ settings:
         -
           name: Alignment
           items:
-            - JustifyLeft
             - JustifyRight
             - JustifyCenter
+            - JustifyLeft
         -
           name: Links
           items:

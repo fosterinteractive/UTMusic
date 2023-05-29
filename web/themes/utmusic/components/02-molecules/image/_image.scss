@@ -10,5 +10,11 @@ picture {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: rem(12px);
+}
+
+.m-image {
+  img,
+  picture {
+    border-radius: rem(12px);
+  }
 }

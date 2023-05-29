@@ -2,11 +2,16 @@ uuid: f63796ec-9180-4e03-b76e-a712e4fc11ed
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.ed_embedded_full_width
+    - core.entity_view_mode.media.news_image_landscape
+    - core.entity_view_mode.media.news_image_portrait
   module:
     - editor
     - entity_embed
     - linkit
     - media
+    - media_contextual_crop_embed
 name: 'Rich Text (w/ images)'
 format: rich_text_w_images
 weight: -10
@@ -20,8 +25,8 @@ filters:
   entity_embed:
     id: entity_embed
     provider: entity_embed
-    status: false
-    weight: -40
+    status: true
+    weight: -43
     settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
@@ -33,7 +38,7 @@ filters:
     id: filter_url
     provider: filter
     status: false
-    weight: -42
+    weight: -40
     settings:
       filter_url_length: 72
   filter_html:
@@ -42,14 +47,14 @@ filters:
     status: true
     weight: -45
     settings:
-      allowed_html: '<em> <strong> <u> <sup> <sub> <strike> <ul start class="a-list--*"> <ol start class="a-list-*"> <li> <dl> <dt> <dd> <h5 id class="a-heading*"> <h6 id class="a-heading*"> <hr> <br> <span class="a-type--*"> <a href hreflang !href accesskey id rel target title data-entity-type data-entity-uuid data-entity-substitution name> <img src srcset alt sizes data-entity-type data-entity-uuid data-entity-substitution data-align data-caption data-responsive-image-style class="*"> <figure alt data-entity-type data-entity-uuid data-entity-substitution data-align data-caption data-responsive-image-style class> <figcaption class> <iframe src title aria-describedby tabindex allowtransparency style frameborder class="*"> <drupal-entity data-entity-type data-entity-uuid data-view-mode data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title> <div class="*"> <table class="a-table* tablecentred tablenoborders tableposter tabletopleft"> <caption> <tbody> <thead> <tfoot> <th width class="a-table*"> <td style class="a-table*"> <tr> <blockquote class="m-quote*"> <drupal-media data-entity-type data-entity-uuid> <p class="a-type--* a-type--small a-type--large a-type--xlarge"> <h2 id class="a-heading* a-heading__h2 a-heading__h1 a-heading__h3"> <h3 id class="a-heading* a-heading__h3 a-heading__h2"> <h4 id class="a-heading* a-heading__h4">'
+      allowed_html: '<br aria-hidden> <p class="a-type--small a-type--medium a-type--large a-type--xlarge text-align-left text-align-center text-align-right"> <h5 id class="a-heading* text-align-left text-align-center text-align-right"> <h6 id class="a-heading* text-align-left text-align-center text-align-right"> <strike> <dl> <dt> <dd> <span class="a-type--*"> <figure alt data-entity-type data-entity-uuid data-entity-substitution data-align data-caption data-responsive-image-style class> <figcaption class> <iframe src title aria-describedby tabindex allowtransparency frameborder class> <drupal-entity data-entity-type data-entity-uuid data-view-mode data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title> <div class> <table class="a-table* tablecentred tablenoborders tableposter tabletopleft"> <th width class="a-table*"> <td class="a-table*"> <blockquote class="m-quote*"> <ul start class="a-list--*"> <ol start class="a-list-*"> <a hreflang accesskey id rel target title name href data-entity-type data-entity-uuid data-entity-substitution> <strong> <em> <u> <sub> <sup> <li> <hr> <img srcset sizes data-entity-substitution data-responsive-image-style src alt data-entity-type data-entity-uuid data-align data-caption class> <h2 class="text-align-left text-align-center text-align-right a-heading__h2 a-heading__h1 a-heading__h3"> <h3 id class="a-heading* text-align-left text-align-center text-align-right a-heading__h3 a-heading__h2"> <h4 id class="a-heading* text-align-left text-align-center text-align-right a-heading__h4"> <drupal-media data-entity-type data-entity-uuid alt data-caption data-align data-crop-settings data-crop-type data-view-mode title>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
     id: filter_autop
     provider: filter
     status: false
-    weight: -43
+    weight: -41
     settings: {  }
   filter_align:
     id: filter_align
@@ -67,13 +72,13 @@ filters:
     id: filter_htmlcorrector
     provider: filter
     status: false
-    weight: -41
+    weight: -39
     settings: {  }
   filter_html_escape:
     id: filter_html_escape
     provider: filter
     status: false
-    weight: -44
+    weight: -42
     settings: {  }
   linkit:
     id: linkit
@@ -85,9 +90,23 @@ filters:
   media_embed:
     id: media_embed
     provider: media
-    status: false
-    weight: -39
+    status: true
+    weight: -44
     settings:
       default_view_mode: default
-      allowed_view_modes: {  }
-      allowed_media_types: {  }
+      allowed_view_modes:
+        ed_embedded_full_width: ed_embedded_full_width
+      allowed_media_types:
+        ed_image: ed_image
+  media_contextual_crop_embed:
+    id: media_contextual_crop_embed
+    provider: media_contextual_crop_embed
+    status: false
+    weight: -38
+    settings:
+      default_view_mode: news_image_landscape
+      allowed_view_modes:
+        news_image_landscape: news_image_landscape
+        news_image_portrait: news_image_portrait
+      allowed_media_types:
+        ed_image: ed_image

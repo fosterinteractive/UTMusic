@@ -163,3 +163,25 @@ body.mm-wrapper {
   }
 }
 
+
+// override style after custom template input-submit 
+.button.js-form-submit {
+  color: #fff;
+  background-color: #003ecc;
+
+  &:hover {
+    color: #fff;
+    background-color: #0036b1;
+  }
+}
+
+// media library contextual crop buttons
+.media-library-item__remove,
+.media-library-item__edit {
+  width: 1.5rem !important;
+  background-color: #fff !important;
+  
+  &:hover {
+    background-color: #fff !important;
+  }
+}

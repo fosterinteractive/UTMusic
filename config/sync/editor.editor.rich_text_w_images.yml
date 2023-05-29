@@ -1,4 +1,4 @@
-uuid: 21bbb909-747b-44f9-92fc-ffc4386b5950
+uuid: a38b016b-eb7a-4059-bf2d-7ca3a18b2f10
 langcode: en
 status: true
 dependencies:
@@ -33,9 +33,9 @@ settings:
         -
           name: Links
           items:
-            - DrupalLink
-            - DrupalUnlink
             - Link
+            - DrupalUnlink
+            - DrupalLink
         -
           name: Lists
           items:
@@ -46,11 +46,8 @@ settings:
         -
           name: Media
           items:
-            - SpecialChar
-            - HorizontalRule
-            - Blockquote
-            - Table
             - DrupalImage
+            - SpecialChar
         -
           name: Tools
           items:
@@ -60,7 +57,7 @@ settings:
             - Maximize
   plugins:
     stylescombo:
-      styles: "h2.a-heading__h2|Heading 2\r\nh2.a-heading__h1|Heading 2 - H1 Appearance\r\nh2.a-heading__h3|Heading 2 - H3 Appearance \r\nh3.a-heading__h3|Heading 3\r\nh3.a-heading__h2|Heading 3 - H2 Appearance\r\nh4.a-heading__h4|Heading 4\r\np|Paragraph\r\np.a-type--small|P (Small)\r\np.a-type--large|P (Large)\r\np.a-type--xlarge|P (x Large)"
+      styles: "h2.a-heading__h2|Heading 2\r\nh2.a-heading__h1|Heading 2 - H1 Appearance\r\nh2.a-heading__h3|Heading 2 - H3 Appearance \r\nh3.a-heading__h3|Heading 3\r\nh3.a-heading__h2|Heading 3 - H2 Appearance\r\nh4.a-heading__h4|Heading 4\r\np|Paragraph\r\np.a-type--small|P (Small)\r\np.a-type--large|P (Large)\r\np.a-type--xlarge|P (x Large)\r\n"
     drupallink:
       linkit_enabled: true
       linkit_profile: default
@@ -80,8 +77,8 @@ settings:
 image_upload:
   status: true
   scheme: public
-  directory: assets/inline-images
+  directory: inline-images
   max_size: ''
   max_dimensions:
-    width: 3000
-    height: 3000
+    width: null
+    height: null

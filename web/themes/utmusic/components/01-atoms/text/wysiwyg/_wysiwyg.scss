@@ -50,6 +50,11 @@
 .cke_editable { // sass-lint:disable-line class-name-format
   @extend %s-wysiwyg__typography;
   // @extend %s-wysiwyg__image;
+
+  img, 
+  picture {
+    border-radius: rem(12px);
+  }
 }
 
 // Author CKEditor UX improvements
