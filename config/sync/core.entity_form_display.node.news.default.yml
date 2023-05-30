@@ -34,7 +34,6 @@ dependencies:
     - media_library_media_modify
     - paragraphs
     - path
-    - term_reference_tree
     - text
 third_party_settings:
   field_group:
@@ -181,15 +180,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_news_area_study:
-    type: term_reference_tree
+    type: options_select
     weight: 28
     region: content
-    settings:
-      start_minimized: true
-      leaves_only: false
-      select_parents: false
-      cascading_selection: 0
-      max_depth: 0
+    settings: {  }
     third_party_settings: {  }
   field_news_body:
     type: entity_reference_paragraphs
@@ -204,15 +198,10 @@ content:
       default_paragraph_type: text_image
     third_party_settings: {  }
   field_news_category:
-    type: term_reference_tree
+    type: options_select
     weight: 27
     region: content
-    settings:
-      start_minimized: true
-      leaves_only: false
-      select_parents: false
-      cascading_selection: 0
-      max_depth: 0
+    settings: {  }
     third_party_settings: {  }
   field_news_date:
     type: datetime_default

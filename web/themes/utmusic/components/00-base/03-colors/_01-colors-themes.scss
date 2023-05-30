@@ -25,12 +25,12 @@
   --c-button-text--secondary: #{palette(grey, 300)};
   --c-button-text--secondary--active: #{palette(grey, 900)};
 
-  // @atoms/pill
-  --c-chip: #{palette(grey, 300)};
+  // @atoms/chip
+  --c-chip: #{palette(teal, 300)};
   --c-chip--active: #{palette(grey, 300)};
-  --c-chip-border: #{palette(grey, 900)};
+  --c-chip-border: #{palette(grey, 800)};
   --c-chip-border--active: #{palette(grey, 900)};
-  --c-chip-background: #{palette(grey, 900)};
+  --c-chip-background: #{palette(white)};
   --c-chip-background--active: #{palette(grey, 900)};
 
 
@@ -53,39 +53,43 @@
 
 
   // @atoms/text
-  --c-text: #{palette(black)};
-  --c-heading: #{palette(black)};
-  --c-heading-link: #{palette(teal)};
-  --c-heading-link--active: #{palette(blue)};
+  --c-text: #{palette(black, 200)};
+  --c-heading: #{palette(black, 200)};
+  --c-heading-decoration: #{palette(teal, 300)};
+  --c-heading-main-title: #{palette(teal, 300)};
+  --c-heading-prefix: #{palette(black, 200)};
+  --c-heading-prefix-decoration: #{palette(teal, 700)};
+  --c-heading-credentials: #{palette(grey, 300)};
+  --c-heading-link: #{palette(teal, 300)};
+  --c-heading-link--active: #{palette(blue, 300)};
   // --c-heading-link-icon: #{palette(teal)};
-  --c-heading-decoration: #{palette(teal)};
 
   // @molecules/inline-menu
   --c-inline-menu-text: #{palette(grey, 300)};
-  --c-inline-menu-text--active: #{palette(teal)};
+  --c-inline-menu-text--active: #{palette(teal, 300)};
   --c-inline-menu-line: #{palette(blue, 900)};
-  --c-inline-menu-line--active: #{palette(teal)};
+  --c-inline-menu-line--active: #{palette(teal, 300)};
 
   // @molecules/quote
-  --c-quote: #{palette(black)};
-  --c-quote--suorce-type: #{palette(blue)};
-  --c-quote--suorce-type--bg: #{palette(black)};
+  --c-quote: #{palette(black, 200)};
+  --c-quote--suorce-type: #{palette(blue, 300)};
+  --c-quote--suorce-type--bg: #{palette(black, 200)};
 
   // @molecules/card
   --c-card--horizontal-background: #{palette(blue, 900)};
-  --c-card--horizontal-text: #{palette(black)};
+  --c-card--horizontal-text: #{palette(black, 200)};
   --c-card-background: #{palette(white)};
-  --c-card-border: #{palette(black)};
-  --c-card-icon-background: #{palette(blue)};
-  --c-card-title: #{palette(black)};
-  --c-card-title--active: #{palette(black)};
-  --c-card--bordered-title: #{palette(black)};
-  --c-card--bordered-title--active: #{palette(black)};
-  --c-card--bordered-text: #{palette(black)};
-  --c-card--image-highlight-below-text: #{palette(black)};
-  --c-card--image-highlight-below-bg: #{palette(blue)};
-  --c-card--illustration: #{palette(black)};
-  --c-card--image-text:  #{palette(black)};
+  --c-card-border: #{palette(black, 200)};
+  --c-card-icon-background: #{palette(blue, 300)};
+  --c-card-title: #{palette(black, 200)};
+  --c-card-title--active: #{palette(black, 200)};
+  --c-card--bordered-title: #{palette(black, 200)};
+  --c-card--bordered-title--active: #{palette(black, 200)};
+  --c-card--bordered-text: #{palette(black, 200)};
+  --c-card--image-highlight-below-text: #{palette(black, 200)};
+  --c-card--image-highlight-below-bg: #{palette(blue, 300)};
+  --c-card--illustration: #{palette(black, 200)};
+  --c-card--image-text:  #{palette(black, 200)};
 
   // @organisms/listing
   --c-listing-item--border: #{palette(teal, 700)};
@@ -93,18 +97,18 @@
 
 
   //pager
-  --c-pager--btn: #{palette(blue)};
-  --c-pager--btn--hover: #{palette(black)};
-  --c-pager--btn-border: #{palette(black)};
-  --c-pager--btn-svg: #{palette(black)};
-  --c-pager--btn-svg--hover: #{palette(blue)};
+  --c-pager--btn: #{palette(blue, 300)};
+  --c-pager--btn--hover: #{palette(black, 200)};
+  --c-pager--btn-border: #{palette(black, 200)};
+  --c-pager--btn-svg: #{palette(black, 200)};
+  --c-pager--btn-svg--hover: #{palette(blue, 300)};
   --c-pager--item-active-text: #{palette(white)};
-  --c-pager--item-active-bg: #{palette(black)};
-  --c-pager--item-text: #{palette(black)};
+  --c-pager--item-active-bg: #{palette(black, 200)};
+  --c-pager--item-text: #{palette(black, 200)};
   --c-pager--item-text--hover: #{palette(white)};
   --c-pager--item-bg: #{palette(blue, 900)};
-  --c-pager--item-bg--hover: #{palette(black)};
-  --c-pager--item-border: #{palette(black)};
+  --c-pager--item-bg--hover: #{palette(black, 200)};
+  --c-pager--item-border: #{palette(black, 200)};
 }
 
 // Light text on a dark background

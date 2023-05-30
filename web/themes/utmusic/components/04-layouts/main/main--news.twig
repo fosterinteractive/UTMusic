@@ -2,17 +2,26 @@
   
   {% block content_single_page %}
     <div class="l-main--news">
-      {% if title %}
-        {% include "@atoms/text/headings/heading.twig" with {
-            directory: directory,
-            html_element: 'h1',
-            appearance: 'h1', 
-            text: title,
-            url: false,
-            id: id,
-            alignment: 'center',
-          } only
-        %}
+
+      {% include "@organisms/content-header/content-header.twig" with {
+          variation: variation,
+          title_prefix: title_prefix,
+          title: title,
+          image_landscape: image_landscape,
+          image_portrait: image_portrait,
+          video: video,
+          author: author,
+          date_string: date_string,
+          news_categories: news_categories,
+          areas_study: areas_study,
+          summary: "This is the summary",
+        } only
+      %}
+
+      {% if breadcrumbs is not empty and not is_front %}
+        <div class="l-main__breadcrumbs">
+        {{ breadcrumbs }}
+        </div>
       {% endif %}
 
       <div class="l-section-bg l-section--[8] l-section-spacing-top--medium l-section-spacing-bottom--small">
