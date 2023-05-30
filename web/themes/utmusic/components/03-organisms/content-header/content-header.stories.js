@@ -1,7 +1,8 @@
 import hero from './content-header.twig';
 
-import contentHeaderOverlayData from './content-header--overlay.yml';
-import contentHeaderRightData from './content-header--right.yml';
+import contentHeaderLandscapeData from './content-header--landscape.yml';
+import contentHeaderPortraitData from './content-header--portrait.yml';
+import contentHeaderVideoData from './content-header--video.yml';
 import contentHeaderTextData from './content-header--text.yml';
 
 /**
@@ -21,7 +22,9 @@ export default {
   },
 }
 
-export const ContentHeaderImageOverlay = () => hero(contentHeaderOverlayData);
-export const ContentHeaderImageRight = () => hero(contentHeaderRightData);
+export const ContentHeaderImageLandscape = () => hero(contentHeaderLandscapeData);
+export const ContentHeaderImagePortrait = () => hero(contentHeaderPortraitData);
+export const ContentHeaderVideo = () => hero(contentHeaderVideoData);
+
 export const ContentHeaderText = () => hero(contentHeaderTextData);
 

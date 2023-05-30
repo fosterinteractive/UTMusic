@@ -1,0 +1,12 @@
+variation: 'portrait'
+image_portrait: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2076&q=80" />'
+title_prefix: 'News title prefix'
+title: 'Anything is possible’: Future Sound 6ix music workshops draw youth from across Toronto'
+author: 'By Samantha Smith'
+date_string: 'May 29, 2023'
+categories:
+  - category: News
+  - category: Announcements
+areas_study:
+  - area: Voice sound 
+

@@ -1,23 +1,26 @@
-// Core icon.
-%o-hero-media__icon-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+//Core Layout
+%o-hero-media-core {
+  // @extend %l-section;
+  display: grid;
+  grid-template-columns: [alpha] 1fr repeat(12, [col] minmax(1px, calc((65rem - (var(--spacer) * 11)) / 12))) 1fr [omega];
+  grid-column-gap: var(--spacer);
+  grid-template-rows: rem(160px) auto rem(70px) rem(70px) auto;
+}
 
-  width: rem(69px);
-  height: rem(69px);
-  border-radius: 50%;
-  background-color: rgba(255, 242, 0, 0.5);
+.o-hero-media__bg-decoration {
+  grid-row: 1/ span 3;
+  grid-column: alpha / omega;
+  background-color: palette(teal, 1000);
 
-  padding: rem(13px);
-  overflow: hidden;
-  margin-top: rem(50px);
+  img {
+    @include breakpoint($bp-tablet-small) {
+      max-height: rem(680px);
+    }
+  }
 }
 
 // Core text.
 %o-hero-media__text-core {
-  // grid-area: 1 / 1;
-
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -25,19 +28,16 @@
 
   margin-right: auto;
   margin-left: auto;
-  padding-right: $half-gutter;
-  padding-left: $half-gutter;
+  padding-right: calc(var(--spacer) / 2);
+  padding-left: calc(var(--spacer) / 2);
   width: 100%;
 
   @include breakpoint($bp-phone-large) {
-    padding-right: $gutter;
-    padding-left: $gutter;
+    padding-right: var(--spacer);
+    padding-left: var(--spacer);
     max-width: $bp-banner-max;
   }
 
-  // Remove gutter when there's not any need as we're now at max-width + the width of the gutter.
-  // @todo - Aidan note - Removed gutter... Should be OK?
-  // @include breakpoint($bp-banner-max + $gutter-px) {
   @include breakpoint($bp-banner-max) {
     padding-right: 0;
     padding-left: 0;
@@ -45,9 +45,10 @@
 }
 
 // Core image.
-%o-hero-media__image-core {
+.o-hero-media__image {
   position: relative;
-  // grid-area: 1 / 1;
+  border-radius: rem(12px);
+  overflow: hidden;
 
   img {
     height: 100%;
@@ -57,217 +58,138 @@
   picture {
     height: 100%;
   }
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-  }
 }
 
 // Core image title-prefix.
 %o-hero-media__title-prefix-core {
-  display: flex;
-  flex-direction: column;
+  @extend %a-type--xsmall;
+  
+  position: relative;
+  display: inline-block;
+  margin-bottom: calc(var(--spacer) / 2);
+  text-transform: uppercase;
+  color: var(--c-heading-prefix);
 
-  &:after {
+  &::before {
+    position: absolute;
+    display: block;
+    left: -15px;
+    width: 3px;
+    height: 100%;
+    background-color: var(--c-heading-prefix-decoration);
     content: '';
-    display: inline-block;
-    max-width: rem(480px);
-    width: 100%;
-    height: 1px;
-    background-color: palette(black);
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    min-width: rem(300px);
-    margin-top: rem(10px);
   }
+}
+
+.o-hero-media__title-prefix {
+  @extend %o-hero-media__title-prefix-core;
 }
 
 .o-hero-media__title {
   display: block;
+  color: var(--c-heading-main-title);
 }
 
-
-// Variations - Image on Right.
-.o-hero-media--image-right {
-  @include breakpoint($bp-full-nav) {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-  }
+.o-hero-media__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--spacer) / 2);
+  margin-top: rem(26px);
 }
 
-.o-hero-media__image--image-right {
-  @extend %o-hero-media__image-core;
-
-  overflow: hidden;
-
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: -70px;
-    left: 0;
-    right: 0;
-    height: 70px;
-    width: 100%;
-    box-shadow: 0 0 60px 70px palette(white);
-  }
-  
-  @include breakpoint($bp-full-nav) {
-    &:before {
-      background: linear-gradient(88.19deg, palette(white) 49.66%, rgba(255, 255, 255, 0) 91.58%);
-    }
-
-    &:after {
-      display: none;
-    }
-
-    grid-area: 1 / 1;
-
-    picture {
-      width: 77%;
-      margin-left: auto;
-    }
-  }
+.o-hero-media__credentials {
+  color: var(--c-heading-credentials);
+  margin-top: rem(34px);
 }
 
-.o-hero-media__text--image-right-wrapper {
-  @extend %o-hero-media__text-core;
-
-  padding-top: 40px;
-  margin-bottom: 40px;
-
-  @include breakpoint($bp-full-nav) {
-    grid-area: 1 / 1;
-    padding-top: 80px;
-    margin-bottom: 70px;
-  }
-}
-
-.o-hero-media__text--image-right {
-  text-align: center;
-  max-width: rem(720px);
-
-  @include breakpoint($bp-full-nav) {
-    text-align: left;
-  }
-}
-
-.o-hero-media__title-prefix--image-right {
-  @extend %o-hero-media__title-prefix-core;
-
-  @include breakpoint($bp-full-nav) {
-    align-items: flex-start;
-  }
-
-  @include breakpoint($bp-full-nav) {
-    &:after {
-      margin-left: 0;
-    }
-  }
-}
-
-.o-hero-media__icon-arrow--image-right {
-  @extend %o-hero-media__icon-arrow;
-
-  margin-left: auto;
-  margin-right: auto;
-  
-  @include breakpoint($bp-full-nav) {
-    margin-left: 0;
-  }
-}
-
-
-// Variations - Image overlay.
-.o-hero-media--image-overlay {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-}
-
-.o-hero-media__image--image-overlay {
-  @extend %o-hero-media__image-core;
-
-  grid-area: 1 / 1;
-
-  &:before {
-    background: radial-gradient(131.58% 86.55% at 50% 50.08%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
-  }
-}
-
-.o-hero-media__text--image-overlay-wrapper {
-  @extend %o-hero-media__text-core;
-
-  grid-area: 1 / 1;
-  align-items: center;
-  text-align: center;
-  padding-top: rem(170px);
-  padding-bottom: rem(170px);
-
-  @include breakpoint($bp-full-nav) {
-    padding-top: rem(125px);
-    padding-top: rem(160px);
-  }
-}
-
-.o-hero-media__title-prefix--image-overlay {
-  @extend %o-hero-media__title-prefix-core;
-
-  align-items: center;
-}
-
-.o-hero-media__icon-arrow--image-overlay {
-  @extend %o-hero-media__icon-arrow;
-
-  margin-left: auto;
-  margin-right: auto;
-}
-
+// Only Text variation
 .o-hero-media__text--text-wrapper {
   @extend %o-hero-media__text-core;
-
-  align-items: center;
-  text-align: center;
 
   padding-top: rem(90px);
   padding-bottom: rem(110px);
 }
 
-.o-hero-media__title-prefix--text {
-  @extend %o-hero-media__title-prefix-core;
 
-  align-items: center;
+// Video variation 
+.o-hero-media--video {
+  @extend %o-hero-media-core;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
 }
 
-.o-hero-media__icon-arrow--text {
-  @extend %o-hero-media__icon-arrow;
+.o-hero-media--video__image {
+  grid-row: 2;
+  grid-column: col 1 / span 12;
 
-  margin-left: auto;
-  margin-right: auto;
+  @include breakpoint($bp-tablet-small) {
+    grid-row: 2;
+    grid-column: col 2 / span 10;
+  }
 }
 
-// Decoration.
-%o-hero-media__decoration-core {
-  grid-area: 1/1;
-  z-index: 1;
-  align-self: end;
+.o-hero-media--video__text-wrapper {
+  grid-row: 5;
+  grid-column: col 1/ span 12;
+
+  @include breakpoint($bp-tablet-small) {
+    grid-row: 5;
+    grid-column: col 3/ span 8;
+  }
 }
 
-div.o-hero-media__decoration--white {
-  @extend %o-hero-media__decoration-core;
-
-  --c-section-background: #{palette(white)};
+// Landscape Variation
+.o-hero-media--landscape {
+  @extend %o-hero-media-core;
 }
 
-div.o-hero-media__decoration--black {
-  @extend %o-hero-media__decoration-core;
+.o-hero-media--landscape__image {
+  grid-row: 2;
+  grid-column: col 1 / span 12;
+  
+  @include breakpoint($bp-tablet-small) {
+    grid-row: 2;
+    grid-column: col 2 / span 10;
+  }
+}
 
-  --c-section-background: #{palette(black)};
+.o-hero-media--landscape__text-wrapper {
+  grid-row: 5;
+  grid-column: col 1/ span 12;
+
+  @include breakpoint($bp-tablet-small) {
+    grid-row: 5;
+    grid-column: col 3/ span 8;
+  }
+}
+
+
+// Portrait Variation 
+.o-hero-media--portrait {
+  @extend %o-hero-media-core;
+  display: grid;
+}
+
+.o-hero-media--portrait__image {
+  grid-row: 2;
+  grid-column: col 1 / span 12;
+
+  @include breakpoint($bp-tablet-small) {
+    grid-row: 2/ span 3;
+    grid-column: 8 / span 6;
+  }
+  
+}
+
+.o-hero-media--portrait__text-wrapper {
+  grid-row: 5;
+  grid-column: col 1/ span 12;
+
+  @include breakpoint($bp-tablet-small) {
+    grid-row: 2;
+    grid-column: col 1/ span 6;
+  }
 }

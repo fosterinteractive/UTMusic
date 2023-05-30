@@ -12,69 +12,78 @@
 
 {% endif %}
 
-{% set decoration_color = decoration_color|default('') %}
-
-{% if decoration_color is not empty %}
-
-  {# Add BEM decoration_color '--' prefix if missing #}
-  {% if decoration_color starts with '--' %}
-    {# Do nothing #}
-  {% else %}
-    {% set decoration_color = '--' ~ decoration_color %}
-  {% endif %} 
-
-{% endif %}
 
 
 <div class="o-hero-media{{ variation }}">
 
-  {% if hero_image %}
-    <div class="{% if variation %}o-hero-media__image{{ variation }}{% endif %}">
-      {{ hero_image }}
+  <div class="o-hero-media__bg-decoration">
+  {# it's a placeholder for background color with shape #}
+     <img alt="" aria-hidden="true" src="/themes/utmusic/images/header-color.png" />
+     
+  </div>
+
+  {% if image_landscape or  image_portrait or video %}
+    <div class="o-hero-media__image {% if variation %}o-hero-media{{ variation }}__image{% endif %}">
+      {% if image_portrait %}
+        {{ image_portrait }}
+      {% elseif image_landscape %}
+        {{ image_landscape }}
+      {% else %}
+        {{ video }}
+      {% endif %}
     </div>
   {% endif %}
 
-  <div class="{% if variation %}o-hero-media__text{{ variation }}-wrapper{% endif %}">
+  <div class="o-hero-media__text {% if variation %}o-hero-media{{ variation }}__text-wrapper{% endif %}">
 
-    <div class="{% if variation %}o-hero-media__text{{ variation }}{% endif %}">
+    <div class="o-hero-media__text {% if variation %}o-hero-media{{ variation }}__text{% endif %}">
       {% if title_prefix or title %}
-        <h1 class="a-heading__h1-large">
+        <h1 class="a-heading__h1">
           {% if title_prefix %}
-            <span class='{% if variation %}o-hero-media__title-prefix{{ variation }}{% endif %}'>{{ title_prefix }}</span>
+            <span class='o-hero-media__title-prefix {% if variation %}o-hero-media{{ variation }}__title-prefix{% endif %}'>
+              {{ title_prefix }}
+            </span>
           {% endif %}
           
           {% if title %}
-            <span class='o-hero-media__title'>{{ title }}</span>
+            <span class='o-hero-media__title'>
+              {{ title }}
+            </span>
           {% endif %}
         </h1>
       {% endif %}
 
-      {% if summary %}
-        <div class="o-hero__summary">
-          {{ summary }}
+      {% if news_categories or area_study %}
+        <div class="o-hero-media__tags {% if variation %}o-hero-media{{variation}}__tags{% endif %}">
+          {% for category in news_categories %}
+            {% include '@atoms/chip/chip.twig' with {
+                text: category
+              } only 
+            %}
+          {% endfor %}
+
+          {% for area in areas_study %}
+            {% include '@atoms/chip/chip.twig' with {
+                text: area
+              } only 
+            %}
+          {% endfor %}
+        </div>
+        
+      {% endif %}
+
+      {% if author or date_string %}
+        <div class="o-hero-media__credentials {% if variation %}o-hero-media{{variation}}__credentials{% endif %}">
+          <div class="o-hero-media__credentials-author">
+            {{ author }}
+          </div>
+          <div class="o-hero-media__credentials-date">
+            {{ date_string }} 
+          </div>
         </div>
       {% endif %}
 
-      <div class="{% if variation %}o-hero-media__icon-arrow{{ variation }}{% endif %}">
-        {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
-          directory: directory,
-          base_class: 'a-icon-arrow',
-          icon: 'arrow-down',
-          icon_file_type: icon_file_type,
-          size: icon_size,
-          } only
-        %}
-      </div>
-
     </div>
-  </div>
-
-  <div class="l-section__decoration-top o-hero-media__decoration{{ decoration_color }}">
-    {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
-      directory: directory,
-      icon: 'brush1',
-      base_class: 'l-section__decoration-svg',
-    } only %}
   </div>
 
 </div>
