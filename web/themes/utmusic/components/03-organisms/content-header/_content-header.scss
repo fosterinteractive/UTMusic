@@ -1,20 +1,20 @@
 //Core Layout
 %o-hero-media-core {
-  // @extend %l-section;
   display: grid;
   grid-template-columns: [alpha] 1fr repeat(12, [col] minmax(1px, calc((65rem - (var(--spacer) * 11)) / 12))) 1fr [omega];
   grid-column-gap: var(--spacer);
-  grid-template-rows: rem(160px) auto rem(70px) rem(70px) auto;
+  grid-template-rows: rem(160px) 1fr rem(70px) rem(70px) auto;
 }
 
 .o-hero-media__bg-decoration {
   grid-row: 1/ span 3;
   grid-column: alpha / omega;
-  background-color: palette(teal, 1000);
 
   img {
-    @include breakpoint($bp-tablet-small) {
-      max-height: rem(680px);
+    height: 100%;
+
+    @include breakpoint($bp-tablet) {
+      max-height: rem(800px);
     }
   }
 }
@@ -47,11 +47,11 @@
 // Core image.
 .o-hero-media__image {
   position: relative;
-  border-radius: rem(12px);
   overflow: hidden;
 
   img {
-    height: 100%;
+    height: auto;
+    border-radius: rem(12px);
     object-fit: cover
   }
 
@@ -103,11 +103,26 @@
 }
 
 // Only Text variation
-.o-hero-media__text--text-wrapper {
+.o-hero-media--text {
+  @extend %o-hero-media-core;
+  grid-template-rows: rem(160px) minmax(1px, max-content) rem(50px);
+}
+
+.o-hero-media--text .o-hero-media__bg-decoration {
+  img {
+    height: 100%;
+
+    @include breakpoint($bp-tablet) {
+      max-height: rem(380px);
+    }
+  }
+}
+
+.o-hero-media--text__text-wrapper {
   @extend %o-hero-media__text-core;
 
-  padding-top: rem(90px);
-  padding-bottom: rem(110px);
+  grid-row: 2;
+  grid-column: 1 / span 12;
 }
 
 
@@ -124,8 +139,10 @@
 .o-hero-media--video__image {
   grid-row: 2;
   grid-column: col 1 / span 12;
+  border-radius: rem(12px);
+  overflow: hidden;
 
-  @include breakpoint($bp-tablet-small) {
+  @include breakpoint($bp-tablet) {
     grid-row: 2;
     grid-column: col 2 / span 10;
   }
@@ -135,7 +152,7 @@
   grid-row: 5;
   grid-column: col 1/ span 12;
 
-  @include breakpoint($bp-tablet-small) {
+  @include breakpoint($bp-tablet) {
     grid-row: 5;
     grid-column: col 3/ span 8;
   }
@@ -150,7 +167,7 @@
   grid-row: 2;
   grid-column: col 1 / span 12;
   
-  @include breakpoint($bp-tablet-small) {
+  @include breakpoint($bp-tablet) {
     grid-row: 2;
     grid-column: col 2 / span 10;
   }
@@ -160,7 +177,7 @@
   grid-row: 5;
   grid-column: col 1/ span 12;
 
-  @include breakpoint($bp-tablet-small) {
+  @include breakpoint($bp-tablet) {
     grid-row: 5;
     grid-column: col 3/ span 8;
   }
@@ -173,11 +190,19 @@
   display: grid;
 }
 
+.o-hero-media--portrait .o-hero-media__bg-decoration {
+  img {
+    @include breakpoint($bp-tablet) {
+      max-height: rem(650px);
+    }
+  }
+}
+
 .o-hero-media--portrait__image {
   grid-row: 2;
   grid-column: col 1 / span 12;
 
-  @include breakpoint($bp-tablet-small) {
+  @include breakpoint($bp-tablet) {
     grid-row: 2/ span 3;
     grid-column: 8 / span 6;
   }
@@ -188,7 +213,7 @@
   grid-row: 5;
   grid-column: col 1/ span 12;
 
-  @include breakpoint($bp-tablet-small) {
+  @include breakpoint($bp-tablet) {
     grid-row: 2;
     grid-column: col 1/ span 6;
   }
