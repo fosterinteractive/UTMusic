@@ -20,15 +20,7 @@
 
 <div class="m-listing-item{{ variation }}{% if image %} has-img{% endif %}">
   
-  {% if image %}
-    <div class="m-listing-item{{ variation }}__img">
-      {% include "@molecules/image/image.twig" with {
-          image: image,
-          variation: image_variation,
-        } only
-      %}
-  {% endif %}
-    </div>
+  
 
   <div class="m-listing-item{{ variation }}__content has-img">
 
@@ -76,4 +68,14 @@
     {% endif %} #}
 
   </div>
+
+  {% if image %}
+    <div class="m-listing-item{{ variation }}__img">
+      {% include "@molecules/image/image.twig" with {
+          image: image,
+          variation: image_variation,
+        } only
+      %}
+    </div>
+  {% endif %}
 </div>
