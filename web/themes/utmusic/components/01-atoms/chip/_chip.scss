@@ -2,14 +2,15 @@
 .a-chip {
   // @extend %u-animate-background-color;
   // @extend %u-remove-child--margin-top-bottom;
-  @extend %a-type--xxsmall;
+  @extend %a-type--xsmall;
 
   display: inline-block;
   margin-bottom: ru(0.25);
   border: rem(1px) solid  var(--c-chip-border);
-  border-radius: rem(20px);
-  padding: ru(0.25) ru(0.5);
+  border-radius: rem(50px);
+  padding: rem(2px) rem(15px);
   color: var(--c-chip);
+  background-color: var(--c-chip-background);
   line-height: 1rem;
 }
 

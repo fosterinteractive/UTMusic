@@ -1,5 +1,5 @@
 text: 'Filter Category'
 variation: 'icon'
 url: ''
-icon: 'times-circle-solid'
+icon: 'download'
 aria_label: 'Remove applied filter category'
