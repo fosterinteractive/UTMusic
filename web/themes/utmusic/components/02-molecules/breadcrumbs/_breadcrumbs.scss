@@ -1,9 +1,11 @@
 .m-breadcrumbs {
+  @extend %a-type--xsmall;
+
   display: block;
   overflow: hidden;
   width: 100%;
   white-space: nowrap;
-  font-size: rem(14px);
+  font-style: italic;
   text-overflow: ellipsis;
 }
 
@@ -13,19 +15,19 @@
 }
 
 .m-breadcrumbs__link {
-  color: var(--c-link);
+  color: var(--c-breadcrumbs-link);
 
-  &:link,
-  &:visited {
-    text-decoration: underline;
+  &:link {
+    text-decoration: none;
   }
   
   &:hover,
   &:active {
-    text-decoration: none;
+    text-decoration: underline;
+    color: var(--c-link);
   }
 }
 
 .m-breadcrumbs__label {
-  color: var(--c-text);
+  color: var(--c-breadcrumbs-text);
 }

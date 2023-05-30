@@ -7,10 +7,4 @@
     {# Print a span label #}
     <span class="m-breadcrumbs__label">{{ text }}</span>
   {% endif %}
-
-  {% if not loop.last %}
-    {# Use non-breaking space so if can't wrap #}
-    {{ "&nbsp;/&nbsp;" }}
-  {% endif %}
-
 </li>

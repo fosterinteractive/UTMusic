@@ -12,6 +12,11 @@
             text: item.text,
           } only 
         %}
+
+        {% if not loop.last %}
+          {# Use non-breaking space so if can't wrap #}
+          {{ "&nbsp;>&nbsp;" }}
+        {% endif %}
       {% endfor %}
       
     </ol>
