@@ -39,9 +39,9 @@
   --c-figcaptions: #{palette(grey, 400)};
 
   // @atoms/link
-  --c-link: #{palette(teal)};
+  --c-link: #{palette(teal, 300)};
   --c-link--active: #{palette(blue)};
-  --c-link-decoration: #{palette(teal)};
+  --c-link-decoration: #{palette(teal, 300)};
   --c-link-decoration--active: #{palette(blue)};
   // --c-link-icon-external, url('./svg/svg-art/external-link-square-alt.svg')};
   // --c-link-background--active, rgba(#{palette(grey, 400), 0.15)};
@@ -59,6 +59,7 @@
   --c-heading-main-title: #{palette(teal, 300)};
   --c-heading-prefix: #{palette(black, 200)};
   --c-heading-prefix-decoration: #{palette(teal, 700)};
+  --c-heading-summary: #{palette(blue, 300)};
   --c-heading-credentials: #{palette(grey, 300)};
   --c-heading-link: #{palette(teal, 300)};
   --c-heading-link--active: #{palette(blue, 300)};

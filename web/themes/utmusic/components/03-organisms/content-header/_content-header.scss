@@ -19,6 +19,16 @@
   }
 }
 
+.o-hero-media__breadcrumbs {
+  grid-row: 4;
+  grid-column: col 1/ span 12;
+  align-self: center;
+
+  @include breakpoint($bp-tablet) {
+    grid-column: col 1/ span 6;
+  }
+}
+
 // Core text.
 %o-hero-media__text-core {
   z-index: 1;
@@ -97,6 +107,10 @@
   margin-top: rem(26px);
 }
 
+.o-hero-media__summary {
+  color: var(--c-heading-summary);
+}
+
 .o-hero-media__credentials {
   color: var(--c-heading-credentials);
   margin-top: rem(34px);
@@ -105,7 +119,7 @@
 // Only Text variation
 .o-hero-media--text {
   @extend %o-hero-media-core;
-  grid-template-rows: rem(160px) minmax(1px, max-content) rem(50px);
+  grid-template-rows: rem(160px) minmax(1px, max-content) rem(50px) rem(70px);
 }
 
 .o-hero-media--text .o-hero-media__bg-decoration {

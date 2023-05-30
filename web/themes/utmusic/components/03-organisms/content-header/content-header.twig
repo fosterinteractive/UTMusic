@@ -1,3 +1,5 @@
+{% set breadcrumbs = drupal_entity('block', 'menu_breadcrumbs') %}
+
 {# Set default hero class - 'o-hero' #}
 {% set variation = variation|default('') %}
 
@@ -52,6 +54,12 @@
         </h1>
       {% endif %}
 
+      {% if summary %}
+        <div class="o-hero-media__summary {% if variation %}o-hero-media{{ variation }}__summary{% endif %}">
+          {{ summary  }}
+        </div>
+      {% endif %}
+
       {% if news_categories or area_study %}
         <div class="o-hero-media__tags {% if variation %}o-hero-media{{variation}}__tags{% endif %}">
           {% for category in news_categories %}
@@ -84,5 +92,11 @@
 
     </div>
   </div>
+
+  {% if breadcrumbs is not empty and not is_front %}
+    <div class="l-main__breadcrumbs o-hero-media__breadcrumbs {% if variation %}o-hero-media{{variation}}__breadcrumbs{% endif %}">
+    {{ breadcrumbs }}
+    </div>
+  {% endif %}
 
 </div>
