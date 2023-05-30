@@ -53,7 +53,7 @@
 
 
   // @atoms/text
-  --c-text: #{palette(black, 200)};
+  --c-text: #{palette(grey, 300)};
   --c-heading: #{palette(black, 200)};
   --c-heading-decoration: #{palette(teal, 300)};
   --c-heading-main-title: #{palette(teal, 300)};
@@ -95,6 +95,11 @@
   // @organisms/listing
   --c-listing-item--border: #{palette(teal, 700)};
   --c-listing-item--date: #{palette(grey, 300)};
+
+  //@molecules/social
+  --c-social-background: #{palette(blue, 900)};
+  --c-social-svg: #{palette(blue, 300)};
+  --c-social-heading: #{palette(blue, 300)};
 
 
   //pager

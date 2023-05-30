@@ -87,8 +87,6 @@
   {% endfor %}
 {% endif %}
 
-
-
 {# Get related articles #}
 {% set articles = [] %}
 {% if content.field_news_related_articles[0] %}
@@ -100,8 +98,15 @@
 {% endif %}
 
 
+{# Check if social share block is empty or not #}
+{% set social_share_block = drupal_entity('block', 'sociallite')|render %}
+{% if social_share_block|striptags|trim is not empty %}
+  {% set social_share = social_share_block %}
+{% endif %}
+
+
 {% include "@layouts/main/main--news.twig" with {
-    breadcrumbs: breadcrumbs,
+    social_share: social_share,
     variation: content.field_news_header_variation[0] ? content.field_news_header_variation[0]['#markup'],
     title_prefix: content.field_news_header_title_prefix[0] ? content.field_news_header_title_prefix[0]['#text'],
     title: content.field_news_title[0] ? content.field_news_title[0]['#text'],

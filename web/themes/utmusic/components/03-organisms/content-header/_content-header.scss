@@ -235,6 +235,8 @@
 
 .o-hero-media--portrait__tags {
   .a-chip {
-    border: none;
+    @include breakpoint($bp-tablet) {
+      border: none;
+    }
   }
 }

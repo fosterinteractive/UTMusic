@@ -1,0 +1,115 @@
+{#
+/**
+* @file
+* Default theme implementation for Social Lite.
+*
+* Available variables
+* - content: containts 
+* - module_path
+*/
+#}
+
+{% if sb_demo %}
+  <div class="m-share">
+      <div class="m-share__label">
+        <h2 class="a-heading__h4">{{ 'Share'|t }}</h2>
+      </div>
+
+    <div class="m-share__icons-wrapper">
+
+        <a href="{{ twitter_link }}" class="m-share__icon-link st-custom-button" target="_blank">
+          <span class="m-share__icon-svg">
+            {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+              directory: directory,
+              icon: 'social-twitter',
+            } only %}
+          </span>
+          <span class="u-visually--hidden">{{ 'Share With Twitter'|t }}</span>
+        </a>
+      
+        <a href="{{ facebook_link }}" class="m-share__icon-link st-custom-button" target="_blank">
+          <span class="m-share__icon-svg">
+            {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+              directory: directory,
+              icon: 'social-facebook',
+            } only %}
+          </span>
+          <span class="u-visually--hidden">{{ 'Share With Facebook'|t }}</span>
+        </a>
+
+        <a href="{{ linkedin_link }}" class="m-share__icon-link st-custom-button" target="_blank">
+          <span class="m-share__icon-svg">
+            {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+              directory: directory,
+              icon: 'social-linkedin',
+            } only %}
+          </span>
+          <span class="u-visually--hidden">{{ 'Share With Linkedin'|t }}</span>
+        </a>
+    </div>
+  </div>
+
+{% else %}
+
+  {% set facebook = content['#facebook'] ? content['#facebook'] %}
+  {% set twitter = content['#twitter'] ? content['#twitter'] %}
+  {% set linkedin = content['#linkedin'] ? content['#linkedin']%}
+
+  {% set facebook_link = content['#facebook_link'] ? content['#facebook_link'] %}
+  {% set twitter_link = content['#twitter_link'] ? content['#twitter_link'] %}
+  {% set linkedin_link = content['#linkedin_link'] ? content['#linkedin_link']%}
+
+  {% set facebook_icon = content['#facebook_icon'] ? content['#facebook_icon'] %}
+  {% set twitter_icon = content['#twitter_icon'] ? content['#twitter_icon'] %}
+  {% set linkedin_icon = content['#linkedin_icon'] ? content['#linkedin_icon']%}
+
+  {% if facebook == 1 or twitter == 1 or linkedin == 1 %}
+    <div class="m-share">
+      {% if content['#block_title'] %}
+        <div class="m-share__label">
+          {# <h2 class="a-heading__h4">{{content['#block_title']}}</h2> #}
+          <h2 class="a-heading__h4">{{ 'Share'|t }}</h2>
+        </div>
+      {% endif %}
+
+      <div class="m-share__icons-wrapper">
+
+        {% if twitter == 1 %}
+          <a href="{{ twitter_link }}" class="m-share__icon-link st-custom-button" target="_blank">
+            <span class="m-share__icon-svg">
+              {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                directory: directory,
+                icon: 'social-twitter',
+              } only %}
+            </span>
+            <span class="u-visually--hidden">{{ 'Share With Twitter'|t }}</span>
+          </a>
+        {% endif %}
+        
+        {% if facebook == 1 %}
+          <a href="{{ facebook_link }}" class="m-share__icon-link st-custom-button" target="_blank">
+            <span class="m-share__icon-svg">
+              {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                directory: directory,
+                icon: 'social-facebook',
+              } only %}
+            </span>
+            <span class="u-visually--hidden">{{ 'Share With Facebook'|t }}</span>
+          </a>
+        {% endif %}
+
+        {% if linkedin == 1 %}
+          <a href="{{ linkedin_link }}" class="m-share__icon-link st-custom-button" target="_blank">
+            <span class="m-share__icon-svg">
+              {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                directory: directory,
+                icon: 'social-linkedin',
+              } only %}
+            </span>
+            <span class="u-visually--hidden">{{ 'Share With Linkedin'|t }}</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+{% endif %}

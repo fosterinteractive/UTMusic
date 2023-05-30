@@ -1,0 +1,13 @@
+twitter_icon: 'social-twitter'
+facebook_icon: 'social-facebook'
+linkedin_icon: 'social-linkedin'
+
+twitter_link: '/'
+facebook_link: '/'
+linkedin_link: '/'
+
+twitter: 1
+facebook: 1
+linkedin: 1 
+
+sb_demo: true

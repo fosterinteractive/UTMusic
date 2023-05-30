@@ -15,11 +15,16 @@
           news_categories: news_categories,
           areas_study: areas_study,
           summary: "This is the summary",
-          breadcrumbs: breadcrumbs,
         } only
       %}
 
+
       <div class="l-section-bg l-section--[8] l-section-spacing-top--medium l-section-spacing-bottom--small">
+        
+        <div class="l-section__zone-1 l-section__social-share">
+          {{ social_share }}
+        </div>
+
         <div class="l-section__zone-1">
           {% if content %}
             {{ content }}
