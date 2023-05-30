@@ -56,7 +56,7 @@
 
       {% if summary %}
         <div class="o-hero-media__summary {% if variation %}o-hero-media{{ variation }}__summary{% endif %}">
-          {{ summary  }}
+          {{ summary }}
         </div>
       {% endif %}
 
@@ -91,10 +91,18 @@
       {% endif %}
 
     </div>
+
+    
   </div>
 
+  {% if variation == "--landscape" or variation == "--video" %}
+    <div class="o-hero-media__social">
+      {{ social_share }}
+    </div>
+  {% endif %}
+
   {% if breadcrumbs is not empty and not is_front %}
-    <div class="l-main__breadcrumbs o-hero-media__breadcrumbs {% if variation %}o-hero-media{{variation}}__breadcrumbs{% endif %}">
+    <div class="o-hero-media__breadcrumbs {% if variation %}o-hero-media{{variation}}__breadcrumbs{% endif %}">
     {{ breadcrumbs }}
     </div>
   {% endif %}

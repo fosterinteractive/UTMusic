@@ -14,16 +14,19 @@
           date_string: date_string,
           news_categories: news_categories,
           areas_study: areas_study,
-          summary: "This is the summary",
+          summary: summary,
+          social_share: social_share,
         } only
       %}
 
 
       <div class="l-section-bg l-section--[8] l-section-spacing-top--medium l-section-spacing-bottom--small">
         
-        <div class="l-section__zone-1 l-section__social-share">
-          {{ social_share }}
-        </div>
+        {% if variation == "portrait" or variation == "text" %}
+          <div class="l-section__zone-1 l-section__social-share">
+            {{ social_share }}
+          </div>
+        {% endif %}
 
         <div class="l-section__zone-1">
           {% if content %}

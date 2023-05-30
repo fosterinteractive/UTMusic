@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: [alpha] 1fr repeat(12, [col] minmax(1px, calc((65rem - (var(--spacer) * 11)) / 12))) 1fr [omega];
   grid-column-gap: var(--spacer);
-  grid-template-rows: rem(160px) 1fr rem(70px) rem(70px) auto;
+  grid-template-rows: rem(160px) 1fr rem(70px) rem(70px) auto auto;
 }
 
 .o-hero-media__bg-decoration {
@@ -12,10 +12,7 @@
 
   img {
     height: 100%;
-
-    @include breakpoint($bp-tablet) {
-      max-height: rem(800px);
-    }
+    object-fit: cover;
   }
 }
 
@@ -26,31 +23,6 @@
 
   @include breakpoint($bp-tablet) {
     grid-column: col 1/ span 6;
-  }
-}
-
-// Core text.
-%o-hero-media__text-core {
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: calc(var(--spacer) / 2);
-  padding-left: calc(var(--spacer) / 2);
-  width: 100%;
-
-  @include breakpoint($bp-phone-large) {
-    padding-right: var(--spacer);
-    padding-left: var(--spacer);
-    max-width: $bp-banner-max;
-  }
-
-  @include breakpoint($bp-banner-max) {
-    padding-right: 0;
-    padding-left: 0;
   }
 }
 
@@ -116,27 +88,41 @@
   margin-top: rem(34px);
 }
 
+.o-hero-media__social {
+  grid-row: 6;
+  grid-column: col 1 / span 12;
+  align-self: center;
+  min-height: rem(150px);
+  display: grid;
+  align-items: center;
+
+  @include breakpoint($bp-tablet) {
+    grid-row: 5;
+    grid-column: col 2/ span 1;
+  }
+}
+
+
+
+
+
 // Only Text variation
 .o-hero-media--text {
   @extend %o-hero-media-core;
   grid-template-rows: rem(160px) minmax(1px, max-content) rem(50px) rem(70px);
 }
 
-.o-hero-media--text .o-hero-media__bg-decoration {
-  img {
-    height: 100%;
+.o-hero-media--text__text-wrapper {
+  grid-row: 2;
+  grid-column: col 1 / span 12;
 
-    @include breakpoint($bp-tablet) {
-      max-height: rem(380px);
-    }
+  @include breakpoint($bp-tablet) {
+    grid-column: col 1 / span 6;
   }
 }
 
-.o-hero-media--text__text-wrapper {
-  @extend %o-hero-media__text-core;
-
-  grid-row: 2;
-  grid-column: 1 / span 12;
+.o-hero-media--text__credentials {
+  color: palette(blue, 300);
 }
 
 
@@ -239,4 +225,8 @@
       border: none;
     }
   }
+}
+
+.o-hero-media--portrait__credentials {
+  color: palette(blue, 300);
 }
