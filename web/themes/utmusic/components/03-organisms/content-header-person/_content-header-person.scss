@@ -1,0 +1,72 @@
+// Event variation
+.o-hero-media--person {
+  @extend %o-hero-media-core;
+  display: grid;
+}
+
+.o-hero-media--person .o-hero-media__bg-decoration {
+  @extend %o-hero-media__bg-decoration;
+}
+
+.o-hero-media--person__image {
+  grid-row: 2;
+  grid-column: col 1 / span 12;
+
+  @include breakpoint($bp-tablet) {
+    grid-row: 2/ span 1;
+    grid-column: 8 / span 6;
+  }
+}
+
+.o-hero-media--person__text-wrapper {
+  grid-row: 5;
+  grid-column: col 1/ span 12;
+
+  @include breakpoint($bp-tablet) {
+    grid-row: 2;
+    grid-column: col 1/ span 6;
+  }
+}
+
+.o-hero-media--person__tags {
+  @extend %o-hero-media-tags-desktop-no-border;
+}
+
+%o-hero-media--person__info, 
+.o-hero-media--person__info {
+  margin-top: rem(40px);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacer)/3);
+}
+
+%o-hero-media--person__info-items,
+.o-hero-media__info-mail, 
+.o-hero-media__info-phone,
+.o-hero-media__info-website-first,
+.o-hero-media__info-website-second {
+  display: flex;
+  gap: calc(var(--spacer) * 0.5);
+  align-items: center;
+
+  .a-link--icon-left {
+    color: palette(blue, 300);
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  svg {
+    width: $base-line-height;
+    height: $base-line-height;
+  }
+}
+
+%o-hero-media__button, 
+.o-hero-media--person__button {
+  margin-top: rem(40px);
+}

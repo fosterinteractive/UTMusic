@@ -1,0 +1,20 @@
+sb_demo: true
+variation: 'person-text' 
+image: 
+title_prefix: 'Person title prefix'
+title: 'Mia Bach'
+summary: "Sessional Teaching Staff: Keyboard, Piano, Voice Studies"
+email: mia.bach@utoronto.ca
+phone: 416 123-4567 x123
+url_first: miabach.personal-website-domain.com
+label_first: miabach.personal-website-domain.com
+aria_label_first: 'Visit personal website'
+url_second: otherwebsite.com
+label_second: otherwebsite.com
+aria_label_second: 'Visit other website'
+categories: 
+  1:
+    category: Keyboard
+  2:
+    category: Voice
+

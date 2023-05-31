@@ -8,7 +8,7 @@ event_time: '7:30pm'
 event_location: 'MacMillan Theatre, Toronto'
 url: '/'
 label: 'Get tickets'
-area_label: 'Get your best tickets'
+aria_label: 'Get your best tickets'
 event_types: 
   1:
     type: Symposium

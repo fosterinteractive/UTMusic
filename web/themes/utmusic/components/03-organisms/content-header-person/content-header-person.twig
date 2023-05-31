@@ -1,0 +1,136 @@
+{# Set default hero class - 'o-hero' #}
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+<div class="o-hero-media{{ variation }}">
+
+  <div class="o-hero-media__bg-decoration">
+    {# it's a placeholder for background #}
+    {% if sb_demo %}
+      <div style="background:#EDF8FC; width:100%; height:100%; "></div>
+    {% else %}
+      <img alt="" aria-hidden="true" src="/themes/utmusic/images/header-color-min.png" />
+    {% endif %}
+  </div>
+
+  {% if image %}
+    <div class="o-hero-media__image {% if variation %}o-hero-media{{ variation }}__image{% endif %}">
+      {% if image %}
+        {{ image }}
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="o-hero-media__text {% if variation %}o-hero-media{{ variation }}__text-wrapper{% endif %}">
+
+    <div class="o-hero-media__text {% if variation %}o-hero-media{{ variation }}__text{% endif %}">
+      {% if title_prefix or title %}
+        <h1 class="a-heading__h1">
+          {% if title_prefix %}
+            <span class='o-hero-media__title-prefix {% if variation %}o-hero-media{{ variation }}__title-prefix{% endif %}'>
+              {{ title_prefix }}
+            </span>
+          {% endif %}
+          
+          {% if title %}
+            <span class='o-hero-media__title'>
+              {{ title }}
+            </span>
+          {% endif %}
+        </h1>
+      {% endif %}
+
+      {% if summary %}
+        <div class="o-hero-media__summary {% if variation %}o-hero-media{{ variation }}__summary{% endif %}">
+          {{ summary }}
+        </div>
+      {% endif %}
+
+      {% if categories %}
+        <div class="o-hero-media__tags {% if variation %}o-hero-media{{variation}}__tags{% endif %}">
+          {% for item in categories %}
+            {% include '@atoms/chip/chip.twig' with {
+                text: sb_demo ? item.category : item,
+              } only 
+            %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if variation == '--person-text' %}
+    <div class="o-hero-media--person-text__info-wrapper">
+    {% endif %}
+
+      {% if email or phone or url_first or url_second %}
+        <div class="o-hero-media__info {% if variation %}o-hero-media{{variation}}__info{% endif %}">
+          
+          <div class="o-hero-media__info-mail">
+            {% include "@atoms/link/link.twig" with {
+                label: email,
+                url: 'mailto:' ~ email,
+                variation: 'icon-left',
+                icon: 'mail',
+              } only
+            %}
+          </div>
+
+          <div class="o-hero-media__info-phone">
+            {% include "@atoms/link/link.twig" with {
+                label: phone,
+                url: 'tel:' ~ phone,
+                aria_label: aria_label_first,
+                variation: 'icon-left',
+                icon: 'phone',
+              } only
+            %}
+          </div>
+
+          <div class="o-hero-media__info-website-first">
+            {% include "@atoms/link/link.twig" with {
+                label: label_first,
+                url: url_first,
+                aria_label: aria_label_first,
+                variation: 'icon-left',
+                icon: 'interface_link_square',
+              } only
+            %}
+          </div>
+
+          <div class="o-hero-media__info-website-second">
+            {% include "@atoms/link/link.twig" with {
+                label: label_second,
+                url: url_second,
+                aria_label: aria_label_second,
+                variation: 'icon-left',
+                icon: 'interface_link_square',
+              } only
+            %}
+          </div>
+          
+        </div>
+      {% endif %}
+
+    {% if variation == '--person-text' %}
+    </div>
+    {% endif %}
+
+  </div>
+
+  {% if breadcrumbs is not empty and not is_front %}
+    <div class="o-hero-media__breadcrumbs {% if variation %}o-hero-media{{variation}}__breadcrumbs{% endif %}">
+    {{ breadcrumbs }}
+    </div>
+  {% endif %}
+
+</div>

@@ -81,8 +81,6 @@
     color: palette(white);
   }
 
-
-
   &:hover,
   &:focus,
   &:active {
@@ -106,6 +104,10 @@
   // }
 }
 
+%a-link--icon-left,
+.a-link--icon-left {
+  @extend %a-link;
+}
 
 // Link Text Icon 
 

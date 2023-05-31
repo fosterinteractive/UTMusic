@@ -16,7 +16,7 @@ export default {
     controls: { hideNoControlsWarning: 'true' },
     docs: {
       description: {
-        component: 'Organism Content Header. Content Header Banners appear at the top of advanced pages',
+        component: 'Organism Content Header. Content Header Banners appear at the top of News CT pages',
       },
     },
   },
