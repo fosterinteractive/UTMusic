@@ -3,7 +3,7 @@
   {% block content_single_page %}
     <div class="l-main--news">
 
-      {% include "@organisms/content-header/content-header.twig" with {
+      {% include "@organisms/content-header-news/content-header-news.twig" with {
           variation: variation,
           title_prefix: title_prefix,
           title: title,
@@ -16,6 +16,7 @@
           areas_study: areas_study,
           summary: summary,
           social_share: social_share,
+          breadcrumbs: breadcrumbs,
         } only
       %}
 

@@ -1,0 +1,31 @@
+// Video variation 
+.o-hero-media-news--video {
+  @extend %o-hero-media-news-core;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.o-hero-media-news--video__image {
+  grid-row: 2;
+  grid-column: col 1 / span 12;
+  border-radius: rem(12px);
+  overflow: hidden;
+
+  @include breakpoint($bp-tablet) {
+    grid-row: 2;
+    grid-column: col 2 / span 10;
+  }
+}
+
+.o-hero-media-news--video__text-wrapper {
+  grid-row: 5;
+  grid-column: col 1/ span 12;
+
+  @include breakpoint($bp-tablet) {
+    grid-row: 5;
+    grid-column: col 3/ span 8;
+  }
+}

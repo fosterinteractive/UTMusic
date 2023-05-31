@@ -1,0 +1,15 @@
+sb_demo: true
+variation: 'text'
+title_prefix: 'News title prefix'
+title: '‘Anything is possible’: Future Sound 6ix music workshops draw youth from across Toronto'
+author: 'By Samantha Smith'
+date_string: 'May 29, 2023'
+area_study: true
+news_categories: 
+  1:
+    category: News
+  2:
+    category: Announcements
+areas_study:
+  1:
+    area: Voice sound 

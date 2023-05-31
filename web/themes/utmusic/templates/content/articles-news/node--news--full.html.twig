@@ -66,6 +66,7 @@
  * @see template_preprocess_node()
 #}
 
+{% set breadcrumbs = drupal_entity('block', 'menu_breadcrumbs') %}
 
 {# Get categories of articles #}
 {% set categories = [] %}
@@ -107,6 +108,9 @@
 
 {% include "@layouts/main/main--news.twig" with {
     social_share: social_share,
+    breadcrumbs: breadcrumbs,
+    news_categories: categories,
+    areas_study: topics,
     variation: content.field_news_header_variation[0] ? content.field_news_header_variation[0]['#markup'],
     title_prefix: content.field_news_header_title_prefix[0] ? content.field_news_header_title_prefix[0]['#text'],
     title: content.field_news_title[0] ? content.field_news_title[0]['#text'],
@@ -115,8 +119,6 @@
     video: content.field_news_header_video[0] ? content.field_news_header_video,
     author: content.field_news_header_author[0] ? content.field_news_header_author[0]['#text'],
     date_string: content.field_news_date[0] ? content.field_news_date[0]['#markup'],
-    news_categories: categories,
-    areas_study: topics,
     content: content.field_news_body[0] ? content.field_news_body,
   }
 %}

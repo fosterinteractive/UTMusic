@@ -1,0 +1,112 @@
+{# Set default hero class - 'o-hero' #}
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+
+
+<div class="o-hero-media{{ variation }}">
+
+  <div class="o-hero-media__bg-decoration">
+    {# it's a placeholder for background #}
+    {% if sb_demo %}
+      <div style="background:#EDF8FC; width: 100%; height: 100%; "></div>
+    {% else %}
+      <img alt="" aria-hidden="true" src="/themes/utmusic/images/header-color-min.png" />
+    {% endif %}
+  </div>
+
+  {% if image_landscape or  image_portrait or video %}
+    <div class="o-hero-media__image {% if variation %}o-hero-media{{ variation }}__image{% endif %}">
+      {% if image_portrait %}
+        {{ image_portrait }}
+      {% elseif image_landscape %}
+        {{ image_landscape }}
+      {% else %}
+        {{ video }}
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="o-hero-media__text {% if variation %}o-hero-media{{ variation }}__text-wrapper{% endif %}">
+
+    <div class="o-hero-media__text {% if variation %}o-hero-media{{ variation }}__text{% endif %}">
+      {% if title_prefix or title %}
+        <h1 class="a-heading__h1">
+          {% if title_prefix %}
+            <span class='o-hero-media__title-prefix {% if variation %}o-hero-media{{ variation }}__title-prefix{% endif %}'>
+              {{ title_prefix }}
+            </span>
+          {% endif %}
+          
+          {% if title %}
+            <span class='o-hero-media__title'>
+              {{ title }}
+            </span>
+          {% endif %}
+        </h1>
+      {% endif %}
+
+      {% if summary %}
+        <div class="o-hero-media__summary {% if variation %}o-hero-media{{ variation }}__summary{% endif %}">
+          {{ summary }}
+        </div>
+      {% endif %}
+
+      {% if news_categories or area_study %}
+        <div class="o-hero-media__tags {% if variation %}o-hero-media{{variation}}__tags{% endif %}">
+          {% for item in news_categories %}
+            {% include '@atoms/chip/chip.twig' with {
+                text: sb_demo ? item.category : item,
+              } only 
+            %}
+          {% endfor %}
+
+          {% for item in areas_study %}
+            {% include '@atoms/chip/chip.twig' with {
+                text: sb_demo ? item.area : item,
+              } only 
+            %}
+          {% endfor %}
+        </div>
+        
+      {% endif %}
+
+      {% if author or date_string %}
+        <div class="o-hero-media__credentials {% if variation %}o-hero-media{{variation}}__credentials{% endif %}">
+          <div class="o-hero-media__credentials-author">
+            {{ author }}
+          </div>
+          <div class="o-hero-media__credentials-date">
+            {{ date_string }} 
+          </div>
+        </div>
+      {% endif %}
+
+    </div>
+
+    
+  </div>
+
+  {% if variation == "--landscape" or variation == "--video" %}
+    <div class="o-hero-media__social">
+      {{ social_share }}
+    </div>
+  {% endif %}
+
+  {% if breadcrumbs is not empty and not is_front %}
+    <div class="o-hero-media__breadcrumbs {% if variation %}o-hero-media{{variation}}__breadcrumbs{% endif %}">
+    {{ breadcrumbs }}
+    </div>
+  {% endif %}
+
+</div>

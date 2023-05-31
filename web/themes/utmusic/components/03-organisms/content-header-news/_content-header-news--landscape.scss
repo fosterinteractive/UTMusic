@@ -1,0 +1,24 @@
+// Landscape Variation
+.o-hero-media-news--landscape {
+  @extend %o-hero-media-news-core;
+}
+
+.o-hero-media-news--landscape__image {
+  grid-row: 2;
+  grid-column: col 1 / span 12;
+  
+  @include breakpoint($bp-tablet) {
+    grid-row: 2;
+    grid-column: col 2 / span 10;
+  }
+}
+
+.o-hero-media-news--landscape__text-wrapper {
+  grid-row: 5;
+  grid-column: col 1/ span 12;
+
+  @include breakpoint($bp-tablet) {
+    grid-row: 5;
+    grid-column: col 3/ span 8;
+  }
+}
