@@ -1,12 +1,18 @@
 .m-breadcrumbs {
   @extend %a-type--xsmall;
 
-  display: block;
   overflow: hidden;
   width: 100%;
   white-space: nowrap;
   font-style: italic;
   text-overflow: ellipsis;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  @include breakpoint($bp-tablet-small) {
+    display: block;
+  }
 }
 
 .m-breadcrumbs__item {

@@ -99,3 +99,30 @@
   color: var(--c-heading-summary);
 }
 
+
+// Text Veriation for content Header on Advanced Pages
+.o-hero-media-page__text.o-hero-media--text__text {
+  @include breakpoint($bp-tablet) {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacer);
+  }
+
+  .a-heading__h1 {
+    @include breakpoint($bp-tablet) {
+      width: 40%;
+    }
+  }
+
+  .o-hero-media__summary {
+    @include breakpoint($bp-tablet) {
+      width: 57%;
+    }
+  }
+}
+
+.o-hero-media-page__text-wrapper.o-hero-media--text__text-wrapper {
+  @include breakpoint($bp-tablet) {
+    grid-column: col 1 / span 12;
+  }
+}

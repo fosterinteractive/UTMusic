@@ -19,24 +19,28 @@
 
   <div class="o-hero-media__bg-decoration">
     {# it's a placeholder for background #}
-     <img alt="" aria-hidden="true" src="/themes/utmusic/images/header-color-min.png" />
+    {% if sb_demo %}
+      <div style="background:#EDF8FC; width: 100%; height: 100%; "></div>
+    {% else %}
+      <img alt="" aria-hidden="true" src="/themes/utmusic/images/header-color-min.png" />
+    {% endif %}
   </div>
 
-  {% if image_landscape or  image_portrait or video %}
+  {% if image %}
     <div class="o-hero-media__image {% if variation %}o-hero-media{{ variation }}__image{% endif %}">
-      {% if image_portrait %}
-        {{ image_portrait }}
-      {% elseif image_landscape %}
+      {% if image %}
+        {{ image }}
+      {# {% elseif image_landscape %}
         {{ image_landscape }}
       {% else %}
-        {{ video }}
+        {{ video }} #}
       {% endif %}
     </div>
   {% endif %}
 
-  <div class="o-hero-media__text {% if variation %}o-hero-media{{ variation }}__text-wrapper{% endif %}">
+  <div class="o-hero-media-page__text-wrapper {% if variation %}o-hero-media{{ variation }}__text-wrapper{% endif %}">
 
-    <div class="o-hero-media__text {% if variation %}o-hero-media{{ variation }}__text{% endif %}">
+    <div class="o-hero-media-page__text {% if variation %}o-hero-media{{ variation }}__text{% endif %}">
       {% if title_prefix or title %}
         <h1 class="a-heading__h1">
           {% if title_prefix %}
