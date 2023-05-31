@@ -13,4 +13,13 @@ news_categories:
 areas_study:
   1:
     area: Voice sound 
-
+breadcrumbs:
+  1:
+    url: "/"
+    text: "Home"
+  2:
+    url: "/"
+    text: "News"
+  3:
+    url: 
+    text: "‘Anything is possible’: Future Sound 6ix music workshops draw youth from across Toronto"

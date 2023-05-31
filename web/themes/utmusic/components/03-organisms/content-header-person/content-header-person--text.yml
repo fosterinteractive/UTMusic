@@ -17,4 +17,16 @@ categories:
     category: Keyboard
   2:
     category: Voice
-
+breadcrumbs:
+  1:
+    url: "/"
+    text: "Home"
+  2:
+    url: "/"
+    text: "People"
+  3:
+    url: "/"
+    text: "Faculty & Instructors"
+  4:
+    url: 
+    text: "Mia Bach"
