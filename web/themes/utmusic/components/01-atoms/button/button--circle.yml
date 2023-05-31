@@ -1,9 +1,0 @@
-label: Visually Hidden Label
-variation: circle
-html_element: a
-url: 'http://example.com'
-id: 
-target: 
-aria_label: 
-aria_labelledby:
-icon: arrow-down

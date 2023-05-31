@@ -1,18 +1,14 @@
 // Portrait Variation 
-.o-hero-media-news--portrait {
-  @extend %o-hero-media-news-core;
+.o-hero-media--portrait {
+  @extend %o-hero-media-core;
   display: grid;
 }
 
-.o-hero-media-news--portrait .o-hero-media-news__bg-decoration {
-  img {
-    @include breakpoint($bp-tablet) {
-      max-height: rem(650px);
-    }
-  }
+.o-hero-media--portrait .o-hero-media__bg-decoration {
+  @extend %o-hero-media__bg-decoration;
 }
 
-.o-hero-media-news--portrait__image {
+.o-hero-media--portrait__image {
   grid-row: 2;
   grid-column: col 1 / span 12;
 
@@ -20,10 +16,9 @@
     grid-row: 2/ span 3;
     grid-column: 8 / span 6;
   }
-  
 }
 
-.o-hero-media-news--portrait__text-wrapper {
+.o-hero-media--portrait__text-wrapper {
   grid-row: 5;
   grid-column: col 1/ span 12;
 
@@ -33,14 +28,10 @@
   }
 }
 
-.o-hero-media-news--portrait__tags {
-  .a-chip {
-    @include breakpoint($bp-tablet) {
-      border: none;
-    }
-  }
+.o-hero-media--portrait__tags {
+  @extend %o-hero-media-tags-desktop-no-border;
 }
 
-.o-hero-media-news--portrait__credentials {
+.o-hero-media--portrait__credentials {
   color: palette(blue, 300);
 }

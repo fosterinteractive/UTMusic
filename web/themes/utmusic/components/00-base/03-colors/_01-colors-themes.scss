@@ -12,18 +12,24 @@
 .adminspring-theme {
   
   // @atoms/button
-  --c-button: #{palette(blue)};
-  --c-button--active: #{palette(black)};
-  --c-button-border: #{palette(black)};
-  --c-button-border--active: #{palette(black)};
-  --c-button-text: #{palette(black)};
-  --c-button-text--active: #{palette(blue)};
+  --c-button: #{palette(blue, 300)};
+  --c-button--active: #{palette(teal, 300)};
+  --c-button-border: #{palette(blue, 300)};
+  --c-button-border--active: #{palette(teal, 300)};
+  --c-button-text: #{palette(white)};
+  --c-button-text--active: #{palette(teal, 1000)};
+
+  --c-button-svg: #{palette(teal, 700)};
+  --c-button-svg--active: #{palette(teal, 1000)};
 
   --c-button--secondary: #{palette(grey, 900)};
   --c-button-border--secondary: #{palette(grey, 900)};
   --c-button--secondary--active: #{palette(grey, 300)};
-  --c-button-text--secondary: #{palette(grey, 300)};
-  --c-button-text--secondary--active: #{palette(grey, 900)};
+  --c-button-text--secondary: #{palette(blue, 300)};
+  --c-button-text--secondary--active: #{palette(teal, 300)};
+ 
+  --c-button--secondary-svg: #{palette(teal, 700)};
+  --c-button--secondary-svg--active: #{palette(blue, 300)};
 
   // @atoms/chip
   --c-chip: #{palette(teal, 300)};

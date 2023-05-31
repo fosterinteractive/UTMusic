@@ -1,6 +1,7 @@
 import hero from './content-header-event.twig';
 
-import contentHeadeEvent from './content-header-event.yml';
+import contentHeaderEvent from './content-header-event.yml';
+import contentHeaderEventText from './content-header-event--text.yml';
 
 /**
  * Storybook Definition with data documentation and controls
@@ -19,4 +20,5 @@ export default {
   },
 }
 
-export const ContentHeaderEvent = () => hero(contentHeadeEvent);
+export const ContentHeaderEvent = () => hero(contentHeaderEvent);
+export const ContentHeaderEventText = () => hero(contentHeaderEventText);

@@ -1,6 +1,6 @@
 // Video variation 
-.o-hero-media-news--video {
-  @extend %o-hero-media-news-core;
+.o-hero-media--video {
+  @extend %o-hero-media-core;
 
   iframe {
     width: 100%;
@@ -8,7 +8,7 @@
   }
 }
 
-.o-hero-media-news--video__image {
+.o-hero-media--video__image {
   grid-row: 2;
   grid-column: col 1 / span 12;
   border-radius: rem(12px);
@@ -20,7 +20,7 @@
   }
 }
 
-.o-hero-media-news--video__text-wrapper {
+.o-hero-media--video__text-wrapper {
   grid-row: 5;
   grid-column: col 1/ span 12;
 

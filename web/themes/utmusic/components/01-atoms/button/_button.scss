@@ -5,20 +5,38 @@
 %a-button--core {
   @extend %a-type--button;
 
-  display: inline-block;
+  // display: inline-block;
+  display: flex;
+  align-items: center;
   border: 1px solid transparent;
   text-align: center;
   text-decoration: none;
-  line-height: 1.2;
   cursor: pointer;
   transition: background-color 0.3s;
   appearance: none;
-  border-radius: rem(10px);
+  border-radius: rem(44px);
+
+
+  svg {
+    margin-left: calc(var(--spacer) * 0.5);
+    width: 1em;
+    height: 1em;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+
+    svg {
+      margin-left: calc(var(--spacer) * 0.7);;
+      transition: 0.2s ease-out;
+    }
+  }
 }
 
 // Default Padding (Medium)
 %a-button--padding {
-  padding: rem(10px) rem(25px);
+  padding: rem(4px) rem(20px);
 }
 
 %a-button--small-width {
@@ -39,27 +57,44 @@
   background-color: var(--c-button);
   color: var(--c-button-text);
 
+  svg {
+    color: var(--c-button-svg);
+    fill: currentColor;
+  }
+
   &:hover,
   &:focus,
   &:active {
     border-color: var(--c-button-border--active);
     background-color: var(--c-button--active);
     color: var(--c-button-text--active);
+
+    svg {
+      color: var(--c-button-svg--active);
+      fill: currentColor;
+    }
   }
 }
 
 // Secondary Button Style
 %a-button--secondary {
-  border: 1px solid var(--c-button-border--secondary);
-  background-color: var(--c-button--secondary);
   color: var(--c-button-text--secondary);
+  
+  svg {
+    color: var(--c-button--secondary-svg);
+    fill: currentColor;
+  }
 
   &:hover,
   &:focus,
   &:active {
     border-color: var(--c-button-border--secondary);
-    background-color: var(--c-button--secondary--active);
     color: var(--c-button-text--secondary--active);
+    
+    svg {
+      color: var(--c-button--secondary-svg--active);
+      fill: currentColor;
+    }
   }
 }
 
@@ -133,34 +168,20 @@
   @extend %a-button__icon--core;
 }
 
-.a-button--circle {
-  @extend %a-button--core;
-  // @extend %a-button--icon;
-  @extend %a-button;
 
-  padding: ru(0.55) ru(0.7);
-  border-radius: 50%;
-}
-
-.a-button--circle__icon {
-  @extend %a-button__icon--core;
-}
 
 // button position
 .a-button--right {
-  display: block;
   margin-left: auto;
   margin-right: 0;
 }
 
 .a-button--left {
-  display: block;
   margin-left: 0;
   margin-right: auto;
 }
 
 .a-button--center {
-  display: block;
   margin: 0 auto;
 }
 

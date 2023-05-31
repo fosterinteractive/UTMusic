@@ -1,0 +1,46 @@
+// Event variation
+.o-hero-media--event-text {
+  @extend %o-hero-media-core;
+  display: grid;
+
+}
+
+.o-hero-media--event-text .o-hero-media__bg-decoration {
+  @extend %o-hero-media__bg-decoration;
+}
+
+.o-hero-media--event-text__text-wrapper {
+  grid-row: 2;
+  grid-column: col 1 / span 12;
+
+  @include breakpoint($bp-tablet) {
+    grid-row: 2;
+    grid-column: col 1/ span 12;
+    display: flex;
+    gap: var(--spacer);
+  }
+}
+
+.o-hero-media--event-text__info_and_button {
+  @include breakpoint($bp-tablet) {
+    width: 33%;
+  }
+}
+
+.o-hero-media--event-text__tags {
+  @extend %o-hero-media-tags-no-border;
+}
+
+.o-hero-media--event-text__info {
+  @extend %o-hero-media--event__info;
+}
+
+.o-hero-media__info-date, 
+.o-hero-media__info-time,
+.o-hero-media__info-location {
+  @extend %o-hero-media--event__info-items;
+}
+
+.o-hero-media--event-text__button {
+  @extend %o-hero-media__button;
+}

@@ -5,6 +5,7 @@
   color: var(--c-text);
   font-weight: 400;
   font-style: normal;
+  line-height: $base-line-height;
 }
 
 p {
@@ -124,9 +125,9 @@ sup {
 }
 
 %a-type--button {
+  @extend %a-type--xmedium;
   font-family: $title-font-family;
   font-weight: bold;
-  font-size: rem(25px);
 }
 
 %a-type--headings,

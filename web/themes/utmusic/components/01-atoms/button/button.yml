@@ -1,5 +1,5 @@
 label: Primary Button
-variation: 
+variation: false
 html_element: a
 url: 'http://example.com'
 id: my-id
@@ -7,3 +7,4 @@ target: ""
 aria_label: Optional text read aloud by screen readers
 aria_labelledby:
 alignment: center
+icon: 'link-shevron'

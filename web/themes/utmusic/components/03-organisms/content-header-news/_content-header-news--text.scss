@@ -1,10 +1,10 @@
 // Only Text variation
-.o-hero-media-news--text {
-  @extend %o-hero-media-news-core;
+.o-hero-media--text {
+  @extend %o-hero-media-core;
   grid-template-rows: rem(160px) minmax(1px, max-content) rem(50px) rem(70px);
 }
 
-.o-hero-media-news--text__text-wrapper {
+.o-hero-media--text__text-wrapper {
   grid-row: 2;
   grid-column: col 1 / span 12;
 
@@ -13,7 +13,11 @@
   }
 }
 
+.o-hero-media--text__tags {
+  @extend %o-hero-media-tags-no-border;
+}
+
 //text on the blue bg
-.o-hero-media-news--text__credentials {
+.o-hero-media--text__credentials {
   color: palette(blue, 300);
 }

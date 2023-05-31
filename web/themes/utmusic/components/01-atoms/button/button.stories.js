@@ -5,7 +5,6 @@ import buttonDataSecondary from './button--secondary.yml';
 import buttonDataIconRight from './button--icon-right.yml';
 import buttonDataIconLeft from './button--icon-left.yml';
 import buttonDataIcon from './button--icon.yml';
-import buttonDataCircle from './button--circle.yml';
 
 
 /**
@@ -110,7 +109,7 @@ export default {
     // Icon
     icon: {
       description: 'SVG symbol ID generated from images/filename.svg',
-      defaultValue: 'hamburger',
+      defaultValue: 'link-shevron',
       control: {
         type: 'text'
       },
@@ -200,5 +199,3 @@ export const iconRight = () => button(buttonDataIconRight);
 export const iconLeft = () => button(buttonDataIconLeft);
 
 export const icon = () => button(buttonDataIcon);
-
-export const iconCircle = () => button(buttonDataCircle);

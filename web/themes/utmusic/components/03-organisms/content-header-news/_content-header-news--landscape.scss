@@ -1,9 +1,9 @@
 // Landscape Variation
-.o-hero-media-news--landscape {
-  @extend %o-hero-media-news-core;
+.o-hero-media--landscape {
+  @extend %o-hero-media-core;
 }
 
-.o-hero-media-news--landscape__image {
+.o-hero-media--landscape__image {
   grid-row: 2;
   grid-column: col 1 / span 12;
   
@@ -13,7 +13,7 @@
   }
 }
 
-.o-hero-media-news--landscape__text-wrapper {
+.o-hero-media--landscape__text-wrapper {
   grid-row: 5;
   grid-column: col 1/ span 12;
 

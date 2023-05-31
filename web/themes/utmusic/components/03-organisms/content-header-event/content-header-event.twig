@@ -1,128 +1,131 @@
-{% set decoration_color = decoration_color|default('') %}
+{# Set default hero class - 'o-hero' #}
+{% set variation = variation|default('') %}
 
-{% if decoration_color is not empty %}
+{% if variation is not empty %}
 
-  {# Add BEM decoration_color '--' prefix if missing #}
-  {% if decoration_color starts with '--' %}
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
     {# Do nothing #}
   {% else %}
-    {% set decoration_color = '--' ~ decoration_color %}
+    {% set variation = '--' ~ variation %}
   {% endif %} 
 
 {% endif %}
 
+<div class="o-hero-media{{ variation }}">
 
-<div class="o-hero-media--image-right">
+  <div class="o-hero-media__bg-decoration">
+    {# it's a placeholder for background #}
+    {% if sb_demo %}
+      <div style="background:#EDF8FC; width:100%; height:100%; "></div>
+    {% else %}
+      <img alt="" aria-hidden="true" src="/themes/utmusic/images/header-color-min.png" />
+    {% endif %}
+  </div>
 
-  {% if hero_image %}
-    <div class="o-hero-media__image--image-right">
-      {{ hero_image }}
+  {% if image %}
+    <div class="o-hero-media__image {% if variation %}o-hero-media{{ variation }}__image{% endif %}">
+      {% if image %}
+        {{ image }}
+      {% endif %}
     </div>
   {% endif %}
 
-  <div class="o-hero-media__event-text--image-right-wrapper">
+  <div class="o-hero-media__text {% if variation %}o-hero-media{{ variation }}__text-wrapper{% endif %}">
 
-    <div class="o-hero-media__text--image-right">
+    <div class="o-hero-media__text {% if variation %}o-hero-media{{ variation }}__text{% endif %}">
       {% if title_prefix or title %}
-        <h1 class="a-heading__h1-large">
+        <h1 class="a-heading__h1">
           {% if title_prefix %}
-            <span class='o-hero-media__title-prefix--image-right'>{{ title_prefix }}</span>
+            <span class='o-hero-media__title-prefix {% if variation %}o-hero-media{{ variation }}__title-prefix{% endif %}'>
+              {{ title_prefix }}
+            </span>
           {% endif %}
-          <span class='o-hero-media__title'>{{ title }}</span>
+          
+          {% if title %}
+            <span class='o-hero-media__title'>
+              {{ title }}
+            </span>
+          {% endif %}
         </h1>
       {% endif %}
 
-      {% if sub_title %}
-        <div class="o-hero-media__event-subtitle">
-          {{ sub_title }}
+      {% if summary %}
+        <div class="o-hero-media__summary {% if variation %}o-hero-media{{ variation }}__summary{% endif %}">
+          {{ summary }}
         </div>
       {% endif %}
 
-      {# ToDo - Review if we need sumary #}
-      {# {% if summary %}
-        <div class="o-hero-media__event-summary">
-          {{ summary }}
+      {% if event_types %}
+        <div class="o-hero-media__tags {% if variation %}o-hero-media{{variation}}__tags{% endif %}">
+          {% for item in event_types %}
+            {% include '@atoms/chip/chip.twig' with {
+                text: sb_demo ? item.type : item,
+              } only 
+            %}
+          {% endfor %}
         </div>
-      {% endif %} #}
-
-      <div class="o-hero-media__event-registration">
-        {# {{'Registration is required'|t}} #}
-        {% include "@atoms/text/headings/heading.twig" with {
-          html_element: 'p',
-          appearance: 'h5',
-          text: 'Registration is required'|t,
-          url: false,
-          id: false,
-          } only
-        %}
-      </div>
-
-      <div class="o-hero-media__event-information-wraper">
-        {% if date %}
-          <div class="o-hero-media__event-information">
-            <span class='o-hero-media__event-information-label'>{{ 'Date'|t }}</span>
-            <span class='o-hero-media__event-information-label-details'>{{ date }}</span>
-          </div>
-        {% endif %}
-        {% if start_time %}
-          <div class="o-hero-media__event-information">
-            <span class='o-hero-media__event-information-label'>{{ 'Time'|t }}</span>
-            <span class='o-hero-media__event-information-label-details'>{{ start_time }}{% if end_time%}&nbsp;-&nbsp;{{end_time}}{% endif %}{% if timezone %}&nbsp;{{timezone}}{% endif %}</span>
-          </div>
-        {% endif %}
-        {% if event_type %}
-          <div class="o-hero-media__event-information">
-            <span class='o-hero-media__event-information-label'>{{ 'Event Type'|t }}</span>
-            <span class='o-hero-media__event-information-label-details'>{{ event_type }}</span>
-          </div>
-        {% endif %}
-        {% if program_type %}
-          <div class="o-hero-media__event-information">
-            <span class='o-hero-media__event-information-label'>{{ 'Program Type'|t }}</span>
-            <span class='o-hero-media__event-information-label-details'>{{ program_type }}</span>
-          </div>
-        {% endif %}
-        {% if address %}
-          <div class="o-hero-media__event-information">
-            <span class='o-hero-media__event-information-label'>{{ 'Address'|t }}</span>
-            <span class='o-hero-media__event-information-label-details--address'>{{ address }}</span>
-          </div>
-        {% endif %}
-        
-
-        {% if register_link_url_primary %}
-          <div class="o-hero-media__event-information-register-btn">
-            {% include "@atoms/button/button.twig" with {
-                url: register_link_url_primary,
-                label: register_link_text_primary,
-                aria_label: button_aria_label_primary,
-                aria_labelledby: button_aria_labelledby_primary
-              } only
-            %}
-          </div>
-        {% endif %}
-
-        {% if register_link_url_secondary %}
-          <div class="o-hero-media__event-information-register-btn">
-            {% include "@atoms/button/button.twig" with {
-                url: register_link_url_secondary,
-                label: register_link_text_secondary,
-                aria_label: button_aria_label_secondary,
-                aria_labelledby: button_aria_labelledby_secondary
-              } only
-            %}
-          </div>
-        {% endif %}
-      </div>
-
+      {% endif %}
     </div>
+
+    {% if variation == '--event-text' %}
+    <div class="o-hero-media--event-text__info_and_button">
+    {% endif %}
+      {% if event_date or event_time or event_location %}
+        <div class="o-hero-media__info {% if variation %}o-hero-media{{variation}}__info{% endif %}">
+          <div class="o-hero-media__info-date">
+            {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                directory: directory,
+                icon: 'calendar',
+              } only 
+            %}
+            {{ event_date }}
+          </div>
+          <div class="o-hero-media__info-time">
+            {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                directory: directory,
+                icon: 'timer',
+              } only 
+            %}
+            {{ event_time }}
+          </div>
+          <div class="o-hero-media__info-location">
+            {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                directory: directory,
+                icon: 'location',
+              } only 
+            %}
+            {{ event_location }}
+          </div>
+          
+        </div>
+      {% endif %}
+
+      {% if url and label %}
+        <div class="o-hero-media__button {% if variation %}o-hero-media{{variation}}__button{% endif %}">
+          {% include "@atoms/button/button.twig" with {
+              label: label,
+              html_element: 'a',
+              variation: '',
+              url: url,
+              target: target,
+              aria_label: aria_label,
+              icon: 'external link',
+              alignment: 'left',
+            } only
+          %}
+        </div>
+      {% endif %}
+    {% if variation == '--event-text' %}
+    </div>
+    {% endif %}
+
   </div>
 
-  <div class="l-section__decoration-top o-hero-media__decoration{{ decoration_color }}">
-    {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
-      directory: directory,
-      icon: 'brush1',
-      base_class: 'l-section__decoration-svg',
-    } only %}
-  </div>
+  {% if breadcrumbs is not empty and not is_front %}
+    <div class="o-hero-media__breadcrumbs {% if variation %}o-hero-media{{variation}}__breadcrumbs{% endif %}">
+    {{ breadcrumbs }}
+    </div>
+  {% endif %}
+
 </div>

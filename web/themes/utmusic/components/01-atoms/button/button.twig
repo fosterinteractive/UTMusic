@@ -13,7 +13,7 @@
 
   
   {# Set default icon all icon variations #}
-  {% if variation == '--icon' or variation == '--icon-left' or variation == '--icon-right' or variation == '--circle' %} 
+  {% if variation == '--icon' or variation == '--icon-left' or variation == '--icon-right' %} 
     {% set icon = icon|default('external-link-square-alt') %}
   {% endif %}   
 
@@ -68,7 +68,7 @@
   {% endif %}
 
   {# --icon variation is the button + icon without visible text. Label is visually hidden #}
-  {% if variation != '--icon' and variation != '--circle' %}
+  {% if variation != '--icon' %}
     {{ label }}
   {% else %} 
     <div class="u-visually--hidden">{{ label }}</div>
@@ -76,7 +76,7 @@
 
 
   {# If variation is --icon or --icon-right attach svg icon before label #}
-  {% if variation == '--icon-right' or variation == '--icon' or variation == '--circle' %}
+  {% if variation == '--icon-right' or variation == '--icon' or variation == '--secondary' or variation == false %}
     {% if icon %}
       {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
         directory: directory,
