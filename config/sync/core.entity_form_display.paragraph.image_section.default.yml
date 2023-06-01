@@ -3,11 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.image_section.field_image_section_icon
-    - field.field.paragraph.image_section.field_image_section_icon_align
     - field.field.paragraph.image_section.field_image_section_image
     - field.field.paragraph.image_section.field_image_section_image_crop
-    - field.field.paragraph.image_section.field_image_section_img_decor
     - paragraphs.paragraphs_type.image_section
   module:
     - field_group
@@ -53,21 +50,6 @@ targetEntityType: paragraph
 bundle: image_section
 mode: default
 content:
-  field_image_section_icon:
-    type: media_library_widget
-    weight: 2
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings:
-      media_library_edit:
-        show_edit: '1'
-  field_image_section_icon_align:
-    type: options_select
-    weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_image_section_image:
     type: media_library_widget
     weight: 3
@@ -80,12 +62,6 @@ content:
   field_image_section_image_crop:
     type: options_select
     weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_image_section_img_decor:
-    type: options_select
-    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
