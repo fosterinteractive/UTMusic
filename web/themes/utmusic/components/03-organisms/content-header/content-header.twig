@@ -26,14 +26,18 @@
     {% endif %}
   </div>
 
-  {% if image %}
+  {% if image or image_first or image_second %}
     <div class="o-hero-media__image {% if variation %}o-hero-media{{ variation }}__image{% endif %}">
       {% if image %}
         {{ image }}
-      {# {% elseif image_landscape %}
-        {{ image_landscape }}
-      {% else %}
-        {{ video }} #}
+      {% elseif image_first and image_second %}
+        <div class="o-hero-media{{ variation}}__image-first">
+          {{ image_first }}
+        </div>
+        <div class="o-hero-media{{ variation}}__image-second">
+          {{ image_second }}
+        </div>
+     
       {% endif %}
     </div>
   {% endif %}

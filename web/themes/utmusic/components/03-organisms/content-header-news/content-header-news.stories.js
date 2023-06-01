@@ -22,8 +22,9 @@ export default {
   },
 }
 
-export const ContentHeaderNewsImageLandscape = () => heroNews(contentHeaderLandscapeData);
 export const ContentHeaderNewsImagePortrait = () => heroNews(contentHeaderPortraitData);
+
+export const ContentHeaderNewsImageLandscape = () => heroNews(contentHeaderLandscapeData);
 export const ContentHeaderNewsVideo = () => heroNews(contentHeaderVideoData);
 
 export const ContentHeaderNewsText = () => heroNews(contentHeaderTextData);

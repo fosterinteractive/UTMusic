@@ -1,10 +1,10 @@
 import hero from './content-header.twig';
 
 import contentHeaderImageData from './content-header--image.yml';
-
-import contentHeaderLandscapeData from './content-header--landscape.yml';
-import contentHeaderVideoData from './content-header--video.yml';
 import contentHeaderTextData from './content-header--text.yml';
+import contentHeaderTwoImages1Data from './content-header--two-images-1.yml';
+import contentHeaderTwoImages2Data from './content-header--two-images-2.yml';
+
 
 /**
  * Storybook Definition with data documentation and controls
@@ -24,9 +24,8 @@ export default {
 }
 
 export const ContentHeaderImage = () => hero(contentHeaderImageData);
-
-export const ContentHeaderImageLandscape = () => hero(contentHeaderLandscapeData);
-export const ContentHeaderVideo = () => hero(contentHeaderVideoData);
-
 export const ContentHeaderText = () => hero(contentHeaderTextData);
+
+export const ContentHeaderTwoImages1 = () => hero(contentHeaderTwoImages1Data);
+export const ContentHeaderTwoImages2 = () => hero(contentHeaderTwoImages2Data);
 
