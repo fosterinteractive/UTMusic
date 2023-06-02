@@ -17,10 +17,11 @@
 .a-icon--xxsmall {
   @extend %a-icon__core;
 
-  width: rem(40px);
-  height: rem(40px);
+  width: rem(30px);
+  height: rem(30px);
 }
 
+// Default Size
 %a-icon--xsmall,
 .a-icon--xsmall {
   @extend %a-icon__core;
@@ -37,7 +38,6 @@
   height: rem(68px);
 }
 
-// Default Size
 %a-icon--medium,
 .a-icon--medium {
   @extend %a-icon__core;
@@ -72,7 +72,7 @@ $icon-size: 0.6em;
   display: inline-block;
   width: $icon-size;
   height: $icon-size;
-  vertical-align: bottom;
+  vertical-align: middle;
   fill: currentColor;
 }
 
@@ -90,46 +90,46 @@ $icon-size: 0.6em;
   @extend  %a-icon__core;
 }
 
+// Default Size
 %a-icon-external--xsmall svg,
 .a-icon-external--xsmall svg {
   @extend %a-icon-external-svg;
 
-  width: rem(48px);
-  height: rem(42px);
+  width: rem(32px);
+  height: rem(37px);
 }
 
-%a-icon-external--small svg,
-.a-icon-external--small svg {
-  @extend %a-icon-external-svg;
+// %a-icon-external--small svg,
+// .a-icon-external--small svg {
+//   @extend %a-icon-external-svg;
 
-  width: rem(78px);
-  height: rem(68px);
-}
+//   width: rem(78px);
+//   height: rem(68px);
+// }
 
-// Default Size
-%a-icon-external--medium svg,
-.a-icon-external--medium svg {
-  @extend %a-icon-external-svg;
+// %a-icon-external--medium svg,
+// .a-icon-external--medium svg {
+//   @extend %a-icon-external-svg;
 
-  width: rem(108px);
-  height: rem(94px);
-}
+//   width: rem(108px);
+//   height: rem(94px);
+// }
 
-%a-icon-external--large svg,
-.a-icon-external--large svg {
-  @extend %a-icon-external-svg;
+// %a-icon-external--large svg,
+// .a-icon-external--large svg {
+//   @extend %a-icon-external-svg;
 
-  width: rem(184px);
-  height: rem(160px);
-}
+//   width: rem(184px);
+//   height: rem(160px);
+// }
 
-%a-icon-external--xlarge svg,
-.a-icon-external--xlarge svg {
-  @extend %a-icon-external-svg;
+// %a-icon-external--xlarge svg,
+// .a-icon-external--xlarge svg {
+//   @extend %a-icon-external-svg;
 
-  width: rem(243px);
-  height: rem(216px);
-}
+//   width: rem(243px);
+//   height: rem(216px);
+// }
 
 //do not show field fith icon-size wich we use as a key to set size for svg
 .a-icon-external--description {

@@ -59,7 +59,16 @@
           {% if id and url %}
             id="{{ id }}"
           {% endif %}
-  
+
+          {% if target %}
+            target="{{ target }}"
+          {% endif %}
+
+          {# Optional Arial Label for ambigious links "read more" with a Heading near it in the DOM #}
+          {% if aria_label %}
+            aria-label="{{ aria_label }}"
+          {% endif %} 
+
           {% if data_attribute %}
             {{ data_attribute|raw }}
           {% endif %}

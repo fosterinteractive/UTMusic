@@ -18,9 +18,9 @@
 
 
   svg {
-    margin-left: calc(var(--spacer) * 0.5);
-    width: 0.8em;
-    height: 1em;
+    margin-left: calc(var(--spacer) * 0.1);
+    width: 0.7em;
+    height: 0.6em;
   }
 
   &:hover,
@@ -28,7 +28,7 @@
   &:focus {
 
     svg {
-      margin-left: calc(var(--spacer) * 0.7);;
+      margin-left: calc(var(--spacer) * 0.3);;
       transition: 0.2s ease-out;
     }
   }
@@ -78,12 +78,13 @@
 
 // Secondary Button Style
 %a-button--secondary {
-  padding-left: 0;
+  display: inline-block;
   color: var(--c-button-text--secondary);
   
   svg {
     color: var(--c-button--secondary-svg);
     fill: currentColor;
+    
   }
 
   &:hover,

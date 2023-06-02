@@ -94,6 +94,8 @@
   --c-card-text: #{palette(grey, 300)};
   --c-card--illustration: #{palette(teal, 300)};
   --c-card--illustration-bg: #{palette(teal, 700)};
+  --c-card-link: #{palette(blue, 300)};
+  --c-card-link--active: #{palette(teal, 300)};
 
   // @organisms/listing
   --c-listing-item--border: #{palette(teal, 700)};

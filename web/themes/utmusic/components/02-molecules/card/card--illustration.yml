@@ -9,5 +9,6 @@ title: 'Undergraduates'
 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
 link_url: '/'
 link_label: 'Learn about our Undergraduate Programs '
+aria_label: test
 title_appearance: h3
 categories: 

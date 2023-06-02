@@ -2,9 +2,6 @@
 .m-card--illustration {
   @extend %m-card;
 
-  // .a-heading__last-word {
-  //   padding-right: 0;
-  // }
 }
 
 .m-card__image-illustration {
@@ -13,9 +10,11 @@
   color: var(--c-card--illustration);
   margin-left: -15px;
 
+  .a-icon-external--xsmall,
   svg {
     grid-column: col 1 /span 2;
     grid-row: 1;
+    z-index: 1;
   }
 }
 
@@ -56,4 +55,12 @@
   
 .m-card--illustration__description {
   @extend %m-card__description;
+}
+
+.m-card--illustration__link {
+  a {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+  }
 }

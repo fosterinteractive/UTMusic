@@ -104,16 +104,17 @@
 
   {% if link_url and link_label %}
     <div class="m-card{{ variation }}__link">
-      {% include '@atoms/button/button.twig' with {
-          base_class: 'a-button',
-          label: link_label,
-          variation: 'secondary',
-          html_element: 'a',
-          url: link_url,
-          aria_label: aria_label,
-          alignment: 'left',
-        } only
-      %}
+        {% include '@atoms/button/button.twig' with {
+            directory: directory,
+            base_class: 'a-button',
+            label: link_label,
+            variation: 'secondary',
+            html_element: 'a',
+            url: link_url,
+            aria_label: aria_label,
+            alignment: 'left',
+          } only
+        %} 
     </div>
   {% endif %}
 </div>

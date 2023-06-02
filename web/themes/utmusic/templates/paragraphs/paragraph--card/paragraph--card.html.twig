@@ -59,54 +59,47 @@
   {% endif %}
 {% endif %}
 
+{# Get categories #}
+{% set categories = [] %}
+{% if content.field_card_categories[0] %}
+  {% set count = content.field_card_categories['#items'].getIterator()|length -1 %}
+
+  {% for i in 0..count %}
+    {% set categories = categories|merge([content.field_card_categories[i]]) %}
+  {% endfor %}
+{% endif %}
+
+
 {% set variation = content.field_card_variation[0] ? content.field_card_variation[0]['#markup'] %}
+
 {% set illustration_file_type = content.field_card_illustration[0] ? content.field_card_illustration[0]['#media'].field_media_image.entity.filemime.value %}
 {% set illustration = content.field_card_illustration[0] ? content.field_card_illustration %}
-{% set title = content.field_card_title[0] ? content.field_card_title[0]['#text'] %}
-{% set title_position = content.field_card_title_position[0] ? content.field_card_title_position[0]['#markup'] %}
-{% set title_appearance = content.field_card_title_appearance[0] ? content.field_card_title_appearance[0]['#markup'] %}
-{% set description = content.field_card_description[0] ? content.field_card_description %}
-{% set card_decoration = content.field_card_decoration[0] ? content.field_card_decoration[0]['#markup'] %}
 {% set illustration_size = content.field_card_illustration_size[0] ? content.field_card_illustration_size[0]['#markup'] %}
-{% set image_variation = content.field_card_image_decoration[0] ? content.field_card_image_decoration[0]['#markup'] %}
+
+{% set title = content.field_card_title[0] ? content.field_card_title[0]['#text'] %}
+{% set title_appearance = content.field_card_title_appearance[0] ? content.field_card_title_appearance[0]['#markup'] %}
+{% set title_html_element = content.field_card_title_html_element[0] ? content.field_card_title_html_element[0]['#markup'] %}
+
+{% set description = content.field_card_description[0] ? content.field_card_description %}
 {% set link_label = content.field_card_button_label[0] ? content.field_card_button_label[0]['#text'] %}
 {% set link_url = content.field_card_button_url[0] ? content.field_card_button_url[0]['#url'] %}
 {% set aria_label = content.field_card_button_aria_label[0] ? content.field_card_button_aria_label[0]['#context'].value %}
-{% set title_html_element = content.field_card_title_html_element[0] ? content.field_card_title_html_element[0]['#markup'] %}
-
-{% set image = content.field_card_image_contextual[0] ? content.field_card_image_contextual %}
 
 
-{% if variation == 'horizontal' %}
-  {% include "@molecules/card/card--horizontal.twig" with {
-      directory: 'themes/utmusic',
-      variation: variation,
-      illustration: illustration,
-      illustration_file_type: illustration_file_type,
-      image: image,
-      title: title,
-      title_html_element: title_html_element,
-      description: description,
-    }
-  %}
-{% else %}
-  {% include "@molecules/card/card.twig" with {
-      directory: 'themes/utmusic',
-      variation: variation,
-      card_decoration: card_decoration,
-      illustration: illustration,
-      illustration_file_type: illustration_file_type,
-      illustration_size: illustration_size,
-      image: image,
-      image_variation: image_variation,
-      title: title,
-      title_position: title_position,
-      title_appearance: title_appearance,
-      title_html_element: title_html_element,
-      description: description,
-      link_label: link_label,
-      link_url: link_url,
-      aria_label: aria_label,
-    }
-  %}
-{% endif %}
+{% include "@molecules/card/card.twig" with {
+    directory: 'themes/utmusic',
+    variation: variation,
+    illustration: illustration,
+    illustration_file_type: illustration_file_type,
+    illustration_size: illustration_size,
+    image: image,
+    title: title,
+    title_appearance: title_appearance,
+    title_html_element: title_html_element,
+    description: description,
+    categories: categories,
+    link_label: link_label,
+    link_url: link_url,
+    aria_label: aria_label,
+  }
+%}
