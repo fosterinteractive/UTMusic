@@ -1,0 +1,88 @@
+uuid: 22c0041d-40cf-4f24-95f5-d3cf9afdd337
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_carousel_header_card1
+    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.carousel_header
+  module:
+    - entity_reference_revisions
+id: paragraph.carousel_header.field_carousel_header_card1
+field_name: field_carousel_header_card1
+entity_type: paragraph
+bundle: carousel_header
+label: 'Card 1'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      card: card
+    negate: 0
+    target_bundles_drag_drop:
+      button:
+        weight: 21
+        enabled: false
+      card:
+        weight: 22
+        enabled: true
+      carousel_header:
+        weight: 23
+        enabled: false
+      carousel_image_group:
+        weight: 24
+        enabled: false
+      events_full_list_dynamic:
+        weight: 25
+        enabled: false
+      events_summary_list_dynamic:
+        weight: 26
+        enabled: false
+      header:
+        weight: 27
+        enabled: false
+      image_section:
+        weight: 28
+        enabled: false
+      inline_menu:
+        weight: 29
+        enabled: false
+      message:
+        weight: 30
+        enabled: false
+      news_full_list_dynamic:
+        weight: 31
+        enabled: false
+      news_summary_list_dynamic:
+        weight: 32
+        enabled: false
+      poster:
+        weight: 33
+        enabled: false
+      quote:
+        weight: 34
+        enabled: false
+      section:
+        weight: 35
+        enabled: false
+      section_title:
+        weight: 36
+        enabled: false
+      soundcloud:
+        weight: 37
+        enabled: false
+      text:
+        weight: 38
+        enabled: false
+      text_image:
+        weight: 39
+        enabled: false
+      video:
+        weight: 40
+        enabled: false
+field_type: entity_reference_revisions

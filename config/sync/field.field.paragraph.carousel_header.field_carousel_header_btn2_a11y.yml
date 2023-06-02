@@ -1,0 +1,19 @@
+uuid: 24d739f2-cf91-43f3-aa7c-8b83a928350a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_carousel_header_btn2_a11y
+    - paragraphs.paragraphs_type.carousel_header
+id: paragraph.carousel_header.field_carousel_header_btn2_a11y
+field_name: field_carousel_header_btn2_a11y
+entity_type: paragraph
+bundle: carousel_header
+label: 'Accessible  Label 2'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

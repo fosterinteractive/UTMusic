@@ -1,0 +1,26 @@
+uuid: 5276f65b-0868-4d32-995d-7bbc943c944d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_carousel_header_btn2_label
+    - paragraphs.paragraphs_type.carousel_header
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
+id: paragraph.carousel_header.field_carousel_header_btn2_label
+field_name: field_carousel_header_btn2_label
+entity_type: paragraph
+bundle: carousel_header
+label: 'Secondary Button Label'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

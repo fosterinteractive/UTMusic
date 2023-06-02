@@ -1,0 +1,21 @@
+uuid: b70e6fec-ae2f-4310-9a4e-a93ae193fee4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_carousel_header_sec_layout
+    - paragraphs.paragraphs_type.carousel_header
+  module:
+    - options
+id: paragraph.carousel_header.field_carousel_header_sec_layout
+field_name: field_carousel_header_sec_layout
+entity_type: paragraph
+bundle: carousel_header
+label: 'Section Layout'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

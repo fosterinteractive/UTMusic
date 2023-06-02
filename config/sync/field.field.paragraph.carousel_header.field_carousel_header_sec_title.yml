@@ -1,0 +1,26 @@
+uuid: 7567921b-f95d-4fe0-9d7d-2b3f9d0193a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_carousel_header_sec_title
+    - paragraphs.paragraphs_type.carousel_header
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
+id: paragraph.carousel_header.field_carousel_header_sec_title
+field_name: field_carousel_header_sec_title
+entity_type: paragraph
+bundle: carousel_header
+label: 'Section Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

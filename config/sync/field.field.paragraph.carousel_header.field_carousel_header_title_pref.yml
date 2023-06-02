@@ -1,0 +1,19 @@
+uuid: ca837f45-527f-4ca8-9666-5da720b9859e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_carousel_header_title_pref
+    - paragraphs.paragraphs_type.carousel_header
+id: paragraph.carousel_header.field_carousel_header_title_pref
+field_name: field_carousel_header_title_pref
+entity_type: paragraph
+bundle: carousel_header
+label: 'Title Prefix'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -7,6 +7,7 @@ dependencies:
     - node.type.page
     - paragraphs.paragraphs_type.button
     - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.carousel_header
     - paragraphs.paragraphs_type.events_full_list_dynamic
     - paragraphs.paragraphs_type.events_summary_list_dynamic
     - paragraphs.paragraphs_type.image_section
@@ -54,6 +55,7 @@ settings:
       events_summary_list_dynamic: events_summary_list_dynamic
       soundcloud: soundcloud
       video: video
+      carousel_header: carousel_header
       text_image: text_image
     negate: 0
     target_bundles_drag_drop:
@@ -63,6 +65,12 @@ settings:
       card:
         weight: -34
         enabled: true
+      carousel_header:
+        weight: 23
+        enabled: true
+      carousel_image_group:
+        weight: 24
+        enabled: false
       events_full_list_dynamic:
         weight: -29
         enabled: true

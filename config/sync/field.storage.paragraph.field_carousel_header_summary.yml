@@ -1,0 +1,19 @@
+uuid: 43d7930d-ef42-4e18-892b-42c67cfbaae4
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_carousel_header_summary
+field_name: field_carousel_header_summary
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

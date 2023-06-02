@@ -1,0 +1,26 @@
+uuid: 1036125d-7cd8-4e09-9510-702c3c6de56e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_carousel_header_summary
+    - paragraphs.paragraphs_type.carousel_header
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - rich_text
+id: paragraph.carousel_header.field_carousel_header_summary
+field_name: field_carousel_header_summary
+entity_type: paragraph
+bundle: carousel_header
+label: Summary
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
