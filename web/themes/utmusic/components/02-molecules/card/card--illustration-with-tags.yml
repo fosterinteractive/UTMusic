@@ -1,0 +1,19 @@
+sb_demo: true
+variation: 'illustration'
+id: 'card-nid-1'
+illustration: undergraduates
+illustration_size: xsmall
+image: 
+image_variation: 
+title: 'Undergraduates'
+description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+link_url: '/'
+link_label: 'Learn about our Undergraduate Programs '
+title_appearance: h3
+categories: 
+  1:
+    category: 4 years 
+  2:
+    category: 20 credits
+  3:
+    category: Full-time

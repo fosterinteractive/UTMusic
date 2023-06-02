@@ -1,0 +1,119 @@
+{% set variation = variation|default('illustration') %}
+
+{% set illustration_size = illustration_size|default('xsmall') %}
+{% set title_appearance = title_appearance|default('h3') %}
+{% set title_html_element = title_html_element|default('h3') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+{# url is coming for title #}
+<div class="m-card{{ variation }}">
+  {% if variation == '--illustration' %}
+    {% if illustration %}
+      <div class="m-card__image-illustration">
+        {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+          directory: directory,
+          base_class: 'a-icon',
+          icon_file_type: illustration_file_type,
+          icon: illustration,
+          size: illustration_size, 
+          } only
+        %}
+        <div class="m-card__image-illustration-bg"></div>
+      </div>
+    {% endif %}
+  {% else %}
+    {% if image %}
+      <div class="m-card{{ variation }}__image">
+        {% include "@molecules/image/image.twig" with {
+          directory: directory,
+          image: image,
+          variation: image_variation,
+          icon_file_type: illustration_file_type,
+          icon: illustration,
+          icon_alignment: 'right',
+          } only
+        %}
+      </div>
+    {% endif %}
+
+    {# Title #}
+    {# {% if title %}
+      {% set link_url_on_title = link_label ? false : link_url %}
+      <div class="m-card{{ variation }}__title">
+        {% include "@atoms/text/headings/heading.twig" with {
+            html_element: title_html_element,
+            appearance: title_appearance,
+            text: title,
+            url: link_url_on_title,
+            id: id,
+            alignment: 'center',
+            directory: directory,
+          } only
+        %}
+      </div>
+    {% endif %} #}
+  {% endif %}
+
+  <div class="m-card{{ variation }}__main">
+    {# Title #}
+    {% if title %}
+      {% set link_url_on_title = link_label ? false : link_url %}
+      <div class="m-card{{ variation }}__title">
+        {% include "@atoms/text/headings/heading.twig" with {
+            html_element: title_html_element,
+            appearance: title_appearance,
+            text: title,
+            url: link_url_on_title,
+            id: id,
+            alignment: 'left',
+            directory: directory,
+          } only
+        %}
+      </div>
+    {% endif %}
+
+    {% if description  %}
+      <div class="m-card{{ variation }}__description">
+        {{ description }}
+      </div>
+    {% endif %}
+
+    
+  </div>
+
+  {% if categories %}
+    <div class="m-card__tags {% if variation %}m-card{{ variation }}__tags{% endif %}">
+      {% for item in categories %}
+        {% include '@atoms/chip/chip.twig' with {
+            text: sb_demo ? item.category : item,
+          } only 
+        %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if link_url and link_label %}
+    <div class="m-card{{ variation }}__link">
+      {% include '@atoms/button/button.twig' with {
+          base_class: 'a-button',
+          label: link_label,
+          variation: 'secondary',
+          html_element: 'a',
+          url: link_url,
+          aria_label: aria_label,
+          alignment: 'left',
+        } only
+      %}
+    </div>
+  {% endif %}
+</div>

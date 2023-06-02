@@ -87,20 +87,13 @@
   --c-quote--suorce-type--bg: #{palette(black, 200)};
 
   // @molecules/card
-  --c-card--horizontal-background: #{palette(blue, 900)};
-  --c-card--horizontal-text: #{palette(black, 200)};
+  --c-card-left-border: #{palette(grey, 800)};
   --c-card-background: #{palette(white)};
-  --c-card-border: #{palette(black, 200)};
-  --c-card-icon-background: #{palette(blue, 300)};
-  --c-card-title: #{palette(black, 200)};
+  --c-card-title: #{palette(teal, 300)};
   --c-card-title--active: #{palette(black, 200)};
-  --c-card--bordered-title: #{palette(black, 200)};
-  --c-card--bordered-title--active: #{palette(black, 200)};
-  --c-card--bordered-text: #{palette(black, 200)};
-  --c-card--image-highlight-below-text: #{palette(black, 200)};
-  --c-card--image-highlight-below-bg: #{palette(blue, 300)};
-  --c-card--illustration: #{palette(black, 200)};
-  --c-card--image-text:  #{palette(black, 200)};
+  --c-card-text: #{palette(grey, 300)};
+  --c-card--illustration: #{palette(teal, 300)};
+  --c-card--illustration-bg: #{palette(teal, 700)};
 
   // @organisms/listing
   --c-listing-item--border: #{palette(teal, 700)};
@@ -220,11 +213,11 @@
 // }
 
 
-.theme--light-blue-bg {
-  @extend %theme--light-bg;
-  // Section Background
-  --c-section-background: #{palette(teal, 1000)};
-}
+// .theme--light-blue-bg {
+//   @extend %theme--light-bg;
+//   // Section Background
+//   --c-section-background: #{palette(teal, 1000)};
+// }
 
 
 

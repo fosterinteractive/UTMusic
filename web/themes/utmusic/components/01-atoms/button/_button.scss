@@ -19,7 +19,7 @@
 
   svg {
     margin-left: calc(var(--spacer) * 0.5);
-    width: 1em;
+    width: 0.8em;
     height: 1em;
   }
 
@@ -78,6 +78,7 @@
 
 // Secondary Button Style
 %a-button--secondary {
+  padding-left: 0;
   color: var(--c-button-text--secondary);
   
   svg {
@@ -88,7 +89,8 @@
   &:hover,
   &:focus,
   &:active {
-    border-color: var(--c-button-border--secondary);
+    text-decoration: underline;
+    // border-color: var(--c-button-border--secondary);
     color: var(--c-button-text--secondary--active);
     
     svg {

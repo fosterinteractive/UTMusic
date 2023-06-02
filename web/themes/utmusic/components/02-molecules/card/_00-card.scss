@@ -1,0 +1,84 @@
+%overlay-link-card {
+  // Overlay link.
+  a::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+  }
+}
+
+%m-card,
+.m-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer);
+  width: 100%; // Required for IE 11 Hack
+  align-items: flex-start;
+  padding-left: var(--spacer);
+  border-left: rem(1px) solid var(--c-card-left-border);
+}
+
+%m-card__title,
+.m-card__title {
+  @extend %overlay-link-card;
+
+  color: var(--c-card-title);
+
+  h2, h3, span {
+    color: var(--c-card-title);
+    margin-bottom: 0;
+    display: inline-block;
+  }
+
+  a {
+    color: var(--c-card-title) !important;
+
+    svg {
+      fill: currentColor !important;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--c-card-title--active);
+
+      .a-heading__last-word {
+        text-decoration: underline;
+      }
+    }
+
+    span {
+      padding: 0;
+    }
+  }
+}
+
+%m-card__main,
+.m-card__main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: calc(var(--spacer) * 0.3);
+}
+
+%m-card__description,
+.m-card__description {
+  @extend %u-remove-child--margin-top-bottom;
+  @extend %a-type--small;
+
+  color: var(--c-card-text);
+  flex-grow: 1;
+
+  p {
+    color: var(--c-card-text);
+  }
+}
+
+.m-card__link {
+  @extend %overlay-link-card;
+}
+

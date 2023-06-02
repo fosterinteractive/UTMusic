@@ -15,8 +15,9 @@
   {# Set default icon all icon variations #}
   {% if variation == '--icon' or variation == '--icon-left' or variation == '--icon-right' %} 
     {% set icon = icon|default('external-link-square-alt') %}
+  {% else %}
+    {% set icon = icon|default('link-shevron') %}
   {% endif %}   
-
 {% endif %}
 
 {# Component can be either <a> (default) or <button> #}

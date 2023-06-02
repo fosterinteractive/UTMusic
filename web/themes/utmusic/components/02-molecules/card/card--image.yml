@@ -1,0 +1,10 @@
+sb_demo: true
+variation: 'image'
+id: 'card-nid-1'
+image: "<img src='https://picsum.photos/id/57/700/700' alt='alt text example'/>"
+image_variation: rounded-corners
+title: 'Undergraduates'
+description:  
+link_url:  
+link_label:  
+title_appearance: h2

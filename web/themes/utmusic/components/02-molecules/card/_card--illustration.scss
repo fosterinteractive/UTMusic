@@ -1,0 +1,59 @@
+// Card Illustration
+.m-card--illustration {
+  @extend %m-card;
+
+  // .a-heading__last-word {
+  //   padding-right: 0;
+  // }
+}
+
+.m-card__image-illustration {
+  display: grid;
+  grid-template-columns: auto rem(15px) auto;
+  color: var(--c-card--illustration);
+  margin-left: -15px;
+
+  svg {
+    grid-column: col 1 /span 2;
+    grid-row: 1;
+  }
+}
+
+.m-card__image-illustration-bg {
+  width: rem(37px);
+  height: rem(37px);
+  border-radius: 50%;
+  background-color: var(--c-card--illustration-bg);
+  grid-column: col 2 / span 2;
+  grid-row: 1;
+}
+  
+.m-card--illustration__title {
+  @extend %m-card__title;
+
+  text-align: center;
+
+  h2, h3, span {
+    display: inline-block;
+  }
+
+  h2 a, h3 a, span a {
+    color: var(--c-card-title) !important;
+    
+    span {
+      padding: 0;
+    }
+  }
+
+  svg {
+    fill: var(--c-card-title) !important;
+  }
+}
+  
+.m-card--illustration__main {
+  @extend %m-card__main;
+}
+  
+.m-card--illustration__description {
+  @extend %m-card__description;
+}

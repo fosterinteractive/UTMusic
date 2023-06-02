@@ -48,8 +48,9 @@
   white-space: nowrap;
 
   svg {
+    margin-left: calc(var(--spacer) * 0.5);
+    width: 0.8em;
     height: 1em;
-    width: 1em;
     vertical-align: middle;
   }
 }
