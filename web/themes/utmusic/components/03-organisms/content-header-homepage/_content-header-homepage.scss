@@ -1,0 +1,64 @@
+// Home Page header
+.o-hero-media--carousel {
+  display: grid;
+  grid-template-columns: [alpha] 1fr repeat(12, [col] minmax(1px, calc((65rem - (var(--spacer) * 11)) / 12))) 1fr [omega];
+  grid-template-rows: rem(160px) auto auto auto;
+  grid-column-gap: var(--spacer);
+  grid-row-gap: var(--spacer);
+
+
+  @include breakpoint($bp-tablet) {
+    grid-template-rows: rem(160px) auto rem(70px) rem(70px) auto;
+    grid-row-gap: 0;
+  }
+
+  @include breakpoint($bp-large) {
+    grid-template-rows: rem(160px) auto rem(110px) rem(110px) auto;
+    grid-row-gap: 0;
+  }
+}
+
+.o-hero-media--carousel__bg-decoration {
+  grid-row: 1/ span 2;
+  grid-column: alpha / omega;
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.o-hero-media--carousel__image {
+  grid-column: col 1 / span 12;
+
+  @include breakpoint($bp-tablet) {
+    grid-row: 2 / span 3;
+    grid-column: col 7/ span 6;
+  }
+}
+
+.o-hero-media--carousel__text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer);
+  padding: 0 0 rem(20px);
+
+  grid-column: col 1 / span 12;
+  grid-row: 2;
+
+
+  @include breakpoint($bp-tablet) {
+    grid-column: col 1 / span 6;
+    grid-row: 2;
+  }
+}
+
+
+.o-hero-media--carousel__lower-section {
+  grid-column: col 1 / span 12;
+  
+  @include breakpoint($bp-tablet) {
+    grid-row: 4/ span 2;
+  grid-column: col 1 / span 9;
+  }
+}

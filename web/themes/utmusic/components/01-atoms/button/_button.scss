@@ -5,8 +5,8 @@
 %a-button--core {
   @extend %a-type--button;
 
-  // display: inline-block;
-  display: flex;
+  display: inline-block;
+  // display: flex;
   align-items: center;
   border: 1px solid transparent;
   text-align: center;

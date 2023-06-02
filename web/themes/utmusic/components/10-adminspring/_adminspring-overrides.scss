@@ -185,3 +185,8 @@ body.mm-wrapper {
     background-color: #fff !important;
   }
 }
+
+
+.layout-select__item label.form-item__label.option {
+  min-width: fit-content;
+}

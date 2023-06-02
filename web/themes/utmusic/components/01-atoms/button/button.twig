@@ -11,14 +11,14 @@
     {% set variation = '--' ~ variation %}
   {% endif %}
 
-  
-  {# Set default icon all icon variations #}
-  {% if variation == '--icon' or variation == '--icon-left' or variation == '--icon-right' %} 
+  {# {% if variation == '--icon' or variation == '--icon-left' or variation == '--icon-right' %} 
     {% set icon = icon|default('external-link-square-alt') %}
   {% else %}
-    {% set icon = icon|default('link-shevron') %}
-  {% endif %}   
+  {% endif %}    #}
 {% endif %}
+
+{# Set default icon all icon variations #}
+{% set icon = icon|default('link-shevron') %}
 
 {# Component can be either <a> (default) or <button> #}
 {% set html_element = html_element|default('a') %}
@@ -76,7 +76,7 @@
 
 
   {# If variation is --icon or --icon-right attach svg icon before label #}
-  {% if variation == '--icon-right' or variation == '--icon' or variation == '--secondary' or variation == false %}
+  {% if variation == '--icon-right' or variation == '--icon' or variation == '--secondary' or variation == '' %}
     {% if icon %}
       {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
         directory: directory,
