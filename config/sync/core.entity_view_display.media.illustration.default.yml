@@ -5,40 +5,33 @@ dependencies:
   config:
     - field.field.media.illustration.field_media_image
     - field.field.media.illustration.field_media_image_svg_size
-    - image.style.large
     - media.type.illustration
+    - responsive_image.styles.ed_full_width
   module:
-    - options
-    - svg_image
+    - svg_image_responsive
 id: media.illustration.default
 targetEntityType: media
 bundle: illustration
 mode: default
 content:
   field_media_image:
-    type: image
-    label: visually_hidden
+    type: responsive_image
+    label: hidden
     settings:
+      responsive_image_style: ed_full_width
       image_link: ''
-      image_style: large
-      svg_attributes:
-        width: null
-        height: null
-      svg_render_as_image: true
       image_loading:
         attribute: lazy
+      svg_attributes:
+        width: '32'
+        height: '37'
+      svg_render_as_image: 0
     third_party_settings: {  }
     weight: 0
     region: content
-  field_media_image_svg_size:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
 hidden:
   created: true
+  field_media_image_svg_size: true
   name: true
   search_api_excerpt: true
   thumbnail: true

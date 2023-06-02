@@ -88,6 +88,7 @@ module:
   media_contextual_crop_fp_adapter: 0
   media_contextual_crop_iwc_adapter: 0
   media_entity_download: 0
+  media_entity_svg: 0
   media_entity_twitter: 0
   media_library: 0
   media_library_edit: 0
@@ -122,6 +123,7 @@ module:
   social_lite: 0
   sophron: 0
   svg_image: 0
+  svg_image_responsive: 0
   system: 0
   taxonomy: 0
   telephone: 0

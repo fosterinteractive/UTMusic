@@ -12,22 +12,6 @@ dependencies:
     - media_library_edit
 third_party_settings:
   field_group:
-    group_icon:
-      children:
-        - field_image_section_icon
-        - field_image_section_icon_align
-      label: Icon
-      region: content
-      parent_name: ''
-      weight: 1
-      format_type: details
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        open: true
-        description: ''
-        required_fields: true
     group_image:
       children:
         - field_image_section_image

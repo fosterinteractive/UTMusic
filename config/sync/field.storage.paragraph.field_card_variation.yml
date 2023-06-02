@@ -14,15 +14,6 @@ settings:
     -
       value: illustration
       label: Illustration
-    -
-      value: image
-      label: 'Large Image'
-    -
-      value: image-icon
-      label: 'Image w/ Yellow Icon Overlay'
-    -
-      value: horizontal
-      label: 'Horizontal Card w/ Large Icon on Left'
   allowed_values_function: ''
 module: options
 locked: false
