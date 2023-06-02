@@ -1,0 +1,53 @@
+uuid: 1e83121c-13cd-403f-9d55-08c91444ea97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.carousel_image_group.field_carousel_group_image1
+    - field.field.paragraph.carousel_image_group.field_carousel_group_image2
+    - field.field.paragraph.carousel_image_group.field_carousel_group_image3
+    - field.field.paragraph.carousel_image_group.field_carousel_group_image4
+    - paragraphs.paragraphs_type.carousel_image_group
+id: paragraph.carousel_image_group.default
+targetEntityType: paragraph
+bundle: carousel_image_group
+mode: default
+content:
+  field_carousel_group_image1:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: mode_crop_10_13
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_carousel_group_image2:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: mode_crop_10_13
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_carousel_group_image3:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: mode_crop_10_11
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_carousel_group_image4:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: mode_crop_10_13
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

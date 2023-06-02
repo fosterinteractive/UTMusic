@@ -1,0 +1,10 @@
+uuid: 1c85fc22-5564-43d9-958e-51a2504b1983
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.context_crop_header_10_11
+label: 'Context Crop Header 10:11'
+targetEntityType: media
+cache: true

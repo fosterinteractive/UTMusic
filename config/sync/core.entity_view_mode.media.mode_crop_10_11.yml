@@ -1,0 +1,10 @@
+uuid: d130ab52-fa6f-4dac-bf48-c5db7775acd7
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.mode_crop_10_11
+label: 'Mode Crop 10:11'
+targetEntityType: media
+cache: true

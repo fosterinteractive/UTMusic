@@ -1,11 +1,11 @@
-uuid: 06e832eb-9fb0-4566-85d9-10a8eed3a096
+uuid: f527e953-2549-4a40-ab5d-2aa03b787d61
 langcode: en
 status: true
 dependencies: {  }
-label: 'Crop 12:10'
-id: crop_1_1
+label: 'Crop Header 10:13'
+id: crop_header_10_13
 description: ''
-aspect_ratio: '12:10'
+aspect_ratio: '10:13'
 soft_limit_width: null
 soft_limit_height: null
 hard_limit_width: null

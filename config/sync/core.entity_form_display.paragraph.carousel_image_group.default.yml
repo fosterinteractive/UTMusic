@@ -1,0 +1,68 @@
+uuid: b5588085-68bb-43c7-a56b-307713453264
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.carousel_image_group.field_carousel_group_image1
+    - field.field.paragraph.carousel_image_group.field_carousel_group_image2
+    - field.field.paragraph.carousel_image_group.field_carousel_group_image3
+    - field.field.paragraph.carousel_image_group.field_carousel_group_image4
+    - paragraphs.paragraphs_type.carousel_image_group
+  module:
+    - media_library_media_modify
+id: paragraph.carousel_image_group.default
+targetEntityType: paragraph
+bundle: carousel_image_group
+mode: default
+content:
+  field_carousel_group_image1:
+    type: media_library_media_modify_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+      form_mode: context_crop_header_10_13
+      check_selected: false
+      replace_checkbox_by_order_indicator: false
+      multi_edit_on_create: true
+      no_edit_on_create: false
+    third_party_settings: {  }
+  field_carousel_group_image2:
+    type: media_library_media_modify_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+      form_mode: context_crop_header_10_13
+      check_selected: false
+      replace_checkbox_by_order_indicator: false
+      multi_edit_on_create: true
+      no_edit_on_create: false
+    third_party_settings: {  }
+  field_carousel_group_image3:
+    type: media_library_media_modify_widget
+    weight: 2
+    region: content
+    settings:
+      media_types: {  }
+      form_mode: context_crop_header_10_11
+      check_selected: false
+      replace_checkbox_by_order_indicator: false
+      multi_edit_on_create: true
+      no_edit_on_create: false
+    third_party_settings: {  }
+  field_carousel_group_image4:
+    type: media_library_media_modify_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+      form_mode: context_crop_header_10_13
+      check_selected: false
+      replace_checkbox_by_order_indicator: false
+      multi_edit_on_create: true
+      no_edit_on_create: false
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

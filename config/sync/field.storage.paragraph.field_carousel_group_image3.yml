@@ -1,0 +1,21 @@
+uuid: f2695f0e-d8d8-4d88-b3a9-4334e78004a8
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - media_library_media_modify
+    - paragraphs
+id: paragraph.field_carousel_group_image3
+field_name: field_carousel_group_image3
+entity_type: paragraph
+type: entity_reference_entity_modify
+settings:
+  target_type: media
+module: media_library_media_modify
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

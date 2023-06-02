@@ -1,0 +1,26 @@
+.m-carousel-img-group {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(9, auto);
+  gap: calc(var(--spacer) * 0.33);
+}
+
+.m-carousel-img-group__image_1 {
+  grid-row: 1/ span 4;
+  grid-column: 1;
+}
+
+.m-carousel-img-group__image_2 {
+  grid-row: 2/ span 4; 
+  grid-column: 2;
+}
+
+.m-carousel-img-group__image_3 {
+  grid-row: 5/ span 3; 
+  grid-column: 1;
+}
+
+.m-carousel-img-group__image_4 {
+  grid-row: 6/ span 4; 
+  grid-column: 2;
+}

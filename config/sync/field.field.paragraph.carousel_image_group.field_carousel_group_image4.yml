@@ -1,0 +1,31 @@
+uuid: ec73203d-f4d1-47af-b444-7c9daed96659
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_carousel_group_image4
+    - media.type.ed_image
+    - paragraphs.paragraphs_type.carousel_image_group
+  module:
+    - media_library_media_modify
+id: paragraph.carousel_image_group.field_carousel_group_image4
+field_name: field_carousel_group_image4
+entity_type: paragraph
+bundle: carousel_image_group
+label: 'Image Bottom-Right'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      ed_image: ed_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_entity_modify

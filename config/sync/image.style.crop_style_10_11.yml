@@ -1,0 +1,18 @@
+uuid: ff88131d-9573-4995-a7bc-9f38724ffd40
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.crop_header_10_11
+  module:
+    - crop
+name: crop_style_10_11
+label: 'Crop Style 10:11'
+effects:
+  b8f131e0-829b-46d6-80d1-c902cecfe6c5:
+    uuid: b8f131e0-829b-46d6-80d1-c902cecfe6c5
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: crop_header_10_11
+      automatic_crop_provider: null
