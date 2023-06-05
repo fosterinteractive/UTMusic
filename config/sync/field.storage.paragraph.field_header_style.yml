@@ -15,10 +15,10 @@ settings:
       value: text
       label: 'Text Only'
     -
-      value: two-images-1
+      value: top-bottom
       label: 'Two Images (Top-Bottom)'
     -
-      value: two-images-2
+      value: bottom-top
       label: 'Two Images (Bottom-Top)'
     -
       value: landscape
