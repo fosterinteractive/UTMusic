@@ -37,38 +37,19 @@
  */
 #}
 
-
-{% set content_header_variation = content.field_header_style[0] ? content.field_header_style[0]['#markup'] %}
-
-{# Image #}
-{# Check if there is a image #}
-{% if content.field_header_image[0] %}
-  {# Get image path, alt and image style field #}
-  {% set image_file_path = content.field_header_image[0]['#media'].field_ed_image_image.entity.uri.value %}
-  {% set image_file_alt = content.field_header_image[0]['#media'].field_ed_image_image.0.alt %}
-
-  {% set image_file_width = content.field_header_image[0]['#media'].field_ed_image_image.0.width %}
-  {% set image_file_height = content.field_header_image[0]['#media'].field_ed_image_image.0.height %}
-
-  {% if content_header_variation =='image-right' %}
-    {% set hero_image = drupal_image(image_file_path, 'content_header_right', {'alt': image_file_alt, 'width': image_file_width, 'height': image_file_height} ,responsive=true) %}
-
-  {% elseif content_header_variation =='image-overlay' %}
-    {% set hero_image = drupal_image(image_file_path, 'content_header', {'alt': image_file_alt, 'width': image_file_width, 'height': image_file_height} ,responsive=true) %}
-  {% endif %}
-  
-{% endif %}
-
 {% include "@organisms/content-header/content-header.twig" with {
     directory: 'themes/utmusic',
 
     variation: content.field_header_style[0] ? content.field_header_style[0]['#markup'],
-    decoration_color: content.field_color_of_header_decoration[0] ? content.field_color_of_header_decoration[0]['#markup'],
 
     title_prefix: content.field_header_title_prefix[0] ? content.field_header_title_prefix[0]['#text'],
     title: content.field_header_title[0] ? content.field_header_title[0],
     summary: content.field_header_summary[0] ? content.field_header_summary,
 
-    hero_image: hero_image,
+    video: content.field_header_video[0] ? content.field_header_video,
+    image_portrait: content.field_header_image_portrait[0] ? content.field_header_image_portrait,
+    image_landscape: content.field_header_image_landscape[0] ? content.field_header_image_landscape,
+    image_short: content.field_header_image1[0] ? content.field_header_image1,
+    image_tall: content.field_header_image2[0] ? content.field_header_image2,
   } only
 %}
