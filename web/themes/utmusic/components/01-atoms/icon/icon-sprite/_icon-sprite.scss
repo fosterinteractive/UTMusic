@@ -26,7 +26,7 @@
 .a-icon--xsmall {
   @extend %a-icon__core;
 
-  width: rem(32px);
+  width: rem(42px);
   height: rem(37px);
 }
 
@@ -95,7 +95,7 @@ $icon-size: 0.6em;
 .a-icon-external--xsmall svg {
   @extend %a-icon-external-svg;
 
-  width: rem(32px);
+  width: rem(42px);
   height: rem(37px);
 }
 

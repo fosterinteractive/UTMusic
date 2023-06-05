@@ -106,7 +106,7 @@
 
   
 
-  {% if section_layout == "card_3" %}
+  {% if section_layout == "cards_3" %}
     <div class="o-hero-media--carousel__lower-section"> 
       {% if lower_section_title %}
         <div class="o-hero-media--carousel__lower-section-title">
@@ -141,7 +141,9 @@
               %}
             {% endfor %}
           {% else %}
-            {{ cards }}
+            {{ card_1 }}
+            {{ card_2 }}
+            {{ card_3 }}
           {% endif %}
         </div>
       {% endif %}
