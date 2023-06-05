@@ -4,17 +4,17 @@
   grid-template-columns: [alpha] 1fr repeat(12, [col] minmax(1px, calc((65rem - (var(--spacer) * 11)) / 12))) 1fr [omega];
   grid-template-rows: rem(160px) auto auto auto;
   grid-column-gap: var(--spacer);
-  grid-row-gap: var(--spacer);
+  row-gap: var(--spacer);
 
 
   @include breakpoint($bp-tablet) {
     grid-template-rows: rem(160px) auto rem(70px) rem(70px) auto;
-    grid-row-gap: 0;
+    row-gap: 0;
   }
 
   @include breakpoint($bp-large) {
     grid-template-rows: rem(160px) auto rem(110px) rem(110px) auto;
-    grid-row-gap: 0;
+    row-gap: 0;
   }
 }
 
