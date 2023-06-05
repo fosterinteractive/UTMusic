@@ -81,74 +81,21 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./components/02-molecules/tabs/tabs.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./components/03-organisms/carousel-header/carousel-header.scss");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./components/02-molecules/tabs/tabs.js":
-/*!**********************************************!*\
-  !*** ./components/02-molecules/tabs/tabs.js ***!
-  \**********************************************/
+/***/ "./components/03-organisms/carousel-header/carousel-header.scss":
+/*!**********************************************************************!*\
+  !*** ./components/03-organisms/carousel-header/carousel-header.scss ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-Drupal.behaviors.tabs = {
-  attach(context) {
-    const el = context.querySelectorAll('.m-tabs');
-    const tabNavigationLinks = context.querySelectorAll('.m-tabs__link');
-    const tabContentContainers = context.querySelectorAll('.m-tabs__tab');
-    let activeIndex = 0;
-
-    /**
-     * goToTab
-     *
-     * @description Goes to a specific tab based on index. Returns nothing.
-     * @param {number} index The index of the tab to go to
-     */
-    function goToTab(index) {
-      if (index !== activeIndex && index >= 0 && index <= tabNavigationLinks.length) {
-        tabNavigationLinks[Number(activeIndex)].classList.remove('is-active');
-        tabNavigationLinks[Number(index)].classList.add('is-active');
-        tabContentContainers[Number(activeIndex)].classList.remove('is-active');
-        tabContentContainers[Number(index)].classList.add('is-active');
-        activeIndex = index;
-      }
-    }
-
-    /**
-     * handleClick
-     *
-     * @description Handles click event listeners on each of the links in the
-     *   tab navigation. Returns nothing.
-     * @param {HTMLElement} link The link to listen for events on
-     * @param {number} index The index of that link
-     */
-    function handleClick(link, index) {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        goToTab(index);
-      });
-    }
-
-    /**
-     * init
-     *
-     * @description Initializes the component by removing the no-js class from
-     *   the component, and attaching event listeners to each of the nav items.
-     *   Returns nothing.
-     */
-    for (let e = 0; e < el.length; e += 1) {
-      el[Number(e)].classList.remove('no-js');
-    }
-    for (let i = 0; i < tabNavigationLinks.length; i += 1) {
-      const link = tabNavigationLinks[Number(i)];
-      handleClick(link, i);
-    }
-  }
-};
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Undefined mixin.\n   ╷\n10 │ ┌   @include breakpoint($bp-tablet) {\n11 │ │     grid-template-rows: rem(160px) auto rem(70px) rem(70px) auto;\n12 │ │     row-gap: 0;\n13 │ └   }\n   ╵\n  components/03-organisms/carousel-header/carousel-header.scss 10:3  root stylesheet\n    at /Users/katekarpenko/_work/UTMusic/web/themes/utmusic/node_modules/webpack/lib/NormalModule.js:316:20\n    at /Users/katekarpenko/_work/UTMusic/web/themes/utmusic/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Users/katekarpenko/_work/UTMusic/web/themes/utmusic/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/Users/katekarpenko/_work/UTMusic/web/themes/utmusic/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at /Users/katekarpenko/_work/UTMusic/web/themes/utmusic/node_modules/sass-loader/dist/index.js:62:7\n    at Function.call$2 (/Users/katekarpenko/_work/UTMusic/web/themes/utmusic/node_modules/sass/sass.dart.js:103688:16)\n    at render_closure1.call$2 (/Users/katekarpenko/_work/UTMusic/web/themes/utmusic/node_modules/sass/sass.dart.js:88332:12)\n    at _RootZone.runBinary$3$3 (/Users/katekarpenko/_work/UTMusic/web/themes/utmusic/node_modules/sass/sass.dart.js:30531:18)\n    at _FutureListener.handleError$1 (/Users/katekarpenko/_work/UTMusic/web/themes/utmusic/node_modules/sass/sass.dart.js:29060:21)\n    at _Future__propagateToListeners_handleError.call$0 (/Users/katekarpenko/_work/UTMusic/web/themes/utmusic/node_modules/sass/sass.dart.js:29367:49)\n    at Object._Future__propagateToListeners (/Users/katekarpenko/_work/UTMusic/web/themes/utmusic/node_modules/sass/sass.dart.js:4001:77)\n    at _Future._completeError$2 (/Users/katekarpenko/_work/UTMusic/web/themes/utmusic/node_modules/sass/sass.dart.js:29213:9)\n    at _AsyncAwaitCompleter.completeError$2 (/Users/katekarpenko/_work/UTMusic/web/themes/utmusic/node_modules/sass/sass.dart.js:28861:12)\n    at Object._asyncRethrow (/Users/katekarpenko/_work/UTMusic/web/themes/utmusic/node_modules/sass/sass.dart.js:3803:17)\n    at /Users/katekarpenko/_work/UTMusic/web/themes/utmusic/node_modules/sass/sass.dart.js:20458:20\n    at _wrapJsFunctionForAsync_closure.$protected (/Users/katekarpenko/_work/UTMusic/web/themes/utmusic/node_modules/sass/sass.dart.js:3828:15)");
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=tabs.js.map
+//# sourceMappingURL=carousel-header.js.map
