@@ -1,17 +1,18 @@
-uuid: 83c1284c-3ab6-489e-af56-6cf063816601
+uuid: 4c98a9b2-b7e8-493a-9b76-b27940798018
 langcode: en
 status: true
 dependencies:
   module:
     - media
+    - media_library_media_modify
     - paragraphs
-id: paragraph.field_header_image
-field_name: field_header_image
+id: paragraph.field_header_image_portrait
+field_name: field_header_image_portrait
 entity_type: paragraph
-type: entity_reference
+type: entity_reference_entity_modify
 settings:
   target_type: media
-module: core
+module: media_library_media_modify
 locked: false
 cardinality: 1
 translatable: true

@@ -1,16 +1,16 @@
-uuid: ba9e8577-f8d2-463e-9526-b5da16c123ef
+uuid: 0328c004-c095-42d4-8186-4b0e8db1079a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_header_image
-    - media.type.ed_image
+    - field.storage.paragraph.field_header_video
+    - media.type.video
     - paragraphs.paragraphs_type.header
-id: paragraph.header.field_header_image
-field_name: field_header_image
+id: paragraph.header.field_header_video
+field_name: field_header_video
 entity_type: paragraph
 bundle: header
-label: Image
+label: Video
 description: ''
 required: false
 translatable: false
@@ -20,7 +20,7 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      ed_image: ed_image
+      video: video
     sort:
       field: _none
       direction: ASC

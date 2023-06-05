@@ -15,11 +15,20 @@ settings:
       value: text
       label: 'Text Only'
     -
-      value: image-right
-      label: 'Image on Right'
+      value: two-images-1
+      label: 'Two Images (Top-Bottom)'
     -
-      value: image-overlay
-      label: 'Image Overlay'
+      value: two-images-2
+      label: 'Two Images (Bottom-Top)'
+    -
+      value: landscape
+      label: 'Landscape Image'
+    -
+      value: portrait
+      label: 'Portrait Image'
+    -
+      value: video
+      label: Video
   allowed_values_function: ''
 module: options
 locked: false

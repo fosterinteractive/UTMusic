@@ -4,11 +4,15 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
-    - field.field.paragraph.header.field_header_image
+    - field.field.paragraph.header.field_header_image1
+    - field.field.paragraph.header.field_header_image2
+    - field.field.paragraph.header.field_header_image_landscape
+    - field.field.paragraph.header.field_header_image_portrait
     - field.field.paragraph.header.field_header_style
     - field.field.paragraph.header.field_header_summary
     - field.field.paragraph.header.field_header_title
     - field.field.paragraph.header.field_header_title_prefix
+    - field.field.paragraph.header.field_header_video
     - paragraphs.paragraphs_type.header
   module:
     - layout_builder
@@ -23,15 +27,6 @@ targetEntityType: paragraph
 bundle: header
 mode: preview
 content:
-  field_header_image:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_header_style:
     type: list_key
     label: hidden
@@ -61,4 +56,9 @@ content:
     weight: 4
     region: content
 hidden:
+  field_header_image1: true
+  field_header_image2: true
+  field_header_image_landscape: true
+  field_header_image_portrait: true
+  field_header_video: true
   search_api_excerpt: true

@@ -1,20 +1,20 @@
-uuid: ec73203d-f4d1-47af-b444-7c9daed96659
+uuid: dd8faa08-c888-44d2-9f48-f5f3b64789c0
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_carousel_group_image4
+    - field.storage.paragraph.field_header_image2
     - media.type.ed_image
-    - paragraphs.paragraphs_type.carousel_image_group
+    - paragraphs.paragraphs_type.header
   module:
     - media_library_media_modify
-id: paragraph.carousel_image_group.field_carousel_group_image4
-field_name: field_carousel_group_image4
+id: paragraph.header.field_header_image2
+field_name: field_header_image2
 entity_type: paragraph
-bundle: carousel_image_group
-label: 'Image Bottom-Right'
+bundle: header
+label: 'Image Tall'
 description: 'Choose image from Media library and then press "edit" button for specifying its alternative text and crop 10:13, then press save '
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

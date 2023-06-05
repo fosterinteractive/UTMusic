@@ -3,11 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.header.field_header_image
+    - field.field.paragraph.header.field_header_image1
+    - field.field.paragraph.header.field_header_image2
+    - field.field.paragraph.header.field_header_image_landscape
+    - field.field.paragraph.header.field_header_image_portrait
     - field.field.paragraph.header.field_header_style
     - field.field.paragraph.header.field_header_summary
     - field.field.paragraph.header.field_header_title
     - field.field.paragraph.header.field_header_title_prefix
+    - field.field.paragraph.header.field_header_video
     - paragraphs.paragraphs_type.header
   module:
     - options
@@ -17,21 +21,48 @@ targetEntityType: paragraph
 bundle: header
 mode: default
 content:
-  field_header_image:
+  field_header_image1:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: content_header
+      view_mode: mode_crop_10_11
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 7
+    region: content
+  field_header_image2:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: mode_crop_10_13
+      link: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_header_image_landscape:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: news_image_landscape
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_header_image_portrait:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: news_image_portrait
+      link: false
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_header_style:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_header_summary:
     type: text_default
@@ -45,14 +76,23 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
   field_header_title_prefix:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
+    region: content
+  field_header_video:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: video
+      link: false
+    third_party_settings: {  }
+    weight: 4
     region: content
 hidden:
   search_api_excerpt: true

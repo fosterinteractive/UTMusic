@@ -3,31 +3,75 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.header.field_header_image
+    - field.field.paragraph.header.field_header_image1
+    - field.field.paragraph.header.field_header_image2
+    - field.field.paragraph.header.field_header_image_landscape
+    - field.field.paragraph.header.field_header_image_portrait
     - field.field.paragraph.header.field_header_style
     - field.field.paragraph.header.field_header_summary
     - field.field.paragraph.header.field_header_title
     - field.field.paragraph.header.field_header_title_prefix
+    - field.field.paragraph.header.field_header_video
     - paragraphs.paragraphs_type.header
   module:
     - allowed_formats
     - media_library
     - media_library_edit
+    - media_library_media_modify
     - text
 id: paragraph.header.default
 targetEntityType: paragraph
 bundle: header
 mode: default
 content:
-  field_header_image:
-    type: media_library_widget
-    weight: 4
+  field_header_image1:
+    type: media_library_media_modify_widget
+    weight: 7
     region: content
     settings:
       media_types: {  }
-    third_party_settings:
-      media_library_edit:
-        show_edit: '1'
+      form_mode: context_crop_header_10_11
+      check_selected: false
+      replace_checkbox_by_order_indicator: false
+      multi_edit_on_create: true
+      no_edit_on_create: false
+    third_party_settings: {  }
+  field_header_image2:
+    type: media_library_media_modify_widget
+    weight: 8
+    region: content
+    settings:
+      media_types: {  }
+      form_mode: context_crop_header_10_13
+      check_selected: false
+      replace_checkbox_by_order_indicator: false
+      multi_edit_on_create: true
+      no_edit_on_create: false
+    third_party_settings: {  }
+  field_header_image_landscape:
+    type: media_library_media_modify_widget
+    weight: 5
+    region: content
+    settings:
+      media_types: {  }
+      form_mode: crop_widget_mode
+      check_selected: false
+      replace_checkbox_by_order_indicator: false
+      multi_edit_on_create: true
+      no_edit_on_create: false
+    third_party_settings: {  }
+  field_header_image_portrait:
+    type: media_library_media_modify_widget
+    weight: 6
+    region: content
+    settings:
+      media_types: {  }
+      form_mode: contextual_crop_portrait
+      check_selected: false
+      replace_checkbox_by_order_indicator: false
+      multi_edit_on_create: true
+      no_edit_on_create: false
+    third_party_settings: {  }
   field_header_style:
     type: options_select
     weight: 0
@@ -67,6 +111,15 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+  field_header_video:
+    type: media_library_widget
+    weight: 4
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
 hidden:
   created: true
   status: true
