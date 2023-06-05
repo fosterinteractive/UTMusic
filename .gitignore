@@ -57,6 +57,7 @@ web/themes/mainspring-theme
 # files to other locations where it scaffolds files that are not
 # already ignored. We must also ignore these generated files.
 /web/**/.gitignore
+!/web/themes/**/.gitignore
 
 # Ignore README.txt files in these locations /web/themes, /web/modules, web/profiles
 /web/**/README.txt
