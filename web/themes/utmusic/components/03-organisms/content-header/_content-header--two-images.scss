@@ -8,12 +8,12 @@
   }
 }
 
-// Two-Images-1 Variation 
-.o-hero-media--two-images-1 {
+// Top-Bottom Variation 
+.o-hero-media--top-bottom {
   @extend %o-hero-media-core;
 }
 
-.o-hero-media--two-images-1 .o-hero-media__bg-decoration {
+.o-hero-media--top-bottom .o-hero-media__bg-decoration {
   @extend %o-hero-media__bg-decoration;
 }
 
@@ -21,11 +21,11 @@
 %two-images-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(7, auto);
   gap: rem(10px);
 }
 
-.o-hero-media--two-images-1__image {
+.o-hero-media--top-bottom__image {
   @extend %two-images-layout; 
 
   grid-row: 2;
@@ -37,43 +37,33 @@
   }
 }
 
-
-.o-hero-media--two-images-1__text-wrapper {
+.o-hero-media--top-bottom__text-wrapper {
   @extend %text-wrapper-layout;
 }
 
-.o-hero-media--two-images-1__image-first {
-  grid-row: 1 / span 3;
+.o-hero-media--top-bottom__image-short {
+  grid-row: 1 / span 5;
 }
 
-.o-hero-media--two-images-1__image-second {
-  grid-row: 2 / span 3;
+.o-hero-media--top-bottom__image-tall {
+  grid-row: 2 / span 6;
 }
 
 
-
-
-// Two-Images-2 Variation 
-.o-hero-media--two-images-2 {
+// Bottom-Top Variation 
+.o-hero-media--bottom-top {
   @extend %o-hero-media-core;
-
-  @include breakpoint($bp-tablet) {
-    grid-template-rows: rem(160px) 1fr rem(70px) rem(70px) rem(70px) auto;
-  }
 }
 
-.o-hero-media--two-images-2 .o-hero-media__bg-decoration {
+.o-hero-media--bottom-top .o-hero-media__bg-decoration {
   @extend %o-hero-media__bg-decoration;
 }
 
-.o-hero-media--two-images-2__image {
+.o-hero-media--bottom-top__image {
+  @extend %two-images-layout; 
+
   grid-row: 2;
   grid-column: col 1 / span 12;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(5, 1fr);
-  gap: rem(10px);
 
   @include breakpoint($bp-tablet) {
     grid-row: 2/ span 4;
@@ -81,14 +71,16 @@
   }
 }
 
-.o-hero-media--two-images-2__text-wrapper {
+.o-hero-media--bottom-top__text-wrapper {
   @extend %text-wrapper-layout;
 }
 
-.o-hero-media--two-images-2__image-first {
-  grid-row: 2 / span 4;
+.o-hero-media--bottom-top__image-tall {
+  grid-row: 2/ span 6;
+  grid-column: 1;
 }
 
-.o-hero-media--two-images-2__image-second {
-  grid-row: 1 / span 4;
+.o-hero-media--bottom-top__image-short {
+  grid-row: 1 / span 5;
+  grid-column: 2;
 }

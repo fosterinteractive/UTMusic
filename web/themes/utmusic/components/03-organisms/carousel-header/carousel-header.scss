@@ -19,13 +19,9 @@
 }
 
 .o-hero-media--carousel__bg-decoration {
-  grid-row: 1/ span 2;
-  grid-column: alpha / omega;
+  @extend %o-hero-media__bg-decoration;
 
-  img {
-    height: 100%;
-    object-fit: cover;
-  }
+  grid-row: 1/ span 2 !important;
 }
 
 .o-hero-media--carousel__image {

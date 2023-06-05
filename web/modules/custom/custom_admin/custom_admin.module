@@ -134,10 +134,10 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
         $element['subform']['field_header_image1']['#states'] = [
           'visible' => [
             [
-              ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => ['value' => 'two-images-1'],
+              ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => ['value' => 'top-bottom'],
             ],
             [
-              ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => ['value' => 'two-images-2'],
+              ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => ['value' => 'bottom-top'],
             ],
           ],
         ];
@@ -145,10 +145,10 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
         $element['subform']['field_header_image2']['#states'] = [
           'visible' => [
             [
-              ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => ['value' => 'two-images-1'],
+              ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => ['value' => 'top-bottom'],
             ],
             [
-              ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => ['value' => 'two-images-2'],
+              ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => ['value' => 'bottom-top'],
             ],
           ],
         ];

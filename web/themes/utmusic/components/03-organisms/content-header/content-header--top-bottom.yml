@@ -1,7 +1,7 @@
 sb_demo: true
-variation: 'two-images-2'
-image_first: '<img src="https://images.unsplash.com/photo-1633882764626-f41b5cc8a1d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1002&q=80" />'
-image_second: '<img src="https://images.unsplash.com/photo-1531651008558-ed1740375b39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" />'
+variation: 'top-bottom'
+image_short: '<img src="https://images.unsplash.com/photo-1633882764626-f41b5cc8a1d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1002&q=80" />'
+image_tall: '<img src="https://images.unsplash.com/photo-1531651008558-ed1740375b39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" />'
 title_prefix: 'Page title prefix'
 title: 'Classical  Undergraduate Programs'
 summary: "Intro statement focused on music as a career. Emphasizes this is Western Classical Music Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus  auctor. "

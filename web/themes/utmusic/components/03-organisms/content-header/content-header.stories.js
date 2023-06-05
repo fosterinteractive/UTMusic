@@ -1,9 +1,13 @@
 import hero from './content-header.twig';
 
-import contentHeaderImageData from './content-header--image.yml';
 import contentHeaderTextData from './content-header--text.yml';
-import contentHeaderTwoImages1Data from './content-header--two-images-1.yml';
-import contentHeaderTwoImages2Data from './content-header--two-images-2.yml';
+
+import contentHeaderImagePortraitData from './content-header--image-portrait.yml';
+import contentHeaderImageLandscapeData from './content-header--image-landscape.yml';
+import contentHeaderVideoData from './content-header--video.yml';
+
+import contentHeaderTwoImages1Data from './content-header--top-bottom.yml';
+import contentHeaderTwoImages2Data from './content-header--bottom-top.yml';
 
 
 /**
@@ -22,10 +26,13 @@ export default {
     },
   },
 }
-
-export const ContentHeaderImage = () => hero(contentHeaderImageData);
 export const ContentHeaderText = () => hero(contentHeaderTextData);
 
-export const ContentHeaderTwoImages1 = () => hero(contentHeaderTwoImages1Data);
-export const ContentHeaderTwoImages2 = () => hero(contentHeaderTwoImages2Data);
+export const ContentHeaderImagePortrait = () => hero(contentHeaderImagePortraitData);
+export const ContentHeaderImageLandscape = () => hero(contentHeaderImageLandscapeData);
+
+export const ContentHeaderVideo = () => hero(contentHeaderVideoData);
+
+export const ContentHeaderTwoImagesTopBottom = () => hero(contentHeaderTwoImages1Data);
+export const ContentHeaderTwoImagesBottomTop = () => hero(contentHeaderTwoImages2Data);
 

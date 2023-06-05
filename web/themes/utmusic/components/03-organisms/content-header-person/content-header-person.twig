@@ -16,16 +16,11 @@
 
   <div class="o-hero-media__bg-decoration">
     {# it's a placeholder for background #}
-    {% if sb_demo %}
-      <div style="background:#EDF8FC; width:100%; height:100%; "></div>
-    {% else %}
-      <img alt="" aria-hidden="true" src="/themes/utmusic/images/header-color-min.png" />
-    {% endif %}
   </div>
 
   {% if image %}
     <div class="o-hero-media__image {% if variation %}o-hero-media{{ variation }}__image{% endif %}">
-      {% if image %}
+      {% if image and variation == '--person' %}
         {{ image }}
       {% endif %}
     </div>

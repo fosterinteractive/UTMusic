@@ -1,6 +1,6 @@
 sb_demo: true
-variation: 'image'
-image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2076&q=80" />'
+variation: 'landscape'
+image_landscape: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2076&q=80" />'
 title_prefix: 'For Undergraduates'
 title: 'Registrar’s Office'
 summary: 'Music Theory is the study of musical structure. We learn how to construct music in historic and contemporary styles; how to deconstruct it through analysis and analytical modeling; and how to understand it through hermeneutic and historically informed interpretation.'

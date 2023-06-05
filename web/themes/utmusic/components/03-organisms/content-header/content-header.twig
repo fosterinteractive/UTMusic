@@ -19,25 +19,23 @@
 
   <div class="o-hero-media__bg-decoration">
     {# it's a placeholder for background #}
-    {% if sb_demo %}
-      <div style="background:#EDF8FC; width: 100%; height: 100%; "></div>
-    {% else %}
-      <img alt="" aria-hidden="true" src="/themes/utmusic/images/header-color-min.png" />
-    {% endif %}
   </div>
 
-  {% if image or image_first or image_second %}
+  {% if video or image_portrait or image_landscape  or  image_short or image_tall %}
     <div class="o-hero-media__image {% if variation %}o-hero-media{{ variation }}__image{% endif %}">
-      {% if image %}
-        {{ image }}
-      {% elseif image_first and image_second %}
-        <div class="o-hero-media{{ variation}}__image-first">
-          {{ image_first }}
+      {% if video and variation == '--video' %}
+        {{ video }}
+      {% elseif image_portrait and variation == '--portrait' %}
+        {{ image_portrait }}
+      {% elseif image_landscape and variation == '--landscape' %}
+        {{ image_landscape }}
+      {% elseif image_short and image_tall and (variation == '--top-bottom' or variation == '--bottom-top') %}
+        <div class="o-hero-media{{ variation}}__image-short">
+          {{ image_short }}
         </div>
-        <div class="o-hero-media{{ variation}}__image-second">
-          {{ image_second }}
+        <div class="o-hero-media{{ variation}}__image-tall">
+          {{ image_tall }}
         </div>
-     
       {% endif %}
     </div>
   {% endif %}
