@@ -106,6 +106,53 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
             ],
           ],
         ];
+
+        $element['subform']['field_header_video']['#states'] = [
+          'visible' => [
+            ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => [
+              'value' => 'video',
+            ],
+          ],
+        ];
+
+        $element['subform']['field_header_image_portrait']['#states'] = [
+          'visible' => [
+            ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => [
+              'value' => 'portrait',
+            ],
+          ],
+        ];
+
+        $element['subform']['field_header_image_landscape']['#states'] = [
+          'visible' => [
+            ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => [
+              'value' => 'landscape',
+            ],
+          ],
+        ];
+
+        $element['subform']['field_header_image1']['#states'] = [
+          'visible' => [
+            [
+              ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => ['value' => 'two-images-1'],
+            ],
+            [
+              ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => ['value' => 'two-images-2'],
+            ],
+          ],
+        ];
+
+        $element['subform']['field_header_image2']['#states'] = [
+          'visible' => [
+            [
+              ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => ['value' => 'two-images-1'],
+            ],
+            [
+              ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => ['value' => 'two-images-2'],
+            ],
+          ],
+        ];
+        
       }
     }
 
@@ -297,6 +344,48 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
         '!visible' => [
           ':input[name="field_card_variation"]' => [
             'value' => 'image',
+          ],
+        ],
+      ];
+    }
+  }
+
+  if ($bundle == 'carousel_header') {
+    if ($field_name == 'field_carousel_header_sec_title') {
+      $element['#states'] = [
+        'visible' => [
+          ':input[name="field_carousel_header_sec_layout"]' => [
+            'value' => 'cards_3',
+          ],
+        ],
+      ];
+    }
+
+    if ($field_name == 'field_carousel_header_card1') {
+      $element['#states'] = [
+        'visible' => [
+          ':input[name="field_carousel_header_sec_layout"]' => [
+            'value' => 'cards_3',
+          ],
+        ],
+      ];
+    }
+
+    if ($field_name == 'field_carousel_header_card2') {
+      $element['#states'] = [
+        'visible' => [
+          ':input[name="field_carousel_header_sec_layout"]' => [
+            'value' => 'cards_3',
+          ],
+        ],
+      ];
+    }
+
+    if ($field_name == 'field_carousel_header_card3') {
+      $element['#states'] = [
+        'visible' => [
+          ':input[name="field_carousel_header_sec_layout"]' => [
+            'value' => 'cards_3',
           ],
         ],
       ];
