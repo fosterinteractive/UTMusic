@@ -98,15 +98,6 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
         // Get the parent paragraph delta.
         $parent_delta = $element['subform']['field_header_style']['widget']['#parents'][1];
 
-        // Set the 'visible' state of the 'field_header_image' element based on the value of the 'field_header_style' element.
-        $element['subform']['field_header_image']['#states'] = [
-          'visible' => [
-            ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => [
-              '!value' => 'text',
-            ],
-          ],
-        ];
-
         $element['subform']['field_header_video']['#states'] = [
           'visible' => [
             ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => [
@@ -153,6 +144,65 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
           ],
         ];
         
+      }
+    }
+
+    ksm($element['subform']);
+
+    if ($paragraph_type === 'carousel_header' && isset($element['subform']['#parents'])) {
+
+      // Define an array of parent fields to check.
+      $parent_fields = ['field_page_header'];
+
+      // Initialize the parent field variable to NULL.
+      $parent_field = NULL;
+
+      // Loop through each parent field and check if it is present in the '#parents' element.
+      foreach ($parent_fields as $field_name) {
+        if (in_array($field_name, $element['subform']['#parents'], TRUE)) {
+          $parent_field = $field_name;
+          break; // Once we find the parent field, we can exit the loop.
+        }
+      }
+
+      // If the parent field is found, set the 'visible' state of the 'field_header_image' element.
+      if ($parent_field !== NULL) {
+
+        // Get the parent paragraph delta.
+        $parent_delta = $element['subform']['field_carousel_header_sec_layout']['widget']['#parents'][1];
+
+        ksm($element['subform']);
+        $element['subform']['field_carousel_header_sec_title']['#states'] = [
+          'visible' => [
+            ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_carousel_header_sec_layout]"]' => [
+              'value' => 'cards_3',
+            ],
+          ],
+        ];
+
+        $element['subform']['field_carousel_header_card1']['#states'] = [
+          'visible' => [
+            ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_carousel_header_sec_layout]"]' => [
+              'value' => 'cards_3',
+            ],
+          ],
+        ];
+
+        $element['subform']['field_carousel_header_card2']['#states'] = [
+          'visible' => [
+            ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_carousel_header_sec_layout]"]' => [
+              'value' => 'cards_3',
+            ],
+          ],
+        ];
+
+        $element['subform']['field_carousel_header_card3']['#states'] = [
+          'visible' => [
+            ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_carousel_header_sec_layout]"]' => [
+              'value' => 'cards_3',
+            ],
+          ],
+        ];
       }
     }
 
