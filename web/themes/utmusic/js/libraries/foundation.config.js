@@ -5,7 +5,6 @@
   var init = function () {
 
     $(document).foundation();
-    console.log('test')
 
     /**
      * Mega Menu
