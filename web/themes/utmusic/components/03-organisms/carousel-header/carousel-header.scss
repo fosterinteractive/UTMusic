@@ -42,12 +42,12 @@
   height: rem(55px);
   background-color: palette(white);
   border-radius: 50%;
-  filter: drop-shadow(0px 10px 20px rgba(30, 56, 102, 0.1));
+  filter: drop-shadow(0px 15px 30px rgba(30, 56, 102, 0.1));
 
   &:hover,
   &:focus,
   &:active {
-    filter: drop-shadow(0px 5px 7px rgba(30, 56, 102, 0.3))
+    filter: drop-shadow(0px 7px 15px rgba(30, 56, 102, 0.3))
   }
 }
 
