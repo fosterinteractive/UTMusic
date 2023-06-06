@@ -1,0 +1,15 @@
+sb_demo: true
+variation: 'text'
+image: 
+title: 'Book a tour'
+description:  We bring together the brightest researchers, educators, creators and performers. We welcome you to join us.
+
+link_url_primary: /
+link_label_primary: Book a tour
+aria_label_primary: Visit our page
+target_primary: 
+
+link_url_secondary: /
+link_label_secondary: Ask a question
+aria_label_secondary: Visit our page questions
+target_secondary: _blank

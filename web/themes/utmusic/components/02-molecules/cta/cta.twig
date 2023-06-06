@@ -1,0 +1,87 @@
+{% set variation = variation|default('image') %}
+{% set theme = theme|default('theme--pink') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+<div class="m-cta {% if variation %}m-cta{{ variation }}{% endif %}">
+
+  <div class="m-cta__main-wrapper">
+    <div class="m-cta__main {% if variation %}m-cta{{ variation }}__main{% endif %} {{ theme }}">
+      <div class="m-cta__main-text-wrapper">
+        {# Title #}
+        {% if title %}
+          <div class="m-cta{{ variation }}__title">
+            {% include "@atoms/text/headings/heading.twig" with {
+                html_element: 'h2',
+                appearance: 'h2',
+                text: title,
+                id: id,
+                alignment: 'left',
+                directory: directory,
+              } only
+            %}
+          </div>
+        {% endif %}
+
+        {% if description  %}
+          <div class="m-cta__description {% if variation %}m-cta{{ variation }}__description{% endif %}">
+            {{ description }}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if link_url_primary or link_url_secondary %}
+        <div class="o-hero-media--carousel__buttons">
+          {% if link_url_primary and link_label_primary %}
+            {% include '@atoms/button/button.twig' with {
+                directory: directory,
+                base_class: 'a-button',
+                label: link_label_primary,
+                variation: '',
+                html_element: 'a',
+                url: link_url_primary,
+                aria_label: aria_label_primary,
+                alignment: 'left',
+                target: target,
+              } only
+            %} 
+          {% endif %}
+
+          {% if link_url_secondary and link_label_secondary %}
+            {% include '@atoms/button/button.twig' with {
+                directory: directory,
+                base_class: 'a-button',
+                label: link_label_secondary,
+                variation: 'secondary',
+                html_element: 'a',
+                url: link_url_secondary,
+                aria_label: aria_label_secondary,
+                alignment: 'left',
+                target: target,
+              } only
+            %} 
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if image and variation == '--image' %}
+    <div class="m-cta{{ variation }}__image">
+      {% include "@molecules/image/image.twig" with {
+        image: image,
+        } only
+      %}
+    </div>
+  {% endif %}
+
+</div>

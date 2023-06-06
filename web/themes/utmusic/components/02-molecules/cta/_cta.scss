@@ -1,0 +1,55 @@
+.m-cta {
+  border-radius: rem(12px);
+  overflow: hidden;
+}
+
+.m-cta__main-wrapper {
+  height: 100%;
+  grid-row: 1;
+  background-image: var(--cta-bg-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  padding: rem(20px);
+  display: grid;
+  align-items: center;
+
+  @include breakpoint($bp-tablet) {
+    padding: rem(20px) rem(80px);
+  }
+}
+
+.m-cta__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer);
+
+  @include breakpoint($bp-tablet) {
+    gap: calc(var(--spacer) * 1.2);
+  }
+}
+
+.m-cta__description {
+  color: var(--c-cta-text);
+}
+
+
+//Image Variation 
+.m-cta--image {
+  @include breakpoint($bp-tablet) {
+    display: grid;
+    align-items: center;
+  }
+}
+
+.m-cta__main--image {
+
+}
+
+.m-cta--image__image {
+  grid-row: 1;
+}
+
+.m-cta--image__image .m-image img {
+  border-radius: 0;
+}

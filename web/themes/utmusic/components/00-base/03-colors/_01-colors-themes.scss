@@ -106,6 +106,9 @@
   --c-social-svg: #{palette(blue, 300)};
   --c-social-heading: #{palette(blue, 300)};
 
+  //@molecules/cta
+  --c-cta-text: #{palette(blue, 300)};
+
 
   //pager
   --c-pager--btn: #{palette(blue, 300)};
@@ -223,9 +226,32 @@
 
 
 
-// .theme--black-bg {
-//   @extend %theme--dark-bg;
-//   // Section Background
-//   --c-section-background: #{palette(black)};
-// }
+.theme--pink {
+  @extend %theme--light-bg;
+  
+  
+  // @atoms/button
+  --c-button: #{palette(pink, 400)};
+  --c-button--active: #{palette(white)};
+  --c-button-border: #{palette(pink, 400)};
+  --c-button-border--active: #{palette(pink, 400)};
+  --c-button-text: #{palette(white)};
+  --c-button-text--active: #{palette(pink, 400)};
+
+  --c-button-svg: #{palette(white)};
+  --c-button-svg--active: #{palette(pink, 400)};
+
+  --c-button--secondary: #{palette(grey, 900)};
+  --c-button-border--secondary: #{palette(grey, 900)};
+  --c-button--secondary--active: #{palette(grey, 300)};
+  --c-button-text--secondary: #{palette(blue, 300)};
+  --c-button-text--secondary--active: #{palette(teal, 300)};
+ 
+  --c-button--secondary-svg: #{palette(pink, 400)};
+  --c-button--secondary-svg--active: #{palette(blue, 300)};
+
+
+  // @atoms/text
+  --c-heading-decoration: #{palette(pink, 400)};
+}
 
