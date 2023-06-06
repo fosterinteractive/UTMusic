@@ -438,6 +438,18 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
       ];
     }
   }
+
+  if ($bundle == 'cta') {
+    if ($field_name == 'field_cta_image') {
+      $element['#states'] = [
+        'visible' => [
+          ':input[name="field_cta_variation"]' => [
+            'value' => 'image',
+          ],
+        ],
+      ];
+    }
+  }
 }
 
 
