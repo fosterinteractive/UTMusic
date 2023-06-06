@@ -13,9 +13,9 @@
         slidesToScroll: 1,
         arrows: false,
         autoplay: true,
-        speed: 300,
+        speed: 500,
         fade: true,
-        cssEase: 'ease',
+        cssEase: 'cubic-bezier(0,.73,1,.26)',
         easing: 'linear',
       });
 
