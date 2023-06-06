@@ -1,0 +1,24 @@
+uuid: 29eee08f-3908-46b8-8b64-90e4cf9bfb6b
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_cta_secondary_btn_target
+field_name: field_cta_secondary_btn_target
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: _blank
+      label: 'Open link in new browser tab'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

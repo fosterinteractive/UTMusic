@@ -1,0 +1,26 @@
+uuid: e60f11e1-6899-4cdc-942b-00afc0668be6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_title
+    - paragraphs.paragraphs_type.cta
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+id: paragraph.cta.field_cta_title
+field_name: field_cta_title
+entity_type: paragraph
+bundle: cta
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

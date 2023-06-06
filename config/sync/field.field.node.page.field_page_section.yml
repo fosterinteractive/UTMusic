@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.button
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.carousel_header
+    - paragraphs.paragraphs_type.cta
     - paragraphs.paragraphs_type.events_full_list_dynamic
     - paragraphs.paragraphs_type.events_summary_list_dynamic
     - paragraphs.paragraphs_type.image_section
@@ -41,12 +42,14 @@ settings:
     target_bundles:
       section: section
       section_title: section_title
-      text: text
       image_section: image_section
+      text: text
+      text_image: text_image
       quote: quote
       message: message
       button: button
       card: card
+      cta: cta
       poster: poster
       inline_menu: inline_menu
       news_full_list_dynamic: news_full_list_dynamic
@@ -56,21 +59,23 @@ settings:
       soundcloud: soundcloud
       video: video
       carousel_header: carousel_header
-      text_image: text_image
     negate: 0
     target_bundles_drag_drop:
       button:
-        weight: -35
+        weight: -36
         enabled: true
       card:
-        weight: -34
+        weight: -35
         enabled: true
       carousel_header:
-        weight: 23
+        weight: -24
         enabled: true
       carousel_image_group:
-        weight: 24
+        weight: -23
         enabled: false
+      cta:
+        weight: -34
+        enabled: true
       events_full_list_dynamic:
         weight: -29
         enabled: true
@@ -78,16 +83,16 @@ settings:
         weight: -28
         enabled: true
       header:
-        weight: -23
+        weight: -25
         enabled: false
       image_section:
-        weight: -38
+        weight: -41
         enabled: true
       inline_menu:
         weight: -32
         enabled: true
       message:
-        weight: -36
+        weight: -37
         enabled: true
       news_full_list_dynamic:
         weight: -31
@@ -99,24 +104,24 @@ settings:
         weight: -33
         enabled: true
       quote:
-        weight: -37
+        weight: -38
         enabled: true
       section:
-        weight: -41
+        weight: -43
         enabled: true
       section_title:
-        weight: -40
+        weight: -42
         enabled: true
       soundcloud:
-        weight: -25
+        weight: -27
         enabled: true
       text:
-        weight: -39
+        weight: -40
         enabled: true
       text_image:
-        weight: 35
+        weight: -39
         enabled: true
       video:
-        weight: -24
+        weight: -26
         enabled: true
 field_type: entity_reference_revisions

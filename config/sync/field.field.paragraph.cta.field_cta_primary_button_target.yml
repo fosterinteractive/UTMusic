@@ -1,0 +1,21 @@
+uuid: 3d11cf76-0d6b-4bbd-98b5-07e62c782fd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_primary_button_target
+    - paragraphs.paragraphs_type.cta
+  module:
+    - options
+id: paragraph.cta.field_cta_primary_button_target
+field_name: field_cta_primary_button_target
+entity_type: paragraph
+bundle: cta
+label: 'Target P'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

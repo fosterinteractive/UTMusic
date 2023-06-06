@@ -1,0 +1,26 @@
+uuid: 250cede2-c1df-49c7-b0cc-30674ed3024b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_text
+    - paragraphs.paragraphs_type.cta
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - rich_text
+id: paragraph.cta.field_cta_text
+field_name: field_cta_text
+entity_type: paragraph
+bundle: cta
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

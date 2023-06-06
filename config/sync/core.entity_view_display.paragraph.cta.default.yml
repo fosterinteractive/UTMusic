@@ -1,0 +1,125 @@
+uuid: 5768023a-c5a3-4da1-8621-1937e0cdf2ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cta.field_cta_image
+    - field.field.paragraph.cta.field_cta_primary_button_a11y
+    - field.field.paragraph.cta.field_cta_primary_button_label
+    - field.field.paragraph.cta.field_cta_primary_button_target
+    - field.field.paragraph.cta.field_cta_primary_button_url
+    - field.field.paragraph.cta.field_cta_secondary_btn_a11y
+    - field.field.paragraph.cta.field_cta_secondary_btn_label
+    - field.field.paragraph.cta.field_cta_secondary_btn_target
+    - field.field.paragraph.cta.field_cta_secondary_btn_url
+    - field.field.paragraph.cta.field_cta_text
+    - field.field.paragraph.cta.field_cta_title
+    - field.field.paragraph.cta.field_cta_variation
+    - paragraphs.paragraphs_type.cta
+  module:
+    - link
+    - options
+    - text
+id: paragraph.cta.default
+targetEntityType: paragraph
+bundle: cta
+mode: default
+content:
+  field_cta_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: news_image_portrait
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_cta_primary_button_a11y:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_cta_primary_button_label:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_cta_primary_button_target:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_cta_primary_button_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_cta_secondary_btn_a11y:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_cta_secondary_btn_label:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_cta_secondary_btn_target:
+    type: list_key
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_cta_secondary_btn_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_cta_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_cta_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_cta_variation:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

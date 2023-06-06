@@ -1,0 +1,26 @@
+uuid: d1dda568-da00-4415-8d19-5aedbc493591
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_secondary_btn_a11y
+    - paragraphs.paragraphs_type.cta
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+id: paragraph.cta.field_cta_secondary_btn_a11y
+field_name: field_cta_secondary_btn_a11y
+entity_type: paragraph
+bundle: cta
+label: 'Secondary A Label'
+description: 'Read aloud by screen readers instead of the visually displayed <b>Label</b>.<br> <i> Use when the button''s label is ambiguous if read aloud.  Eg “Read more” ...(about what?)</i>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,20 @@
+uuid: ec15447e-a0ad-4592-b4cd-492262bbe430
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_cta_primary_button_label
+field_name: field_cta_primary_button_label
+entity_type: paragraph
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

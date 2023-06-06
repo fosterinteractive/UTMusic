@@ -1,0 +1,21 @@
+uuid: cecfcc21-5409-4034-907e-c1629f91ce03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_secondary_btn_target
+    - paragraphs.paragraphs_type.cta
+  module:
+    - options
+id: paragraph.cta.field_cta_secondary_btn_target
+field_name: field_cta_secondary_btn_target
+entity_type: paragraph
+bundle: cta
+label: 'Target S'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

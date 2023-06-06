@@ -1,0 +1,23 @@
+uuid: 75b32d73-48d3-408b-9a37-0b4cfc9279d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_primary_button_url
+    - paragraphs.paragraphs_type.cta
+  module:
+    - link
+id: paragraph.cta.field_cta_primary_button_url
+field_name: field_cta_primary_button_url
+entity_type: paragraph
+bundle: cta
+label: 'Primary Button URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link
