@@ -5,7 +5,7 @@ dependencies: {  }
 label: 'Crop Header 10:13'
 id: crop_header_10_13
 description: ''
-aspect_ratio: '10:13'
+aspect_ratio: '10:14'
 soft_limit_width: null
 soft_limit_height: null
 hard_limit_width: null
