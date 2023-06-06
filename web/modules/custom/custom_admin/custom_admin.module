@@ -147,8 +147,6 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
       }
     }
 
-    ksm($element['subform']);
-
     if ($paragraph_type === 'carousel_header' && isset($element['subform']['#parents'])) {
 
       // Define an array of parent fields to check.
@@ -171,7 +169,6 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
         // Get the parent paragraph delta.
         $parent_delta = $element['subform']['field_carousel_header_sec_layout']['widget']['#parents'][1];
 
-        ksm($element['subform']);
         $element['subform']['field_carousel_header_sec_title']['#states'] = [
           'visible' => [
             ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_carousel_header_sec_layout]"]' => [
