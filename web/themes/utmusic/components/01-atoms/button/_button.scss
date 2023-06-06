@@ -79,6 +79,7 @@
 // Secondary Button Style
 %a-button--secondary {
   display: inline-block;
+  border-radius: 0;
   color: var(--c-button-text--secondary);
   
   svg {

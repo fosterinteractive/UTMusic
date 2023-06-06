@@ -46,6 +46,14 @@ announcement:
   js:
     js/exposed-filters-a11y.js: {}
 
+slick-carousel:
+  license:
+      name: MIT
+      url: https://kenwheeler.github.io/slick/
+  js:
+    https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js: { type: external,  minified: true }
+    js/slick-carousel.js: {}
+
 foundation_core:
   version: 6.7.4
   # css:

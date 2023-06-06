@@ -40,13 +40,6 @@
     
 {% set section_layout = content.field_carousel_header_sec_layout[0] ? content.field_carousel_header_sec_layout[0]['#markup'] %}
 
-{# Get cards #}
-{% set cards = [] %}
-{% if content.field_carousel_header_card1[0] or content.field_carousel_header_card2[0] or content.field_carousel_header_card3[0] %}
-  {% set cards = cards|merge([content.field_carousel_header_card1]) %}
-{% endif %}
-
-
 {% include "@organisms/carousel-header/carousel-header.twig" with {
     directory: 'themes/utmusic',
 
@@ -62,7 +55,8 @@
     link_label_secondary: content.field_carousel_header_btn2_label[0] ? content.field_carousel_header_btn2_label[0]['#text'],
     aria_label_secondary: content.field_carousel_header_btn2_a11y[0] ? content.field_carousel_header_btn2_a11y[0],
 
-    image_group: content.field_carousel_header_img_group[0] ? content.field_carousel_header_img_group[0],
+    image_group: content.field_carousel_header_img_group[0] ? content.field_carousel_header_img_group,
+    image_group_count: content.field_carousel_header_img_group['#items'].getIterator()|length,
 
     section_layout: content.field_carousel_header_sec_layout[0] ? content.field_carousel_header_sec_layout[0]['#markup'],
     lower_section_title: content.field_carousel_header_sec_title[0] ? content.field_carousel_header_sec_title[0]['#text'],
@@ -73,3 +67,5 @@
     card_3: content.field_carousel_header_card3[0] ? content.field_carousel_header_card3,
   } only
 %}
+
+{{ attach_library('utmusic/slick-carousel') }}

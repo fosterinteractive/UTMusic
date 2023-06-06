@@ -34,7 +34,16 @@
           %}
         {% endfor %}
       {% else %}
-        {{ image_group }}
+        {% if image_group_count > 1 %}
+          <button class="o-hero-media--carousel__image-button" aria-controls="image-group" aria-label="{{ 'Pause'|t }}">
+            <span class="o-hero-media--carousel__image-button__inner-el"></span>
+          </button>
+        {% endif %}
+
+        <div id="image-group" class="o-hero-media--carousel__image-slick-carousel">
+          {{ image_group }}
+        </div>
+
       {% endif %}
     </div>
   {% endif %}
