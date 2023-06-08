@@ -54,4 +54,4 @@ jobs:
         git config user.name "FIBot"
         git add .
         git commit -q -m 'Build theme.'
-        git push -u --force pantheon HEAD:refs/heads/$BASE_BRANCH
+        git push --force pantheon HEAD:refs/heads/$BASE_BRANCH
