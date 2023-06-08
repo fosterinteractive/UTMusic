@@ -56,13 +56,13 @@
   justify-content: center;
   align-items: center;
   border-radius: rem(7px);
-  background: var(--c-pager--btn); 
   width: rem(60px);
   height: rem(40px);
-  border: rem(1px) solid var(--c-pager--btn-border);
+  border-radius: rem(50px);
 
   svg {
-    height: rem(25px);
+    // height: rem(25px);
+    max-height: 100%;
     fill: var(--c-pager--btn-svg);
   }
 
@@ -75,6 +75,11 @@
       fill: var(--c-pager--btn-svg--hover);
     }
   }
+}
+
+svg.m-pager__btn-prev-icon,
+svg.m-pager__btn-next-icon {
+  max-height: 75%;
 }
 
 .m-pager__btn-prev,
@@ -147,15 +152,14 @@
 
   color: var(--c-pager--item-text);
   text-decoration: none;
-  border: rem(1px) solid var(--c-pager--item-border);
-  background-color: var(--c-pager--item-bg);
-  border-radius: rem(7px);
+  border-radius: (50px);
 
   &:hover,
   &:focus,
   &:active {
     background-color: var(--c-pager--item-bg--hover);
     color: var(--c-pager--item-text--hover);
+    text-decoration: underline;
   }
 }
 
@@ -164,7 +168,7 @@
   @extend %m-pager--btn-spacing;
 
   background-color: var(--c-pager--item-active-bg);
-  border-radius: rem(7px);
+  border-radius: rem(50px);
   color: var( --c-pager--item-active-text);
   cursor: default;
   text-decoration: none;

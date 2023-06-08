@@ -112,16 +112,16 @@
 
   //pager
   --c-pager--btn: #{palette(blue, 300)};
-  --c-pager--btn--hover: #{palette(black, 200)};
+  --c-pager--btn--hover: #{palette(teal, 1000)};
   --c-pager--btn-border: #{palette(black, 200)};
-  --c-pager--btn-svg: #{palette(black, 200)};
+  --c-pager--btn-svg: #{palette(teal, 300)};
   --c-pager--btn-svg--hover: #{palette(blue, 300)};
-  --c-pager--item-active-text: #{palette(white)};
-  --c-pager--item-active-bg: #{palette(black, 200)};
-  --c-pager--item-text: #{palette(black, 200)};
-  --c-pager--item-text--hover: #{palette(white)};
+  --c-pager--item-active-text: #{palette(teal, 300)};
+  --c-pager--item-active-bg: #{palette(teal, 1000)};
+  --c-pager--item-text: #{palette(blue, 300)};
+  --c-pager--item-text--hover: #{palette(blue, 300)};
   --c-pager--item-bg: #{palette(blue, 900)};
-  --c-pager--item-bg--hover: #{palette(black, 200)};
+  --c-pager--item-bg--hover: #{palette(teal, 1000)};
   --c-pager--item-border: #{palette(black, 200)};
 }
 

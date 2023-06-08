@@ -24,11 +24,11 @@ items:
 
 current: 4
 
-prev_icon: 'angle-left'
-next_icon: 'angle-right'
+prev_icon: 'chevron-left-solid'
+next_icon: 'chevron-right-solid'
 
-first_page_icon: 'angles-left'
-last_page_icon: 'angles-right'
+first_page_icon: 'arrow_previous'
+last_page_icon: 'arrow_next'
 
 show_first_last_btn: true
 

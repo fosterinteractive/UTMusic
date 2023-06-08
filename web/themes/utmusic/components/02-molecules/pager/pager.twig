@@ -7,11 +7,11 @@
     // pager buttons.
   #}
 
-  {% set prev_icon = prev_icon|default('angle-left') %}
-  {% set next_icon = next_icon|default('angle-right') %}
+  {% set prev_icon = prev_icon|default('chevron-left-solid') %}
+  {% set next_icon = next_icon|default('chevron-right-solid') %}
 
-  {% set first_page_icon = first_page_icon|default('angles-left') %}
-  {% set last_page_icon = last_page_icon|default('angles-right') %}
+  {% set first_page_icon = first_page_icon|default('arrow_previous') %}
+  {% set last_page_icon = last_page_icon|default('arrow_next') %}
 
   <div class="m-pager__container attachment">
     <nav class="m-pager views-summary" role="navigation" aria-label="Pagination Navigation">
