@@ -77,14 +77,12 @@
 {% set variation = false %}
 
 {% include "@organisms/listing/listing-item.twig" with {
-    directory: directory,
+    directory: 'themes/utmusic',
     variation: variation,
     id: node.id,
     title: content.field_news_title[0] ? content.field_news_title[0]['#text'],
     image: image,
     url: url,
     date_string: content.field_news_date[0] ? content.field_news_date[0]['#text'],
-    tags: topics,
-    category: topics[0],
   } only
 %}

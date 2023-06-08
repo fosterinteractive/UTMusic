@@ -3,11 +3,12 @@ select {
   // background-image: url("./svg-src/svg-art/ico-chevron-down--red-minified.svg");
   // Minfied with https://vecta.io/nano
   // URL encoded with https://yoksel.github.io/url-encoder/
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" xmlns:v="https://vecta.io/nano"%3E%3Cpath d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0h0z" fill="%23d32a32"/%3E%3C/svg%3E');
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjciIGhlaWdodD0iMjciIHZpZXdCb3g9IjAgMCAyNyAyNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEzLjQ5OTQgMTguNjQyNkMxMy4xNzA0IDE4LjY0MjYgMTIuODQxMyAxOC41MTcxIDEyLjU5MDYgMTguMjY2TDQuODc2NjYgMTAuNTUyQzQuMzc0NDUgMTAuMDQ5OCA0LjM3NDQ1IDkuMjM2MjMgNC44NzY2NiA4LjczNDAyQzUuMzc4ODcgOC4yMzE4MSA2LjE5MjQ1IDguMjMxODEgNi42OTQ2NiA4LjczNDAyTDEzLjQ5OTQgMTUuNTQxTDIwLjMwNTMgOC43MzUwMkMyMC44MDc2IDguMjMyODEgMjEuNjIxMSA4LjIzMjgxIDIyLjEyMzMgOC43MzUwMkMyMi42MjU2IDkuMjM3MjMgMjIuNjI1NiAxMC4wNTA4IDIyLjEyMzMgMTAuNTUzTDE0LjQwOTQgMTguMjY3QzE0LjE1ODMgMTguNTE4MSAxMy44Mjg4IDE4LjY0MjYgMTMuNDk5NCAxOC42NDI2WiIgZmlsbD0iIzRENEQ0RCIvPgo8L3N2Zz4K');
   background-repeat: no-repeat;
   background-position: right ru(0.75) center;
   background-size: ru(0.75) ru(0.75);
   padding-right: ru(2);
+  // border-radius: rem(10px);
   cursor: pointer;
   appearance: none;
 }

@@ -527,31 +527,35 @@ function utmusic_theme_suggestions_menu_alter(array &$suggestions, array $variab
  * Exposed Views Filters Form.
  */
 function utmusic_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // View 'jobs_full_list' - aply 'select2_all' module 
-  $form['job_title']['#placeholder'] = t('Search jobs...');
-  $form['job_title']['#attributes']['class'][] = 'm-input m-input--search';
+  // // View 'jobs_full_list' - aply 'select2_all' module 
+  // $form['job_title']['#placeholder'] = t('Search jobs...');
+  // $form['job_title']['#attributes']['class'][] = 'm-input m-input--search';
 
-  $form['job_location']['#options']['All'] = t('All');
-  // $form['job_location']['#select2'] = ['allowClear' => FALSE];
-  $form['job_location']['#attributes']['class'][] = 'm-input';
+  // $form['job_location']['#options']['All'] = t('All');
+  // // $form['job_location']['#select2'] = ['allowClear' => FALSE];
+  // $form['job_location']['#attributes']['class'][] = 'm-input';
 
-  $form['job_company']['#options']['All'] = t('All');
-  // $form['job_company']['#select2'] = ['allowClear' => FALSE];
-  $form['job_company']['#attributes']['class'][] = 'm-input';
+  // $form['job_company']['#options']['All'] = t('All');
+  // // $form['job_company']['#select2'] = ['allowClear' => FALSE];
+  // $form['job_company']['#attributes']['class'][] = 'm-input';
 
   // View 'events_full_list' - aply 'select2_all' module 
-  $form['event_type']['#options']['All'] = t('All');
-  // $form['event_type']['#select2'] = ['allowClear' => FALSE];
-  $form['event_type']['#attributes']['class'][] = 'm-input';
+  // $form['event_type']['#options']['All'] = t('All');
+  // // $form['event_type']['#select2'] = ['allowClear' => FALSE];
+  // $form['event_type']['#attributes']['class'][] = 'm-input';
 
-  $form['location']['#options']['All'] = t('All');
-  // $form['location']['#select2'] = ['allowClear' => FALSE];
-  $form['location']['#attributes']['class'][] = 'm-input';
+  // $form['location']['#options']['All'] = t('All');
+  // // $form['location']['#select2'] = ['allowClear' => FALSE];
+  // $form['location']['#attributes']['class'][] = 'm-input';
 
   // View 'news_full_list' - aply 'select2_all' module 
   $form['news_category']['#options']['All'] = t('All');
   // $form['news_category']['#select2'] = ['allowClear' => FALSE];
   $form['news_category']['#attributes']['class'][] = 'm-input';
+
+  $form['area_study']['#options']['All'] = t('All');
+  // $form['area_study']['#select2'] = ['allowClear' => FALSE];
+  $form['area_study']['#attributes']['class'][] = 'm-input';
 
   if (
     ($form['#id'] == 'views-exposed-form-events-full-list-block-full-list') 
@@ -579,5 +583,4 @@ function utmusic_form_views_exposed_form_alter(&$form, FormStateInterface $form_
 
 function utmusic_theme_suggestions_form_alter(array &$suggestions, array $variables) {
   $suggestions[] = 'form__' . str_replace('-','_', $variables['element']['#id']);
-  $suggestions[] = 'form__' . str_replace('-','_', 'views-exposed-form');
 }

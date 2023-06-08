@@ -65,26 +65,41 @@
  *
  * @see template_preprocess_node()
 #}
-{% set topics = [] %}
+{% set categories = [] %}
 {% if content.field_news_category[0] %}
-  {% set topics_count = content.field_news_category['#items'].getIterator()|length - 1 %}
+  {% set categories_count = content.field_news_category['#items'].getIterator()|length - 1 %}
 
-  {% for i in 0..topics_count %}
-    {% set topics = topics|merge([content.field_news_category['#items'][i].entity.label]) %}
+  {% for i in 0..categories_count %}
+    {% set categories = categories|merge([content.field_news_category['#items'][i].entity.label]) %}
   {% endfor %}
 {% endif %}
 
-{% set variation = false %}
+{% set areas_study = [] %}
+{% if content.field_news_area_study[0] %}
+  {% set areas_study_count = content.field_news_area_study['#items'].getIterator()|length - 1 %}
+
+  {% for i in 0..areas_study_count %}
+    {% set areas_study = areas_study|merge([content.field_news_area_study['#items'][i].entity.label]) %}
+  {% endfor %}
+{% endif %}
+
+{% if content.field_news_image[0] %}
+  {% set image = content.field_news_image %}
+{% elseif content.field_news_header_image_landscap[0] %}
+  {% set image = content.field_news_header_image_landscap %}
+{% elseif content.field_news_header_image_portrait %}
+  {% set image = content.field_news_header_image_portrait %}
+{% endif %}
 
 {% include "@organisms/listing/listing-item.twig" with {
-    directory: directory,
-    variation: variation,
+    directory: 'themes/utmusic',
+    variation: 'news',
     id: node.id,
     title: content.field_news_title[0] ? content.field_news_title[0]['#text'],
-    image: content.field_news_image[0] ? content.field_news_image,
+    image: image,
     url: url,
     date_string: content.field_news_date[0] ? content.field_news_date[0]['#markup'],
-    tags: topics,
-    category: topics[0],
+    areas_study: areas_study,
+    categories: categories,
   } only
 %}

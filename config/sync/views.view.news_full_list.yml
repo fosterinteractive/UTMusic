@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.listing_item
-    - core.entity_view_mode.node.listing_item_condensed
     - node.type.news
     - taxonomy.vocabulary.ed_news_category
+    - taxonomy.vocabulary.news_area_of_study
   module:
     - datetime
     - node
@@ -76,9 +76,26 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: none
+        type: full
         options:
           offset: 0
+          items_per_page: 10
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -206,6 +223,7 @@ display:
           validate_options:
             bundles:
               ed_news_category: ed_news_category
+              news_area_of_study: news_area_of_study
             access: false
             operation: view
             multiple: 1
@@ -235,6 +253,7 @@ display:
           plugin_id: bundle
           value:
             news: news
+          group: 1
           expose:
             operator_limit_selection: false
             operator_list: {  }
@@ -303,7 +322,7 @@ display:
             operator: field_news_category_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_news_category_target_id
+            identifier: news_category
             required: false
             remember: false
             multiple: false
@@ -327,6 +346,54 @@ display:
             group_items: {  }
           reduce_duplicates: false
           vid: ed_news_category
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_news_area_study_target_id:
+          id: field_news_area_study_target_id
+          table: node__field_news_area_study
+          field: field_news_area_study_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_news_area_study_target_id_op
+            label: 'Area of Study'
+            description: ''
+            use_operator: false
+            operator: field_news_area_study_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: area_study
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: news_area_of_study
           type: select
           hierarchy: false
           limit: true
@@ -373,13 +440,17 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: default
       row:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: listing_item_condensed
+          view_mode: listing_item
       query:
         type: views_query
         options:
@@ -401,6 +472,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
@@ -421,6 +493,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
