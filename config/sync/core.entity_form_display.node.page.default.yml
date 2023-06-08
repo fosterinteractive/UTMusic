@@ -115,7 +115,7 @@ content:
     settings:
       title: Header
       title_plural: Headers
-      edit_mode: closed
+      edit_mode: preview
       add_mode: button
       form_display_mode: default
       default_paragraph_type: header

@@ -11,7 +11,7 @@ id: paragraph.carousel_header.field_carousel_header_btn1_url
 field_name: field_carousel_header_btn1_url
 entity_type: paragraph
 bundle: carousel_header
-label: 'Primary Button URL'
+label: URL
 description: ''
 required: false
 translatable: false
