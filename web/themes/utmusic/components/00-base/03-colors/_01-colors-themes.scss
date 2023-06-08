@@ -69,7 +69,9 @@
   --c-heading-credentials: #{palette(grey, 300)};
   --c-heading-link: #{palette(teal, 300)};
   --c-heading-link--active: #{palette(blue, 300)};
-  // --c-heading-link-icon: #{palette(teal)};
+  --c-heading-link-icon: #{palette(teal, 300)};
+  --c-heading-link-icon--active: #{palette(blue, 300)};
+
 
   // @molecules/breadcrumbs
   --c-breadcrumbs-text: #{palette(pink, 400)};

@@ -1,0 +1,15 @@
+storybook_demo: true
+variation: 'news'
+title: '‘Anything is possible’: Future Sound 6ix music workshops draw youth from across Toronto'
+date_string: 'June 10, 2023'
+image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+id: 'listing-item-news'
+url: "#"
+categories: 
+  1:
+    category: News
+  2:
+    category: Announcements
+areas_study:
+  1:
+    area: Voice sound 

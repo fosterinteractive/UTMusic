@@ -1,9 +1,8 @@
 import listingItem from './listing-item.twig';
 import listingItemEvents from './listing-item--events.twig';
 
-
+import ListingItemNewsData from './listing-item--news.yml';
 import ListingItemRelatedNewsData from './listing-item--related-news.yml';
-
 import listingItemEventsData from './listing-item--events.yml';
 import listingItemEventsCondensedData from './listing-item--events-condensed.yml';
 
@@ -12,7 +11,7 @@ import listingItemEventsCondensedData from './listing-item--events-condensed.yml
  * Storybook Definition with data documentation and controls
  */
 export default {
-  title: 'Organisms/Listing',
+  title: 'Organisms/Listing/Listing Item',
   component: listingItem,
 
   parameters: {
@@ -25,6 +24,7 @@ export default {
   },
 }
 
+export const ListingItemNews = () => listingItem(ListingItemNewsData);
 export const ListingItemRelatedNews = () => listingItem(ListingItemRelatedNewsData);
 
 
