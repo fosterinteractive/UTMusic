@@ -50,6 +50,8 @@ jobs:
       run: |
         BASE_BRANCH=${GITHUB_REF##*/}
         git remote add pantheon $pantheon_repo
+        git config user.mail "fibot@fosterinteractive.com"
+        git config user.name "FIBot"
         git add .
         git commit -q -m 'Build theme.'
         git push -u --force pantheon HEAD:refs/heads/$BASE_BRANCH
