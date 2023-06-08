@@ -8,15 +8,17 @@
       const carousel = $(controlButton).next();
 
       $(carousel).slick({
+        pauseOnHover: false,
         slidesToShow: 1,
         infinite: true,
         slidesToScroll: 1,
         arrows: false,
         autoplay: true,
-        speed: 500,
+        autoplaySpeed: 2000,
         fade: true,
-        cssEase: 'cubic-bezier(0,.73,1,.26)',
-        easing: 'linear',
+        speed: 600,
+        cssEase: 'cubic-bezier(0,15,1,10)',
+        // easing: 'linear',
       });
 
       $(controlButton).on('click', () => {

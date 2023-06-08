@@ -13,7 +13,7 @@
   }
 
   @include breakpoint($bp-large) {
-    grid-template-rows: rem(160px) auto rem(110px) rem(110px) auto;
+    grid-template-rows: rem(160px) 1fr rem(50px) rem(250px) 1fr;
     row-gap: 0;
   }
 }
@@ -117,4 +117,59 @@
 
 .o-hero-media--carousel__lower-section-title {
   margin-bottom: rem(70px);
+}
+
+
+//animation
+.m-carousel-img-group.slick-slide {
+  opacity: 0;
+}
+
+.m-carousel-img-group.slick-current {
+  animation: slideFadeIn ease 600ms;
+}
+
+%image-fade {
+  animation: imageFadeIn ease 600ms;
+}
+
+.m-carousel-img-group.slick-active {
+  .m-carousel-img-group__image_1 img {
+    @extend %image-fade;
+  }
+  
+  .m-carousel-img-group__image_2 img {
+    @extend %image-fade;
+    animation-delay: 100ms;
+  }
+  
+  .m-carousel-img-group__image_3 img {
+    @extend %image-fade;
+    animation-delay: 200ms;
+  }
+  
+  .m-carousel-img-group__image_4 img {
+    @extend %image-fade;
+    animation-delay: 300ms;
+  }
+}
+
+
+
+@keyframes imageFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
 }
