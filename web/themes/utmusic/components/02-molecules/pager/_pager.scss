@@ -1,3 +1,12 @@
+.m-pager__container {
+  margin-top: var(--spacer);
+
+  @include breakpoint($bp-tablet) {
+    width: 66%;
+    margin: var(--spacer) auto 0;
+  }
+}
+
 .m-pager {
   display: flex;
   flex-wrap: wrap;
