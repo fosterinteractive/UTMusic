@@ -68,7 +68,7 @@
 
 {% set breadcrumbs = drupal_entity('block', 'menu_breadcrumbs') %}
 
-{# Get categories of articles #}
+{# Get categories of news #}
 {% set categories = [] %}
 {% if content.field_news_category[0] %}
   {% set categories_count = content.field_news_category['#items'].getIterator()|length - 1 %}
@@ -78,7 +78,7 @@
   {% endfor %}
 {% endif %}
 
-{# Get area_study of articles #}
+{# Get area_study of news #}
 {% set topics = [] %}
 {% if content.field_news_area_study[0] %}
   {% set topics_count = content.field_news_area_study['#items'].getIterator()|length - 1 %}
@@ -88,13 +88,13 @@
   {% endfor %}
 {% endif %}
 
-{# Get related articles #}
-{% set articles = [] %}
+{# Get related news #}
+{% set related_news = [] %}
 {% if content.field_news_related_articles[0] %}
   {% set count = content.field_news_related_articles['#items'].getIterator()|length -1 %}
 
   {% for i in 0..count %}
-    {% set articles = articles|merge([content.field_news_related_articles[i]]) %}
+    {% set related_news = related_news|merge([content.field_news_related_articles[i]]) %}
   {% endfor %}
 {% endif %}
 
@@ -120,5 +120,6 @@
     author: content.field_news_header_author[0] ? content.field_news_header_author[0]['#text'],
     date_string: content.field_news_date[0] ? content.field_news_date[0]['#markup'],
     content: content.field_news_body[0] ? content.field_news_body,
+    related_news: related_news,
   }
 %}
