@@ -12,6 +12,7 @@ dependencies:
     - node
     - taxonomy
     - user
+    - views_autosubmit
 id: news_full_list
 label: 'News: Full List '
 module: views
@@ -97,7 +98,7 @@ display:
             offset_label: Offset
           quantity: 9
       exposed_form:
-        type: basic
+        type: autosubmit
         options:
           submit_button: Apply
           reset_button: false
@@ -106,6 +107,7 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+          autosubmit_hide: true
       access:
         type: perm
         options:
@@ -485,7 +487,8 @@ display:
     display_options:
       display_description: ''
       display_extenders:
-        ajax_history: {  }
+        ajax_history:
+          enable_history: true
       path: news-full-list
     cache_metadata:
       max-age: -1
