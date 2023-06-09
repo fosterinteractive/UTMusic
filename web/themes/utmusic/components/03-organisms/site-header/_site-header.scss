@@ -115,8 +115,8 @@
 
 .l-page__menu-main-wrapper {
   display: none;
-  border-top:  1px solid palette(grey, 950);
-  border-bottom:  1px solid palette(grey, 950);
+  border-top:  1px solid palette(grey, 1000);
+  border-bottom:  1px solid palette(grey, 1000);
 
   @include breakpoint($bp-full-nav) {
     display: block;

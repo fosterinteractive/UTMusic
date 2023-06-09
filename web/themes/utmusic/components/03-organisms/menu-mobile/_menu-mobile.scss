@@ -47,7 +47,7 @@
 
   // Active state.
   &.is-active .mm-listitem__text {
-    background: palette(grey, 950);
+    background: palette(grey, 1000);
   }
 
   // Hover state.
@@ -94,7 +94,7 @@
   &:hover,
   &:focus,
   &:active {
-    background: palette(grey, 950);
+    background: palette(grey, 1000);
   }
 
   svg {
@@ -127,7 +127,7 @@
 
 // Prev & Next button.
 %m-menu-mobile-button__core {
-  background: palette(grey, 950);
+  background: palette(grey, 1000);
 
   &:hover,
   &:focus,
