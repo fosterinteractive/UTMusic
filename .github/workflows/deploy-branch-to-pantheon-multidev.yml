@@ -21,6 +21,13 @@ jobs:
       with:
         pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
 
+    - name: Install Terminus Build Tools
+      run: terminus self:plugin:install terminus-build-tools-plugin
+
+    # Check Terminus works.
+    - name: Update Ignore File.
+      run: terminus build:gitignore:cut
+
     # Node Actions
     - uses: actions/checkout@v3
     - name: Use Node.js 16.
