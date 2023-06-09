@@ -1,6 +1,6 @@
 import listing from './listing.twig';
 
-import listingData from './listing.yml';
+import fullListNewsData from './listing-full-news.yml';
 import listingCondensedData from './listing--condensed.yml';
 
 /**
@@ -20,6 +20,6 @@ export default {
   },
 }
 
-export const Listing = () => listing(listingData);
+export const FullListNews = () => listing(fullListNewsData);
 export const ListingCondensed = () => listing(listingCondensedData);
 
