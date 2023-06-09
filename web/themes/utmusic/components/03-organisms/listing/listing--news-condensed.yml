@@ -1,0 +1,93 @@
+sb_demo: true
+variation: 'news-condensed'
+title: List Condensed News
+listing_col_layout: l-flex
+listing_button_url:  
+listing_button_text:  
+listing_items:
+  1:
+    sb_demo: true
+    variation: 'news-condensed'
+    title: 'News title about a research award'
+    date_string: 'June 10, 2023'
+    image:
+    id: 'listing-item-news'
+    url: "#"
+    news_categories: 
+      1:
+        category: Research
+    areas_study:
+
+  2: 
+    sb_demo: true
+    variation: 'news-condensed'
+    title: 'Future Sound 6ix music workshops draw youth from across Toronto'
+    date_string: 'April 5, 2023'
+    image:
+    id: 'listing-item-news'
+    url: "#"
+    news_categories: 
+      1:
+        category: News
+    areas_study:
+      1:
+        area: Voice sound 
+  
+  3:
+    sb_demo: true
+    variation: 'news-condensed'
+    title: 'News title about a staff update for the faculty of music'
+    date_string: 'August 19, 2023'
+    image:
+    id: 'listing-item-news'
+    url: "#"
+    news_categories: 
+      1:
+        category: Announcements
+    areas_study:
+      1:
+        area: Voice sound 
+
+  4:
+    sb_demo: true
+    variation: 'news-condensed'
+    title: 'News title about a student success'
+    date_string: 'October 13, 2023'
+    image:
+    id: 'listing-item-news'
+    url: "#"
+    news_categories: 
+      1:
+        category: People
+    areas_study:
+
+# pager:
+#   items:
+#     pages:
+#       1:
+#         href: '#'
+#       2:
+#         href: '#'
+#       3:
+#         href: '#'
+#       4:
+#         href: '#'
+#       5:
+#         href: '#'
+
+#     previous: true
+#     first: true
+#     next: true
+#     last: true
+#   current: 4
+#   prev_icon: 'chevron-left-solid'
+#   next_icon: 'chevron-right-solid'
+
+#   first_page_icon: 'arrow_previous'
+#   last_page_icon: 'arrow_next'
+
+#   show_first_last_btn: true
+
+#   ellipses:
+#     next: true
+

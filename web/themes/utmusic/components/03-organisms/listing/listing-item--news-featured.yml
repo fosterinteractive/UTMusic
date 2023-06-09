@@ -1,0 +1,18 @@
+sb_demo: true
+variation: 'news-featured'
+icon: featured_article
+title: 'Brave new technology: A&S experts discuss generative AI tools'
+summary: "As artificial intelligence (AI) continues to rapidly advance, there has been a surge in the development of AI-powered content creation tools like ChatGPT ..."
+date_string: 'March 31, 2023'
+image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+id: 'listing-item-news'
+url: '/'
+label: 'Learn more'
+news_categories: 
+  0:
+    category: News
+  1:
+    category: Announcements
+areas_study:
+  1:
+    area: Voice sound 

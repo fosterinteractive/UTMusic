@@ -4,11 +4,13 @@
 
 }
 
+%m-card__image-illustration,
 .m-card__image-illustration {
   display: grid;
   grid-template-columns: auto rem(15px) auto;
   color: var(--c-card--illustration);
   margin-left: -15px;
+  justify-content: start;
 
   .a-icon-external--xsmall,
   svg {
@@ -18,6 +20,7 @@
   }
 }
 
+%m-card__image-illustration-bg,
 .m-card__image-illustration-bg {
   width: rem(37px);
   height: rem(37px);

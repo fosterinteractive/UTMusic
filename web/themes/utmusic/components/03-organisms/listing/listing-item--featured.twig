@@ -18,29 +18,23 @@
   {% set directory =  'themes/utmusic' %}
 {% endif %}
 
+{% set icon = icon|default('featured_article') %}
+
 <div class="m-listing-item{{ variation }}{% if image %} has-img{% endif %}">
   
   <div class="m-listing-item{{ variation }}__content has-img">
-
-    <div class="m-listing-item{{ variation }}__title">
-      {% include "@atoms/text/headings/heading.twig" with {
-          html_element: 'h3',
-          appearance: 'h3',
-          text: title,
-          url: url,          
-        } only
-      %}
-    </div>
-
-    {% if date_string and variation != '--news-condensed' %}
-      <div class="m-listing-item{{ variation }}__date">
-        {{ date_string }}
+    <div class="m-listing-item{{variation}}__wrapper-tags-icon">
+    
+      <div class="m-listing-item{{ variation }}__illustration">
+        {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+          directory: directory,
+          base_class: 'a-icon',
+          icon: icon,
+          size: 'xsmall', 
+          } only
+        %}
+        <div class="m-listing-item{{ variation }}__illustration-bg"></div>
       </div>
-    {% endif %}
-
-    {% if variation == '--news-condensed' %}
-    <div class="m-listing-item{{variation}}__wrapper-tags-date">
-    {% endif %}
 
       {% if news_categories or areas_study %}
         <div class="m-listing-item{{ variation }}__tags">
@@ -63,42 +57,51 @@
         
       {% endif %}
 
-      {% if date_string and variation == '--news-condensed' %}
+    </div>
+    
+    <div class="m-listing-item{{ variation }}__wrapper-title-date">
+
+      {% if date_string %}
         <div class="m-listing-item{{ variation }}__date">
           {{ date_string }}
         </div>
       {% endif %}
 
-      {% if variation == '--news-condensed' %}
-      </div>
-      {% endif %}
+      {% if title %}
+        <div class="m-listing-item{{ variation }}__title">
+          {% include "@atoms/text/headings/heading.twig" with {
+              html_element: 'h2',
+              appearance: 'h2',
+              text: title,
+              url: url,          
+            } only
+          %}
+        </div>
+      {% endif  %}
+    </div>
 
-        {# {% if text %}
-      <div class="m-listing-item{{ variation }}__text" data-dotdotdot="elipsis">
-        {% include "@molecules/text/text.twig" with {
-            body: text,
+    {% if summary %}
+    <div class="m-listing-item{{ variation }}__summary">
+      {{ summary }}
+    </div>
+    {% endif %}
+        
+    {% if url and label %}
+      <div class="m-listing-item{{ variation }}__button">
+        {% include "@atoms/button/button.twig" with {
+            label: label,
+            html_element: 'a',
+            base_class: 'a-button',
+            variation: '',
+            url: url,
+            id: 'stories-listing-item-'|t ~ id,
+            target: '',
+            aria_label: title,
+            alignment: 'left'
           } only
         %}
       </div>
-    {% endif %} #}
-
-    {# {% if url %}
-      <div class="m-listing-item{{ variation }}__button">
-        {% set button_label = ('Read more'|t) %}
-
-          {% include "@atoms/button/button.twig" with {
-              label: button_label,
-              html_element: 'a',
-              variation: '',
-              url: url,
-              id: 'stories-listing-item-'|t ~ id,
-              target: '',
-              aria_label: title,
-              alignment: 'left'
-            } only
-          %}
-      </div>
-    {% endif %} #}
+    {% endif %}
 
   </div>
 

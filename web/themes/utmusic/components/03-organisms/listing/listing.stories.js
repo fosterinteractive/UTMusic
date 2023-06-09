@@ -1,7 +1,9 @@
 import listing from './listing.twig';
 
-import fullListNewsData from './listing-full-news.yml';
-import listingCondensedData from './listing--condensed.yml';
+import fullListNewsData from './listing--full-news.yml';
+import listRelatedNewsData from './listing--news-related.yml';
+
+import listingCondensedData from './listing--news-condensed.yml';
 
 /**
  * Storybook Definition with data documentation and controls
@@ -21,5 +23,6 @@ export default {
 }
 
 export const FullListNews = () => listing(fullListNewsData);
-export const ListingCondensed = () => listing(listingCondensedData);
+export const RelatedNews = () => listing(listRelatedNewsData);
+export const ListNewsCondensed = () => listing(listingCondensedData);
 
