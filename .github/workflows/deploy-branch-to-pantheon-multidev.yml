@@ -16,8 +16,8 @@ jobs:
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
     
     #Install Terminus
-    - name: Installing Terminus
-      uses: kopepasah/setup-pantheon-terminus@master
+    - name: Install Terminus
+      uses: pantheon-systems/terminus-github-actions@main
       with:
         pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
 
