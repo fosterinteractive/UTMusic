@@ -1,0 +1,23 @@
+uuid: aa367c51-cdb0-4ac9-8b16-6cec4c25f224
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_news_summary_variation
+    - paragraphs.paragraphs_type.news_summary_list_dynamic
+  module:
+    - options
+id: paragraph.news_summary_list_dynamic.field_news_summary_variation
+field_name: field_news_summary_variation
+entity_type: paragraph
+bundle: news_summary_list_dynamic
+label: Variation
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: l-flex
+default_value_callback: ''
+settings: {  }
+field_type: list_string

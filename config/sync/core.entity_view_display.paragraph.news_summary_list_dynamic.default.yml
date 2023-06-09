@@ -8,6 +8,7 @@ dependencies:
     - field.field.paragraph.news_summary_list_dynamic.field_news_offset
     - field.field.paragraph.news_summary_list_dynamic.field_news_other_number_of_items
     - field.field.paragraph.news_summary_list_dynamic.field_news_promote_filter
+    - field.field.paragraph.news_summary_list_dynamic.field_news_summary_variation
     - field.field.paragraph.news_summary_list_dynamic.field_news_title
     - paragraphs.paragraphs_type.news_summary_list_dynamic
   module:
@@ -57,6 +58,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_news_summary_variation:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_news_title:
     type: text_default

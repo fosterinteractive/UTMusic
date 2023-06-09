@@ -59,21 +59,6 @@ third_party_settings:
         description: ''
         required_fields: true
         open: true
-    group_promote:
-      children:
-        - field_news_promote
-      label: Promote
-      region: content
-      parent_name: ''
-      weight: 2
-      format_type: fieldset
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        description: ''
-        required_fields: true
-        open: true
     group_search_engines_social_shar:
       children:
         - group_tip_search_engine_optimiz
@@ -128,6 +113,7 @@ third_party_settings:
         - field_news_image
         - field_news_category
         - field_news_area_study
+        - field_news_promote
       label: Summary
       region: content
       parent_name: ''
@@ -181,7 +167,7 @@ content:
     third_party_settings: {  }
   field_news_area_study:
     type: options_select
-    weight: 28
+    weight: 27
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -199,7 +185,7 @@ content:
     third_party_settings: {  }
   field_news_category:
     type: options_select
-    weight: 27
+    weight: 26
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -281,7 +267,7 @@ content:
         show_edit: '1'
   field_news_promote:
     type: options_select
-    weight: 20
+    weight: 28
     region: content
     settings: {  }
     third_party_settings: {  }
