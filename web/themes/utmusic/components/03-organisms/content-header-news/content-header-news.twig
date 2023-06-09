@@ -57,7 +57,7 @@
         </div>
       {% endif %}
 
-      {% if news_categories or area_study %}
+      {% if news_categories or areas_study %}
         <div class="o-hero-media__tags {% if variation %}o-hero-media{{variation}}__tags{% endif %}">
           {% for item in news_categories %}
             {% include '@atoms/chip/chip.twig' with {

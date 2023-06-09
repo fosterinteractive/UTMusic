@@ -41,7 +41,7 @@
 
   <div class="o-listing__items {{ listing_col_layout }}"> 
     {% for item in listing_items %}
-      {% if storybook_demo %}
+      {% if sb_demo %}
         {% if variation == '--events' or '--events-condensed' %}
           {% include "@organisms/listing/listing-item--events.twig" with {
               directory: directory,
@@ -64,8 +64,6 @@
               image: item.image,
               url: item.url,
               id: item.id,
-              start_date: item.start_date,
-              end_date: item.end_date,
               tags: item.tags,
               text: item.text,
             } only

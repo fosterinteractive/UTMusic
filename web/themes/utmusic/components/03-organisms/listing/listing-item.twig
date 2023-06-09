@@ -32,30 +32,46 @@
       %}
     </div>
 
-    {% if date_string %}
+    {% if date_string and variation != '--news-condensed' %}
       <div class="m-listing-item{{ variation }}__date">
         {{ date_string }}
       </div>
     {% endif %}
 
-    {% if categories or area_study %}
-      <div class="m-listing-item{{ variation }}__tags">
-        {% for item in categories %}
-          {% include '@atoms/chip/chip.twig' with {
-              text: sb_demo ? item.category : item,
-            } only 
-          %}
-        {% endfor %}
-
-        {% for item in areas_study %}
-          {% include '@atoms/chip/chip.twig' with {
-              text: sb_demo ? item.area : item,
-            } only 
-          %}
-        {% endfor %}
-      </div>
-      
+    {% if variation == '--news-condensed' %}
+    <div class="m-listing-item{{variation}}__wrapper-tags-date">
     {% endif %}
+
+      {% if news_categories or areas_study %}
+        <div class="m-listing-item{{ variation }}__tags">
+
+          {% for item in news_categories %}
+            {% include '@atoms/chip/chip.twig' with {
+                text: sb_demo ? item.category : item,
+              } only 
+            %}
+          {% endfor %}
+
+          {% for item in areas_study %}
+            {% include '@atoms/chip/chip.twig' with {
+                text: sb_demo ? item.area : item,
+              } only 
+            %}
+          {% endfor %}
+
+        </div>
+        
+      {% endif %}
+
+      {% if date_string and variation == '--news-condensed' %}
+        <div class="m-listing-item{{ variation }}__date">
+          {{ date_string }}
+        </div>
+      {% endif %}
+
+      {% if variation == '--news-condensed' %}
+      </div>
+      {% endif %}
 
         {# {% if text %}
       <div class="m-listing-item{{ variation }}__text" data-dotdotdot="elipsis">
