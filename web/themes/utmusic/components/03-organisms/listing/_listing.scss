@@ -69,3 +69,18 @@
     }
   }
 }
+
+
+// News listing
+.o-listing--news {
+  margin-top: var(--spacer);
+
+  @include breakpoint($bp-tablet) {
+    width: 66%;
+    margin: var(--spacer) auto 0;
+  }
+}
+
+.o-listing--news .o-listing__items {
+  gap: 0;
+}
