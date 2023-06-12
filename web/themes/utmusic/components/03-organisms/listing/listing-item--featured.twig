@@ -73,7 +73,6 @@
               html_element: 'h2',
               appearance: 'h2',
               text: title,
-              url: url,          
             } only
           %}
         </div>
@@ -89,12 +88,13 @@
     {% if url and label %}
       <div class="m-listing-item{{ variation }}__button">
         {% include "@atoms/button/button.twig" with {
-            label: label,
+            directory: directory,
             html_element: 'a',
             base_class: 'a-button',
             variation: '',
             url: url,
-            id: 'stories-listing-item-'|t ~ id,
+            label: label,
+            id: 'news-featured-item-'|t ~ id,
             target: '',
             aria_label: title,
             alignment: 'left'
