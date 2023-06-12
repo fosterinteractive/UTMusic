@@ -65,12 +65,23 @@
  *
  * @see template_preprocess_node()
 #}
-{% set topics = [] %}
-{% if content.field_news_category[0] %}
-  {% set topics_count = content.field_news_category['#items'].getIterator()|length - 1 %}
 
-  {% for i in 0..topics_count %}
-    {% set topics = topics|merge([content.field_news_category['#items'][i].entity.label]) %}
+{# Get news_categories of news #}
+{% set news_categories = [] %}
+{% if content.field_news_category[0] %}
+  {% set news_categories_count = content.field_news_category['#items'].getIterator()|length - 1 %}
+
+  {% for i in 0..news_categories_count %}
+    {% set news_categories = news_categories|merge([content.field_news_category['#items'][i].entity.label]) %}
+  {% endfor %}
+{% endif %}
+
+{% set areas_study = [] %}
+{% if content.field_news_area_study[0] %}
+  {% set areas_study_count = content.field_news_area_study['#items'].getIterator()|length - 1 %}
+
+  {% for i in 0..areas_study_count %}
+    {% set areas_study = areas_study|merge([content.field_news_area_study['#items'][i].entity.label]) %}
   {% endfor %}
 {% endif %}
 
@@ -78,12 +89,12 @@
 
 {% include "@organisms/listing/listing-item.twig" with {
     directory: directory,
-    variation: variation,
+    variation: 'news-condensed',
     id: node.id,
-    title: label[0] ? label[0]['#context']['value'],
-    image: content.field_news_image[0] ? content.field_news_image,
+    title: content.field_news_title[0] ? content.field_news_title[0]['#text'],
     url: url,
     date_string: content.field_news_date[0] ? content.field_news_date[0]['#markup'],
-    tags: topics,
+    areas_study: areas_study,
+    news_categories: news_categories,
   } only
 %}

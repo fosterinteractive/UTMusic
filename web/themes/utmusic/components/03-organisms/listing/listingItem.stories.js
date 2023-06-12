@@ -30,10 +30,10 @@ export default {
   },
 }
 
-export const ListingItemRelatedNews = () => listingItem(ListingItemRelatedNewsData);
 
 export const ListingItemNews = () => listingItem(ListingItemNewsData);
 export const ListingItemNewsCondensed = () => listingItem(ListingItemNewsCondensedData);
+export const ListingItemRelatedNews = () => listingItem(ListingItemRelatedNewsData);
 
 export const ListingItemFeaturedNews = () => listingItemFeatured(ListingItemNewsFeaturedData);
 
