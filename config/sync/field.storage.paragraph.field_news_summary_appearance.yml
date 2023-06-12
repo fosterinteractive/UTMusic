@@ -1,0 +1,27 @@
+uuid: d183c020-44e6-4f4f-abd9-ad8662852b42
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_news_summary_appearance
+field_name: field_news_summary_appearance
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: listing-item
+      label: 'Listing with Images'
+    -
+      value: condensed
+      label: 'Condensed Listing'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,12 +1,12 @@
-uuid: 9345ae6e-7c2d-407e-a25d-3ed2638c54ee
+uuid: c2485156-e05e-4479-8c65-cf9f8c140662
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
     - taxonomy
-id: paragraph.field_news_category
-field_name: field_news_category
+id: paragraph.field_news_summary_area_study
+field_name: field_news_summary_area_study
 entity_type: paragraph
 type: entity_reference
 settings:

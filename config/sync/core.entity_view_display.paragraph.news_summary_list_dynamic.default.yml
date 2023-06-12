@@ -8,6 +8,8 @@ dependencies:
     - field.field.paragraph.news_summary_list_dynamic.field_news_offset
     - field.field.paragraph.news_summary_list_dynamic.field_news_other_number_of_items
     - field.field.paragraph.news_summary_list_dynamic.field_news_promote_filter
+    - field.field.paragraph.news_summary_list_dynamic.field_news_summary_appearance
+    - field.field.paragraph.news_summary_list_dynamic.field_news_summary_area_study
     - field.field.paragraph.news_summary_list_dynamic.field_news_summary_variation
     - field.field.paragraph.news_summary_list_dynamic.field_news_title
     - paragraphs.paragraphs_type.news_summary_list_dynamic
@@ -24,14 +26,14 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_news_number_of_items:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_news_offset:
     type: number_integer
@@ -40,7 +42,7 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_news_other_number_of_items:
     type: number_integer
@@ -49,29 +51,42 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 3
-    region: content
-  field_news_promote_filter:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
     weight: 4
     region: content
-  field_news_summary_variation:
-    type: list_default
-    label: above
+  field_news_promote_filter:
+    type: entity_reference_entity_id
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 5
+    region: content
+  field_news_summary_appearance:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_news_summary_area_study:
+    type: entity_reference_entity_id
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_news_summary_variation:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
     region: content
   field_news_title:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   search_api_excerpt: true
