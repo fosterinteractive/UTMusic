@@ -1,0 +1,20 @@
+uuid: b87e92de-43f2-47c5-b65b-3146f120af4a
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_news_featured_area_study
+field_name: field_news_featured_area_study
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

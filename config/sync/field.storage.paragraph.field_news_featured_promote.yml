@@ -1,0 +1,20 @@
+uuid: 1a0bc399-cd63-4cc9-94db-5145558cf42d
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_news_featured_promote
+field_name: field_news_featured_promote
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

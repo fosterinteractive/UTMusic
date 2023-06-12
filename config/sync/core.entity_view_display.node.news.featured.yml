@@ -1,9 +1,9 @@
-uuid: fe161041-f659-4096-8d27-71aa364d1f6a
+uuid: 39f127fe-3148-4613-a4a7-bada5d200cf0
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.full
+    - core.entity_view_mode.node.featured
     - field.field.node.news.field_news_area_study
     - field.field.node.news.field_news_body
     - field.field.node.news.field_news_category
@@ -28,18 +28,17 @@ dependencies:
   module:
     - datetime
     - layout_builder
-    - layout_paragraphs
-    - options
+    - smart_trim
     - text
     - user
 third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: node.news.full
+id: node.news.featured
 targetEntityType: node
 bundle: news
-mode: full
+mode: featured
 content:
   field_news_area_study:
     type: entity_reference_label
@@ -47,16 +46,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 10
-    region: content
-  field_news_body:
-    type: layout_paragraphs
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 9
+    weight: 1
     region: content
   field_news_category:
     type: entity_reference_label
@@ -64,7 +54,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 8
+    weight: 0
     region: content
   field_news_date:
     type: datetime_custom
@@ -73,14 +63,7 @@ content:
       timezone_override: America/Toronto
       date_format: 'F j, Y'
     third_party_settings: {  }
-    weight: 7
-    region: content
-  field_news_header_author:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 6
+    weight: 2
     region: content
   field_news_header_image_landscap:
     type: entity_reference_entity_view
@@ -89,7 +72,7 @@ content:
       view_mode: news_image_landscape
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 6
     region: content
   field_news_header_image_portrait:
     type: entity_reference_entity_view
@@ -98,55 +81,65 @@ content:
       view_mode: news_image_portrait
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 7
     region: content
-  field_news_header_title_prefix:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_news_header_variation:
-    type: list_key
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_news_header_video:
+  field_news_image:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: video
+      view_mode: news_image
       link: false
     third_party_settings: {  }
     weight: 5
     region: content
-  field_news_related_articles:
-    type: entity_reference_entity_view
+  field_news_summary_text:
+    type: smart_trim
     label: hidden
     settings:
-      view_mode: related_news_item
-      link: false
+      trim_length: 153
+      trim_type: chars
+      trim_suffix: ...
+      wrap_output: false
+      wrap_class: trimmed
+      more:
+        display_link: false
+        target_blank: false
+        link_trim_only: false
+        class: more-link
+        text: More
+        aria_label: 'Read more about [node:title]'
+        token_browser: ''
+      summary_handler: full
+      trim_options:
+        text: false
+        trim_zero: false
+        replace_tokens: false
     third_party_settings: {  }
-    weight: 11
+    weight: 4
     region: content
   field_news_title:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
     region: content
 hidden:
-  field_news_image: true
+  field_news_body: true
+  field_news_header_author: true
+  field_news_header_title_prefix: true
+  field_news_header_variation: true
+  field_news_header_video: true
   field_news_promote: true
-  field_news_summary_text: true
+  field_news_related_articles: true
   field_page_admin_help_seo: true
   field_page_admin_help_social: true
   field_page_meta_description: true
   field_page_meta_image: true
   field_page_meta_title: true
-  links: true
   search_api_excerpt: true
