@@ -8,10 +8,10 @@ dependencies:
     - field.field.media.ed_image.field_ed_image_image
     - field.field.media.ed_image.field_ed_image_width
     - media.type.ed_image
-    - responsive_image.styles.news_image_3_2
+    - responsive_image.styles.news_image_4_3
   module:
     - layout_builder
-    - responsive_image
+    - svg_image_responsive
 third_party_settings:
   layout_builder:
     enabled: false
@@ -27,10 +27,14 @@ content:
     type: responsive_image
     label: hidden
     settings:
-      responsive_image_style: news_image_3_2
+      responsive_image_style: news_image_4_3
       image_link: ''
       image_loading:
         attribute: lazy
+      svg_render_as_image: '1'
+      svg_attributes:
+        width: ''
+        height: ''
     third_party_settings: {  }
     weight: 0
     region: content

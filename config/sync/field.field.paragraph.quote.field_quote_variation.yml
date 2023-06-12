@@ -1,19 +1,19 @@
-uuid: 89badcbe-c7a3-472b-ac1e-0b8fe53efac4
+uuid: 20ed1252-3613-4359-91a8-9859a0603a6e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_quote_source_type
+    - field.storage.paragraph.field_quote_variation
     - paragraphs.paragraphs_type.quote
   module:
     - options
-id: paragraph.quote.field_quote_source_type
-field_name: field_quote_source_type
+id: paragraph.quote.field_quote_variation
+field_name: field_quote_variation
 entity_type: paragraph
 bundle: quote
-label: 'Source Type'
+label: Variation
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

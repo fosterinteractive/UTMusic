@@ -1,0 +1,21 @@
+uuid: ad886a82-c69b-4b78-ab17-d3514f867cf5
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - media_library_media_modify
+    - paragraphs
+id: paragraph.field_quote_image_small
+field_name: field_quote_image_small
+entity_type: paragraph
+type: entity_reference_entity_modify
+settings:
+  target_type: media
+module: media_library_media_modify
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

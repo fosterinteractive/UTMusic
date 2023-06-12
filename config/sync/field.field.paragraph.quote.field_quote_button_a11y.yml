@@ -1,9 +1,9 @@
-uuid: 0c1a3990-52b4-482d-a3e4-ca9aca6718b2
+uuid: 7aa38694-387b-426d-ac1b-784ab4d82a60
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_quote_text
+    - field.storage.paragraph.field_quote_button_a11y
     - paragraphs.paragraphs_type.quote
   module:
     - allowed_formats
@@ -11,16 +11,16 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - rich_text
-id: paragraph.quote.field_quote_text
-field_name: field_quote_text
+      - plain_text
+id: paragraph.quote.field_quote_button_a11y
+field_name: field_quote_button_a11y
 entity_type: paragraph
 bundle: quote
-label: Text
+label: 'Accessible Label'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text_long
+field_type: text
