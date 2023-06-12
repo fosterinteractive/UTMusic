@@ -135,6 +135,7 @@ function utmusic_preprocess_paragraph(array &$variables) {
   $dynamic_block_paragraphs = [
     'news_summary_list_dynamic' => ['type' => 'news'],
     'events_summary_list_dynamic' => ['type' => 'event'],
+    'news_featured_item' => ['type' => 'news_featured'],
   ];
 
   if (isset($dynamic_block_paragraphs[$paragraph_type])) {
@@ -153,6 +154,17 @@ function utmusic_preprocess_paragraph(array &$variables) {
         'offset' => 'field_news_offset',
         'layout' => 'field_news_summary_variation',
         'appearance' => 'field_news_summary_appearance',
+      ],
+      'news_featured' => [
+        'title' =>  null,
+        'contextual' => [
+          'promote' => 'field_news_featured_promote',
+          'category1' => 'field_news_featured_category',
+          'category2' => 'field_news_featured_area_study',
+        ],
+        'number_items' => null,
+        'number_other_items' => null,
+        'offset' => 'field_news_featured_offset',
       ],
       'event' => [
         'title' => 'field_events_title',
@@ -215,6 +227,9 @@ function utmusic_preprocess_paragraph(array &$variables) {
           $variables['content']['news_summary_list'] = utmusic_return_rendered_view('news_full_list', 'news_summary_list', $number_items, $categories,  $dynamic_title, $offset, $layout);
         }
 
+      }
+      elseif ($paragraph_type == 'news_featured_item') {
+        $variables['content']['news_featured_item'] = utmusic_return_rendered_view('news_full_list', 'news_featured_item', $number_items, $categories,  $dynamic_title, $offset);
       }
       elseif ($paragraph_type == 'events_summary_list_dynamic') {
         // $variables['content']['events_summary_list_past'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_upcoming', $number_items, $categories, $promote, $dynamic_title, $offset);
