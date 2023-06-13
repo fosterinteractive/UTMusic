@@ -51,10 +51,16 @@
   }
 }
 
-
 %m-listing-item__content,
 .m-listing-item__content {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacer) * 0.5);
+}
+
+.m-listing-item__title h3 {
+  margin-bottom: 0;
 }
 
 .m-listing-item__title .a-icon--inline {
