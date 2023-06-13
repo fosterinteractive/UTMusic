@@ -450,6 +450,29 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
       ];
     }
   }
+
+  //Quote PT 
+  if ($bundle == 'quote') {
+    if ($field_name == 'field_quote_image_main') {
+      $element['#states'] = [
+        'visible' => [
+          ':input[name="field_quote_variation"]' => [
+            'value' => 'image',
+          ],
+        ],
+      ];
+    }
+
+    if ($field_name == 'field_quote_image_small') {
+      $element['#states'] = [
+        'visible' => [
+          ':input[name="field_quote_variation"]' => [
+            'value' => 'image',
+          ],
+        ],
+      ];
+    }
+  }
 }
 
 
