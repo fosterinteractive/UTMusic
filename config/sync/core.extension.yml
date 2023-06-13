@@ -17,6 +17,7 @@ module:
   cacheflush_entity: 0
   captcha: 0
   ckeditor: 0
+  ckeditor5: 0
   ckwordcount: 0
   components: 0
   composer_deploy: 0

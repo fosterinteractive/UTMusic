@@ -28,7 +28,6 @@ dependencies:
   module:
     - datetime
     - layout_builder
-    - smart_trim
     - text
     - user
 third_party_settings:
@@ -93,29 +92,11 @@ content:
     weight: 5
     region: content
   field_news_summary_text:
-    type: smart_trim
-    label: hidden
-    settings:
-      trim_length: 153
-      trim_type: chars
-      trim_suffix: ...
-      wrap_output: false
-      wrap_class: trimmed
-      more:
-        display_link: false
-        target_blank: false
-        link_trim_only: false
-        class: more-link
-        text: More
-        aria_label: 'Read more about [node:title]'
-        token_browser: ''
-      summary_handler: full
-      trim_options:
-        text: false
-        trim_zero: false
-        replace_tokens: false
+    type: text_default
+    label: above
+    settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 9
     region: content
   field_news_title:
     type: text_default
