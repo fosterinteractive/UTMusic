@@ -39,6 +39,22 @@ targetEntityType: node
 bundle: news
 mode: related_news_item
 content:
+  field_news_area_study:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_news_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_news_date:
     type: datetime_default
     label: hidden
@@ -88,9 +104,7 @@ content:
     weight: 0
     region: content
 hidden:
-  field_news_area_study: true
   field_news_body: true
-  field_news_category: true
   field_news_header_author: true
   field_news_header_title_prefix: true
   field_news_header_variation: true
