@@ -14,24 +14,7 @@
   cursor: pointer;
   transition: background-color 0.3s;
   appearance: none;
-  border-radius: rem(44px);
-
-
-  svg {
-    margin-left: calc(var(--spacer) * 0.1);
-    width: 0.7em;
-    height: 0.6em;
-  }
-
-  &:hover,
-  &:active,
-  &:focus {
-
-    svg {
-      margin-left: calc(var(--spacer) * 0.3);;
-      transition: 0.2s ease-out;
-    }
-  }
+  border-radius: rem(44px); 
 }
 
 // Default Padding (Medium)
@@ -81,11 +64,14 @@
   display: inline-block;
   border-radius: 0;
   color: var(--c-button-text--secondary);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   
   svg {
+    margin-left: calc(var(--spacer) * 0.1);
+    width: 0.7em;
+    height: 0.6em;
     color: var(--c-button--secondary-svg);
     fill: currentColor;
-    
   }
 
   &:hover,
@@ -96,6 +82,8 @@
     color: var(--c-button-text--secondary--active);
     
     svg {
+      margin-left: calc(var(--spacer) * 0.3);;
+      transition: 0.2s ease-out;
       color: var(--c-button--secondary-svg--active);
       fill: currentColor;
     }
@@ -104,15 +92,25 @@
 
 // Icon Button Style (No visible text)
 %a-button--icon {
-  border: 1px solid var(--c-button-border--secondary);
-  background-color: var(--c-button--secondary);
+  border: rem(1px) solid var(--c-button-border--secondary);
   color: var(--c-button-text--secondary);
+  border-radius: rem(10px);
+
+  svg {
+    fill: var(--c-button-text--secondary);
+    stroke: var(--c-button-text--secondary);
+  }
 
   &:hover,
   &:focus,
   &:active {
-    background-color: var(--c-button--secondary--active);
-    color: var(--c-button-tex--secondary--active);
+    border: rem(1px) solid var(--c-button-border--secondary--active);
+    color: var(--c-button-text--secondary--active);
+
+    svg {
+      fill: var(--c-button-text--secondary--active);
+      stroke: var(--c-button-text--secondary--active);
+    }
   }
 }
 
@@ -122,6 +120,24 @@
   @extend %a-button--padding;
   @extend %a-button;
   @extend %a-button--small-width;
+}
+
+.a-button {
+  svg {
+    margin-left: calc(var(--spacer) * 0.1);
+    width: 0.7em;
+    height: 0.6em;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+
+    svg {
+      margin-left: calc(var(--spacer) * 0.3);;
+      transition: 0.2s ease-out;
+    }
+  }
 }
 
 %a-button--secondary,
@@ -136,8 +152,8 @@
   display: inline-block;
   width: 1em;
   height: 1em;
-  vertical-align: bottom;
   fill: currentColor;
+  vertical-align: middle;
 }
 
 .a-button--icon-right {
@@ -170,8 +186,9 @@
 
 .a-button--icon__icon {
   @extend %a-button__icon--core;
+  width: rem(26px);
+  height: rem(26px);
 }
-
 
 
 // button position

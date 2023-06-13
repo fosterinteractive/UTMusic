@@ -23,8 +23,9 @@
   --c-button-svg--active: #{palette(teal, 1000)};
 
   --c-button--secondary: #{palette(grey, 900)};
-  --c-button-border--secondary: #{palette(grey, 900)};
   --c-button--secondary--active: #{palette(grey, 300)};
+  --c-button-border--secondary: #{palette(white)};
+  --c-button-border--secondary--active: #{palette(grey, 900)};
   --c-button-text--secondary: #{palette(blue, 300)};
   --c-button-text--secondary--active: #{palette(teal, 300)};
  
