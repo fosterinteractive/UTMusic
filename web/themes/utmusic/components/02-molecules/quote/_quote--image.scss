@@ -1,0 +1,48 @@
+@use 'sass:math';
+@use "sass:list";
+
+.m-quote--image {
+  @extend %m-quote;
+
+  @include breakpoint($bp-tablet) {
+    display: flex;
+    gap: calc(var(--spacer) * 2);
+  }
+}
+
+.m-cta--image__images {
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(4, auto);
+}
+
+.m-cta--image__image-main {
+  grid-column: col 2/ span 4;
+  grid-row: 1 / span 3;
+}
+
+.m-cta--image__image-small {
+  grid-column: col 1/ span 2;
+  grid-row: 3/ span 2;
+  z-index: 1;
+}
+
+
+.m-quote--image__illustration {
+  @extend %m-quote--illustration;
+}
+
+.m-quote--image__illustration-bg {
+ @extend %m-card__image-illustration-bg;
+}
+
+.m-quote--image__content-wrapper {
+  @extend %m-quote--content-wrapper;
+  width: calc(50% - calc(var(--spacer) * 2 ));
+}
+
+.m-quote--image__source {
+  @extend %m-quote--source;
+}
+

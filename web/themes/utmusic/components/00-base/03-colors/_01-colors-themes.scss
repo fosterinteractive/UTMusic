@@ -85,8 +85,8 @@
 
   // @molecules/quote
   --c-quote: #{palette(black, 200)};
-  --c-quote--suorce-type: #{palette(blue, 300)};
-  --c-quote--suorce-type--bg: #{palette(black, 200)};
+  --c-quote-text-border: #{palette(teal, 300)};
+
 
   // @molecules/card
   --c-card-left-border: #{palette(grey, 800)};

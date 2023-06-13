@@ -1,0 +1,58 @@
+@use 'sass:math';
+@use "sass:list";
+
+%m-quote,
+.m-quote--text {
+  margin-right: 0;
+  margin-left: 0;
+  padding-top:   list.slash(var(--spacer), 2);
+  padding-bottom:   list.slash(var(--spacer), 2);
+
+  @include breakpoint ($bp-tablet-small) {
+    padding-top:  var(--spacer);
+    padding-bottom:  var(--spacer);
+  }
+}
+
+%m-quote--illustration, 
+.m-quote--text__illustration {
+  @extend %m-card__image-illustration;
+
+  .a-icon--xsmall {
+    height: rem(24px);
+  }
+}
+
+.m-quote--text__illustration-bg {
+ @extend %m-card__image-illustration-bg;
+}
+
+.m-quote__text {
+  border-bottom: rem(1px) solid var(--c-quote-text-border);
+  padding-bottom: var(--spacer);
+}
+
+.m-quote__text--small {
+  @extend %a-type--small;
+}
+
+.m-quote__text--medium {
+  @extend %a-type--medium;
+}
+
+.m-quote__text--large {
+  @extend %a-type--large;
+}
+
+%m-quote--content-wrapper,
+.m-quote--text__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer);
+}
+
+%m-quote--source,
+.m-quote--text__source {
+  @extend %a-type--small;
+}
+
