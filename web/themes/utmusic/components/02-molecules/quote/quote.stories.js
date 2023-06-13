@@ -1,6 +1,9 @@
 import quote from './quote.twig';
 
-import quoteData from './quote.yml';
+import quoteTextData from './quote--text.yml';
+import quoteImageData from './quote--image.yml';
+import quoteImageMainData from './quote--image-main.yml';
+
 
 /**
  * Storybook Definition.
@@ -13,13 +16,13 @@ export default {
   argTypes: {
     //Quote variation
     // variation: {
-    //   defaultValue: quoteData.variation,
+    //   defaultValue: quoteImageData.variation,
     //   description: 'Quote variation',
     //   type: { required: 'true' },
     //   control: {
     //     type: 'select',
     //     options: { 
-    //       'Default[text with icon]': quoteData.variation, 
+    //       'Default[text with icon]': quoteImageData.variation, 
     //     },
     //   },
     //   table: {
@@ -32,7 +35,7 @@ export default {
     text: {
       description: 'Quote text field',
       type: {required: true},
-      defaultValue: quoteData.text,
+      defaultValue: quoteImageData.text,
       control: {
         type: 'text'
       },
@@ -45,7 +48,7 @@ export default {
     // Quote source name
     source_name: {
       description: 'Quote source name',
-      defaultValue: quoteData.source_name,
+      defaultValue: quoteImageData.source_name,
       control: {
         type: 'text'
       },
@@ -85,7 +88,7 @@ export default {
     // Quote source type
     source_type: {
       description: 'Quote source type',
-      defaultValue: quoteData.source_type,
+      defaultValue: quoteImageData.source_type,
       control: {
         type: 'select',
         options: {
@@ -100,19 +103,23 @@ export default {
   },
 };
 
-export const Quote = ({
-  variation,  
-  text, 
-  source_name, 
-  location,
-  source_type,
-   }) => 
+// export const QuoteDemo = ({
+//   variation,  
+//   text, 
+//   source_name, 
+//   location,
+//   source_type,
+//    }) => 
 
-    quote({
-      variation,
-      text,
-      source_name,
-      location,
-      source_type
+//     quote({
+//       variation,
+//       text,
+//       source_name,
+//       location,
+//       source_type
      
-    });  
+//     });  
+
+export const QuoteText = () => quote(quoteTextData);  
+export const QuoteImage = () => quote(quoteImageData);  
+export const QuoteImageMain = () => quote(quoteImageMainData);  

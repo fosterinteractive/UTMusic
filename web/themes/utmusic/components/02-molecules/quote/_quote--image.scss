@@ -3,23 +3,34 @@
 
 .m-quote--image {
   @extend %m-quote;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer);
+
 
   @include breakpoint($bp-tablet) {
-    display: flex;
+    flex-direction: row;
     gap: calc(var(--spacer) * 2);
   }
 }
 
 .m-cta--image__images {
-  width: 50%;
   display: grid;
   grid-template-columns: repeat(5, auto);
   grid-template-rows: repeat(4, auto);
+
+  @include breakpoint($bp-tablet) {
+    width: 50%;
+  }
 }
 
 .m-cta--image__image-main {
   grid-column: col 2/ span 4;
   grid-row: 1 / span 3;
+
+  @include breakpoint($bp-tablet) {
+    align-self: center;
+  }
 }
 
 .m-cta--image__image-small {
@@ -39,7 +50,11 @@
 
 .m-quote--image__content-wrapper {
   @extend %m-quote--content-wrapper;
-  width: calc(50% - calc(var(--spacer) * 2 ));
+
+  @include breakpoint($bp-tablet) {
+    width: calc(50% - calc(var(--spacer) * 2 ));
+
+  }
 }
 
 .m-quote--image__source {

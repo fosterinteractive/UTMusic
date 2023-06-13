@@ -27,9 +27,13 @@
  @extend %m-card__image-illustration-bg;
 }
 
-.m-quote__text {
+.m-quote__text  {
   border-bottom: rem(1px) solid var(--c-quote-text-border);
   padding-bottom: var(--spacer);
+
+  .s-wysiwyg,  .s-wysiwyg p {
+    color: var(--c-quote);
+  }
 }
 
 .m-quote__text--small {
