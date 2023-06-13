@@ -1,6 +1,7 @@
 import featuredMedia from './featured-media.twig';
 
 import featuredMediaData from './featured-media.yml';
+import featuredMediaSingleData from './featured-media--single.yml';
 
 
 /**
@@ -20,4 +21,5 @@ export default {
   },
  };
 
-export const FeaturedMediaCarousel = () => featuredMedia(featuredMediaData);
+export const FeaturedMediaHorizontalScroll = () => featuredMedia(featuredMediaData);
+export const FeaturedMediaSingleItem = () => featuredMedia(featuredMediaSingleData);
