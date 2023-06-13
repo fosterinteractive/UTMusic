@@ -1,0 +1,29 @@
+uuid: 8e5ce6b5-ca16-4dfe-841a-44681567d231
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_news_featured_promote
+    - paragraphs.paragraphs_type.news_featured_item
+    - taxonomy.vocabulary.promote_on_news
+id: paragraph.news_featured_item.field_news_featured_promote
+field_name: field_news_featured_promote
+entity_type: paragraph
+bundle: news_featured_item
+label: 'Promote On'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      promote_on_news: promote_on_news
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

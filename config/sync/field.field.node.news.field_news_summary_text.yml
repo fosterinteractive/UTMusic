@@ -1,0 +1,26 @@
+uuid: de94c44f-29c1-4892-8f12-0f1b815f7e6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_summary_text
+    - node.type.news
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+id: node.news.field_news_summary_text
+field_name: field_news_summary_text
+entity_type: node
+bundle: news
+label: 'Summary Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

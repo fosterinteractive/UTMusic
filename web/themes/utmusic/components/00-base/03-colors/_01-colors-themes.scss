@@ -85,8 +85,8 @@
 
   // @molecules/quote
   --c-quote: #{palette(black, 200)};
-  --c-quote--suorce-type: #{palette(blue, 300)};
-  --c-quote--suorce-type--bg: #{palette(black, 200)};
+  --c-quote-text-border: #{palette(teal, 300)};
+
 
   // @molecules/card
   --c-card-left-border: #{palette(grey, 800)};
@@ -99,10 +99,6 @@
   --c-card-link: #{palette(blue, 300)};
   --c-card-link--active: #{palette(teal, 300)};
 
-  // @organisms/listing
-  --c-listing-item--border: #{palette(teal, 700)};
-  --c-listing-item--date: #{palette(grey, 300)};
-
   //@molecules/social
   --c-social-background: #{palette(blue, 900)};
   --c-social-svg: #{palette(blue, 300)};
@@ -110,6 +106,13 @@
 
   //@molecules/cta
   --c-cta-text: #{palette(blue, 300)};
+
+  // @organisms/listing
+  --c-listing-item--border: #{palette(grey, 800)};
+  --c-listing-item--date: #{palette(grey, 300)};
+
+  //@organisms/listing/listing-item-featured
+  --c-news-featured-title:  #{palette(teal, 300)};
 
 
   //pager
@@ -255,5 +258,17 @@
 
   // @atoms/text
   --c-heading-decoration: #{palette(pink, 400)};
+}
+
+.theme--blue-light {
+  @extend %theme--light-bg;
+
+  // @atoms/chip
+  --c-chip-border: #{palette(white)};
+
+  
+  // @organisms/listing
+  --c-listing-item--border: #{palette(teal, 700)};
+  --c-listing-item--date: #{palette(grey, 300)};
 }
 

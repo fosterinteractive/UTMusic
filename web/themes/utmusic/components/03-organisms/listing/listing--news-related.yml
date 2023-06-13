@@ -1,0 +1,85 @@
+sb_demo: true
+variation: 'news-related'
+title: Related News
+listing_col_layout: l-flex--2col
+listing_button_url:  
+listing_button_text:  
+listing_items:
+  1:
+    variation: ''
+    sb_demo: true
+    title: 'A bit longer research news title about a recent study or event'
+    date_string: 'May 29, 2023'
+    image: '<img src="https://images.unsplash.com/photo-1633882764626-f41b5cc8a1d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1002&q=80" />'
+    id: 'listing-item-test'
+    url: "#"
+    news_categories: 
+      1:
+        category: Announcements
+    areas_study:
+      1:
+        area: Voice sound 
+
+  2: 
+    variation: ''
+    sb_demo: true
+    title: 'Faculty of Music at the 2022 AMS/SEM/SMT Joint Annual Meeting'
+    date_string: 'October 1, 2023'
+    image: '<img src="https://images.unsplash.com/photo-1531651008558-ed1740375b39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" />'
+    id: 'listing-item-test'
+    url: "#"
+  
+  3:
+    variation: ''
+    sb_demo: true
+    title: "‘Putting people front and centre’: Historian Anna Shternshis keeps Holocaust survivors' stories alive"
+    date_string: 'June 19, 2023'
+    image: '<img src="https://images.unsplash.com/photo-1525362081669-2b476bb628c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=40" />'
+    id: 'listing-item-test'
+    url: "#"
+
+  4:
+    variation: ''
+    sb_demo: true
+    title: '2023 Faculty of Music Undergraduate Research Showcase'
+    date_string: 'January 15, 2023'
+    image: '<img src="https://images.unsplash.com/photo-1492284163710-4eef97892705?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=988&q=80" />'
+    id: 'listing-item-test'
+    url: "#"
+    news_categories: 
+      1:
+        category: Announcements
+    areas_study:
+      1:
+        area: Voice sound 
+
+# pager:
+#   items:
+#     pages:
+#       1:
+#         href: '#'
+#       2:
+#         href: '#'
+#       3:
+#         href: '#'
+#       4:
+#         href: '#'
+#       5:
+#         href: '#'
+
+#     previous: true
+#     first: true
+#     next: true
+#     last: true
+#   current: 4
+#   prev_icon: 'chevron-left-solid'
+#   next_icon: 'chevron-right-solid'
+
+#   first_page_icon: 'arrow_previous'
+#   last_page_icon: 'arrow_next'
+
+#   show_first_last_btn: true
+
+#   ellipses:
+#     next: true
+

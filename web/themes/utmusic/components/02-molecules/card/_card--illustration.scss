@@ -4,20 +4,25 @@
 
 }
 
+%m-card__image-illustration,
 .m-card__image-illustration {
   display: grid;
   grid-template-columns: auto rem(15px) auto;
   color: var(--c-card--illustration);
   margin-left: -15px;
+  justify-content: start;
+  align-items: center;
 
   .a-icon-external--xsmall,
   svg {
     grid-column: col 1 /span 2;
     grid-row: 1;
     z-index: 1;
+    justify-self: end;
   }
 }
 
+%m-card__image-illustration-bg,
 .m-card__image-illustration-bg {
   width: rem(37px);
   height: rem(37px);

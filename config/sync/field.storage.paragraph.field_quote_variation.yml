@@ -1,0 +1,27 @@
+uuid: 45c2dfff-083c-431b-9b4a-3b1d79219aa2
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_quote_variation
+field_name: field_quote_variation
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: text
+      label: 'Text only'
+    -
+      value: image
+      label: 'With Image'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

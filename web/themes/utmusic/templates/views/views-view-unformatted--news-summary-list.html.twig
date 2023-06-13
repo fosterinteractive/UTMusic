@@ -22,14 +22,15 @@
 {% endfor %}
 
 {# {% set view_all_link_url = path('view.news_full_list.full_news') %} #}
-{% set view_all_link_url = drupal_url('node/16') %}
+{# {% set view_all_link_url = drupal_url('node/16') %} #}
 
 {% include "@organisms/listing/listing.twig" with {
     directory: 'themes/utmusic',
-    variation: '',
-    title: view.args[2] ? view.args[2],
+    variation: 'news-condensed',
+    title: view.args[4] ? view.args[4],
     listing_items: items,
+    listing_col_layout: view.args[5] ? view.args[5],
     listing_button_url: view_all_link_url,
-    listing_button_text: view_all_link_title ? view_all_link_title : 'See More Stories'|t,
+    listing_button_text: view_all_link_title ? view_all_link_title : 'See More News'|t,
   } only
 %}

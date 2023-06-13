@@ -16,9 +16,9 @@ id: paragraph.quote.field_quote_source_name
 field_name: field_quote_source_name
 entity_type: paragraph
 bundle: quote
-label: 'Source Name'
+label: 'Quote Source'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

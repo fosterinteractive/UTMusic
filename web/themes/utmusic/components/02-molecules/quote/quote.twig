@@ -11,31 +11,76 @@
 
 {% endif %}
 
-{% set location = location == "Blank" ? false : location %}
+{% set icon = icon|default('quotes') %}
+{% set text_size = text_size|default('normal') %}
 
 {% if text %}
   <blockquote class="m-quote{{ variation }}">
-    {% if text %}
-      <div class="m-quote{{ variation }}__body">
-        {{ text }}
+    
+    {% if image_main and variation == '--image' %}
+      <div class="m-cta{{ variation }}__images">
+        <div class="m-cta{{ variation }}__image-main">
+          {% include "@molecules/image/image.twig" with {
+              image: image_main,
+            } only
+          %}
+        </div>
+
+        {% if image_small %}
+          <div class="m-cta{{ variation }}__image-small">
+            {% include "@molecules/image/image.twig" with {
+                image: image_small,
+              } only
+            %}
+          </div>
+        {% endif %}
       </div>
     {% endif %}
 
-    {% if source_name or location or source_type %} 
-      <cite class="m-quote{{ variation }}__source">
-        {% if source_name %}
-          <div class="m-quote{{ variation }}__source-name">
-            {{" – "}}{{ source_name }}{% if location %}{{','}} {{ location }}{% endif %} 
+
+    {% if text or source %}
+      <div class="m-quote{{ variation }}__content-wrapper">
+        <div class="m-quote{{ variation }}__illustration">
+          {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+            directory: directory,
+            base_class: 'a-icon',
+            icon: icon,
+            size: 'xsmall', 
+            } only
+          %}
+          <div class="m-quote{{ variation }}__illustration-bg"></div>
+        </div>
+
+        {% if text %}
+          <div class="m-quote__text m-quote__text--{{ text_size }} m-quote{{ variation }}__text">
+            {{ text }}
           </div>
         {% endif %}
-        
-        {% if source_type %}
-          <div class="m-quote{{ variation }}__source-type">
-            {{ "Come to Work"|t }} {{ source_type }} 
-          </div>
+
+        {% if source %} 
+          <cite class="m-quote{{ variation }}__source">
+            {{" – "}}{{ source }} 
+          </cite>
         {% endif %}
-      </cite>
+
+        {% if url and label %}
+          {% include '@atoms/button/button.twig' with {
+              directory: directory,
+              base_class: 'a-button',
+              label: label,
+              variation: '',
+              html_element: 'a',
+              url: url,
+              aria_label: aria_label,
+              alignment: 'left',
+              target: target,
+            } only
+          %} 
+        {% endif %}
+      </div>
+
     {% endif %}
+      
   </blockquote>
 {% endif %}
 

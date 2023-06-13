@@ -1,0 +1,8 @@
+uuid: b09dfbcc-c2be-4e44-ab47-5ef5d0001655
+langcode: en
+status: true
+dependencies: {  }
+name: 'Promoted on (News)'
+vid: promote_on_news
+description: ''
+weight: 0

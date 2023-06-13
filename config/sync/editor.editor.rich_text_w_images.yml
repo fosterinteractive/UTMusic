@@ -1,84 +1,128 @@
-uuid: a38b016b-eb7a-4059-bf2d-7ca3a18b2f10
+uuid: b64457ae-5161-4ef9-b910-5e58fa048013
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.rich_text_w_images
   module:
-    - ckeditor
+    - ckeditor5
 format: rich_text_w_images
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Styles
-          items:
-            - Styles
-        -
-          name: Formatting
-          items:
-            - Bold
-            - Italic
-            - Superscript
-            - Subscript
-            - RemoveFormat
-        -
-          name: Alignment
-          items:
-            - JustifyLeft
-            - JustifyCenter
-            - JustifyRight
-        -
-          name: Links
-          items:
-            - Link
-            - DrupalUnlink
-            - DrupalLink
-        -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
-            - Outdent
-            - Indent
-        -
-          name: Media
-          items:
-            - DrupalImage
-            - SpecialChar
-        -
-          name: Tools
-          items:
-            - PasteFromWord
-            - Source
-            - ShowBlocks
-            - Maximize
+    items:
+      - style
+      - '|'
+      - bold
+      - italic
+      - superscript
+      - subscript
+      - removeFormat
+      - '|'
+      - alignment
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - outdent
+      - indent
+      - '|'
+      - drupalInsertImage
+      - specialCharacters
+      - '|'
+      - sourceEditing
+      - '|'
+      - heading
+      - insertTable
+      - underline
+      - horizontalLine
   plugins:
-    stylescombo:
-      styles: "h2.a-heading__h2|Heading 2\r\nh2.a-heading__h1|Heading 2 - H1 Appearance\r\nh2.a-heading__h3|Heading 2 - H3 Appearance \r\nh3.a-heading__h3|Heading 3\r\nh3.a-heading__h2|Heading 3 - H2 Appearance\r\nh4.a-heading__h4|Heading 4\r\np|Paragraph\r\np.a-type--small|P (Small)\r\np.a-type--large|P (Large)\r\np.a-type--xlarge|P (x Large)\r\n"
-    drupallink:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Heading 2'
+          element: '<h2 class="a-heading__h2">'
+        -
+          label: 'Heading 2 - H1 Appearance'
+          element: '<h2 class="a-heading__h1">'
+        -
+          label: 'Heading 2 - H3 Appearance'
+          element: '<h2 class="a-heading__h3">'
+        -
+          label: 'Heading 3'
+          element: '<h3 class="a-heading__h3">'
+        -
+          label: 'Heading 3 - H2 Appearance'
+          element: '<h3 class="a-heading__h2">'
+        -
+          label: 'Heading 4'
+          element: '<h4 class="a-heading__h4">'
+        -
+          label: 'P (Small)'
+          element: '<p class="a-type--small">'
+        -
+          label: 'P (Large)'
+          element: '<p class="a-type--large">'
+        -
+          label: 'P (x Large)'
+          element: '<p class="a-type--xlarge">'
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<strike>'
+        - '<dl>'
+        - '<dt>'
+        - '<dd>'
+        - '<h5 id class="a-heading* text-align-left text-align-center text-align-right">'
+        - '<h6 id class="a-heading* text-align-left text-align-center text-align-right">'
+        - '<span class="a-type--*">'
+        - '<figure alt data-entity-type data-entity-uuid data-entity-substitution data-align data-caption data-responsive-image-style class>'
+        - '<figcaption class>'
+        - '<iframe src title aria-describedby tabindex allowtransparency frameborder class>'
+        - '<drupal-entity data-entity-type data-entity-uuid data-view-mode data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title>'
+        - '<div class>'
+        - '<table class="a-table* tablecentred tablenoborders tableposter tabletopleft">'
+        - '<th width class="a-table*">'
+        - '<td class="a-table*">'
+        - '<blockquote class="m-quote*">'
+        - '<h3 id class="a-heading*">'
+        - '<h4 id class="a-heading*">'
+        - '<br aria-hidden>'
+        - '<p class="a-type--medium">'
+        - '<ul start class="a-list--*">'
+        - '<ol class="a-list-*">'
+        - '<a hreflang accesskey id rel target title name>'
+        - '<img srcset sizes data-entity-substitution data-responsive-image-style class>'
+        - '<drupal-media title>'
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
+    ckeditor5_alignment:
+      enabled_alignments:
+        - left
+        - center
+        - right
+    ckeditor5_imageResize:
+      allow_resize: true
+    media_media:
+      allow_view_mode_override: false
+    linkit_extension:
       linkit_enabled: true
       linkit_profile: default
-    wordcount:
-      enable: true
-      show_remaining: false
-      show_paragraphs: false
-      show_word_count: true
-      show_char_count: false
-      count_bytes: false
-      count_spaces: false
-      count_html: 0
-      count_line_breaks: false
-      max_words: -1
-      max_chars: -1
-      hard_limit: 1
+    media_contextual_crop_embed_MCCE:
+      view_mode: default
 image_upload:
   status: true
   scheme: public
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: null
-    height: null
+    width: 0
+    height: 0

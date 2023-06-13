@@ -1,0 +1,31 @@
+uuid: bb75cd9c-18d0-4ff7-a161-7511d52e299d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_quote_image_small
+    - media.type.ed_image
+    - paragraphs.paragraphs_type.quote
+  module:
+    - media_library_media_modify
+id: paragraph.quote.field_quote_image_small
+field_name: field_quote_image_small
+entity_type: paragraph
+bundle: quote
+label: 'Small Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      ed_image: ed_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_entity_modify

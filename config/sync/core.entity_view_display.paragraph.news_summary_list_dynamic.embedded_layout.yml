@@ -9,6 +9,9 @@ dependencies:
     - field.field.paragraph.news_summary_list_dynamic.field_news_offset
     - field.field.paragraph.news_summary_list_dynamic.field_news_other_number_of_items
     - field.field.paragraph.news_summary_list_dynamic.field_news_promote_filter
+    - field.field.paragraph.news_summary_list_dynamic.field_news_summary_appearance
+    - field.field.paragraph.news_summary_list_dynamic.field_news_summary_area_study
+    - field.field.paragraph.news_summary_list_dynamic.field_news_summary_variation
     - field.field.paragraph.news_summary_list_dynamic.field_news_title
     - paragraphs.paragraphs_type.news_summary_list_dynamic
   module:
@@ -28,5 +31,8 @@ hidden:
   field_news_offset: true
   field_news_other_number_of_items: true
   field_news_promote_filter: true
+  field_news_summary_appearance: true
+  field_news_summary_area_study: true
+  field_news_summary_variation: true
   field_news_title: true
   search_api_excerpt: true

@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.news.field_news_image
     - field.field.node.news.field_news_promote
     - field.field.node.news.field_news_related_articles
+    - field.field.node.news.field_news_summary_text
     - field.field.node.news.field_news_title
     - field.field.node.news.field_page_admin_help_seo
     - field.field.node.news.field_page_admin_help_social
@@ -141,6 +142,13 @@ content:
       link: false
     third_party_settings: {  }
     weight: 17
+    region: content
+  field_news_summary_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 18
     region: content
   field_news_title:
     type: text_default

@@ -65,12 +65,14 @@
  *
  * @see template_preprocess_node()
 #}
-{% set categories = [] %}
-{% if content.field_news_category[0] %}
-  {% set categories_count = content.field_news_category['#items'].getIterator()|length - 1 %}
 
-  {% for i in 0..categories_count %}
-    {% set categories = categories|merge([content.field_news_category['#items'][i].entity.label]) %}
+{# Get news_categories of news #}
+{% set news_categories = [] %}
+{% if content.field_news_category[0] %}
+  {% set news_categories_count = content.field_news_category['#items'].getIterator()|length - 1 %}
+
+  {% for i in 0..news_categories_count %}
+    {% set news_categories = news_categories|merge([content.field_news_category['#items'][i].entity.label]) %}
   {% endfor %}
 {% endif %}
 
@@ -91,15 +93,17 @@
   {% set image = content.field_news_header_image_portrait %}
 {% endif %}
 
-{% include "@organisms/listing/listing-item.twig" with {
+{% include "@organisms/listing/listing-item--featured.twig" with {
     directory: 'themes/utmusic',
-    variation: 'news',
+    variation: 'news-featured',
     id: node.id,
     title: content.field_news_title[0] ? content.field_news_title[0]['#text'],
     image: image,
+    summary: content.field_news_summary_text[0] ? content.field_news_summary_text,
     url: url,
+    label: "Learn more"|t,
     date_string: content.field_news_date[0] ? content.field_news_date[0]['#markup'],
     areas_study: areas_study,
-    categories: categories,
+    news_categories: news_categories,
   } only
 %}

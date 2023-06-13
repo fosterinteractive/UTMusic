@@ -5,12 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_news_promote
     - node.type.news
-    - taxonomy.vocabulary.ed_promote_content
+    - taxonomy.vocabulary.promote_on_news
 id: node.news.field_news_promote
 field_name: field_news_promote
 entity_type: node
 bundle: news
-label: Promote
+label: 'Promote On'
 description: ''
 required: false
 translatable: false
@@ -20,10 +20,10 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      ed_promote_content: ed_promote_content
+      promote_on_news: promote_on_news
     sort:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: ed_promote_content
 field_type: entity_reference

@@ -36,15 +36,15 @@
         </div>
       </div>
 
-      {% if articles %}
-        <div class="l-section-bg l-section--[12] l-section--related-news l-section-spacing-top--medium l-section-spacing-bottom--medium">
+      {% if related_news %}
+        <div class="l-section-bg l-section--[12] l-section--related-news theme--blue-light l-section-spacing-top--medium l-section-spacing-bottom--medium">
           <div class="l-section-bg__bg-decoration">
             {# it's a placeholder for background #}
             <img alt="" aria-hidden="true" src="/themes/utmusic/images/related-news-min.png" />
           </div>
                   
-          <div class="l-main--news-related-articles l-section__zone-1">
-            <div class="l-main--news-related-articles__title">
+          <div class="l-main--news-related l-section__zone-1">
+            <div class="l-main--news-related__title">
               {% include "@atoms/text/headings/heading.twig" with {
                   html_element: 'h2',
                   appearance: 'h2',
@@ -53,8 +53,8 @@
               %}
             </div>
              
-            <div class="l-main--news-related-articles__items l-flex--2col">
-              {{ articles }}
+            <div class="l-main--news-related__items l-flex--2col">
+              {{ related_news }}
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ dependencies:
   module:
     - crop
 name: image_style_crop_1_1
-label: 'Image Style Crop 1:1'
+label: 'Image Style Crop 12:10'
 effects:
   545a2a87-c820-45db-beea-868d22183983:
     uuid: 545a2a87-c820-45db-beea-868d22183983

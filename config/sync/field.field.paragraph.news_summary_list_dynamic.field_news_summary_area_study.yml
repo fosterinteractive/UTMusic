@@ -1,0 +1,29 @@
+uuid: 6c742ac3-1941-4343-a84a-32c7cabe9fee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_news_summary_area_study
+    - paragraphs.paragraphs_type.news_summary_list_dynamic
+    - taxonomy.vocabulary.news_area_of_study
+id: paragraph.news_summary_list_dynamic.field_news_summary_area_study
+field_name: field_news_summary_area_study
+entity_type: paragraph
+bundle: news_summary_list_dynamic
+label: 'Area of Study'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      news_area_of_study: news_area_of_study
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

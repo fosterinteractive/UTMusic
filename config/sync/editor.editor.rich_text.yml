@@ -1,83 +1,113 @@
-uuid: 2c05c7fa-37ed-4b1b-a48c-c5e1e61e2601
+uuid: 8da7ba66-d734-4be1-a8f9-8a672a621f9c
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.rich_text
   module:
-    - ckeditor
-_core:
-  default_config_hash: fWdSKw-6uOe02g_IWdcOzq0vIyH_bQLuWidRdC8SKns
+    - ckeditor5
 format: rich_text
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Styles
-          items:
-            - Styles
-        -
-          name: Formatting
-          items:
-            - Bold
-            - Italic
-            - Underline
-            - Superscript
-            - Subscript
-            - RemoveFormat
-        -
-          name: Alignment
-          items:
-            - JustifyRight
-            - JustifyCenter
-            - JustifyLeft
-        -
-          name: Links
-          items:
-            - DrupalLink
-            - DrupalUnlink
-            - Link
-        -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
-            - Outdent
-            - Indent
-        -
-          name: Media
-          items:
-            - SpecialChar
-            - HorizontalRule
-            - Table
-        -
-          name: Tools
-          items:
-            - PasteFromWord
-            - Source
-            - ShowBlocks
-            - Maximize
+    items:
+      - style
+      - '|'
+      - bold
+      - italic
+      - superscript
+      - subscript
+      - removeFormat
+      - '|'
+      - alignment
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - outdent
+      - indent
+      - '|'
+      - specialCharacters
+      - horizontalLine
+      - '|'
+      - sourceEditing
+      - heading
+      - '|'
   plugins:
-    stylescombo:
-      styles: "h2.a-heading__h2|Heading 2\r\nh2.a-heading__h1|Heading 2 - H1 Appearance\r\nh2.a-heading__h3|Heading 2 - H3 Appearance \r\nh3.a-heading__h3|Heading 3\r\nh3.a-heading__h2|Heading 3 - H2 Appearance\r\nh4.a-heading__h4|Heading 4\r\np|Paragraph\r\np.a-type--small|P (Small)\r\np.a-type--large|P (Large)\r\np.a-type--xlarge|P (x Large)\r\n"
-    drupallink:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Heading 2'
+          element: '<h2 class="a-heading__h2">'
+        -
+          label: 'Heading 2 - H1 Appearance'
+          element: '<h2 class="a-heading__h1">'
+        -
+          label: 'Heading 2 - H3 Appearance'
+          element: '<h2 class="a-heading__h3">'
+        -
+          label: 'Heading 3'
+          element: '<h3 class="a-heading__h3">'
+        -
+          label: 'Heading 3 - H2 Appearance'
+          element: '<h3 class="a-heading__h2">'
+        -
+          label: 'Heading 4'
+          element: '<h4 class="a-heading__h4">'
+        -
+          label: 'P (Small)'
+          element: '<p class="a-type--small">'
+        -
+          label: 'P (Large)'
+          element: '<p class="a-type--large">'
+        -
+          label: 'P (x Large)'
+          element: '<p class="a-type--xlarge">'
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<strike>'
+        - '<dl>'
+        - '<dt>'
+        - '<dd>'
+        - '<h5 id class="a-heading*">'
+        - '<h6 id class="a-heading*">'
+        - '<span class="a-type--*">'
+        - '<img src srcset alt sizes data-entity-type data-entity-uuid data-entity-substitution data-align data-caption data-responsive-image-style class>'
+        - '<figure alt data-entity-type data-entity-uuid data-entity-substitution data-align data-caption data-responsive-image-style class>'
+        - '<figcaption class>'
+        - '<iframe src title aria-describedby tabindex allowtransparency frameborder class>'
+        - '<drupal-entity data-entity-type data-entity-uuid data-view-mode data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button>'
+        - '<div class>'
+        - '<blockquote class="m-quote*">'
+        - '<h4 id class="a-heading*">'
+        - '<h2 aria-live id class="a-heading*">'
+        - '<h3 aria-live id class="a-heading*">'
+        - '<ul start class="a-list--*">'
+        - '<ol class="a-list-*">'
+        - '<br aria-hidden>'
+        - '<a hreflang accesskey id rel target title name>'
+        - '<table class="a-table* tablecentred tablenoborders tableposter tabletopleft">'
+        - '<th width class="a-table*">'
+        - '<td class="a-table*">'
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
+    ckeditor5_alignment:
+      enabled_alignments:
+        - left
+        - center
+        - right
+    linkit_extension:
       linkit_enabled: true
       linkit_profile: default
-    wordcount:
-      enable: true
-      show_remaining: false
-      show_paragraphs: false
-      show_word_count: true
-      show_char_count: false
-      count_bytes: false
-      count_spaces: false
-      count_html: 0
-      count_line_breaks: false
-      max_words: -1
-      max_chars: -1
-      hard_limit: 1
 image_upload:
   status: true
   scheme: public

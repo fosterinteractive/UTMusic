@@ -1,0 +1,23 @@
+uuid: aaada14c-5555-49cd-a79d-581d165f5ec0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_news_summary_appearance
+    - paragraphs.paragraphs_type.news_summary_list_dynamic
+  module:
+    - options
+id: paragraph.news_summary_list_dynamic.field_news_summary_appearance
+field_name: field_news_summary_appearance
+entity_type: paragraph
+bundle: news_summary_list_dynamic
+label: Appearance
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: condensed
+default_value_callback: ''
+settings: {  }
+field_type: list_string

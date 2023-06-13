@@ -1,0 +1,26 @@
+uuid: 2cc3f7b3-a6a6-4021-883c-981e3333eacc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_quote_button_label
+    - paragraphs.paragraphs_type.quote
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+id: paragraph.quote.field_quote_button_label
+field_name: field_quote_button_label
+entity_type: paragraph
+bundle: quote
+label: Label
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

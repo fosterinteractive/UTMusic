@@ -1,17 +1,17 @@
-uuid: 4ac1b914-c57d-439f-8a9c-f27372d6111d
+uuid: 9b59dbb2-9ee7-411b-8f99-90d2e500d8a6
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_quote_source_location
+    - field.storage.paragraph.field_quote_button_target
     - paragraphs.paragraphs_type.quote
   module:
     - options
-id: paragraph.quote.field_quote_source_location
-field_name: field_quote_source_location
+id: paragraph.quote.field_quote_button_target
+field_name: field_quote_button_target
 entity_type: paragraph
 bundle: quote
-label: 'Source Location'
+label: Target
 description: ''
 required: false
 translatable: false

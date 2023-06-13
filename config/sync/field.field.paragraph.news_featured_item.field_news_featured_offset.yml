@@ -1,0 +1,25 @@
+uuid: 6f6f7a9f-eef9-4e71-a9af-2e0b42c1990e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_news_featured_offset
+    - paragraphs.paragraphs_type.news_featured_item
+id: paragraph.news_featured_item.field_news_featured_offset
+field_name: field_news_featured_offset
+entity_type: paragraph
+bundle: news_featured_item
+label: Offset
+description: 'Skip this number of items on the list'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,10 @@
+uuid: a5815426-8768-4b2e-aa1c-7ecf39b29bfd
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.contextual_card
+label: 'Contextual Crop Card (12:10)'
+targetEntityType: media
+cache: true

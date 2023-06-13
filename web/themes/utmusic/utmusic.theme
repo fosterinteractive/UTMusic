@@ -135,7 +135,7 @@ function utmusic_preprocess_paragraph(array &$variables) {
   $dynamic_block_paragraphs = [
     'news_summary_list_dynamic' => ['type' => 'news'],
     'events_summary_list_dynamic' => ['type' => 'event'],
-    'ed_twitter_stream' => ['type' => 'twitter_stream']
+    'news_featured_item' => ['type' => 'news_featured'],
   ];
 
   if (isset($dynamic_block_paragraphs[$paragraph_type])) {
@@ -144,11 +144,27 @@ function utmusic_preprocess_paragraph(array &$variables) {
     $field_mapping = [
       'news' => [
         'title' => 'field_news_title',
-        'contextual' => 'field_news_category',
+        'contextual' => [
+          'promote' => 'field_news_promote_filter',
+          'category1' => 'field_news_category',
+          'category2' => 'field_news_summary_area_study',
+        ],
         'number_items' => 'field_news_number_of_items',
         'number_other_items' => 'field_news_other_number_of_items',
-        'promote' => NULL,
-        'offset' => NULL,
+        'offset' => 'field_news_offset',
+        'layout' => 'field_news_summary_variation',
+        'appearance' => 'field_news_summary_appearance',
+      ],
+      'news_featured' => [
+        'title' =>  null,
+        'contextual' => [
+          'promote' => 'field_news_featured_promote',
+          'category1' => 'field_news_featured_category',
+          'category2' => 'field_news_featured_area_study',
+        ],
+        'number_items' => null,
+        'number_other_items' => null,
+        'offset' => 'field_news_featured_offset',
       ],
       'event' => [
         'title' => 'field_events_title',
@@ -158,45 +174,17 @@ function utmusic_preprocess_paragraph(array &$variables) {
         'promote' => 'field_events_promote',
         'offset' => 'field_events_offset',
       ],
-      'twitter_stream' => [
-        'title' => NULL,
-        'contextual' => NULL,
-        'number_items' => 'field_ed_twitter_stream_num_item',
-        'number_other_items' => 'field_ed__twitter_stream_other',
-        'promote' => NULL,
-        'follow_url' => NULL,
-        'offset' => NULL,
-      ]
     ];
 
     // Set the dynamic title for the view.
     $dynamic_title = $paragraph->hasField($field_mapping[$type]['title']) && !$paragraph->{$field_mapping[$type]['title']}->isEmpty() ? $paragraph->{$field_mapping[$type]['title']}->value : '';
 
-    //Set the offset.
-    $offset = $paragraph->hasField($field_mapping[$type]['offset']) && !$paragraph->{$field_mapping[$type]['offset']}->isEmpty() ? $paragraph->{$field_mapping[$type]['offset']}->value : NULL;
-
-    // Set the contextual filters.
-    $category_tags = $paragraph->hasField($field_mapping[$type]['contextual']) && !$paragraph->{$field_mapping[$type]['contextual']}->isEmpty() ? $paragraph->{$field_mapping[$type]['contextual']}->getValue() : NULL;
-
     // Set the number of items.
     $number_items_value = $paragraph->hasField($field_mapping[$type]['number_items']) && !$paragraph->{$field_mapping[$type]['number_items']}->isEmpty() ? $paragraph->{$field_mapping[$type]['number_items']}->value : NULL;
     $other_number_items_value = $paragraph->hasField($field_mapping[$type]['number_other_items']) && !$paragraph->{$field_mapping[$type]['number_other_items']}->isEmpty() ? $paragraph->{$field_mapping[$type]['number_other_items']}->value : NULL;
 
-    // Set the promote
-    $promote = !empty($field_mapping[$type]['promote']) && $paragraph->hasField($field_mapping[$type]['promote']) && !$paragraph->{$field_mapping[$type]['promote']}->isEmpty() ? $paragraph->{$field_mapping[$type]['promote']}->target_id : NULL;
-
-    // Check if contextual filters has atleast 1 filter picked.
-    $categories = NULL;
-    $category_ids = '';
-    if ($category_tags) {
-      // Generate a contextual filter string to use in views.
-      foreach ($category_tags as $tag) {
-        $id = $tag['target_id'];
-        $category_ids .= $id . '+';
-      }
-      // Remove the last + from the string.
-      $categories = substr($category_ids, 0, -1);
-    }
+    //Set the offset.
+    $offset = $paragraph->hasField($field_mapping[$type]['offset']) && !$paragraph->{$field_mapping[$type]['offset']}->isEmpty() ? $paragraph->{$field_mapping[$type]['offset']}->value : NULL;
 
     // Determine the number of news items to display.
     $number_items = 0;
@@ -207,33 +195,47 @@ function utmusic_preprocess_paragraph(array &$variables) {
       $number_items = $number_items_value;
     }
 
+    // Set the contextual filters. These filters are setup to be the 1st
+    // argument on the view and multiple fields (taxonomies) are combined.
+    $categories = [];
+
+    foreach ($field_mapping[$type]['contextual'] as $field_type => $field) {
+      $contextual_filters = $paragraph->hasField($field) && !$paragraph->{$field}->isEmpty() ? $paragraph->{$field}->getValue() : NULL;
+
+      $arg = 'all';
+      $category_ids = '';
+      if (!empty($contextual_filters)) {
+        foreach ($contextual_filters as $filter) {
+          $id = $filter['target_id'];
+          $category_ids .= $id . '+';
+        }
+        $arg = substr($category_ids, 0, -1);
+      }
+
+      $categories[$field_type] = $arg;
+    }
+
     if (in_array($paragraph_view_mode, ['preview', 'full', 'default'])) {
       // Creates render variables to use in template.
       if ($paragraph_type == 'news_summary_list_dynamic') {
-        $variables['content']['news_summary_list'] = utmusic_return_rendered_view('news_full_list', 'news_summary_list', $number_items, $categories, NULL, $dynamic_title, NULL);
+        $layout = $paragraph->hasField($field_mapping[$type]['layout']) && !$paragraph->{$field_mapping[$type]['layout']}->isEmpty() ? $paragraph->{$field_mapping[$type]['layout']}->value : NULL;
+        $appearance = $paragraph->hasField($field_mapping[$type]['appearance']) && !$paragraph->{$field_mapping[$type]['appearance']}->isEmpty() ? $paragraph->{$field_mapping[$type]['appearance']}->value : NULL;
+
+        if ($appearance == 'listing-item') {
+          $variables['content']['news_summary_list'] = utmusic_return_rendered_view('news_full_list', 'news_summary_list_images', $number_items, $categories,  $dynamic_title, $offset, $layout);
+        } else {
+          $variables['content']['news_summary_list'] = utmusic_return_rendered_view('news_full_list', 'news_summary_list', $number_items, $categories,  $dynamic_title, $offset, $layout);
+        }
+
+      }
+      elseif ($paragraph_type == 'news_featured_item') {
+        $variables['content']['news_featured_item'] = utmusic_return_rendered_view('news_full_list', 'news_featured_item', $number_items, $categories,  $dynamic_title, $offset);
       }
       elseif ($paragraph_type == 'events_summary_list_dynamic') {
-        $variables['content']['events_summary_list_past'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_upcoming', $number_items, $categories, $promote, $dynamic_title, $offset);
-        $variables['content']['events_summary_list_upcoming'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_upcoming', $number_items, $categories, $promote, $dynamic_title, $offset);
+        // $variables['content']['events_summary_list_past'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_upcoming', $number_items, $categories, $promote, $dynamic_title, $offset);
+        // $variables['content']['events_summary_list_upcoming'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_upcoming', $number_items, $categories, $promote, $dynamic_title, $offset);
       }
     }
-  }
-
-
-  if ($paragraph_type == "logos_group" ) {
-
-    $label_expand = $variables['content']['field_logo_group_button_label'][0]['#text'];
-    $label_collapse = $variables['content']['field_logo_group_btn_label_coll'][0]['#text'];
-
-    $aria_label_expand = $variables['content']['field_logo_group_btn_aria_label'][0]['#text'] ?? FALSE;
-    $aria_label_collapse = $variables['content']['field_logo_grp_btn_aria_collap'][0]['#text'] ?? FALSE;
-
-    $variables['#attached']['drupalSettings']['logogroup']['readmore'] = [
-      'label_expand' => $label_expand,
-      'label_collapse' => $label_collapse,
-      'aria_label_expand' => $aria_label_expand,
-      'aria_label_collapse' => $aria_label_collapse
-    ];
   }
 }
 
@@ -470,12 +472,32 @@ function utmusic_preprocess_views_view_unformatted(array &$variables) {
  *
  * used to render a view allowing us to pass contextual arguments to the view.
  */
-function utmusic_return_rendered_view($view, $display, $items, $categories, $promote, $title, $offset) {
+function utmusic_return_rendered_view($view, $display, $items = NULL, $categories = [], $title = NULL, $offset = NULL, $layout = NULL ) {
+  $args = [];
+
+  if (isset($categories['promote'])) {
+    $args[] = $categories['promote'];
+  }
+
+  if (isset($categories['category1'])) {
+    $args[] = $categories['category1'];
+  }
+
+  if (isset($categories['category2'])) {
+    $args[] = $categories['category2'];
+  }
+
+  $args = array_merge($args, [
+    $items,
+    $title,
+    $layout,
+  ]);
+  
   // Get View, set number of items to display and filters.
   $filtered_view = Views::getView($view);
   $filtered_view->setDisplay($display);
   $filtered_view->setItemsPerPage($items);
-  $filtered_view->setArguments([$categories, $promote, $title]);
+  $filtered_view->setArguments($args);
   $filtered_view->setOffset($offset);
   
   // Render filtered view.
@@ -527,27 +549,6 @@ function utmusic_theme_suggestions_menu_alter(array &$suggestions, array $variab
  * Exposed Views Filters Form.
  */
 function utmusic_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // // View 'jobs_full_list' - aply 'select2_all' module 
-  // $form['job_title']['#placeholder'] = t('Search jobs...');
-  // $form['job_title']['#attributes']['class'][] = 'm-input m-input--search';
-
-  // $form['job_location']['#options']['All'] = t('All');
-  // // $form['job_location']['#select2'] = ['allowClear' => FALSE];
-  // $form['job_location']['#attributes']['class'][] = 'm-input';
-
-  // $form['job_company']['#options']['All'] = t('All');
-  // // $form['job_company']['#select2'] = ['allowClear' => FALSE];
-  // $form['job_company']['#attributes']['class'][] = 'm-input';
-
-  // View 'events_full_list' - aply 'select2_all' module 
-  // $form['event_type']['#options']['All'] = t('All');
-  // // $form['event_type']['#select2'] = ['allowClear' => FALSE];
-  // $form['event_type']['#attributes']['class'][] = 'm-input';
-
-  // $form['location']['#options']['All'] = t('All');
-  // // $form['location']['#select2'] = ['allowClear' => FALSE];
-  // $form['location']['#attributes']['class'][] = 'm-input';
-
   // View 'news_full_list' - aply 'select2_all' module 
   $form['news_category']['#options']['All'] = t('All');
   // $form['news_category']['#select2'] = ['allowClear' => FALSE];
@@ -557,28 +558,28 @@ function utmusic_form_views_exposed_form_alter(&$form, FormStateInterface $form_
   // $form['area_study']['#select2'] = ['allowClear' => FALSE];
   $form['area_study']['#attributes']['class'][] = 'm-input';
 
-  if (
-    ($form['#id'] == 'views-exposed-form-events-full-list-block-full-list') 
-    || ($form['#id'] == 'views-exposed-form-jobs-full-list-block-full-list')
-    || ($form['#id'] == 'views-exposed-form-stories-full-list-default')
-    ) {
-    // Change buttons appearance
-    $form['actions']['submit']['#attributes']['class'][] = 'a-button';
-    $form['actions']['reset']['#attributes']['class'][] = 'a-button--secondary';
+  // if (
+  //   ($form['#id'] == 'views-exposed-form-events-full-list-block-full-list') 
+  //   || ($form['#id'] == 'views-exposed-form-jobs-full-list-block-full-list')
+  //   || ($form['#id'] == 'views-exposed-form-stories-full-list-default')
+  //   ) {
+  //   // Change buttons appearance
+  //   $form['actions']['submit']['#attributes']['class'][] = 'a-button';
+  //   $form['actions']['reset']['#attributes']['class'][] = 'a-button--secondary';
 
-    if (isset($form['field_event_date_end_value_1'])) {
-      $form['field_event_date_end_value_1']['#type'] = 'select';
-      $form['field_event_date_end_value_1']['#size'] = NULL;
-      $form['field_event_date_end_value_1']['#default_value'] = t('+30 days');
-      $form['field_event_date_end_value_1']['#options'] = [
-        '+30 days' => t('Events within 30 days'),
-        '+2 years' => t('Upcoming Events')
-      ];
+  //   if (isset($form['field_event_date_end_value_1'])) {
+  //     $form['field_event_date_end_value_1']['#type'] = 'select';
+  //     $form['field_event_date_end_value_1']['#size'] = NULL;
+  //     $form['field_event_date_end_value_1']['#default_value'] = t('+30 days');
+  //     $form['field_event_date_end_value_1']['#options'] = [
+  //       '+30 days' => t('Events within 30 days'),
+  //       '+2 years' => t('Upcoming Events')
+  //     ];
 
-      // $form['field_event_date_end_value_1']['#select2'] = ['allowClear' => FALSE];
-      $form['field_event_date_end_value_1']['#attributes']['class'][] = 'm-input';
-    }
-  }
+  //     // $form['field_event_date_end_value_1']['#select2'] = ['allowClear' => FALSE];
+  //     $form['field_event_date_end_value_1']['#attributes']['class'][] = 'm-input';
+  //   }
+  // }
 }
 
 function utmusic_theme_suggestions_form_alter(array &$suggestions, array $variables) {

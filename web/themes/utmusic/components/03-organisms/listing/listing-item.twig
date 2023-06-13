@@ -1,4 +1,4 @@
-{# Set default poster class - 'm-poster' #}
+{# Set default poster class - 'listing-item' #}
 {% set variation = variation|default('') %}
 
 {% if variation is not empty %}
@@ -12,7 +12,7 @@
 
 {% endif %}
 
-{% if storybook_demo %}
+{% if sb_demo %}
   {% set directory = directory %}
 {% else %}
   {% set directory =  'themes/utmusic' %}
@@ -24,6 +24,7 @@
 
     <div class="m-listing-item{{ variation }}__title">
       {% include "@atoms/text/headings/heading.twig" with {
+          directory: directory,
           html_element: 'h3',
           appearance: 'h3',
           text: title,

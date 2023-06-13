@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_news_promote_filter
     - paragraphs.paragraphs_type.news_summary_list_dynamic
-    - taxonomy.vocabulary.ed_promote_content
+    - taxonomy.vocabulary.promote_on_news
 id: paragraph.news_summary_list_dynamic.field_news_promote_filter
 field_name: field_news_promote_filter
 entity_type: paragraph
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      ed_promote_content: ed_promote_content
+      promote_on_news: promote_on_news
     sort:
       field: name
       direction: asc

@@ -39,11 +39,11 @@
 
   {% set listing_col_layout = listing_col_layout|default('l-flex') %}
 
-  <div class="o-listing__items {{ listing_col_layout }}"> 
+  <div class="o-listing{{ variation }}__items {{ listing_col_layout }}"> 
     {% for item in listing_items %}
       {% if sb_demo %}
-        {% if variation == '--events' or '--events-condensed' %}
-          {% include "@organisms/listing/listing-item--events.twig" with {
+        {% if variation == '--events' or variation == '--events-condensed' %}
+          {# {% include "@organisms/listing/listing-item--events.twig" with {
               directory: directory,
               variation: item.variation,
               title: item.title, 
@@ -55,17 +55,19 @@
               tags: item.tags,
               text: item.text,
             } only
-          %}
+          %} #}
         {% else %}
           {% include "@organisms/listing/listing-item.twig" with {
               directory: directory,
               variation: item.variation,
               title: item.title, 
+              date_string: item.date_string,
               image: item.image,
               url: item.url,
               id: item.id,
-              tags: item.tags,
-              text: item.text,
+              news_categories: item.news_categories,
+              areas_study: item.areas_study,
+              sb_demo: item.sb_demo,
             } only
           %}
         {% endif %}
@@ -77,7 +79,7 @@
     {% endfor %}
   </div>
 
-  {% if listing_button_url and listing_button_text %}
+  {# {% if listing_button_url and listing_button_text %}
     <div class="o-listing__button">
       {% include "@atoms/button/button.twig" with {
           label: listing_button_text,
@@ -89,6 +91,17 @@
           aria_label: listing_button_text ~ ' ' ~ aria_label,
           alignment: 'left'
         } only
+      %}
+    </div>
+  {% endif %} #}
+  {% if sb_demo %}
+    <div class="o-listing__pager-demo">
+      {% include '@molecules/pager/pager.twig' with {
+          items: pager.items,
+          current: pager.current,
+          prev_icon: pager.prev_icon,
+
+        } only 
       %}
     </div>
   {% endif %}

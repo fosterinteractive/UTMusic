@@ -8,11 +8,13 @@ dependencies:
     - field.field.paragraph.news_summary_list_dynamic.field_news_offset
     - field.field.paragraph.news_summary_list_dynamic.field_news_other_number_of_items
     - field.field.paragraph.news_summary_list_dynamic.field_news_promote_filter
+    - field.field.paragraph.news_summary_list_dynamic.field_news_summary_appearance
+    - field.field.paragraph.news_summary_list_dynamic.field_news_summary_area_study
+    - field.field.paragraph.news_summary_list_dynamic.field_news_summary_variation
     - field.field.paragraph.news_summary_list_dynamic.field_news_title
     - paragraphs.paragraphs_type.news_summary_list_dynamic
   module:
     - allowed_formats
-    - term_reference_tree
     - text
 id: paragraph.news_summary_list_dynamic.default
 targetEntityType: paragraph
@@ -20,45 +22,58 @@ bundle: news_summary_list_dynamic
 mode: default
 content:
   field_news_category:
-    type: term_reference_tree
-    weight: 4
+    type: options_select
+    weight: 6
     region: content
-    settings:
-      start_minimized: true
-      leaves_only: false
-      select_parents: true
-      cascading_selection: 3
-      max_depth: 0
+    settings: {  }
     third_party_settings: {  }
   field_news_number_of_items:
     type: options_select
-    weight: 1
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   field_news_offset:
     type: number
-    weight: 3
+    weight: 5
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_news_other_number_of_items:
     type: number
-    weight: 2
+    weight: 4
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_news_promote_filter:
     type: options_select
-    weight: 5
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_news_summary_appearance:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_news_summary_area_study:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_news_summary_variation:
+    type: options_select
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
   field_news_title:
     type: text_textfield
-    weight: 0
+    weight: 2
     region: content
     settings:
       size: 60

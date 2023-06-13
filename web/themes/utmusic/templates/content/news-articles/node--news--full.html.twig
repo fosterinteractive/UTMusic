@@ -68,33 +68,33 @@
 
 {% set breadcrumbs = drupal_entity('block', 'menu_breadcrumbs') %}
 
-{# Get categories of articles #}
-{% set categories = [] %}
+{# Get news_categories of news #}
+{% set news_categories = [] %}
 {% if content.field_news_category[0] %}
-  {% set categories_count = content.field_news_category['#items'].getIterator()|length - 1 %}
+  {% set news_categories_count = content.field_news_category['#items'].getIterator()|length - 1 %}
 
-  {% for i in 0..categories_count %}
-    {% set categories = categories|merge([content.field_news_category['#items'][i].entity.label]) %}
+  {% for i in 0..news_categories_count %}
+    {% set news_categories = news_categories|merge([content.field_news_category['#items'][i].entity.label]) %}
   {% endfor %}
 {% endif %}
 
-{# Get area_study of articles #}
-{% set topics = [] %}
+{# Get area_study of news #}
+{% set areas_study = [] %}
 {% if content.field_news_area_study[0] %}
-  {% set topics_count = content.field_news_area_study['#items'].getIterator()|length - 1 %}
+  {% set areas_study_count = content.field_news_area_study['#items'].getIterator()|length - 1 %}
 
-  {% for i in 0..topics_count %}
-    {% set topics = topics|merge([content.field_news_area_study['#items'][i].entity.label]) %}
+  {% for i in 0..areas_study_count %}
+    {% set areas_study = areas_study|merge([content.field_news_area_study['#items'][i].entity.label]) %}
   {% endfor %}
 {% endif %}
 
-{# Get related articles #}
-{% set articles = [] %}
+{# Get related news #}
+{% set related_news = [] %}
 {% if content.field_news_related_articles[0] %}
   {% set count = content.field_news_related_articles['#items'].getIterator()|length -1 %}
 
   {% for i in 0..count %}
-    {% set articles = articles|merge([content.field_news_related_articles[i]]) %}
+    {% set related_news = related_news|merge([content.field_news_related_articles[i]]) %}
   {% endfor %}
 {% endif %}
 
@@ -109,8 +109,8 @@
 {% include "@layouts/main/main--news.twig" with {
     social_share: social_share,
     breadcrumbs: breadcrumbs,
-    news_categories: categories,
-    areas_study: topics,
+    news_categories: news_categories,
+    areas_study: areas_study,
     variation: content.field_news_header_variation[0] ? content.field_news_header_variation[0]['#markup'],
     title_prefix: content.field_news_header_title_prefix[0] ? content.field_news_header_title_prefix[0]['#text'],
     title: content.field_news_title[0] ? content.field_news_title[0]['#text'],
@@ -120,5 +120,6 @@
     author: content.field_news_header_author[0] ? content.field_news_header_author[0]['#text'],
     date_string: content.field_news_date[0] ? content.field_news_date[0]['#markup'],
     content: content.field_news_body[0] ? content.field_news_body,
+    related_news: related_news,
   }
 %}
