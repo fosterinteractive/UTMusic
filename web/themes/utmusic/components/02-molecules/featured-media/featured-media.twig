@@ -1,0 +1,50 @@
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+
+<div class="m-featured-media">
+  {% if title %}
+    <div class="m-featured-media__title">
+      {% include "@atoms/text/headings/heading.twig" with {
+          directory: directory,
+          html_element: 'h2',
+          appearance: 'h2',
+          text: title,
+        } only
+      %}
+    </div>
+  {% endif %}
+
+  {% if featured_media_items %}
+   
+    {# Check array if it has more than 1 item inside  #}
+    {% if number_items > 0 %}
+      <div class="m-featured-media__items">
+    {% else %}
+      <div class="m-featured-media__single-item">
+    {% endif %}
+
+        {% for item in featured_media_items %}
+          <div class="m-featured-media__item">
+            {% include '@atoms/videos/video.twig' with {
+                video_type: item.video_type,
+                video: item.video,
+                caption: item.caption,
+              } only 
+            %}
+          </div>
+        {% endfor %}
+      </div>
+    
+  {% endif %}
+</div>

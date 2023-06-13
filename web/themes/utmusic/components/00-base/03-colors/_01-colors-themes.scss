@@ -78,6 +78,11 @@
   --c-breadcrumbs-text: #{palette(pink, 400)};
   --c-breadcrumbs-link: #{palette(blue, 300)};
 
+  //@molecules/featured media & @atoms/video
+  --c-featured-media-title: #{palette(black, 200)};
+  --c-video-caption: #{palette(black, 200)};
+  --c-video-caption-border: #{palette(teal, 300)};
+
   // @molecules/inline-menu
   --c-inline-menu-text: #{palette(grey, 300)};
   --c-inline-menu-text--active: #{palette(teal, 300)};
@@ -217,20 +222,6 @@
 //   --c-pager--item-border: #{palette(black)};
 // }
 
-// .theme--white-bg {
-//   @extend %theme--light-bg;
-//   // Section Background
-//   --c-section-background: #{palette(white)};
-// }
-
-
-// .theme--light-blue-bg {
-//   @extend %theme--light-bg;
-//   // Section Background
-//   --c-section-background: #{palette(teal, 1000)};
-// }
-
-
 
 .theme--pink {
   @extend %theme--light-bg;
@@ -273,3 +264,12 @@
   --c-listing-item--date: #{palette(grey, 300)};
 }
 
+
+.theme--blue-dark {
+  @extend %theme--light-bg;
+
+  //@molecules/featured media
+  --c-featured-media-title: #{palette(white)};
+  --c-heading-decoration: #{palette(teal, 700)};
+  --c-video-caption: #{palette(white)};
+}

@@ -36,10 +36,21 @@
  * @ingroup themeable
  */
 #}
-{% include "@atoms/videos/video.twig" with {
-    title: content.field_video_title[0] ? content.field_video_title[0]['#text'],
-    description: content.field_video_summary[0] ? content.field_video_summary,
-    video: content.field_video[0] ? content.field_video[0],
-    video_type: 'embed',
+
+{% set featured_media_items = [] %}
+
+{% if content.field_featured_media_items[0] %}
+  {% set featured_media_items_count = content.field_featured_media_items['#items'].getIterator()|length - 1 %}
+
+  {% for i in 0..featured_media_items_count %}
+    {% set label = content.field_featured_media_items['#items'][i].entity.label %}
+    {% set featured_media_items = featured_media_items|merge([{ "caption": label, 'video_type': 'embed', 'video': content.field_featured_media_items[i] }]) %}
+  {% endfor %}
+{% endif %}
+
+{% include "@molecules/featured-media/featured-media.twig" with {
+    title: content.field_featured_media_title[0] ? content.field_featured_media_title[0]['#text'],
+    featured_media_items: featured_media_items,
+    number_items: featured_media_items_count,
   } only
 %}
