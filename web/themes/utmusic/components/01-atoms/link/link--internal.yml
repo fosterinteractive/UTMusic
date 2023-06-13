@@ -1,0 +1,8 @@
+label: Example Internal Link
+variation: 'link'
+base_class: a-link
+url: '/node/4'
+id: 
+target: 
+aria_label: 
+aria_labelledby:

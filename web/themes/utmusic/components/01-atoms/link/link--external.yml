@@ -1,0 +1,8 @@
+label: Example External Link
+variation: 'link-external'
+base_class: a-link
+url: 'http://example.com'
+id: 
+target: 
+aria_label: 
+aria_labelledby:
