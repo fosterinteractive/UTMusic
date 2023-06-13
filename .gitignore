@@ -55,14 +55,6 @@ web/sites/example.sites.php
 # Ignored themes.
 web/themes/adminspring-theme
 
-# Remove when these themes are removed from the composer.json
-web/themes/mainspring-theme
-
-# Uncomment these paths and change them to your theme's name.
-# web/themes/my-theme-name/pattern-lab/public
-# web/themes/my-theme-name/assets
-# web/themes/my-theme-name/js/vendor
-
 # This distinction is only important when using this
 # repository as a custom upstream. The .gitignore file
 # is not modified in the GitHub PR workflow.
@@ -90,17 +82,6 @@ web/themes/mainspring-theme
 # Ignore these paths used by Docker
 /db/
 /mariadb-init/
-
-# :::::::::::::::::::::: cut ::::::::::::::::::::::
-
-###
-### Pantheon site .gitignore section
-###
-### Items below the "cut" line are still ignored on
-### the Pantheon site. Items above the "cut" line
-### are ignored in the GitHub repository, but committed
-### to the Pantheon repository.
-###
 
 # Ignore Drupal's file directory
 # Ignore paths that contain user-generated content.

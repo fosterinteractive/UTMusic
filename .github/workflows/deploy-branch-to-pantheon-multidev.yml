@@ -8,14 +8,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+
+    - uses: actions/checkout@v3
     - uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.PANTHEON_SSH_KEY }}
         config: ${{ secrets.SSH_CONFIG }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
-    
-    #Install Terminus
+
+    - name: Use Node.js 16.19
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16.19'
+
     - name: Install Terminus
       uses: pantheon-systems/terminus-github-actions@main
       with:
@@ -24,47 +29,24 @@ jobs:
     - name: Install Terminus Build Tools
       run: terminus self:plugin:install terminus-build-tools-plugin
 
-    - name: Make .gitignore writable 
-      run:  |
-        chmod -R 777 .gitignore
-
-    # Check Terminus works.
     - name: Update Ignore File.
       run: terminus build:gitignore:cut
-
-    # Node Actions
-    - uses: actions/checkout@v3
-    - name: Use Node.js 16.
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16.x'
-
-    # Cache vendor folder
-    - name: Cache vendor folder
-      uses: actions/cache@v2
-      env:
-        cache-name: cache-vendor
-      with:
-        path: ./vendor
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/composer.lock') }}
 
     - name: Build Theme
       run:  |
         npm install
         npm run build
       working-directory: 'web/themes/utmusic'
-    
-    
-    - name: deployer
+
+    - name: Deployer
       env:
         pantheon_repo: '${{ secrets.PANTHEON_REPO }}'
         pantheon_site_name: '${{ secrets.PANTHEON_SITE_NAME }}'
       run: |
         BASE_BRANCH=${GITHUB_REF##*/}
         git remote add pantheon $pantheon_repo
-        git config user.mail "fibot@fosterinteractive.com"
-        git config user.name "FIBot"
-        git status
+        git config --global user.email "fibot@fosterinteractive.com"
+        git config --global user.name "FIBot"
         git add -A
         git commit -q -m 'Build theme.'
         git fetch --unshallow origin
