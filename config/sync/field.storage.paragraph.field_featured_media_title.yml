@@ -1,0 +1,20 @@
+uuid: 98d40bdf-7bef-464a-911b-edd588c9babf
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_featured_media_title
+field_name: field_featured_media_title
+entity_type: paragraph
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

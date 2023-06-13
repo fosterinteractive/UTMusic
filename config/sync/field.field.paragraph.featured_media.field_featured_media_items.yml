@@ -1,0 +1,29 @@
+uuid: 297e0b71-41c5-4ba9-9d43-da7c1d128ddd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_featured_media_items
+    - media.type.video
+    - paragraphs.paragraphs_type.featured_media
+id: paragraph.featured_media.field_featured_media_items
+field_name: field_featured_media_items
+entity_type: paragraph
+bundle: featured_media
+label: 'Media Items'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      video: video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
