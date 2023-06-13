@@ -24,6 +24,10 @@ jobs:
     - name: Install Terminus Build Tools
       run: terminus self:plugin:install terminus-build-tools-plugin
 
+    - name: Make .gitignore writable 
+      run:  |
+        chmod -R 777 .gitignore
+
     # Check Terminus works.
     - name: Update Ignore File.
       run: terminus build:gitignore:cut
@@ -44,9 +48,10 @@ jobs:
         path: ./vendor
         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/composer.lock') }}
 
-    - run: npm install
-      working-directory: 'web/themes/utmusic'
-    - run: npm run build
+    - name: Build Theme
+      run:  |
+        npm install
+        npm run build
       working-directory: 'web/themes/utmusic'
     
     
@@ -59,7 +64,8 @@ jobs:
         git remote add pantheon $pantheon_repo
         git config user.mail "fibot@fosterinteractive.com"
         git config user.name "FIBot"
-        git add .
+        git status
+        git add -A
         git commit -q -m 'Build theme.'
         git fetch --unshallow origin
         git push --force pantheon HEAD:refs/heads/$BASE_BRANCH
