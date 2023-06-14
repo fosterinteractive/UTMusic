@@ -321,7 +321,7 @@ display:
           exposed: true
           expose:
             operator_id: field_news_category_target_id_op
-            label: 'Category (field_news_category)'
+            label: Category
             description: ''
             use_operator: false
             operator: field_news_category_target_id_op
