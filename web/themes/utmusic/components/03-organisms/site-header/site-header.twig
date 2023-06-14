@@ -8,12 +8,13 @@
 
       <div class="o-header__search">
         {% include '@atoms/button/button.twig' with {
+            directory: directory,
             variation: 'icon',
             html_element: 'a',
             url: '/search',
             id: 'toggle-icon',
             aria_label: 'Search this site'|t,
-            icon: 'magnifying-glass',
+            icon: 'search',
           } only
         %}
       </div>
