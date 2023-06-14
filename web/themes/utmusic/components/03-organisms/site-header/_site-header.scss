@@ -102,8 +102,6 @@
   @include breakpoint($bp-large) {
     max-width: rem(350px);  
   }
-
-  outline: 5px solid pink;
 }
 
 .o-header__menu-main {
