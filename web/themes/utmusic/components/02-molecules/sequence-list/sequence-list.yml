@@ -1,0 +1,47 @@
+sb_demo: true
+sequence_items:
+  1: 
+    variation: 'medium'
+    step_number: '1'
+    title: 'Apply by Jan 12, 2023'
+    description: 'Apply through the Ontario Universities’ Application Centre (OUAC). International and current or former U of T students have an alternative process.'
+  2: 
+    variation: 'medium'
+    step_number: '2'
+    title: 'Sent Music Questionnaire & Pre-screening and Fee by Jan 12, 2023'
+    description: 'Submit a supplementary Music Questionnaire and the audition/interview fee and any pre-screening materials to the Faculty of Music. Questionnaire is available Nov 11 2022'
+  3: 
+    variation: 'medium'
+    step_number: '3'
+    title: 'Send program-specific requirements by due dates (Jan-?? 2023)'
+    description: 'Complete any additional special requirements for individual programs (e.g.Composition Portfolio requirements, etc.). Specific dates vary by program'
+  4: 
+    variation: 'medium'
+    step_number: '4'
+    title: 'Send Supporting Documentation by Mar ?? 2023'
+    description: 'Apply through the Ontario Universities’ Application Centre (OUAC). International and current or former U of T students have an alternative process. '
+  5: 
+    variation: 'medium'
+    step_number: '5'
+    title: 'Send Recorded Audition & Interview by Feb 1, in-person auditions run Feb 1 to early Mar'
+    description: 'Complete an Audition & Interview (in-person, or via recording and Zoom interview).'
+  6: 
+    variation: 'medium'
+    step_number: '6'
+    title: 'Apply for scholarships on UTAPS by Feb 28'
+    description: 'Apply through the Ontario Universities’ Application Centre (OUAC). International and current or former U of T students have an alternative process.'
+  7: 
+    variation: 'medium'
+    step_number: '7'
+    title: 'Apply for residence by Mar 21'
+    description: 'First Year applicants must submit their residence application by this date in order to be eligible for the First Year Residence Guarantee'
+  8: 
+    variation: 'medium'
+    step_number: '8'
+    title: 'Online Faculty of Music Entrance Theory Examination on Apr 15'
+    description: 'All Jazz Applicants must write the Jazz Entrance Theory Exam. All Classical Applicants without RCM Level 8 Theory or equivalent must complete the Classical Entrance Theory Exam'
+  9: 
+    variation: 'medium'
+    step_number: '9'
+    title: 'Send Proof of Completion of Prerequisites by June 23 '
+    description: 'All official RCM transcripts must be received by the Faculty of Music by this date'

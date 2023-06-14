@@ -110,6 +110,11 @@
   --c-social-svg: #{palette(blue, 300)};
   --c-social-heading: #{palette(blue, 300)};
 
+  //@molecules/sequence
+  --c-sequence-title: #{palette(teal, 300)};
+  --c-sequence-bg: #{palette(teal, 1000)};
+  --c-sequence-vertical-line: #{palette(grey, 900)};
+
   //@molecules/cta
   --c-cta-text: #{palette(blue, 300)};
 

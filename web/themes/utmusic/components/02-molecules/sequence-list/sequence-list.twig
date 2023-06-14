@@ -1,0 +1,28 @@
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+<div class="m-sequence-list">
+  {% if sequence_items %}
+    <div class="m-sequence-list__items">
+      {% for item in sequence_items %}
+        {% include '@molecules/sequence-list/sequence-list--item.twig' with {
+            step_number: item.step_number,
+            variation: item.variation,
+            title: item.title,
+            description: item.description,
+          } only 
+        %}      
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

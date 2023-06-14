@@ -1,0 +1,40 @@
+{% set variation = variation|default('medium') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+<div class="m-sequence-list-item m-sequence-list-item{{ variation }}">
+  {% if step_number %}
+    <div class="m-sequence-list-item__step m-sequence-list-item{{ variation }}__step">
+      {{ step_number }}
+    </div>
+  {% endif %}
+
+  <div class="m-sequence-list-item__main">
+    {% if title %}
+      <div class="m-sequence-list-item__title">
+        {% include "@atoms/text/headings/heading.twig" with {
+            html_element: 'h3',
+            appearance: 'h3',
+            text: title,
+            alignment: 'left',
+          } only
+        %}
+      </div>
+    {% endif %}
+
+    {% if description  %}
+      <div class="m-sequence-list-item__description">
+        {{ description }}
+      </div>
+    {% endif %}
+  </div>
+</div>
