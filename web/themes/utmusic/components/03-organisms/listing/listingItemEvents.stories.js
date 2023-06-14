@@ -1,6 +1,7 @@
-import listingItem from './listing-item.twig';
+import listingItemEvents from './listing-item--events.twig';
 import listingItemFeaturedEvents from './listing-item--events-featured.twig';
 
+import ListingItemEventsData from './listing-item--events.yml';
 import ListingItemEventsFeaturedData from './listing-item--events-featured.yml';
 
 /**
@@ -8,7 +9,7 @@ import ListingItemEventsFeaturedData from './listing-item--events-featured.yml';
  */
 export default {
   title: 'Organisms/Listing/Listing Item/Events',
-  component: listingItem,
+  component: listingItemEvents,
 
   parameters: {
     controls: { hideNoControlsWarning: 'true' },
@@ -19,5 +20,7 @@ export default {
     },
   },
 }
+
+export const ListingItemEvents = () => listingItemEvents(ListingItemEventsData);
 
 export const ListingItemFeaturedEvents = () => listingItemFeaturedEvents(ListingItemEventsFeaturedData);

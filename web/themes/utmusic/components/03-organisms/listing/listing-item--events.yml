@@ -1,14 +1,9 @@
+sb_demo: true
 variation: 'events'
-storybook_demo: true
-title: 'Listing Item Event'
+title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
 image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
-# image: ''
-url: '#'
+url: '/'
 link_text: 'Learn More'
 id: 'listing-item-id'
-date: 'February 24, 2023'
-start_time: '10:00am'
-end_time: '11:00pm'
-timezone: 'EST'
+event_date: 'Fri, May 26 2023 - Sat, May 27 2023'
 location: 'Location' 
-desc: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes</p>'
