@@ -1,17 +1,16 @@
+sb_demo: true
 variation: 'events-condensed'
-storybook_demo: true
-title: 'Listing Item Event - Condensed'
-image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
-# image: ''
-url: '#'
-link_text: 'Learn More about Listing Item Event - Condensed'
+title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
+image: 
+url: '/'
+link_text: 'Learn More'
 id: 'listing-item-id'
-# status: 'past'
-# status: 'current'
-status: ''
-date: 'February 24, 2023'
-start_time: '10:00am'
-end_time: '11:00pm'
-timezone: 'EST'
-location: 'Location' 
-desc: ''
+event_date: 
+event_date_month: December
+event_date_day: '31'
+time: 7:30pm
+location: 'Walter Hall, 80 Queen’s Park' 
+price: free
+area_specialization: 
+  1:
+    area: Black Feminist Conversation

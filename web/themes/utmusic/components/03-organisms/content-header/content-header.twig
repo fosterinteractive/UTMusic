@@ -69,14 +69,16 @@
         <div class="o-hero-media__tags {% if variation %}o-hero-media{{variation}}__tags{% endif %}">
           {% for category in news_categories %}
             {% include '@atoms/chip/chip.twig' with {
-                text: category
+                text: category,
+                html_element: 'div',
               } only 
             %}
           {% endfor %}
 
           {% for area in areas_study %}
             {% include '@atoms/chip/chip.twig' with {
-                text: area
+                text: area,
+                html_element: 'div',
               } only 
             %}
           {% endfor %}

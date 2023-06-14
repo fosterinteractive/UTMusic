@@ -1,4 +1,5 @@
 {# By Default Chip is just a text label when there is no variation #}
+{% set html_element = html_element|default('button') %}
 
 {% if variation is not empty %}
 
@@ -18,7 +19,7 @@
   </a>
 
 {% elseif variation == '--icon' or variation == '--icon-left' %}
-  <button class="a-chip{{ variation }}" {{ attributes }}{% if aria_label %} aria-label="{{ aria_label }}"{% endif %}>
+  <{{ html_element }} class="a-chip{{ variation }}" {{ attributes }}{% if aria_label %} aria-label="{{ aria_label }}"{% endif %}>
     {% if icon and variation == '--icon-left' %}
       {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
         directory: directory,
@@ -40,7 +41,7 @@
         } only
       %}
     {% endif %}
-  </button>
+  </{{ html_element }}>
 
 {# Assumes Basic Div if no variation declared #}
 {% else %}

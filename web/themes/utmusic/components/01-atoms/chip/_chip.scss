@@ -31,7 +31,7 @@
 %a-chip--icon,
 .a-chip--icon {
   @extend %a-chip;
-  @extend %a-chip--link;
+  // @extend %a-chip--link;
   display: flex;
   align-items: center;
 

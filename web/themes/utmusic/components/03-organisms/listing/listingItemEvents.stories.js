@@ -2,6 +2,7 @@ import listingItemEvents from './listing-item--events.twig';
 import listingItemFeaturedEvents from './listing-item--events-featured.twig';
 
 import ListingItemEventsData from './listing-item--events.yml';
+import ListingItemEventsCondensedData from './listing-item--events-condensed.yml';
 import ListingItemEventsFeaturedData from './listing-item--events-featured.yml';
 
 /**
@@ -22,5 +23,6 @@ export default {
 }
 
 export const ListingItemEvents = () => listingItemEvents(ListingItemEventsData);
+export const ListingItemEventsCondensed = () => listingItemEvents(ListingItemEventsCondensedData);
 
 export const ListingItemFeaturedEvents = () => listingItemFeaturedEvents(ListingItemEventsFeaturedData);

@@ -19,6 +19,15 @@
 {% endif %}
 
 <div class="m-listing-item{{ variation }}{% if image %} has-img{% endif %}">
+
+  <div class="m-listing-item{{ variation }}__event-date">
+    <div class="m-listing-item{{ variation }}__event-date-month">
+      {{ event_date_month }}
+    </div>
+    <div class="m-listing-item{{ variation }}__event-date-day">
+      {{ event_date_day }}
+    </div>
+  </div>
   
   <div class="m-listing-item{{ variation }}__content has-img">
 
@@ -38,48 +47,47 @@
         {{ event_date }}
       </div>
     {% endif %}
-      {# 
-      {% if variation == '--news-condensed' %}
-      <div class="m-listing-item{{variation}}__wrapper-tags-date">
-      {% endif %}
 
-      {% if news_categories or areas_study %}
-        <div class="m-listing-item{{ variation }}__tags">
+    {# for condensed listing item  #}
 
-          {% for item in news_categories %}
-            {% include '@atoms/chip/chip.twig' with {
-                text: sb_demo ? item.category : item,
-              } only 
-            %}
-          {% endfor %}
-
-          {% for item in areas_study %}
-            {% include '@atoms/chip/chip.twig' with {
-                text: sb_demo ? item.area : item,
-              } only 
-            %}
-          {% endfor %}
-
-        </div>
-        
-      {% endif %}
-
-      {% if date_string and variation == '--news-condensed' %}
-        <div class="m-listing-item{{ variation }}__date">
-          {{ date_string }}
-        </div>
-      {% endif %}
-
-      {% if variation == '--news-condensed' %}
+    {% if area_specialization %}
+      <div class="m-listing-item{{ variation }}__category">
+        {% if price == 'free' %} {{ 'Free:'|t }}{% endif %}
+        {% for area in area_specialization %}
+          {{ area.area }}
+          {% if not loop.last %},{% endif %}
+        {% endfor %}
       </div>
-      {% endif %} #}
+    {% endif %}
+
+    {% if time or location %}
+      <div class="m-listing-item{{ variation }}__tags">
+
+        {% include '@atoms/chip/chip.twig' with {
+            text: time,
+            variation: 'icon-left',
+            icon: 'time',
+            html_element: 'div',
+          } only 
+        %}
+
+        {% include '@atoms/chip/chip.twig' with {
+            text: location,
+            variation: 'icon-left',
+            icon: 'location',
+            html_element: 'div',
+          } only 
+        %}
+
+      </div>
+    {% endif %}
+    
   </div>
 
   {% if image %}
     <div class="m-listing-item{{ variation }}__img">
       {% include "@molecules/image/image.twig" with {
           image: image,
-          variation: image_variation,
         } only
       %}
     </div>

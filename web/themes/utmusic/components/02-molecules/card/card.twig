@@ -87,8 +87,6 @@
         {{ description }}
       </div>
     {% endif %}
-
-    
   </div>
 
   {% if categories %}
@@ -96,6 +94,7 @@
       {% for item in categories %}
         {% include '@atoms/chip/chip.twig' with {
             text: sb_demo ? item.category : item,
+            html_element: 'div',
           } only 
         %}
       {% endfor %}

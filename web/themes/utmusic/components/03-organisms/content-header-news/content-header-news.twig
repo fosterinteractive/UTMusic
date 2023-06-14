@@ -62,6 +62,7 @@
           {% for item in news_categories %}
             {% include '@atoms/chip/chip.twig' with {
                 text: sb_demo ? item.category : item,
+                html_element: 'div',
               } only 
             %}
           {% endfor %}
@@ -69,6 +70,7 @@
           {% for item in areas_study %}
             {% include '@atoms/chip/chip.twig' with {
                 text: sb_demo ? item.area : item,
+                html_element: 'div',
               } only 
             %}
           {% endfor %}
