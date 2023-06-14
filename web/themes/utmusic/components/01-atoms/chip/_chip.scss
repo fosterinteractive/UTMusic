@@ -11,7 +11,6 @@
   padding: rem(2px) rem(15px);
   color: var(--c-chip);
   background-color: var(--c-chip-background);
-  line-height: 1rem;
 }
 
 %a-chip--link,
@@ -38,8 +37,6 @@
   svg {
     display: block;
     margin-left: rem(8px);
-    width: rem(14px);
-    height: rem(14px);
     fill: currentColor;
   }
 }

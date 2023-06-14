@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.ed_embedded_full_width
     - core.entity_view_mode.media.news_image_landscape
     - core.entity_view_mode.media.news_image_portrait
   module:
@@ -95,7 +94,7 @@ filters:
     settings:
       default_view_mode: default
       allowed_view_modes:
-        ed_embedded_full_width: ed_embedded_full_width
+        default: default
       allowed_media_types:
         ed_image: ed_image
   media_contextual_crop_embed:

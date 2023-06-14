@@ -22,6 +22,10 @@
   }
 }
 
+.a-link--link {
+  @extend %a-link;
+}
+
 // need to refactor.
 %a-external-link {
   &[href^='http']:after {
@@ -38,6 +42,11 @@
     content: '';
     background-position-y: 1px;
   }
+}
+
+.a-link--link-external {
+  @extend %a-link;
+  @extend %a-external-link;
 }
 
 %a-link--grey,

@@ -1,10 +1,13 @@
 import link from './link.twig';
 
-import linkData from './link.yml';
+import linkInternalData from './link--internal.yml';
+import linkExternalData from './link--external.yml';
+
 
 /**
  * Storybook Definition.
  */
 export default { title: 'Atoms/Links' };
 
-export const example = () => link(linkData);
+export const LinkInternal = () => link(linkInternalData);
+export const LinkExternal = () => link(linkExternalData);

@@ -36,10 +36,8 @@
  * @ingroup themeable
  */
 #}
-{% include "@atoms/videos/video.twig" with {
-    title: content.field_video_title[0] ? content.field_video_title[0]['#text'],
-    description: content.field_video_summary[0] ? content.field_video_summary,
-    video: content.field_video[0] ? content.field_video[0],
-    video_type: 'embed',
-  } only
-%}
+{% extends "/themes/utmusic/templates/paragraphs/adminspring-preview.html.twig" %}
+
+{% block content %}
+  {% include "paragraph--featured-media.html.twig" %}
+{% endblock %}

@@ -1,0 +1,37 @@
+.m-featured-media {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer);
+}
+
+.m-featured-media__title h2 {
+  color: var(--c-featured-media-title);
+}
+
+.m-featured-media__items {
+  display: grid;
+  grid-auto-flow: column;
+  gap: var(--spacer);
+  padding-bottom: var(--spacer);
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  overscroll-behavior-x: contain;
+}
+
+.m-featured-media__item {
+  @extend %a-type--xsmall;
+  color: var(--c-video-caption);
+  scroll-snap-align: center;
+  position: relative;
+
+
+  iframe {
+    border-radius: rem(12px);
+  }
+}
+
+.m-featured-media__single-item {
+  .m-video {
+    width: 100%;
+  }
+}

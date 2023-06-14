@@ -1,0 +1,9 @@
+sb_demo: true
+title: "Featured Media Single Item"
+number_items: 0
+featured_media_items:
+  1: 
+    video_type: 'embed'
+    video: <iframe width="560" height="315" src="https://www.youtube.com/embed/_4kHxtiuML0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    caption: 'Focus Music for work and Studying'
+  

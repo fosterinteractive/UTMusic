@@ -1,0 +1,26 @@
+uuid: 8e0b5474-374b-408d-8a94-a4bd05c7161d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_featured_media_title
+    - paragraphs.paragraphs_type.featured_media
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+id: paragraph.featured_media.field_featured_media_title
+field_name: field_featured_media_title
+entity_type: paragraph
+bundle: featured_media
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
