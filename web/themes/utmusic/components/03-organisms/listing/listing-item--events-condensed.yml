@@ -8,9 +8,11 @@ id: 'listing-item-id'
 event_date: 
 event_date_month: December
 event_date_day: '31'
-time: 7:30pm
+time_start: 7:30pm
 location: 'Walter Hall, 80 Queen’s Park' 
 price: free
-area_specialization: 
+categories: 
   1:
-    area: Black Feminist Conversation
+    category: Masters Performance
+  2:
+    category: 1 year

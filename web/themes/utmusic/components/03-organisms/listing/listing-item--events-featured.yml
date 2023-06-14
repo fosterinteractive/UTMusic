@@ -10,5 +10,5 @@ image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" 
 id: 'listing-item-news'
 url: '/'
 label: 'Learn more'
-time: 7:30pm
+time_start: 7:30pm
 location: Walter Hall, 80 Queen’s Park

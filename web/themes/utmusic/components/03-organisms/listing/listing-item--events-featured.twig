@@ -36,11 +36,11 @@
         <div class="m-listing-item{{ variation }}__illustration-bg"></div>
       </div>
 
-      {% if time or location %}
+      {% if time_start or location %}
         <div class="m-listing-item{{ variation }}__tags">
 
           {% include '@atoms/chip/chip.twig' with {
-              text: time,
+              text: time_start,
               variation: 'icon-left',
               icon: 'time',
             } only 
