@@ -20,6 +20,7 @@ dependencies:
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.section_title
+    - paragraphs.paragraphs_type.sequence_list
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.text_image
   module:
@@ -48,6 +49,7 @@ settings:
       quote: quote
       cta: cta
       card: card
+      sequence_list: sequence_list
       featured_media: featured_media
       inline_menu: inline_menu
       news_full_list_dynamic: news_full_list_dynamic
@@ -58,72 +60,78 @@ settings:
     negate: 0
     target_bundles_drag_drop:
       button:
-        weight: -42
-        enabled: true
-      card:
-        weight: -38
-        enabled: true
-      carousel_header:
-        weight: -26
-        enabled: false
-      carousel_image_group:
-        weight: -25
-        enabled: false
-      cta:
-        weight: -39
-        enabled: true
-      events_full_list_dynamic:
-        weight: -32
-        enabled: true
-      events_summary_list_dynamic:
-        weight: -31
-        enabled: true
-      featured_media:
-        weight: -37
-        enabled: true
-      header:
-        weight: -27
-        enabled: false
-      image_section:
-        weight: -43
-        enabled: true
-      inline_menu:
-        weight: -36
-        enabled: true
-      message:
-        weight: -41
-        enabled: true
-      news_featured_item:
-        weight: -33
-        enabled: true
-      news_full_list_dynamic:
-        weight: -35
-        enabled: true
-      news_summary_list_dynamic:
-        weight: -34
-        enabled: true
-      poster:
-        weight: -29
-        enabled: false
-      quote:
-        weight: -40
-        enabled: true
-      section:
-        weight: -47
-        enabled: true
-      section_title:
         weight: -46
         enabled: true
-      soundcloud:
+      card:
+        weight: -42
+        enabled: true
+      carousel_header:
+        weight: -29
+        enabled: false
+      carousel_image_group:
+        weight: -28
+        enabled: false
+      cta:
+        weight: -43
+        enabled: true
+      events_full_list_dynamic:
+        weight: -35
+        enabled: true
+      events_summary_list_dynamic:
+        weight: -34
+        enabled: true
+      featured_media:
+        weight: -40
+        enabled: true
+      header:
         weight: -30
         enabled: false
-      text:
+      image_section:
+        weight: -47
+        enabled: true
+      inline_menu:
+        weight: -39
+        enabled: true
+      message:
         weight: -45
         enabled: true
-      text_image:
+      news_featured_item:
+        weight: -36
+        enabled: true
+      news_full_list_dynamic:
+        weight: -38
+        enabled: true
+      news_summary_list_dynamic:
+        weight: -37
+        enabled: true
+      poster:
+        weight: -32
+        enabled: false
+      quote:
         weight: -44
         enabled: true
+      section:
+        weight: -51
+        enabled: true
+      section_title:
+        weight: -50
+        enabled: true
+      sequence_item:
+        weight: -27
+        enabled: false
+      sequence_list:
+        weight: -41
+        enabled: true
+      soundcloud:
+        weight: -33
+        enabled: false
+      text:
+        weight: -49
+        enabled: true
+      text_image:
+        weight: -48
+        enabled: true
       video:
-        weight: -28
+        weight: -31
         enabled: false
 field_type: entity_reference_revisions

@@ -1,0 +1,10 @@
+uuid: 48d4a4e9-8303-4f92-9af5-77c7d102f34c
+langcode: en
+status: true
+dependencies: {  }
+id: sequence_item
+label: 'Sequence Item'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

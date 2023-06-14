@@ -1,0 +1,25 @@
+uuid: b7cca1c2-94ea-45a3-af54-2f60056fb6d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sequence_list.field_sequence_list_items
+    - paragraphs.paragraphs_type.sequence_list
+  module:
+    - entity_reference_revisions
+id: paragraph.sequence_list.default
+targetEntityType: paragraph
+bundle: sequence_list
+mode: default
+content:
+  field_sequence_list_items:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

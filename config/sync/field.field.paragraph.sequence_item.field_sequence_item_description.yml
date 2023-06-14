@@ -1,0 +1,26 @@
+uuid: 7e4d60a8-ec64-435d-bebe-dd5f68447f4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sequence_item_description
+    - paragraphs.paragraphs_type.sequence_item
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - rich_text
+id: paragraph.sequence_item.field_sequence_item_description
+field_name: field_sequence_item_description
+entity_type: paragraph
+bundle: sequence_item
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

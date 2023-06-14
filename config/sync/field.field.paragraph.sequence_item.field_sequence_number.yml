@@ -1,0 +1,23 @@
+uuid: 1061ae0d-8693-4a8f-b1de-d706b59c99a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sequence_number
+    - paragraphs.paragraphs_type.sequence_item
+id: paragraph.sequence_item.field_sequence_number
+field_name: field_sequence_number
+entity_type: paragraph
+bundle: sequence_item
+label: 'Step Number'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,23 @@
+uuid: 8c3dbc99-4937-4582-af34-6ac7ecf376a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sequence_item_number_size
+    - paragraphs.paragraphs_type.sequence_item
+  module:
+    - options
+id: paragraph.sequence_item.field_sequence_item_number_size
+field_name: field_sequence_item_number_size
+entity_type: paragraph
+bundle: sequence_item
+label: 'Step Number Size'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: medium
+default_value_callback: ''
+settings: {  }
+field_type: list_string

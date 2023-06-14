@@ -1,0 +1,50 @@
+uuid: a5ccd543-00fe-49da-9c92-5be20634060e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sequence_item.field_sequence_item_description
+    - field.field.paragraph.sequence_item.field_sequence_item_number_size
+    - field.field.paragraph.sequence_item.field_sequence_item_title
+    - field.field.paragraph.sequence_item.field_sequence_number
+    - paragraphs.paragraphs_type.sequence_item
+  module:
+    - options
+    - text
+id: paragraph.sequence_item.default
+targetEntityType: paragraph
+bundle: sequence_item
+mode: default
+content:
+  field_sequence_item_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_sequence_item_number_size:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_sequence_item_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_sequence_number:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

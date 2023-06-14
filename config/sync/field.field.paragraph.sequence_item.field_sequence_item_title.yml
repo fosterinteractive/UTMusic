@@ -1,0 +1,26 @@
+uuid: babae804-dfef-48bb-9b63-7cdb89ed5d84
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sequence_item_title
+    - paragraphs.paragraphs_type.sequence_item
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+id: paragraph.sequence_item.field_sequence_item_title
+field_name: field_sequence_item_title
+entity_type: paragraph
+bundle: sequence_item
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
