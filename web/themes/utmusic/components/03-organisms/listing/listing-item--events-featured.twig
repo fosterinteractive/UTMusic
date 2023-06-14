@@ -36,22 +36,22 @@
         <div class="m-listing-item{{ variation }}__illustration-bg"></div>
       </div>
 
-      {% if news_categories or areas_study %}
+      {% if time or location %}
         <div class="m-listing-item{{ variation }}__tags">
 
-          {% for item in news_categories %}
-            {% include '@atoms/chip/chip.twig' with {
-                text: sb_demo ? item.category : item,
-              } only 
-            %}
-          {% endfor %}
+          {% include '@atoms/chip/chip.twig' with {
+              text: time,
+              variation: 'icon-left',
+              icon: 'time',
+            } only 
+          %}
 
-          {% for item in areas_study %}
-            {% include '@atoms/chip/chip.twig' with {
-                text: sb_demo ? item.area : item,
-              } only 
-            %}
-          {% endfor %}
+          {% include '@atoms/chip/chip.twig' with {
+              text: location,
+              variation: 'icon-left',
+              icon: 'location',
+            } only 
+          %}
 
         </div>
         
@@ -61,9 +61,9 @@
     
     <div class="m-listing-item{{ variation }}__wrapper-title-date">
 
-      {% if date_string %}
+      {% if published_date %}
         <div class="m-listing-item{{ variation }}__date">
-          {{ date_string }}
+          {{ published_date }}
         </div>
       {% endif %}
 
@@ -111,6 +111,15 @@
           image: image,
         } only
       %}
+
+      <div class="m-listing-item{{ variation }}__event-date">
+        <div class="m-listing-item{{ variation }}__event-date-month">
+          {{ event_date_month }}
+        </div>
+        <div class="m-listing-item{{ variation }}__event-date-day">
+          {{ event_date_day }}
+        </div>
+      </div>
     </div>
   {% endif %}
 </div>

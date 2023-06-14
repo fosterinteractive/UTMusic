@@ -3,6 +3,7 @@ import chip from './chip.twig';
 import chipData from './chip.yml';
 import chipLinkData from './chip--link.yml';
 import chipIconData from './chip--icon.yml';
+import chipIconLeftData from './chip--icon-left.yml';
 
 /**
  * Storybook Definition.
@@ -106,3 +107,4 @@ export const Chip = ({ variation, text, url, attributes, icon, aria_label }) =>
 
 export const ChipLink = () => chip(chipLinkData);
 export const chipIcon = () => chip(chipIconData);
+export const chipIconLeft = () => chip(chipIconLeftData);

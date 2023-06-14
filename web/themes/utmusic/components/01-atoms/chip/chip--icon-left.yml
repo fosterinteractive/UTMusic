@@ -1,0 +1,5 @@
+text: 'Filter Category'
+variation: 'icon-left'
+url: ''
+icon: 'time'
+aria_label: 'Remove applied filter category'

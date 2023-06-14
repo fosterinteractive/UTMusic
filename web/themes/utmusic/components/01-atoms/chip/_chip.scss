@@ -28,6 +28,7 @@
   }
 }
 
+%a-chip--icon,
 .a-chip--icon {
   @extend %a-chip;
   @extend %a-chip--link;
@@ -36,7 +37,18 @@
 
   svg {
     display: block;
+    width: rem(20px);
+    height: rem(20px);
     margin-left: rem(8px);
     fill: currentColor;
+  }
+}
+
+.a-chip--icon-left {
+  @extend %a-chip--icon;
+
+  svg {
+    margin-right: rem(8px);
+    margin-left: 0;
   }
 }

@@ -17,11 +17,21 @@
     {{ text }}
   </a>
 
-{% elseif variation == '--icon' %}
+{% elseif variation == '--icon' or variation == '--icon-left' %}
   <button class="a-chip{{ variation }}" {{ attributes }}{% if aria_label %} aria-label="{{ aria_label }}"{% endif %}>
+    {% if icon and variation == '--icon-left' %}
+      {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+        directory: directory,
+        base_class: 'a-icon',
+        icon: icon,
+        size: 'xsmall',
+        } only
+      %}
+    {% endif %}
+
     {{ text }}
 
-    {% if icon %}
+    {% if icon and variation != '--icon-left'%}
       {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
         directory: directory,
         base_class: 'a-icon',
