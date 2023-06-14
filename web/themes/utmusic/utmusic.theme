@@ -229,7 +229,7 @@ function utmusic_preprocess_paragraph(array &$variables) {
 
       }
       elseif ($paragraph_type == 'news_featured_item') {
-        $variables['content']['news_featured_item'] = utmusic_return_rendered_view('news_full_list', 'news_featured_item', $number_items, $categories,  $dynamic_title, $offset);
+        $variables['content']['news_featured_item'] = utmusic_return_rendered_view('news_full_list', 'news_featured_item', null , $categories,  $dynamic_title, $offset);
       }
       elseif ($paragraph_type == 'events_summary_list_dynamic') {
         // $variables['content']['events_summary_list_past'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_upcoming', $number_items, $categories, $promote, $dynamic_title, $offset);
