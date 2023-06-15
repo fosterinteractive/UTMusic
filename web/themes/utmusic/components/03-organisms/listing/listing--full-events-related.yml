@@ -1,0 +1,85 @@
+sb_demo: true
+variation: 'events-related'
+title: Related Events
+listing_col_layout: l-flex--2col
+listing_button_url:  
+listing_button_text:  
+listing_items:
+  1:
+    sb_demo: true
+    variation: 'events'
+    title: 'Jazz and Justice: Transformative, Equitable Futures in Music'
+    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+    url: '/'
+    id: 'listing-item-id'
+    event_date: 'Fri, May 26 2023 - Sat, May 27 2023'
+    time_start: 7:30pm
+    location: 'Location' 
+
+
+  2: 
+    sb_demo: true
+    variation: 'events'
+    title: 'SoundLife Scarborough Launch and Symposium: Mapping Music Pathways'
+    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+    url: '/'
+    id: 'listing-item-id'
+    event_date: 'Fri, May 26 2023 - Sat, May 27 2023'
+    time_start: 7:30pm
+    location: 'Location' 
+
+  
+  3:
+    sb_demo: true
+    variation: 'events'
+    title: '2023 Choral Conducting Symposium'
+    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+    url: '/'
+    id: 'listing-item-id'
+    event_date: 'Fri, May 26 2023 - Sat, May 27 2023'
+    time_start: 7:30pm
+    location: 'Location' 
+
+
+  4:
+    sb_demo: true
+    variation: 'events'
+    title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
+    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+    url: '/'
+    id: 'listing-item-id'
+    event_date: 'Fri, May 26 2023 - Sat, May 27 2023'
+    time_start: 7:30pm
+    location: 'Location' 
+
+
+# pager:
+#   items:
+#     pages:
+#       1:
+#         href: '#'
+#       2:
+#         href: '#'
+#       3:
+#         href: '#'
+#       4:
+#         href: '#'
+#       5:
+#         href: '#'
+
+#     previous: true
+#     first: true
+#     next: true
+#     last: true
+#   current: 4
+#   prev_icon: 'chevron-left-solid'
+#   next_icon: 'chevron-right-solid'
+
+#   first_page_icon: 'arrow_previous'
+#   last_page_icon: 'arrow_next'
+
+#   show_first_last_btn: true
+
+#   ellipses:
+#     next: true
+

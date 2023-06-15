@@ -13,7 +13,6 @@
   @extend %o-listing;
 }
 
-
 .o-listing__header {
   display: flex;
   flex-wrap: wrap;
@@ -39,7 +38,6 @@
 
   @include breakpoint($bp-large) {
     margin-bottom: var(--spacer);
-    text-align: right;
   }
 }
 
@@ -89,4 +87,44 @@
 // Demo in Storybook
 .o-listing__pager-demo .m-pager__container {
   width: 100%;
+}
+
+// carousel Events Items
+.o-listing--events-carousel__items {
+  display: grid !important;
+  grid-auto-flow: column;
+  gap: var(--spacer);
+  padding-bottom: calc(var(--spacer) * 0.5);
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  overscroll-behavior-x: contain;
+
+  .m-listing-item--events-carousel__img {
+    scroll-snap-align: start;
+    width: rem(280px);
+
+    @include breakpoint($bp-tablet-small) {
+      width: rem(400px);
+    }
+
+    @include breakpoint($bp-tablet) {
+      width: rem(470px);
+    }
+  }
+}
+
+.o-listing--events-carousel {
+  @extend %carousel-container;
+}
+
+.o-listing--events-carousel__items-prev-btn {
+  @extend %carousel-controls-btn;
+  
+  left: var(--spacer);
+}
+
+.o-listing--events-carousel__items-next-btn {
+  @extend %carousel-controls-btn;
+  
+  right: var(--spacer);
 }

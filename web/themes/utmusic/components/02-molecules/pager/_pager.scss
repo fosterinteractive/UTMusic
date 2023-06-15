@@ -79,6 +79,7 @@
   &:focus,
   &:active {
     background: var(--c-pager--btn--hover);
+    box-shadow: 0px rem(4px) rem(10px) rgba(62, 19, 77, 0.09);
 
     svg {
       fill: var(--c-pager--btn-svg--hover);
@@ -169,6 +170,7 @@ svg.m-pager__btn-next-icon {
     background-color: var(--c-pager--item-bg--hover);
     color: var(--c-pager--item-text--hover);
     text-decoration: underline;
+    box-shadow: 0px rem(4px) rem(10px) rgba(62, 19, 77, 0.09);
   }
 }
 
