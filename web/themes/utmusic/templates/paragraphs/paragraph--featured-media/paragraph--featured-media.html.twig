@@ -49,8 +49,11 @@
 {% endif %}
 
 {% include "@molecules/featured-media/featured-media.twig" with {
+    directory: 'themes/utmusic',
     title: content.field_featured_media_title[0] ? content.field_featured_media_title[0]['#text'],
     featured_media_items: featured_media_items,
     number_items: featured_media_items_count,
   } only
 %}
+
+{{ attach_library('utmusic/featured-media')}}

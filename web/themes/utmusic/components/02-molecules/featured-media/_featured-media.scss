@@ -65,19 +65,19 @@
 .m-featured-media__items-prev-btn {
   @extend %carousel-controls-btn;
   
-  left: calc(var(--spacer) * 0.5);
+  left: calc(var(--spacer) * 0.3);
 }
 
 .m-featured-media__items-next-btn {
   @extend %carousel-controls-btn;
   
-  right: calc(var(--spacer) * 0.5);
+  right: calc(var(--spacer) * 0.3);
 }
 
 .m-featured-media__item {
   @extend %a-type--xsmall;
   color: var(--c-video-caption);
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   position: relative;
 
   iframe {
@@ -93,4 +93,8 @@
   @include breakpoint($bp-tablet) {
     width: rem(470px);
   }
+}
+
+.m-featured-media__single-item .m-featured-media__item {
+  width: 100%;
 }
