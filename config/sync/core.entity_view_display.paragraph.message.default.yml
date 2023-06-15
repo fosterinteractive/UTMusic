@@ -3,13 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.message.field_message_date
+    - field.field.paragraph.message.field_message_icon
     - field.field.paragraph.message.field_message_text
     - field.field.paragraph.message.field_message_title
     - field.field.paragraph.message.field_message_variation
     - paragraphs.paragraphs_type.message
   module:
-    - datetime_range
     - options
     - text
 id: paragraph.message.default
@@ -17,15 +16,14 @@ targetEntityType: paragraph
 bundle: message
 mode: default
 content:
-  field_message_date:
-    type: daterange_default
+  field_message_icon:
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      timezone_override: ''
-      format_type: medium
-      separator: '-'
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_message_text:
     type: text_default

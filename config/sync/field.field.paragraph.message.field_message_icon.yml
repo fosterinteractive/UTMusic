@@ -1,0 +1,29 @@
+uuid: dd8043c5-91a5-44d8-a48e-f75812b96fa5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_message_icon
+    - media.type.illustration
+    - paragraphs.paragraphs_type.message
+id: paragraph.message.field_message_icon
+field_name: field_message_icon
+entity_type: paragraph
+bundle: message
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      illustration: illustration
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
