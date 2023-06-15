@@ -6,4 +6,5 @@ url: '/'
 link_text: 'Learn More'
 id: 'listing-item-id'
 event_date: 'Fri, May 26 2023 - Sat, May 27 2023'
+time_start: 7:30pm
 location: 'Location' 

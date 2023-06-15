@@ -23,6 +23,6 @@ export default {
 }
 
 export const FullListNews = () => listing(fullListNewsData);
-export const RelatedNews = () => listing(listRelatedNewsData);
+export const ListRelatedNews = () => listing(listRelatedNewsData);
 export const ListNewsCondensed = () => listing(listingCondensedData);
 

@@ -19,7 +19,7 @@
 {% endif %}
 
 <div class="o-listing{{ variation }}">
-  {% if title or listing_button_url %}
+  {% if title %}
     <div class="o-listing__header">
       {% if title %}
         <div class="o-listing__title">
@@ -94,6 +94,7 @@
       %}
     </div>
   {% endif %} #}
+
   {% if sb_demo %}
     <div class="o-listing__pager-demo">
       {% include '@molecules/pager/pager.twig' with {
