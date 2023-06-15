@@ -3,7 +3,7 @@
 
   Drupal.behaviors.skipLink = {
     attach(context, settings) {
-    const skipLink = document.querySelector('.skip-link');
+    const skipLink = context.querySelector('.skip-link');
     if (!skipLink) return false;
     skipLink.addEventListener('click', (e) => {
         e.preventDefault();
