@@ -2,7 +2,7 @@
   @extend %m-listing-item;
 
   padding: calc(var(--spacer) * 0.5);
-  border: rem(1px) solid palette(grey, 950);
+  border: rem(1px) solid var(--c-news-featured-border);
   border-radius: rem(12px);
   box-shadow: 0px rem(15px) rem(30px) rgba(62, 19, 77, 0.09);
 

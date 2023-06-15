@@ -1,0 +1,8 @@
+sb_demo: true
+variation: 'events-carousel'
+title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
+event_date_month: 'December'
+event_date_day: '27'
+image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+id: 'listing-item-news'
+url: '/'

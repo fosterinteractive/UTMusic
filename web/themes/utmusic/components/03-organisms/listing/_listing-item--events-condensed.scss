@@ -1,26 +1,3 @@
-%m-listing-item--events-date {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-width: rem(70px);
-  min-height: rem(70px);
-  padding: rem(8px);
-  border-radius: rem(12px);
-  color: var(--c-events-featured-date);
-  background-color: var(--c-events-featured-bg);
-}
-
-%m-listing-item--events-date-month {
-  @extend %a-type--xsmall;
-}
-
-%m-listing-item--events-date-day {
-  @extend %a-type--xxlarge;
-  font-weight: 700;
-}
-
-// Condensed Listing Item
 .m-listing-item--events-condensed {
   @extend %m-listing-item;
 }

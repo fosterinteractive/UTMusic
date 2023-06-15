@@ -125,10 +125,17 @@
 
   //@organisms/listing/listing-item-featured
   --c-news-featured-title:  #{palette(teal, 300)};
+  --c-news-featured-border: #{palette(grey, 950)};
+
   --c-events-featured-title: #{palette(teal, 300)};
   --c-events-featured-date: #{palette(blue, 900)};
   --c-events-featured-bg: #{palette(black, 200)};
+  --c-events-featured-border: #{palette(grey, 950)};
 
+  --c-events-carousel-bg: #{palette(teal, 300)};
+  --c-events-carousel-date: #{palette(teal, 1000)};
+  --c-events-carousel-border: #{palette(teal, 300)};
+  --c-events-carousel-title: #{palette(teal, 300)};
 
   //pager
   --c-pager--btn: #{palette(blue, 300)};
@@ -281,4 +288,7 @@
   --c-featured-media-title: #{palette(white)};
   --c-heading-decoration: #{palette(teal, 700)};
   --c-video-caption: #{palette(white)};
+
+  //@organisms/listing & listing-item
+  --c-events-carousel-title: #{palette(white)};
 }
