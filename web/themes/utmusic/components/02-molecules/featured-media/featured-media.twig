@@ -29,6 +29,18 @@
    
     {# Check array if it has more than 1 item inside  #}
     {% if number_items > 0 %}
+      <div class="m-featured-media{{ variation }}__items-next-btn">
+        {% include "@atoms/button/button.twig" with {
+            label: label,
+            html_element: 'button',
+            variation: 'icon',
+            icon: 'chevron-right-solid',
+            url: '#',
+            aria_label: "Next"|t,
+            alignment: 'left'
+          } only
+        %}
+      </div>
       <div class="m-featured-media__items">
     {% else %}
       <div class="m-featured-media__single-item">
@@ -45,6 +57,21 @@
           </div>
         {% endfor %}
       </div>
+
+      {% if number_items > 0 %}
+        <div class="m-featured-media{{ variation }}__items-prev-btn">
+          {% include "@atoms/button/button.twig" with {
+              label: label,
+              html_element: 'button',
+              variation: 'icon',
+              icon: 'chevron-left-solid',
+              url: '#',
+              aria_label: "Previous"|t,
+              alignment: 'left'
+            } only
+          %}
+        </div>
+      {% endif %}
     
   {% endif %}
 </div>

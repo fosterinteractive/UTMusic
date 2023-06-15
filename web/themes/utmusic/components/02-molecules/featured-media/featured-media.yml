@@ -22,4 +22,24 @@ featured_media_items:
     video_type: 'embed'
     video: <iframe width="560" height="315" src="https://www.youtube.com/embed/_4kHxtiuML0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     caption: 'Focus Music for work and Studying'
+  6: 
+    video_type: 'embed'
+    video: <iframe width="560" height="315" src="https://www.youtube.com/embed/cvPhWmgSJ8E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    caption: 'Brain power classical music'
+  7: 
+    video_type: 'embed'
+    video: <iframe width="560" height="315" src="https://www.youtube.com/embed/Rb0UmrCXxVA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    caption: 'The Best of Mozart'
+  8: 
+    video_type: 'embed'
+    video: <iframe width="560" height="315" src="https://www.youtube.com/embed/7JmprpRIsEY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    caption: 'Classical Music for Brain Power'
+  9: 
+    video_type: 'embed'
+    video: <iframe width="560" height="315" src="https://www.youtube.com/embed/28QvSs2_zec" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    caption: 'Increase Brain Power'
+  10: 
+    video_type: 'embed'
+    video: <iframe width="560" height="315" src="https://www.youtube.com/embed/_4kHxtiuML0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    caption: 'Focus Music for work and Studying'
   

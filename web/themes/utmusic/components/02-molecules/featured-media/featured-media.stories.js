@@ -3,6 +3,7 @@ import featuredMedia from './featured-media.twig';
 import featuredMediaData from './featured-media.yml';
 import featuredMediaSingleData from './featured-media--single.yml';
 
+import './featured-media';
 
 /**
  * Storybook Definition.

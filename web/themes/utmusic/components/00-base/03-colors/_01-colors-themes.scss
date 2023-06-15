@@ -32,6 +32,9 @@
   --c-button--secondary-svg: #{palette(teal, 700)};
   --c-button--secondary-svg--active: #{palette(blue, 300)};
 
+  --c-button-icon-bg: #{palette(teal, 1000)};
+  --c-button-icon-bg--active: #{palette(white)};
+
   // @atoms/chip
   --c-chip: #{palette(teal, 300)};
   --c-chip--active: #{palette(grey, 300)};
@@ -283,6 +286,14 @@
 
 .theme--blue-dark {
   @extend %theme--light-bg;
+
+  //@atoms/button
+  --c-button-text--secondary: #{palette(white)};
+  --c-button-text--secondary--active: #{palette(teal, 700)};
+ 
+  --c-button--secondary-svg: #{palette(teal, 700)};
+  --c-button--secondary-svg--active: #{palette(teal, 300)};
+
 
   //@molecules/featured media
   --c-featured-media-title: #{palette(white)};
