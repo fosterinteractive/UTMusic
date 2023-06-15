@@ -108,6 +108,15 @@
   --c-card-link: #{palette(blue, 300)};
   --c-card-link--active: #{palette(teal, 300)};
 
+  //@molecules/message
+  --c-message-blue-bg: #{palette(white)};
+  --c-message-blue-title: #{palette(blue, 300)};
+  --c-message-blue-svg: #{palette(blue, 300)};
+  --c-message-blue-border: #{palette(teal, 700)};
+
+  --c-message-pink-title: #{palette(blue, 300)};
+  --c-message-pink-svg: #{palette(pink, 400)};
+
   //@molecules/social
   --c-social-background: #{palette(blue, 900)};
   --c-social-svg: #{palette(blue, 300)};

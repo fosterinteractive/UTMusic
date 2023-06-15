@@ -2,10 +2,13 @@ import message from './message.twig';
 import messageStatus from './message--status.twig';
 
 
-import messageData from './message.yml';
-import messageLowData from './message--low.yml';
-import messageMediumData from './message--medium.yml';
-import messageHighData from './message--high.yml';
+import messageData from './message--grey.yml';
+import messageLowData from './message--green.yml';
+import messageMediumData from './message--yellow.yml';
+import messageHighData from './message--red.yml';
+import messageBlueData from './message--blue.yml';
+import messagePinkData from './message--pink.yml';
+
 
 import messageStatusData from './message--status.yml';
 /**
@@ -72,18 +75,18 @@ export default {
       },
     },
     //Message text
-    date_string: {
-      defaultValue: messageData.date_string,
-      description: 'Message date',
-      control: {
-        type: 'text',
-      },
-      table: {
-        type: {
-          summary: 'string (plain text)',
-        },
-      },
-    },
+    // date_string: {
+    //   defaultValue: messageData.date_string,
+    //   description: 'Message date',
+    //   control: {
+    //     type: 'text',
+    //   },
+    //   table: {
+    //     type: {
+    //       summary: 'string (plain text)',
+    //     },
+    //   },
+    // },
      //Message icon
      message_icon: {
       defaultValue: messageData.message_icon,
@@ -113,7 +116,7 @@ export default {
   },
 };
 
-export const Message = ({ variation, title, text, date_string, message_icon, message_icon_color }) => 
+export const MessageDemo = ({ variation, title, text, date_string, message_icon, message_icon_color }) => 
   message({
     variation,
     title,
@@ -123,7 +126,14 @@ export const Message = ({ variation, title, text, date_string, message_icon, mes
     message_icon_color,
   });
 
-export const MessageLow = () => message(messageLowData);
-export const MessageMedium = () => message(messageMediumData);
-export const MessageHigh = () => message(messageHighData);
+
+
+
+export const MessageGrey = () => message(messageData);
+export const MessageGreen = () => message(messageLowData);
+export const MessageYellow = () => message(messageMediumData);
+export const MessageRed = () => message(messageHighData);
+export const MessageBlue = () => message(messageBlueData);
+export const MessagePink = () => message(messagePinkData);
+
 export const MessageStatus = () => messageStatus(messageStatusData);
