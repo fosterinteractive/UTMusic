@@ -54,7 +54,22 @@
     </div>
   {% endif %}
 
-  <div class="o-listing{{ variation }}__items {{ listing_col_layout }}"> 
+  {% if variation == '--events-carousel' %}
+    <div class="o-listing{{ variation }}__items-prev-btn">
+      {% include "@atoms/button/button.twig" with {
+        label: label,
+        html_element: 'button',
+        variation: 'icon',
+        icon: 'chevron-left-solid',
+        url: '#',
+        aria_label: "Previous"|t,
+        alignment: 'left'
+      } only
+    %}
+    </div>
+  {% endif %}
+
+  <div role="region" aria-label="{{ title }}" class="o-listing{{ variation }}__items {{ listing_col_layout }}"> 
 
     {% for item in listing_items %}
       {% if sb_demo %}
@@ -116,21 +131,6 @@
       {% endif %}
     {% endfor %}
   </div>
-
-  {% if variation == '--events-carousel' %}
-    <div class="o-listing{{ variation }}__items-prev-btn">
-      {% include "@atoms/button/button.twig" with {
-        label: label,
-        html_element: 'button',
-        variation: 'icon',
-        icon: 'chevron-left-solid',
-        url: '#',
-        aria_label: "Previous"|t,
-        alignment: 'left'
-      } only
-    %}
-    </div>
-  {% endif %}
 
   {% if listing_button_url and listing_button_text %}
     <div class="o-listing__button">
