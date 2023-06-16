@@ -85,7 +85,8 @@
         "cweagans/composer-patches": "^1.7",
         "drush/drush": "^10 || ^11 || ^12",
         "drupal/views_autosubmit": "^1.5",
-        "drupal/smart_trim": "^2.1"
+        "drupal/smart_trim": "^2.1",
+        "drupal/media_file_delete": "^1.3"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2",
