@@ -19,12 +19,11 @@ Drupal.behaviors.featuredMediaDrupal = {
     const prevButton = context.querySelector('.m-featured-media__items-prev-btn');
 
     //On loading page we hide previous button
-    prevButton.style.display = 'none';
+    prevButton.style.visibility = 'hidden';
 
     // Find carousel container with controls buttons and items
     const carouselContainer = document.querySelector('.m-featured-media__items');
     const allItems = carouselContainer.querySelectorAll('.m-featured-media__item');
-    // const itemWidth = carouselContainer.firstElementChild.getBoundingClientRect().width;
 
     // Create new region (if it doesn't not exist for screenreaders)
     const liveregionExist = context.querySelector('.liveregion');
@@ -39,20 +38,19 @@ Drupal.behaviors.featuredMediaDrupal = {
     nextButton.addEventListener('click', (e)=> {
       e.preventDefault();
       const carousel = e.target.closest('.m-featured-media').querySelector('.m-featured-media__items');
-      // const allItems = carousel.querySelectorAll('.m-featured-media__item');
       const itemWidth = carousel.firstElementChild.getBoundingClientRect().width;
       // this line scrolls the items
       carousel.scrollLeft += itemWidth;
-      //Display previous button
-      prevButton.style.display = 'block';
+      //visibility previous button
+      prevButton.style.visibility = 'visible';
 
       let currentItem = currentIndex(carouselContainer, itemWidth) + 1;
       // Message for screen-reader in the visually-hidden region
-      e.target.closest('.m-featured-media').querySelector('.liveregion').innerText = Drupal.t('Item ' + currentItem + ' of ' + allItems.length);
+      e.target.closest('.m-featured-media').querySelector('.liveregion').innerText = 'Item ' + currentItem + ' of ' + allItems.length;
 
       const isEndOfScroll = carousel.scrollWidth - carousel.scrollLeft === carousel.clientWidth;
-      nextButton.style.display = isEndOfScroll ? 'none' : 'block';
-      if (nextButton.style.display == 'none') {
+      nextButton.style.visibility = isEndOfScroll ? 'hidden' : 'visible';
+      if (nextButton.style.visibility == 'hidden') {
         prevButton.firstElementChild.focus();
       }
     });
@@ -61,21 +59,20 @@ Drupal.behaviors.featuredMediaDrupal = {
       e.preventDefault();
 
       const carousel = e.target.closest('.m-featured-media').querySelector('.m-featured-media__items');
-      // const allItems = carousel.querySelectorAll('.m-featured-media__item');
       const itemWidth = carousel.firstElementChild.getBoundingClientRect().width;
       // this line scrolls the items
       carousel.scrollLeft -= itemWidth;
-      //Display next button
-      nextButton.style.display = 'block';
+      //visibility next button
+      nextButton.style.visibility = 'visible';
 
       let currentItem = currentIndex(carouselContainer, itemWidth) + 1;
       // Message for screen-reader in the visually-hidden region
-      e.target.closest('.m-featured-media').querySelector('.liveregion').innerText = Drupal.t('Item ' + currentItem + ' of ' + allItems.length);
+      e.target.closest('.m-featured-media').querySelector('.liveregion').innerText = 'Item ' + currentItem + ' of ' + allItems.length;
 
       const isStartOfScroll = carousel.scrollLeft === 0;
-      prevButton.style.display = isStartOfScroll ? 'none' : 'block';
+      prevButton.style.visibility = isStartOfScroll ? 'hidden' : 'visible';
      
-      if (prevButton.style.display == 'none') {
+      if (prevButton.style.visibility == 'hidden') {
         nextButton.firstElementChild.focus();
       }
     });
@@ -88,17 +85,17 @@ Drupal.behaviors.featuredMediaDrupal = {
 
       let currentItem = currentIndex(carouselContainer, itemWidth) + 1;
       // Message for screen-reader in the visually-hidden region
-      e.target.closest('.m-featured-media').querySelector('.liveregion').innerText = Drupal.t('Item ' + currentItem + ' of ' + allItems.length);
+      e.target.closest('.m-featured-media').querySelector('.liveregion').innerText = 'Item ' + currentItem + ' of ' + allItems.length;
       
       const isEndOfScroll = carouselContainer.scrollWidth - carouselContainer.scrollLeft === carouselContainer.clientWidth;
-      nextButton.style.display = isEndOfScroll ? 'none' : 'block';
-      if (nextButton.style.display == 'none') {
+      nextButton.style.visibility = isEndOfScroll ? 'hidden' : 'visible';
+      if (nextButton.style.visibility == 'hidden') {
         prevButton.firstElementChild.focus();
       }
 
       const isStartOfScroll = carouselContainer.scrollLeft === 0;
-      prevButton.style.display = isStartOfScroll ? 'none' : 'block';
-      if (prevButton.style.display == 'none') {
+      prevButton.style.visibility = isStartOfScroll ? 'hidden' : 'visible';
+      if (prevButton.style.visibility == 'hidden') {
         nextButton.firstElementChild.focus();
       }
     });
