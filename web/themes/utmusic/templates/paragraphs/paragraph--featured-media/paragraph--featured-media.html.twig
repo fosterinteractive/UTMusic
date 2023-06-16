@@ -43,8 +43,11 @@
   {% set featured_media_items_count = content.field_featured_media_items['#items'].getIterator()|length - 1 %}
 
   {% for i in 0..featured_media_items_count %}
-    {% set label = content.field_featured_media_items['#items'][i].entity.label %}
-    {% set featured_media_items = featured_media_items|merge([{ "caption": label, 'video_type': 'embed', 'video': content.field_featured_media_items[i] }]) %}
+    {# if there is no video - do not merge this item #}
+    {% if content.field_featured_media_items[i] %}
+      {% set label =  content.field_featured_media_items['#items'][i].entity.label %}
+      {% set featured_media_items = featured_media_items|merge([{ "caption": label, 'video_type': 'embed', 'video': content.field_featured_media_items[i] }]) %}
+    {% endif %}
   {% endfor %}
 {% endif %}
 

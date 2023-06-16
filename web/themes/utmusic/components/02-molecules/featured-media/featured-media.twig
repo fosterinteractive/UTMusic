@@ -62,14 +62,16 @@
     {% endif %}
 
         {% for item in featured_media_items %}
-          <div class="m-featured-media__item" aria-label="{{ item.caption }}" >
-            {% include '@atoms/videos/video.twig' with {
-                video_type: item.video_type,
-                video: item.video,
-                caption: item.caption,
-              } only 
-            %}
-          </div>
+          {% if item.video %}
+            <div class="m-featured-media__item" aria-label="{{ item.caption }}" >
+              {% include '@atoms/videos/video.twig' with {
+                  video_type: item.video_type,
+                  video: item.video,
+                  caption: item.video ? item.caption,
+                } only 
+              %}
+            </div>
+          {% endif %}
         {% endfor %}
       </div>
 
