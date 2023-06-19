@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.news.field_news_header_video
     - field.field.node.news.field_news_image
     - field.field.node.news.field_news_promote
-    - field.field.node.news.field_news_related_articles
     - field.field.node.news.field_news_summary_text
     - field.field.node.news.field_news_title
     - field.field.node.news.field_page_admin_help_seo
@@ -272,16 +271,6 @@ content:
     weight: 29
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_news_related_articles:
-    type: entity_reference_autocomplete
-    weight: 13
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   field_news_summary_text:
     type: text_textarea
