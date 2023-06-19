@@ -1,6 +1,8 @@
 {# Set default listing class - 'o-listing' #}
 {% set variation = variation|default('') %}
 
+{% set listing_col_layout = listing_col_layout|default('l-flex') %}
+
 {% if variation is not empty %}
 
   {# Add BEM variation '--' prefix if missing #}
@@ -12,14 +14,14 @@
 
 {% endif %}
 
-{% if storybook_demo %}
+{# {% if storybook_demo %}
   {% set directory = directory %}
 {% else %}
   {% set directory =  'themes/utmusic' %}
-{% endif %}
+{% endif %} #}
 
 <div class="o-listing{{ variation }}">
-  {% if title or listing_button_url %}
+  {% if title %}
     <div class="o-listing__header">
       {% if title %}
         <div class="o-listing__title">
@@ -37,25 +39,77 @@
     </div>
   {% endif %}
 
-  {% set listing_col_layout = listing_col_layout|default('l-flex') %}
+  {% if variation == '--events-carousel' %}
+    <div class="o-listing{{ variation }}__items-next-btn">
+      {% include "@atoms/button/button.twig" with {
+        label: label,
+        html_element: 'button',
+        variation: 'icon',
+        icon: 'chevron-right-solid',
+        url: '#',
+        aria_label: "Next"|t,
+        alignment: 'left'
+      } only
+    %}
+    </div>
+  {% endif %}
 
-  <div class="o-listing{{ variation }}__items {{ listing_col_layout }}"> 
+  {% if variation == '--events-carousel' %}
+    <div class="o-listing{{ variation }}__items-prev-btn">
+      {% include "@atoms/button/button.twig" with {
+        label: label,
+        html_element: 'button',
+        variation: 'icon',
+        icon: 'chevron-left-solid',
+        url: '#',
+        aria_label: "Previous"|t,
+        alignment: 'left'
+      } only
+    %}
+    </div>
+  {% endif %}
+
+  <div role="region" aria-label="{{ title }}" class="o-listing{{ variation }}__items {{ listing_col_layout }}"> 
+
     {% for item in listing_items %}
+      <div class="o-listing{{variation}}__item" {% if loop.last and variation == '--events-carousel' %} id="last-item"{% endif %}  {% if variation == '--events-carousel' %} tabindex="0" {% endif %}>
       {% if sb_demo %}
-        {% if variation == '--events' or variation == '--events-condensed' %}
-          {# {% include "@organisms/listing/listing-item--events.twig" with {
+        {% if variation == '--events-related' or variation == '--events-condensed' %}
+          {% include "@organisms/listing/listing-item--events.twig" with {
               directory: directory,
               variation: item.variation,
               title: item.title, 
               image: item.image,
               url: item.url,
               id: item.id,
-              start_date: item.start_date,
-              end_date: item.end_date,
-              tags: item.tags,
-              text: item.text,
+              event_date: item.event_date,
+              event_date_month: item.event_date_month,
+              event_date_day: item.event_date_day,
+              price: item.price,
+              categories: item.categories,
+              time_start: item.time_start,
+              location: item.location,
+              sb_demo: item.sb_demo,
             } only
-          %} #}
+          %}
+        {% elseif variation == '--events-carousel' %}
+          {% include "@organisms/listing/listing-item--events-carousel.twig" with {
+              directory: directory,
+              variation: item.variation,
+              title: item.title, 
+              image: item.image,
+              url: item.url,
+              id: item.id,
+              event_date: item.event_date,
+              event_date_month: item.event_date_month,
+              event_date_day: item.event_date_day,
+              price: item.price,
+              categories: item.categories,
+              time_start: item.time_start,
+              location: item.location,
+              sb_demo: item.sb_demo,
+            } only
+          %}
         {% else %}
           {% include "@organisms/listing/listing-item.twig" with {
               directory: directory,
@@ -75,32 +129,40 @@
       
       {# Because for Drupal we include listing-item or listing-item--event on the level of Node #}
         {{ item }}
+        {% if loop.index == 3 and loop.length > 3 and variation == '--events-carousel' %} 
+          <a href="#last-item" class="u-visually--hidden visually-hidden focusable skip-link">
+            {{ 'Skip to the last item'|t }}
+          </a>
+        {% endif %}
       {% endif %}
+      </div>
+
     {% endfor %}
   </div>
 
-  {# {% if listing_button_url and listing_button_text %}
+  {% if listing_button_url and listing_button_text %}
     <div class="o-listing__button">
       {% include "@atoms/button/button.twig" with {
+          directory: directory,
           label: listing_button_text,
           html_element: 'a',
-          variation: '',
+          variation: 'secondary',
           url: listing_button_url,
           id: 'listing'|t ~ title,
           target: '',
-          aria_label: listing_button_text ~ ' ' ~ aria_label,
+          aria_label: aria_label,
           alignment: 'left'
         } only
       %}
     </div>
-  {% endif %} #}
+  {% endif %}
+
   {% if sb_demo %}
     <div class="o-listing__pager-demo">
       {% include '@molecules/pager/pager.twig' with {
           items: pager.items,
           current: pager.current,
           prev_icon: pager.prev_icon,
-
         } only 
       %}
     </div>

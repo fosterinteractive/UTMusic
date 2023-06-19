@@ -1,0 +1,54 @@
+{# Set default listing-item class - 'm-listing-item' #}
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+{# {% if sb_demo %}
+  {% set directory = directory %}
+{% else %}
+  {% set directory =  'themes/utmusic' %}
+{% endif %} #}
+
+
+<div class="m-listing-item{{ variation }}">
+
+  {% if image %}
+    <div class="m-listing-item{{ variation }}__img">
+      {% include "@molecules/image/image.twig" with {
+          image: image,
+        } only
+      %}
+
+      <div class="m-listing-item{{ variation }}__event-date">
+        <div class="m-listing-item{{ variation }}__event-date-month">
+          {{ event_date_month }}
+        </div>
+        <div class="m-listing-item{{ variation }}__event-date-day">
+          {{ event_date_day }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if title %}
+    <div class="m-listing-item{{ variation }}__title">
+      {% include "@atoms/text/headings/heading.twig" with {
+          html_element: 'h3',
+          appearance: 'h3',
+          text: title,
+          url: url,
+        } only
+      %}
+    </div>
+  {% endif  %}
+  
+</div>

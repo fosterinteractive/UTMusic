@@ -1,0 +1,26 @@
+uuid: 8c2c9845-ed0c-4488-813c-424f41d32e58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_news_summary_button_label
+    - paragraphs.paragraphs_type.news_summary_list_dynamic
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+id: paragraph.news_summary_list_dynamic.field_news_summary_button_label
+field_name: field_news_summary_button_label
+entity_type: paragraph
+bundle: news_summary_list_dynamic
+label: Label
+description: 'Visually displayed text'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

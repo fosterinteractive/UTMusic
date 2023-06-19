@@ -18,8 +18,8 @@
   <blockquote class="m-quote{{ variation }}">
     
     {% if image_main and variation == '--image' %}
-      <div class="m-cta{{ variation }}__images">
-        <div class="m-cta{{ variation }}__image-main">
+      <div class="m-quote{{ variation }}__images">
+        <div class="m-quote{{ variation }}__image-main">
           {% include "@molecules/image/image.twig" with {
               image: image_main,
             } only
@@ -27,7 +27,7 @@
         </div>
 
         {% if image_small %}
-          <div class="m-cta{{ variation }}__image-small">
+          <div class="m-quote{{ variation }}__image-small">
             {% include "@molecules/image/image.twig" with {
                 image: image_small,
               } only

@@ -3,11 +3,13 @@
 
   Drupal.behaviors.skipLink = {
     attach(context, settings) {
-    const skipLink = document.querySelector('.skip-link');
+    const skipLink = context.querySelectorAll('.skip-link');
     if (!skipLink) return false;
-    skipLink.addEventListener('click', (e) => {
+
+    skipLink.forEach( link => {
+      link.addEventListener('click', (e) => {
         e.preventDefault();
-        const target = document.getElementById(skipLink.href.split('#')[1]);
+        const target = document.getElementById(link.href.split('#')[1]);
         if (target) {
             target.setAttribute('tabindex', '-1');
             target.addEventListener('blur', e => {
@@ -15,7 +17,9 @@
             }, {once: true});
             target.focus();
         }
+      });
     });
+    
 
     jQuery.extend(jQuery.expr[':'], {
         focusable: function(el, index, selector){

@@ -32,6 +32,9 @@
   --c-button--secondary-svg: #{palette(teal, 700)};
   --c-button--secondary-svg--active: #{palette(blue, 300)};
 
+  --c-button-icon-bg: #{palette(teal, 1000)};
+  --c-button-icon-bg--active: #{palette(white)};
+
   // @atoms/chip
   --c-chip: #{palette(teal, 300)};
   --c-chip--active: #{palette(grey, 300)};
@@ -105,6 +108,15 @@
   --c-card-link: #{palette(blue, 300)};
   --c-card-link--active: #{palette(teal, 300)};
 
+  //@molecules/message
+  --c-message-blue-bg: #{palette(white)};
+  --c-message-blue-title: #{palette(blue, 300)};
+  --c-message-blue-svg: #{palette(blue, 300)};
+  --c-message-blue-border: #{palette(teal, 700)};
+
+  --c-message-pink-title: #{palette(blue, 300)};
+  --c-message-pink-svg: #{palette(pink, 400)};
+
   //@molecules/social
   --c-social-background: #{palette(blue, 900)};
   --c-social-svg: #{palette(blue, 300)};
@@ -125,10 +137,17 @@
 
   //@organisms/listing/listing-item-featured
   --c-news-featured-title:  #{palette(teal, 300)};
+  --c-news-featured-border: #{palette(grey, 950)};
+
   --c-events-featured-title: #{palette(teal, 300)};
   --c-events-featured-date: #{palette(blue, 900)};
   --c-events-featured-bg: #{palette(black, 200)};
+  --c-events-featured-border: #{palette(grey, 950)};
 
+  --c-events-carousel-bg: #{palette(teal, 300)};
+  --c-events-carousel-date: #{palette(teal, 1000)};
+  --c-events-carousel-border: #{palette(teal, 300)};
+  --c-events-carousel-title: #{palette(teal, 300)};
 
   //pager
   --c-pager--btn: #{palette(blue, 300)};
@@ -277,8 +296,19 @@
 .theme--blue-dark {
   @extend %theme--light-bg;
 
+  //@atoms/button
+  --c-button-text--secondary: #{palette(white)};
+  --c-button-text--secondary--active: #{palette(teal, 700)};
+ 
+  --c-button--secondary-svg: #{palette(teal, 700)};
+  --c-button--secondary-svg--active: #{palette(teal, 300)};
+
+
   //@molecules/featured media
   --c-featured-media-title: #{palette(white)};
   --c-heading-decoration: #{palette(teal, 700)};
   --c-video-caption: #{palette(white)};
+
+  //@organisms/listing & listing-item
+  --c-events-carousel-title: #{palette(white)};
 }

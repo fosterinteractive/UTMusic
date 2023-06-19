@@ -1,7 +1,7 @@
 {% set breadcrumbs = breadcrumbs|default([['Home','/'],['Level 1',''],['Level 2','/some-url.html']]) %}
 
 {% if breadcrumbs %}
-  <nav role="navigation" aria-labelledby="system-breadcrumb" class="m-breadcrumbs__nav">
+  <nav aria-labelledby="system-breadcrumb" class="m-breadcrumbs__nav">
     <h2 class="visually-hidden" id="system-breadcrumb">{{ 'Breadcrumbs'|t }}</h2>
     
     <ol class="m-breadcrumbs">

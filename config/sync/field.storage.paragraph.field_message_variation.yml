@@ -12,17 +12,23 @@ type: list_string
 settings:
   allowed_values:
     -
+      value: blue
+      label: Blue
+    -
+      value: pink
+      label: Pink
+    -
       value: 'null'
-      label: 'Default (Grey)'
+      label: 'Grey (Message)'
     -
       value: low
-      label: 'Low (Green)'
+      label: 'Green (Task)'
     -
       value: medium
-      label: 'Medium (Yellow)'
+      label: 'Yellow (Warning)'
     -
       value: high
-      label: 'High (Red)'
+      label: 'Red (Alert)'
   allowed_values_function: ''
 module: options
 locked: false

@@ -1,0 +1,20 @@
+uuid: 371e16d6-0613-4951-80ca-8d5ad71286d9
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_news_summary_button_label
+field_name: field_news_summary_button_label
+entity_type: paragraph
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

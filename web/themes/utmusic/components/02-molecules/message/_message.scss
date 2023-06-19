@@ -1,4 +1,3 @@
-
 %m-message__core { 
   display: flex;
   gap: var(--spacer);
@@ -15,7 +14,7 @@
   @extend %m-message__core;
 
   border-left: rem(8px) solid palette(grey);
-  border-color: palette(grey, 900);
+  border-color: palette(grey, 300);
   background-color: palette(grey, 900);
 
   p {
@@ -122,4 +121,74 @@ $statuses: (
 
 .m-message--error {
   @extend %m-message--high;
+}
+
+// Music theme message
+%m-message-admission {
+  display: flex;
+  gap: var(--spacer);
+  padding: rem(30px) rem(20px); 
+  border-radius: rem(12px);
+  background-color: var(--c-message-blue-bg);
+  box-shadow: 0px 8px 16px rgba(62, 19, 77, 0.07);
+}
+
+%m-message-admission-svg {
+  width: rem(48px);
+  height: rem(48px);
+}
+
+//Blue theme message
+.m-message--blue {
+  @extend %m-message-admission;
+}
+
+.m-message--blue__content {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    width: rem(2px);
+    height: 100%;
+    background-color: var(--c-message-blue-border);
+    border-radius: rem(10px);
+    position: absolute;
+    left: -15px;
+  }
+}
+
+.m-message--blue__title h3 {
+  @extend %a-type--xsmall;
+  text-transform: uppercase;
+  color: var(--c-message-blue-title);
+}
+
+.m-message--blue__icon svg {
+  @extend %m-message-admission-svg;
+  fill: var(--c-message-blue-svg);
+}
+
+.m-message--blue__text {
+  @extend %a-type--xsmall;
+}
+
+
+// Pink theme message
+.m-message--pink {
+  @extend %m-message-admission;
+  align-items: center;
+
+  @include breakpoint($bp-tablet) {
+    padding: rem(30px) rem(60px); 
+  }
+}
+
+.m-message--pink__title h3 {
+  color: var(--c-message-pink-title);
+}
+
+.m-message--pink__icon svg {
+  @extend %m-message-admission-svg;
+  fill: var(--c-message-pink-svg);
 }

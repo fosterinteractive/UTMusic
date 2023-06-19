@@ -47,6 +47,7 @@ dependencies:
     - linkit
     - media
     - media_bulk_upload
+    - media_file_delete
     - menu_position
     - metatag
     - moderation_sidebar
@@ -113,6 +114,7 @@ permissions:
   - 'administer media'
   - 'administer media display'
   - 'administer media fields'
+  - 'administer media file delete'
   - 'administer media form display'
   - 'administer media types'
   - 'administer media_bulk_upload configuration'
@@ -186,6 +188,7 @@ permissions:
   - 'delete any ed_image media'
   - 'delete any ed_notice content'
   - 'delete any event content'
+  - 'delete any file'
   - 'delete any media'
   - 'delete any news content'
   - 'delete any page content'

@@ -1,0 +1,96 @@
+sb_demo: true
+variation: 'events-carousel'
+title: List Events carousel
+listing_col_layout: 
+listing_button_url:  /
+listing_button_text: 'See all events'
+listing_items:
+  1:
+    sb_demo: true
+    variation: 'events-carousel'
+    title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
+    event_date_month: 'April'
+    event_date_day: '30'
+    image: '<img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" />'
+    id: 'listing-item-news'
+    url: '/'
+  
+  2:
+    sb_demo: true
+    variation: 'events-carousel'
+    title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
+    event_date_month: 'December'
+    event_date_day: '09'
+    image: '<img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2338&q=80" />'
+    id: 'listing-item-news'
+    url: '/' 
+
+  3:
+    sb_demo: true
+    variation: 'events-carousel'
+    title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
+    event_date_month: 'July'
+    event_date_day: '17'
+    image: '<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" />'
+    id: 'listing-item-news'
+    url: '/'   
+  4:
+    sb_demo: true
+    variation: 'events-carousel'
+    title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
+    event_date_month: 'April'
+    event_date_day: '30'
+    image: '<img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" />'
+    id: 'listing-item-news'
+    url: '/'
+  
+  5:
+    sb_demo: true
+    variation: 'events-carousel'
+    title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
+    event_date_month: 'December'
+    event_date_day: '09'
+    image: '<img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2338&q=80" />'
+    id: 'listing-item-news'
+    url: '/' 
+
+  6:
+    sb_demo: true
+    variation: 'events-carousel'
+    title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
+    event_date_month: 'July'
+    event_date_day: '17'
+    image: '<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" />'
+    id: 'listing-item-news'
+    url: '/' 
+
+# pager:
+#   items:
+#     pages:
+#       1:
+#         href: '#'
+#       2:
+#         href: '#'
+#       3:
+#         href: '#'
+#       4:
+#         href: '#'
+#       5:
+#         href: '#'
+
+#     previous: true
+#     first: true
+#     next: true
+#     last: true
+#   current: 4
+#   prev_icon: 'chevron-left-solid'
+#   next_icon: 'chevron-right-solid'
+
+#   first_page_icon: 'arrow_previous'
+#   last_page_icon: 'arrow_next'
+
+#   show_first_last_btn: true
+
+#   ellipses:
+#     next: true
+

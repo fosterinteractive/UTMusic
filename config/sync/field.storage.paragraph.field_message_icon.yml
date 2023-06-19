@@ -1,13 +1,13 @@
-uuid: dd46b64d-08a9-4a1a-8089-725cc191a61b
+uuid: 1faf37fe-b520-4f28-9011-b54953f82f23
 langcode: en
 status: true
 dependencies:
   module:
     - media
-    - node
-id: node.field_image_as_mt
-field_name: field_image_as_mt
-entity_type: node
+    - paragraphs
+id: paragraph.field_message_icon
+field_name: field_message_icon
+entity_type: paragraph
 type: entity_reference
 settings:
   target_type: media

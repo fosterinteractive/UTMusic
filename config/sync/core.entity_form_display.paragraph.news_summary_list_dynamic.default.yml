@@ -10,12 +10,36 @@ dependencies:
     - field.field.paragraph.news_summary_list_dynamic.field_news_promote_filter
     - field.field.paragraph.news_summary_list_dynamic.field_news_summary_appearance
     - field.field.paragraph.news_summary_list_dynamic.field_news_summary_area_study
+    - field.field.paragraph.news_summary_list_dynamic.field_news_summary_button_a11y
+    - field.field.paragraph.news_summary_list_dynamic.field_news_summary_button_label
+    - field.field.paragraph.news_summary_list_dynamic.field_news_summary_button_url
     - field.field.paragraph.news_summary_list_dynamic.field_news_summary_variation
     - field.field.paragraph.news_summary_list_dynamic.field_news_title
     - paragraphs.paragraphs_type.news_summary_list_dynamic
   module:
     - allowed_formats
+    - field_group
+    - link
     - text
+third_party_settings:
+  field_group:
+    group_button:
+      children:
+        - field_news_summary_button_url
+        - field_news_summary_button_label
+        - field_news_summary_button_a11y
+      label: Button
+      region: content
+      parent_name: ''
+      weight: 9
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
 id: paragraph.news_summary_list_dynamic.default
 targetEntityType: paragraph
 bundle: news_summary_list_dynamic
@@ -64,6 +88,36 @@ content:
     weight: 7
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_news_summary_button_a11y:
+    type: text_textfield
+    weight: 12
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+  field_news_summary_button_label:
+    type: text_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+  field_news_summary_button_url:
+    type: link_default
+    weight: 10
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   field_news_summary_variation:
     type: options_select

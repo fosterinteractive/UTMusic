@@ -30,7 +30,8 @@
     title: view.args[4] ? view.args[4],
     listing_items: items,
     listing_col_layout: view.args[5] ? view.args[5],
-    listing_button_url: view_all_link_url,
-    listing_button_text: view_all_link_title ? view_all_link_title : 'See More News'|t,
+    listing_button_url: view.args[6] ? view.args[6],
+    listing_button_text: view.args[7] ? view.args[7],
+    aria_label: view.args[8] ? view.args[8]
   } only
 %}

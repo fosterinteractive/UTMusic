@@ -1,16 +1,16 @@
-uuid: bda87031-2333-411d-807b-727b37a0369f
+uuid: dd8043c5-91a5-44d8-a48e-f75812b96fa5
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image_as_mt
-    - media.type.ed_image
-    - node.type.test
-id: node.test.field_image_as_mt
-field_name: field_image_as_mt
-entity_type: node
-bundle: test
-label: 'Image as MT Image'
+    - field.storage.paragraph.field_message_icon
+    - media.type.illustration
+    - paragraphs.paragraphs_type.message
+id: paragraph.message.field_message_icon
+field_name: field_message_icon
+entity_type: paragraph
+bundle: message
+label: Icon
 description: ''
 required: false
 translatable: false
@@ -20,7 +20,7 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      ed_image: ed_image
+      illustration: illustration
     sort:
       field: _none
       direction: ASC

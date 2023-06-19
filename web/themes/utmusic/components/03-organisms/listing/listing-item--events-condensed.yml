@@ -1,9 +1,7 @@
 sb_demo: true
 variation: 'events-condensed'
 title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
-image: 
 url: '/'
-link_text: 'Learn More'
 id: 'listing-item-id'
 event_date: 
 event_date_month: December

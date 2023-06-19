@@ -25,7 +25,7 @@ listing_items:
     date_string: 'April 5, 2023'
     image:
     id: 'listing-item-news'
-    url: "#"
+    url: "/"
     news_categories: 
       1:
         category: News
@@ -40,7 +40,7 @@ listing_items:
     date_string: 'August 19, 2023'
     image:
     id: 'listing-item-news'
-    url: "#"
+    url: "/"
     news_categories: 
       1:
         category: Announcements
@@ -55,7 +55,7 @@ listing_items:
     date_string: 'October 13, 2023'
     image:
     id: 'listing-item-news'
-    url: "#"
+    url: "/"
     news_categories: 
       1:
         category: People

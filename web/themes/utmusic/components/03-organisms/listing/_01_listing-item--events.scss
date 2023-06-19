@@ -7,7 +7,7 @@
 }
 
 .m-listing-item--events__title .a-icon--inline {
-  display: none;
+  // display: none;
 }
 
 .m-listing-item--events__date {
@@ -20,4 +20,30 @@
 
 .m-listing-item--events__content {
   @extend  %m-listing-item__content;
+}
+
+.m-listing-item--events__tags {
+  @extend %m-listing-item__tags;
+}
+
+%m-listing-item--events-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: rem(70px);
+  min-height: rem(70px);
+  padding: rem(8px);
+  border-radius: rem(12px);
+  color: var(--c-events-featured-date);
+  background-color: var(--c-events-featured-bg);
+}
+
+%m-listing-item--events-date-month {
+  @extend %a-type--xsmall;
+}
+
+%m-listing-item--events-date-day {
+  @extend %a-type--xxlarge;
+  font-weight: 700;
 }

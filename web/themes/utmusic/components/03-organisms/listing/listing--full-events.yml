@@ -1,0 +1,104 @@
+sb_demo: true
+variation: 'events-condensed'
+title: Full List Events with Condensed Items
+listing_col_layout: l-flex--2col
+listing_button_url:  
+listing_button_text:  
+listing_items:
+  1:
+    sb_demo: true
+    variation: 'events-condensed'
+    title: 'SoundLife Scarborough Launch and Symposium: Mapping Music Pathways'
+    image: 
+    url: '/'
+    id: 'listing-item-id'
+    event_date: 
+    event_date_month: May
+    event_date_day: '10'
+    time_start: 12:30pm
+    location: 'Walter Hall, 80 Queen’s Park' 
+    price: paid
+    categories: 
+      0:
+        category: Black Feminist Conversation
+
+  2: 
+    sb_demo: true
+    variation: 'events-condensed'
+    title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
+    url: '/'
+    id: 'listing-item-id'
+    event_date: 
+    event_date_month: December
+    event_date_day: '31'
+    time_start: 7:30pm
+    location: 'Walter Hall, 80 Queen’s Park' 
+    price: free
+    categories: 
+      1:
+        category: Masters Performance
+      2:
+        category: 1 year
+  3: 
+    sb_demo: true
+    variation: 'events-condensed'
+    title: '2023 Choral Conducting Symposium'
+    url: '/'
+    id: 'listing-item-id'
+    event_date: 
+    event_date_month: July
+    event_date_day: '15'
+    time_start: 7:15pm
+    location: 'Walter Hall, 80 Queen’s Park' 
+    price: free
+    categories: 
+      1:
+        category: Masters Performance
+      2:
+        category: 1 year 
+  4: 
+    sb_demo: true
+    variation: 'events-condensed'
+    title: 'Jazz and Justice: Transformative, Equitable Futures in Music'
+    url: '/'
+    id: 'listing-item-id'
+    event_date: 
+    event_date_month: September
+    event_date_day: '02'
+    time_start: 6:45pm
+    location: 'Walter Hall, 80 Queen’s Park' 
+    price: paid
+    categories: 
+      1:
+        category: Black Feminist Conversation
+
+pager: 
+  items:
+    pages:
+      1:
+        href: '#'
+      2:
+        href: '#'
+      3:
+        href: '#'
+      4:
+        href: '#'
+      5:
+        href: '#'
+
+    previous: true
+    first: true
+    next: true
+    last: true
+  current: 2
+  prev_icon: 'chevron-left-solid'
+  next_icon: 'chevron-right-solid'
+
+  first_page_icon: 'arrow_previous'
+  last_page_icon: 'arrow_next'
+
+  show_first_last_btn: true
+
+  ellipses:
+    next: true
+

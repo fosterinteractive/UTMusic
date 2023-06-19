@@ -26,25 +26,67 @@
   {% endif %}
 
   {% if featured_media_items %}
+  <div role="region" aria-label="{{ title }}" class="m-featured-media__items-wrapper">
    
     {# Check array if it has more than 1 item inside  #}
     {% if number_items > 0 %}
+      <div class="m-featured-media{{ variation }}__items-next-btn">
+        {% include "@atoms/button/button.twig" with {
+            directory: directory,
+            label: label,
+            html_element: 'button',
+            variation: 'icon',
+            icon: 'chevron-right-solid',
+            url: '#',
+            aria_label: "Next"|t,
+            alignment: 'left',
+          } only
+        %}
+      </div>
+      <div class="m-featured-media{{ variation }}__items-prev-btn">
+        {% include "@atoms/button/button.twig" with {
+            directory: directory,
+            label: label,
+            html_element: 'button',
+            variation: 'icon',
+            icon: 'chevron-left-solid',
+            url: '#',
+            aria_label: "Previous"|t,
+            alignment: 'left',
+          } only
+        %}
+      </div>
       <div class="m-featured-media__items">
     {% else %}
       <div class="m-featured-media__single-item">
     {% endif %}
 
         {% for item in featured_media_items %}
-          <div class="m-featured-media__item">
-            {% include '@atoms/videos/video.twig' with {
-                video_type: item.video_type,
-                video: item.video,
-                caption: item.caption,
-              } only 
-            %}
-          </div>
+          {% if item.video %}
+            <div class="m-featured-media__item" aria-label="{{ item.caption }}" {% if loop.last %} id="last-item"{% endif %}  tabindex="0" >
+              {% include '@atoms/videos/video.twig' with {
+                  video_type: item.video_type,
+                  video: item.video,
+                  caption: item.video ? item.caption,
+                } only 
+              %}
+            </div>
+
+            {% if loop.index == 3 and loop.length > 3 %} 
+              <a href="#last-item" class="u-visually--hidden visually-hidden focusable skip-link">
+                {{ 'Skip to the last item'|t }}
+              </a>
+            {% endif %}
+          {% endif %}
         {% endfor %}
       </div>
-    
+
+    {% if number_items > 0 %}
+      </div>
+    {% else %}
+      </div>
+    {% endif %}
+
+  </div>
   {% endif %}
 </div>

@@ -1,0 +1,26 @@
+uuid: c1c0693e-4284-47f7-9fc5-a956866d00dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_news_summary_button_a11y
+    - paragraphs.paragraphs_type.news_summary_list_dynamic
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+id: paragraph.news_summary_list_dynamic.field_news_summary_button_a11y
+field_name: field_news_summary_button_a11y
+entity_type: paragraph
+bundle: news_summary_list_dynamic
+label: 'Accessible Label'
+description: 'Read aloud by screen readers instead of the visually displayed <b>Label</b>.<br> <i> Use when the button''s label is ambiguous if read aloud.  Eg “Read more” ...(about what?)</i>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
