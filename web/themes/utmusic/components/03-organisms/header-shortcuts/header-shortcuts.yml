@@ -1,0 +1,15 @@
+pl_class: 'pl__wrapper--med pl__wrapper--grey-light'
+attributes:
+  Attribute():
+    class: []
+items:
+- title: 'Lorem'
+  url: '#'
+  attributes:
+    Attribute():
+      class: []
+- title: 'Ipsum'
+  url: '#'
+  attributes:
+    Attribute():
+      class: []

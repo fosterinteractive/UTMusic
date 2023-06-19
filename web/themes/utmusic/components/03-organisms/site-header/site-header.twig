@@ -2,40 +2,42 @@
   <div class="o-header__top">
     <div class="o-header__top-contain">
 
-      <div class="o-header__shortcuts">
-        {{ header_shortcuts }}
-      </div>
-
-      <div class="o-header__search">
-        {% include '@atoms/button/button.twig' with {
-            directory: directory,
-            variation: 'icon',
-            html_element: 'a',
-            url: '/search',
-            id: 'toggle-icon',
-            aria_label: 'Search this site'|t,
-            icon: 'search',
-          } only
-        %}
-      </div>
+      {% if header_search %}
+        <div class="o-header__search">
+          {% include '@atoms/button/button.twig' with {
+              directory: directory,
+              variation: 'icon',
+              html_element: 'a',
+              url: '/search',
+              id: 'toggle-icon',
+              aria_label: 'Search this site'|t,
+              icon: 'search'
+            } only
+          %}
+        </div>
+      {% endif %}
 
     </div>
   </div>
 
   <div class="o-header__bottom">
     <div class="o-header__logo">
-      {% include "@molecules/logo/logo.twig" with {
-          directory: directory,
-          logo_icon: 'logo',
-          logo_icon_size: logo_icon_size,
-          logo_icon_color: logo_icon_size,
-          logo_aria_label: 'UTMusic',
-
+      {% include "@molecules/logo/logo.twig"
+        with {
+          variation: '--image',
+          logo_image_src: logo_image_url,
+          logo_alt: site_name,
           url: front_page,
-          site_name: site_name,
+          is_front: is_front,
         } only
       %}
     </div>
+
+    {% if header_shortcuts %}
+      <div class="o-header__shortcuts">
+        {{ header_shortcuts }}
+      </div>
+    {% endif %}
 
     {% if language_selector %}
       <div class="o-header__language-and-mobile-btn-wrapper">

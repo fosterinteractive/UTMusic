@@ -4,8 +4,8 @@
 
 // Background Line
 .o-header__top {
-  border-bottom:  1px solid palette(grey, 900);
-  background-color: palette(grey, 900);
+  // border-bottom:  1px solid palette(grey, 900);
+  // background-color: palette(blue, 300);
 }
 
 // Container for max-width
@@ -22,7 +22,7 @@
 .o-header__parent-site-link {
   // @extend %m-menu-header-shortcuts__link;
 
-  border-right: 1px solid palette(blue, 900);
+  border-right: 1px solid palette(blue, 300);
   background-size: 0;
   padding-right: ru(0.5);
   padding-left: ru(0.5);
@@ -76,17 +76,22 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
-  margin-right: auto;
-  margin-left: auto;
-  padding: ru(0.25);
+  margin-right: ru(0.5);
+  margin-left: ru(0.5);
+  padding: ru(0.25) 0;
+  border-bottom: 1px solid #6FC7EA;
   max-width: $bp-max;
 
   @include breakpoint($bp-phone-large) {
-    padding: ru(0.5);
+    padding: ru(0.7) 0;
   }
 
   @include breakpoint($bp-full-nav) {
     align-items: center;
+    padding: ru(0.7);
+    margin-right: auto;
+    margin-left: auto;
+    border-bottom: 0;
   }
 
   @include breakpoint($bp-max + $gutter-px) {
@@ -100,7 +105,7 @@
   max-width: rem(250px);
 
   @include breakpoint($bp-large) {
-    max-width: rem(350px);  
+    max-width: rem(380px);  
   }
 }
 
@@ -115,8 +120,6 @@
 
 .l-page__menu-main-wrapper {
   display: none;
-  border-top:  1px solid palette(grey, 1000);
-  border-bottom:  1px solid palette(grey, 1000);
 
   @include breakpoint($bp-full-nav) {
     display: block;
@@ -126,7 +129,7 @@
 .l-page__menu-main {
   margin-right: auto;
   margin-left: auto;
-  max-width: $bp-banner-max;
+  max-width: $bp-max;
 }
 
 .o-header__language-and-mobile-btn-wrapper {
@@ -138,6 +141,8 @@
 .o-header__mobile-btn-menu-triger {
   height: rem(62px);
   margin-left: rem(15px);
+  display: flex;
+  align-items: center;
 
   a {
     padding: 0;
@@ -151,6 +156,7 @@
     &:focus,
     &:active {
       background: 0;
+      border: 0;
     }
   }
 

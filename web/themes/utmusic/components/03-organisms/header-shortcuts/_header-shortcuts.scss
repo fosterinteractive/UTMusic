@@ -1,0 +1,43 @@
+.m-menu-header-shortcuts {
+  display: flex;
+  height: 100%;
+  gap: ru(0.4);
+}
+
+.m-menu-header-shortcuts__item {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  flex-basis: content;
+}
+
+%m-menu-header-shortcuts__link,
+.m-menu-header-shortcuts__link {
+  --shortcuts-text-color: #{palette(blue, 300)};
+
+  @extend %a-button--base-core;
+  @extend %a-type--small;
+
+  padding: 2.5px 15px;
+  background-color: palette(white);
+  font-weight: 700;
+  color: var(--shortcuts-text-color);
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.is-active {
+    background-color: var(--shortcuts-text-color);
+    color: palette(white);
+  }
+}
+
+.m-menu-header-shortcuts__item:first-child {
+  .m-menu-header-shortcuts__link {
+    --shortcuts-text-color: #{palette(pink, 400)};
+  }
+}
+
+.l-page {
+  background-color: #f0fcff;
+}

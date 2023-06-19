@@ -107,6 +107,25 @@ function utmusic_preprocess_page(&$variables) {
   $variables['site_youtube'] = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_youtube') && !$custom_site_settings->get('field_site_youtube')->isEmpty() ? $custom_site_settings->get('field_site_youtube')->getString() : NULL;
   // Site Instagram URL.
   $variables['site_instagram'] = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_instagram') && !$custom_site_settings->get('field_site_instagram')->isEmpty() ? $custom_site_settings->get('field_site_instagram')->getString() : NULL;
+
+
+  // Student Assistance
+  $variables['student_assistance_url'] = NULL;
+  $variables['student_assistance_theme'] = NULL;
+  $variables['student_assistance_label'] = NULL;
+  if (
+    !empty($custom_site_settings) && 
+    $custom_site_settings->hasField('field_site_student_assist_enable') &&
+    !$custom_site_settings->get('field_site_student_assist_enable')->isEmpty() &&
+    $custom_site_settings->get('field_site_student_assist_enable')->value == 1
+  ) {
+    if (!empty($custom_site_settings) && $custom_site_settings->hasField('field_site_student_assist_link') && !$custom_site_settings->get('field_site_student_assist_link')->isEmpty()) {
+      $student_assistance_label = $custom_site_settings->get('field_site_student_assist_link')->first()->getValue()['title'];
+      $variables['student_assistance_label'] = !empty($student_assistance_label) ? $student_assistance_label : t('Student Assistance');
+      $variables['student_assistance_url'] = $custom_site_settings->get('field_site_student_assist_link')->first()->getUrl()->toString();
+    }
+    $variables['student_assistance_theme'] = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_student_assist_theme') && !$custom_site_settings->get('field_site_student_assist_theme')->isEmpty() ? $custom_site_settings->get('field_site_student_assist_theme')->value : NULL;
+  }
 }
 
 /**
@@ -584,4 +603,270 @@ function utmusic_form_views_exposed_form_alter(&$form, FormStateInterface $form_
 
 function utmusic_theme_suggestions_form_alter(array &$suggestions, array $variables) {
   $suggestions[] = 'form__' . str_replace('-','_', $variables['element']['#id']);
+}
+
+/**
+ * Implements template_preprocess_menu().
+ */
+function utmusic_preprocess_menu(&$variables) {
+
+  // Main menu (Desktop).
+  if (
+    $variables['menu_name'] == 'main' &&
+    isset($variables['menu_block_configuration']) && 
+    $variables['menu_block_configuration']['suggestion'] == 'main'
+  ) {
+    // Custom site configuration.
+    // $custom_site_settings = ConfigPages::config('custom_site_settings');
+    // $menu_logic = $custom_site_settings->hasField('field_menu_columns_logic') && !$custom_site_settings->get('field_menu_columns_logic')->isEmpty() ? $custom_site_settings->get('field_menu_columns_logic')->first()->getString() : NULL;
+    $menu_logic = 'reverse';
+    // Menu items.
+    $items = $variables['items'];
+
+    // Loop through the level 1 items in the menu to find out if they have any
+    // children which means they should be a menu panel and need to be broken
+    // into columns.
+    foreach ($items as $level1_menu_id => $item) {
+      $total_level2_items = 0;
+      // If there are no children menu items skip preocessing this level 1 item.
+      if (empty($item['below'])) {
+        continue;
+      }
+
+      // Level 2 menu items.
+      $level2_items = $item['below'];
+      if ($menu_logic == 'reverse') {
+        // dpm($level2_items);
+        $level2_items = array_reverse($level2_items);
+        // dpm($level2_items);
+      }
+      // The total amount of items (links) in level 2 and 3 for this level 1
+      // item.
+      $total_level2_items = $total_items = count($level2_items);
+      // Section totals are the number of links per each level 2 menu item
+      // including it's children items (level 3).
+      $section_totals = [];
+      foreach ($level2_items as $level2_menu_id => $level2_item) {
+        // Level 3 menu items which are children of this level 2 menu item.
+        $level3_items = $level2_item['below'];
+        // Set a count of total links for this level 2 menu item.
+        $section_totals[$level2_menu_id] = 1 + count($level3_items);
+        // Increase the total item count for all items on this level 1 menu
+        // item by the amount of level 3 .
+        $total_items = $total_items + count($level3_items);
+      }
+
+      // Calculate the ideal amount of links in each column. We take the total
+      // links of the level 1 menu item (menu level 2 + 3) and divide by the
+      // amount of columns.
+      $column_3_count = ceil($total_items / 3);
+      // A variable to keep track of which level 2 items belong in which column.
+      $columns = [];
+      // A variable to keep track of the ideal amount of links in 2 columns.
+      // This is calculated after we add the ideal amount of items to the 1st
+      // column for 3 columns then with the remainder calculate the ideal amount
+      // of links for 2 even columns.
+      $column_2_count = 0;
+      // Keep track of which level 2 menu items have already been placed into
+      // columns.
+      $processed_sections = [];
+      // Loop through our 1 to 3 columns.
+      foreach(range(1,3) as $col) {
+        $link_count = 0;
+        // Used to keep track of what level 2 items have been added to this
+        // column.
+        $column_section = [];
+
+        // Loop through each level 2 menu items keyed by the menu link id and
+        // value of the total count of links in the item.
+        foreach ($section_totals as $menu_id => $count) {
+          // If this level 2 item has been processed already (Set to a column)
+          // then skip processing it for this column.
+          if (isset($processed_sections[$menu_id])) {
+            continue;
+          }
+
+          // Flag to track if this section should be added to this column.
+          $process = FALSE;
+          // If the link count is 0 it means we have not added any level 2
+          // menu items to the column yet so always add the first level 2
+          // item as links remain in the correct menu order.
+          if ($link_count == 0) {
+            $process = TRUE;
+            $link_count = $count;
+          }
+          else {
+            // Keep track of the initial count of links.
+            $original_count = $link_count;
+            // Get what would be the new count of links if we added on another
+            // level 2 menu item in this column. We will use this number to
+            // check if we should be adding another menu item or not.
+            $link_count = $link_count + $count;
+            // If this is the 1st column and the amount of links added is less
+            // then or equal to our ideal (equal amount) of links in a 3
+            // column layout then add this section (level 2 menu item) to the
+            // column.
+            if ($col == 1 && $link_count <= $column_3_count) {
+              $process = TRUE;
+            }
+            // If this is the 2nd column and the amount of links is less then
+            // or equal to our ideal amount of links in a 2 column layout then
+            // add this level 2 menu item to the column.
+            elseif ($col == 2 && $link_count <= $column_2_count) {
+              $process = TRUE;
+            }
+            // Any left over menu items will get put in the 3rd column.
+            elseif ($col == 3) {
+              $process = TRUE;
+            }
+
+            // If this is the first column we can calculate the ideal amount
+            // of items in 2 columns since we know how many items remain after
+            // adding them to the 1st column.
+            if (
+              $col == 1 &&
+              $link_count > $column_3_count &&
+              $column_2_count == 0
+            ) {
+              $remainder = $total_items - $original_count;
+              $column_2_count = ceil($remainder / 2);
+            }
+          }
+
+          // If this section is supposed to be processed for this column then
+          // it will be recorded.
+          if ($process == true) {
+            $column_section[$menu_id] = $menu_id;
+            $processed_sections[$menu_id] = $menu_id;
+          }
+        }
+
+        // Add all the column sections to the column.
+        if (!empty($column_section)) {
+          $columns[$col] = $column_section;
+        }
+      }
+
+      // If there a level 2 menu item that has twice as many items then all
+      // other level 2 menu items combined we should used a 2 column layout
+      // and split this long menu item into 2 columns.
+      //
+      // The count of links in each column.
+      $columns_count = [];
+      // The column number with the most menu items.
+      $largest_col = NULL;
+      // The menu level 2 item with the most links count.
+      $largest_sum = 0;
+      // Loop through the columns that we built. In this loop we are trying
+      // to determine how many links are in each column and if there is 1 col
+      // that has only 1 level 2 menu items that is bigger then every other
+      // column.
+      foreach ($columns as $col_num => $column) {
+        $count = 0;
+        // Loop through each columns menu items and get a total count.
+        foreach ($column as $col) {
+          $count = $count + $section_totals[$col];
+        }
+        $columns_count[$col_num] = $count;
+        // If the count of the column is bigger then the largest sum and there
+        // is only 1 level 2 menu item in the column record the column number
+        // and the amount of items.
+        if (
+          $count > $largest_sum &&
+          count($column) == 1 &&
+          $total_level2_items >= 2
+        ) {
+          // Keep track of the number of the largest column while iterating
+          // through the array.
+          $largest_col = $col_num;
+          // Keep track of the amount of links in the largest column while
+          // iterating through the array.
+          $largest_sum = $count;
+        }
+      }
+
+      $split_col_number = NULL;
+      // If we have found 1 column that has 1 menu level 2 in it we need to
+      // check if this 1 column has more then twice the amount of links of the
+      // rest of the columns combined. If it does then we need to redo the
+      // columns and split the largest column into 2 columns. With all the
+      // rest of the links going into 1 column.
+      if (!is_null($largest_col)) {
+        // Calculate the total amount of items in the columns excluding the
+        // largest column.
+        unset($columns_count[$largest_col]);
+        $new_column_total = array_sum($columns_count);
+
+        // Will be the new column with the links of 2 columns moved into it.
+        $new_column = [];
+        $total_columns = count($columns);
+        // If the largest column has more items then x2 all the rest of the
+        // columns items then we will split.
+        if ($largest_sum > ($new_column_total * 2)) {
+          // Record which column should be split.
+          $split_col_number = $largest_col;
+          // Loop through the columns to combine all other columns into 1 new
+          // column.
+          foreach ($columns as $col_id => $column) {
+            foreach ($column as $menu_id => $col) {
+              if ($col_id != $largest_col) {
+                $new_column[$menu_id] = $menu_id;
+              }
+            }
+          }
+
+          if ($menu_logic == 'reverse') {
+            if ($split_col_number == 1) {
+              $split_col_number = 2;
+            }
+            else {
+              $split_col_number = 1;
+            }
+          }
+
+          // Reset the columns to 2 columns. 
+          if ($largest_col == 1) {
+            $columns = [1 => $columns[$largest_col], 2 => $new_column];
+          }
+          // There is a sceneario with the reverse menu where if we have links
+          // before and after the largerest menu item it will create 2 columns
+          // but put all the links in the 2nd column even though there are links
+          // before the largest menu item. To counter act this we need to switch
+          // the new columns on this scenario.
+          elseif (
+            $largest_col == 2 &&
+            $menu_logic == 'reverse' &&
+            $total_columns == 3
+          ) {
+            $columns = [1 => $columns[$largest_col], 2 => $new_column];
+            $split_col_number = 2;
+          }
+          else {
+            $columns = [1 => $new_column, 2 => $columns[$largest_col]];
+          }
+        }
+      }
+
+      // If the menu is reveresed then reverse the items in the column and
+      // reverse the columns so everything is fliped the right way.
+      if ($menu_logic == 'reverse') {
+        foreach ($columns as $n => $column) {
+          // Reverse the menu items in the column back to the correct order.
+          $columns[$n] = array_reverse($column);
+        }
+
+        // Reverse the columns back to the right order.
+        $columns = array_reverse($columns);
+        // Reindex the array keys starting from 1. So we can use these keys
+        // to set our column classes in the twig file.
+        $columns = array_combine(range(1, count($columns)), array_values($columns));
+      }
+
+      $items[$level1_menu_id]['columns_data']['columns'] = $columns;
+      $items[$level1_menu_id]['columns_data']['split_col'] = $split_col_number;
+    }
+
+    $variables['items'] = $items;
+
+  }
 }

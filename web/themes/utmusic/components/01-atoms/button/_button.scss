@@ -2,9 +2,7 @@
 // See "a-links" for elements  that appear like text links without a containing element
 
 // Core Button
-%a-button--core {
-  @extend %a-type--button;
-
+%a-button--base-core {
   display: inline-block;
   // display: flex;
   align-items: center;
@@ -16,6 +14,11 @@
   appearance: none;
   border-radius: rem(44px); 
   position: relative;
+}
+
+%a-button--core {
+  @extend %a-button--base-core;
+  @extend %a-type--button;
 }
 
 // Default Padding (Medium)
@@ -36,7 +39,7 @@
 // }
 
 // Default Style and Icons with text
-%a-button {
+%a-button-t {
   border: 1px solid var(--c-button-border);
   background-color: var(--c-button);
   color: var(--c-button-text);

@@ -1,15 +1,17 @@
 .m-menu-mobile {
-  @include root-prop(--mm-color-background, palette(white));
-  @include root-prop(--mm-color-button, palette(black, 100));
-  @include root-prop(--mm-background-button, palette(black, 100));
+  @include root-prop(--mm-color-background, palette(teal, 1000));
+  @include root-prop(--mm-color-button, palette(blue, 300));
+  @include root-prop(--mm-background-button, palette(teal, 1000));
+  @include root-prop(--mm-background-button-hover, palette(teal, 750));
   @include root-prop(--mm-color-text, palette(blue, 300));
   @include root-prop(--mm-color-text-dimmed, palette(white));
-  @include root-prop(--mm-color-border, palette(grey, 800));
+  @include root-prop(--mm-color-border, palette(teal, 700));
 
   &:not(.mm-menu) {
     display: none;
   }
 }
+
 
 %m-menu-mobile__item {
   padding: ru(1) 0 ru(0.75);
@@ -42,17 +44,17 @@
 // Menu items.
 .mm-listitem {
   @extend %m-menu-mobile__item;
-  border-bottom: 1px solid palette(grey, 800);
+  border-bottom: 1px solid var(--mm-color-border);
   padding: ru(1) 0 ru(0.75);
 
   // Active state.
   &.is-active .mm-listitem__text {
-    background: palette(grey, 1000);
+    background: var(--mm-background-button-hover);
   }
 
   // Hover state.
   .mm-listitem__text:hover {
-    background: palette(grey, 900);
+    background: var(--mm-background-button-hover);
   }
 }
 
@@ -94,7 +96,7 @@
   &:hover,
   &:focus,
   &:active {
-    background: palette(grey, 1000);
+    background: vra(--mm-background-button-hover);
   }
 
   svg {
@@ -118,33 +120,36 @@
 }
 
 .m-menu-mobile__search {
-  border-right: 1px solid palette(grey, 800);
+  border-right: 1px solid var(--mm-color-border);
 }
 
 .m-menu-mobile__close {
-  border-left: 1px solid palette(grey, 800);
+  border-left: 1px solid var(--mm-color-border);
 }
 
 // Prev & Next button.
 %m-menu-mobile-button__core {
-  background: palette(grey, 1000);
+  background: var(--mm-background-button);
 
   &:hover,
   &:focus,
   &:active {
-    background: palette(grey, 900);
+    background-color: palette(teal, 750);
+
   }
 }
 
 // sass-lint:disable class-name-format
 .mm-btn.mm-btn_next,
-.mm-btn.mm-btn_prev {
+.mm-btn.mm-btn_prev,
+.m-menu-mobile__search,
+.m-menu-mobile__close {
   @extend %m-menu-mobile-button__core;
 }
 // sass-lint:enable class-name-format
 
 // sass-lint:disable class-name-format
 .mm-btn_prev {
-  border-right: 1px solid palette(grey, 800);
+  border-right: 1px solid var(--mm-color-border);
 }
 // sass-lint:enable class-name-format

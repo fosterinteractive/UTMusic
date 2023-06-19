@@ -2,15 +2,15 @@
 
   'use strict';
   // Configuration that should only be ran once globally.
-  Drupal.behaviors.munkMmenuConfiguration = {
+  Drupal.behaviors.MmenuConfiguration = {
     attach: function attach(context, settings) {
       $('body').each(function() {
 
         var $header = $('#menu-mobile-header-content');
         var header = $header.html();
 
-        var $searchIcon = '<svg class="m-menu-mobile__btn-search-svg m-menu-mobile-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/icons.svg#magnifying-glass"></use></svg>';
-        var $closeIcon = '<svg class="m-menu-mobile__btn-search-svg m-menu-mobile-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/icons.svg#xmark"></use></svg>';
+        var $searchIcon = '<svg class="m-menu-mobile__btn-search-svg m-menu-mobile-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/utmusic/dist/icons.svg#search"></use></svg>';
+        var $closeIcon = '<svg class="m-menu-mobile__btn-search-svg m-menu-mobile-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/utmusic/dist/icons.svg#xmark"></use></svg>';
 
         $header.remove();
 
