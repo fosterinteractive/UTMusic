@@ -72,7 +72,7 @@
   <div role="region" aria-label="{{ title }}" class="o-listing{{ variation }}__items {{ listing_col_layout }}"> 
 
     {% for item in listing_items %}
-      <div class="o-listing{{variation}}__item" {% if loop.last %} id="last-item"{% endif %}  tabindex="0">
+      <div class="o-listing{{variation}}__item" {% if loop.last and variation == '--events-carousel' %} id="last-item"{% endif %}  {% if variation == '--events-carousel' %} tabindex="0" {% endif %}>
       {% if sb_demo %}
         {% if variation == '--events-related' or variation == '--events-condensed' %}
           {% include "@organisms/listing/listing-item--events.twig" with {
@@ -129,7 +129,7 @@
       
       {# Because for Drupal we include listing-item or listing-item--event on the level of Node #}
         {{ item }}
-        {% if loop.index == 3 and loop.length > 3 %} 
+        {% if loop.index == 3 and loop.length > 3 and variation == '--events-carousel' %} 
           <a href="#last-item" class="u-visually--hidden visually-hidden focusable skip-link">
             {{ 'Skip to the last item'|t }}
           </a>
@@ -143,6 +143,7 @@
   {% if listing_button_url and listing_button_text %}
     <div class="o-listing__button">
       {% include "@atoms/button/button.twig" with {
+          directory: directory,
           label: listing_button_text,
           html_element: 'a',
           variation: 'secondary',

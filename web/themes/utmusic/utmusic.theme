@@ -15,6 +15,7 @@ use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\date_all_day\Utility\DateRangeAllDayHelper;
 use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
 use \Drupal\node\Entity\Node;
+use Drupal\Core\Url;
 
 /**
  * Implements template_preprocess().
@@ -154,6 +155,9 @@ function utmusic_preprocess_paragraph(array &$variables) {
         'offset' => 'field_news_offset',
         'layout' => 'field_news_summary_variation',
         'appearance' => 'field_news_summary_appearance',
+        'button_url' => 'field_news_summary_button_url',
+        'button_label' => 'field_news_summary_button_label',
+        'button_a11y' => 'field_news_summary_button_a11y',
       ],
       'news_featured' => [
         'title' =>  null,
@@ -218,13 +222,30 @@ function utmusic_preprocess_paragraph(array &$variables) {
     if (in_array($paragraph_view_mode, ['preview', 'full', 'default'])) {
       // Creates render variables to use in template.
       if ($paragraph_type == 'news_summary_list_dynamic') {
+        //pass view-more link from admin UI
+        $button_uri = $paragraph->hasField($field_mapping[$type]['button_url']) && !$paragraph->{$field_mapping[$type]['button_url']}->isEmpty() ? $paragraph->{$field_mapping[$type]['button_url']}->uri : NULL;
+        if (isset($button_uri) && (Url::fromUri($button_uri )->isExternal())) {
+          // For external urls.
+          $button_url = $button_uri ;
+        } 
+        elseif (isset($button_uri)) {
+          // For internal urls.
+          $button_url = Url::fromUri($button_uri )->setAbsolute()->toString();
+        }
+        else {
+          $button_url = NULL;
+        }
+        
+        $button_label = $paragraph->hasField($field_mapping[$type]['button_label']) && !$paragraph->{$field_mapping[$type]['button_label']}->isEmpty() ? $paragraph->{$field_mapping[$type]['button_label']}->value : NULL;
+        $button_a11y = $paragraph->hasField($field_mapping[$type]['button_a11y']) && !$paragraph->{$field_mapping[$type]['button_a11y']}->isEmpty() ? $paragraph->{$field_mapping[$type]['button_a11y']}->value : NULL;
+
         $layout = $paragraph->hasField($field_mapping[$type]['layout']) && !$paragraph->{$field_mapping[$type]['layout']}->isEmpty() ? $paragraph->{$field_mapping[$type]['layout']}->value : NULL;
         $appearance = $paragraph->hasField($field_mapping[$type]['appearance']) && !$paragraph->{$field_mapping[$type]['appearance']}->isEmpty() ? $paragraph->{$field_mapping[$type]['appearance']}->value : NULL;
 
         if ($appearance == 'listing-item') {
-          $variables['content']['news_summary_list'] = utmusic_return_rendered_view('news_full_list', 'news_summary_list_images', $number_items, $categories,  $dynamic_title, $offset, $layout);
+          $variables['content']['news_summary_list'] = utmusic_return_rendered_view('news_full_list', 'news_summary_list_images', $number_items, $categories,  $dynamic_title, $offset, $layout, $button_url, $button_label, $button_a11y);
         } else {
-          $variables['content']['news_summary_list'] = utmusic_return_rendered_view('news_full_list', 'news_summary_list', $number_items, $categories,  $dynamic_title, $offset, $layout);
+          $variables['content']['news_summary_list'] = utmusic_return_rendered_view('news_full_list', 'news_summary_list', $number_items, $categories,  $dynamic_title, $offset, $layout, $button_url, $button_label, $button_a11y);
         }
 
       }
@@ -472,7 +493,7 @@ function utmusic_preprocess_views_view_unformatted(array &$variables) {
  *
  * used to render a view allowing us to pass contextual arguments to the view.
  */
-function utmusic_return_rendered_view($view, $display, $items = NULL, $categories = [], $title = NULL, $offset = NULL, $layout = NULL ) {
+function utmusic_return_rendered_view($view, $display, $items = NULL, $categories = [], $title = NULL, $offset = NULL, $layout = NULL, $button_url = NULL, $button_label = NULL, $button_a11y = NULL ) {
   $args = [];
 
   if (isset($categories['promote'])) {
@@ -491,6 +512,9 @@ function utmusic_return_rendered_view($view, $display, $items = NULL, $categorie
     $items,
     $title,
     $layout,
+    $button_url,
+    $button_label,
+    $button_a11y
   ]);
   
   // Get View, set number of items to display and filters.
