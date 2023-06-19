@@ -63,7 +63,7 @@
 
         {% for item in featured_media_items %}
           {% if item.video %}
-            <div class="m-featured-media__item" aria-label="{{ item.caption }}" >
+            <div class="m-featured-media__item" aria-label="{{ item.caption }}" {% if loop.last %} id="last-item"{% endif %}  tabindex="0" >
               {% include '@atoms/videos/video.twig' with {
                   video_type: item.video_type,
                   video: item.video,
@@ -71,6 +71,12 @@
                 } only 
               %}
             </div>
+
+            {% if loop.index == 3 and loop.length > 3 %} 
+              <a href="#last-item" class="u-visually--hidden visually-hidden focusable skip-link">
+                {{ 'Skip to the last item'|t }}
+              </a>
+            {% endif %}
           {% endif %}
         {% endfor %}
       </div>

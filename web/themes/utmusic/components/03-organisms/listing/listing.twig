@@ -72,6 +72,7 @@
   <div role="region" aria-label="{{ title }}" class="o-listing{{ variation }}__items {{ listing_col_layout }}"> 
 
     {% for item in listing_items %}
+      <div class="o-listing{{variation}}__item" {% if loop.last %} id="last-item"{% endif %}  tabindex="0">
       {% if sb_demo %}
         {% if variation == '--events-related' or variation == '--events-condensed' %}
           {% include "@organisms/listing/listing-item--events.twig" with {
@@ -128,7 +129,14 @@
       
       {# Because for Drupal we include listing-item or listing-item--event on the level of Node #}
         {{ item }}
+        {% if loop.index == 3 and loop.length > 3 %} 
+          <a href="#last-item" class="u-visually--hidden visually-hidden focusable skip-link">
+            {{ 'Skip to the last item'|t }}
+          </a>
+        {% endif %}
       {% endif %}
+      </div>
+
     {% endfor %}
   </div>
 

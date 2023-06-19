@@ -94,6 +94,11 @@
   @include breakpoint($bp-tablet) {
     width: rem(470px);
   }
+
+  &:focus {
+    outline: auto 5px palette(blue, 300); /* for webkit browsers */
+    scroll-snap-align: center !important;
+  }
 }
 
 .m-featured-media__single-item .m-featured-media__item {

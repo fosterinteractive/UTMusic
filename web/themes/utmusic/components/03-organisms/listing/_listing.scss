@@ -101,7 +101,7 @@
   scroll-behavior: smooth;
 
   .m-listing-item--events-carousel__img {
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     width: rem(280px);
 
     @include breakpoint($bp-tablet-small) {
@@ -110,6 +110,11 @@
 
     @include breakpoint($bp-tablet) {
       width: rem(470px);
+    }
+
+    &:focus {
+      outline: auto 5px palette(blue, 300); /* for webkit browsers */
+      scroll-snap-align: center !important;
     }
   }
 }
