@@ -63,6 +63,10 @@
   }
 }
 
+.a-button {
+  @extend %a-button-t;
+}
+
 // Secondary Button Style
 %a-button--secondary {
   display: inline-block;
