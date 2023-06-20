@@ -146,14 +146,6 @@
     scroll-snap-align: center;
     width: rem(280px);
 
-    @include breakpoint($bp-tablet-small) {
-      // width: rem(400px);
-    }
-
-    @include breakpoint($bp-tablet) {
-      // width: rem(470px);
-    }
-
     &:focus {
       outline: auto 5px palette(blue, 300); /* for webkit browsers */
       scroll-snap-align: center !important;
