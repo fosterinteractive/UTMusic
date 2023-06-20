@@ -16,7 +16,6 @@ dependencies:
     - field.field.node.news.field_news_header_video
     - field.field.node.news.field_news_image
     - field.field.node.news.field_news_promote
-    - field.field.node.news.field_news_related_articles
     - field.field.node.news.field_news_summary_text
     - field.field.node.news.field_news_title
     - field.field.node.news.field_page_admin_help_seo
@@ -105,7 +104,6 @@ hidden:
   field_news_header_variation: true
   field_news_header_video: true
   field_news_promote: true
-  field_news_related_articles: true
   field_news_summary_text: true
   field_page_admin_help_seo: true
   field_page_admin_help_social: true
