@@ -113,6 +113,21 @@
               sb_demo: item.sb_demo,
             } only
           %}
+        {% elseif variation == '--people' %}
+          {% include "@organisms/listing/listing-item--people.twig" with {
+              directory: directory,
+              variation: item.variation,
+              title: item.title, 
+              image: item.image,
+              url: item.url,
+              id: item.id,
+              sb_demo: item.sb_demo,
+              role: item.role,
+              placeholder_icon: item.placeholder_icon,
+              areas_specialization: item.areas_specialization,
+              instruments: item.instruments,
+            } only
+          %}
         {% else %}
           {% include "@organisms/listing/listing-item.twig" with {
               directory: directory,
