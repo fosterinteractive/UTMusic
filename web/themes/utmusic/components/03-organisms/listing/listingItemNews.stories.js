@@ -5,13 +5,13 @@ import ListingItemNewsData from './listing-item--news.yml';
 import ListingItemNewsCondensedData from './listing-item--news-condensed.yml';
 import ListingItemNewsFeaturedData from './listing-item--news-featured.yml';
 
-import ListingItemRelatedNewsData from './listing-item--related-news.yml';
+import ListingItemRelatedNewsData from './listing-item--news-related.yml';
 
 /**
  * Storybook Definition with data documentation and controls
  */
 export default {
-  title: 'Organisms/Listing/Listing Item/News',
+  title: 'Organisms/Listing/01-Listing Item/News',
   component: listingItem,
 
   parameters: {

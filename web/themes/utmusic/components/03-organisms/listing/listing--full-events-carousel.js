@@ -17,10 +17,11 @@ Drupal.behaviors.listingEventsCarousel = {
   attach(context) {
     // Find carousel container with controls buttons and items
     const carouselContainer = document.querySelector('.o-listing--events-carousel__items');
-    const allItems = carouselContainer.querySelectorAll('.m-listing-item--events-carousel');
     if (!carouselContainer) {
       return;
     }
+    const allItems = carouselContainer.querySelectorAll('.m-listing-item--events-carousel');
+    
 
     const nextButton = context.querySelector('.o-listing--events-carousel__items-next-btn');
     const prevButton = context.querySelector('.o-listing--events-carousel__items-prev-btn');
