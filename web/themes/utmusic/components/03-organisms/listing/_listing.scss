@@ -90,6 +90,7 @@
 }
 
 // carousel Events Items
+%o-listing--carousel,
 .o-listing--events-carousel__items {
   display: grid !important;
   grid-auto-flow: column;
@@ -130,6 +131,47 @@
 }
 
 .o-listing--events-carousel__items-next-btn {
+  @extend %carousel-controls-btn;
+  
+  right: var(--spacer);
+}
+
+
+// carousel People Items
+.o-listing--people-carousel__items {
+  @extend %o-listing--carousel;
+
+  .m-listing-item--people__img-illustration,
+  .m-listing-item--people__img {
+    scroll-snap-align: center;
+    width: rem(280px);
+
+    @include breakpoint($bp-tablet-small) {
+      // width: rem(400px);
+    }
+
+    @include breakpoint($bp-tablet) {
+      // width: rem(470px);
+    }
+
+    &:focus {
+      outline: auto 5px palette(blue, 300); /* for webkit browsers */
+      scroll-snap-align: center !important;
+    }
+  }
+}
+
+.o-listing--people-carousel {
+  @extend %carousel-container;
+}
+
+.o-listing--people-carousel__items-prev-btn {
+  @extend %carousel-controls-btn;
+  
+  left: var(--spacer);
+}
+
+.o-listing--people-carousel__items-next-btn {
   @extend %carousel-controls-btn;
   
   right: var(--spacer);

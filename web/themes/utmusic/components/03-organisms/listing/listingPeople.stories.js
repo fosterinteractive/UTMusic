@@ -1,8 +1,12 @@
 import listing from './listing.twig';
 
 import fullListPeopleData from './listing--full-people.yml';
+import listingPeopleCarouselData from './listing--full-people-carousel.yml';
+
 
 import './listing--full-people';
+import './listing--full-people-carousel';
+
 /**
  * Storybook Definition with data documentation and controls
  */
@@ -21,3 +25,4 @@ export default {
 }
 
 export const FullListPeople = () => listing(fullListPeopleData);
+export const ListPeopleCarousel = () => listing(listingPeopleCarouselData);
