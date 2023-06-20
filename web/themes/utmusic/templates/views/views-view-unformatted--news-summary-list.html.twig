@@ -21,9 +21,6 @@
   {% set items = items|merge([row.content]) %}
 {% endfor %}
 
-{# {% set view_all_link_url = path('view.news_full_list.full_news') %} #}
-{# {% set view_all_link_url = drupal_url('node/16') %} #}
-
 {% include "@organisms/listing/listing.twig" with {
     directory: 'themes/utmusic',
     variation: 'news-condensed',
