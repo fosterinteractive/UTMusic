@@ -397,64 +397,25 @@ function utmusic_preprocess_node(array &$variables) {
       }
     }
   }
-  // Event series.
-  if ($node_type == 'event_series') {
 
-    if ($node_view_mode == 'event_confirmation') {
-      $langcode = $node->language()->getId();
-      $node_storage = \Drupal::entityTypeManager()->getStorage('node');
-      // Get all events in this series.
-      $nids = $node_storage->getQuery()
-        ->condition('type', 'event')
-        ->condition('status', 1)
-        ->condition('field_event_series', $node_id)
-        ->condition('langcode', $langcode, '=')
-        ->sort('field_event_date.value', 'ASC')
-        ->sort('nid', 'ASC')
-        ->execute();
-      // Get the count of all the events.
-      $variables['total_events_in_series'] = count($nids);
-    }
-  }
+  // News CT
+  if ($node_type == 'news') {
+    if ($node_view_mode == 'full') {
+      // Get View, set number of items to display and filters.
+      $filtered_view = Views::getView('news_full_list');
+      $filtered_view->setDisplay('related_news_footer');
+      $filtered_view->setItemsPerPage(4);
 
-  // Event confirmation used on event and event series.
-  if ($node_view_mode == 'event_confirmation') {
-    $first_name = \Drupal::request()->query->get('first_name');
-    $variables['first_name'] = $first_name;
-    $variables['upcoming_events_in_series'] = 0;
-    // Need to get the current date in drupals storage format so we can filter
-    // events that have expired.
-    $date = new DrupalDateTime('now');
-    $date->setTimezone(new \DateTimezone(DateTimeItemInterface::STORAGE_TIMEZONE));
-    $formatted = $date->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT);
-    // Query event nodes which are in this series which have not yet expired
-    // sorted chronologically.
-    $series_id = NULL;
-    if ($node_type == 'event_series') {
-      $series_id = $node_id;
-    }
-    else {
-      if (!$node->field_event_series->isEmpty()) {
-        $series_id = $node->field_event_series->target_id;
-      }
-    }
+      // Render filtered view.
+      $render_view = $filtered_view->render();
 
-    if ($series_id) {
-      $langcode = $node->language()->getId();
-      $nids = $node_storage->getQuery()
-        ->condition('type', 'event')
-        ->condition('status', 1)
-        ->condition('field_event_series', $series_id)
-        ->condition('field_sales_force_id', NULL, 'IS NOT NULL')
-        ->condition('field_event_date.value', $formatted, '>=')
-        ->condition('langcode', $langcode, '=')
-        ->sort('field_event_date.value', 'ASC')
-        ->execute();
-
-      $variables['upcoming_events_in_series'] = empty($nids) ? 0 : count($nids);
+      // $variables['content']['related_news_footer'] = utmusic_return_rendered_view('news_full_list', 'related_news_footer', 4, [], NULL, NULL, NULL, NULL, NULL, NULL);
+      $variables['content']['related_news_footer'] = $render_view;
     }
   }
 }
+
+
 
 /**
  * Implements hook_preprocess_views().

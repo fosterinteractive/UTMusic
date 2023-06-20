@@ -1,11 +1,7 @@
-// Pre-Header
-// Mini Nav at very top of layout "parent site" search and
-// shortcut links
 
-// Background Line
-.o-header__top {
-  // border-bottom:  1px solid palette(grey, 900);
-  // background-color: palette(blue, 300);
+.o-header,
+.l-page__menu-main-wrapper {
+  background: palette(teal, 1000);
 }
 
 // Container for max-width
@@ -20,8 +16,6 @@
 
 // Parent Site link
 .o-header__parent-site-link {
-  // @extend %m-menu-header-shortcuts__link;
-
   border-right: 1px solid palette(blue, 300);
   background-size: 0;
   padding-right: ru(0.5);

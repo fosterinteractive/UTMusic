@@ -72,7 +72,10 @@
   <div role="region" aria-label="{{ title }}" class="o-listing{{ variation }}__items {{ listing_col_layout }}"> 
 
     {% for item in listing_items %}
-      <div class="o-listing{{variation}}__item" {% if loop.last and variation == '--events-carousel' %} id="last-item"{% endif %}  {% if variation == '--events-carousel' %} tabindex="0" {% endif %}>
+    {% if variation == '--events-carousel' %}
+      <div class="o-listing{{variation}}__item" {% if loop.last %} id="last-item"{% endif %} tabindex="0">
+    {% endif %}
+
       {% if sb_demo %}
         {% if variation == '--events-related' or variation == '--events-condensed' %}
           {% include "@organisms/listing/listing-item--events.twig" with {
@@ -135,7 +138,10 @@
           </a>
         {% endif %}
       {% endif %}
+      
+      {% if variation == '--events-carousel' %}
       </div>
+      {% endif %}
 
     {% endfor %}
   </div>

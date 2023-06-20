@@ -24,7 +24,7 @@ settings:
   label_link: false
   label_type: block
   level: 1
-  depth: 2
+  depth: 3
   expand_all_items: true
   parent: 'main:'
   suggestion: main

@@ -97,6 +97,7 @@ module:
   media_library_media_modify: 0
   menu_block: 0
   menu_breadcrumb: 0
+  menu_item_extras: 0
   menu_position: 0
   menu_ui: 0
   metatag: 0
@@ -121,6 +122,7 @@ module:
   role_delegation: 0
   search_api: 0
   search_api_db: 0
+  similarterms: 0
   simple_sitemap: 0
   smart_date: 0
   smart_trim: 0

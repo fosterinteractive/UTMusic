@@ -1,0 +1,40 @@
+<div class="m-promo">
+  {# Title #}
+  {% if title %}
+    {% set link_url_on_title = link_label ? false : link_url %}
+    <div class="m-promo__title">
+      {% include "@atoms/text/headings/heading.twig" with {
+        html_element: 'h3',
+        appearance: 'h2',
+        text: title,
+        url: link_url_on_title,
+        id: id,
+        alignment: 'left',
+        directory: directory,
+        } only
+      %}
+    </div>
+  {% endif %}
+
+  {% if description  %}
+    <div class="m-promo__description">
+      {{ description }}
+    </div>
+  {% endif %}
+
+  {% if link_url and link_label %}
+    <div class="m-promo__link">
+        {% include '@atoms/button/button.twig' with {
+          directory: directory,
+          base_class: 'a-button',
+          label: link_label,
+          variation: '',
+          html_element: 'a',
+          url: link_url,
+          aria_label: aria_label,
+          alignment: 'left',
+          } only
+        %} 
+    </div>
+  {% endif %}
+</div>
