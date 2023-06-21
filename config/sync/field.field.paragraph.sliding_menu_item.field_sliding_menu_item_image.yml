@@ -1,0 +1,31 @@
+uuid: 0dd4fcfc-80cf-4379-bf07-f63708c676c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sliding_menu_item_image
+    - media.type.ed_image
+    - paragraphs.paragraphs_type.sliding_menu_item
+  module:
+    - media_library_media_modify
+id: paragraph.sliding_menu_item.field_sliding_menu_item_image
+field_name: field_sliding_menu_item_image
+entity_type: paragraph
+bundle: sliding_menu_item
+label: Image
+description: 'Crop the subject in the center of the image'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      ed_image: ed_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_entity_modify

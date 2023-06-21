@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 label: 'Crop 16:3'
 id: crop_16_3
-description: 'Crop 16:3 description'
+description: ''
 aspect_ratio: '16:3'
 soft_limit_width: null
 soft_limit_height: null

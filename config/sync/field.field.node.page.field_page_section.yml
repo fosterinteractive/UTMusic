@@ -12,7 +12,6 @@ dependencies:
     - paragraphs.paragraphs_type.events_summary_list_dynamic
     - paragraphs.paragraphs_type.featured_media
     - paragraphs.paragraphs_type.image_section
-    - paragraphs.paragraphs_type.inline_menu
     - paragraphs.paragraphs_type.message
     - paragraphs.paragraphs_type.news_featured_item
     - paragraphs.paragraphs_type.news_full_list_dynamic
@@ -21,6 +20,7 @@ dependencies:
     - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.section_title
     - paragraphs.paragraphs_type.sequence_list
+    - paragraphs.paragraphs_type.sliding_menu
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.text_image
   module:
@@ -51,7 +51,7 @@ settings:
       card: card
       sequence_list: sequence_list
       featured_media: featured_media
-      inline_menu: inline_menu
+      sliding_menu: sliding_menu
       news_full_list_dynamic: news_full_list_dynamic
       news_summary_list_dynamic: news_summary_list_dynamic
       news_featured_item: news_featured_item
@@ -60,78 +60,84 @@ settings:
     negate: 0
     target_bundles_drag_drop:
       button:
-        weight: -46
-        enabled: true
-      card:
-        weight: -42
-        enabled: true
-      carousel_header:
-        weight: -29
-        enabled: false
-      carousel_image_group:
-        weight: -28
-        enabled: false
-      cta:
-        weight: -43
-        enabled: true
-      events_full_list_dynamic:
-        weight: -35
-        enabled: true
-      events_summary_list_dynamic:
-        weight: -34
-        enabled: true
-      featured_media:
-        weight: -40
-        enabled: true
-      header:
-        weight: -30
-        enabled: false
-      image_section:
-        weight: -47
-        enabled: true
-      inline_menu:
-        weight: -39
-        enabled: true
-      message:
-        weight: -45
-        enabled: true
-      news_featured_item:
-        weight: -36
-        enabled: true
-      news_full_list_dynamic:
-        weight: -38
-        enabled: true
-      news_summary_list_dynamic:
-        weight: -37
-        enabled: true
-      poster:
-        weight: -32
-        enabled: false
-      quote:
-        weight: -44
-        enabled: true
-      section:
-        weight: -51
-        enabled: true
-      section_title:
         weight: -50
         enabled: true
-      sequence_item:
-        weight: -27
-        enabled: false
-      sequence_list:
-        weight: -41
+      card:
+        weight: -46
         enabled: true
-      soundcloud:
+      carousel_header:
+        weight: -32
+        enabled: false
+      carousel_image_group:
+        weight: -31
+        enabled: false
+      cta:
+        weight: -47
+        enabled: true
+      events_full_list_dynamic:
+        weight: -39
+        enabled: true
+      events_summary_list_dynamic:
+        weight: -38
+        enabled: true
+      featured_media:
+        weight: -44
+        enabled: true
+      header:
         weight: -33
         enabled: false
-      text:
+      image_section:
+        weight: -51
+        enabled: true
+      inline_menu:
+        weight: -36
+        enabled: false
+      message:
         weight: -49
         enabled: true
-      text_image:
+      news_featured_item:
+        weight: -40
+        enabled: true
+      news_full_list_dynamic:
+        weight: -42
+        enabled: true
+      news_summary_list_dynamic:
+        weight: -41
+        enabled: true
+      poster:
+        weight: -35
+        enabled: false
+      quote:
         weight: -48
         enabled: true
+      section:
+        weight: -55
+        enabled: true
+      section_title:
+        weight: -54
+        enabled: true
+      sequence_item:
+        weight: -30
+        enabled: false
+      sequence_list:
+        weight: -45
+        enabled: true
+      sliding_menu:
+        weight: -43
+        enabled: true
+      sliding_menu_item:
+        weight: -29
+        enabled: false
+      soundcloud:
+        weight: -37
+        enabled: false
+      text:
+        weight: -53
+        enabled: true
+      text_image:
+        weight: -52
+        enabled: true
       video:
-        weight: -31
+        weight: -34
         enabled: false
 field_type: entity_reference_revisions

@@ -1,0 +1,29 @@
+uuid: c8d529ea-6857-4944-beb1-f4b7421dc946
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sliding_menu.field_sliding_menu_items
+    - paragraphs.paragraphs_type.sliding_menu
+  module:
+    - paragraphs
+id: paragraph.sliding_menu.default
+targetEntityType: paragraph
+bundle: sliding_menu
+mode: default
+content:
+  field_sliding_menu_items:
+    type: entity_reference_paragraphs
+    weight: 0
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: preview
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: sliding_menu_item
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

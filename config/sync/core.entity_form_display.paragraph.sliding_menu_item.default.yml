@@ -1,0 +1,65 @@
+uuid: ba66f4af-4d16-47b8-abfa-6a97d6a466b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sliding_menu_item.field_sliding_menu_item_a11y
+    - field.field.paragraph.sliding_menu_item.field_sliding_menu_item_image
+    - field.field.paragraph.sliding_menu_item.field_sliding_menu_item_label
+    - field.field.paragraph.sliding_menu_item.field_sliding_menu_item_url
+    - paragraphs.paragraphs_type.sliding_menu_item
+  module:
+    - allowed_formats
+    - link
+    - media_library_media_modify
+    - text
+id: paragraph.sliding_menu_item.default
+targetEntityType: paragraph
+bundle: sliding_menu_item
+mode: default
+content:
+  field_sliding_menu_item_a11y:
+    type: text_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+  field_sliding_menu_item_image:
+    type: media_library_media_modify_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+      form_mode: contextual_card
+      check_selected: false
+      replace_checkbox_by_order_indicator: false
+      multi_edit_on_create: true
+      no_edit_on_create: false
+    third_party_settings: {  }
+  field_sliding_menu_item_label:
+    type: text_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+  field_sliding_menu_item_url:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

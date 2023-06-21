@@ -1,0 +1,19 @@
+uuid: dce370f1-a835-408f-857b-e78f64ea2780
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.field_sliding_menu_item_url
+field_name: field_sliding_menu_item_url
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

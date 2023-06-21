@@ -2,10 +2,10 @@ uuid: 06e832eb-9fb0-4566-85d9-10a8eed3a096
 langcode: en
 status: true
 dependencies: {  }
-label: 'Crop 12:10'
+label: 'Crop 13:10'
 id: crop_1_1
 description: ''
-aspect_ratio: '12:10'
+aspect_ratio: '13:10'
 soft_limit_width: null
 soft_limit_height: null
 hard_limit_width: null
