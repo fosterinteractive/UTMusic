@@ -104,3 +104,8 @@
 .m-featured-media__single-item .m-featured-media__item {
   width: 100%;
 }
+
+// disabled unneeded controls for featured media PT (added a blocked div in preview paragraph template)
+.utmusic-paragraph-wrapper {
+  pointer-events: none;
+}
