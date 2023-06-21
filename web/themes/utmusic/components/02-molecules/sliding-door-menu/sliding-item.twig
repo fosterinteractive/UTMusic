@@ -12,7 +12,7 @@
 {% endif %}
 
 {# url is coming for title #}
-<div class="m-sliding-item{{ variation }}">
+<div class="m-sliding-item{{ variation }}" role="listitem">
   {% if image %}
     <div class="m-sliding-item{{ variation }}__image">
       {% include "@molecules/image/image.twig" with {
@@ -25,7 +25,6 @@
 
   <div class="m-sliding-item{{ variation }}__image-gradient">
   </div>
-
 
   {% if link_url and link_label %}
     <div class="m-sliding-item{{ variation }}__link">

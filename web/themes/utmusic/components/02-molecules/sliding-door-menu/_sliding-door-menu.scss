@@ -1,6 +1,7 @@
 .m-sliding-door-menu {
   border-radius: rem(12px);
   overflow: hidden;
+  height: 100%;
 
   @include breakpoint($bp-tablet) {
     display: flex;
@@ -9,6 +10,7 @@
 
   @include breakpoint($bp-large) {
     flex-wrap: nowrap;
+    min-height: rem(350px);
   }
 }
 
