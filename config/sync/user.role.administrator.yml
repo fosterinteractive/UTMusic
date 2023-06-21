@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.header_summary
     - filter.format.raw_html
     - filter.format.rich_text
     - filter.format.rich_text_w_images
@@ -262,6 +263,7 @@ permissions:
   - 'use editorial transition publish'
   - 'use editorial transition restore'
   - 'use editorial transition restore_to_draft'
+  - 'use text format header_summary'
   - 'use text format raw_html'
   - 'use text format rich_text'
   - 'use text format rich_text_w_images'

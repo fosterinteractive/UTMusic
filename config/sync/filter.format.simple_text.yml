@@ -6,7 +6,7 @@ _core:
   default_config_hash: RmO1jIHyjCygkWuSM_OtNLOvfN-PNkzczOvKwOyccv0
 name: 'Simple text'
 format: simple_text
-weight: -8
+weight: -7
 filters:
   filter_html:
     id: filter_html
