@@ -58,6 +58,10 @@ featured-media:
   js:
     js/featured-media.js: {}
 
+sliding-door-menu:
+  js:
+    js/sliding-door-menu.js: {}
+
 foundation_core:
   version: 6.7.4
   # css:
