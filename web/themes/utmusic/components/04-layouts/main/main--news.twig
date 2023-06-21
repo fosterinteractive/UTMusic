@@ -20,6 +20,12 @@
         } only
       %}
 
+      {% if messages is not empty or tabs is not empty %}
+        <div class="l-main__utility">
+          {{ messages }}
+          {{ tabs }}
+        </div>
+      {% endif %}
 
       <div class="l-section-bg l-section--[8] l-section-spacing-top--medium l-section-spacing-bottom--medium">
         

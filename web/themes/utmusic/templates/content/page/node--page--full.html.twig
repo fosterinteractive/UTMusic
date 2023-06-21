@@ -82,5 +82,7 @@
     content: content.field_page_section[0] ? content.field_page_section,
     is_front: is_front,
     moderation: content.content_moderation_control ? content.content_moderation_control,
+    messages: drupal_entity('block', 'messages'),
+    tabs: drupal_entity('block', 'tabs'),
   } only
 %}

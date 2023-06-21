@@ -108,10 +108,11 @@
   {% set social_share = social_share_block %}
 {% endif %}
 
-
 {% include "@layouts/main/main--news.twig" with {
     social_share: social_share,
     breadcrumbs: breadcrumbs,
+    messages: drupal_entity('block', 'messages'),
+    tabs: drupal_entity('block', 'tabs'),
     news_categories: news_categories,
     areas_study: areas_study,
     variation: content.field_news_header_variation[0] ? content.field_news_header_variation[0]['#markup'],

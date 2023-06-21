@@ -1,7 +1,7 @@
 // Only Text variation
 .o-hero-media--text {
   @extend %o-hero-media-core;
-  grid-template-rows: rem(160px) minmax(1px, max-content) rem(50px) rem(70px);
+  grid-template-rows: var(--header-height) minmax(1px, max-content) rem(50px) rem(70px);
 }
 
 .o-hero-media--text__text-wrapper {

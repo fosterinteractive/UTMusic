@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: [alpha] 1fr repeat(12, [col] minmax(1px, calc((65rem - (var(--spacer) * 11)) / 12))) 1fr [omega];
   grid-column-gap: var(--spacer);
-  grid-template-rows: rem(160px) minmax(1px, min-content) rem(70px) rem(70px) auto auto;
+  grid-template-rows: var(--header-height) minmax(1px, min-content) rem(70px) rem(70px) auto auto;
 }
 
 %o-hero-media__bg-decoration, 
