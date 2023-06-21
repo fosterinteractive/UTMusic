@@ -25,7 +25,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     grid-template-columns: [alpha] 1fr repeat(12, [col] minmax(1px, $max-col-width)) 1fr [omega];
     grid-column-gap: var(--spacer);
   }
-
 }
 
 .l-page--system__wrapper {
@@ -39,11 +38,21 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
   grid-column: 2/ span 12;
 }
 
-// Borderless (Not extending %l-section as it doesn't need grid)
-// .l-section {
-  
-// }
+.l-page__utilities-tabs-wrapper,
+.l-main__header-wrapper {
+  @extend %l-section;
+} 
 
+.l-main__header-wrapper {
+  padding-top: $spacing-small;
+  padding-bottom: $spacing-small;
+}
+
+.l-page__utilities-tabs,
+.l-main__breadcrumbs,
+.l-main__header {
+  grid-column: 2/ span 12;
+}
 
 .l-section--\[12\] {
   @extend %l-section;

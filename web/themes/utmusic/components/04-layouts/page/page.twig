@@ -33,8 +33,10 @@
   {{ messages }}
 
   {% if tabs is not empty %}
-    <div class="l-page__utilities-tabs">
-      {{ tabs }}
+    <div class="l-page__utilities-tabs-wrapper">
+      <div class="l-page__utilities-tabs">
+        {{ tabs }}
+      </div>
     </div>
   {% endif %}
 

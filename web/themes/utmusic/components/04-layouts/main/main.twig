@@ -7,19 +7,20 @@
   {% block content_single_page %}
     {# Check if there is a banner #}
     {% if hero_banner %}
-        {{ hero_banner }}
+      {{ hero_banner }}
+
+      {% if breadcrumbs is not empty and not is_front %}
+        <div class="l-main__breadcrumbs-wrapper">
+          <div class="l-main__breadcrumbs">
+            {{ breadcrumbs }}
+          </div>
+        </div>
+      {% endif %}
       {# Else print heading title #}
-      {% else %}
+    {% else %}
+      <div class="l-main__header-wrapper">
         <div class="l-main__header">
           <div class="l-main__header-title">
-            {# {% include "@atoms/00-type/00-heading.twig"
-              with {
-                text: title,
-                level: banner_title_heading_level|default('1'),
-                variation: 't1',
-              } only
-            %} #}
-
             {% include "@atoms/text/headings/heading.twig" with {
                 html_element: 'h1',
                 appearance: 'h1',
@@ -30,11 +31,12 @@
             %}
           </div>
         </div>
-    {% endif %}
 
-    {% if breadcrumbs is not empty and not is_front %}
-      <div class="l-main__breadcrumbs">
-      {{ breadcrumbs }}
+        {% if breadcrumbs is not empty and not is_front %}
+          <div class="l-main__breadcrumbs">
+            {{ breadcrumbs }}
+          </div>
+        {% endif %}
       </div>
     {% endif %}
 
