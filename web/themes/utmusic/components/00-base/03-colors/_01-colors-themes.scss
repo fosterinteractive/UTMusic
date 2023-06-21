@@ -131,6 +131,11 @@
   //@molecules/cta
   --c-cta-text: #{palette(blue, 300)};
 
+  //@molecules/sliding-menu
+  --c-sliding-menu-link: #{palette(white)};
+  --c-sliding-menu-link--active: #{palette(teal, 700)};
+
+
   // @organisms/listing
   --c-listing-item--border: #{palette(grey, 800)};
   --c-listing-item--date: #{palette(grey, 300)};

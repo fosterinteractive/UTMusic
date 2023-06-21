@@ -1,0 +1,5 @@
+sb_demo: true
+image: "<img src='https://picsum.photos/id/57/700/700' alt='alt text example'/>"
+link_url:  /
+link_label: Areas of Study
+aria_label: Visit our link
