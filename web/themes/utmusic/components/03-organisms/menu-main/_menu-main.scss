@@ -2,7 +2,6 @@
   border-top: 1px solid palette(teal, 700);
   border-bottom: 1px solid palette(teal, 700);
   width: 100%;
-  // line-height: ru(2/3);
 }
 
 // wraper for L1 items.
@@ -54,7 +53,8 @@
 
   &:hover,
   &:focus,
-  &:active {
+  &:active,
+  &.is-active {
     background-color: palette(teal, 750);
   }
 }
@@ -93,6 +93,16 @@
   max-width: $bp-max;
 }
 
+.m-menu-main__panel-inner--promo-block {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: var(--spacer);
+}
+
+.m-menu-main__promo {
+  padding-top: ru(1.7);
+}
+
 .m-menu-main__cols--3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -124,14 +134,6 @@
   grid-column-end: 3;
 }
 
-// Each L2 Header section (L2 header + L3 links) in a single column
-// .m-menu-main__item--level-2 {
-
-//   &:not(:last-of-type) {
-//     margin-bottom: ru(2/3);
-//   }
-// }
-
 // Common styles for L2 / L3 buttons
 %m-menu-main__panel-button-core {
   @extend %a-external-link;
@@ -145,8 +147,8 @@
 
   &:hover,
   &:focus,
-  &:active {
-    // color: palette(blue, 300);
+  &:active,
+  &.is-active {
     color: palette(teal, 300);
   }
 }
@@ -157,7 +159,7 @@
 
   display: block;
   position: relative;
-  padding: ru(1.7) 0 25px 0;
+  padding: ru(1.7) 0 rem(25px) 0;
   text-transform: uppercase;
   font-weight: 700;
   color: palette(teal, 300);
@@ -189,8 +191,6 @@
   display: block;
   position: relative;
   color: palette(blue, 300);
-
-  // padding: ru() 0;
   padding-top: ru(0.7);
 }
 

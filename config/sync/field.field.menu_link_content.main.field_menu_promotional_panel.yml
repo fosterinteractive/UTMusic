@@ -1,0 +1,23 @@
+uuid: bb85dd9d-87c4-4e97-909d-650c846229a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_menu_promotional_panel
+    - system.menu.main
+id: menu_link_content.main.field_menu_promotional_panel
+field_name: field_menu_promotional_panel
+entity_type: menu_link_content
+bundle: main
+label: 'Promotional Panel'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

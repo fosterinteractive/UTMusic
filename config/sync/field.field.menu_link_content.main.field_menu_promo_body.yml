@@ -1,0 +1,26 @@
+uuid: fa1f9fc5-6c35-46ec-a89e-29ee69b71f5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_menu_promo_body
+    - system.menu.main
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+id: menu_link_content.main.field_menu_promo_body
+field_name: field_menu_promo_body
+entity_type: menu_link_content
+bundle: main
+label: 'Promo Body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

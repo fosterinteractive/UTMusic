@@ -1,0 +1,26 @@
+uuid: 0a353e86-b52c-426c-93fa-8eec11e7447d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_menu_promo_title
+    - system.menu.main
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
+id: menu_link_content.main.field_menu_promo_title
+field_name: field_menu_promo_title
+entity_type: menu_link_content
+bundle: main
+label: 'Promo Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
