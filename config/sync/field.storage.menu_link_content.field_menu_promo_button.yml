@@ -1,0 +1,19 @@
+uuid: 6e8c314d-3d1a-445c-b201-6ba6aa0b1a7a
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - menu_link_content
+id: menu_link_content.field_menu_promo_button
+field_name: field_menu_promo_button
+entity_type: menu_link_content
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

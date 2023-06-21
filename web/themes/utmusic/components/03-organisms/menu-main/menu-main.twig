@@ -63,9 +63,28 @@
           {% endif %}
 
           {% if item.below %}
+            {% if item.content.field_menu_promotional_panel[0]['#markup'] == "On" %}
+              {% set promo_block = 'm-menu-main__panel-inner--promo-block' %}
+            {% endif %}
+
             <div class="m-menu-main__panel{% if item.pl_panel_active == true %} is-open {% endif %}" id="{{ panel_id }}" data-dropdown data-close-on-click="true" data-hover="true" data-hover-pane="true">
-              <div class="m-menu-main__panel-inner">
+              <div class="m-menu-main__panel-inner {{ promo_block }}">
                 {{ menus.menu_links(item.below, attributes, menu_level + 1, item.columns_data) }}
+
+                {# promotional panel #}
+                {% if item.content.field_menu_promotional_panel[0]['#markup'] == "On" %}
+                  <div class="m-menu-main__promo">
+                    {% include "@molecules/menu-main-promo/menu-main-promo.twig" with {
+                        title: item.content.field_menu_promo_title[0]['#text'],
+                        description: item.content.field_menu_promo_body[0],
+                        link_label: item.content.field_menu_promo_button[0]['#title'],
+                        link_url: item.content.field_menu_promo_button[0]['#url_title'],
+                        directory: 'themes/utmusic',
+                      } only
+                    %}
+                  </div>
+                {% endif %}
+
               </div>
             </div>
           {% endif %}
@@ -93,8 +112,9 @@
               {% set classes = [
                 'm-menu-main__item--level-' ~ menu_level,
                 item.in_active_trail == TRUE ? 'is-active',
-              ]
-            %}
+                ]
+              %}
+
               <li{{ items[section].attributes.addClass(classes) }}>
                 {% if items[section].url == '<nolink>' or (items[section].url.isRouted() and items[section].url.getRouteName == '<nolink>') %}
                   {{ link(items[section].title, items[section].url, { 'class' : ['m-menu-main__label--level-2']}) }}
@@ -106,17 +126,20 @@
                   {{ menus.menu_links(items[section].below, attributes, menu_level + 1) }}
                 {% endif %}
               </li>
+              
             {% endfor %}
             </ul>
           </div>
         {% endfor %}
       </div>
+
     {% endif %}
 
     {# Menu Level 3 #}
     {% if menu_level == 3 %}
       <ul class="m-menu-main__list--level-3" data-main-menu-component="third-level-list">
       {% for item in items %}
+
         {% set classes = [
             'm-menu-main__item--level-3',
             item.in_active_trail == TRUE ? 'is-active',
