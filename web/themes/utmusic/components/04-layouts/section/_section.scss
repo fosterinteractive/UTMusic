@@ -332,35 +332,3 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
   background-color: var(--c-section-background);
   grid-area: z4;
 }
-
-// Brush Stroke Decoration
-.l-section__decoration-top {
-  @include svg-wrapper(1280,71); 
-  grid-area: h1;
-  filter: drop-shadow(0px -7px 3px rgb(0 0 0 / 0.05));
-
-  svg {
-    top: rem(1px);
-  }
-}
-
-.l-section__decoration-svg {
-  fill: var(--c-section-background);
-}
-
-.l-section__decoration-svg--bottom {
-  fill: var(--c-section-background);
-  transform: scale(1, -1);
-  transform-origin: center;
-  filter: drop-shadow(0px -7px 3px rgb(0 0 0 / 0.05));
-}
-
-
-.l-section__decoration-bottom {
-  @include svg-wrapper(1280,72); 
-  grid-area: f1;
-
-  svg {
-    top: rem(-1px);
-  }
-}
