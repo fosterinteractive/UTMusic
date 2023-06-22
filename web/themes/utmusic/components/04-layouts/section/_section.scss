@@ -27,33 +27,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
   }
 }
 
-.l-page--system__wrapper {
-  @extend %l-section;
-  padding-top: $spacing-medium;
-  padding-bottom: $spacing-medium;
-}
-
-.l-page--system {
-  @extend %l-section__child;
-  grid-column: 2/ span 12;
-}
-
-.l-page__utilities-tabs-wrapper,
-.l-main__header-wrapper {
-  @extend %l-section;
-} 
-
-.l-main__header-wrapper {
-  padding-top: $spacing-small;
-  padding-bottom: $spacing-small;
-}
-
-.l-page__utilities-tabs,
-.l-main__breadcrumbs,
-.l-main__header {
-  grid-column: 2/ span 12;
-}
-
 .l-section--\[12\] {
   @extend %l-section;
   
@@ -65,7 +38,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
 }
-
 
 .l-section--\[10\] {
   @extend %l-section;

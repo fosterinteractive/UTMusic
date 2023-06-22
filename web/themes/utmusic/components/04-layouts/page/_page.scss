@@ -10,15 +10,13 @@
   }
 }
 
+// See the same value in _section-spacing.scss
+$spacing-small: var(--spacer);
+$spacing-medium: calc(var(--spacer) * 2.5);
+$spacing-large: calc(var(--spacer) * 5);
+
 .l-page {
   min-height: 100vh;
-}
-
-.l-page__footer {
-  margin-top: auto;
-}
-
-.l-page {
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-areas: 
@@ -40,5 +38,35 @@
 }
 
 .l-page__footer {
+  margin-top: auto;
   grid-area: footer;
+}
+
+.l-page--system__wrapper {
+  @extend %l-section;
+  padding-top: $spacing-medium;
+  padding-bottom: $spacing-medium;
+}
+
+.l-page--system {
+  @extend %l-section__child;
+  grid-column: 2/ span 12;
+}
+
+.l-main__utility-wrapper,
+.l-page__utilities-tabs-wrapper,
+.l-main__header-wrapper {
+  @extend %l-section;
+} 
+
+.l-main__header-wrapper {
+  padding-top: $spacing-small;
+  padding-bottom: $spacing-small;
+}
+
+.l-main__utility,
+.l-page__utilities-tabs,
+.l-main__breadcrumbs,
+.l-main__header {
+  grid-column: 2/ span 12;
 }
