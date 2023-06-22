@@ -7,6 +7,7 @@ dependencies:
     - field.field.menu_link_content.main.field_menu_promo_button
     - field.field.menu_link_content.main.field_menu_promo_title
     - field.field.menu_link_content.main.field_menu_promotional_panel
+    - field.field.menu_link_content.main.field_promotional_panel_help
     - system.menu.main
   module:
     - link
@@ -19,7 +20,7 @@ content:
   children:
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_menu_promo_body:
     type: text_default
@@ -55,7 +56,8 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 1
     region: content
 hidden:
+  field_promotional_panel_help: true
   search_api_excerpt: true

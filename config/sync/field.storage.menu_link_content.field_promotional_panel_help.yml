@@ -1,0 +1,19 @@
+uuid: 4eab5292-1301-4556-ac53-91052f8cbd19
+langcode: en
+status: true
+dependencies:
+  module:
+    - markup
+    - menu_link_content
+id: menu_link_content.field_promotional_panel_help
+field_name: field_promotional_panel_help
+entity_type: menu_link_content
+type: markup
+settings: {  }
+module: markup
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -6,6 +6,10 @@
   }
 
   @include breakpoint($bp-full-nav) {
+    --header-height: #{rem(250px)};
+  }
+
+  @include breakpoint($bp-large) {
     --header-height: #{rem(285px)};
   }
 }
