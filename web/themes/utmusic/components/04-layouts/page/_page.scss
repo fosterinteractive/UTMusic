@@ -14,11 +14,6 @@
   }
 }
 
-// See the same value in _section-spacing.scss
-$spacing-small: var(--spacer);
-$spacing-medium: calc(var(--spacer) * 2.5);
-$spacing-large: calc(var(--spacer) * 5);
-
 .l-page {
   min-height: 100vh;
   display: grid;
@@ -54,21 +49,5 @@ $spacing-large: calc(var(--spacer) * 5);
 
 .l-page--system {
   @extend %l-section__child;
-  grid-column: 2/ span 12;
-}
-
-.l-page__utilities-tabs-wrapper,
-.l-main__header-wrapper {
-  @extend %l-section;
-} 
-
-.l-main__header-wrapper {
-  padding-top: $spacing-small;
-  padding-bottom: $spacing-small;
-}
-
-.l-page__utilities-tabs,
-.l-main__breadcrumbs,
-.l-main__header {
   grid-column: 2/ span 12;
 }

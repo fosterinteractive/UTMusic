@@ -10,34 +10,34 @@
       {{ hero_banner }}
 
       {% if breadcrumbs is not empty and not is_front %}
-        <div class="l-main__breadcrumbs-wrapper">
-          <div class="l-main__breadcrumbs">
+        <div class="l-main__breadcrumbs l-section--[12]">
+          <div class="l-section__zone-1">
             {{ breadcrumbs }}
           </div>
         </div>
       {% endif %}
       {# Else print heading title #}
     {% else %}
-      <div class="l-main__header-wrapper">
-        <div class="l-main__header">
-          <div class="l-main__header-title">
-            {% include "@atoms/text/headings/heading.twig" with {
-                html_element: 'h1',
-                appearance: 'h1',
-                text: title,
-                url: link_url,
-                id: id,
-              } only
-            %}
-          </div>
+      <div class="l-main__header">
+        <div class="l-main__header-title">
+          {% include "@atoms/text/headings/heading.twig" with {
+              html_element: 'h1',
+              appearance: 'h1',
+              text: title,
+              url: link_url,
+              id: id,
+            } only
+          %}
         </div>
+      </div>
 
-        {% if breadcrumbs is not empty and not is_front %}
-          <div class="l-main__breadcrumbs">
+      {% if breadcrumbs is not empty and not is_front %}
+        <div class="l-main__breadcrumbs l-section--[12]">
+          <div class="l-section__zone-1">
             {{ breadcrumbs }}
           </div>
-        {% endif %}
-      </div>
+        </div>
+      {% endif %}
     {% endif %}
 
     {% if messages is not empty or tabs is not empty %}

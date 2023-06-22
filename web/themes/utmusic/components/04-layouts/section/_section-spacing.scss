@@ -4,29 +4,9 @@
 ***************************************************************************
 **************************************************************************/
 
-$spacing-small: var(--spacer);
-$spacing-medium: calc(var(--spacer) * 2.5);
-$spacing-large: calc(var(--spacer) * 5);
-
-// .l-section-spacing__xsmall {
-//   padding-top: var(--spacer);
-//   padding-bottom: var(--spacer);
-// }
-
-// .l-section-spacing__small {
-//   padding-top: $spacing-small;
-//   padding-bottom: $spacing-small;
-// }
-
-// .l-section-spacing__medium {
-//   padding-top: $spacing-medium;
-//   padding-bottom: $spacing-medium;
-// }
-
-// .l-section-spacing__large {
-//   padding-top: $spacing-large;
-//   padding-bottom: $spacing-large;
-// }
+$spacing-small: calc(var(--spacer) * 2);
+$spacing-medium: calc(var(--spacer) * 3);
+$spacing-large: calc(var(--spacer) * 6);
 
 .l-section-spacing-top--small {
 
@@ -36,7 +16,6 @@ $spacing-large: calc(var(--spacer) * 5);
   .l-section__zone-4 {
     padding-top: $spacing-small;
   }
-  
 }
 
 .l-section-spacing-bottom--small {
