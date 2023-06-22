@@ -14,34 +14,16 @@
         header_shortcuts: header_shortcuts,
       } only
     %}
-  </div>
 
-  <div class="l-page__menu-main-wrapper">
-    <div class="l-page__menu-main">
-      {{ menu_main }}
-    </div>
-  </div>
-
-  <div class="l-page__menu-mega">
-    {{ menu_mega }}
-  </div>
-
-  {# {% if breadcrumbs is not empty %}
-    {{ breadcrumbs }}
-  {% endif %} #}
-
-  {{ messages }}
-
-  {% if tabs is not empty %}
-    <div class="l-page__utilities-tabs-wrapper">
-      <div class="l-page__utilities-tabs">
-        {{ tabs }}
+    <div class="l-page__menu-main-wrapper">
+      <div class="l-page__menu-main">
+        {{ menu_main }}
       </div>
     </div>
-  {% endif %}
+  </div>
+
 
   <main id="main-content" aria-label="Content" class="l-page__main{% if has_banner %} has-banner{% endif %}">
-  {# <main aria-label="Content" class="l-page__main{% if has_banner %} has-banner{% endif %}"> #}
 
   {# link is in html.html.twig #}
     {% block page_content %}

@@ -1,9 +1,44 @@
+:root {
+  --header-height: #{rem(133px)};
+
+  @include breakpoint($bp-tablet) {
+    --header-height: #{rem(140px)};
+  }
+
+  @include breakpoint($bp-full-nav) {
+    --header-height: #{rem(285px)};
+  }
+}
+
 .l-page {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 .l-page__footer {
   margin-top: auto;
+}
+
+.l-page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+
+.l-page__header {
+  grid-area: main;
+  width: 100%;
+  z-index: 2; // ensures the header is on top when they overlap
+  height: var(--header-height);
+}
+
+.l-page__main {
+  grid-area: main;
+  z-index: 1; // ensures the main content is below when they overlap
+}
+
+.l-page__footer {
+  grid-area: footer;
 }

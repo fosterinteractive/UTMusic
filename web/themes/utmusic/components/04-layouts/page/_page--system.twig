@@ -13,10 +13,14 @@
     </div>
   {% endset %}
 
+  {% include "@organisms/content-header/content-header.twig" with {
+      variation: '--text',
+      title: content_title,
+    } only
+  %}
+
   {% include "@layouts/main/main.twig"
     with {
-      title: content_title,
-      hero_banner: hero_banner,
       content: system_content,
     }
   %}

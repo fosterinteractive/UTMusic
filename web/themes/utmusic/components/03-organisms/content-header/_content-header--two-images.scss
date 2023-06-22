@@ -49,10 +49,10 @@
 .o-hero-media--top-bottom {
   @extend %o-hero-media-core;
 
-  grid-template-rows: rem(160px) minmax(1px, min-content) auto auto rem(250px) rem(30px) auto;
+  grid-template-rows: var(--header-height) minmax(1px, min-content) auto auto rem(250px) rem(30px) auto;
 
   @include breakpoint($bp-tablet) {
-    grid-template-rows: rem(160px) minmax(1px, min-content) rem(70px) rem(70px) auto auto;
+    grid-template-rows: var(--header-height) minmax(1px, min-content) rem(70px) rem(70px) auto auto;
   }
 }
 
@@ -91,10 +91,10 @@
 // Bottom-Top Variation 
 .o-hero-media--bottom-top {
   @extend %o-hero-media-core;
-  grid-template-rows: rem(160px) minmax(1px, min-content) auto auto rem(250px) rem(30px) auto;
+  grid-template-rows: var(--header-height) minmax(1px, min-content) auto auto rem(250px) rem(30px) auto;
 
   @include breakpoint($bp-tablet) {
-    grid-template-rows: rem(160px) minmax(1px, min-content) rem(70px) rem(70px) auto auto;
+    grid-template-rows: var(--header-height) minmax(1px, min-content) rem(70px) rem(70px) auto auto;
   }
 }
 
