@@ -6,6 +6,10 @@
   }
 
   @include breakpoint($bp-full-nav) {
+    --header-height: #{rem(250px)};
+  }
+
+  @include breakpoint($bp-large) {
     --header-height: #{rem(285px)};
   }
 }
@@ -53,7 +57,6 @@ $spacing-large: calc(var(--spacer) * 5);
   grid-column: 2/ span 12;
 }
 
-.l-main__utility-wrapper,
 .l-page__utilities-tabs-wrapper,
 .l-main__header-wrapper {
   @extend %l-section;
@@ -64,7 +67,6 @@ $spacing-large: calc(var(--spacer) * 5);
   padding-bottom: $spacing-small;
 }
 
-.l-main__utility,
 .l-page__utilities-tabs,
 .l-main__breadcrumbs,
 .l-main__header {

@@ -41,13 +41,12 @@
     {% endif %}
 
     {% if messages is not empty or tabs is not empty %}
-      <div class="l-main__utility-wrapper">
-        <div class="l-main__utility">
+      <div class="l-main__utility l-section--[12]">
+        <div class="l-section__zone-1">
           {{ messages }}
           {{ tabs }}
         </div>
       </div>
-
     {% endif %}
 
     {% if moderation %}
