@@ -72,26 +72,130 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
   }
 }
 
-//for Thank you (Confirmation) page
-.l-section--\[10\|2\] {
+// 2 Col Layouts 
+// '[3|8]': '[3|8] of 12 columns Wide'
+// '[3|9]': '[3|9] of 12 columns Wide'
+// '[4|6]': '[4|6] of 12 columns Wide'
+// '[4|7]': '[4|7] of 12 columns Wide'
+// '[4|8]': '[4|8] of 12 columns Wide' 
+// '[5|5]': '[5|5] of 12 columns Wide' 
+// '[5|6]': '[5|6] of 12 columns Wide' 
+// '[5|7]': '[5|7] of 12 columns Wide' 
+// '[6|4]': '[6|4] of 12 columns Wide' 
+// '[6|5]': '[6|5] of 12 columns Wide' 
+// '[6|6]': '[6|6] of 12 columns Wide' 
+// '[7|4]': '[7|4] of 12 columns Wide' 
+// '[7|5]': '[7|5] of 12 columns Wide' 
+// '[8|3]': '[8|3] of 12 columns Wide' 
+// '[8|4]': '[8|4] of 12 columns Wide' 
+// '[9|3]': '[9|3] of 12 columns Wide'
+
+.l-section--\[3\|8\] {
   @extend %l-section;
 
   @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
-    'alpha z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 x1 x1 omega'
+    'alpha z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 z2 omega omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
 }
 
-
-.l-section--\[6\|6\] {
+.l-section--\[8\|3\] {
   @extend %l-section;
 
   @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
-    'alpha z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 omega'
+    'alpha alpha z1 z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[3\|9\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 z2 z2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[9\|3\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet){
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[4\|6\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z1 . z2 z2 z2 z2 z2 z2 omega omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[6\|4\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha alpha z1 z1 z1 z1 z1 z1 . z2 z2 z2 z2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[4\|7\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 omega omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[7\|4\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha alpha z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[4\|8\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 z2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[8\|4\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
 }
@@ -107,26 +211,24 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
   }
 }
 
-.l-section--\[4\|4\] {
+.l-section--\[5\|6\] {
   @extend %l-section;
 
   @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
-    'alpha alpha alpha z1 z1 z1 z1 z2 z2 z2 z2 omega omega omega'
+    'alpha z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 omega omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
 }
 
-
-
-.l-section--\[7\|5\] {
+.l-section--\[6\|5\] {
   @extend %l-section;
 
-  @include breakpoint($bp-phone-large){
+  @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
-    'alpha z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 omega'
+    'alpha alpha z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
 }
@@ -134,7 +236,7 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
 .l-section--\[5\|7\] {
   @extend %l-section;
 
-  @include breakpoint($bp-phone-large){
+  @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 omega'
@@ -142,25 +244,24 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
   }
 }
 
-
-.l-section--\[8\|4\] {
+.l-section--\[7\|5\] {
   @extend %l-section;
 
-  @include breakpoint($bp-phone-large){
+  @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
-    'alpha z1 z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 omega'
+    'alpha z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
 }
 
-.l-section--\[4\|8\] {
+.l-section--\[6\|6\] {
   @extend %l-section;
 
-  @include breakpoint($bp-phone-large){
+  @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
-    'alpha z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 z2 omega'
+    'alpha z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
 }
@@ -168,7 +269,7 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
 .l-section--\[4\|4\|4\] {
   @extend %l-section;
 
-  @include breakpoint($bp-phone-large){
+  @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z1 z2 z2 z2 z2 z3 z3 z3 z3 omega'
@@ -179,7 +280,7 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
 .l-section--\[3\|3\|3\|3\] {
   @extend %l-section;
 
-  @include breakpoint($bp-phone-large){
+  @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z2 z2 z2 z3 z3 z3 z4 z4 z4 omega'
@@ -262,9 +363,4 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
   svg {
     top: rem(-1px);
   }
-}
-
-.light-yellow-decoration-bg {
-  background-color: palette(yellow, 900);
-  filter: none;
 }
