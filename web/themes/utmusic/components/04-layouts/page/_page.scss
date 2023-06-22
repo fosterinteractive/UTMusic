@@ -40,14 +40,3 @@
   margin-top: auto;
   grid-area: footer;
 }
-
-.l-page--system__wrapper {
-  @extend %l-section;
-  padding-top: $spacing-medium;
-  padding-bottom: $spacing-medium;
-}
-
-.l-page--system {
-  @extend %l-section__child;
-  grid-column: 2/ span 12;
-}

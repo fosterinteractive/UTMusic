@@ -13,7 +13,7 @@
   }
 
   @include breakpoint($bp-large) {
-    grid-template-rows: var(--header-height) 1fr rem(50px) rem(250px) 1fr;
+    grid-template-rows: var(--header-height) 1fr rem(50px) rem(250px) auto;
     row-gap: 0;
   }
 }
