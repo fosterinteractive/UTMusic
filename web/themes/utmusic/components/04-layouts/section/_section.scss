@@ -16,7 +16,11 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     display: block;
     grid-column: alpha / omega;
     grid-row: 2 / span 1;
-    background-color: var(--c-section-background);
+    // background-color: var(--c-section-background);
+    background-image: var(--c-section-background-image);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     content:'';
   }
 

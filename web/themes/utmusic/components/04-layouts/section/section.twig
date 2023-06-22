@@ -94,7 +94,9 @@
 {% set zone_3_child_layout = zone_3_child_layout|default('l-flex') %}
 {% set zone_4_child_layout = zone_4_child_layout|default('l-flex') %}
 
-{% set demo_class_section = 'storybook-section__demo--blue' %}
+{% if sb_demo %}
+  {% set demo_class_section = 'storybook-section__demo--blue' %}
+{% endif %}
 
 {% set html_element = html_element|default('div') %}
 {% set html_element_child = html_element == 'div' ? 'div' : 'li' %}
