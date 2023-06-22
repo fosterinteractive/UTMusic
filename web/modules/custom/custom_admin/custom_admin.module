@@ -507,3 +507,29 @@ function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_stat
    
   }
 }
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function custom_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  // Check if the form_id matches the desired form
+  if ($form_id == 'menu_link_content_main_form') {
+
+    // Define the fields we want to show/hide.
+    $fields_to_modify = ['field_menu_promo_title', 'field_menu_promo_body', 'field_menu_promo_button', 'field_promotional_panel_help'];
+
+    // The condition for visibility
+    $visibility_condition = [
+      'visible' => [
+        ':input[name="field_menu_promotional_panel[value]"]' => ['checked' => TRUE],
+      ],
+    ];
+
+    // Loop through each field and assign the condition
+    foreach ($fields_to_modify as $field) {
+      $form[$field]['#states'] = $visibility_condition;
+    }
+  }
+}

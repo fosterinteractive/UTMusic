@@ -12,14 +12,6 @@
       {% else %}
         <div class="l-main__header">
           <div class="l-main__header-title">
-            {# {% include "@atoms/00-type/00-heading.twig"
-              with {
-                text: title,
-                level: banner_title_heading_level|default('1'),
-                variation: 't1',
-              } only
-            %} #}
-
             {% include "@atoms/text/headings/heading.twig" with {
                 html_element: 'h1',
                 appearance: 'h1',
@@ -39,9 +31,11 @@
     {% endif %}
 
     {% if messages is not empty or tabs is not empty %}
-      <div class="l-main__utility">
-        {{ messages }}
-        {{ tabs }}
+      <div class="l-main__utility l-section--[12]">
+        <div class="l-section__zone-1">
+          {{ messages }}
+          {{ tabs }}
+        </div>
       </div>
     {% endif %}
 
