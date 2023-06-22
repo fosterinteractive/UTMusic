@@ -23,9 +23,9 @@ third_party_settings:
         slashes: false
         pathauto: false
         transliterate: false
-    redirect: true
+    redirect: false
     retroactive_update: false
-    active_updating: true
+    active_updating: false
 _core:
   default_config_hash: V7TftJyoi6U3WHGdIk1mAmvirpED2PF4k5YqVFRDlk8
 id: media.ed_image.field_ed_image_image

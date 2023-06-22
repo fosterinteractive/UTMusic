@@ -23,9 +23,9 @@ third_party_settings:
         slashes: false
         pathauto: false
         transliterate: false
-    redirect: true
+    redirect: false
     retroactive_update: false
-    active_updating: true
+    active_updating: false
 id: media.illustration.field_media_image
 field_name: field_media_image
 entity_type: media
