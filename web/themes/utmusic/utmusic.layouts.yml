@@ -28,8 +28,6 @@ full_1_col:
         'blue-right-bg': 'Blue Background with Shape on Right'
         'blue-left-bg': 'Blue Background with Shape on Left'
         'blue-both-bg': 'Blue Background with Shape on Both Sides'
-        'blue-right-long-bg': 'Blue Background for Long Section with Shape on Right'
-        'blue-left-long-bg': 'Blue Background for Long Section  with Shape on Left'
       description: 'Select the background color for this section.'
     spacing_top:
       label: 'Vertical Top Spacing'
@@ -111,8 +109,6 @@ full_2_col:
         'blue-right-bg': 'Blue Background with Shape on Right'
         'blue-left-bg': 'Blue Background with Shape on Left'
         'blue-both-bg': 'Blue Background with Shape on Both Sides'
-        'blue-right-long-bg': 'Blue Background for Long Section with Shape on Right'
-        'blue-left-long-bg': 'Blue Background for Long Section  with Shape on Left'
       description: 'Select the background color for this section.'
     spacing_top:
       label: 'Vertical Top Spacing'
@@ -182,8 +178,6 @@ full_3_col:
         'blue-right-bg': 'Blue Background with Shape on Right'
         'blue-left-bg': 'Blue Background with Shape on Left'
         'blue-both-bg': 'Blue Background with Shape on Both Sides'
-        'blue-right-long-bg': 'Blue Background for Long Section with Shape on Right'
-        'blue-left-long-bg': 'Blue Background for Long Section  with Shape on Left'
       description: 'Select the background color for this section.'
     spacing_top:
       label: 'Vertical Top Spacing'
@@ -254,8 +248,6 @@ full_4_col:
         'blue-right-bg': 'Blue Background with Shape on Right'
         'blue-left-bg': 'Blue Background with Shape on Left'
         'blue-both-bg': 'Blue Background with Shape on Both Sides'
-        'blue-right-long-bg': 'Blue Background for Long Section with Shape on Right'
-        'blue-left-long-bg': 'Blue Background for Long Section  with Shape on Left'
       description: 'Select the background color for this section.'
     spacing_top:
       label: 'Vertical Top Spacing'
@@ -341,8 +333,6 @@ full_grid_2col:
         'blue-right-bg': 'Blue Background with Shape on Right'
         'blue-left-bg': 'Blue Background with Shape on Left'
         'blue-both-bg': 'Blue Background with Shape on Both Sides'
-        'blue-right-long-bg': 'Blue Background for Long Section with Shape on Right'
-        'blue-left-long-bg': 'Blue Background for Long Section  with Shape on Left'
       description: 'Select the background color for this section.'
     spacing_top:
       label: 'Vertical Top Spacing'
@@ -422,8 +412,6 @@ full_grid_3col:
         'blue-right-bg': 'Blue Background with Shape on Right'
         'blue-left-bg': 'Blue Background with Shape on Left'
         'blue-both-bg': 'Blue Background with Shape on Both Sides'
-        'blue-right-long-bg': 'Blue Background for Long Section with Shape on Right'
-        'blue-left-long-bg': 'Blue Background for Long Section  with Shape on Left'
       description: 'Select the background color for this section.'
     spacing_top:
       label: 'Vertical Top Spacing'
@@ -502,8 +490,6 @@ full_grid_4col:
         'blue-right-bg': 'Blue Background with Shape on Right'
         'blue-left-bg': 'Blue Background with Shape on Left'
         'blue-both-bg': 'Blue Background with Shape on Both Sides'
-        'blue-right-long-bg': 'Blue Background for Long Section with Shape on Right'
-        'blue-left-long-bg': 'Blue Background for Long Section  with Shape on Left'
       description: 'Select the background color for this section.'
     spacing_top:
       label: 'Vertical Top Spacing'
