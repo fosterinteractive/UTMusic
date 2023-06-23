@@ -26,7 +26,7 @@
 
 {# Zone is displayed in the front end so attributes are empty #}
 {% if region_attributes is empty %}
-  <{{ html_element_child }} class="l-section__zone-{{ zone }} {{ zone_child_layout }} {{ zone_child_extra_class }} {{ vertical_alignment }} {{ demo_class_zone }}" {{ zone_child_extra_attr }} >   
+  <{{ html_element_child }} class="l-section__zone l-section__zone-{{ zone }} {{ zone_child_layout }} {{ zone_child_extra_class }} {{ vertical_alignment }} {{ demo_class_zone }}" {{ zone_child_extra_attr }} >   
     {% if content %}
       {{ content }}
     {% endif %}
@@ -34,7 +34,7 @@
 
 {# Zone is displayed in the layout buider UI attributes will have contextual links#}
 {% else %}
-  <{{ html_element_child }} class="l-section__zone-{{ zone }}">
+  <{{ html_element_child }} class="l-section__zone l-section__zone-{{ zone }}">
     {% if content %}
       {# Adds Markup with attributes wrapper to allow contextual menus in layout builder editor UI #} 
       <div {{ region_attributes.addClass(zone_child_layout, zone_child_extra_class, vertical_alignment) }} {{ zone_child_extra_attr }}>

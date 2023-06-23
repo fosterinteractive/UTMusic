@@ -10,30 +10,15 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
 
 
 %l-section {
-
-  // Before psuedo element hold the background color for the theme
-  &:before {
-    display: block;
-    grid-column: alpha / omega;
-    grid-row: 2 / span 1;
-    // background-color: var(--c-section-background);
-    background-image: var(--c-section-background-image);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    content:'';
-  }
-
-  @include breakpoint($bp-tablet) {
-    display: grid;
-    grid-template-columns: [alpha] 1fr repeat(12, [col] minmax(1px, $max-col-width)) 1fr [omega];
-    grid-column-gap: var(--spacer);
-  }
+  display: grid;
+  grid-template-columns: [alpha] 1fr repeat(12, [col] minmax(1px, $max-col-width)) 1fr [omega];
+  grid-template-rows: auto;
+  grid-column-gap: var(--spacer);
 }
 
 .l-section__background {
-  grid-row: 1 / -1;
-  grid-column: alpha / omega;
+  grid-row: 1;
+  grid-column: alpha/omega;
 
   img {
     width: 100%;
@@ -46,7 +31,7 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
   @extend %l-section;
   
 
-  @include breakpoint($bp-tablet){
+  @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 omega'
@@ -57,7 +42,7 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
 .l-section--\[10\] {
   @extend %l-section;
 
-  @include breakpoint($bp-tablet){
+  @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha x1 z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 x2 omega'
@@ -68,7 +53,7 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
 .l-section--\[8\] {
   @extend %l-section;
 
-  @include breakpoint($bp-tablet){
+  @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha x1 x1 z1 z1 z1 z1 z1 z1 z1 z1 x2 x2 omega'
@@ -79,7 +64,7 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
 .l-section--\[6\] {
   @extend %l-section;
 
-  @include breakpoint($bp-tablet){
+  @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha x1 x1 x1 z1 z1 z1 z1 z1 z1 x2 x2 x2 omega'
@@ -114,6 +99,10 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     'alpha z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 z2 omega omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
+
+  .l-section__background {
+    grid-row: 1/ span 2;
+  }
 }
 
 .l-section--\[8\|3\] {
@@ -124,6 +113,10 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha alpha z1 z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+
+  .l-section__background {
+    grid-row: 1/ span 2;
   }
 }
 
@@ -136,16 +129,24 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     'alpha z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
+
+  .l-section__background {
+    grid-row: 1/ span 2;
+  }
 }
 
 .l-section--\[9\|3\] {
   @extend %l-section;
 
-  @include breakpoint($bp-tablet){
+  @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+
+  .l-section__background {
+    grid-row: 1/ span 2;
   }
 }
 
@@ -158,6 +159,10 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     'alpha z1 z1 z1 z1 . z2 z2 z2 z2 z2 z2 omega omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
+
+  .l-section__background {
+    grid-row: 1/ span 2;
+  }
 }
 
 .l-section--\[6\|4\] {
@@ -168,6 +173,10 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha alpha z1 z1 z1 z1 z1 z1 . z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+
+  .l-section__background {
+    grid-row: 1/ span 2;
   }
 }
 
@@ -180,6 +189,10 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     'alpha z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 omega omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
+
+  .l-section__background {
+    grid-row: 1/ span 2;
+  }
 }
 
 .l-section--\[7\|4\] {
@@ -190,6 +203,10 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha alpha z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+
+  .l-section__background {
+    grid-row: 1/ span 2;
   }
 }
 
@@ -202,6 +219,10 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     'alpha z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
+
+  .l-section__background {
+    grid-row: 1/ span 2;
+  }
 }
 
 .l-section--\[8\|4\] {
@@ -212,6 +233,10 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+
+  .l-section__background {
+    grid-row: 1/ span 2;
   }
 }
 
@@ -224,6 +249,10 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     'alpha alpha z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 omega omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
+
+  .l-section__background {
+    grid-row: 1/ span 2;
+  }
 }
 
 .l-section--\[5\|6\] {
@@ -234,6 +263,10 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 omega omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+
+  .l-section__background {
+    grid-row: 1/ span 2;
   }
 }
 
@@ -246,6 +279,10 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     'alpha alpha z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
+
+  .l-section__background {
+    grid-row: 1/ span 2;
+  }
 }
 
 .l-section--\[5\|7\] {
@@ -256,6 +293,10 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+
+  .l-section__background {
+    grid-row: 1/ span 2;
   }
 }
 
@@ -268,6 +309,10 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     'alpha z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
+
+  .l-section__background {
+    grid-row: 1/ span 2;
+  }
 }
 
 .l-section--\[6\|6\] {
@@ -278,6 +323,10 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+
+  .l-section__background {
+    grid-row: 1/ span 2;
   }
 }
 
@@ -290,6 +339,10 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     'alpha z1 z1 z1 z1 z2 z2 z2 z2 z3 z3 z3 z3 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
+
+  .l-section__background {
+    grid-row: 1/ span 3;
+  }
 }
 
 .l-section--\[3\|3\|3\|3\] {
@@ -300,6 +353,10 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z2 z2 z2 z3 z3 z3 z4 z4 z4 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+
+  .l-section__background {
+    grid-row: 1/ span 4;
   }
 }
 
@@ -316,6 +373,9 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     overflow: hidden;
   }
 
+  grid-column: col 1/ span 12;
+  grid-row: 1;
+
   @include breakpoint(1px $bp-tablet) {
     padding-right: var(--spacer);
     padding-bottom: var(--spacer);
@@ -327,23 +387,39 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
 .l-section__zone-1 {
   @extend %l-section__child;
   background-color: var(--c-section-background);
-  grid-area: z1;
+  grid-row: 1;
+  
+  @include breakpoint($bp-tablet) {
+    grid-area: z1;
+  }
 }
 
 .l-section__zone-2 {
   @extend %l-section__child;
   background-color: var(--c-section-background);
-  grid-area: z2;
+  grid-row: 2;
+  
+  @include breakpoint($bp-tablet) {
+    grid-area: z2;
+  }
 }
 
 .l-section__zone-3 {
   @extend %l-section__child;
   background-color: var(--c-section-background);
-  grid-area: z3;
+  grid-row: 3;
+
+  @include breakpoint($bp-tablet) {
+    grid-area: z3;
+  }
 }
 
 .l-section__zone-4 {
   @extend %l-section__child;
   background-color: var(--c-section-background);
-  grid-area: z4;
+  grid-row: 4;
+
+  @include breakpoint($bp-tablet) {
+    grid-area: z4;
+  }
 }

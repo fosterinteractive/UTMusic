@@ -62,6 +62,10 @@ sliding-door-menu:
   js:
     js/sliding-door-menu.js: {}
 
+section-background:
+  js:
+    js/section-background.js: {}
+
 foundation_core:
   version: 6.7.4
   # css:
