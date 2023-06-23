@@ -3,20 +3,22 @@
   overflow: hidden;
 }
 
-.m-cta__main-wrapper {
+%m-cta__main-wrapper {
   height: 100%;
   display: grid;
-  grid-template-areas: 'main';
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   align-items: center;
-
-  @include breakpoint($bp-tablet-small) {
-    grid-row: 1;
-  }
 }
 
-.m-cta__main-wrapper__background {
-  grid-area: main;
+%m-cta-main-background {
+  grid-row: 1;
+  grid-column: 1;
   height: 100%;
+
+  background-image: var(--cta-image-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
 
   img {
     width: 100%;
@@ -25,8 +27,18 @@
   }
 }
 
+%m-cta--buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacer);
+
+  .a-button,
+  .a-button--secondary {
+    margin-right: 0;
+  }
+}
+
 .m-cta__main {
-  grid-area: main;
   display: flex;
   flex-direction: column;
   gap: var(--spacer);
@@ -34,9 +46,6 @@
 
   @include breakpoint($bp-tablet) {
     gap: calc(var(--spacer) * 1.2);
-  }
-
-  @include breakpoint($bp-large) {
     padding: rem(20px) rem(80px);
   }
 }
@@ -56,6 +65,26 @@
     grid-row: 1;
     align-items: center;
   }
+}
+
+.m-cta--image__main-wrapper {
+  @extend %m-cta__main-wrapper;
+
+  @include breakpoint($bp-tablet-small) {
+    grid-row: 1;
+  }
+}
+
+.m-cta--image__main-wrapper__background {
+  @extend %m-cta-main-background;
+}
+
+.m-cta--image__main {
+  height: 100%;
+  justify-content: center;
+
+  grid-row: 1;
+  grid-column: 1;
 }
 
 .m-cta--image__image {
@@ -80,8 +109,27 @@
   border-radius: 0;
 }
 
-.o-hero-media--carousel__buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacer);
+.m-cta__main--image__buttons {
+  @extend %m-cta--buttons;
+}
+
+// Text Variation 
+.m-cta--text__main-wrapper {
+  @extend %m-cta__main-wrapper
+}
+
+.m-cta--text__main {
+  height: 100%;
+  justify-content: center;
+
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.m-cta--text__main-wrapper__background {
+  @extend %m-cta-main-background;
+}
+
+.m-cta__main--text__buttons {
+  @extend %m-cta--buttons;
 }
