@@ -31,6 +31,17 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
   }
 }
 
+.l-section__background {
+  grid-row: 1 / -1;
+  grid-column: alpha / omega;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
 .l-section--\[12\] {
   @extend %l-section;
   

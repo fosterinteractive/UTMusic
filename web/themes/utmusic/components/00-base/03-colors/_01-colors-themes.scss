@@ -302,9 +302,6 @@
 .theme--dark-blue-bg {
   @extend %theme--light-bg;
 
-  // --c-section-background: #{palette(black, 200)};
-  --c-section-background-image: var(--dark-bg-image);
-
   --c-text: #{palette(white)};
 
   //@atoms/button
@@ -324,33 +321,3 @@
   --c-events-carousel-title: #{palette(white)};
 }
 
-
-.theme--blue-right-bg {
-  @extend %theme--blue-light;
-
-  --c-section-background-image: var(--blue-right-bg-image);
-}
-
-.theme--blue-left-bg {
-  @extend %theme--blue-light;
-
-  --c-section-background-image: var(--blue-left-bg-image);
-}
-
-.theme--blue-both-bg {
-  @extend %theme--blue-light;
-
-  --c-section-background-image: var(--blue-both-bg-image);
-}
-
-.theme--blue-right-circle-bg {
-  @extend %theme--blue-light;
-
-  --c-section-background-image: var(--blue-right-circle-bg-image);
-}
-
-.theme--blue-left-circle-bg {
-  @extend %theme--blue-light;
-
-  --c-section-background-image: var(--blue-left-circle-bg-image);
-}
