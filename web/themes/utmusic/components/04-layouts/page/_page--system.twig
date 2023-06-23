@@ -5,12 +5,12 @@
   {# Set system_content to Load Content in a 1 column main wrapper #}
 
   {% set system_content %}
-  <div class="l-page--system__wrapper">
-    <div class="l-page--system">
-      {# System Content  #}
-      {{ content }}
+    <div class="l-page--system l-section--[12] l-section-spacing-top--medium l-section-spacing-bottom--medium">
+      <div class="l-section__zone-1">
+        {# System Content  #}
+        {{ content }}
+      </div>
     </div>
-  </div>
   {% endset %}
 
   {% include "@organisms/content-header/content-header.twig" with {

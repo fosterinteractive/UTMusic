@@ -1,8 +1,9 @@
+sb_demo: true
 layout: '[12]'
 zone_1_child_layout: 'l-flex--2col'
 spacing_top: small
 spacing_bottom: small
-theme: light-yellow-bg
+theme: black-bg
 demo_class_section: 
 demo_class_zone: 
 content:

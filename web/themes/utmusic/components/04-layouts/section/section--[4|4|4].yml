@@ -1,3 +1,4 @@
+sb_demo: true
 layout: '[4|4|4]'
 vertical_alignment: 
 spacing_top: small
@@ -9,5 +10,3 @@ content:
   zone1: '<div class="storybook-section__demo--red"><p> CONTENT OF ZONE 1 <br/> Item 1A </p></div> <div class="storybook-section__demo--red"><p> CONTENT OF ZONE 1 <br/><br/><br/> Item 1B  </p></div>'
   zone2: '<div class="storybook-section__demo--green"><p>  CONTENT OF ZONE 2 <br/><br/><br/><br/> Item 2A </p></div> <div class="storybook-section__demo--green">  <p>CONTENT OF ZONE 2 <br/> <br/> Item 2B</p> </div>'
   zone3: '<div class="storybook-section__demo--red"><p> CONTENT OF ZONE 3 <br/> Item 3A </p></div> <div class="storybook-section__demo--red"><p> CONTENT OF ZONE 3 <br/><br/><br/> Item 3B  </p></div> <div class="storybook-section__demo--red"><p> CONTENT OF ZONE 3 <br/><br/><br/> Item 3C  </p></div>'
-
-

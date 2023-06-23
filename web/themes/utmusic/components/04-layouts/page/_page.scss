@@ -16,13 +16,6 @@
 
 .l-page {
   min-height: 100vh;
-}
-
-.l-page__footer {
-  margin-top: auto;
-}
-
-.l-page {
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-areas: 
@@ -44,5 +37,6 @@
 }
 
 .l-page__footer {
+  margin-top: auto;
   grid-area: footer;
 }

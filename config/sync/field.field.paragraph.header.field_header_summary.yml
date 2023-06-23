@@ -11,7 +11,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - rich_text
+      - header_summary
 id: paragraph.header.field_header_summary
 field_name: field_header_summary
 entity_type: paragraph

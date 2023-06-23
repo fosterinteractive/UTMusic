@@ -131,6 +131,11 @@
   //@molecules/cta
   --c-cta-text: #{palette(blue, 300)};
 
+  //@molecules/sliding-menu
+  --c-sliding-menu-link: #{palette(white)};
+  --c-sliding-menu-link--active: #{palette(teal, 700)};
+
+
   // @organisms/listing
   --c-listing-item--border: #{palette(grey, 800)};
   --c-listing-item--date: #{palette(grey, 300)};
@@ -148,6 +153,9 @@
   --c-events-carousel-date: #{palette(teal, 1000)};
   --c-events-carousel-border: #{palette(teal, 300)};
   --c-events-carousel-title: #{palette(teal, 300)};
+
+  --c-people-title: #{palette(blue, 300)};
+  --c-people-title--active: #{palette(teal, 300)};
 
   //pager
   --c-pager--btn: #{palette(blue, 300)};
@@ -254,8 +262,7 @@
 .theme--pink {
   @extend %theme--light-bg;
   
-  
-  // @atoms/button
+   // @atoms/button
   --c-button: #{palette(pink, 400)};
   --c-button--active: #{palette(white)};
   --c-button-border: #{palette(pink, 400)};
@@ -280,21 +287,22 @@
   --c-heading-decoration: #{palette(pink, 400)};
 }
 
+%theme--blue-light,
 .theme--blue-light {
   @extend %theme--light-bg;
 
   // @atoms/chip
   --c-chip-border: #{palette(white)};
-
   
   // @organisms/listing
   --c-listing-item--border: #{palette(teal, 700)};
   --c-listing-item--date: #{palette(grey, 300)};
 }
 
-
-.theme--blue-dark {
+.theme--dark-blue-bg {
   @extend %theme--light-bg;
+
+  --c-text: #{palette(white)};
 
   //@atoms/button
   --c-button-text--secondary: #{palette(white)};
@@ -312,3 +320,4 @@
   //@organisms/listing & listing-item
   --c-events-carousel-title: #{palette(white)};
 }
+

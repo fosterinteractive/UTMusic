@@ -41,11 +41,10 @@ export default {
         options: { 
           'Default (White Background)': '', 
           'Black Background': 'black-bg', 
-          'Light Yellow Background': 'light-yellow-bg', 
         },
       },
       table: {
-        type: { summary: 'white-bg | black-bg | light-yellow-bg' },
+        type: { summary: 'white-bg | black-bg ' },
         defaultValue: { summary: 'white-bg' },
       },
     },

@@ -93,12 +93,6 @@
   {% set image = content.field_news_header_image_portrait %}
 {% endif %}
 
-{# {% set image_file_path = content.field_logo_item[0] ? content.field_logo_item[0]['#media'].field_ed_image_image.entity.uri.value %} #}
-{# {% set image_file_alt = content.field_logo_item[0] ? content.field_logo_item[0]['#media'].field_ed_image_image.0.alt %} #}
-{# {% set image_file_width = content.field_logo_max_width_override[0] ? content.field_logo_max_width_override[0]['#markup']: 'auto' %} #}
-
-{# {% set image = drupal_image(image_file_path, 'card_landscape_3_2', {'alt': image_file_alt, 'width': image_file_width, 'height': 'auto'}, responsive=true) %} #}
-
 {% set variation = false %}
 
 {% include "@organisms/listing/listing-item.twig" with {

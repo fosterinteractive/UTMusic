@@ -10,9 +10,6 @@ dependencies:
     - field.field.paragraph.card.field_card_categories
     - field.field.paragraph.card.field_card_description
     - field.field.paragraph.card.field_card_illustration
-    - field.field.paragraph.card.field_card_illustration_size
-    - field.field.paragraph.card.field_card_image
-    - field.field.paragraph.card.field_card_image_crop
     - field.field.paragraph.card.field_card_title
     - field.field.paragraph.card.field_card_title_appearance
     - field.field.paragraph.card.field_card_title_html_element
@@ -75,13 +72,6 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
-  field_card_illustration_size:
-    type: list_key
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 8
-    region: content
   field_card_title:
     type: text_default
     label: hidden
@@ -112,6 +102,4 @@ content:
     region: content
 hidden:
   field_card_categories: true
-  field_card_image: true
-  field_card_image_crop: true
   search_api_excerpt: true

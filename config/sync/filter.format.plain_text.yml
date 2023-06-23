@@ -6,7 +6,7 @@ _core:
   default_config_hash: WjS6KSndTdnIxxRjro9raCy5RGDk5WZaAYOlzixaEfY
 name: 'Plain text'
 format: plain_text
-weight: -7
+weight: -6
 filters:
   filter_html_escape:
     id: filter_html_escape

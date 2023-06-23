@@ -16,7 +16,11 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     display: block;
     grid-column: alpha / omega;
     grid-row: 2 / span 1;
-    background-color: var(--c-section-background);
+    // background-color: var(--c-section-background);
+    background-image: var(--c-section-background-image);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     content:'';
   }
 
@@ -25,25 +29,18 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     grid-template-columns: [alpha] 1fr repeat(12, [col] minmax(1px, $max-col-width)) 1fr [omega];
     grid-column-gap: var(--spacer);
   }
-
 }
 
-.l-page--system__wrapper {
-  @extend %l-section;
-  padding-top: $spacing-medium;
-  padding-bottom: $spacing-medium;
+.l-section__background {
+  grid-row: 1 / -1;
+  grid-column: alpha / omega;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
-
-.l-page--system {
-  @extend %l-section__child;
-  grid-column: 2/ span 12;
-}
-
-// Borderless (Not extending %l-section as it doesn't need grid)
-// .l-section {
-  
-// }
-
 
 .l-section--\[12\] {
   @extend %l-section;
@@ -56,7 +53,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
 }
-
 
 .l-section--\[10\] {
   @extend %l-section;
@@ -91,26 +87,130 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
   }
 }
 
-//for Thank you (Confirmation) page
-.l-section--\[10\|2\] {
+// 2 Col Layouts 
+// '[3|8]': '[3|8] of 12 columns Wide'
+// '[3|9]': '[3|9] of 12 columns Wide'
+// '[4|6]': '[4|6] of 12 columns Wide'
+// '[4|7]': '[4|7] of 12 columns Wide'
+// '[4|8]': '[4|8] of 12 columns Wide' 
+// '[5|5]': '[5|5] of 12 columns Wide' 
+// '[5|6]': '[5|6] of 12 columns Wide' 
+// '[5|7]': '[5|7] of 12 columns Wide' 
+// '[6|4]': '[6|4] of 12 columns Wide' 
+// '[6|5]': '[6|5] of 12 columns Wide' 
+// '[6|6]': '[6|6] of 12 columns Wide' 
+// '[7|4]': '[7|4] of 12 columns Wide' 
+// '[7|5]': '[7|5] of 12 columns Wide' 
+// '[8|3]': '[8|3] of 12 columns Wide' 
+// '[8|4]': '[8|4] of 12 columns Wide' 
+// '[9|3]': '[9|3] of 12 columns Wide'
+
+.l-section--\[3\|8\] {
   @extend %l-section;
 
   @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
-    'alpha z1 z1 z1 z1 z1 z1 z1 z1 z1 z1 x1 x1 omega'
+    'alpha z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 z2 omega omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
 }
 
-
-.l-section--\[6\|6\] {
+.l-section--\[8\|3\] {
   @extend %l-section;
 
   @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
-    'alpha z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 omega'
+    'alpha alpha z1 z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[3\|9\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 z2 z2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[9\|3\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet){
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[4\|6\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z1 . z2 z2 z2 z2 z2 z2 omega omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[6\|4\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha alpha z1 z1 z1 z1 z1 z1 . z2 z2 z2 z2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[4\|7\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 omega omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[7\|4\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha alpha z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[4\|8\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 z2 omega'
+       'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
+  }
+}
+
+.l-section--\[8\|4\] {
+  @extend %l-section;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-areas:
+       'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
+    'alpha z1 z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
 }
@@ -126,26 +226,24 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
   }
 }
 
-.l-section--\[4\|4\] {
+.l-section--\[5\|6\] {
   @extend %l-section;
 
   @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
-    'alpha alpha alpha z1 z1 z1 z1 z2 z2 z2 z2 omega omega omega'
+    'alpha z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 omega omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
 }
 
-
-
-.l-section--\[7\|5\] {
+.l-section--\[6\|5\] {
   @extend %l-section;
 
-  @include breakpoint($bp-phone-large){
+  @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
-    'alpha z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 omega'
+    'alpha alpha z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
 }
@@ -153,7 +251,7 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
 .l-section--\[5\|7\] {
   @extend %l-section;
 
-  @include breakpoint($bp-phone-large){
+  @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 omega'
@@ -161,25 +259,24 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
   }
 }
 
-
-.l-section--\[8\|4\] {
+.l-section--\[7\|5\] {
   @extend %l-section;
 
-  @include breakpoint($bp-phone-large){
+  @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
-    'alpha z1 z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 omega'
+    'alpha z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
 }
 
-.l-section--\[4\|8\] {
+.l-section--\[6\|6\] {
   @extend %l-section;
 
-  @include breakpoint($bp-phone-large){
+  @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
-    'alpha z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 z2 omega'
+    'alpha z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
 }
@@ -187,7 +284,7 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
 .l-section--\[4\|4\|4\] {
   @extend %l-section;
 
-  @include breakpoint($bp-phone-large){
+  @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z1 z2 z2 z2 z2 z3 z3 z3 z3 omega'
@@ -198,7 +295,7 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
 .l-section--\[3\|3\|3\|3\] {
   @extend %l-section;
 
-  @include breakpoint($bp-phone-large){
+  @include breakpoint($bp-tablet) {
     grid-template-areas:
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z2 z2 z2 z3 z3 z3 z4 z4 z4 omega'
@@ -249,41 +346,4 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
   @extend %l-section__child;
   background-color: var(--c-section-background);
   grid-area: z4;
-}
-
-// Brush Stroke Decoration
-.l-section__decoration-top {
-  @include svg-wrapper(1280,71); 
-  grid-area: h1;
-  filter: drop-shadow(0px -7px 3px rgb(0 0 0 / 0.05));
-
-  svg {
-    top: rem(1px);
-  }
-}
-
-.l-section__decoration-svg {
-  fill: var(--c-section-background);
-}
-
-.l-section__decoration-svg--bottom {
-  fill: var(--c-section-background);
-  transform: scale(1, -1);
-  transform-origin: center;
-  filter: drop-shadow(0px -7px 3px rgb(0 0 0 / 0.05));
-}
-
-
-.l-section__decoration-bottom {
-  @include svg-wrapper(1280,72); 
-  grid-area: f1;
-
-  svg {
-    top: rem(-1px);
-  }
-}
-
-.light-yellow-decoration-bg {
-  background-color: palette(yellow, 900);
-  filter: none;
 }

@@ -1,0 +1,31 @@
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+<div role="navigation" class="m-sliding-door-menu{{ variation }} {% if sb_demo %}sb_demo{% endif %}">
+ 
+  {% for item in sliding_menu_items %}
+    {% if sb_demo %}
+      {% include '@molecules/sliding-door-menu/sliding-item.twig' with {
+          sb_demo: item.sb_demo,
+          image: item.image,
+          link_url: item.link_url,
+          link_label: item.link_label,
+          aria_label: item.aria_label,
+          special_class: special_class,
+        } only
+      %}
+    {% else %}
+      {{ item }}
+    {% endif %}
+  {% endfor %}
+</div>

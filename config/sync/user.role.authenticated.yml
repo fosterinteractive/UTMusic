@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.header_summary
     - filter.format.rich_text
     - filter.format.rich_text_w_images
     - filter.format.simple_text
@@ -44,6 +45,7 @@ permissions:
   - 'opt-in or out of google analytics tracking'
   - 'update media'
   - 'use moderation sidebar'
+  - 'use text format header_summary'
   - 'use text format rich_text'
   - 'use text format rich_text_w_images'
   - 'use text format simple_text'

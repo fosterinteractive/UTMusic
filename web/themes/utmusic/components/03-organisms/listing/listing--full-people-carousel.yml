@@ -1,0 +1,129 @@
+sb_demo: true
+variation: 'people-carousel'
+title: List People Carousel
+listing_col_layout: 
+listing_button_url:  
+listing_button_text: 
+listing_items:
+  1: 
+    sb_demo: true
+    variation: 'people'
+    title: 'Andrew Downing'
+    image: '<img src="https://images.unsplash.com/photo-1614008516609-542a07c7b701?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" />'
+    id: 'listing-item-people'
+    url: "#"
+    role: Sessional Teaching Staff
+
+  2: 
+    sb_demo: true
+    variation: 'people'
+    title: 'Brian Katz'
+    image: '<img src="https://images.unsplash.com/photo-1546820389-44d77e1f3b31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" />'
+    id: 'listing-item-people'
+    url: "#"
+    role: Sessional Teaching Staff
+
+  3:
+    sb_demo: true
+    variation: 'people'
+    title: 'Harry Potter'
+    placeholder_icon: person
+    # image: '<img src="https://images.unsplash.com/photo-1519615407563-0651829f107d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" />'
+    id: 'listing-item-people'
+    url: "#"
+    role: Sessional Instructor
+
+  4: 
+    sb_demo: true
+    variation: 'people'
+    title: 'James Holden'
+    image: '<img src="https://images.unsplash.com/photo-1519615407563-0651829f107d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" />'
+    id: 'listing-item-people'
+    url: "#"
+    role: Sessional Teaching Staff
+
+  5: 
+    sb_demo: true
+    variation: 'people'
+    title: 'Mia Bach'
+    image: '<img src="https://images.unsplash.com/photo-1618508035424-73ad1a15006c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1365&q=80" />'
+    id: 'listing-item-people'
+    url: "#"
+    role: Sessional Teaching Staff
+
+  6: 
+    sb_demo: true
+    variation: 'people'
+    title: 'Henry Richards'
+    image: '<img src="https://images.unsplash.com/photo-1535643302794-19c3804b874b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" />'
+    id: 'listing-item-people'
+    url: "#"
+    role: Sessional Instructor
+  
+  7: 
+    sb_demo: true
+    variation: 'people'
+    title: 'Jane Doe'
+    image: '<img src="https://images.unsplash.com/photo-1599842057874-37393e9342df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" />'
+    id: 'listing-item-people'
+    url: "#"
+    role: Sessional Teaching Staff
+
+  8: 
+    sb_demo: true
+    variation: 'people'
+    title: 'Steve McCalister'
+    image: '<img src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" />'
+    id: 'listing-item-people'
+    url: "#"
+    role: Sessional Teaching Staff
+
+  9: 
+    sb_demo: true
+    variation: 'people'
+    title: 'Anette Li'
+    image: '<img src="https://images.unsplash.com/photo-1548142542-c53707f8b05b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=989&q=80" />'
+    id: 'listing-item-people'
+    url: "#"
+    role: Sessional Teaching Staff
+
+  10: 
+    sb_demo: true
+    variation: 'people'
+    title: 'Chucho Baretto'
+    image: '<img src="https://images.unsplash.com/photo-1608932931398-80f38fc81740?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" />'
+    id: 'listing-item-people'
+    url: "#"
+    role: Sessional Teaching Staff
+
+
+# pager:
+#   items:
+#     pages:
+#       1:
+#         href: '#'
+#       2:
+#         href: '#'
+#       3:
+#         href: '#'
+#       4:
+#         href: '#'
+#       5:
+#         href: '#'
+
+#     previous: true
+#     first: true
+#     next: true
+#     last: true
+#   current: 4
+#   prev_icon: 'chevron-left-solid'
+#   next_icon: 'chevron-right-solid'
+
+#   first_page_icon: 'arrow_previous'
+#   last_page_icon: 'arrow_next'
+
+#   show_first_last_btn: true
+
+#   ellipses:
+#     next: true
+

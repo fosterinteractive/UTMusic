@@ -1,0 +1,17 @@
+uuid: 79f43570-4755-4651-ac4d-929e5498802f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Header Summary'
+format: header_summary
+weight: -8
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: false
+    weight: -10
+    settings:
+      allowed_html: ''
+      filter_html_help: true
+      filter_html_nofollow: false

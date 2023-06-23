@@ -39,7 +39,7 @@
     </div>
   {% endif %}
 
-  {% if variation == '--events-carousel' %}
+  {% if variation == '--events-carousel' or variation == '--people-carousel' %}
     <div class="o-listing{{ variation }}__items-next-btn">
       {% include "@atoms/button/button.twig" with {
         label: label,
@@ -54,7 +54,7 @@
     </div>
   {% endif %}
 
-  {% if variation == '--events-carousel' %}
+  {% if variation == '--events-carousel' or variation == '--people-carousel' %}
     <div class="o-listing{{ variation }}__items-prev-btn">
       {% include "@atoms/button/button.twig" with {
         label: label,
@@ -71,8 +71,8 @@
 
   <div role="region" aria-label="{{ title }}" class="o-listing{{ variation }}__items {{ listing_col_layout }}"> 
 
-    {% for item in listing_items %}
-    {% if variation == '--events-carousel' %}
+  {% for item in listing_items %}
+    {% if variation == '--events-carousel' or variation == '--people-carousel' %}
       <div class="o-listing{{variation}}__item" {% if loop.last %} id="last-item"{% endif %} tabindex="0">
     {% endif %}
 
@@ -113,6 +113,32 @@
               sb_demo: item.sb_demo,
             } only
           %}
+          {% if loop.index == 3 and loop.length > 3 and variation == '--events-carousel'  %} 
+            <a href="#last-item" class="u-visually--hidden visually-hidden focusable skip-link">
+              {{ 'Skip to the last item'|t }}
+            </a>
+          {% endif %}
+        {% elseif variation == '--people' or variation == '--people-carousel' %}
+          {% include "@organisms/listing/listing-item--people.twig" with {
+              directory: directory,
+              variation: item.variation,
+              title: item.title, 
+              image: item.image,
+              url: item.url,
+              id: item.id,
+              sb_demo: item.sb_demo,
+              role: item.role,
+              placeholder_icon: item.placeholder_icon,
+              areas_specialization: item.areas_specialization,
+              instruments: item.instruments,
+            } only
+          %}
+
+          {% if loop.index == 3 and loop.length > 3 and variation == '--people-carousel'  %} 
+            <a href="#last-item" class="u-visually--hidden visually-hidden focusable skip-link">
+              {{ 'Skip to the last item'|t }}
+            </a>
+          {% endif %}
         {% else %}
           {% include "@organisms/listing/listing-item.twig" with {
               directory: directory,
@@ -132,18 +158,21 @@
       
       {# Because for Drupal we include listing-item or listing-item--event on the level of Node #}
         {{ item }}
-        {% if loop.index == 3 and loop.length > 3 and variation == '--events-carousel' %} 
-          <a href="#last-item" class="u-visually--hidden visually-hidden focusable skip-link">
-            {{ 'Skip to the last item'|t }}
-          </a>
+
+        {% if variation == '--events-carousel' or variation == '--people-carousel' %}
+          {% if loop.index == 3 and loop.length > 3  %} 
+            <a href="#last-item" class="u-visually--hidden visually-hidden focusable skip-link">
+              {{ 'Skip to the last item'|t }}
+            </a>
+          {% endif %}
         {% endif %}
       {% endif %}
       
-      {% if variation == '--events-carousel' %}
+      {% if variation == '--events-carousel' or variation == '--people-carousel' %}
       </div>
       {% endif %}
 
-    {% endfor %}
+  {% endfor %}
   </div>
 
   {% if listing_button_url and listing_button_text %}

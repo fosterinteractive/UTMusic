@@ -1,7 +1,8 @@
+sb_demo: true
 layout: '[10]'
 spacing_top: small
 spacing_bottom: small
-theme: light-yellow-bg
+theme: black-bg
 demo_class_section: storybook-section__demo--blue
 demo_class_zone: storybook-section__demo--red
 content:

@@ -68,6 +68,20 @@
     {% set theme = 'theme--white-bg' %}
 {% endif %}
 
+{% if theme == 'theme--dark-blue-bg' %}
+  {% set background_image_path = '/themes/utmusic/images/dark-min.jpeg' %}
+{% elseif theme == 'theme--blue-right-bg' %}
+  {% set background_image_path = '/themes/utmusic/images/blue-right-min.jpg' %}
+{% elseif theme == 'theme--blue-left-bg' %}
+  {% set background_image_path = '/themes/utmusic/images/blue-left-min.jpg' %}
+{% elseif theme == 'theme--blue-both-bg' %}
+  {% set background_image_path = '/themes/utmusic/images/blue-both-min.jpg' %}
+{% elseif theme == 'theme--blue-right-long-bg' %}
+  {% set background_image_path = '/themes/utmusic/images/blue-long-right-min.jpg' %}
+{% elseif theme == 'theme--blue-left-long-bg' %}
+  {% set background_image_path = '/themes/utmusic/images/blue-long-left-min.jpg' %}
+{% endif %}
+
 
 {% if spacing_top is not empty %}
   {# Add BEM variation '--' prefix if missing #}
@@ -94,13 +108,21 @@
 {% set zone_3_child_layout = zone_3_child_layout|default('l-flex') %}
 {% set zone_4_child_layout = zone_4_child_layout|default('l-flex') %}
 
-{% set demo_class_section = 'storybook-section__demo--blue' %}
+{% if sb_demo %}
+  {% set demo_class_section = 'storybook-section__demo--blue' %}
+{% endif %}
 
 {% set html_element = html_element|default('div') %}
 {% set html_element_child = html_element == 'div' ? 'div' : 'li' %}
 
 {# Outer Wrapper for the l-section #}
 <{{ html_element }} class="l-section{{ layout }} {{ theme }} {{ spacing_top }} {{ spacing_bottom }} {{ extra_class }} {{ demo_class_section }}" {% if id %} id="{{ id }}" {% endif %}>
+  
+  {% if background_image_path %}
+    <div class="l-section__background">
+      <img alt="" aria-hidden="true" src='{{ background_image_path}}'  >
+    </div>
+  {% endif %}
 
   {% if content.zone1 %}
     {# Include zone1 markup #}

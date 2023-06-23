@@ -9,7 +9,7 @@ full_1_col:
       label: 'Content Width'
       multiple: false
       required: true
-      default: '[10]'
+      default: '[12]'
       options:
         '[6]': '[6] of 12 columns Wide'
         '[8]': '[8] of 12 columns Wide'
@@ -24,8 +24,12 @@ full_1_col:
       default: 'white-bg'
       options:
         'white-bg': 'White Background'
-        'black-bg': 'Black Background'
-        'light-yellow-bg': 'Light Yellow Background'
+        'dark-blue-bg': 'Dark Background'
+        'blue-right-bg': 'Blue Background with Shape on Right'
+        'blue-left-bg': 'Blue Background with Shape on Left'
+        'blue-both-bg': 'Blue Background with Shape on Both Sides'
+        'blue-right-long-bg': 'Blue Background for Long Section with Shape on Right'
+        'blue-left-long-bg': 'Blue Background for Long Section  with Shape on Left'
       description: 'Select the background color for this section.'
     spacing_top:
       label: 'Vertical Top Spacing'
@@ -69,13 +73,22 @@ full_2_col:
       required: true
       default: '[6|6]'
       options:
-        '[4|4]': '[4|4] of 12 columns Wide'
-        '[5|5]': '[5|5] of 12 columns Wide'
-        '[6|6]': '[6|6] of 12 columns Wide'
-        '[7|5]': '[7|5] of 12 columns Wide'
-        '[5|7]': '[5|7] of 12 columns Wide' 
-        '[8|4]': '[8|4] of 12 columns Wide' 
+        '[3|8]': '[3|8] of 12 columns Wide'
+        '[3|9]': '[3|9] of 12 columns Wide'
+        '[4|6]': '[4|6] of 12 columns Wide'
+        '[4|7]': '[4|7] of 12 columns Wide'
         '[4|8]': '[4|8] of 12 columns Wide' 
+        '[5|5]': '[5|5] of 12 columns Wide' 
+        '[5|6]': '[5|6] of 12 columns Wide' 
+        '[5|7]': '[5|7] of 12 columns Wide' 
+        '[6|4]': '[6|4] of 12 columns Wide' 
+        '[6|5]': '[6|5] of 12 columns Wide' 
+        '[6|6]': '[6|6] of 12 columns Wide' 
+        '[7|4]': '[7|4] of 12 columns Wide' 
+        '[7|5]': '[7|5] of 12 columns Wide' 
+        '[8|3]': '[8|3] of 12 columns Wide' 
+        '[8|4]': '[8|4] of 12 columns Wide' 
+        '[9|3]': '[9|3] of 12 columns Wide'
     vertical_alignment:
       label: 'Vertical Alignment'
       multiple: false
@@ -94,8 +107,12 @@ full_2_col:
       default: 'white-bg'
       options:
         'white-bg': 'White Background'
-        'black-bg': 'Black Background'
-        'light-yellow-bg': 'Light Yellow Background'
+        'dark-blue-bg': 'Dark Background'
+        'blue-right-bg': 'Blue Background with Shape on Right'
+        'blue-left-bg': 'Blue Background with Shape on Left'
+        'blue-both-bg': 'Blue Background with Shape on Both Sides'
+        'blue-right-long-bg': 'Blue Background for Long Section with Shape on Right'
+        'blue-left-long-bg': 'Blue Background for Long Section  with Shape on Left'
       description: 'Select the background color for this section.'
     spacing_top:
       label: 'Vertical Top Spacing'
@@ -161,8 +178,12 @@ full_3_col:
       default: 'white-bg'
       options:
         'white-bg': 'White Background'
-        'black-bg': 'Black Background'
-        'light-yellow-bg': 'Light Yellow Background'
+        'dark-blue-bg': 'Dark Background'
+        'blue-right-bg': 'Blue Background with Shape on Right'
+        'blue-left-bg': 'Blue Background with Shape on Left'
+        'blue-both-bg': 'Blue Background with Shape on Both Sides'
+        'blue-right-long-bg': 'Blue Background for Long Section with Shape on Right'
+        'blue-left-long-bg': 'Blue Background for Long Section  with Shape on Left'
       description: 'Select the background color for this section.'
     spacing_top:
       label: 'Vertical Top Spacing'
@@ -229,8 +250,12 @@ full_4_col:
       default: 'white-bg'
       options:
         'white-bg': 'White Background'
-        'black-bg': 'Black Background'
-        'light-yellow-bg': 'Light Yellow Background'
+        'dark-blue-bg': 'Dark Background'
+        'blue-right-bg': 'Blue Background with Shape on Right'
+        'blue-left-bg': 'Blue Background with Shape on Left'
+        'blue-both-bg': 'Blue Background with Shape on Both Sides'
+        'blue-right-long-bg': 'Blue Background for Long Section with Shape on Right'
+        'blue-left-long-bg': 'Blue Background for Long Section  with Shape on Left'
       description: 'Select the background color for this section.'
     spacing_top:
       label: 'Vertical Top Spacing'
@@ -312,8 +337,12 @@ full_grid_2col:
       default: 'white-bg'
       options:
         'white-bg': 'White Background'
-        'black-bg': 'Black Background'
-        'light-yellow-bg': 'Light Yellow Background'
+        'dark-blue-bg': 'Dark Background'
+        'blue-right-bg': 'Blue Background with Shape on Right'
+        'blue-left-bg': 'Blue Background with Shape on Left'
+        'blue-both-bg': 'Blue Background with Shape on Both Sides'
+        'blue-right-long-bg': 'Blue Background for Long Section with Shape on Right'
+        'blue-left-long-bg': 'Blue Background for Long Section  with Shape on Left'
       description: 'Select the background color for this section.'
     spacing_top:
       label: 'Vertical Top Spacing'
@@ -389,8 +418,12 @@ full_grid_3col:
       default: 'white-bg'
       options:
         'white-bg': 'White Background'
-        'black-bg': 'Black Background'
-        'light-yellow-bg': 'Light Yellow Background'
+        'dark-blue-bg': 'Dark Background'
+        'blue-right-bg': 'Blue Background with Shape on Right'
+        'blue-left-bg': 'Blue Background with Shape on Left'
+        'blue-both-bg': 'Blue Background with Shape on Both Sides'
+        'blue-right-long-bg': 'Blue Background for Long Section with Shape on Right'
+        'blue-left-long-bg': 'Blue Background for Long Section  with Shape on Left'
       description: 'Select the background color for this section.'
     spacing_top:
       label: 'Vertical Top Spacing'
@@ -465,8 +498,12 @@ full_grid_4col:
       default: 'white-bg'
       options:
         'white-bg': 'White Background'
-        'black-bg': 'Black Background'
-        'light-yellow-bg': 'Light Yellow Background'
+        'dark-blue-bg': 'Dark Background'
+        'blue-right-bg': 'Blue Background with Shape on Right'
+        'blue-left-bg': 'Blue Background with Shape on Left'
+        'blue-both-bg': 'Blue Background with Shape on Both Sides'
+        'blue-right-long-bg': 'Blue Background for Long Section with Shape on Right'
+        'blue-left-long-bg': 'Blue Background for Long Section  with Shape on Left'
       description: 'Select the background color for this section.'
     spacing_top:
       label: 'Vertical Top Spacing'

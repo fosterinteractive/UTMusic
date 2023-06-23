@@ -1,0 +1,109 @@
+uuid: 91155d7b-88c6-4ff6-a6a4-b62778bfffe8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sliding_menu_items
+    - paragraphs.paragraphs_type.sliding_menu
+    - paragraphs.paragraphs_type.sliding_menu_item
+  module:
+    - entity_reference_revisions
+id: paragraph.sliding_menu.field_sliding_menu_items
+field_name: field_sliding_menu_items
+entity_type: paragraph
+bundle: sliding_menu
+label: Items
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      sliding_menu_item: sliding_menu_item
+    negate: 0
+    target_bundles_drag_drop:
+      button:
+        weight: 28
+        enabled: false
+      card:
+        weight: 29
+        enabled: false
+      carousel_header:
+        weight: 30
+        enabled: false
+      carousel_image_group:
+        weight: 31
+        enabled: false
+      cta:
+        weight: 32
+        enabled: false
+      events_full_list_dynamic:
+        weight: 33
+        enabled: false
+      events_summary_list_dynamic:
+        weight: 34
+        enabled: false
+      featured_media:
+        weight: 35
+        enabled: false
+      header:
+        weight: 36
+        enabled: false
+      image_section:
+        weight: 37
+        enabled: false
+      inline_menu:
+        weight: 38
+        enabled: false
+      message:
+        weight: 39
+        enabled: false
+      news_featured_item:
+        weight: 40
+        enabled: false
+      news_full_list_dynamic:
+        weight: 41
+        enabled: false
+      news_summary_list_dynamic:
+        weight: 42
+        enabled: false
+      poster:
+        weight: 43
+        enabled: false
+      quote:
+        weight: 44
+        enabled: false
+      section:
+        weight: 45
+        enabled: false
+      section_title:
+        weight: 46
+        enabled: false
+      sequence_item:
+        weight: 47
+        enabled: false
+      sequence_list:
+        weight: 48
+        enabled: false
+      sliding_menu:
+        weight: 49
+        enabled: false
+      sliding_menu_item:
+        weight: 50
+        enabled: true
+      soundcloud:
+        weight: 51
+        enabled: false
+      text:
+        weight: 52
+        enabled: false
+      text_image:
+        weight: 53
+        enabled: false
+      video:
+        weight: 54
+        enabled: false
+field_type: entity_reference_revisions

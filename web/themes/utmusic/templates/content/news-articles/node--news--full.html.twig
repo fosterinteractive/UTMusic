@@ -88,16 +88,6 @@
   {% endfor %}
 {% endif %}
 
-{# Get related news #}
-{# {% set related_news = [] %}
-{% if content.field_news_related_articles[0] %}
-  {% set count = content.field_news_related_articles['#items'].getIterator()|length -1 %}
-
-  {% for i in 0..count %}
-    {% set related_news = related_news|merge([content.field_news_related_articles[i]]) %}
-  {% endfor %}
-{% endif %} #}
-
 {% if content.related_news_footer %}
   {% set related_news = content.related_news_footer %}
 {% endif %}

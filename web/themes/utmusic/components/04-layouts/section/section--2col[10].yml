@@ -1,3 +1,4 @@
+sb_demo: true
 layout: '[10]'
 zone_1_child_layout: 'l-flex--2col'
 spacing_top: small

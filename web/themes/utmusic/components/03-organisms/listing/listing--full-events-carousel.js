@@ -17,10 +17,11 @@ Drupal.behaviors.listingEventsCarousel = {
   attach(context) {
     // Find carousel container with controls buttons and items
     const carouselContainer = document.querySelector('.o-listing--events-carousel__items');
-    const allItems = carouselContainer.querySelectorAll('.m-listing-item--events-carousel');
     if (!carouselContainer) {
       return;
     }
+    const allItems = carouselContainer.querySelectorAll('.m-listing-item--events-carousel');
+    
 
     const nextButton = context.querySelector('.o-listing--events-carousel__items-next-btn');
     const prevButton = context.querySelector('.o-listing--events-carousel__items-prev-btn');
@@ -53,9 +54,6 @@ Drupal.behaviors.listingEventsCarousel = {
 
       const isEndOfScroll = carousel.scrollWidth - carousel.scrollLeft === carousel.clientWidth;
       nextButton.style.visibility = isEndOfScroll ? 'hidden' : 'visible';
-      if (nextButton.style.visibility == 'hidden') {
-        // prevButton.firstElementChild.focus();
-      }
     });
 
     prevButton.addEventListener('click', (e)=> {
@@ -74,10 +72,6 @@ Drupal.behaviors.listingEventsCarousel = {
 
       const isStartOfScroll = carousel.scrollLeft === 0;
       prevButton.style.visibility = isStartOfScroll ? 'hidden' : 'visible';
-     
-      if (prevButton.style.visibility == 'hidden') {
-        // nextButton.firstElementChild.focus();
-      }
     });
 
     carouselContainer.addEventListener('scroll', (e)=> {
@@ -90,15 +84,9 @@ Drupal.behaviors.listingEventsCarousel = {
       
       const isEndOfScroll = carouselContainer.scrollWidth - carouselContainer.scrollLeft === carouselContainer.clientWidth;
       nextButton.style.visibility = isEndOfScroll ? 'hidden' : 'visible';
-      if (nextButton.style.visibility == 'hidden') {
-        // prevButton.firstElementChild.focus();
-      }
 
       const isStartOfScroll = carouselContainer.scrollLeft === 0;
       prevButton.style.visibility = isStartOfScroll ? 'hidden' : 'visible';
-      if (prevButton.style.visibility == 'hidden') {
-        // nextButton.firstElementChild.focus();
-      }
     });
 
   },

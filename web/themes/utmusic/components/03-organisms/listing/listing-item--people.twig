@@ -1,0 +1,72 @@
+{# Set default listing-item class - 'm-listing-item' #}
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+<div class="m-listing-item{{ variation }}">
+    
+    {% if image %}
+      <div class="m-listing-item{{ variation }}__img {% if sb_demo %}m-listing-item{{ variation }}__img-demo{% endif %}">
+        {% include "@molecules/image/image.twig" with {
+            image: image,
+          } only
+        %}
+      </div>
+    {% else %}
+      <div class="m-listing-item{{ variation}}__img-illustration">
+        {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+            directory: directory,
+            base_class: 'a-icon',
+            icon: placeholder_icon,
+            size: 'large', 
+          } only
+        %}
+      </div>
+    {% endif %}
+
+  <div class="m-listing-item{{ variation }}__content">
+
+    <div class="m-listing-item{{ variation }}__title">
+      {% include "@atoms/text/headings/heading.twig" with {
+          directory: directory,
+          html_element: 'h3',
+          appearance: 'h3',
+          text: title,
+          url: url,          
+        } only
+      %}
+    </div>
+
+    {% if role or instruments %}
+      <div class="m-listing-item{{ variation }}__position">
+        {{ role }}{% if instruments %}:{% endif %}
+        {% for item in instruments %}
+          {{ item.instrument}}{% if not loop.last %},{% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+    
+  {% if areas_specialization %}
+    <div class="m-listing-item{{ variation }}__tags">
+      {% for item in areas_specialization %}
+        {% include '@atoms/chip/chip.twig' with {
+            text: item.area,
+            variation: '',
+            html_element: 'div',
+          } only 
+        %}
+      {% endfor %}
+    </div>
+  {% endif %}
+  
+</div>

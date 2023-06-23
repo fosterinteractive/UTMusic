@@ -9,9 +9,6 @@ dependencies:
     - field.field.paragraph.card.field_card_categories
     - field.field.paragraph.card.field_card_description
     - field.field.paragraph.card.field_card_illustration
-    - field.field.paragraph.card.field_card_illustration_size
-    - field.field.paragraph.card.field_card_image
-    - field.field.paragraph.card.field_card_image_crop
     - field.field.paragraph.card.field_card_title
     - field.field.paragraph.card.field_card_title_appearance
     - field.field.paragraph.card.field_card_title_html_element
@@ -26,21 +23,6 @@ dependencies:
     - text
 third_party_settings:
   field_group:
-    group_illustration:
-      children:
-        - field_card_illustration_size
-      label: Illustration
-      region: hidden
-      parent_name: ''
-      weight: 10
-      format_type: details
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        open: true
-        description: ''
-        required_fields: true
     group_title:
       children:
         - field_card_title
@@ -179,7 +161,4 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_card_illustration_size: true
-  field_card_image: true
-  field_card_image_crop: true
   status: true

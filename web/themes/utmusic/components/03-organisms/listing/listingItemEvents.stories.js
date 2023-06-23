@@ -11,7 +11,7 @@ import ListingItemEventsCarouselData from './listing-item--events-carousel.yml';
  * Storybook Definition with data documentation and controls
  */
 export default {
-  title: 'Organisms/Listing/Listing Item/Events',
+  title: 'Organisms/Listing/01- Listing Item/Events',
   component: listingItemEvents,
 
   parameters: {

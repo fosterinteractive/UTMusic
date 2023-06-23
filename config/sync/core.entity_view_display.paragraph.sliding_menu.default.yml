@@ -1,0 +1,25 @@
+uuid: 9c152cec-2d36-46ad-8ad3-8f87dd4ef907
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sliding_menu.field_sliding_menu_items
+    - paragraphs.paragraphs_type.sliding_menu
+  module:
+    - entity_reference_revisions
+id: paragraph.sliding_menu.default
+targetEntityType: paragraph
+bundle: sliding_menu
+mode: default
+content:
+  field_sliding_menu_items:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

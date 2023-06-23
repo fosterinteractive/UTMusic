@@ -5,6 +5,6 @@ dependencies:
   module:
     - media
 id: media.contextual_card
-label: 'Contextual Crop Card (12:10)'
+label: 'Contextual Crop Card (13:10)'
 targetEntityType: media
 cache: true

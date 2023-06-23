@@ -1,0 +1,43 @@
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+<div class="m-sliding-item{{ variation }}" role="listitem">
+  {% if image %}
+    <div class="m-sliding-item{{ variation }}__image">
+      {% include "@molecules/image/image.twig" with {
+          directory: directory,
+          image: image,
+        } only
+      %}
+    </div>
+  {% endif %}
+
+  <div class="m-sliding-item{{ variation }}__image-gradient">
+  </div>
+
+  {% if link_url and link_label %}
+    <div class="m-sliding-item{{ variation }}__link">
+      {% include "@atoms/text/headings/heading.twig" with {
+          html_element: 'h3',
+          appearance: 'h5',
+          text: link_label,
+          url: link_url,
+          id: id,
+          alignment: 'left',
+          directory: directory,
+          aria_label: aria_label,
+        } only
+      %}
+    </div>
+  {% endif %}
+</div>

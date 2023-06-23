@@ -1,0 +1,10 @@
+uuid: 6ac0cec0-5aaf-426e-ac7c-d3b2ced9a83c
+langcode: en
+status: true
+dependencies: {  }
+id: sliding_menu_item
+label: 'Sliding Door Menu Item'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

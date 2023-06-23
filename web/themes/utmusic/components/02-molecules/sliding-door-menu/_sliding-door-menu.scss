@@ -1,0 +1,58 @@
+.m-sliding-door-menu {
+  border-radius: rem(12px);
+  overflow: hidden;
+  height: 100%;
+
+  @include breakpoint($bp-tablet) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include breakpoint($bp-large) {
+    flex-wrap: nowrap;
+    min-height: rem(350px);
+  }
+}
+
+.m-sliding-door-menu .m-sliding-item {
+  .m-image,
+  .m-image__image {
+    height: 100%;
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+  }
+
+  @include breakpoint($bp-tablet) {
+    flex: 1 1 50%;
+  }
+
+  @include breakpoint($bp-large) {
+    flex: 1 1 25%;
+    transition: flex 0.2s ease-in;
+  }
+}
+
+.m-sliding-item.highlighted-slide {
+  @include breakpoint($bp-large) {
+    flex: 1 1 50%;
+
+    .a-heading__h5 a {
+      color: var(--c-sliding-menu-link--active);
+      text-decoration: underline;
+  
+      svg {
+        fill: currentColor;
+      }
+    }
+  }
+}
+
+// Demo in Storybook
+.m-sliding-door-menu.sb_demo {
+  img {
+    height: 300px;
+  }
+}
