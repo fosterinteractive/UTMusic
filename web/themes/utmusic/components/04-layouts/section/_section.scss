@@ -17,7 +17,7 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
 }
 
 .l-section__background {
-  grid-row: 1;
+  grid-row: h1/ f1;
   grid-column: alpha/omega;
 
   img {
@@ -99,10 +99,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     'alpha z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 z2 omega omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
-
-  .l-section__background {
-    grid-row: 1/ span 2;
-  }
 }
 
 .l-section--\[8\|3\] {
@@ -113,10 +109,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha alpha z1 z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
-  }
-
-  .l-section__background {
-    grid-row: 1/ span 2;
   }
 }
 
@@ -129,10 +121,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     'alpha z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
-
-  .l-section__background {
-    grid-row: 1/ span 2;
-  }
 }
 
 .l-section--\[9\|3\] {
@@ -143,10 +131,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
-  }
-
-  .l-section__background {
-    grid-row: 1/ span 2;
   }
 }
 
@@ -159,10 +143,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     'alpha z1 z1 z1 z1 . z2 z2 z2 z2 z2 z2 omega omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
-
-  .l-section__background {
-    grid-row: 1/ span 2;
-  }
 }
 
 .l-section--\[6\|4\] {
@@ -173,10 +153,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha alpha z1 z1 z1 z1 z1 z1 . z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
-  }
-
-  .l-section__background {
-    grid-row: 1/ span 2;
   }
 }
 
@@ -189,10 +165,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     'alpha z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 omega omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
-
-  .l-section__background {
-    grid-row: 1/ span 2;
-  }
 }
 
 .l-section--\[7\|4\] {
@@ -203,10 +175,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha alpha z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
-  }
-
-  .l-section__background {
-    grid-row: 1/ span 2;
   }
 }
 
@@ -219,10 +187,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     'alpha z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
-
-  .l-section__background {
-    grid-row: 1/ span 2;
-  }
 }
 
 .l-section--\[8\|4\] {
@@ -233,10 +197,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
-  }
-
-  .l-section__background {
-    grid-row: 1/ span 2;
   }
 }
 
@@ -249,10 +209,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     'alpha alpha z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 omega omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
-
-  .l-section__background {
-    grid-row: 1/ span 2;
-  }
 }
 
 .l-section--\[5\|6\] {
@@ -263,10 +219,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 omega omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
-  }
-
-  .l-section__background {
-    grid-row: 1/ span 2;
   }
 }
 
@@ -279,10 +231,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     'alpha alpha z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
-
-  .l-section__background {
-    grid-row: 1/ span 2;
-  }
 }
 
 .l-section--\[5\|7\] {
@@ -293,10 +241,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
-  }
-
-  .l-section__background {
-    grid-row: 1/ span 2;
   }
 }
 
@@ -309,10 +253,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     'alpha z1 z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
-
-  .l-section__background {
-    grid-row: 1/ span 2;
-  }
 }
 
 .l-section--\[6\|6\] {
@@ -323,10 +263,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z1 z1 z1 z2 z2 z2 z2 z2 z2 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
-  }
-
-  .l-section__background {
-    grid-row: 1/ span 2;
   }
 }
 
@@ -339,10 +275,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
     'alpha z1 z1 z1 z1 z2 z2 z2 z2 z3 z3 z3 z3 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
   }
-
-  .l-section__background {
-    grid-row: 1/ span 3;
-  }
 }
 
 .l-section--\[3\|3\|3\|3\] {
@@ -353,10 +285,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
        'h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1'
     'alpha z1 z1 z1 z2 z2 z2 z3 z3 z3 z4 z4 z4 omega'
        'f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1';
-  }
-
-  .l-section__background {
-    grid-row: 1/ span 4;
   }
 }
 
