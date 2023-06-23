@@ -69,17 +69,13 @@
 {% endif %}
 
 {% if theme == 'theme--dark-blue-bg' %}
-  {% set background_image_path = '/themes/utmusic/images/dark-min.jpeg' %}
+  {% set background_image_path = '/themes/utmusic/images/texture--left-min.png' %}
 {% elseif theme == 'theme--blue-right-bg' %}
-  {% set background_image_path = '/themes/utmusic/images/blue-right-min.jpg' %}
+  {% set background_image_path = '/themes/utmusic/images/texture--right-min.png' %}
 {% elseif theme == 'theme--blue-left-bg' %}
-  {% set background_image_path = '/themes/utmusic/images/blue-left-min.jpg' %}
+  {% set background_image_path = '/themes/utmusic/images/texture--left-min.png' %}
 {% elseif theme == 'theme--blue-both-bg' %}
-  {% set background_image_path = '/themes/utmusic/images/blue-both-min.jpg' %}
-{% elseif theme == 'theme--blue-right-long-bg' %}
-  {% set background_image_path = '/themes/utmusic/images/blue-long-right-min.jpg' %}
-{% elseif theme == 'theme--blue-left-long-bg' %}
-  {% set background_image_path = '/themes/utmusic/images/blue-long-left-min.jpg' %}
+  {% set background_image_path = '/themes/utmusic/images/texture--both-min.png' %}
 {% endif %}
 
 
@@ -116,11 +112,11 @@
 {% set html_element_child = html_element == 'div' ? 'div' : 'li' %}
 
 {# Outer Wrapper for the l-section #}
-<{{ html_element }} class="l-section{{ layout }} {{ theme }} {{ spacing_top }} {{ spacing_bottom }} {{ extra_class }} {{ demo_class_section }}" {% if id %} id="{{ id }}" {% endif %}>
+<{{ html_element }} class="l-section{{ layout }} l-section-wrapper {{ theme }} {{ spacing_top }} {{ spacing_bottom }} {{ extra_class }} {{ demo_class_section }}" {% if id %} id="{{ id }}" {% endif %}>
   
   {% if background_image_path %}
     <div class="l-section__background">
-      <img alt="" aria-hidden="true" src='{{ background_image_path}}'  >
+      <img alt="" aria-hidden="true" src='{{ background_image_path}}' />
     </div>
   {% endif %}
 

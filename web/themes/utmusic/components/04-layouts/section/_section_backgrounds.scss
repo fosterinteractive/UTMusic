@@ -1,0 +1,56 @@
+.theme--dark-blue-bg {
+  .l-section__background {
+    background-color: palette(black, 200);
+
+    img {
+      opacity: 20%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: hard-light;
+
+    }
+  }
+}
+
+.theme--blue-right-bg {
+  .l-section__background {
+    background-color: palette(teal, 1000);
+
+    img {
+      opacity: 40%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: color-burn;
+    }
+  }
+}
+
+.theme--blue-left-bg {
+  .l-section__background {
+    background-color: palette(teal, 1000);
+
+    img {
+      opacity: 40%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: color-burn;
+    }
+  }
+}
+
+.theme--blue-both-bg {
+  .l-section__background {
+    background-color: palette(teal, 1000);
+
+    img {
+      opacity: 40%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: color-burn;
+    }
+  }
+}
