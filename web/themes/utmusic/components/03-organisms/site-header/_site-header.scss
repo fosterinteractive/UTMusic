@@ -76,7 +76,7 @@
   margin-right: ru(0.5);
   margin-left: ru(0.5);
   padding: ru(0.25) 0;
-  border-bottom: 1px solid #6FC7EA;
+  border-bottom: 1px solid palette(teal, 700);
   max-width: $bp-max;
 
   @include breakpoint($bp-phone-large) {
