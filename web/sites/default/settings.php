@@ -4,7 +4,6 @@
  * Load services definition file.
  */
 $settings['container_yamls'][] = __DIR__ . '/services.yml';
-$settings['file_public_path']  = 'sites/default/files/assets';
 
 /**
  * Include the Pantheon-specific settings file.

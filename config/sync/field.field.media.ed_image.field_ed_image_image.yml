@@ -12,7 +12,7 @@ third_party_settings:
   filefield_paths:
     enabled: true
     file_path:
-      value: 'image/[current-date:html_year]'
+      value: 'assets/image/[current-date:html_year]'
       options:
         slashes: false
         pathauto: false

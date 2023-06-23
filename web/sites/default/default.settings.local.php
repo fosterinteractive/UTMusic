@@ -71,7 +71,6 @@ $settings['rebuild_access'] = TRUE;
 
 // Temp file path.
 $settings['file_temp_path'] = '/tmp';
-$settings['file_public_path']  = 'sites/default/files/assets';
 
 // Database.
 $databases['default']['default'] = [
