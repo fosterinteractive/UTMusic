@@ -3,8 +3,9 @@
     <div class="o-header__logo">
       {% include "@molecules/logo/logo.twig"
         with {
+          directory: directory,
           variation: '--image',
-          logo_image_src: logo_image_url,
+          logo_image_src: 'images/logo.svg',
           logo_alt: site_name,
           url: front_page,
           is_front: is_front,
