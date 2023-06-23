@@ -1,63 +1,257 @@
 <div class="l-page__header">
   <header class="o-header">
-    <div class="o-header__top">
-      <div class="o-header__top-contain">
-        <div class="o-header__shortcuts">
-          <nav aria-labelledby="block-header-shortcuts-menu" id="block-header-shortcuts" class="contextual-region">
-            <h2 class="visually-hidden" id="block-header-shortcuts-menu">Header Shortcuts</h2>
-          </nav>
-        </div>
-        <div class="o-header__search">
-          <a href="/search" id="toggle-icon" class="a-button--icon" aria-label="Search this site">
-          <div class="u-visually--hidden"></div><svg class="a-button--icon__icon" aria-hidden="true">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/icons.svg#search"></use></svg></a>
-        </div>
-      </div>
-    </div>
     <div class="o-header__bottom">
       <div class="o-header__logo">
-        <a class="m-logo--image" href="/" aria-label=""><img class="m-logo--image__img" src="/sites/default/files/assets/logo/logo.png" alt=" Home" width="970" height="360"></a>
+        <a class="m-logo--image" href="/" aria-label=""><img class="m-logo--image__img" src="themes/utmusic/images/logo.svg" alt="UofT Music Home"></a>
       </div>
-      <div class="o-header__mobile-btn">
-        <a href="#menu-mobile" id="toggle-icon" class="a-button--icon" aria-label="Menu">
+      <div class="o-header__shortcuts">
+        <!-- THEME DEBUG -->
+        <!-- THEME HOOK: 'block' -->
+        <!-- FILE NAME SUGGESTIONS:
+   * block==header-shortcuts.html.twig
+   * block==menu-block==header-shortcuts.html.twig
+   * block==menu-block.html.twig
+   x block==system-menu-block.html.twig
+   * block.html.twig
+-->
+        <!-- BEGIN OUTPUT from 'themes/utmusic/templates/block/block==system-menu-block.html.twig' -->
+        <nav aria-labelledby="block-header-shortcuts-menu" id="block-header-shortcuts">
+          <h2 class="visually-hidden" id="block-header-shortcuts-menu">Header Shortcuts</h2><!-- THEME DEBUG -->
+          <!-- THEME HOOK: 'menu' -->
+          <!-- FILE NAME SUGGESTIONS:
+   x menu==header-shortcuts.html.twig
+   * menu.html.twig
+-->
+          <!-- BEGIN OUTPUT from 'themes/utmusic/templates/navigation/menu==header-shortcuts.html.twig' -->
+          <ul class="m-menu-header-shortcuts">
+            <li class="m-menu-header-shortcuts__item">
+              <a href="/node/12" class="m-menu-header-shortcuts__link" data-drupal-link-system-path="node/12">Donate</a>
+            </li>
+            <li class="m-menu-header-shortcuts__item">
+              <a href="/node/13" class="m-menu-header-shortcuts__link" data-drupal-link-system-path="node/13">Feeling Distressed</a>
+            </li>
+          </ul><!-- END OUTPUT from 'themes/utmusic/templates/navigation/menu==header-shortcuts.html.twig' -->
+        </nav><!-- END OUTPUT from 'themes/utmusic/templates/block/block==system-menu-block.html.twig' -->
+      </div>
+      <div class="o-header__search">
+        <a href="/search" id="toggle-icon" class="a-button--icon a-button--left" aria-label="Search this site">
         <div class="u-visually--hidden"></div><svg class="a-button--icon__icon" aria-hidden="true">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/icons.svg#hamburger"></use></svg></a>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/utmusic/dist/icons.svg#search"></use></svg></a>
       </div>
-      <div class="o-header__slogan">
-        Vestibulum purus quam scelerisque ut
+      <div class="o-header__mobile-btn-menu-triger">
+        <a href="#menu-mobile" id="toggle-icon" class="a-button--icon a-button--left" aria-label="Menu">
+        <div class="u-visually--hidden"></div><svg class="a-button--icon__icon" aria-hidden="true">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/utmusic/dist/icons.svg#hamburger"></use></svg></a>
       </div>
     </div>
   </header>
-</div>
-<div class="l-page__menu-main-wrapper">
-  <div class="l-page__menu-main">
-    <nav aria-labelledby="menu-main-menu" id="menu-main" class="contextual-region m-menu-main" data-menu-main="">
-      <h2 class="visually-hidden" id="menu-main-menu">Main Menu</h2>
-      <ul class="m-menu-main__list--level-1 js-menu-main__list">
-        <li class="m-menu-main__item--level-1 js-menu-main__item">
-          <a href="/praesent-ac-massa-ligula-laoreet-iaculis-proin-pretium-leo-ac-pellentesque-mollis-felis-nunc" class="m-menu-main__link--level-1" data-drupal-link-system-path="node/2">Menu link 1</a>
-          <div class="m-menu-main__panel js-menu-main__panel">
-            <ul class="m-menu-main__list--level-2">
-              <li class="m-menu-main__item--level-2">
-                <a href="/news/hac-habitasse-platea-dictumst-2" class="m-menu-main__link--level-2" data-drupal-link-system-path="node/1">Menu link 1-1</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="m-menu-main__item--level-1 is-active js-menu-main__item">
-          <a href="/news/hac-habitasse-platea-dictumst-2" class="m-menu-main__link--level-1" data-drupal-link-system-path="node/1">Menu link 2</a>
-          <div class="m-menu-main__panel js-menu-main__panel">
-            <ul class="m-menu-main__list--level-2">
-              <li class="m-menu-main__item--level-2">
-                <a href="/news/hac-habitasse-platea-dictumst-2" class="m-menu-main__link--level-2" data-drupal-link-system-path="node/1">Menu link 1-2</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="m-menu-main__item--level-1 js-menu-main__item">
-          <a href="/news/hac-habitasse-platea-dictumst-2" class="m-menu-main__link--level-1" data-drupal-link-system-path="node/1">Menu link 3</a>
-        </li>
-      </ul>
-    </nav>
+  <div class="l-page__menu-main-wrapper">
+    <div class="l-page__menu-main">
+      <!-- THEME DEBUG -->
+      <!-- THEME HOOK: 'block' -->
+      <!-- FILE NAME SUGGESTIONS:
+   * block==menu-main.html.twig
+   x block==menu-block==main.html.twig
+   * block==menu-block.html.twig
+   * block==system-menu-block.html.twig
+   * block.html.twig
+-->
+      <!-- BEGIN OUTPUT from 'themes/utmusic/templates/block/block==menu-block==main.html.twig' -->
+      <nav aria-labelledby="menu-main-menu" id="menu-main" data-menu-main="" class="m-menu-main">
+        <h2 class="visually-hidden" id="menu-main-menu">Main Menu</h2><!-- THEME DEBUG -->
+        <!-- THEME HOOK: 'menu' -->
+        <!-- FILE NAME SUGGESTIONS:
+   x menu==main.html.twig
+   * menu.html.twig
+-->
+        <!-- BEGIN OUTPUT from 'themes/utmusic/templates/navigation/menu==main.html.twig' -->
+        <ul class="m-menu-main__list--level-1" data-dropdown-menu="">
+          <li class="m-menu-main__item--level-1">
+            <a href="/node/4" class="m-menu-main__link--level-1" data-toggle="panel-id-06fdef14-0168-4eae-b31f-1de1f1445b02" data-drupal-link-system-path="node/4">About</a>
+            <div class="m-menu-main__panel" id="panel-id-06fdef14-0168-4eae-b31f-1de1f1445b02" data-dropdown="" data-close-on-click="true" data-hover="true" data-hover-pane="true">
+              <div class="m-menu-main__panel-inner m-menu-main__panel-inner--promo-block">
+                <div class="m-menu-main__cols--3">
+                  <div class="m-menu-main__col--">
+                    <ul class="m-menu-main__list--level-2" data-main-menu-component="second-level-list">
+                      <li class="m-menu-main__item--level-2">
+                        <span class="m-menu-main__label--level-2">Menu link title 1-2</span>
+                        <ul class="m-menu-main__list--level-3" data-main-menu-component="third-level-list">
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-2-1</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-2-2</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-2-3</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="m-menu-main__item--level-2">
+                        <span class="m-menu-main__label--level-2">Menu link title 1-3</span>
+                        <ul class="m-menu-main__list--level-3" data-main-menu-component="third-level-list">
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-3-1</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-3-2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="m-menu-main__item--level-2">
+                        <span class="m-menu-main__label--level-2">Menu link title 1-4</span>
+                        <ul class="m-menu-main__list--level-3" data-main-menu-component="third-level-list">
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-4-1</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="m-menu-main__col--2-split is-split">
+                    <ul class="m-menu-main__list--level-2" data-main-menu-component="second-level-list">
+                      <li class="m-menu-main__item--level-2">
+                        <span class="m-menu-main__label--level-2">Menu link title 1-1</span>
+                        <ul class="m-menu-main__list--level-3" data-main-menu-component="third-level-list">
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-1</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-2</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-3</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-4</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-5</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-6</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-7</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-8</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-9</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-10</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-11</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-12</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-13</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-14</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-15</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-16</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-17</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-18</a>
+                          </li>
+                          <li class="m-menu-main__item--level-3">
+                            <a href="/node/18" class="m-menu-main__link--level-3" data-drupal-link-system-path="node/18">Menu link title 1-1-19</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="m-menu-main__promo">
+                  <div class="m-promo">
+                    <div class="m-promo__title">
+                      <h3 class="a-heading__h2 a-heading--left">Application Deadlines</h3>
+                    </div>
+                    <div class="m-promo__description">
+                      Could contain seasonal, promotional note for prospective students.
+                    </div>
+                    <div class="m-promo__link">
+                      <a href="/node/4" class="a-button a-button--left" aria-label="Application Deadlines">Learn more <svg class="a-button__icon" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/utmusic/dist/icons.svg#link-shevron"></use></svg></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="m-menu-main__item--level-1">
+            <a href="/node/6" class="m-menu-main__link--level-1" data-toggle="panel-id-577d1b28-9b94-4ae9-8e55-56396697b60e" data-drupal-link-system-path="node/6">Admissions</a>
+            <div class="m-menu-main__panel" id="panel-id-577d1b28-9b94-4ae9-8e55-56396697b60e" data-dropdown="" data-close-on-click="true" data-hover="true" data-hover-pane="true">
+              <div class="m-menu-main__panel-inner m-menu-main__panel-inner--promo-block">
+                <div class="m-menu-main__cols--3">
+                  <div class="m-menu-main__col--">
+                    <ul class="m-menu-main__list--level-2" data-main-menu-component="second-level-list">
+                      <li class="m-menu-main__item--level-2">
+                        <a href="/node/5" class="m-menu-main__link--level-2" data-drupal-link-system-path="node/5">Menu test</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="m-menu-main__promo">
+                  <div class="m-promo">
+                    <div class="m-promo__title">
+                      <h3 class="a-heading__h2 a-heading--left">Promo Title 2</h3>
+                    </div>
+                    <div class="m-promo__description">
+                      Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit amet eros. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Donec vitae orci sed dolor rutrum auctor.
+                    </div>
+                    <div class="m-promo__link">
+                      <a href="/node/5" class="a-button a-button--left" aria-label="Promo Title 2">Link text <svg class="a-button__icon" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/utmusic/dist/icons.svg#link-shevron"></use></svg></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="m-menu-main__item--level-1">
+            <a href="/node/9" class="m-menu-main__link--level-1" data-toggle="panel-id-7840a1d6-cc5e-4376-a8e8-4294ae8075c8" data-drupal-link-system-path="node/9">People</a>
+            <div class="m-menu-main__panel" id="panel-id-7840a1d6-cc5e-4376-a8e8-4294ae8075c8" data-dropdown="" data-close-on-click="true" data-hover="true" data-hover-pane="true">
+              <div class="m-menu-main__panel-inner m-menu-main__panel-inner--promo-block">
+                <div class="m-menu-main__cols--3">
+                  <div class="m-menu-main__col--">
+                    <ul class="m-menu-main__list--level-2" data-main-menu-component="second-level-list">
+                      <li class="m-menu-main__item--level-2">
+                        <a href="/node/6" class="m-menu-main__link--level-2" data-drupal-link-system-path="node/6">Menu test 2</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="m-menu-main__item--level-1">
+            <a href="/node/1" class="m-menu-main__link--level-1" data-drupal-link-system-path="node/1">Programs</a>
+          </li>
+          <li class="m-menu-main__item--level-1">
+            <a href="/node/10" class="m-menu-main__link--level-1" data-drupal-link-system-path="node/10">Student Resources</a>
+          </li>
+          <li class="m-menu-main__item--level-1">
+            <a href="/node/8" class="m-menu-main__link--level-1" data-drupal-link-system-path="node/8">Research & Creation</a>
+          </li>
+          <li class="m-menu-main__item--level-1">
+            <a href="/node/12" class="m-menu-main__link--level-1" data-drupal-link-system-path="node/12">Concerts & Events</a>
+          </li>
+        </ul><!-- END OUTPUT from 'themes/utmusic/templates/navigation/menu==main.html.twig' -->
+      </nav><!-- END OUTPUT from 'themes/utmusic/templates/block/block==menu-block==main.html.twig' -->
+    </div>
   </div>
 </div>
