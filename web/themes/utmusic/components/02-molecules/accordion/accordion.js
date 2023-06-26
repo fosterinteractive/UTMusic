@@ -50,7 +50,6 @@ Drupal.behaviors.accordion = {
       });
     });
 
-
     const expandButton = context.querySelector('.js-accordion__control');
 
     if (!expandButton) {
