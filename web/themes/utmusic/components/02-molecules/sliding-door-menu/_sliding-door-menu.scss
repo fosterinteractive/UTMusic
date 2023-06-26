@@ -9,7 +9,7 @@
 
   @include breakpoint($bp-large) {
     flex-wrap: nowrap;
-    min-height: rem(405px);
+    height: rem(405px);
   }
 }
 
