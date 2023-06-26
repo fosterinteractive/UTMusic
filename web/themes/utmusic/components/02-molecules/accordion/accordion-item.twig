@@ -15,8 +15,16 @@
 
             {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
               directory: directory,
-              base_class: 'a-icon',
+              base_class: 'accordion-item__toggle-plus a-icon',
               icon: 'plus-solid',
+              size: 'small',
+              } only
+            %}
+
+            {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+              directory: directory,
+              base_class: 'accordion-item__toggle-minus a-icon',
+              icon: 'minus-solid',
               size: 'small',
               } only
             %}

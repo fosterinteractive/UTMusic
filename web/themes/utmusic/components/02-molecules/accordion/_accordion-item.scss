@@ -19,7 +19,7 @@
 }
 
 .m-accordion-item__header-wrapper {
-  padding: rem(20px) rem(30px);
+  padding: rem(20px) rem(15px) rem(20px) rem(30px);
   border-bottom: rem(1px) solid var(--c-accordion-item-border);
 }
 
@@ -36,4 +36,22 @@
 .m-accordion-item__content[aria-hidden="false"] {
   display: block;
   border-bottom: rem(1px) solid var(--c-accordion-item-border);
+}
+
+.m-accordion-item__label[aria-expanded="false"] {
+  .accordion-item__toggle-plus {
+    display: block;
+  }
+  .accordion-item__toggle-minus {
+    display: none;
+  }
+}
+
+.m-accordion-item__label[aria-expanded="true"] {
+  .accordion-item__toggle-plus {
+    display: none;
+  }
+  .accordion-item__toggle-minus {
+    display: block;
+  }
 }

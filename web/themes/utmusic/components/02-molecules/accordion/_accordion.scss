@@ -26,4 +26,19 @@
   border: unset;
   color: var(--c-accordion-expand-button-text);
   background-color: var(--c-accordion-expand-button-bg);
+
+  &[aria-expanded="true"] {
+    svg {
+      transform: rotate(180deg);
+      transition: 0.2s ease-in;
+    }
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-radius: rem(50px);
+    text-decoration: underline;
+    box-shadow: 0px rem(4px) rem(10px) rgba(62, 19, 77, 0.09);
+  }
 }

@@ -66,6 +66,10 @@ section-background:
   js:
     js/section-background.js: {}
 
+accordion:
+  js:
+    js/accordion.js: {}
+
 foundation_core:
   version: 6.7.4
   # css:

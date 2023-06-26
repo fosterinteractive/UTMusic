@@ -22,6 +22,7 @@
     {% for item in items %}
       {% if loop.index == 3 and loop.length >= 3 %}
         {% include '@atoms/chip/chip.twig' with {
+            directory: directory,
             variation: 'icon',
             text: expand_button_label,
             html_element: 'button',
