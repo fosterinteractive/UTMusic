@@ -14,6 +14,8 @@
 }
 
 .theme--blue-right-bg {
+  @extend %theme--blue-light;
+
   .l-section__background {
     background-color: palette(teal, 1000);
 
@@ -28,6 +30,8 @@
 }
 
 .theme--blue-left-bg {
+  @extend %theme--blue-light;
+
   .l-section__background {
     background-color: palette(teal, 1000);
 
@@ -42,6 +46,8 @@
 }
 
 .theme--blue-both-bg {
+  @extend %theme--blue-light;
+
   .l-section__background {
     background-color: palette(teal, 1000);
 
