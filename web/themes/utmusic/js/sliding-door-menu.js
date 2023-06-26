@@ -39,5 +39,20 @@ Drupal.behaviors.slidingDoorDrupal = {
         link.closest('.m-sliding-item').classList.remove('highlighted-slide');
       });
     });
+
+
+    // let find the height of at least one image 
+    // and set that height to the whole vomponent for avoiding "jumping efect" on hover
+    if (window.innerWidth > 1024) {
+      if (context.querySelector('.utmusic-paragraph-wrapper .m-sliding-door-menu')) {
+        return;
+      }
+
+      let definedHeight = 0;
+      let firstSlidingItem = slidingDoor.querySelector('.m-sliding-item');
+      definedHeight = firstSlidingItem.offsetHeight;
+      slidingDoor.style.height = definedHeight*2 + "px";
+      
+    }
   },
 };

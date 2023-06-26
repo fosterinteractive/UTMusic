@@ -31,6 +31,7 @@
   align-self: end;
   background: linear-gradient(0deg, rgba(8,8,8,1) 15%, rgba(255,255,255,0) 100%);
   opacity: 1;
+  z-index: 0;
 }
 
 .m-sliding-item__link {
@@ -68,3 +69,11 @@
 
 
 
+//admin-preview 
+.field--name-field-sliding-menu-item-image {
+  height: 100%;
+
+  .media--type-ed-image {
+    height: 100%;
+  }
+}

@@ -10,7 +10,6 @@
 
   @include breakpoint($bp-large) {
     flex-wrap: nowrap;
-    min-height: rem(350px);
   }
 }
 
