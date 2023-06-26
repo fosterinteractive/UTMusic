@@ -1,0 +1,19 @@
+uuid: 0e1d9e68-2727-43a1-bab2-b6dfe76fedc6
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_accordion_item_content
+field_name: field_accordion_item_content
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
