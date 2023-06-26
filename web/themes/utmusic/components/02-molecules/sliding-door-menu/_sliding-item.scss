@@ -21,6 +21,10 @@
 
   img {
     border-radius: 0; 
+
+    @include breakpoint($bp-large) {
+      filter: saturate(0);
+    }
   }
 }
 

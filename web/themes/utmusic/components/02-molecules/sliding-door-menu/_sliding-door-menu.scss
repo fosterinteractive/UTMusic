@@ -1,9 +1,8 @@
 .m-sliding-door-menu {
   border-radius: rem(12px);
   overflow: hidden;
-  height: 100%;
 
-  @include breakpoint($bp-tablet) {
+  @include breakpoint($bp-tablet-small) {
     display: flex;
     flex-wrap: wrap;
   }
@@ -38,6 +37,14 @@
   @include breakpoint($bp-large) {
     flex: 1 1 50%;
 
+    .m-sliding-item__image {
+      grid-area: slide;
+    
+      img {
+        filter: saturate(1);
+      }
+    }
+
     .a-heading__h5 a {
       color: var(--c-sliding-menu-link--active);
       text-decoration: underline;
@@ -46,12 +53,5 @@
         fill: currentColor;
       }
     }
-  }
-}
-
-// Demo in Storybook
-.m-sliding-door-menu.sb_demo {
-  img {
-    height: 300px;
   }
 }
