@@ -1,0 +1,50 @@
+<div class="m-accordion" data-accordion>
+  <div class="m-accordion-header-wrapper">
+    {% if title %}
+      {% include "@atoms/text/headings/heading.twig" with {
+          html_element: 'h2',
+          appearance: 'h3',
+          text: title,
+          alignment: 'left',
+          directory: directory,
+        } only
+      %}
+    {% endif %}
+
+    {% if summary %}
+      <div class="m-accordion__summary">
+        {{ summary }}
+      </div>
+    {% endif %}
+  </div>
+
+  {# We show button "Expand All" only if we have 3 and more items  #}
+    {% for item in items %}
+      {% if loop.index == 3 and loop.length >= 3 %}
+        {% include '@atoms/chip/chip.twig' with {
+            variation: 'icon',
+            text: expand_button_label,
+            html_element: 'button',
+            icon: 'chevron-down-solid',
+            additional_classes: 'm-accordion__btn-toggle js-accordion__control',
+            accordion_state: 'true',
+          } only 
+        %}
+      {% endif %}
+    {% endfor %}
+
+  <div id="{{ id }}" class="m-accordion__items" data-accordion-component="items">
+    {% for item in items %}
+      {% if sb_demo %}
+        {% include '@molecules/accordion/accordion-item.twig' with {
+            title: item.title,
+            subtitle: item.subtitle,
+            content: item.content,
+          } only 
+        %}
+      {% else %}
+        {{ item }}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

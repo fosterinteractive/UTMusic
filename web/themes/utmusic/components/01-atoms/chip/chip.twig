@@ -19,7 +19,7 @@
   </a>
 
 {% elseif variation == '--icon' or variation == '--icon-left' %}
-  <{{ html_element }} class="a-chip{{ variation }}" {{ attributes }}{% if aria_label %} aria-label="{{ aria_label }}"{% endif %}>
+  <{{ html_element }} class="a-chip{{ variation }} {{additional_classes}}" {{ attributes }}{% if aria_label %} aria-label="{{ aria_label }}"{% endif %} {% if accordion_state %}data-accordion-component='toggle' data-accordion-state='collapsed'{% endif %}>
     {% if icon and variation == '--icon-left' %}
       {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
         directory: directory,

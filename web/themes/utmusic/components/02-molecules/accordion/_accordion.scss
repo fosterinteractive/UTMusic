@@ -1,0 +1,29 @@
+.m-accordion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.m-accordion-header-wrapper {
+  padding: rem(10px) rem(15px);
+}
+
+.m-accordion__btn-toggle {
+  margin-left: auto;
+}
+
+.m-accordion__items {
+  width: 100%;
+}
+
+.m-accordion__items .m-accordion-item:first-of-type {
+  .m-accordion-item__header-wrapper {
+    border-top: rem(1px) solid var(--c-accordion-item-border);
+  }
+}
+
+.m-accordion__btn-toggle {
+  border: unset;
+  color: var(--c-accordion-expand-button-text);
+  background-color: var(--c-accordion-expand-button-bg);
+}

@@ -1,0 +1,41 @@
+{# Create a unique ID for each accordion item #}
+{% set unique_id = random('1234567890') ~ random('1234567890') ~ random('1234567890') ~ random('1234567890') %}
+{% set accordion__panel__id = 'accordion__panel-' ~ unique_id %}
+{% set accordion__header__id = 'accordion__header-' ~ unique_id %}
+
+<div class="m-accordion-item js-accordion-item"  data-accordion-state='collapsed' data-accordion-component='item'>
+  
+  {# Header #}
+  {% if title or subtitle %}
+    <div class="m-accordion-item__header-wrapper">
+      {% if title %}
+        <h4>
+          <button class="m-accordion-item__label toggle js-accordion-item__toggle" aria-expanded="false" id="{{accordion__header__id}}" aria-controls="{{accordion__panel__id}}" >
+            {{ title }}
+
+            {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+              directory: directory,
+              base_class: 'a-icon',
+              icon: 'plus-solid',
+              size: 'small',
+              } only
+            %}
+          </button>
+        </h4>
+      {% endif %}
+
+      {% if subtitle %}
+        <span class="m-accordion-item__subtitle">
+          {{ subtitle }}
+        </span>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {# Panel  #}
+  {% if content %}
+    <section class="m-accordion-item__content s-wysiwyg js-accordion-item__panel" data-accordion-component="content" aria-hidden="true" aria-labelledby="{{accordion__header__id}}" id="{{accordion__panel__id}}" >
+      {{ content }}
+    </section>
+  {% endif %}
+</div>
