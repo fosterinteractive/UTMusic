@@ -50,38 +50,39 @@ Drupal.behaviors.accordion = {
       });
     });
 
-    const expandButton = context.querySelector('.js-accordion__control');
+    const expandButtons = context.querySelectorAll('.js-accordion__control');
 
-    if (!expandButton) {
+    if (!expandButtons) {
       return;
     }
 
-    // Get all items relevant to the control.
-    const allAccordionItems = expandButton.closest('.m-accordion').querySelectorAll('.js-accordion-item');
+    expandButtons.forEach( expandButton => {
+      // Get all items relevant to the control.
+      const allAccordionItems = expandButton.closest('.m-accordion').querySelectorAll('.js-accordion-item');
 
-    // Add click listener on the parent 
-    expandButton.addEventListener('click', (e) => {
-      let expandButtonState = expandButton.getAttribute('aria-expanded');
+      // Add click listener on the parent 
+      expandButton.addEventListener('click', (e) => {
+        let expandButtonState = expandButton.getAttribute('aria-expanded');
 
-      // Iterate over items
-      allAccordionItems.forEach((item) => {
-        const button = item.querySelector('.js-accordion-item__toggle');
-        const panel = item.querySelector('.js-accordion-item__panel');
+        // Iterate over items
+        allAccordionItems.forEach((item) => {
+          const button = item.querySelector('.js-accordion-item__toggle');
+          const panel = item.querySelector('.js-accordion-item__panel');
 
+          if (expandButtonState === 'true') {
+            collapse(item, button, panel);
+          } else {
+            expand(item, button, panel);
+          }
+        });
+
+        //Change the state for button
         if (expandButtonState === 'true') {
-          collapse(item, button, panel);
+          expandButton.setAttribute('aria-expanded', 'false');
         } else {
-          expand(item, button, panel);
+          expandButton.setAttribute('aria-expanded', 'true');
         }
       });
-
-      //Change the state for button
-      if (expandButtonState === 'true') {
-        expandButton.setAttribute('aria-expanded', 'false');
-      } else {
-        expandButton.setAttribute('aria-expanded', 'true');
-      }
-
     });
   },
 };
