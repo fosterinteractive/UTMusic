@@ -611,6 +611,7 @@ function utmusic_preprocess_menu(&$variables) {
       // Decide here how many columns this level 1 menu item should be.
       // Logic would be based off of if there is a panel or not.
       $cols = 3;
+
       $columns_data = $mega_menu_builder->build($item, $cols);
       // Add the mega menu columns data to the level 1 item.
       $items[$level1_menu_id]['columns_data'] = $columns_data;
