@@ -29,6 +29,10 @@
             "url": "https://github.com/fosterinteractive/social_lite"
         },
         {
+            "type": "vcs",
+            "url": "https://github.com/fosterinteractive/mega-menu-builder"
+        },
+        {
             "type": "package",
             "package": {
                 "name": "ckeditor/link",
@@ -76,6 +80,7 @@
         "drupal/media_contextual_crop_embed": "1.2.1",
         "fosterinteractive/adminspring-theme": "dev-10.0.x-dev",
         "fosterinteractive/mainspring-profile": "dev-10.x-dev",
+        "fosterinteractive/mega-menu-builder": "1.x-dev",
         "fosterinteractive/social_lite": "2.0.0",
         "pantheon-systems/drupal-integrations": "^9",
         "mnsami/composer-custom-directory-installer": "^2.0",

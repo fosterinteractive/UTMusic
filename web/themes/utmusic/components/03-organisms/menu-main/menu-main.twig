@@ -95,18 +95,15 @@
 
     {# Menu Level 2 #}
     {% if menu_level == 2 %}
-      <div class="m-menu-main__cols--3">
+      <div class="m-menu-main__cols--{{ columns_data.number_of_columns }}">
         {% set split = columns_data.split_col %}
         {% for col_id, column in columns_data.columns %}
+          {% set col_variation = '' %}
           {% if split and split == col_id %}
-            {% set col_variation = '--' ~ split ~ '-split' %}
-          {% elseif split == 1 and col != split %}
-            {% set col_variation = '--3' %}
-          {% else %}
-            {% set col_variation = '--' ~ col %}
+            {% set col_variation = '--'  ~ 'split' %}
           {% endif %}
 
-          <div class="m-menu-main__col{{ col_variation }}{% if split == col_id %} is-split{% endif %}">
+          <div class="m-menu-main__col{{ col_variation }}">
             <ul class="m-menu-main__list--level-2" data-main-menu-component="second-level-list">
             {% for section in column %}
               {% set classes = [
