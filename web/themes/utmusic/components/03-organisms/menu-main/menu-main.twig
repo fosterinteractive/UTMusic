@@ -98,12 +98,12 @@
       <div class="m-menu-main__cols--{{ columns_data.number_of_columns }}">
         {% set split = columns_data.split_col %}
         {% for col_id, column in columns_data.columns %}
-          {% set col_variation = 'no' %}
+          {% set col_variation = '' %}
           {% if split and split == col_id %}
             {% set col_variation = '--' ~ 'split' %}
           {% endif %}
 
-          <div class="m-menu-main__col{{ col_variation }}">
+          <div class="m-menu-main__col{{ col_variation }} eric">
             <ul class="m-menu-main__list--level-2" data-main-menu-component="second-level-list">
             {% for section in column %}
               {% set classes = [
