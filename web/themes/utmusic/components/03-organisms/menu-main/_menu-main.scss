@@ -81,11 +81,6 @@
 }
 
 .m-menu-main__panel {
-  @include breakpoint($bp-full-nav calc($bp-max + 30px)) {
-    width: 100%;
-    padding-left: rem(9px);
-    padding-right: rem(9px);
-  }
 
   display: block;
   position: absolute;
@@ -99,6 +94,12 @@
   padding-bottom: ru(1.7);
   width: 100vw;
   transform: translateX(-50%);
+
+  @include breakpoint($bp-full-nav calc($bp-max + 30px)) {
+    width: 100%;
+    padding-left: rem(9px);
+    padding-right: rem(9px);
+  }
 
   &.is-open {
     visibility: visible;
