@@ -98,9 +98,9 @@
       <div class="m-menu-main__cols--{{ columns_data.number_of_columns }}">
         {% set split = columns_data.split_col %}
         {% for col_id, column in columns_data.columns %}
-          {% set col_variation = '' %}
+          {% set col_variation = 'no' %}
           {% if split and split == col_id %}
-            {% set col_variation = '--'  ~ 'split' %}
+            {% set col_variation = '--' ~ 'split' %}
           {% endif %}
 
           <div class="m-menu-main__col{{ col_variation }}">
