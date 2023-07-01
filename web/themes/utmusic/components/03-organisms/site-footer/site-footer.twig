@@ -1,122 +1,133 @@
 <footer class="o-footer">
   <div class="o-footer__top">
     <div class="o-footer__top-container">
-
-      <div class="o-footer__logo o-footer__logo--{{ lang }}">
-
-        {% if lang == 'en' %}
-
-          {% include "@molecules/logo/logo.twig" with {
-              directory: directory,
-              logo_icon: 'logo',
-              logo_icon_size: logo_icon_size,
-              logo_icon_color: logo_icon_size,
-              logo_aria_label: 'UTMusic',
-
-              url: front_page,
-              site_name: site_name,
-            } only
-          %}
-
-        {% elseif lang == 'fr' %}
-
-          {% include "@molecules/logo/logo.twig" with {
-              directory: directory,
-              logo_icon: 'logo',
-              logo_icon_size: logo_icon_size,
-              logo_icon_color: logo_icon_size,
-              logo_aria_label: "UTMusic FR",
-
-              url: front_page,
-              site_name: site_name,
-            } only
-          %}
-
-        {% endif %}
+      <div class="o-footer__top-menu">
+        <h2 class="a-heading__h4">{{ 'Resources & Sites'|t }}</h2>
+        {{footer_menu}}
       </div>
 
-      <div class="o-footer__menu">
-        {{ footer_menu }}
+      <div class="o-footer__top-contact">
+        <h2 class="a-heading__h4">{{ 'Contact Us'|t }}</h2>
+        <p><a href="tel:416-978-1221">416-978-1221</a><br/><a href="tel:1-800-463-6048">1-800-463-6048</a></p>
+
+        <p>University of Toronto<br/>
+        21 King's College Circle<br/>
+        Toronto, Ontario, Canada<br/>
+        M5S 3J3</p>
+      </div>
+
+      <div class="o-footer__top-donate">
+        <h2 class="a-heading__h4">{{ 'Empower the Future of Music'|t }}</h2>
+        <p>Shape Tomorrow's Musical Landscape &amp; Strengthen Canada's Cultural Economy<p>
+        <a href="#" class="o-footer__top-donate__link">Donate</a>
+      </div>
+
+      <div class="o-footer__top-social">
+        {% if site_facebook or site_linkedin or site_twitter or site_youtube or site_instagram %}
+          <div class="o-footer__social">
+            {% if site_twitter %}
+              {% include '@atoms/button/button.twig' with {
+                  directory: directory,
+                  variation: 'icon',
+                  html_element: 'a',
+                  url: site_twitter,
+                  target: "_blank",
+                  aria_label: 'Follow us on Twitter'|t,
+                  icon: 'social-twitter',
+                } only
+              %}
+            {% endif %}
+
+            {% if site_facebook %}
+              {% include '@atoms/button/button.twig' with {
+                  directory: directory,
+                  variation: 'icon',
+                  html_element: 'a',
+                  target: "_blank",
+                  url: site_facebook|raw,
+                  aria_label: 'Follow us on Facebook'|t,
+                  icon: 'social-facebook'
+                } only
+              %}
+            {% endif %}
+
+            {% if site_instagram %}
+              {% include '@atoms/button/button.twig' with {
+                  directory: directory,
+                  variation: 'icon',
+                  html_element: 'a',
+                  url: site_instagram,
+                  target: "_blank",
+                  aria_label: 'Follow us on Instagram'|t,
+                  icon: 'social-instagram',
+                } only
+              %}
+            {% endif %}
+
+            {% if site_linkedin %}
+              {% include '@atoms/button/button.twig' with {
+                  directory: directory,
+                  variation: 'icon',
+                  html_element: 'a',
+                  target: "_blank",
+                  url: site_linkedin,
+                  aria_label: 'Follow us on LinkedIn'|t,
+                  icon: 'social-linkedin',
+                } only
+              %}
+            {% endif %}
+
+            {% if site_youtube %}
+              {% include '@atoms/button/button.twig' with {
+                  directory: directory,
+                  variation: 'icon',
+                  html_element: 'a',
+                  url: site_youtube,
+                  target: "_blank",
+                  aria_label: 'Follow us on Youtube'|t,
+                  icon: 'social-youtube',
+                } only
+              %}
+            {% endif %}
+          </div>
+        {% endif %}
+
+        
+        <div class="o-footer__top-defy">
+          {% include "@molecules/logo/logo.twig"
+            with {
+              directory: directory,
+              variation: '--image',
+              logo_image_src: 'images/Defy_Logo_Footer.svg',
+              logo_alt: 'Defy Gravity'|t,
+              url: 'https://defygravitycampaign.utoronto.ca'
+            } only
+          %}
+        </div>
+
+        <div class="o-footer__top-uoft">
+          {% include "@molecules/logo/logo.twig"
+            with {
+              directory: directory,
+              variation: '--image',
+              logo_image_src: 'images/UofT_Logo_Footer.svg',
+              logo_alt: 'University of Toronto'|t,
+              url: 'https://www.utoronto.ca'
+            } only
+          %}
+        </div>
+      
       </div>
     </div>
   </div>
 
   <div class="o-footer__bottom">
-    
-    <div class="o-footer__legal">
-      {{ 'Copyright'|t }} &copy; {{ year }} {{ 'UTMusic. All Rights Reserved.'|t }}
+    <div class="o-footer__bottom-links">
+      {{footer_shortcuts}}
     </div>
 
-    {% if site_facebook or site_linkedin or site_twitter or site_youtube or site_instagram %}
-      <div class="o-footer__social">
-
-        {% if site_facebook %}
-          {% include '@atoms/button/button.twig' with {
-              directory: directory,
-              variation: 'icon',
-              html_element: 'a',
-              target: "_blank",
-              url: site_facebook|raw,
-              aria_label: 'Follow us on Facebook'|t,
-              icon: 'social-facebook'
-            } only
-          %}
-        {% endif %}
-
-        {% if site_linkedin %}
-          {% include '@atoms/button/button.twig' with {
-              directory: directory,
-              variation: 'icon',
-              html_element: 'a',
-              target: "_blank",
-              url: site_linkedin,
-              aria_label: 'Follow us on LinkedIn'|t,
-              icon: 'social-linkedin',
-            } only
-          %}
-        {% endif %}
-
-        {% if site_twitter %}
-          {% include '@atoms/button/button.twig' with {
-              directory: directory,
-              variation: 'icon',
-              html_element: 'a',
-              url: site_twitter,
-              target: "_blank",
-              aria_label: 'Follow us on Twitter'|t,
-              icon: 'social-twitter',
-            } only
-          %}
-        {% endif %}
-
-        {% if site_instagram %}
-          {% include '@atoms/button/button.twig' with {
-              directory: directory,
-              variation: 'icon',
-              html_element: 'a',
-              url: site_instagram,
-              target: "_blank",
-              aria_label: 'Follow us on Instagram'|t,
-              icon: 'social-instagram',
-            } only
-          %}
-        {% endif %}
-
-        {% if site_youtube %}
-          {% include '@atoms/button/button.twig' with {
-              directory: directory,
-              variation: 'icon',
-              html_element: 'a',
-              url: site_youtube,
-              target: "_blank",
-              aria_label: 'Follow us on Youtube'|t,
-              icon: 'social-youtube',
-            } only
-          %}
-        {% endif %}
-
-      </div>
-    {% endif %}
+     <div class="o-footer__legal">
+      {{ 'Copyright'|t }} &copy; {{ year }} {{ 'All Rights Reserved.'|t }}
+    </div>
   </div>
-
 </footer>

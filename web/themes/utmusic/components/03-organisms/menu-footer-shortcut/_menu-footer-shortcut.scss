@@ -1,0 +1,39 @@
+.m-menu-footer-shortcut {
+  @include breakpoint($bp-tablet-small) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.m-menu-footer-shortcut__item {
+  display: inline-block;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-right: ru(0.25);
+    padding-right: ru(0.5);
+
+    &:after {
+      display: block;
+      position: absolute;
+      top: 4px;
+      right: 0;
+      bottom: 4px;
+      background: palette(blue, 300);
+      width: 1px;
+      content: '';
+    }
+  }
+}
+
+.m-menu-footer-shortcut__link {
+  @extend %a-type--small;
+
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+  }
+}

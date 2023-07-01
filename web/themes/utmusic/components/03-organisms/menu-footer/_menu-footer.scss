@@ -1,44 +1,15 @@
 .m-menu-footer {
+  @extend %a-type--xmedium;
 
-  @include breakpoint($bp-tablet-small) {
-    display: flex;
-    flex-wrap: wrap;
-  }
+  font-weight: 700;
 }
 
 .m-menu-footer__item {
-  display: block;
-  position: relative;
-
-  @include breakpoint($bp-tablet-small) {
-
-    &:not(:last-child) {
-      margin-right: ru(0.75);
-      padding-right: ru(0.75);
-
-      &:after {
-        display: block;
-        position: absolute;
-        top: 4px;
-        right: 0;
-        bottom: 4px;
-        background: palette(blue, 300);
-        width: 1px;
-        content: '';
-      }
-    }
+  &:not(:last-child) {
+    margin-bottom: ru(0.5);
   }
 }
 
 .m-menu-footer__link {
-  @extend %a-type--small;
-
-  color: palette(grey, 900);
-
-  &:hover,
-  &:focus,
-  &:active {
-    text-decoration: underline;
-    color: palette(white);
-  }
+  @extend %a-external-link;
 }

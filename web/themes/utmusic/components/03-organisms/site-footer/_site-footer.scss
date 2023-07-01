@@ -1,7 +1,30 @@
 .o-footer {
-  border-top: rem(1px) solid palette(white);
-  background-color: palette(black);
-  color: palette(white);
+  background-color: palette(blue, 900);
+  color: palette(blue, 300);
+
+  a,
+  p {
+    color: palette(blue, 300);
+
+    &.o-footer__top-donate__link {
+      @extend %a-button--base-core;
+      @extend %a-type--small;
+
+      padding: 2.5px 15px;
+      background-color: palette(white);
+      font-weight: 700;
+      color: palette(pink, 400);
+
+      &:hover,
+      &:focus,
+      &:active,
+      &.is-active {
+        background-color: palette(pink, 400);
+        color: palette(white);
+      }
+
+    }
+  }
 }
 
 .o-footer__top,
@@ -14,7 +37,7 @@
   @include breakpoint($bp-phone-large) {
     padding-right: $gutter;
     padding-left: $gutter;
-    max-width: $bp-banner-max;
+    max-width: $bp-max;
   }
 
   // Remove gutter when there's not any need as we're now at max-width + the width of the gutter.
@@ -26,26 +49,71 @@
   }
 }
 
+%o-footer_container_col {
+  &:not(:last-of-type){
+    margin-bottom: ru(1.25);
+  }
+
+  @include breakpoint($bp-tablet-small) {
+    flex: 1 1 0px;
+    width: 0;
+  }
+}
+
 // top container.
 .o-footer__top-container {
+  @extend %a-type--xsmall;
+
   display: flex;
   flex-direction: column;
   padding-top: rem(40px);
   padding-bottom: rem(40px);
-  align-items: center;
-  border-bottom: 1px solid palette(white);
+  align-items: flex-start;
+  border-bottom: 1px solid palette(grey, 850);
 
-  @include breakpoint($bp-full-nav) {
+  a {
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
+  h2 {
+    color: palette(blue, 300);
+  }
+
+  @include breakpoint($bp-tablet-small) {
     flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  @include breakpoint($bp-tablet) {
+    flex-wrap: nowrap;
     justify-content: space-between;
   }
 }
 
+.o-footer__top-menu,
+.o-footer__top-contact,
+.o-footer__top-donate,
+.o-footer__top-social {
+  @extend %o-footer_container_col;
+  @extend %u-remove-child--margin-top-bottom;
+}
+
 .o-footer__menu {
   margin-bottom: ru(1);
+}
 
-  @include breakpoint($bp-full-nav) {
-    margin-bottom: 0;
+.o-footer__top-social {
+  margin: 0 auto;
+
+  @include breakpoint($bp-tablet-small) {
+    margin: 0;
   }
 }
 
@@ -84,6 +152,8 @@
 
 // bottom container.
 .o-footer__bottom {
+  @extend %a-type--xsmall;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,10 +175,10 @@
 .o-footer__social {
   display: flex;
   flex-wrap: wrap;
-  gap: rem(37px);
+  gap: rem(6px);
   
   @include breakpoint($bp-tablet-small) {
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   .a-button--icon  {
@@ -122,12 +192,9 @@
     &:hover,
     &:focus,
     &:active {
-      color: palette(yellow, 600);
-      
       .a-button--icon__icon  {
-        border: 2px solid palette(white);
+        border: 1px solid palette(white);
         border-radius: 50%;
-        padding: 2px;
       }
     }
   }
@@ -145,6 +212,32 @@
   }
 }
 
+%o-footer__logo {
+  margin: ru(1) auto 0;
+
+  a {
+    padding: 0;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: none;
+    }
+  }
+}
+
+.o-footer__top-defy {
+  @extend %o-footer__logo;
+
+  max-width: ru(3.75);
+}
+
+.o-footer__top-uoft {
+  @extend %o-footer__logo;
+
+  max-width: ru(5.5);
+}
+
 .o-footer__content {
   @extend %u-remove-child--margin-top-bottom;
 
@@ -155,16 +248,8 @@
 
 .o-footer__legal {
   text-align: center;
-  order: 1;
-  font-size: rem(25px);
 
   @include breakpoint($bp-full-nav) {
     text-align: left;
-    font-size: rem(20px); 
-    order: 0;
-  }
-
-  @include breakpoint($bp-large) {
-    font-size: rem(25px);
   }
 }

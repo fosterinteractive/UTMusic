@@ -1,0 +1,19 @@
+attributes:
+  Attribute():
+    class: []
+items:
+- title: 'News'
+  url: '#'
+  attributes:
+    Attribute():
+      class: []
+- title: 'Events'
+  url: '#'
+  attributes:
+    Attribute():
+      class: []
+- title: 'About'
+  url: '#'
+  attributes:
+    Attribute():
+      class: []
