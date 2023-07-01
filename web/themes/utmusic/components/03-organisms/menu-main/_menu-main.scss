@@ -81,11 +81,6 @@
 }
 
 .m-menu-main__panel {
-  @include breakpoint($bp-full-nav calc($bp-max + 30px)) {
-    width: 100%;
-    padding-left: rem(9px);
-    padding-right: rem(9px);
-  }
 
   display: block;
   position: absolute;
@@ -99,6 +94,12 @@
   padding-bottom: ru(1.7);
   width: 100vw;
   transform: translateX(-50%);
+
+  @include breakpoint($bp-full-nav calc($bp-max + 30px)) {
+    width: 100%;
+    padding-left: rem(9px);
+    padding-right: rem(9px);
+  }
 
   &.is-open {
     visibility: visible;
@@ -124,35 +125,47 @@
   padding-top: ru(1.7);
 }
 
-.m-menu-main__cols--3 {
+%m-menu-main__cols {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   column-gap: var(--spacer);
 }
 
-.m-menu-main__col--1 {
-  grid-column-start: 1;
-  grid-column-end: 1;
+.m-menu-main__cols--1 {
+  @extend %m-menu-main__cols;
+
+  grid-template-columns: 1fr;
 }
 
-.m-menu-main__col--1-split {
-  grid-column-start: 1;
-  grid-column-end: 3;
+.m-menu-main__cols--2 {
+  @extend %m-menu-main__cols;
+
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.m-menu-main__col--2 {
-  grid-column-start: 2;
-  grid-column-end: 2;
+.m-menu-main__cols--3 {
+  @extend %m-menu-main__cols;
+
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.m-menu-main__col--2-split {
-  grid-column-start: 2;
-  grid-column-end: 4;
+.m-menu-main__cols--4 {
+  @extend %m-menu-main__cols;
+
+  grid-template-columns: repeat(4, 1fr);
 }
 
-.m-menu-main__col--3 {
-  grid-column-start: 3;
-  grid-column-end: 3;
+.m-menu-main__cols--5 {
+  @extend %m-menu-main__cols;
+
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.m-menu-main__col {
+  grid-column: auto;
+}
+
+.m-menu-main__col--split {
+  grid-column: auto / span 2;
 }
 
 // Common styles for L2 / L3 buttons

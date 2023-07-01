@@ -96,6 +96,7 @@ module:
   media_library: 0
   media_library_edit: 0
   media_library_media_modify: 0
+  mega_menu_builder: 0
   menu_block: 0
   menu_breadcrumb: 0
   menu_item_extras: 0
