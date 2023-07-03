@@ -1,0 +1,151 @@
+uuid: 0798566e-522f-4c89-b409-7ac01439dbfa
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.featured
+    - field.field.node.event.field_event_area
+    - field.field.node.event.field_event_body
+    - field.field.node.event.field_event_button_a11y
+    - field.field.node.event.field_event_button_label
+    - field.field.node.event.field_event_button_target
+    - field.field.node.event.field_event_button_url
+    - field.field.node.event.field_event_custom_location
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_image_crop
+    - field.field.node.event.field_event_location
+    - field.field.node.event.field_event_price
+    - field.field.node.event.field_event_promote
+    - field.field.node.event.field_event_summary
+    - field.field.node.event.field_event_summary_image
+    - field.field.node.event.field_event_title
+    - field.field.node.event.field_event_type
+    - field.field.node.event.field_page_admin_help_seo
+    - field.field.node.event.field_page_admin_help_social
+    - field.field.node.event.field_page_meta_description
+    - field.field.node.event.field_page_meta_image
+    - field.field.node.event.field_page_meta_title
+    - field.field.node.event.field_show_related_events
+    - node.type.event
+  module:
+    - datetime_range
+    - layout_builder
+    - options
+    - smart_trim
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.event.featured
+targetEntityType: node
+bundle: event
+mode: featured
+content:
+  field_event_area:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_event_custom_location:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_event_date:
+    type: daterange_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: html_datetime
+      separator: '-'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_event_location:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_event_price:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_event_summary:
+    type: smart_trim
+    label: hidden
+    settings:
+      trim_length: 153
+      trim_type: chars
+      trim_suffix: ...
+      wrap_output: false
+      wrap_class: trimmed
+      more:
+        display_link: false
+        target_blank: false
+        link_trim_only: false
+        class: more-link
+        text: More
+        aria_label: 'Read more about [node:title]'
+        token_browser: ''
+      summary_handler: full
+      trim_options:
+        text: false
+        trim_zero: false
+        replace_tokens: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_event_summary_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: news_image
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_event_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_event_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+hidden:
+  field_event_body: true
+  field_event_button_a11y: true
+  field_event_button_label: true
+  field_event_button_target: true
+  field_event_button_url: true
+  field_event_image: true
+  field_event_image_crop: true
+  field_event_promote: true
+  field_page_admin_help_seo: true
+  field_page_admin_help_social: true
+  field_page_meta_description: true
+  field_page_meta_image: true
+  field_page_meta_title: true
+  field_show_related_events: true
+  links: true
+  search_api_excerpt: true

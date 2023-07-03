@@ -1,0 +1,8 @@
+uuid: 01f09c38-748e-40fd-b954-b166a3a1c1fd
+langcode: en
+status: true
+dependencies: {  }
+name: 'Promoted on (Events)'
+vid: promoted_on_events
+description: ''
+weight: 0

@@ -1,0 +1,43 @@
+uuid: 3c9c0b14-f048-46b9-a9ef-b0aff1855f66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.event_featured_item.field_event_area
+    - field.field.paragraph.event_featured_item.field_event_feature_promote
+    - field.field.paragraph.event_featured_item.field_event_offset
+    - field.field.paragraph.event_featured_item.field_event_type
+    - paragraphs.paragraphs_type.event_featured_item
+id: paragraph.event_featured_item.default
+targetEntityType: paragraph
+bundle: event_featured_item
+mode: default
+content:
+  field_event_area:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_event_feature_promote:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_event_offset:
+    type: number
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_event_type:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

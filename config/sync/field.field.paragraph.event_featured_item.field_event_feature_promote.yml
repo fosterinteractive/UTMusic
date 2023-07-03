@@ -1,15 +1,15 @@
-uuid: 05e9415d-3c2a-4935-8d19-04c28ba6e3de
+uuid: b086210a-f6cf-438e-a3cf-dba8e5f4c0dd
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_event_promote
-    - node.type.event
+    - field.storage.paragraph.field_event_feature_promote
+    - paragraphs.paragraphs_type.event_featured_item
     - taxonomy.vocabulary.promoted_on_events
-id: node.event.field_event_promote
-field_name: field_event_promote
-entity_type: node
-bundle: event
+id: paragraph.event_featured_item.field_event_feature_promote
+field_name: field_event_feature_promote
+entity_type: paragraph
+bundle: event_featured_item
 label: 'Promote On'
 description: ''
 required: false
@@ -25,5 +25,5 @@ settings:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: ed_promote_content
+    auto_create_bundle: ''
 field_type: entity_reference

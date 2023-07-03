@@ -1,0 +1,25 @@
+uuid: 37577550-b385-4fe8-b101-e6c7b8fff44a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_event_offset
+    - paragraphs.paragraphs_type.event_featured_item
+id: paragraph.event_featured_item.field_event_offset
+field_name: field_event_offset
+entity_type: paragraph
+bundle: event_featured_item
+label: Offset
+description: 'Skip this number of items on the list'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

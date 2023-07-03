@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.button
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.cta
+    - paragraphs.paragraphs_type.event_featured_item
     - paragraphs.paragraphs_type.events_full_list_dynamic
     - paragraphs.paragraphs_type.events_summary_list_dynamic
     - paragraphs.paragraphs_type.featured_media
@@ -59,93 +60,97 @@ settings:
       news_featured_item: news_featured_item
       events_full_list_dynamic: events_full_list_dynamic
       events_summary_list_dynamic: events_summary_list_dynamic
+      event_featured_item: event_featured_item
     negate: 0
     target_bundles_drag_drop:
       accordion:
-        weight: -48
-        enabled: true
-      accordion_item:
-        weight: -31
-        enabled: false
-      button:
-        weight: -54
-        enabled: true
-      card:
         weight: -50
         enabled: true
-      carousel_header:
-        weight: -35
-        enabled: false
-      carousel_image_group:
-        weight: -34
-        enabled: false
-      cta:
-        weight: -51
-        enabled: true
-      events_full_list_dynamic:
-        weight: -42
-        enabled: true
-      events_summary_list_dynamic:
-        weight: -41
-        enabled: true
-      featured_media:
-        weight: -47
-        enabled: true
-      header:
-        weight: -36
-        enabled: false
-      image_section:
-        weight: -55
-        enabled: true
-      inline_menu:
-        weight: -39
-        enabled: false
-      message:
-        weight: -53
-        enabled: true
-      news_featured_item:
-        weight: -43
-        enabled: true
-      news_full_list_dynamic:
-        weight: -45
-        enabled: true
-      news_summary_list_dynamic:
-        weight: -44
-        enabled: true
-      poster:
-        weight: -38
-        enabled: false
-      quote:
-        weight: -52
-        enabled: true
-      section:
-        weight: -59
-        enabled: true
-      section_title:
-        weight: -58
-        enabled: true
-      sequence_item:
-        weight: -33
-        enabled: false
-      sequence_list:
-        weight: -49
-        enabled: true
-      sliding_menu:
-        weight: -46
-        enabled: true
-      sliding_menu_item:
+      accordion_item:
         weight: -32
         enabled: false
-      soundcloud:
-        weight: -40
-        enabled: false
-      text:
-        weight: -57
-        enabled: true
-      text_image:
+      button:
         weight: -56
         enabled: true
-      video:
+      card:
+        weight: -52
+        enabled: true
+      carousel_header:
+        weight: -36
+        enabled: false
+      carousel_image_group:
+        weight: -35
+        enabled: false
+      cta:
+        weight: -53
+        enabled: true
+      event_featured_item:
+        weight: -42
+        enabled: true
+      events_full_list_dynamic:
+        weight: -44
+        enabled: true
+      events_summary_list_dynamic:
+        weight: -43
+        enabled: true
+      featured_media:
+        weight: -49
+        enabled: true
+      header:
         weight: -37
+        enabled: false
+      image_section:
+        weight: -57
+        enabled: true
+      inline_menu:
+        weight: -40
+        enabled: false
+      message:
+        weight: -55
+        enabled: true
+      news_featured_item:
+        weight: -45
+        enabled: true
+      news_full_list_dynamic:
+        weight: -47
+        enabled: true
+      news_summary_list_dynamic:
+        weight: -46
+        enabled: true
+      poster:
+        weight: -39
+        enabled: false
+      quote:
+        weight: -54
+        enabled: true
+      section:
+        weight: -61
+        enabled: true
+      section_title:
+        weight: -60
+        enabled: true
+      sequence_item:
+        weight: -34
+        enabled: false
+      sequence_list:
+        weight: -51
+        enabled: true
+      sliding_menu:
+        weight: -48
+        enabled: true
+      sliding_menu_item:
+        weight: -33
+        enabled: false
+      soundcloud:
+        weight: -41
+        enabled: false
+      text:
+        weight: -59
+        enabled: true
+      text_image:
+        weight: -58
+        enabled: true
+      video:
+        weight: -38
         enabled: false
 field_type: entity_reference_revisions

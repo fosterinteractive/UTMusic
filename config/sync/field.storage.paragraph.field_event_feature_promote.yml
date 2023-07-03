@@ -1,0 +1,20 @@
+uuid: 763d66df-c87c-4bc8-9aa3-c3748b805e79
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_event_feature_promote
+field_name: field_event_feature_promote
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

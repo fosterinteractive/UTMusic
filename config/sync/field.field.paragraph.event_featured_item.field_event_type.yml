@@ -1,0 +1,29 @@
+uuid: d5292f89-f45b-424c-be39-0bc6485d4a25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_event_type
+    - paragraphs.paragraphs_type.event_featured_item
+    - taxonomy.vocabulary.event_type
+id: paragraph.event_featured_item.field_event_type
+field_name: field_event_type
+entity_type: paragraph
+bundle: event_featured_item
+label: 'Event Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      event_type: event_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
