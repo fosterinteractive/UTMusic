@@ -18,9 +18,8 @@ listing_items:
     time_start: 12:30pm
     location: 'Walter Hall, 80 Queen’s Park' 
     price: paid
-    categories: 
-      0:
-        category: Black Feminist Conversation
+    areas: 
+      - 'Black Feminist Conversation'
 
   2: 
     sb_demo: true

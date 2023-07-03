@@ -16,7 +16,7 @@ id: node.event.field_event_summary
 field_name: field_event_summary
 entity_type: node
 bundle: event
-label: Summary
+label: 'Summary Text'
 description: ''
 required: false
 translatable: false

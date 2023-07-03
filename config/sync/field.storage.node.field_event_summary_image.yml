@@ -1,19 +1,19 @@
-uuid: e9e31917-6bae-402c-996e-c5aa508828d6
+uuid: 696431fb-99a9-479f-95af-44a9308d5dfb
 langcode: en
 status: true
 dependencies:
   module:
+    - media
     - node
-    - taxonomy
-id: node.field_event_category
-field_name: field_event_category
+id: node.field_event_summary_image
+field_name: field_event_summary_image
 entity_type: node
 type: entity_reference
 settings:
-  target_type: taxonomy_term
+  target_type: media
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

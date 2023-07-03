@@ -22,7 +22,8 @@
 
 {% include "@organisms/listing/listing.twig" with {
     directory: 'themes/utmusic',
-    variation: '',
+    variation: 'events-condensed',
+    listing_col_layout: 'l-flex--2col',
     title: view.args[2] ? view.args[2] : '',
     listing_items: items,
     listing_button_url: false,

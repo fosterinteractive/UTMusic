@@ -65,32 +65,61 @@
  *
  * @see template_preprocess_node()
 #}
-{% set event_status = 'default' %}
-{% if is_past_event %}
-  {% set status_text = 'This event has already passed.'|t %}
-  {% set event_status = 'past' %}
-{% elseif node.id == current_id %}
-  {% set event_status = 'current' %}
-  {% set status_text = 'This is the event you are currently registering for.'|t %}
-{% else %}
-  {% set link_text = 'Learn more about '|t ~ content.field_event_title[0]['#text'] %}
+{# Set string of areas of specialization from array #}
+{% if content.field_event_area[0] %}
+  {% set areas = [] %}
+
+  {# Get number of items #}
+  {% if content.field_event_area['#items'].getIterator() %}
+    {% set item_count = content.field_event_area['#items'].getIterator()|length - 1 %}
+  {% endif %}
+
+  {# For each item add to areas array #}
+  {% for i in 0..item_count %}
+    {% set areas = areas|merge([content.field_event_area[i]['#plain_text']]) %}
+  {% endfor %}
 {% endif %}
+
+{# Check if event is free #}
+{% if content.field_event_price[0] %}
+  {% set price_key = content.field_event_price[0]['#markup'] %}
+  {% if price_key == 'Free' %}
+    {% set price = 'free' %}
+  {% endif %}
+{% endif %}
+
+{# Get check if custom location or listed #}
+{% if content.field_event_location[0] %}
+  {% set location_key = content.field_event_location[0]['#markup'] %}
+  {% if location_key == 'Custom' %}
+    {% set location = content.field_event_custom_location %}
+  {% else %}
+    {% set location = content.field_event_location[0]['#markup'] %}
+  {% endif %}
+{% endif %}
+
+{# Get Start Date and break it apart  #}
+{% if content.field_event_date[0] %}
+  {% set start_date = content.field_event_date[0]['start_date']['#text'] %}
+
+  {% set date_day = start_date|date('j') %}
+  {% set date_month = start_date|date('F') %}
+  {% set date_time = start_date|date('g:ia') %}
+{% endif %}
+
 
 {% include "@organisms/listing/listing-item--events.twig" with {
     directory: directory,
-    variation: 'events',
-    id: node.id,
-    title: content.field_event_title[0] ? content.field_event_title,
+    variation: 'events-condensed',
+    title: content.field_event_title[0] ? content.field_event_title[0]['#text'],
     url: url,
-    event_status: event_status,
-    status_text: status_text,
-    link_text: link_text,
-    link_type: 'text',
-    date: content.field_event_date[0] ? content.field_event_date,
-    start_time: start_time,
-    end_time: end_time,
-    timezone: 'EST',
-    location: content.field_event_location[0] ? content.field_event_location,
-    image: content.field_event_image[0] ? content.field_event_image,
+    id: 'listing-item-id-' ~ node.id(),
+    event_date: "",
+    event_date_month: date_month,
+    event_date_day: date_day,
+    time_start: date_time,
+    location: location,
+    price: price,
+    areas: areas
   } only
 %}

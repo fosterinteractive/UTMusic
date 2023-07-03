@@ -1,0 +1,23 @@
+uuid: 38f78e4e-2639-40e9-8c47-6f13f4535214
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_button_target
+    - node.type.event
+  module:
+    - options
+id: node.event.field_event_button_target
+field_name: field_event_button_target
+entity_type: node
+bundle: event
+label: Target
+description: 'By default links open in the current window.'
+required: true
+translatable: false
+default_value:
+  -
+    value: none
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,17 +1,17 @@
-uuid: 24ff64b9-7349-469f-87bd-3e27d5cd5767
+uuid: 94eaaa00-8a8d-41af-a0ad-78d907228d74
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_event_location
+    - field.storage.node.field_event_price
     - node.type.event
   module:
     - options
-id: node.event.field_event_location
-field_name: field_event_location
+id: node.event.field_event_price
+field_name: field_event_price
 entity_type: node
 bundle: event
-label: Location
+label: Price
 description: ''
 required: true
 translatable: false

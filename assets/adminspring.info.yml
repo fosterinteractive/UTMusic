@@ -121,8 +121,6 @@ libraries-extend:
     - claro/checkbox
   core/drupal.message:
     - claro/messages
-  core/drupal.progress:
-    - adminspring/progress
   core/drupal.tabbingmanager:
     - claro/claro.jquery.ui
   core/drupal.tabledrag:

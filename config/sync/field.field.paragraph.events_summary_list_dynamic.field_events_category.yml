@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.paragraph.field_events_category
     - paragraphs.paragraphs_type.events_summary_list_dynamic
-    - taxonomy.vocabulary.ed_event_category
 id: paragraph.events_summary_list_dynamic.field_events_category
 field_name: field_events_category
 entity_type: paragraph
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      ed_event_category: ed_event_category
+    target_bundles: {  }
     sort:
       field: name
       direction: asc

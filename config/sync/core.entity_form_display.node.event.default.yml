@@ -3,21 +3,29 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.event.field_event_area
     - field.field.node.event.field_event_body
-    - field.field.node.event.field_event_category
+    - field.field.node.event.field_event_button_a11y
+    - field.field.node.event.field_event_button_label
+    - field.field.node.event.field_event_button_target
+    - field.field.node.event.field_event_button_url
+    - field.field.node.event.field_event_custom_location
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_image
     - field.field.node.event.field_event_image_crop
-    - field.field.node.event.field_event_link
     - field.field.node.event.field_event_location
+    - field.field.node.event.field_event_price
     - field.field.node.event.field_event_promote
     - field.field.node.event.field_event_summary
+    - field.field.node.event.field_event_summary_image
     - field.field.node.event.field_event_title
+    - field.field.node.event.field_event_type
     - field.field.node.event.field_page_admin_help_seo
     - field.field.node.event.field_page_admin_help_social
     - field.field.node.event.field_page_meta_description
     - field.field.node.event.field_page_meta_image
     - field.field.node.event.field_page_meta_title
+    - field.field.node.event.field_show_related_events
     - node.type.event
   module:
     - allowed_formats
@@ -29,7 +37,6 @@ dependencies:
     - media_library
     - media_library_edit
     - path
-    - term_reference_tree
     - text
 third_party_settings:
   field_group:
@@ -69,6 +76,7 @@ third_party_settings:
     group_location:
       children:
         - field_event_location
+        - field_event_custom_location
       label: Location
       region: content
       parent_name: ''
@@ -83,11 +91,12 @@ third_party_settings:
         required_fields: true
     group_category:
       children:
-        - field_event_category
+        - field_event_type
+        - field_event_area
       label: Category
       region: content
       parent_name: ''
-      weight: 3
+      weight: 6
       format_type: details
       format_settings:
         classes: ''
@@ -99,22 +108,8 @@ third_party_settings:
     group_summary:
       children:
         - field_event_summary
+        - field_event_summary_image
       label: Summary
-      region: content
-      parent_name: ''
-      weight: 4
-      format_type: details
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        open: true
-        description: ''
-        required_fields: true
-    group_link:
-      children:
-        - field_event_link
-      label: Link
       region: content
       parent_name: ''
       weight: 5
@@ -126,13 +121,32 @@ third_party_settings:
         open: true
         description: ''
         required_fields: true
+    group_link:
+      children:
+        - field_event_button_url
+        - field_event_button_label
+        - field_event_button_a11y
+        - field_event_button_target
+      label: Link
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
     group_content:
       children:
         - field_event_body
+        - field_show_related_events
       label: Content
       region: content
       parent_name: ''
-      weight: 6
+      weight: 7
       format_type: details
       format_settings:
         classes: ''
@@ -151,7 +165,7 @@ third_party_settings:
       label: 'Search Engines & Social Share (Advanced)'
       region: content
       parent_name: ''
-      weight: 8
+      weight: 9
       format_type: details
       format_settings:
         classes: ''
@@ -196,7 +210,7 @@ third_party_settings:
       label: Promote
       region: content
       parent_name: ''
-      weight: 7
+      weight: 8
       format_type: details
       format_settings:
         classes: ''
@@ -212,7 +226,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_event_area:
+    type: options_select
+    weight: 40
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -227,16 +247,43 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
-  field_event_category:
-    type: term_reference_tree
-    weight: 17
+  field_event_button_a11y:
+    type: string_textfield
+    weight: 35
     region: content
     settings:
-      start_minimized: true
-      leaves_only: false
-      select_parents: true
-      cascading_selection: 3
-      max_depth: 0
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_event_button_label:
+    type: string_textfield
+    weight: 34
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_event_button_target:
+    type: options_select
+    weight: 36
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_event_button_url:
+    type: link_default
+    weight: 33
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_event_custom_location:
+    type: text_textarea
+    weight: 31
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
   field_event_date:
     type: daterange_all_day
@@ -257,25 +304,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_event_link:
-    type: link_default
-    weight: 20
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
   field_event_location:
-    type: text_textarea
+    type: options_select
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_event_price:
+    type: options_select
     weight: 3
     region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings:
-      allowed_formats:
-        hide_help: '1'
-        hide_guidelines: '1'
+    settings: {  }
+    third_party_settings: {  }
   field_event_promote:
     type: options_select
     weight: 24
@@ -293,6 +333,13 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+  field_event_summary_image:
+    type: media_library_widget
+    weight: 6
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   field_event_title:
     type: text_textfield
     weight: 18
@@ -304,6 +351,12 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+  field_event_type:
+    type: options_select
+    weight: 39
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_page_admin_help_seo:
     type: markup
     weight: 19
@@ -341,6 +394,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_show_related_events:
+    type: boolean_checkbox
+    weight: 20
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   moderation_state:
     type: string_textfield
     weight: 15
@@ -351,7 +411,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -368,13 +428,13 @@ content:
       allow_user_settings: true
     third_party_settings: {  }
   simple_sitemap:
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 14
+    weight: 15
     region: content
     settings:
       display_label: true
@@ -389,7 +449,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
@@ -398,7 +458,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }

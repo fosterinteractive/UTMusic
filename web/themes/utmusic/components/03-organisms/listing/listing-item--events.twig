@@ -49,12 +49,11 @@
     {% endif %}
 
     {# for condensed listing item  #}
-    {% if categories %}
+    {% if areas %} 
       <div class="m-listing-item{{ variation }}__category">
         {% if price == 'free' %} {{ 'Free:'|t }}{% endif %}
-        {% for category in categories %}
-          {{ category.category }}
-          {% if not loop.last %},{% endif %}
+        {% for area in areas %}
+          {{ area }}{% if not loop.last %},{% endif %}
         {% endfor %}
       </div>
     {% endif %}
@@ -63,6 +62,7 @@
       <div class="m-listing-item{{ variation }}__tags">
 
         {% include '@atoms/chip/chip.twig' with {
+            directory: directory,
             text: time_start,
             variation: 'icon-left',
             icon: 'time',
@@ -71,6 +71,7 @@
         %}
 
         {% include '@atoms/chip/chip.twig' with {
+            directory: directory,
             text: location,
             variation: 'icon-left',
             icon: 'location',

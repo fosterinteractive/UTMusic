@@ -1,16 +1,30 @@
-uuid: 95938e19-dbf9-4d96-872d-b90eccf0707e
+uuid: 4532bb75-d05f-45db-8a61-be3daf58c5f2
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - text
+    - options
 id: node.field_event_location
 field_name: field_event_location
 entity_type: node
-type: text_long
-settings: {  }
-module: text
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: location1
+      label: 'Walter Hall, 80 Queen’s Park'
+    -
+      value: location2
+      label: 'Trinity-St. Paul’s United Church'
+    -
+      value: location3
+      label: 'Geiger-Torel Room, 80 Queen’s Park'
+    -
+      value: custom
+      label: Custom
+  allowed_values_function: ''
+module: options
 locked: false
 cardinality: 1
 translatable: true

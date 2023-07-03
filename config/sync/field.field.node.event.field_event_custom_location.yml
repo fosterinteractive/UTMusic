@@ -1,9 +1,9 @@
-uuid: ece35150-c9ef-4807-bdcc-165ec7a6341c
+uuid: aaef1d80-7e24-492b-b71e-449fc6f74978
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_event_body
+    - field.storage.node.field_event_custom_location
     - node.type.event
   module:
     - allowed_formats
@@ -11,14 +11,14 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - rich_text
-id: node.event.field_event_body
-field_name: field_event_body
+      - simple_text
+id: node.event.field_event_custom_location
+field_name: field_event_custom_location
 entity_type: node
 bundle: event
-label: 'Main Content'
+label: 'Custom Location'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

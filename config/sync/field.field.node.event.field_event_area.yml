@@ -1,0 +1,29 @@
+uuid: 55884ffd-a585-47fb-8f7a-b3ae6aac1ab1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_area
+    - node.type.event
+    - taxonomy.vocabulary.area_of_specialization
+id: node.event.field_event_area
+field_name: field_event_area
+entity_type: node
+bundle: event
+label: 'Area of specialization'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      area_of_specialization: area_of_specialization
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,8 @@
+uuid: 9bc1cee3-535d-47a3-b4a8-b6622494fe72
+langcode: en
+status: true
+dependencies: {  }
+id: footer-shortcuts
+label: 'Footer Shortcuts'
+description: ''
+locked: false

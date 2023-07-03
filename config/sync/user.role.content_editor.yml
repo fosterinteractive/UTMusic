@@ -14,7 +14,6 @@ dependencies:
     - node.type.event
     - node.type.news
     - node.type.page
-    - taxonomy.vocabulary.ed_event_category
     - taxonomy.vocabulary.ed_news_category
     - taxonomy.vocabulary.ed_profile_type
     - taxonomy.vocabulary.ed_promote_content
@@ -46,7 +45,6 @@ permissions:
   - 'create event content'
   - 'create news content'
   - 'create page content'
-  - 'create terms in ed_event_category'
   - 'create terms in ed_news_category'
   - 'create terms in ed_profile_type'
   - 'create terms in ed_promote_content'
@@ -69,7 +67,6 @@ permissions:
   - 'delete own page content'
   - 'delete own video media'
   - 'delete page revisions'
-  - 'delete terms in ed_event_category'
   - 'delete terms in ed_news_category'
   - 'delete terms in ed_profile_type'
   - 'delete terms in ed_promote_content'
@@ -81,7 +78,6 @@ permissions:
   - 'edit any video media'
   - 'edit layout paragraphs plugin config'
   - 'edit own page content'
-  - 'edit terms in ed_event_category'
   - 'edit terms in ed_news_category'
   - 'edit terms in ed_profile_type'
   - 'edit terms in ed_promote_content'

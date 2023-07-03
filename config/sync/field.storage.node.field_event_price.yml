@@ -1,0 +1,27 @@
+uuid: af455d23-d167-4d92-b7e5-7c3cc9bc4ba9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_event_price
+field_name: field_event_price
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: paid
+      label: Paid
+    -
+      value: free
+      label: Free
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

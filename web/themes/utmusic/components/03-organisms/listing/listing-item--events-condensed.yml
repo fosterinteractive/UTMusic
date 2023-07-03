@@ -9,8 +9,6 @@ event_date_day: '31'
 time_start: 7:30pm
 location: 'Walter Hall, 80 Queen’s Park' 
 price: free
-categories: 
-  1:
-    category: Masters Performance
-  2:
-    category: 1 year
+areas: 
+  - 'Masters Performance'
+  - '1 year'
