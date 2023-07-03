@@ -392,7 +392,16 @@ function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_stat
         ':input[name="field_news_header_variation"]' => ['value' => 'video'],
       ],
     ];
-   
+  }
+
+  // The "events" add and edit forms.
+  if ($form_id == 'node_event_form' || $form_id == 'node_event_edit_form' ) {
+    // Show the "custom location" field
+    $form['field_event_custom_location']['#states'] = [
+      'visible' => [
+        ':input[name="field_event_location"]' => ['value' => 'custom'],
+      ]
+    ];
   }
 }
 

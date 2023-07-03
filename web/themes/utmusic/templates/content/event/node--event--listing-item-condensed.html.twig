@@ -92,7 +92,9 @@
 {% if content.field_event_location[0] %}
   {% set location_key = content.field_event_location[0]['#markup'] %}
   {% if location_key == 'Custom' %}
-    {% set location = content.field_event_custom_location %}
+    {% if content.field_event_custom_location[0] %}
+      {% set location = content.field_event_custom_location %}
+    {% endif %}
   {% else %}
     {% set location = content.field_event_location[0]['#markup'] %}
   {% endif %}

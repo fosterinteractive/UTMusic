@@ -61,23 +61,27 @@
     {% if time_start or location %}
       <div class="m-listing-item{{ variation }}__tags">
 
-        {% include '@atoms/chip/chip.twig' with {
-            directory: directory,
-            text: time_start,
-            variation: 'icon-left',
-            icon: 'time',
-            html_element: 'div',
-          } only 
-        %}
+        {% if time_start %}
+          {% include '@atoms/chip/chip.twig' with {
+              directory: directory,
+              text: time_start,
+              variation: 'icon-left',
+              icon: 'time',
+              html_element: 'div',
+            } only 
+          %}
+        {% endif %}
 
-        {% include '@atoms/chip/chip.twig' with {
-            directory: directory,
-            text: location,
-            variation: 'icon-left',
-            icon: 'location',
-            html_element: 'div',
-          } only 
-        %}
+        {% if location %}
+          {% include '@atoms/chip/chip.twig' with {
+              directory: directory,
+              text: location,
+              variation: 'icon-left',
+              icon: 'location',
+              html_element: 'div',
+            } only 
+          %}
+        {% endif %}
 
       </div>
     {% endif %}
