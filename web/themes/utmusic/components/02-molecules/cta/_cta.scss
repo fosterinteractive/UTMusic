@@ -61,8 +61,8 @@
 
   @include breakpoint($bp-tablet-small) {
     display: grid;
-    grid-column: auto auto;
-    grid-row: 1;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
     align-items: center;
   }
 }
