@@ -17,6 +17,14 @@ selection_criteria:
       node: node
     bundles:
       ed_person: ed_person
+  1bc4ec73-76eb-41c8-8d3c-0b94aca48d07:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 1bc4ec73-76eb-41c8-8d3c-0b94aca48d07
+    context_mapping:
+      node: node
+    bundles:
+      people: people
 selection_logic: and
 weight: -5
 relationships: {  }

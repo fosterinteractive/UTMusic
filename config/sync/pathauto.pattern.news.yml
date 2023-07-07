@@ -17,6 +17,14 @@ selection_criteria:
       node: node
     bundles:
       ed_news: ed_news
+  272e8468-1cfc-43ea-b13b-1fbb3623100b:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 272e8468-1cfc-43ea-b13b-1fbb3623100b
+    context_mapping:
+      node: node
+    bundles:
+      news: news
 selection_logic: and
 weight: -5
 relationships: {  }

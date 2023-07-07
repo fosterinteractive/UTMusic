@@ -8,7 +8,8 @@
   @extend %o-hero-media__bg-decoration;
 }
 
-.o-hero-media--event-text__title{
+.o-hero-media--event__title,
+.o-hero-media--event-text__title {
   @extend %o-hero-media__title;
 }
 

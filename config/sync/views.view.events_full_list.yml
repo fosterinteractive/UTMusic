@@ -654,6 +654,7 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+      empty: {  }
       sorts:
         similarterms:
           id: similarterms
@@ -840,6 +841,7 @@ display:
           relationship: none
           view_mode: listing_item
       defaults:
+        empty: false
         title: false
         pager: false
         exposed_form: false
@@ -852,6 +854,7 @@ display:
       display_description: ''
       display_extenders:
         ajax_history: {  }
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:

@@ -17,6 +17,14 @@ selection_criteria:
       node: node
     bundles:
       ed_event: ed_event
+  6adb2387-1975-459e-9004-ee812176d56e:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 6adb2387-1975-459e-9004-ee812176d56e
+    context_mapping:
+      node: node
+    bundles:
+      event: event
 selection_logic: and
 weight: -5
 relationships: {  }

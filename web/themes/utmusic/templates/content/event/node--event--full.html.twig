@@ -202,7 +202,9 @@
   {% if related_event_type == 'default' %}
     {% set related_display = 'default' %}
 
-    {% set related_events = content.related_event_footer %}
+    {% if content.related_event_footer['#rows'][0] %}
+      {% set related_events = content.related_event_footer %}
+    {% endif %}
   {% elseif related_event_type == 'manual' %}
     {% set related_display = 'manual' %}
 

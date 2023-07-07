@@ -19,6 +19,14 @@ selection_criteria:
       node: node
     bundles:
       ed_page: ed_page
+  62a57814-767c-4391-8a64-a5671b2addc9:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 62a57814-767c-4391-8a64-a5671b2addc9
+    context_mapping:
+      node: node
+    bundles:
+      page: page
 selection_logic: and
 weight: -10
 relationships: {  }
