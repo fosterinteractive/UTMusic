@@ -1,0 +1,23 @@
+uuid: 02ebb7c0-41aa-49ca-ad1f-6ef2154383b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_featured_media_pick
+    - node.type.event
+  module:
+    - options
+id: node.event.field_event_featured_media_pick
+field_name: field_event_featured_media_pick
+entity_type: node
+bundle: event
+label: 'Featured Media'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

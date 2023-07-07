@@ -1,0 +1,27 @@
+uuid: 30b730bc-ed4b-4687-9f11-e6182e716720
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_event_related_pick
+field_name: field_event_related_pick
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: default
+      label: 'Default(Dynamic Auto-generated List)'
+    -
+      value: manual
+      label: 'Manual List'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

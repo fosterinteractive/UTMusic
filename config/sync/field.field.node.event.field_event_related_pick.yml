@@ -1,21 +1,23 @@
-uuid: 5f8f384f-261b-421b-8e23-f03ede10ba44
+uuid: 40ac2d09-40b7-4bfb-a361-650436c06c0e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_event_image_crop
+    - field.storage.node.field_event_related_pick
     - node.type.event
   module:
     - options
-id: node.event.field_event_image_crop
-field_name: field_event_image_crop
+id: node.event.field_event_related_pick
+field_name: field_event_related_pick
 entity_type: node
 bundle: event
-label: 'Image Crop'
+label: 'Related Events'
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: default
 default_value_callback: ''
 settings: {  }
 field_type: list_string

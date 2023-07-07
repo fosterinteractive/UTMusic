@@ -12,11 +12,16 @@ dependencies:
     - field.field.node.event.field_event_button_url
     - field.field.node.event.field_event_custom_location
     - field.field.node.event.field_event_date
-    - field.field.node.event.field_event_image
-    - field.field.node.event.field_event_image_crop
+    - field.field.node.event.field_event_featured_media
+    - field.field.node.event.field_event_featured_media_pick
+    - field.field.node.event.field_event_header_image_landsca
+    - field.field.node.event.field_event_header_image_portra
+    - field.field.node.event.field_event_header_variation
     - field.field.node.event.field_event_location
     - field.field.node.event.field_event_price
     - field.field.node.event.field_event_promote
+    - field.field.node.event.field_event_related_events
+    - field.field.node.event.field_event_related_pick
     - field.field.node.event.field_event_summary
     - field.field.node.event.field_event_summary_image
     - field.field.node.event.field_event_title
@@ -54,11 +59,16 @@ hidden:
   field_event_button_url: true
   field_event_custom_location: true
   field_event_date: true
-  field_event_image: true
-  field_event_image_crop: true
+  field_event_featured_media: true
+  field_event_featured_media_pick: true
+  field_event_header_image_landsca: true
+  field_event_header_image_portra: true
+  field_event_header_variation: true
   field_event_location: true
   field_event_price: true
   field_event_promote: true
+  field_event_related_events: true
+  field_event_related_pick: true
   field_event_summary: true
   field_event_summary_image: true
   field_event_title: true

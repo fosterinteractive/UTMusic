@@ -25,3 +25,48 @@
 .l-section__zone-1.l-section__social-share {
   grid-column: col 2;
 }
+
+
+// Event Main
+.l-main--event__content-wrapper {
+  .l-section__zone-1 {
+    grid-row: 2;
+
+    @include breakpoint($bp-large) {
+      grid-row: 1; 
+    }
+  }
+}
+
+.l-main--event__social {
+  grid-column: 2 / 11;
+  padding-left: calc(var(--spacer) * 1);
+
+  @include breakpoint($bp-tablet) {
+    grid-column: 4 / 8;
+    padding-left: 0;
+    
+  }
+
+  @include breakpoint($bp-full-nav) {
+    margin-bottom: calc(var(--spacer) * -1.5);
+  }
+
+  @include breakpoint($bp-large) {
+    grid-column: 12;
+    margin-bottom: 0;
+    padding-top: calc(var(--spacer) * 2.5);
+  }
+}
+
+.l-main--event__media {
+  grid-column: 2 / 15;
+  padding-bottom: calc(var(--spacer) * 2);
+  padding-left: calc(var(--spacer) * 1);
+  overflow: hidden;
+
+  @include breakpoint($bp-tablet) {
+    grid-column: 4 / omega;
+    padding-left: 0;
+  }
+}

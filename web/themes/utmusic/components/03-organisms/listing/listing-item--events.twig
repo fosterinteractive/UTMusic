@@ -88,12 +88,14 @@
     
   </div>
 
-  {% if image %}
+  {% if image_landscape or image_portrait %}
     <div class="m-listing-item{{ variation }}__img">
-      {% include "@molecules/image/image.twig" with {
-          image: image,
-        } only
-      %}
+      {% if image_portrait and header_variation == "portrait" %}
+        {{ image_portrait }}
+      {% elseif image_landscape and header_variation == "landscape" %}
+        {{ image_landscape }}
+      {% endif %}
     </div>
   {% endif %}
+
 </div>

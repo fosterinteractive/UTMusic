@@ -1,0 +1,28 @@
+uuid: 4e11ebd4-0ac6-4c81-9bda-15947dc21024
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_related_events
+    - node.type.event
+id: node.event.field_event_related_events
+field_name: field_event_related_events
+entity_type: node
+bundle: event
+label: 'Related Events'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      event: event
+    sort:
+      field: field_event_title.value
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

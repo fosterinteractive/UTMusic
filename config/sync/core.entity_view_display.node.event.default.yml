@@ -11,11 +11,16 @@ dependencies:
     - field.field.node.event.field_event_button_url
     - field.field.node.event.field_event_custom_location
     - field.field.node.event.field_event_date
-    - field.field.node.event.field_event_image
-    - field.field.node.event.field_event_image_crop
+    - field.field.node.event.field_event_featured_media
+    - field.field.node.event.field_event_featured_media_pick
+    - field.field.node.event.field_event_header_image_landsca
+    - field.field.node.event.field_event_header_image_portra
+    - field.field.node.event.field_event_header_variation
     - field.field.node.event.field_event_location
     - field.field.node.event.field_event_price
     - field.field.node.event.field_event_promote
+    - field.field.node.event.field_event_related_events
+    - field.field.node.event.field_event_related_pick
     - field.field.node.event.field_event_summary
     - field.field.node.event.field_event_summary_image
     - field.field.node.event.field_event_title
@@ -105,21 +110,46 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_event_image:
+  field_event_featured_media:
     type: entity_reference_entity_view
-    label: hidden
+    label: above
     settings:
-      view_mode: news_image
+      view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 11
+    weight: 26
     region: content
-  field_event_image_crop:
-    type: list_key
-    label: hidden
+  field_event_featured_media_pick:
+    type: list_default
+    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 12
+    weight: 27
+    region: content
+  field_event_header_image_landsca:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 32
+    region: content
+  field_event_header_image_portra:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 33
+    region: content
+  field_event_header_variation:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 31
     region: content
   field_event_location:
     type: list_default
@@ -143,6 +173,21 @@ content:
     third_party_settings: {  }
     weight: 6
     region: content
+  field_event_related_events:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 29
+    region: content
+  field_event_related_pick:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 28
+    region: content
   field_event_summary:
     type: text_default
     label: hidden
@@ -157,7 +202,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 22
+    weight: 30
     region: content
   field_event_title:
     type: text_default

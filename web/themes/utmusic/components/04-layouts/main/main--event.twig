@@ -3,69 +3,124 @@
   {% block content_single_page %}
     <div class="l-main--event">
 
-      
+      {% if header_variation == 'text' %}
+        {% set variation = 'event-text' %}
+      {% else %}
+        {% set variation = 'event' %}
+      {% endif %}
 
-      {# Main content of the page - usually body field #}
-      {# <div class="l-section--[12] theme--white-bg l-section-spacing-top--small l-section-spacing-bottom--small">
-        <div class="l-section__zone-1 l-flex">    #}
-          {% include "@organisms/content-header-event/content-header-event.twig" with {
-              directory: directory,
-              hero_image: image,
-              title_prefix: series,
-              title: title,
-              sub_title: sub_title,
-              summary: "This is the summary",
-              icon: 'arrow-down',
-              date: date,
-              start_time: start_time,
-              end_time: end_time,
-              timezone: timezone,
-              event_type: event_type,
-              program_type: program_type,
-              address: address,
-              register_link_url_primary: reg_btn_url,
-              register_link_text_primary: reg_btn_text,
-              register_link_url_secondary: reg_sec_btn_url,
-              register_link_text_secondary: reg_sec_btn_text, 
-            } only
-          %}
-        {# </div>
-      </div> #}
+      {% include "@organisms/content-header-event/content-header-event.twig" with {
+          directory: directory,
+          variation: variation,
+          header_variation: header_variation,
+          image_landscape: image_landscape,
+          image_portrait: image_portrait,
+          title: title,
+          event_date: event_date,
+          event_time: event_time,
+          event_location: location,
+          event_price: event_price,
+          url: btn_url,
+          label: btn_label,
+          aria_label: btn_a11y,
+          target: btn_target,
+          event_types: event_types,
+          event_areas: event_areas,
+          breadcrumbs: breadcrumbs,
+
+        } only
+      %}
+
+      {% if messages is not empty or tabs is not empty %}
+        <div class="l-main__utility l-section--[12]">
+          <div class="l-section__zone-1">
+            {{ messages }}
+            {{ tabs }}
+          </div>
+        </div>
+
+      {% endif %}
 
       {% if content %}
-        <div class="l-section--[12] theme--white-bg l-section-spacing-top--small l-section-spacing-bottom--small">
+        <div class="l-main--event__content-wrapper l-section--[8] theme--white-bg l-section-spacing-top--small l-section-spacing-bottom--small">
           <div class="l-section__zone-1 l-flex">
-            <div class="l-main--event__overview">
-              <h2 class="a-heading__h2">{{'Event Overview'|t}}</h2>
+            <div class="l-main--event__content">
               {{ content }}
             </div>
           </div>
+          
+          {% if social_share %}
+            <div class="l-main--event__social">
+              {{ social_share }}
+            </div>
+          {% endif %}
+
         </div>
       {% endif %}
 
-      {% if series_overview %}
-        <div class="l-section--[12] l-section-spacing-top--small l-section-spacing-bottom--small">
-          <div class="l-section__zone-1 l-flex">   
-            <div class="l-main--event__series-overview">
-              <h2 class="a-heading__h2">{{'Series Overview'|t}}</h2>
-              {{ series_overview }}
-            </div>
+
+      {% if media_display == 'default' %}
+        {{ featured_media }}
+      {% elseif media_display == 'carousel' %}
+        <div class="l-section--[12] theme--white-bg">
+          <div class="l-main--event__media">
+            {% include "@organisms/listing/listing.twig" with {
+                directory: 'themes/utmusic',
+                variation: 'events-carousel',
+                listing_items: featured_media
+              } only
+            %}
+          </div>
+        </div>
+      {% elseif media_display == 'single' %}
+        <div class="l-section--[6] theme--white-bg l-section-spacing-bottom--small">
+          <div class="l-section__zone-1 l-flex">
+            {{featured_media}}
           </div>
         </div>
       {% endif %}
 
       {% if related_events %}
-      <div class="l-section--[12] theme--black-bg l-section-spacing-top--small l-section-spacing-bottom--small   ">
-        <div class="l-section__zone-1 l-flex">  
-          <div class="l-main--event__overview">
-            <h2 class="a-heading__h2">{{'Other Events in the Series'|t}}</h2>
-            {{ related_events }}
-          </div> 
+        <div class="l-section-bg l-section--[12] l-section--related-event theme--blue-light l-section-spacing-top--small l-section-spacing-bottom--small">
+          <div class="l-section-bg__bg-decoration">
+            {# it's a placeholder for background #}
+            <img alt="" aria-hidden="true" src="/themes/utmusic/images/blue-both-min.jpg" />
+          </div>
+                  
+          <div class="l-main--event-related l-section__zone-1">
+            <div class="l-main--event-related__title">
+              {% include "@atoms/text/headings/heading.twig" with {
+                  html_element: 'h2',
+                  appearance: 'h2',
+                  text: 'Related event'|t,
+                } only
+              %}
+            </div>
+             
+            {% if related_display == 'default' %}
+              <div class="l-main--event-related__items">
+                {{ related_events }}
+              </div>
+            {% elseif related_display == 'manual' %}
+              <div class="l-main--event-related__items">
+                {% include "@organisms/listing/listing.twig" with {
+                    directory: 'themes/utmusic',
+                    variation: 'events-condensed',
+                    listing_col_layout: 'l-flex--2col',
+                    title: view.args[2] ? view.args[2] : '',
+                    listing_items: related_events,
+                    listing_button_url: false,
+                    listing_button_text: false,
+                  } only
+                %}
+              </div>
+            {% endif %}
+            
+          </div>
         </div>
-      </div>
       {% endif %}
 
-      {% if see_more_link %}
+      {# {% if see_more_link %}
         <div class="l-section--[12] theme--white-bg l-section-spacing-top--small l-section-spacing-bottom--small">
           <div class="l-section__zone-1 l-flex">   
             <div class="l-main--event__cta">
@@ -80,7 +135,7 @@
             </div>
           </div>
         </div>
-      {% endif %}
+      {% endif %} #}
 
     </div>
   {% endblock content_single_page %}

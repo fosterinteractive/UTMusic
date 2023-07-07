@@ -78,7 +78,9 @@
     end_time: end_time,
     timezone: 'EST',
     location: content.field_event_location[0] ? content.field_event_location,
-    image: content.field_event_image[0] ? content.field_event_image,
+    header_variation: content.field_event_header_variation[0] ? content.field_event_header_variation[0]['#markup'],
+    image_landscape: content.field_event_header_image_landsca[0] ? content.field_event_header_image_landsca,
+    image_portrait: content.field_event_header_image_portra[0] ? content.field_event_header_image_portra,
     desc: content.field_event_summary[0] ? content.field_event_summary
   } only
 %}

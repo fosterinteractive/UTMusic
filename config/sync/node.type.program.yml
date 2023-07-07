@@ -1,0 +1,18 @@
+uuid: fc6a8c9d-18dc-4ec7-9e92-33861a34aa3f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Program
+type: program
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

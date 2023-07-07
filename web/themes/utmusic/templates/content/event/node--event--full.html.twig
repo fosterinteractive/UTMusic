@@ -65,72 +65,184 @@
  *
  * @see template_preprocess_node()
 #}
-{# get the registration buttons for a single event or a multi-event series. #}
-{% set single_registration_url = null %}
-{% set single_registration_text = null %}
-{% set multiple_registration_url = null %}
-{% set multiple_registration_text = null %}
-{# This event must have a sales force id for buttons to show. #}
-{% if not node.field_sales_force_id.isEmpty() %}
-  {# Set the single event registration url. #}
-  {# {% set single_registration_url = path('cnib_events.event_register_single_event', {'node': node.id}) %} #}
-  {% set single_registration_text = 'Register for event'|t %}
-  {# This event must also have a series for the multi-event button to show. #}
-  {% if not node.field_event_series.isEmpty() %}
-    {# {% set multiple_registration_url = path('cnib_events.event_register_multiple_event', {'node': node.id}) %} #}
-    {% set multiple_registration_text = 'Register for all available events in this series'|t %}
+{# Get breadcrumbs block #}
+{% set breadcrumbs = drupal_entity('block', 'menu_breadcrumbs') %}
 
-    {% set single_registration_text %}
-      {% trans %}Register for event {{ event_position_in_series }} of {{ total_events_in_series }}{% endtrans %}
-    {% endset %}
+{# Check "show related events" field #}
+{% if content.field_show_related_events[0] %}
+  {% set show_related = content.field_show_related_events[0]['#markup'] %}
 
-    {% set sub_title %}
-      {% trans %}This is the event {{ event_position_in_series }} of a {{ total_events_in_series }} part series.{% endtrans %}
-    {% endset %}
+  {% if show_related == 1 %}
+    {% if content.related_event_footer %}
+      {% set related_events = content.related_event_footer %}
+    {% endif %}
   {% endif %}
 {% endif %}
 
-{# ToDo Add series overview #}
-{# {% set series_overview = "" %} #}
-
-{% set related_events_block = drupal_view('events_related_by_series', 'events_series_related')|render %}
-{% if related_events_block|striptags|trim is not empty %}
-  {% set related_events = related_events_block %}
+{# Check if social share block is empty or not #}
+{% set social_share_block = drupal_entity('block', 'sociallite')|render %}
+{% if social_share_block|striptags|trim is not empty %}
+  {% set social_share = social_share_block %}
 {% endif %}
 
-{% if lang_code == 'fr' %}
-  {% set see_more_link = '/fr' ~ event_list_path %}
-{% else %}
-  {% set see_more_link = event_list_path %}
+{# Set string of type of specialization from array #}
+{% if content.field_event_type[0] %}
+  {% set type = [] %}
+
+  {# Get number of items #}
+  {% if content.field_event_type['#items'].getIterator() %}
+    {% set item_count = content.field_event_type['#items'].getIterator()|length - 1 %}
+  {% endif %}
+
+  {# For each item add to type array #}
+  {% for i in 0..item_count %}
+    {% set type = type|merge([content.field_event_type[i]['#plain_text']]) %}
+  {% endfor %}
 {% endif %}
 
-{% include "@layouts/main/main--event.twig" 
-  with {
-    directory: directory,
-    series: content.field_event_series[0] ? content.field_event_series[0]['#plain_text'],
-    image: content.field_event_image[0] ? content.field_event_image,
-    title: content.field_event_title[0] ? content.field_event_title,
-    sub_title: sub_title,
-    content: content.field_event_body[0] ? content.field_event_body,
-    event_type: content.field_event_type[0] ? content.field_event_type[0]['#markup'],
-    program_type: content.field_event_program_type[0] ? content.field_event_program_type[0]['#plain_text'],
-    date: content.field_event_date[0] ? content.field_event_date,
-    start_time: start_time,
-    end_time: end_time,
-    timezone: 'EST',
-    zoom_link_url: content.field_event_zoom_link[0] ? content.field_event_zoom_link[0]['#url'],
-    location: content.field_event_location[0] ? content.field_event_location,
-    address: content.field_event_address[0] ? content.field_event_address,
-    reg_btn_text: single_registration_text,
-    reg_btn_url: single_registration_url,
-    reg_sec_btn_text: multiple_registration_text,
-    reg_sec_btn_url: multiple_registration_url,
-    series_overview: series_overview,
-    related_events: related_events,
-    see_more_link: see_more_link,
-    total_events_in_series: total_events_in_series,
-    event_position_in_series: event_position_in_series,
+{# Set string of areas of specialization from array #}
+{% if content.field_event_area[0] %}
+  {% set areas = [] %}
+
+  {# Get number of items #}
+  {% if content.field_event_area['#items'].getIterator() %}
+    {% set item_count = content.field_event_area['#items'].getIterator()|length - 1 %}
+  {% endif %}
+
+  {# For each item add to areas array #}
+  {% for i in 0..item_count %}
+    {% set areas = areas|merge([content.field_event_area[i]['#plain_text']]) %}
+  {% endfor %}
+{% endif %}
+
+
+{# Get check if custom location or listed #}
+{% if content.field_event_location[0] %}
+  {% set location_key = content.field_event_location[0]['#markup'] %}
+  {% if location_key == 'Custom' %}
+    {% if content.field_event_custom_location[0] %}
+      {% set location = content.field_event_custom_location %}
+    {% endif %}
+  {% else %}
+    {% set location = content.field_event_location[0]['#markup'] %}
+  {% endif %}
+{% endif %}
+
+{# Get Start Date and break it apart  #}
+{% if content.field_event_date[0] %}
+  {% set start_date = content.field_event_date[0]['start_date']['#text'] %}
+
+  {% set event_date = start_date|date('D, M j Y') %}
+  {% set date_day = start_date|date('j') %}
+  {% set date_month = start_date|date('F') %}
+  {% set date_time = start_date|date('g:ia') %}
+
+  {% if content.field_event_date[0]['end_date'] %}
+    {% set end_date = content.field_event_date[0]['end_date']['#text'] %}
+
+    {% set event_end_date = end_date|date('D, M j Y') %}
+  {% endif %}
+
+  {% if event_date is defined and event_end_date is defined %}
+    {% set event_date_string = event_date ~ ' - ' ~ event_end_date %}
+  {% else %}
+    {% set event_date_string = event_date %}
+  {% endif %}
+{% endif %}
+
+{# Check field target #}
+{% if content.field_event_button_target[0] %}
+  {% set target_value = content.field_event_button_target[0]['#markup'] %}
+
+  {% if target_value == '_blank' %}
+    {% set target = target_value %}
+  {% endif %}
+{% endif %}
+
+
+{# Check if the feature media type exists #}
+{% if content.field_event_featured_media_pick[0] %}
+  {# Get value of feauture media type #}
+  {% set feature_media_list_type = content.field_event_featured_media_pick[0]['#markup'] %}
+
+  {# If "default" get dynamic auto-generated view of realted content #}
+  {% if feature_media_list_type == 'default' %}
+    {% set featured_media = drupal_view('media_related_to_content', 'media_related_event') %}
+    {% set media_display = 'default' %}
+
+  {# If "manual", check for amount of items #}
+  {% elseif feature_media_list_type == 'manual' %}
+    {% if content.field_event_featured_media[0] %}
+      {% set media_arr = [] %}
+      
+      {# Get the number of media items #}
+      {% set media_count = content.field_event_featured_media['#items'].getIterator()|length - 1 %}
+
+      {# if there is more than 1 item #}
+      {% if media_count > 1 %}
+        {% set media_display = 'carousel' %}
+        {# Create array with all items  #}
+        {% for i in 0..media_count %}
+          {% set media_arr = media_arr|merge([content.field_event_featured_media[i]]) %}
+        {% endfor %}
+      {% else %}
+        {# Get single media item #}
+        {% set media = content.field_event_featured_media[0] ? content.field_event_featured_media[0] %}
+        {% set media_display = 'single' %}
+      {% endif %}
+    {% endif %}
+
+    {% set featured_media = media_arr ? media_arr : media %}
+  {% endif %}
+{% endif %}
+
+{% if content.field_event_related_pick[0] %}
+  {% set related_event_type = content.field_event_related_pick[0]['#markup'] %}
+
+  {% if related_event_type == 'default' %}
+    {% set related_display = 'default' %}
+
+    {% set related_events = content.related_event_footer %}
+  {% elseif related_event_type == 'manual' %}
+    {% set related_display = 'manual' %}
+
+    {% set related_arr = [] %}
+
+    {# Get the number of media items #}
+    {% set related_count = content.field_event_related_events['#items'].getIterator()|length - 1 %}
+
+    {% for i in 0..related_count %}
+      {% set related_arr = related_arr|merge([content.field_event_related_events[i]]) %}
+    {% endfor %}
+
+    {% set related_events = related_arr %}
+  {% endif %}
+{% endif %}
+
+
+{% include "@layouts/main/main--event.twig" with {
+    social_share: social_share,
+    breadcrumbs: breadcrumbs,
     messages: drupal_entity('block', 'messages'),
     tabs: drupal_entity('block', 'tabs'),
+    header_variation: content.field_event_header_variation[0] ? content.field_event_header_variation[0]['#markup'],
+    title: content.field_event_title[0] ? content.field_event_title,
+    image_landscape: content.field_event_header_image_landsca[0] ? content.field_event_header_image_landsca,
+    image_portrait: content.field_event_header_image_portra[0] ? content.field_event_header_image_portra,
+    location: location,
+    event_date: event_date_string,
+    event_time: date_time,
+    event_types: type,
+    event_areas: areas,
+    event_price: content.field_event_price[0] ? content.field_event_price[0]['#markup'],
+    btn_url: content.field_event_button_url[0] ? content.field_event_button_url[0]['#url_title'],
+    btn_label: content.field_event_button_label[0] ? content.field_event_button_label[0]['#context']['value'],
+    btn_a11y: content.field_event_button_a11y[0] ? content.field_event_button_a11y[0]['#context']['value'],
+    btn_target: target,
+    content: content.field_event_body[0] ? content.field_event_body,
+    media_display: media_display,
+    featured_media: featured_media,
+    related_display: related_display, 
+    related_events: related_events
   }
 %}

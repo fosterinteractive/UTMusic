@@ -10,13 +10,8 @@ url: '/'
 label: 'Get tickets'
 aria_label: 'Get your best tickets'
 event_types: 
-  1:
-    type: Guest recital
+  - "Guest recital"
 breadcrumbs:
-  1:
-    url: "/"
-    text: "Concerts & Events"
-  2:
-    url: 
-    text: "Joseph Haydn’s ORFEO: The Soul of the Philosopher"
+  - "Concerts & Events"
+  - "Joseph Haydn’s ORFEO: The Soul of the Philosopher"
 

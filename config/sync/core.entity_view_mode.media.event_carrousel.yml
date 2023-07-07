@@ -1,0 +1,10 @@
+uuid: 141a0628-5e78-4600-ad9f-030ebd15519e
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.event_carrousel
+label: 'Event Carrousel'
+targetEntityType: media
+cache: true

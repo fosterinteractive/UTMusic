@@ -1,17 +1,18 @@
-uuid: c022be45-e3d8-477d-93e0-33ec566acf58
+uuid: a5ab3163-c00e-44be-b0a0-decf03c9ed2a
 langcode: en
 status: true
 dependencies:
   module:
     - media
+    - media_library_media_modify
     - node
-id: node.field_event_image
-field_name: field_event_image
+id: node.field_event_header_image_landsca
+field_name: field_event_header_image_landsca
 entity_type: node
-type: entity_reference
+type: entity_reference_entity_modify
 settings:
   target_type: media
-module: core
+module: media_library_media_modify
 locked: false
 cardinality: 1
 translatable: true

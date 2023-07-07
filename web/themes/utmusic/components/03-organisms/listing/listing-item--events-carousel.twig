@@ -28,14 +28,21 @@
         } only
       %}
 
-      <div class="m-listing-item{{ variation }}__event-date">
-        <div class="m-listing-item{{ variation }}__event-date-month">
-          {{ event_date_month }}
+      {% if event__date_month or event_date_day %}
+        <div class="m-listing-item{{ variation }}__event-date">
+          {% if event__date_month %}
+            <div class="m-listing-item{{ variation }}__event-date-month">
+              {{ event_date_month }}
+            </div>
+          {% endif %}
+
+          {% if event_date_day %}
+            <div class="m-listing-item{{ variation }}__event-date-day">
+              {{ event_date_day }}
+            </div>
+          {% endif %}
         </div>
-        <div class="m-listing-item{{ variation }}__event-date-day">
-          {{ event_date_day }}
-        </div>
-      </div>
+      {% endif %}
     </div>
   {% endif %}
 

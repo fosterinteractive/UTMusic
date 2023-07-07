@@ -17,6 +17,7 @@
   background-size: 100% 100%;
 }
 
+%o-hero-media__breadcrumbs,
 .o-hero-media__breadcrumbs {
   grid-row: 4;
   grid-column: col 1/ span 12;
@@ -28,6 +29,7 @@
 }
 
 // Core image.
+%o-here-media__image,
 .o-hero-media__image {
   position: relative;
   overflow: hidden;
@@ -68,6 +70,7 @@
   @extend %o-hero-media__title-prefix-core;
 }
 
+%o-hero-media__title,
 .o-hero-media__title {
   display: block;
   color: var(--c-heading-main-title);
@@ -125,5 +128,21 @@
 .o-hero-media-page__text-wrapper.o-hero-media--text__text-wrapper {
   @include breakpoint($bp-tablet) {
     grid-column: col 1 / span 12;
+  }
+}
+
+//Event Variation 
+.o-hero-media--event__tags-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.o-hero-media--event__tags {
+  &:not(:last-of-type) {
+    margin-right: ru(0.5);
+  }
+
+  .a-chip {
+    margin-bottom: 0;
   }
 }

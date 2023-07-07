@@ -1,0 +1,21 @@
+uuid: 3a5553fa-cce2-4533-88be-f2be7c7924fc
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - media_library_media_modify
+    - node
+id: node.field_event_header_image_portra
+field_name: field_event_header_image_portra
+entity_type: node
+type: entity_reference_entity_modify
+settings:
+  target_type: media
+module: media_library_media_modify
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

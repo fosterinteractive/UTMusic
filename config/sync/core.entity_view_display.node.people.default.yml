@@ -1,0 +1,29 @@
+uuid: 11764a5a-41b9-4898-bc31-d678342a919a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.people.body
+    - node.type.people
+  module:
+    - text
+    - user
+id: node.people.default
+targetEntityType: node
+bundle: people
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

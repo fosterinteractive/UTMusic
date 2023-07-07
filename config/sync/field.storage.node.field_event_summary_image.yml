@@ -1,17 +1,18 @@
-uuid: 696431fb-99a9-479f-95af-44a9308d5dfb
+uuid: 8366b3d6-21f2-4205-ac40-c6cb8706b51c
 langcode: en
 status: true
 dependencies:
   module:
     - media
+    - media_library_media_modify
     - node
 id: node.field_event_summary_image
 field_name: field_event_summary_image
 entity_type: node
-type: entity_reference
+type: entity_reference_entity_modify
 settings:
   target_type: media
-module: core
+module: media_library_media_modify
 locked: false
 cardinality: 1
 translatable: true

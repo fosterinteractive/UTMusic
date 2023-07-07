@@ -1,0 +1,23 @@
+uuid: 2a8d6106-0c5a-4482-bad8-64ec426f326f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_header_variation
+    - node.type.event
+  module:
+    - options
+id: node.event.field_event_header_variation
+field_name: field_event_header_variation
+entity_type: node
+bundle: event
+label: Variation
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: landscape
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -310,6 +310,18 @@ function utmusic_preprocess_node(array &$variables) {
 
   // If event CT.
   if ($node_type == 'event') {
+    if ($node_view_mode == 'full') {
+      // Get View, set number of items to display and filters.
+      $filtered_view = Views::getView('events_full_list');
+      $filtered_view->setDisplay('related_events_footer');
+      $filtered_view->setItemsPerPage(4);
+
+      // Render filtered view.
+      $render_view = $filtered_view->render();
+
+      // $variables['content']['related_news_footer'] = utmusic_return_rendered_view('news_full_list', 'related_news_footer', 4, [], NULL, NULL, NULL, NULL, NULL, NULL);
+      $variables['content']['related_event_footer'] = $render_view;
+    }
     // Check if date field exists.
     // Get Node 
     // $node = $variables['node'];     

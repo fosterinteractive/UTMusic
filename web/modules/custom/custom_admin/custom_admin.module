@@ -396,13 +396,56 @@ function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_stat
 
   // The "events" add and edit forms.
   if ($form_id == 'node_event_form' || $form_id == 'node_event_edit_form' ) {
+    // Show the "landscape" field
+    $form['field_event_header_image_landsca']['#states'] = [
+      'visible' => [
+        ':input[name="field_event_header_variation"]' => ['value' => 'landscape'],
+      ]
+    ];
+
+    // Show the "portrait" image field
+    $form['field_event_header_image_portra']['#states'] = [
+      'visible' => [
+        ':input[name="field_event_header_variation"]' => ['value' => 'portrait'],
+      ]
+    ];
+
     // Show the "custom location" field
     $form['field_event_custom_location']['#states'] = [
       'visible' => [
         ':input[name="field_event_location"]' => ['value' => 'custom'],
       ]
     ];
+
+    // Show "Feature Media" field for manual pick
+    $form['field_event_featured_media']['#states'] = [
+      'visible' => [
+        ':input[name="field_event_featured_media_pick"]' => ['value' => 'manual'],
+      ]
+    ];
+
+    // Show "Related Events" field for manual pick
+    $form['field_event_related_events']['#states'] = [
+      'visible' => [
+        ':input[name="field_event_related_pick"]' => ['value' => 'manual'],
+      ]
+    ];
+
+
   }
+}
+
+/**
+* Implements hook_field_group_form_process().
+*/
+function custom_admin_field_group_form_process(array &$element, &$group, &$complete_form) {
+  $form = $complete_form;
+
+  $form['group_link']['#states'] = [
+    'visible' => [[
+      ':input[name="field_event_price"]' => ['value' => 'paid']
+    ]]
+  ];
 }
 
 

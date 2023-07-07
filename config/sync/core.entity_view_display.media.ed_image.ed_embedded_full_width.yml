@@ -7,6 +7,9 @@ dependencies:
     - field.field.media.ed_image.field_ed_image_height
     - field.field.media.ed_image.field_ed_image_image
     - field.field.media.ed_image.field_ed_image_width
+    - field.field.media.ed_image.field_img_related_event
+    - field.field.media.ed_image.field_img_related_people
+    - field.field.media.ed_image.field_img_related_program
     - media.type.ed_image
   module:
     - svg_image
@@ -36,6 +39,9 @@ hidden:
   created: true
   field_ed_image_height: true
   field_ed_image_width: true
+  field_img_related_event: true
+  field_img_related_people: true
+  field_img_related_program: true
   name: true
   search_api_excerpt: true
   thumbnail: true

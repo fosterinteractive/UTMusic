@@ -1,4 +1,4 @@
-uuid: 743727c7-05f4-403e-aefa-1a21c9ab68da
+uuid: eb11d78b-ef73-49a2-ab03-67752f69dc40
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - field.storage.node.field_event_summary_image
     - media.type.ed_image
     - node.type.event
+  module:
+    - media_library_media_modify
 id: node.event.field_event_summary_image
 field_name: field_event_summary_image
 entity_type: node
@@ -26,4 +28,4 @@ settings:
       direction: ASC
     auto_create: false
     auto_create_bundle: ''
-field_type: entity_reference
+field_type: entity_reference_entity_modify

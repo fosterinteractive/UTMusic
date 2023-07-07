@@ -1,0 +1,31 @@
+uuid: 04bf3535-8ae5-4090-a5b7-04775a24dd56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_featured_media
+    - media.type.ed_image
+    - node.type.event
+  module:
+    - media_library_media_modify
+id: node.event.field_event_featured_media
+field_name: field_event_featured_media
+entity_type: node
+bundle: event
+label: 'Featured Media'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      ed_image: ed_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_entity_modify

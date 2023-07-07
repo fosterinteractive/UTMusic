@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+
+
+{% set items = [] %}
+{% for row in rows %}
+  {% set items = items|merge([row.content]) %}
+{% endfor %}
+
+{% if items|length > 1 %}
+  <div class="l-section--[12] theme--white-bg">
+    <div class="l-main--event__media">
+      {% include "@organisms/listing/listing.twig" with {
+          directory: 'themes/utmusic',
+          variation: 'events-carousel',
+          listing_items: items
+        } only
+      %}
+    </div>
+  </div>
+{% else %}
+  <div class="l-section--[6] theme--white-bg l-section-spacing-bottom--small">
+    <div class="l-section__zone-1 l-flex">
+      {{items}}
+    </div>
+  </div>
+{% endif %}
+

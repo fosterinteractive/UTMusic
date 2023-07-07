@@ -6,10 +6,33 @@ dependencies:
     - field.field.media.ed_image.field_ed_image_height
     - field.field.media.ed_image.field_ed_image_image
     - field.field.media.ed_image.field_ed_image_width
+    - field.field.media.ed_image.field_img_related_event
+    - field.field.media.ed_image.field_img_related_people
+    - field.field.media.ed_image.field_img_related_program
     - image.style.large
     - media.type.ed_image
   module:
+    - field_group
     - focal_point
+third_party_settings:
+  field_group:
+    group_related_content:
+      children:
+        - field_img_related_event
+        - field_img_related_people
+        - field_img_related_program
+      label: 'Related Content'
+      region: content
+      parent_name: ''
+      weight: 5
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
 _core:
   default_config_hash: zEhdY05QJj_PfdQgQ98By6Slvnm8RTco7VAQwLXE1JA
 id: media.ed_image.default
@@ -26,6 +49,24 @@ content:
       preview_image_style: large
       preview_link: true
       offsets: '50,50'
+    third_party_settings: {  }
+  field_img_related_event:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_img_related_people:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_img_related_program:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
     third_party_settings: {  }
   name:
     type: string_textfield

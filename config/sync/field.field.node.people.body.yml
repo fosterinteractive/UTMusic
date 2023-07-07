@@ -1,0 +1,23 @@
+uuid: fdb7e035-847f-48e6-bae4-206b41d4f58c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.people
+  module:
+    - text
+id: node.people.body
+field_name: body
+entity_type: node
+bundle: people
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,26 +1,26 @@
-uuid: 69237122-15a3-4b58-a4e7-62c1bf073f48
+uuid: bd85f036-0ff8-458c-9dbe-fa69cf7ff380
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_event_image
+    - field.storage.media.field_img_related_program
     - media.type.ed_image
-    - node.type.event
-id: node.event.field_event_image
-field_name: field_event_image
-entity_type: node
-bundle: event
-label: Image
+    - node.type.program
+id: media.ed_image.field_img_related_program
+field_name: field_img_related_program
+entity_type: media
+bundle: ed_image
+label: Program
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
+  handler: 'default:node'
   handler_settings:
     target_bundles:
-      ed_image: ed_image
+      program: program
     sort:
       field: _none
       direction: ASC
