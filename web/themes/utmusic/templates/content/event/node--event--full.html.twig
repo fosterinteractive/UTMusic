@@ -178,18 +178,12 @@
       {# Get the number of media items #}
       {% set media_count = content.field_event_featured_media['#items'].getIterator()|length - 1 %}
 
-      {# if there is more than 1 item #}
-      {% if media_count > 1 %}
-        {% set media_display = 'carousel' %}
-        {# Create array with all items  #}
-        {% for i in 0..media_count %}
-          {% set media_arr = media_arr|merge([content.field_event_featured_media[i]]) %}
-        {% endfor %}
-      {% else %}
-        {# Get single media item #}
-        {% set media = content.field_event_featured_media[0] ? content.field_event_featured_media[0] %}
-        {% set media_display = 'single' %}
-      {% endif %}
+      {% set media_display = 'carousel' %}
+      {# Create array with all items  #}
+      {% for i in 0..media_count %}
+        {% set media_arr = media_arr|merge([content.field_event_featured_media[i]]) %}
+      {% endfor %}
+   
     {% endif %}
 
     {% set featured_media = media_arr ? media_arr : media %}
@@ -221,8 +215,8 @@
   {% endif %}
 {% endif %}
 
-
 {% include "@layouts/main/main--event.twig" with {
+    directory: 'themes/utmusic',
     social_share: social_share,
     breadcrumbs: breadcrumbs,
     messages: drupal_entity('block', 'messages'),
@@ -245,6 +239,10 @@
     media_display: media_display,
     featured_media: featured_media,
     related_display: related_display, 
-    related_events: related_events
+    related_events: related_events,
+    number_items: media_count,
   }
 %}
+
+
+{{ attach_library('utmusic/carousel-events') }}

@@ -114,7 +114,7 @@ content:
     type: entity_reference_entity_view
     label: above
     settings:
-      view_mode: default
+      view_mode: news_image_landscape
       link: false
     third_party_settings: {  }
     weight: 26

@@ -62,20 +62,15 @@
       {% if media_display == 'default' %}
         {{ featured_media }}
       {% elseif media_display == 'carousel' %}
-        <div class="l-section--[12] theme--white-bg">
-          <div class="l-main--event__media">
+        <div class="l-section--[8] theme--white-bg">
+          <div class="l-main--event__media l-section__zone-1">
             {% include "@organisms/listing/listing.twig" with {
-                directory: 'themes/utmusic',
+                directory: directory,
                 variation: 'events-carousel',
-                listing_items: featured_media
+                listing_items: featured_media,
+                number_items: number_items,
               } only
             %}
-          </div>
-        </div>
-      {% elseif media_display == 'single' %}
-        <div class="l-section--[6] theme--white-bg l-section-spacing-bottom--small">
-          <div class="l-section__zone-1 l-flex">
-            {{featured_media}}
           </div>
         </div>
       {% endif %}
