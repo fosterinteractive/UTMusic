@@ -20,14 +20,10 @@
   {% set items = items|merge([row.content]) %}
 {% endfor %}
 
-{% set view_all_link_url = path('view.events_full_list.events_full_list_past') %}
-
 {% include "@organisms/listing/listing.twig" with {
     directory: 'themes/utmusic',
     variation: '',
-    title: view.args[2] ? view.args[2],
+    title: view.args[4] ? view.args[4],
     listing_items: items,
-    listing_button_url: view_all_link_url,
-    listing_button_text: view_all_link_title ? view_all_link_title : 'See All Past Events'|t,
   } only
 %}

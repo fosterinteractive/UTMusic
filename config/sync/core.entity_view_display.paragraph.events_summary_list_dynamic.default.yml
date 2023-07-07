@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.events_summary_list_dynamic.field_event_context_area
     - field.field.paragraph.events_summary_list_dynamic.field_events_category
     - field.field.paragraph.events_summary_list_dynamic.field_events_number_of_items
     - field.field.paragraph.events_summary_list_dynamic.field_events_offset
@@ -19,6 +20,13 @@ targetEntityType: paragraph
 bundle: events_summary_list_dynamic
 mode: default
 content:
+  field_event_context_area:
+    type: entity_reference_entity_id
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
   field_events_category:
     type: entity_reference_entity_id
     label: hidden
@@ -52,10 +60,9 @@ content:
     weight: 3
     region: content
   field_events_promote:
-    type: entity_reference_label
+    type: entity_reference_entity_id
     label: hidden
-    settings:
-      link: false
+    settings: {  }
     third_party_settings: {  }
     weight: 4
     region: content

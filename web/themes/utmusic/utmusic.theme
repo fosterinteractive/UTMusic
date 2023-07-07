@@ -193,11 +193,15 @@ function utmusic_preprocess_paragraph(array &$variables) {
       ],
       'event' => [
         'title' => 'field_events_title',
-        'contextual' => 'field_events_category',
+        'contextual' => [
+          'promote' => 'field_events_promote',
+          'category1' => 'field_events_category',
+          'category2' => 'field_events_promote'
+        ],
         'number_items' => 'field_events_number_of_items',
         'number_other_items' => 'field_events_other_number_items',
-        'promote' => 'field_events_promote',
         'offset' => 'field_events_offset',
+        'status' => 'field_events_status',
       ],
       'event_featured' => [
         'title' =>  null,
@@ -285,11 +289,16 @@ function utmusic_preprocess_paragraph(array &$variables) {
         $variables['content']['news_featured_item'] = utmusic_return_rendered_view('news_full_list', 'news_featured_item', null , $categories,  $dynamic_title, $offset);
       }
       elseif ($paragraph_type == 'events_summary_list_dynamic') {
-        // $variables['content']['events_summary_list_past'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_upcoming', $number_items, $categories, $promote, $dynamic_title, $offset);
-        // $variables['content']['events_summary_list_upcoming'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_upcoming', $number_items, $categories, $promote, $dynamic_title, $offset);
+        $status = $paragraph->hasField($field_mapping[$type]['status']) && !$paragraph->{$field_mapping[$type]['status']}->isEmpty() ? $paragraph->{$field_mapping[$type]['status']}->value : NULL;
+
+        if ($status == 'upcoming') {
+          $variables['content']['events_summary_list_upcoming'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_upcoming', $number_items, $categories, $dynamic_title, $offset);
+        } else {
+          $variables['content']['events_summary_list_past'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_past', $number_items, $categories,  $dynamic_title, $offset);
+        }
       }
       elseif ($paragraph_type == 'event_featured_item') {
-        $variables['content']['event_featured_item'] = utmusic_return_rendered_view('events_full_list', 'events_featured_item', null , $categories,  $dynamic_title, $offset);
+        $variables['content']['event_featured_item'] = utmusic_return_rendered_view('events_full_list', 'events_featured_item', null , $categories, $dynamic_title, $offset);
       }
     }
   }

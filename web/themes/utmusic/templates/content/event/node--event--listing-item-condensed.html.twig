@@ -102,7 +102,11 @@
 
 {# Get Start Date and break it apart  #}
 {% if content.field_event_date[0] %}
-  {% set start_date = content.field_event_date[0]['start_date']['#text'] %}
+  {% if content.field_event_date[0]['start_date'] %}
+    {% set start_date = content.field_event_date[0]['start_date']['#text'] %}
+  {% else %}
+    {% set start_date = content.field_event_date[0]['#text'] %}
+  {% endif %}
 
   {% set date_day = start_date|date('j') %}
   {% set date_month = start_date|date('F') %}

@@ -285,6 +285,18 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
     }
   }
 
+  if($bundle == 'events_summary_list_dynamic') {
+    if ($field_name == 'field_events_other_number_items') {
+      $element['value']['#states'] = [
+        'visible' => [
+          ':input[name="field_events_number_of_items"]' => [
+            'value' => 'other',
+          ],
+        ],
+      ];
+    }
+  }
+
   if ($bundle == 'carousel_header') {
     if ($field_name == 'field_carousel_header_sec_title') {
       $element['#states'] = [

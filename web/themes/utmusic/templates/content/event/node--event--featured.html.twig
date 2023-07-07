@@ -103,13 +103,19 @@
 
 {# Get Start Date and break it apart  #}
 {% if content.field_event_date[0] %}
-  {% set start_date = content.field_event_date[0]['start_date']['#text'] %}
+  {% if content.field_event_date[0]['start_date'] %}
+    {% set start_date = content.field_event_date[0]['start_date']['#text'] %}
+  {% else %}
+    {% set start_date = content.field_event_date[0]['#text'] %}
+  {% endif %}
 
   {% set event_date = start_date|date('D, M j Y') %}
   {% set date_day = start_date|date('j') %}
   {% set date_month = start_date|date('F') %}
   {% set date_time = start_date|date('g:ia') %}
 {% endif %}
+
+{% set aria_label = 'Learn more about ' ~ content.field_event_title[0]['#text'] %}
 
 {% include "@organisms/listing/listing-item--events-featured.twig" with {
     directory: directory,
@@ -124,6 +130,7 @@
     id: 'listing-item-event' ~ node.id(),
     url: url,
     label: 'Learn more',
+    aria_label: aria_label,
     time_start: date_time,
     location: location,
   } only

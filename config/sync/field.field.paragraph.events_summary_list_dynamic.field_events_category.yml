@@ -5,11 +5,12 @@ dependencies:
   config:
     - field.storage.paragraph.field_events_category
     - paragraphs.paragraphs_type.events_summary_list_dynamic
+    - taxonomy.vocabulary.event_type
 id: paragraph.events_summary_list_dynamic.field_events_category
 field_name: field_events_category
 entity_type: paragraph
 bundle: events_summary_list_dynamic
-label: Category
+label: Type
 description: ''
 required: false
 translatable: false
@@ -18,7 +19,8 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles: {  }
+    target_bundles:
+      event_type: event_type
     sort:
       field: name
       direction: asc

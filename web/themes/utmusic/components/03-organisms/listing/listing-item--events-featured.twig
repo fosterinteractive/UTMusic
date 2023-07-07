@@ -12,11 +12,11 @@
 
 {% endif %}
 
-{# {% if sb_demo %}
+{% if sb_demo %}
   {% set directory = directory %}
 {% else %}
   {% set directory =  'themes/utmusic' %}
-{% endif %} #}
+{% endif %}
 
 {% set icon = icon|default('featured_article') %}
 
@@ -85,9 +85,9 @@
     </div>
 
     {% if summary %}
-    <div class="m-listing-item{{ variation }}__summary">
-      {{ summary }}
-    </div>
+      <div class="m-listing-item{{ variation }}__summary">
+        {{ summary }}
+      </div>
     {% endif %}
         
     {% if url and label %}
@@ -99,9 +99,9 @@
             variation: '',
             url: url,
             label: label,
-            id: 'news-featured-item-'|t ~ id,
+            id: 'event-featured-item-' ~ id,
             target: '',
-            aria_label: title,
+            aria_label: aria_label,
             alignment: 'left'
           } only
         %}

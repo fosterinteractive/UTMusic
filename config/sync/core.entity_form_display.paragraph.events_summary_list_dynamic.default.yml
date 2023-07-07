@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.events_summary_list_dynamic.field_event_context_area
     - field.field.paragraph.events_summary_list_dynamic.field_events_category
     - field.field.paragraph.events_summary_list_dynamic.field_events_number_of_items
     - field.field.paragraph.events_summary_list_dynamic.field_events_offset
@@ -20,9 +21,9 @@ targetEntityType: paragraph
 bundle: events_summary_list_dynamic
 mode: default
 content:
-  field_events_category:
+  field_event_context_area:
     type: term_reference_tree
-    weight: 2
+    weight: 6
     region: content
     settings:
       start_minimized: true
@@ -31,35 +32,41 @@ content:
       cascading_selection: 0
       max_depth: 0
     third_party_settings: {  }
+  field_events_category:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_events_number_of_items:
     type: options_select
-    weight: 3
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   field_events_offset:
     type: number
-    weight: 5
+    weight: 3
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_events_other_number_items:
     type: number
-    weight: 4
+    weight: 2
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_events_promote:
     type: options_select
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   field_events_status:
     type: options_select
-    weight: 1
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }

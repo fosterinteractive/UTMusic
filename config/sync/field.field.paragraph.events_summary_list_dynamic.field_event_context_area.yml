@@ -1,16 +1,16 @@
-uuid: 325d4fba-f96c-4c0f-a453-d61ca753837c
+uuid: fd0c9f57-2644-46d9-b6b7-fc6153ae7052
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_events_promote
+    - field.storage.paragraph.field_event_context_area
     - paragraphs.paragraphs_type.events_summary_list_dynamic
-    - taxonomy.vocabulary.promoted_on_events
-id: paragraph.events_summary_list_dynamic.field_events_promote
-field_name: field_events_promote
+    - taxonomy.vocabulary.area_of_specialization
+id: paragraph.events_summary_list_dynamic.field_event_context_area
+field_name: field_event_context_area
 entity_type: paragraph
 bundle: events_summary_list_dynamic
-label: Promote
+label: 'Area of specialization'
 description: ''
 required: false
 translatable: false
@@ -20,10 +20,10 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      promoted_on_events: promoted_on_events
+      area_of_specialization: area_of_specialization
     sort:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: ed_promote_content
+    auto_create_bundle: ''
 field_type: entity_reference
