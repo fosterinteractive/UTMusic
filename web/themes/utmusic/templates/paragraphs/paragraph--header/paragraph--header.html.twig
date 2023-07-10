@@ -37,9 +37,12 @@
  */
 #}
 
+{# Get breadcrumbs block #}
+{% set breadcrumbs = drupal_entity('block', 'menu_breadcrumbs') %}
+
 {% include "@organisms/content-header/content-header.twig" with {
     directory: 'themes/utmusic',
-
+    breadcrumbs: breadcrumbs,
     variation: content.field_header_style[0] ? content.field_header_style[0]['#markup'],
 
     title_prefix: content.field_header_title_prefix[0] ? content.field_header_title_prefix[0]['#text'],
