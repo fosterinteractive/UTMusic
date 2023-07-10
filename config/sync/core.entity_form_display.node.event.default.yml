@@ -310,7 +310,7 @@ content:
     region: content
     settings:
       media_types: {  }
-      form_mode: default
+      form_mode: crop_widget_mode
       check_selected: true
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: false

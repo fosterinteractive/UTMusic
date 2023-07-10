@@ -159,7 +159,7 @@
 
   --c-events-carousel-bg: #{palette(teal, 300)};
   --c-events-carousel-date: #{palette(teal, 1000)};
-  --c-events-carousel-border: #{palette(teal, 300)};
+  --c-events-carousel-border: #{palette(grey, 800)};
   --c-events-carousel-title: #{palette(teal, 300)};
 
   --c-people-title: #{palette(blue, 300)};
@@ -243,5 +243,6 @@
 
   //@organisms/listing & listing-item
   --c-events-carousel-title: #{palette(white)};
+  --c-events-carousel-border: #{palette(teal, 300)};
 }
 
