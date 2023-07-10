@@ -4,8 +4,13 @@
 // Add bottom spacing to the last item or button in the layout
 %o-listing,
 .o-listing {
-  margin-top: list.slash(var(--spacer), 2);
+  margin-top: var(--spacer);
   margin-bottom: var(--spacer);
+}
+
+.o-listing--events-condensed {
+  @extend %o-listing;
+  margin-top: calc(var(--spacer) * 2);
 }
 
 // Add bottom spacing to the last item or button in the layout
