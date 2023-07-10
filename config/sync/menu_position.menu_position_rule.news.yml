@@ -1,0 +1,21 @@
+uuid: e0768e7a-dfc3-4d77-a1f7-ca0054a5fdc6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: news
+label: News
+menu_name: main
+parent: 'menu_link_content:5ade2a78-7165-4e36-aa1e-be2f169cd3df'
+menu_link: 'menu_position_link:news'
+enabled: true
+weight: null
+conditions:
+  node_type:
+    id: node_type
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      news: news

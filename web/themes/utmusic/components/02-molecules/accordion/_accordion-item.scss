@@ -1,3 +1,20 @@
+// Admin links
+.m-accordion-item__admin-links {
+  margin-top: rem(-13px);
+  margin-left: rem(-30px);
+
+  .a-button--icon {
+    margin-right: rem(6px);
+    padding: ru(0.25);
+  }
+  
+  .a-button--icon__icon {
+    display: block;
+    width: rem(16px);
+    height: rem(16px);
+  }
+}
+
 .m-accordion-item__label {
   @extend %a-type--medium;
   display: flex;

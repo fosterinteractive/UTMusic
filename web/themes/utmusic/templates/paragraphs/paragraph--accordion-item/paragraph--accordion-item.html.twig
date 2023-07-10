@@ -39,8 +39,12 @@
 
 {% include "@molecules/accordion/accordion-item.twig" with {
     directory: 'themes/utmusic',
+    anchor_id: content.field_accordion_item_anchor_tag[0] ? content.field_accordion_item_anchor_tag[0]['#context']['value'],
     title: content.field_accordion_item_title[0] ? content.field_accordion_item_title[0]['#text'],
     subtitle: content.field_accordion_item_subtitle[0] ? content.field_accordion_item_subtitle[0]['#text'],
     content: content.field_accordion_item_content[0] ? content.field_accordion_item_content,
+    is_admin: is_admin,
+    absolute_path: absolute_path,
+    relative_path: relative_path
   }
 %}

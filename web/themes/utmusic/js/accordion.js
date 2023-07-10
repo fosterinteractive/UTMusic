@@ -7,6 +7,35 @@ Drupal.behaviors.accordion = {
       return;
     }
 
+    document.querySelectorAll(".m-accordion-item__admin-links").forEach(copyLinkContainer => {
+      const copyAbsoluteButton = copyLinkContainer.querySelector(".a-button--icon-absolute");
+      const copyRelativeButton = copyLinkContainer.querySelector(".a-button--icon-relative");
+
+      copyAbsoluteButton.addEventListener("click", (e) => {
+        const copyText = copyLinkContainer.querySelector(".m-accordion-item__admin-link-absolute-text");
+        const link = copyText.innerHTML;
+        // const link = copyButton.href;
+
+        e.preventDefault();
+
+        console.log(link);
+
+        window.navigator.clipboard.writeText(link);
+      });
+
+      copyRelativeButton.addEventListener("click", (e) => {
+        const copyText = copyLinkContainer.querySelector(".m-accordion-item__admin-link-relative-text");
+        const link = copyText.innerHTML;
+        // const link = copyButton.href;
+
+        e.preventDefault();
+
+        console.log(link);
+
+        window.navigator.clipboard.writeText(link);
+      });
+    });
+
     // Function to expand an accordion item.
     const expand = (item, button, panel) => {
       item.setAttribute('data-accordion-state', 'expanded');
@@ -84,5 +113,58 @@ Drupal.behaviors.accordion = {
         }
       });
     });
+
+    let accordionSection = window.location.hash;
+    
+    if (accordionSection) {
+      
+      let accordionId = accordionSection.replace('#', '');
+      let accordionWrapper = context.getElementById(accordionId);
+      let accordionButton = accordionWrapper.getElementsByClassName('m-accordion-item__label');
+      let accordionBody = accordionWrapper.getElementsByClassName('m-accordion-item__content');
+      // openAccordion($accordionSection);
+
+      accordionWrapper.setAttribute('data-accordion-state', 'collapsed');
+      accordionButton[0].setAttribute('aria-expanded', 'true');
+      accordionBody[0].setAttribute('aria-hidden', 'false');
+
+      // let accordionWrapper = accordionSection.getAttribute('id');
+      // let accordionButton = item.querySelector('#' + $accordionWrapper + ' [data-accordion-component="label"]');
+      // let accordionBody = item.querySelector('#' + $accordionWrapper + ' [data-accordion-component="content"]');
+
+      // console.log(accordionSection);
+      // console.log(accordionWrapper);
+      // console.log(accordionButton);
+      // console.log(accordionBody);
+      
+
+      
+      // $accordionSection.setAttribute('data-accordion-state', 'expanded');
+      // $accordionButton.setAttribute('aria-expanded', 'true');
+      // $accordionBody.setAttribute('aria-hidden', 'false');
+    }
+
+    
+    // function locationHashChanged() {
+      
+    //   let $accordionSection = querySelector(window.location.hash);
+
+      
+    //   openAccordion($accordionSection);
+    // }
+
+    
+    // function openAccordion($accordionSection) {
+      
+    //   let $accordionWrapper = $accordionSection.getAttribute('id');
+    //   let $accordionButton = querySelector('#' + $accordionWrapper + ' [data-accordion-component="label"]');
+    //   let $accordionBody = querySelector('#' + $accordionWrapper + ' [data-accordion-component="content"]');
+
+      
+    //   $accordionSection.setAttribute('data-accordion-state', 'expanded');
+    //   $accordionButton.setAttribute('aria-expanded', 'true');
+    //   $accordionBody.setAttribute('aria-hidden', 'false');
+    // }
+
   },
 };

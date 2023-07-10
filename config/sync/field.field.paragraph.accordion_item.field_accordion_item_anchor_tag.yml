@@ -1,0 +1,19 @@
+uuid: 3bea19f3-0eb7-498a-b14c-d85e3d32386c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_accordion_item_anchor_tag
+    - paragraphs.paragraphs_type.accordion_item
+id: paragraph.accordion_item.field_accordion_item_anchor_tag
+field_name: field_accordion_item_anchor_tag
+entity_type: paragraph
+bundle: accordion_item
+label: 'Anchor Tag'
+description: 'Use lower case and dashes (eg. accordion-tag). All text will be transformed to lowered case. The prefix "anchor-" will appended and all spaces will be converted to ''-''. <b>Must</b> be unique.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

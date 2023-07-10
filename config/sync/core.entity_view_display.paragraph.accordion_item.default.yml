@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.accordion_item.field_accordion_item_anchor_tag
     - field.field.paragraph.accordion_item.field_accordion_item_content
     - field.field.paragraph.accordion_item.field_accordion_item_subtitle
     - field.field.paragraph.accordion_item.field_accordion_item_title
@@ -14,6 +15,14 @@ targetEntityType: paragraph
 bundle: accordion_item
 mode: default
 content:
+  field_accordion_item_anchor_tag:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_accordion_item_content:
     type: text_default
     label: hidden

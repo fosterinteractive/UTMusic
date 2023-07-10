@@ -152,6 +152,17 @@ function utmusic_preprocess_paragraph(array &$variables) {
   $paragraph_type = $paragraph->getType();
   $paragraph_view_mode = $variables['view_mode'];
 
+  if ($paragraph_view_mode == 'default') {
+    if ($paragraph_type == 'accordion_item') {
+      $host = \Drupal::request()->getSchemeAndHttpHost();
+      $current_path = \Drupal::service('path.current')->getPath();
+      $current_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+
+      $variables['absolute_path'] = $host.$current_alias;
+      $variables['relative_path'] = $current_alias;
+    }
+  }
+
   // Dynamic block paragraphs.
   $dynamic_block_paragraphs = [
     'news_summary_list_dynamic' => ['type' => 'news'],
