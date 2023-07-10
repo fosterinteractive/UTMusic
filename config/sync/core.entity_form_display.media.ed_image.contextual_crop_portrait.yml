@@ -13,7 +13,27 @@ dependencies:
     - image.style.large
     - media.type.ed_image
   module:
+    - field_group
     - image_widget_crop
+third_party_settings:
+  field_group:
+    group_related_content:
+      children:
+        - field_img_related_event
+        - field_img_related_people
+        - field_img_related_program
+      label: 'Related Content'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
 _core:
   default_config_hash: zEhdY05QJj_PfdQgQ98By6Slvnm8RTco7VAQwLXE1JA
 id: media.ed_image.contextual_crop_portrait
@@ -36,6 +56,24 @@ content:
       show_crop_area: true
       show_default_crop: true
     third_party_settings: {  }
+  field_img_related_event:
+    type: options_select
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_img_related_people:
+    type: options_select
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_img_related_program:
+    type: options_select
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0
@@ -48,9 +86,6 @@ hidden:
   created: true
   field_ed_image_height: true
   field_ed_image_width: true
-  field_img_related_event: true
-  field_img_related_people: true
-  field_img_related_program: true
   path: true
   revision_log_message: true
   status: true
