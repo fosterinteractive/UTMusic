@@ -20,14 +20,14 @@
 
 <div class="m-listing-item{{ variation }}{% if image %} has-img{% endif %}">
 
-  <div class="m-listing-item{{ variation }}__event-date">
+  {# <div class="m-listing-item{{ variation }}__event-date">
     <div class="m-listing-item{{ variation }}__event-date-month">
       {{ event_date_month }}
     </div>
     <div class="m-listing-item{{ variation }}__event-date-day">
       {{ event_date_day }}
     </div>
-  </div>
+  </div> #}
   
   <div class="m-listing-item{{ variation }}__content has-img">
 
@@ -44,7 +44,7 @@
 
     {% if event_date %}
       <div class="m-listing-item{{ variation }}__date">
-        {{ event_date }}
+        {{ event_date }} - {{ event_end_date }}
       </div>
     {% endif %}
 
@@ -88,13 +88,13 @@
     
   </div>
 
-  {% if image_landscape or image_portrait %}
+  {% if image %}
     <div class="m-listing-item{{ variation }}__img">
-      {% if image_portrait and header_variation == "portrait" %}
-        {{ image_portrait }}
-      {% elseif image_landscape and header_variation == "landscape" %}
-        {{ image_landscape }}
-      {% endif %}
+      {% include "@molecules/image/image.twig" with {
+          image: image,
+          variation: image_variation,
+        } only
+      %}
     </div>
   {% endif %}
 
