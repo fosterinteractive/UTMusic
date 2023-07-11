@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "41abf8fa80dca46dd0d408613d3a1b92",
+    "content-hash": "2b2c1465ab1dfabe7b24a00698200a0d",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -12754,17 +12754,17 @@
             "time": "2023-06-26T18:46:13+00:00"
         },
         {
-            "name": "fosterinteractive/mega-menu-builder",
+            "name": "fosterinteractive/mega_menu_builder",
             "version": "1.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fosterinteractive/mega-menu-builder.git",
-                "reference": "5e85e6b48fee8d16a92acd408a3d2daa0bd38282"
+                "url": "https://github.com/fosterinteractive/mega_menu_builder.git",
+                "reference": "1fa9458bba870837983de37a05610dea182e7893"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fosterinteractive/mega-menu-builder/zipball/5e85e6b48fee8d16a92acd408a3d2daa0bd38282",
-                "reference": "5e85e6b48fee8d16a92acd408a3d2daa0bd38282",
+                "url": "https://api.github.com/repos/fosterinteractive/mega_menu_builder/zipball/1fa9458bba870837983de37a05610dea182e7893",
+                "reference": "1fa9458bba870837983de37a05610dea182e7893",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -12772,10 +12772,10 @@
                 "MIT"
             ],
             "support": {
-                "source": "https://github.com/fosterinteractive/mega-menu-builder/tree/dev",
-                "issues": "https://github.com/fosterinteractive/mega-menu-builder/issues"
+                "source": "https://github.com/fosterinteractive/mega_menu_builder/tree/1.x",
+                "issues": "https://github.com/fosterinteractive/mega_menu_builder/issues"
             },
-            "time": "2023-06-29T21:04:43+00:00"
+            "time": "2023-07-10T21:34:40+00:00"
         },
         {
             "name": "fosterinteractive/social_lite",
@@ -23790,7 +23790,7 @@
         "pantheon-upstreams/upstream-configuration": 20,
         "fosterinteractive/adminspring-theme": 20,
         "fosterinteractive/mainspring-profile": 20,
-        "fosterinteractive/mega-menu-builder": 20
+        "fosterinteractive/mega_menu_builder": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
