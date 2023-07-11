@@ -1,17 +1,50 @@
 // Admin links
-.m-accordion-item__admin-links {
+.m-accordion-item__copy-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   margin-top: rem(-13px);
   margin-left: rem(-30px);
+}
 
-  .a-button--icon {
-    margin-right: rem(6px);
-    padding: ru(0.25);
-  }
-  
+.m-accordion-item__copy-link {
+  margin-right: 10px;
+}
+
+.m-accordion-item__copy-btn {
+  background-color: palette(teal, 1000);
+  border-radius: 5px;
+  padding: 6px;  
+
   .a-button--icon__icon {
     display: block;
     width: rem(16px);
     height: rem(16px);
+    fill: palette(blue);
+  }
+
+  &:hover,
+  &:active,
+  &:visited {
+    background-color: palette(blue, 900);
+  }
+}
+
+.tippy-box[data-theme~='custom'] {
+  border: 1px solid palette(blue, 900);
+  background: palette(blue, 950);
+  max-width: rem(250px) !important;
+  color: palette(blue);
+
+  .tippy-arrow {
+    color: palette(blue, 950);
+  }
+
+  .tippy-content {
+    @extend %u-remove-child--margin-top-bottom;
+    p {
+      color: palette(blue);
+    }
   }
 }
 

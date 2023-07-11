@@ -54,6 +54,16 @@ slick-carousel:
     https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js: { type: external,  minified: true }
     js/slick-carousel.js: {}
 
+tippyjs:
+  header: true
+  js:
+    /libraries/popperjs--core/dist/umd/popper.min.js: {}
+    /libraries/tippy.js/dist/tippy-bundle.umd.min.js: {}
+    
+tooltip:
+  js:
+    js/libraries/tooltips.config.js: {}
+
 featured-media:
   js:
     js/featured-media.js: {}

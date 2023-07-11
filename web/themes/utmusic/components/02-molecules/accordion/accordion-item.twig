@@ -2,6 +2,7 @@
 {% set unique_id = random('1234567890') ~ random('1234567890') ~ random('1234567890') ~ random('1234567890') %}
 {% set accordion__panel__id = 'accordion__panel-' ~ unique_id %}
 {% set accordion__header__id = 'accordion__header-' ~ unique_id %}
+{% set accordion__tooltip__id = 'accordion__tooltip-' ~ unique_id %}
 
 {% if anchor_id %}
   {% set accordion_id = "anchor-" ~ anchor_id|lower|replace({' ':'-', '(':'', ')':''}) %}
@@ -24,35 +25,44 @@
       {% if is_admin == 1 %}
         {# if the absolute or relative links exists  #}
         {% if absolute_link or relative_link %}
-          <div class="m-accordion-item__admin-links">
+          <div class="m-accordion-item__copy-links">
             {% if absolute_link %}
-              {% include "@atoms/button/button.twig" with {
-                directory: directory,
-                extra_classes: 'a-button--icon-absolute',
-                data_attribute: 'title="Copy absolute path"',
-                label: 'Copy absolute path',
-                variation: 'icon',
-                html_element: 'a',
-                url: '#',
-                icon: 'link'
-                } only
-              %}
-              <span class="u-visually--hidden m-accordion-item__admin-link-absolute-text">{{absolute_link}}</span>
+
+              <div class="m-accordion-item__copy-link">
+                <button class="m-accordion-item__copy-btn is-absolute data-trigger" data-template="{{accordion__tooltip__id}}--absolute" type="button">
+                  {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                      directory: directory,
+                      icon: 'envelope',
+                      base_class: 'a-button--icon__icon',
+                    } only
+                  %}
+                </button>
+
+                <div class="visually-hidden" id="{{accordion__tooltip__id}}--absolute">
+                  <p>Copy link for email (Full Url)</p>
+                </div>
+
+                <span class="u-visually--hidden is-absolute-text">{{absolute_link}}</span>
+              </div>              
             {% endif %}
 
             {% if relative_link %}
-              {% include "@atoms/button/button.twig" with {
-                directory: directory,
-                extra_classes: 'a-button--icon-relative',
-                data_attribute: 'title="Copy relative path"',
-                label: 'Copy relative path',
-                variation: 'icon',
-                html_element: 'a',
-                url: '#',
-                icon: 'link-simple'
-                } only
-              %}
-              <span class="u-visually--hidden m-accordion-item__admin-link-relative-text">{{relative_link}}</span>
+              <div class="m-accordion-item__copy-link">
+                <button class="m-accordion-item__copy-btn is-relative data-trigger" data-template="{{accordion__tooltip__id}}--relative" type="button">
+                  {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                      directory: directory,
+                      icon: 'link-simple',
+                      base_class: 'a-button--icon__icon',
+                    } only
+                  %}
+                </button>
+
+                <div class="visually-hidden" id="{{accordion__tooltip__id}}--relative">
+                  <p>Copy website link (Relative Url)</p>
+                </div>
+
+                <span class="u-visually--hidden is-relative-text">{{relative_link}}</span>
+              </div>  
             {% endif %}
           </div>
         {% endif %}

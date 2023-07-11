@@ -7,30 +7,24 @@ Drupal.behaviors.accordion = {
       return;
     }
 
-    document.querySelectorAll(".m-accordion-item__admin-links").forEach(copyLinkContainer => {
-      const copyAbsoluteButton = copyLinkContainer.querySelector(".a-button--icon-absolute");
-      const copyRelativeButton = copyLinkContainer.querySelector(".a-button--icon-relative");
+    document.querySelectorAll(".m-accordion-item__copy-links").forEach(copyLinkContainer => {
+      const copyAbsoluteButton = copyLinkContainer.querySelector(".is-absolute");
+      const copyRelativeButton = copyLinkContainer.querySelector(".is-relative");
 
       copyAbsoluteButton.addEventListener("click", (e) => {
-        const copyText = copyLinkContainer.querySelector(".m-accordion-item__admin-link-absolute-text");
+        const copyText = copyLinkContainer.querySelector(".is-absolute-text");
         const link = copyText.innerHTML;
-        // const link = copyButton.href;
 
         e.preventDefault();
-
-        console.log(link);
 
         window.navigator.clipboard.writeText(link);
       });
 
       copyRelativeButton.addEventListener("click", (e) => {
-        const copyText = copyLinkContainer.querySelector(".m-accordion-item__admin-link-relative-text");
+        const copyText = copyLinkContainer.querySelector(".is-relative-text");
         const link = copyText.innerHTML;
-        // const link = copyButton.href;
 
         e.preventDefault();
-
-        console.log(link);
 
         window.navigator.clipboard.writeText(link);
       });
