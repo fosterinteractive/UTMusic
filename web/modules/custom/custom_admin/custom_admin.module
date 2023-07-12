@@ -79,7 +79,7 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
     if ($paragraph_type === 'header' && isset($element['subform']['#parents'])) {
 
       // Define an array of parent fields to check.
-      $parent_fields = ['field_page_header'];
+      $parent_fields = ['field_page_header', 'field_program_header'];
 
       // Initialize the parent field variable to NULL.
       $parent_field = NULL;
@@ -442,8 +442,16 @@ function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_stat
         ':input[name="field_event_related_pick"]' => ['value' => 'manual'],
       ]
     ];
+  }
 
-
+  // The "events" add and edit forms.
+  if ($form_id == 'node_program_form' || $form_id == 'node_program_edit_form' ) {
+    // Show "Feature Media" field for manual pick
+    $form['field_program_featured_media']['#states'] = [
+      'visible' => [
+        ':input[name="field_program_enable_media"]' => ['value' => 'manual'],
+      ]
+    ];
   }
 }
 

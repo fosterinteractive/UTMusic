@@ -1,0 +1,29 @@
+uuid: 84af8191-0c98-4366-aee8-c65f37cd3d06
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_stream
+    - node.type.program
+    - taxonomy.vocabulary.program_stream
+id: node.program.field_program_stream
+field_name: field_program_stream
+entity_type: node
+bundle: program
+label: 'Program Stream'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      program_stream: program_stream
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: program_stream
+field_type: entity_reference

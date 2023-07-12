@@ -1,0 +1,23 @@
+uuid: 3071caf2-e01f-4b73-bd0a-d7b3c915eaba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_enable_media
+    - node.type.program
+  module:
+    - options
+id: node.program.field_program_enable_media
+field_name: field_program_enable_media
+entity_type: node
+bundle: program
+label: 'Enable Media'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: view
+default_value_callback: ''
+settings: {  }
+field_type: list_string

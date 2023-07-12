@@ -1,0 +1,19 @@
+uuid: 3793172e-5276-4bbc-ab40-6049c976139b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_meta_title
+    - node.type.program
+id: node.program.field_page_meta_title
+field_name: field_page_meta_title
+entity_type: node
+bundle: program
+label: 'Meta Title / Page Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

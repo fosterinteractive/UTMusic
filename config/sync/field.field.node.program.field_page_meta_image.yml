@@ -1,0 +1,29 @@
+uuid: aa7c7ba6-ab70-4e91-87d8-c2b81d45e0b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_meta_image
+    - media.type.ed_image
+    - node.type.program
+id: node.program.field_page_meta_image
+field_name: field_page_meta_image
+entity_type: node
+bundle: program
+label: 'Meta Image'
+description: '<b>Optional:</b> Create a default image to use when this page is shared on social media (LinkedIn, Facebook, etc.)'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      ed_image: ed_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

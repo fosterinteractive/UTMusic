@@ -1,9 +1,9 @@
-uuid: ddbd3ae1-caad-43e4-82e5-b9efbbfeebe0
+uuid: ea7f3480-65ac-4989-b444-a2459cbd3424
 langcode: en
-status: false
+status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.listing_item
     - field.field.node.program.field_page_admin_help_seo
     - field.field.node.program.field_page_admin_help_social
     - field.field.node.program.field_page_meta_description
@@ -20,16 +20,26 @@ dependencies:
     - field.field.node.program.field_program_type
     - node.type.program
   module:
+    - entity_reference_revisions
+    - layout_builder
     - user
-id: node.program.teaser
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.program.listing_item
 targetEntityType: node
 bundle: program
-mode: teaser
+mode: listing_item
 content:
-  links:
-    settings: {  }
+  field_program_header:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   field_page_admin_help_seo: true
@@ -41,9 +51,9 @@ hidden:
   field_program_concentration: true
   field_program_enable_media: true
   field_program_featured_media: true
-  field_program_header: true
   field_program_overview: true
   field_program_stream: true
   field_program_supporting_details: true
   field_program_type: true
+  links: true
   search_api_excerpt: true

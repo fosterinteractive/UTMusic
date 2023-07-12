@@ -1,0 +1,18 @@
+uuid: b5a9a54d-91a3-4598-8d42-d30049e6d17a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.program
+id: node.program.title
+field_name: title
+entity_type: node
+bundle: program
+label: 'Drupal Label (Auto Hidden)'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
