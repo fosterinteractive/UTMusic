@@ -79,7 +79,7 @@
         "drupal/core-recommended": "^9.2",
         "drupal/media_contextual_crop_embed": "1.2.1",
         "fosterinteractive/adminspring-theme": "dev-10.0.x-dev",
-        "fosterinteractive/mainspring-profile": "dev-10.x-dev",
+        "fosterinteractive/mainspring-profile": "9.2.0-beta1",
         "fosterinteractive/mega_menu_builder": "1.x-dev",
         "fosterinteractive/social_lite": "2.0.0",
         "pantheon-systems/drupal-integrations": "^9",
