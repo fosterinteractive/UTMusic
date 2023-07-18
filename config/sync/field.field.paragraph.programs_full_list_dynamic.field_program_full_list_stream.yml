@@ -1,16 +1,16 @@
-uuid: 84af8191-0c98-4366-aee8-c65f37cd3d06
+uuid: 55b11ab7-2d7c-49e0-b08d-8fae90bd98c2
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_program_stream
-    - node.type.program
+    - field.storage.paragraph.field_program_full_list_stream
+    - paragraphs.paragraphs_type.programs_full_list_dynamic
     - taxonomy.vocabulary.program_stream
-id: node.program.field_program_stream
-field_name: field_program_stream
-entity_type: node
-bundle: program
-label: 'Program Stream'
+id: paragraph.programs_full_list_dynamic.field_program_full_list_stream
+field_name: field_program_full_list_stream
+entity_type: paragraph
+bundle: programs_full_list_dynamic
+label: 'Limit By Program Stream'
 description: ''
 required: false
 translatable: false
@@ -25,5 +25,5 @@ settings:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: program_stream
+    auto_create_bundle: ''
 field_type: entity_reference

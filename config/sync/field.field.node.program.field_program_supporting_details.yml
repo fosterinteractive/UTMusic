@@ -5,8 +5,18 @@ dependencies:
   config:
     - field.storage.node.field_program_supporting_details
     - node.type.program
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.button
+    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.cta
+    - paragraphs.paragraphs_type.image_section
+    - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.section_title
+    - paragraphs.paragraphs_type.sequence_list
     - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.text_image
+    - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
 id: node.program.field_program_supporting_details
@@ -23,22 +33,32 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
+      accordion: accordion
+      button: button
+      card: card
+      cta: cta
+      image_section: image_section
+      quote: quote
       section: section
+      section_title: section_title
+      sequence_list: sequence_list
       text: text
+      text_image: text_image
+      video: video
     negate: 0
     target_bundles_drag_drop:
       accordion:
         weight: 31
-        enabled: false
+        enabled: true
       accordion_item:
         weight: 32
         enabled: false
       button:
         weight: 33
-        enabled: false
+        enabled: true
       card:
         weight: 34
-        enabled: false
+        enabled: true
       carousel_header:
         weight: 35
         enabled: false
@@ -47,7 +67,7 @@ settings:
         enabled: false
       cta:
         weight: 37
-        enabled: false
+        enabled: true
       event_featured_item:
         weight: 40
         enabled: false
@@ -65,7 +85,7 @@ settings:
         enabled: false
       image_section:
         weight: 43
-        enabled: false
+        enabled: true
       inline_menu:
         weight: 44
         enabled: false
@@ -86,19 +106,19 @@ settings:
         enabled: false
       quote:
         weight: 50
-        enabled: false
+        enabled: true
       section:
         weight: 51
         enabled: true
       section_title:
         weight: 52
-        enabled: false
+        enabled: true
       sequence_item:
         weight: 53
         enabled: false
       sequence_list:
         weight: 54
-        enabled: false
+        enabled: true
       sliding_menu:
         weight: 55
         enabled: false
@@ -113,8 +133,8 @@ settings:
         enabled: true
       text_image:
         weight: 59
-        enabled: false
+        enabled: true
       video:
         weight: 60
-        enabled: false
+        enabled: true
 field_type: entity_reference_revisions

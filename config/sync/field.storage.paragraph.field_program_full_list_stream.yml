@@ -1,0 +1,20 @@
+uuid: 77ae3202-963e-4223-bbf7-4e01ffdce908
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_program_full_list_stream
+field_name: field_program_full_list_stream
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

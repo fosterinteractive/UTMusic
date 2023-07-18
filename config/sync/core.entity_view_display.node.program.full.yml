@@ -16,12 +16,16 @@ dependencies:
     - field.field.node.program.field_program_header
     - field.field.node.program.field_program_overview
     - field.field.node.program.field_program_stream
+    - field.field.node.program.field_program_summary_image
     - field.field.node.program.field_program_supporting_details
     - field.field.node.program.field_program_type
     - node.type.program
   module:
     - entity_reference_revisions
     - layout_builder
+    - layout_paragraphs
+    - options
+    - text
     - user
 third_party_settings:
   layout_builder:
@@ -32,6 +36,38 @@ targetEntityType: node
 bundle: program
 mode: full
 content:
+  field_program_academic_info:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_program_concentration:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_program_enable_media:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_program_featured_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: event_carrousel
+      link: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
   field_program_header:
     type: entity_reference_revisions_entity_view
     label: hidden
@@ -41,19 +77,46 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_program_overview:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_program_stream:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_program_supporting_details:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_program_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   field_page_admin_help_seo: true
   field_page_admin_help_social: true
   field_page_meta_description: true
   field_page_meta_image: true
   field_page_meta_title: true
-  field_program_academic_info: true
-  field_program_concentration: true
-  field_program_enable_media: true
-  field_program_featured_media: true
-  field_program_overview: true
-  field_program_stream: true
-  field_program_supporting_details: true
-  field_program_type: true
+  field_program_summary_image: true
   links: true
   search_api_excerpt: true

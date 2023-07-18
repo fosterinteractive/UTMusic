@@ -1,0 +1,125 @@
+{% embed "@layouts/main/main.twig" %}
+
+  {% block content_single_page %}
+    <div class="l-main--program">
+
+      {% if hero_banner %}
+        {{ hero_banner }}
+      {% else %}
+        <div class="l-main__header">
+          <div class="l-main__header-title">
+            {% include "@atoms/text/headings/heading.twig" with {
+                html_element: 'h1',
+                appearance: 'h1',
+                text: title,
+                url: link_url,
+                id: id,
+              } only
+            %}
+          </div>
+        </div>
+
+        {% if breadcrumbs is not empty and not is_front %}
+          <div class="l-main__breadcrumbs l-section--[12]">
+            <div class="l-section__zone-1">
+              {{ breadcrumbs }}
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+
+      {% if messages is not empty or tabs is not empty %}
+        <div class="l-main__utility l-section--[12]">
+          <div class="l-section__zone-1">
+            {{ messages }}
+            {{ tabs }}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if moderation %}
+        <div class="l-main__moderation">
+          {{ moderation }}
+        </div>
+      {% endif %}
+
+      {% if overview %}
+        <div class="l-main--program__overview">
+          {{ overview }}
+        </div>
+      {% endif %}
+
+      {% if academic_info %}
+        <div class="l-main--program__academic-info">
+          {{ academic_info }}
+        </div>
+      {% endif %} 
+
+      {% if faculty %}
+        <div class="l-section--[12] theme--white-bg l-section-spacing-top--small l-section-spacing-bottom--small">
+          <div class="l-main--program__faculty l-section__zone-1 l-flex">
+            <div class="l-main--program__media-title">
+              {% include "@atoms/text/headings/heading.twig" with {
+                  html_element: 'h2',
+                  appearance: 'h2',
+                  text: 'Faculty'|t,
+                } only
+              %}
+            </div>
+
+            {{ faculty }}
+          </div>
+        </div>
+      {% endif %} 
+
+      {% if supporting_details %}
+        <div class="l-main--program__supporting-details">
+          {{ supporting_details }}
+        </div>
+      {% endif %} 
+
+      {% if media_display == 'default' %}
+        <div class="l-section--[12] theme--dark-blue-bg l-section-spacing-top--small l-section-spacing-bottom--small">
+          <div class="l-section__background"></div>
+          <div class="l-main--program__media l-section__zone-1 l-flex">
+            <div class="l-main--program__media-title">
+              {% include "@atoms/text/headings/heading.twig" with {
+                  html_element: 'h2',
+                  appearance: 'h2',
+                  text: 'Featured Media'|t,
+                } only
+              %}
+            </div>
+
+            {{ featured_media }}
+          </div>
+        </div>
+      {% elseif media_display == 'carousel' %}
+        <div class="l-section--[12] theme--dark-blue-bg l-section-spacing-top--small l-section-spacing-bottom--small">
+          <div class="l-section__background"></div>
+          <div class="l-main--program__media l-section__zone-1">
+            <div class="l-main--event-related__title">
+              {% include "@atoms/text/headings/heading.twig" with {
+                  html_element: 'h2',
+                  appearance: 'h2',
+                  text: 'Featured Media'|t,
+                } only
+              %}
+            </div>
+
+            {% include "@organisms/listing/listing.twig" with {
+                directory: directory,
+                variation: 'media-carousel',
+                listing_items: featured_media,
+                number_items: number_items,
+              } only
+            %}
+          </div>
+        </div>
+      {% endif %}
+
+
+    </div>
+  {% endblock content_single_page %}
+  
+{% endembed %}

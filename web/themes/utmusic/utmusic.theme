@@ -169,6 +169,7 @@ function utmusic_preprocess_paragraph(array &$variables) {
     'events_summary_list_dynamic' => ['type' => 'event'],
     'news_featured_item' => ['type' => 'news_featured'],
     'event_featured_item' => ['type' => 'event_featured'],
+    'programs_full_list_dynamic' => ['type' => 'program_full']
   ];
 
   if (isset($dynamic_block_paragraphs[$paragraph_type])) {
@@ -225,6 +226,17 @@ function utmusic_preprocess_paragraph(array &$variables) {
         'number_other_items' => null,
         'offset' => 'field_event_offset',
       ],
+      'program_full' => [
+        'title' => null,
+        'contextual' => [
+          'category1' => 'field_program_full_list_stream',
+        ],
+        'program_type' => 'field_program_full_list_type',
+        'number_items' => null,
+        'number_other_items' => null,
+        'offset' => null,
+        'status' => null,
+      ],
     ];
 
     // Set the dynamic title for the view.
@@ -246,6 +258,27 @@ function utmusic_preprocess_paragraph(array &$variables) {
       $number_items = $number_items_value;
     }
 
+    // Check if the value for program_type is defined 
+    if (isset($field_mapping[$type]['program_type'])) {
+      $program_types = '';
+
+      // Get value of field "program_type"
+      $contextual_type = $paragraph->hasField($field_mapping[$type]['program_type']) && !$paragraph->{$field_mapping[$type]['program_type']}->isEmpty() ? $paragraph->{$field_mapping[$type]['program_type']} : '';
+
+      $type_args = 'all';
+      $program_type_ids = '';
+      if (!empty($contextual_type)) {
+        foreach ($contextual_type as $filter_type) {
+          $id = $filter_type->get('target_id')->getValue();
+          $program_type_ids .= $id . '+';
+        }
+
+        $type_args = substr($program_type_ids, 0, -1);
+      }
+
+      $program_types =  $type_args;
+    }
+
     // Set the contextual filters. These filters are setup to be the 1st
     // argument on the view and multiple fields (taxonomies) are combined.
     $categories = [];
@@ -255,12 +288,19 @@ function utmusic_preprocess_paragraph(array &$variables) {
 
       $arg = 'all';
       $category_ids = '';
+      // If the contextual filters are not empty 
       if (!empty($contextual_filters)) {
         foreach ($contextual_filters as $filter) {
           $id = $filter['target_id'];
           $category_ids .= $id . '+';
         }
         $arg = substr($category_ids, 0, -1);
+      // if the contextual filters are empty
+      } else {
+        // Check if the program_types is set
+        if (isset($program_types)){
+          $arg = $program_types;
+        }
       }
 
       $categories[$field_type] = $arg;
@@ -311,6 +351,9 @@ function utmusic_preprocess_paragraph(array &$variables) {
       elseif ($paragraph_type == 'event_featured_item') {
         $variables['content']['event_featured_item'] = utmusic_return_rendered_view('events_full_list', 'events_featured_item', null , $categories, $dynamic_title, $offset);
       }
+      elseif ($paragraph_type == 'programs_full_list_dynamic') {
+        $variables['content']['programs_full_list_dynamic'] = utmusic_return_rendered_view('programs_full_list', 'programs_full_list', null , $categories, null, null, $program_types);
+      }
     }
   }
 }
@@ -339,111 +382,8 @@ function utmusic_preprocess_node(array &$variables) {
       // Render filtered view.
       $render_view = $filtered_view->render();
 
-      // $variables['content']['related_news_footer'] = utmusic_return_rendered_view('news_full_list', 'related_news_footer', 4, [], NULL, NULL, NULL, NULL, NULL, NULL);
       $variables['content']['related_event_footer'] = $render_view;
     }
-    // Check if date field exists.
-    // Get Node 
-    // $node = $variables['node'];     
-    
-    // $node_route = \Drupal::routeMatch()->getParameter('node');
-    // if ($node_route instanceof \Drupal\node\NodeInterface) {
-    //   // You can get nid and anything else you need from the node object.
-    //   $variables['current_id'] = $node_route->id();
-    // }
-
-    // $lang_code = \Drupal::languageManager()->getCurrentLanguage()->getId();
-    // $list_node = Node::load(17)->getTranslation($lang_code)->toArray();
-
-    // $variables['lang_code'] = $lang_code;
-    // $variables['event_list_path'] = $list_node['path'][0]['alias'];
-
-    // // check if date field exists
-    // if (!empty($variables['elements']['field_event_date'])) { 
-    //   $formatter = \Drupal::service('date.formatter');
-    //   $date_now = new DateTime();
-
-    //   $event_date_values = $variables['elements']['field_event_date']['#object']->get('field_event_date')->getValue()[0];
-    //   $date_start = $event_date_values['value'];
-    //   $date_end = $event_date_values['end_value'];
-
-    //   // Check if there is an end date
-    //   if ($date_end == NULL) {
-    //     // If there is not end date - make end date equal to start date
-    //     $date_end = $date_start;
-    //   }
-
-    //   $end_date_object = new DateTime($date_end);
-    //   $variables['is_past_event'] = 0;
-    //   if ($end_date_object < $date_now) {
-    //     $variables['is_past_event'] = 1;
-    //   }
-      
-    //   // If the start and end date are equal
-    //   if ($date_start == $date_end) {
-    //     // set end_time null (won't show)
-    //     $variables['end_time'] = NULL;
-    //   } else {
-    //     // Set end_time
-    //     $end_time = strtotime($date_end.' UTC');
-    //     $variables['end_time'] = $formatter->format($end_time, 'custom', 'g:ia');
-    //   }
-      
-    //   // Determine if the event is all day or not.
-    //   $variables['all_day'] = FALSE;
-    //   if (empty($node->field_event_date->end_value)) {
-    //     $variables['all_day'] = TRUE;
-    //     // set start_time null (won't show)
-    //     $variables['start_time'] = NULL;
-    //   }
-    //   elseif (!empty($node->field_event_date->value) && !empty($node->field_event_date->end_value)) {
-    //     // Set start_time
-    //     $start_time = strtotime($date_start.' UTC');
-    //     $variables['start_time'] = $formatter->format($start_time, 'custom', 'g:ia');
-
-    //     $item = [
-    //       'value' => new DrupalDateTime($node->field_event_date->value, DateTimeItemInterface::STORAGE_TIMEZONE),
-    //       'end_value' => new DrupalDateTime($node->field_event_date->end_value, DateTimeItemInterface::STORAGE_TIMEZONE)
-    //     ];
-    //     $variables['all_day'] = DateRangeAllDayHelper::isAllDay($item);
-    //   }
-    // }
-
-    // if (in_array($node_view_mode, ['full', 'event_confirmation'])) {
-    //   // If this event is part of a series we need to determine it's number in
-    //   // the series which should be determined chronological.
-    //   $variables['total_events_in_series'] = NULL;
-    //   $variables['event_position_in_series'] = NULL;
-    //   if (!$node->field_event_series->isEmpty()) {
-    //     $langcode = $node->language()->getId();
-    //     $series_id = $node->field_event_series->target_id;
-    //     $node_storage = \Drupal::entityTypeManager()->getStorage('node');
-    //     // Get all events in this series.
-    //     $nids = $node_storage->getQuery()
-    //       ->condition('type', 'event')
-    //       ->condition('status', 1)
-    //       ->condition('field_event_series', $series_id)
-    //       ->condition('langcode', $langcode, '=')
-    //       ->sort('field_event_date.value', 'ASC')
-    //       ->sort('nid', 'ASC')
-    //       ->execute();
-    //     // Get the count of all the events.
-    //     $variables['total_events_in_series'] = count($nids);
-    //     // Loop through the event ids to find what position this current event is
-    //     // in the list of series.
-    //     $position = 0;
-    //     $i = 1;
-    //     foreach ($nids as $id) {
-    //       if ($node_id == $id) {
-    //         $position = $i;
-    //         break;
-    //       }
-    //       $i++;
-    //     }
-    //     // Add the postion as a varaiable.
-    //     $variables['event_position_in_series'] = $position;
-    //   }
-    // }
   }
 
   // News CT
@@ -457,7 +397,6 @@ function utmusic_preprocess_node(array &$variables) {
       // Render filtered view.
       $render_view = $filtered_view->render();
 
-      // $variables['content']['related_news_footer'] = utmusic_return_rendered_view('news_full_list', 'related_news_footer', 4, [], NULL, NULL, NULL, NULL, NULL, NULL);
       $variables['content']['related_news_footer'] = $render_view;
     }
   }
@@ -521,7 +460,7 @@ function utmusic_preprocess_views_view_unformatted(array &$variables) {
  *
  * used to render a view allowing us to pass contextual arguments to the view.
  */
-function utmusic_return_rendered_view($view, $display, $items = NULL, $categories = [], $title = NULL, $offset = NULL, $layout = NULL, $button_url = NULL, $button_label = NULL, $button_a11y = NULL ) {
+function utmusic_return_rendered_view($view, $display, $items = NULL, $categories = [], $title = NULL, $offset = NULL, $layout = NULL, $button_url = NULL, $button_label = NULL, $button_a11y = NULL, $program_types = NULL ) {
   $args = [];
 
   if (isset($categories['promote'])) {
@@ -542,7 +481,8 @@ function utmusic_return_rendered_view($view, $display, $items = NULL, $categorie
     $layout,
     $button_url,
     $button_label,
-    $button_a11y
+    $button_a11y,
+    $program_types
   ]);
   
   // Get View, set number of items to display and filters.
@@ -601,6 +541,10 @@ function utmusic_theme_suggestions_menu_alter(array &$suggestions, array $variab
  * Exposed Views Filters Form.
  */
 function utmusic_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form_id = $form['#id'];
+  $storage = $form_state->getStorage();
+  $view = $storage['view'] ?? NULL;
+
   // View 'news_full_list' - aply 'select2_all' module 
   $form['news_category']['#options']['All'] = t('All');
   // $form['news_category']['#select2'] = ['allowClear' => FALSE];
@@ -610,28 +554,42 @@ function utmusic_form_views_exposed_form_alter(&$form, FormStateInterface $form_
   // $form['area_study']['#select2'] = ['allowClear' => FALSE];
   $form['area_study']['#attributes']['class'][] = 'm-input';
 
-  // if (
-  //   ($form['#id'] == 'views-exposed-form-events-full-list-block-full-list') 
-  //   || ($form['#id'] == 'views-exposed-form-jobs-full-list-block-full-list')
-  //   || ($form['#id'] == 'views-exposed-form-stories-full-list-default')
-  //   ) {
-  //   // Change buttons appearance
-  //   $form['actions']['submit']['#attributes']['class'][] = 'a-button';
-  //   $form['actions']['reset']['#attributes']['class'][] = 'a-button--secondary';
+  // If the exposed form is for the full programs full list
+  if ($form_id == 'views-exposed-form-programs-full-list-programs-full-list') {
+    $field = 'program_type';
 
-  //   if (isset($form['field_event_date_end_value_1'])) {
-  //     $form['field_event_date_end_value_1']['#type'] = 'select';
-  //     $form['field_event_date_end_value_1']['#size'] = NULL;
-  //     $form['field_event_date_end_value_1']['#default_value'] = t('+30 days');
-  //     $form['field_event_date_end_value_1']['#options'] = [
-  //       '+30 days' => t('Events within 30 days'),
-  //       '+2 years' => t('Upcoming Events')
-  //     ];
+    if (isset($form[$field])) {
+      $limited_args = [];
+      if (isset($view->args[3]) && $view->args[3] !== 'all') {
+        $limited_args = explode("+", $view->args[3]);
+      }
 
-  //     // $form['field_event_date_end_value_1']['#select2'] = ['allowClear' => FALSE];
-  //     $form['field_event_date_end_value_1']['#attributes']['class'][] = 'm-input';
-  //   }
-  // }
+      $filtered_options = ["All" => "- Any -"];
+      $options = $form[$field]['#options'];
+
+      foreach ($options as $index => $option) {
+        if ($index === 'All') {
+          $filtered_options[$index] = $option;
+        } else {
+          $tid = key($option->option);
+          $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
+          
+          if (!empty($limited_args)) {
+            if (in_array($tid, $limited_args)) {
+              $filtered_options[$index] = $option;
+            }
+          }
+          else {
+            $filtered_options[$index] = $option;
+          }
+        }
+      }
+
+      $form[$field]['#size'] = NULL;
+      $form[$field]['#multiple'] = FALSE;
+      $form[$field]['#options'] = $filtered_options;
+    }
+  }
 }
 
 function utmusic_theme_suggestions_form_alter(array &$suggestions, array $variables) {

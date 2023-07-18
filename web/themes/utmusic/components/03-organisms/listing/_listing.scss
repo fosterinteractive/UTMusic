@@ -96,7 +96,7 @@
 
 // carousel Events Items
 %o-listing--carousel,
-.o-listing--events-carousel__items {
+.o-listing--media-carousel__items {
   display: grid !important;
   grid-auto-flow: column;
   gap: var(--spacer);
@@ -106,7 +106,7 @@
   // overscroll-behavior-x: contain;
   // scroll-behavior: smooth;
 
-  .m-listing-item--events-carousel__img {
+  .m-listing-item--media-carousel__img {
     scroll-snap-align: center;
     width: rem(280px);
 
@@ -125,17 +125,17 @@
   }
 }
 
-.o-listing--events-carousel {
+.o-listing--media-carousel {
   @extend %carousel-container;
 }
 
-.o-listing--events-carousel__items-prev-btn {
+.o-listing--media-carousel__items-prev-btn {
   @extend %carousel-controls-btn;
   
   left: var(--spacer);
 }
 
-.o-listing--events-carousel__items-next-btn {
+.o-listing--media-carousel__items-next-btn {
   @extend %carousel-controls-btn;
   
   right: var(--spacer);

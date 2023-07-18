@@ -1,0 +1,28 @@
+uuid: bc6696d6-a3a5-4465-b930-fdfd91db5e26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.programs_full_list_dynamic.field_program_full_list_stream
+    - field.field.paragraph.programs_full_list_dynamic.field_program_full_list_type
+    - paragraphs.paragraphs_type.programs_full_list_dynamic
+id: paragraph.programs_full_list_dynamic.default
+targetEntityType: paragraph
+bundle: programs_full_list_dynamic
+mode: default
+content:
+  field_program_full_list_stream:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_program_full_list_type:
+    type: options_buttons
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

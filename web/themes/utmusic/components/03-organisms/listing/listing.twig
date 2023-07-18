@@ -33,7 +33,7 @@
     </div>
   {% endif %}
 
-  {% if (variation == '--events-carousel' and number_items > 0) or (variation == '--people-carousel' and number_items > 0) %}
+  {% if (variation == '--media-carousel' and number_items > 0) or (variation == '--people-carousel' and number_items > 0) %}
     <div class="o-listing{{ variation }}__items-next-btn">
       {% include "@atoms/button/button.twig" with {
         directory: directory,
@@ -49,7 +49,7 @@
     </div>
   {% endif %}
 
-  {% if (variation == '--events-carousel' and number_items > 0) or (variation == '--people-carousel' and number_items > 0) %}
+  {% if (variation == '--media-carousel' and number_items > 0) or (variation == '--people-carousel' and number_items > 0) %}
     <div class="o-listing{{ variation }}__items-prev-btn">
       {% include "@atoms/button/button.twig" with {
         directory: directory,
@@ -65,16 +65,16 @@
     </div>
   {% endif %}
 
-  {% if (number_items > 0 and variation == '--people-carousel') or ( number_items > 0 and variation == '--events-carousel') %}
+  {% if (number_items > 0 and variation == '--people-carousel') or ( number_items > 0 and variation == '--media-carousel') %}
     <div role="region" aria-label="{{ title }}" class="o-listing{{ variation }}__items {{ listing_col_layout }}"  style="scroll-snap-type: x mandatory; overflow-x: scroll; overscroll-behavior-x: contain; scroll-behavior: smooth;"> 
-  {% elseif (number_items == 0 and variation == '--people-carousel') or ( number_items > 0 and variation == '--events-carousel') %}
+  {% elseif (number_items == 0 and variation == '--people-carousel') or ( number_items > 0 and variation == '--media-carousel') %}
     <div class="o-listing{{ variation }}__single-item">
   {% else %}
     <div role="region" aria-label="{{ title }}" class="o-listing{{ variation }}__items {{ listing_col_layout }}"> 
   {% endif %}
 
       {% for item in listing_items %}
-        {% if variation == '--events-carousel' or variation == '--people-carousel' %}
+        {% if variation == '--media-carousel' or variation == '--people-carousel' %}
           <div class="o-listing{{variation}}__item" {% if loop.last %} id="last-item"{% endif %} tabindex="0">
         {% endif %}
 
@@ -97,8 +97,8 @@
                   sb_demo: item.sb_demo,
                 } only
               %}
-            {% elseif variation == '--events-carousel' %}
-              {% include "@organisms/listing/listing-item--events-carousel.twig" with {
+            {% elseif variation == '--media-carousel' %}
+              {% include "@organisms/listing/listing-item--media-carousel.twig" with {
                   directory: directory,
                   variation: item.variation,
                   title: item.title, 
@@ -115,7 +115,7 @@
                   sb_demo: item.sb_demo,
                 } only
               %}
-              {% if loop.index == 3 and loop.length > 3 and variation == '--events-carousel'  %} 
+              {% if loop.index == 3 and loop.length > 3 and variation == '--media-carousel'  %} 
                 <a href="#last-item" class="u-visually--hidden visually-hidden focusable skip-link">
                   {{ 'Skip to the last item'|t }}
                 </a>
@@ -161,7 +161,7 @@
           {# Because for Drupal we include listing-item or listing-item--event on the level of Node #}
             {{ item }}
 
-            {% if variation == '--events-carousel' or variation == '--people-carousel' %}
+            {% if variation == '--media-carousel' or variation == '--people-carousel' %}
               {% if loop.index == 3 and loop.length > 3  %} 
                 <a href="#last-item" class="u-visually--hidden visually-hidden focusable skip-link">
                   {{ 'Skip to the last item'|t }}
@@ -170,7 +170,7 @@
             {% endif %}
           {% endif %}
           
-          {% if variation == '--events-carousel' or variation == '--people-carousel' %}
+          {% if variation == '--media-carousel' or variation == '--people-carousel' %}
           </div>
           {% endif %}
 

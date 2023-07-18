@@ -68,9 +68,9 @@ featured-media:
   js:
     js/featured-media.js: {}
 
-carousel-events:
+carousel-media:
   js:
-    js/carousel-events.js: {}
+    js/carousel-media.js: {}
 
 sliding-door-menu:
   js:

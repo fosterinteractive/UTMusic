@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.program.field_program_header
     - field.field.node.program.field_program_overview
     - field.field.node.program.field_program_stream
+    - field.field.node.program.field_program_summary_image
     - field.field.node.program.field_program_supporting_details
     - field.field.node.program.field_program_type
     - node.type.program
@@ -58,6 +59,7 @@ hidden:
   field_program_featured_media: true
   field_program_overview: true
   field_program_stream: true
+  field_program_summary_image: true
   field_program_supporting_details: true
   field_program_type: true
   search_api_excerpt: true

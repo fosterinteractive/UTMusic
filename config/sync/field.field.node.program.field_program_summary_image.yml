@@ -1,0 +1,31 @@
+uuid: 31147a33-a074-4f44-a9f7-f786d928441d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_summary_image
+    - media.type.ed_image
+    - node.type.program
+  module:
+    - media_library_media_modify
+id: node.program.field_program_summary_image
+field_name: field_program_summary_image
+entity_type: node
+bundle: program
+label: 'Summary Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      ed_image: ed_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_entity_modify

@@ -1,5 +1,5 @@
 sb_demo: true
-variation: 'events-carousel'
+variation: 'media-carousel'
 title: List Events carousel
 listing_col_layout: 
 listing_button_url:  /
@@ -7,7 +7,7 @@ listing_button_text: 'See all events'
 listing_items:
   1:
     sb_demo: true
-    variation: 'events-carousel'
+    variation: 'media-carousel'
     title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
     event_date_month: 'April'
     event_date_day: '30'
@@ -17,7 +17,7 @@ listing_items:
   
   2:
     sb_demo: true
-    variation: 'events-carousel'
+    variation: 'media-carousel'
     title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
     event_date_month: 'December'
     event_date_day: '09'
@@ -27,7 +27,7 @@ listing_items:
 
   3:
     sb_demo: true
-    variation: 'events-carousel'
+    variation: 'media-carousel'
     title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
     event_date_month: 'July'
     event_date_day: '17'
@@ -36,7 +36,7 @@ listing_items:
     url: '/'   
   4:
     sb_demo: true
-    variation: 'events-carousel'
+    variation: 'media-carousel'
     title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
     event_date_month: 'April'
     event_date_day: '30'
@@ -46,7 +46,7 @@ listing_items:
   
   5:
     sb_demo: true
-    variation: 'events-carousel'
+    variation: 'media-carousel'
     title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
     event_date_month: 'December'
     event_date_day: '09'
@@ -56,7 +56,7 @@ listing_items:
 
   6:
     sb_demo: true
-    variation: 'events-carousel'
+    variation: 'media-carousel'
     title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
     event_date_month: 'July'
     event_date_day: '17'

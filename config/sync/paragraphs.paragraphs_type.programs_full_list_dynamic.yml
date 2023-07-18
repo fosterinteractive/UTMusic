@@ -1,0 +1,10 @@
+uuid: 3f76ed31-4195-45b3-a188-61f3c2a2b1ab
+langcode: en
+status: true
+dependencies: {  }
+id: programs_full_list_dynamic
+label: 'Programs: Full List (Dynamic)'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

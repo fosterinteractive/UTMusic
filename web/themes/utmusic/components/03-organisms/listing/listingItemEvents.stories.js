@@ -1,11 +1,11 @@
 import listingItemEvents from './listing-item--events.twig';
 import listingItemFeaturedEvents from './listing-item--events-featured.twig';
-import listingItemCarouselEvents from './listing-item--events-carousel.twig';
+import listingItemCarouselEvents from './listing-item--media-carousel.twig';
 
 import ListingItemEventsData from './listing-item--events.yml';
 import ListingItemEventsCondensedData from './listing-item--events-condensed.yml';
 import ListingItemEventsFeaturedData from './listing-item--events-featured.yml';
-import ListingItemEventsCarouselData from './listing-item--events-carousel.yml';
+import ListingItemEventsCarouselData from './listing-item--media-carousel.yml';
 
 /**
  * Storybook Definition with data documentation and controls
@@ -18,7 +18,7 @@ export default {
     controls: { hideNoControlsWarning: 'true' },
     docs: {
       description: {
-        component: 'Listing Item News',
+        component: 'Listing Item Event',
       },
     },
   },

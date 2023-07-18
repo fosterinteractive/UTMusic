@@ -11,7 +11,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - rich_text
+      - simple_text
 id: node.program.field_program_concentration
 field_name: field_program_concentration
 entity_type: node

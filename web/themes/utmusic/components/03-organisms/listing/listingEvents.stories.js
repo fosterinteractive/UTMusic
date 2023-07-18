@@ -2,10 +2,10 @@ import listing from './listing.twig';
 
 import fullListEventsData from './listing--full-events.yml';
 import listRelatedEventsData from './listing--full-events-related.yml';
-import listingEventsCarouselData from './listing--full-events-carousel.yml';
+import listingEventsCarouselData from './listing--full-media-carousel.yml';
 
 
-import './listing--full-events-carousel';
+import './listing--full-media-carousel';
 /**
  * Storybook Definition with data documentation and controls
  */

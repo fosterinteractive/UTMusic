@@ -235,6 +235,10 @@
   --c-button--secondary-svg: #{palette(teal, 700)};
   --c-button--secondary-svg--active: #{palette(teal, 300)};
 
+  // @atoms/text
+  --c-text: #{palette(white)};
+  --c-heading: #{palette(white)};
+
 
   //@molecules/featured media
   --c-featured-media-title: #{palette(white)};

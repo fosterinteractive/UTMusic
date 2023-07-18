@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.program.field_program_header
     - field.field.node.program.field_program_overview
     - field.field.node.program.field_program_stream
+    - field.field.node.program.field_program_summary_image
     - field.field.node.program.field_program_supporting_details
     - field.field.node.program.field_program_type
     - node.type.program
@@ -123,6 +124,15 @@ content:
       link: true
     third_party_settings: {  }
     weight: 104
+    region: content
+  field_program_summary_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 115
     region: content
   field_program_supporting_details:
     type: entity_reference_revisions_entity_view

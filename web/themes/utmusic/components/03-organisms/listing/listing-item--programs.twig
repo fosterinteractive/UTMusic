@@ -1,0 +1,55 @@
+{# Set default listing-item class - 'm-listing-item' #}
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+
+
+<div class="m-listing-item{{ variation }}{% if image %} has-img{% endif %}">
+
+  {% if image %}
+    <div class="m-listing-item{{ variation }}__img">
+      {% include "@molecules/image/image.twig" with {
+          image: image,
+          variation: image_variation,
+        } only
+      %}
+    </div>
+  {% endif %}
+
+  <div class="m-listing-item{{ variation }}__content has-img">
+
+    {% if program_type %}
+      <div class="m-listing-item{{ variation }}__type">
+        {{ program_type }}
+      </div>
+    {% endif %}
+
+    <div class="m-listing-item{{ variation }}__title">
+      {% include "@atoms/text/headings/heading.twig" with {
+          directory: directory,
+          html_element: 'h2',
+          appearance: 'h3',
+          text: title,
+          url: url,          
+        } only
+      %}
+    </div>
+
+    {% if concentration %}
+      <div class="m-listing-item{{ variation }}__concentration">
+        {{ concentration }}
+      </div>
+    {% endif %}
+    
+  </div>
+</div>
