@@ -429,13 +429,6 @@ function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_stat
       ]
     ];
 
-    // Show "Feature Media" field for manual pick
-    $form['field_event_featured_media']['#states'] = [
-      'visible' => [
-        ':input[name="field_event_featured_media_pick"]' => ['value' => 'manual'],
-      ]
-    ];
-
     // Show "Related Events" field for manual pick
     $form['field_event_related_events']['#states'] = [
       'visible' => [

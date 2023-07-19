@@ -1,0 +1,27 @@
+uuid: bd701d05-5814-4c2b-8409-672b4f79c9fd
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_program_full_list_show_fil
+field_name: field_program_full_list_show_fil
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: enable-filter
+      label: 'Show Program Type Filter'
+    -
+      value: hide-filter
+      label: 'Hide Program Type Filter'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

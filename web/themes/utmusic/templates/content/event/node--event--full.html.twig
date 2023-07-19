@@ -164,35 +164,22 @@
 {% endif %}
 
 
-{# Check if the feature media type exists #}
-{% if content.field_event_featured_media_pick[0] %}
-  {# Get value of feauture media type #}
-  {% set feature_media_list_type = content.field_event_featured_media_pick[0]['#markup'] %}
+{% if content.field_event_featured_media[0] %}
+  {% set media_arr = [] %}
+  
+  {# Get the number of media items #}
+  {% set media_count = content.field_event_featured_media['#items'].getIterator()|length - 1 %}
 
-  {# If "default" get dynamic auto-generated view of realted content #}
-  {% if feature_media_list_type == 'default' %}
-    {% set featured_media = drupal_view('media_related_to_content', 'media_related_event') %}
-    {% set media_display = 'default' %}
+  {% set media_display = 'carousel' %}
+  {# Create array with all items  #}
+  {% for i in 0..media_count %}
+    {% set media_arr = media_arr|merge([content.field_event_featured_media[i]]) %}
+  {% endfor %}
 
-  {# If "manual", check for amount of items #}
-  {% elseif feature_media_list_type == 'manual' %}
-    {% if content.field_event_featured_media[0] %}
-      {% set media_arr = [] %}
-      
-      {# Get the number of media items #}
-      {% set media_count = content.field_event_featured_media['#items'].getIterator()|length - 1 %}
+  {% set featured_media = media_arr %}
 
-      {% set media_display = 'carousel' %}
-      {# Create array with all items  #}
-      {% for i in 0..media_count %}
-        {% set media_arr = media_arr|merge([content.field_event_featured_media[i]]) %}
-      {% endfor %}
-   
-    {% endif %}
-
-    {% set featured_media = media_arr ? media_arr : media %}
-  {% endif %}
 {% endif %}
+    
 
 {% if content.field_event_related_pick[0] %}
   {% set related_event_type = content.field_event_related_pick[0]['#markup'] %}

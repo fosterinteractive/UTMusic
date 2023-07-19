@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.programs_full_list_dynamic.field_program_full_list_show_fil
     - field.field.paragraph.programs_full_list_dynamic.field_program_full_list_stream
     - field.field.paragraph.programs_full_list_dynamic.field_program_full_list_type
     - paragraphs.paragraphs_type.programs_full_list_dynamic
@@ -11,6 +12,12 @@ targetEntityType: paragraph
 bundle: programs_full_list_dynamic
 mode: default
 content:
+  field_program_full_list_show_fil:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_program_full_list_stream:
     type: options_select
     weight: 0

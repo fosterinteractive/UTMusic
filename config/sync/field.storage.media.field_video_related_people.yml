@@ -1,12 +1,12 @@
-uuid: a6166415-7ed7-4275-ac29-104617250623
+uuid: 367ba52c-eda9-41f5-9c73-5391e2c14039
 langcode: en
 status: true
 dependencies:
   module:
     - media
     - node
-id: media.field_img_related_event
-field_name: field_img_related_event
+id: media.field_video_related_people
+field_name: field_video_related_people
 entity_type: media
 type: entity_reference
 settings:

@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_program_featured_media
-    - media.type.ed_image
+    - media.type.video
     - node.type.program
   module:
     - media_library_media_modify
@@ -22,10 +22,10 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      ed_image: ed_image
+      video: video
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: ed_image
 field_type: entity_reference_entity_modify

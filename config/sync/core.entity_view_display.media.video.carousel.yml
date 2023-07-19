@@ -1,9 +1,9 @@
-uuid: 0c4f09dc-2663-40c5-999e-9b902c867262
+uuid: 751ced04-552f-4d2e-97b3-fca678c5b123
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.media_library
+    - core.entity_view_mode.media.carousel
     - field.field.media.video.field_ed_video_author
     - field.field.media.video.field_ed_video_height
     - field.field.media.video.field_ed_video_oembed_video
@@ -13,43 +13,48 @@ dependencies:
     - field.field.media.video.field_video_related_area
     - field.field.media.video.field_video_related_people
     - field.field.media.video.field_video_related_program
-    - image.style.medium
     - media.type.video
   module:
-    - svg_image
+    - layout_builder
+    - media
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
-  default_config_hash: co7uaTULtmag7jZyjHRLohAJUND2GCkA0T-ynWg8MF0
-id: media.video.media_library
+  default_config_hash: R0I_1tbmSMTDJEAsSY_CSldgCQ9q8KeovrtlYlIe1nc
+id: media.video.carousel
 targetEntityType: media
 bundle: video
-mode: media_library
+mode: carousel
 content:
-  thumbnail:
-    type: image
+  field_ed_video_oembed_video:
+    type: oembed
     label: hidden
     settings:
-      image_link: ''
-      image_style: medium
-      svg_attributes:
-        width: null
-        height: null
-      svg_render_as_image: true
-      image_loading:
-        attribute: lazy
+      max_width: 0
+      max_height: 0
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_ed_video_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   created: true
   field_ed_video_author: true
   field_ed_video_height: true
-  field_ed_video_oembed_video: true
   field_ed_video_provider: true
-  field_ed_video_title: true
   field_ed_video_width: true
   field_video_related_area: true
   field_video_related_people: true
   field_video_related_program: true
   name: true
   search_api_excerpt: true
+  thumbnail: true
   uid: true

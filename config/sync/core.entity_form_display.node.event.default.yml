@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.event.field_event_area
+    - field.field.node.event.field_event_audience
     - field.field.node.event.field_event_body
     - field.field.node.event.field_event_button_a11y
     - field.field.node.event.field_event_button_label
@@ -25,6 +26,7 @@ dependencies:
     - field.field.node.event.field_event_summary_image
     - field.field.node.event.field_event_title
     - field.field.node.event.field_event_type
+    - field.field.node.event.field_events_ensembles_choirs
     - field.field.node.event.field_page_admin_help_seo
     - field.field.node.event.field_page_admin_help_social
     - field.field.node.event.field_page_meta_description
@@ -100,6 +102,8 @@ third_party_settings:
       children:
         - field_event_type
         - field_event_area
+        - field_events_ensembles_choirs
+        - field_event_audience
       label: Category
       region: content
       parent_name: ''
@@ -149,7 +153,6 @@ third_party_settings:
     group_content:
       children:
         - field_event_body
-        - field_event_featured_media_pick
         - field_event_featured_media
       label: Content
       region: content
@@ -246,6 +249,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_event_audience:
+    type: options_select
+    weight: 42
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_event_body:
     type: text_textarea
     weight: 19
@@ -315,12 +324,6 @@ content:
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: false
       no_edit_on_create: false
-    third_party_settings: {  }
-  field_event_featured_media_pick:
-    type: options_select
-    weight: 20
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_event_header_image_landsca:
     type: media_library_media_modify_widget
@@ -426,6 +429,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_events_ensembles_choirs:
+    type: options_select
+    weight: 41
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_page_admin_help_seo:
     type: markup
     weight: 19
@@ -525,6 +534,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_event_featured_media_pick: true
   field_show_related_events: true
   promote: true
   sticky: true

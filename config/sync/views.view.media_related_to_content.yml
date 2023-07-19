@@ -3,8 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.event_carrousel
+    - core.entity_view_mode.media.carousel
     - media.type.ed_image
+    - media.type.video
   module:
     - media
     - user
@@ -201,18 +202,18 @@ display:
       tags: {  }
   media_related_event:
     id: media_related_event
-    display_title: 'Media Related to Events'
+    display_title: 'Media Video Related to Event'
     display_plugin: block
     position: 1
     display_options:
       arguments:
-        field_img_related_event_target_id:
-          id: field_img_related_event_target_id
-          table: media__field_img_related_event
-          field: field_img_related_event_target_id
+        field_video_related_program_target_id:
+          id: field_video_related_program_target_id
+          table: media__field_video_related_program
+          field: field_video_related_program_target_id
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: 'Media Video Related to Event'
           plugin_id: numeric
           default_action: default
           exception:
@@ -258,14 +259,44 @@ display:
           id: bundle
           table: media_field_data
           field: bundle
+          relationship: none
+          group_type: group
+          admin_label: ''
           entity_type: media
           entity_field: bundle
           plugin_id: bundle
+          operator: in
           value:
-            ed_image: ed_image
+            video: video
+          group: 1
+          exposed: false
           expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
             operator_limit_selection: false
             operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -281,7 +312,7 @@ display:
         type: 'entity:media'
         options:
           relationship: none
-          view_mode: event_carrousel
+          view_mode: carousel
       defaults:
         style: false
         row: false
@@ -302,18 +333,18 @@ display:
       tags: {  }
   media_related_program:
     id: media_related_program
-    display_title: 'Media Related to Progam'
+    display_title: 'Media Video Related to Program'
     display_plugin: block
     position: 1
     display_options:
       arguments:
-        field_img_related_program_target_id:
-          id: field_img_related_program_target_id
-          table: media__field_img_related_program
-          field: field_img_related_program_target_id
+        field_video_related_program_target_id:
+          id: field_video_related_program_target_id
+          table: media__field_video_related_program
+          field: field_video_related_program_target_id
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: 'Media Video Related to Program'
           plugin_id: numeric
           default_action: default
           exception:
@@ -359,14 +390,44 @@ display:
           id: bundle
           table: media_field_data
           field: bundle
+          relationship: none
+          group_type: group
+          admin_label: ''
           entity_type: media
           entity_field: bundle
           plugin_id: bundle
+          operator: in
           value:
-            ed_image: ed_image
+            video: video
+          group: 1
+          exposed: false
           expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
             operator_limit_selection: false
             operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -382,7 +443,7 @@ display:
         type: 'entity:media'
         options:
           relationship: none
-          view_mode: event_carrousel
+          view_mode: carousel
       defaults:
         style: false
         row: false

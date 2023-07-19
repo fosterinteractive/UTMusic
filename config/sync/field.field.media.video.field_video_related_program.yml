@@ -1,0 +1,29 @@
+uuid: a5609acf-0f6b-4b63-bd7f-3f1ba026a98a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_video_related_program
+    - media.type.video
+    - node.type.program
+id: media.video.field_video_related_program
+field_name: field_video_related_program
+entity_type: media
+bundle: video
+label: Program
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      program: program
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

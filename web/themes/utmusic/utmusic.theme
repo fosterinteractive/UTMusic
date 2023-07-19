@@ -232,6 +232,7 @@ function utmusic_preprocess_paragraph(array &$variables) {
           'category1' => 'field_program_full_list_stream',
         ],
         'program_type' => 'field_program_full_list_type',
+        'show_filter' => 'field_program_full_list_show_fil',
         'number_items' => null,
         'number_other_items' => null,
         'offset' => null,
@@ -248,6 +249,9 @@ function utmusic_preprocess_paragraph(array &$variables) {
 
     //Set the offset.
     $offset = $paragraph->hasField($field_mapping[$type]['offset']) && !$paragraph->{$field_mapping[$type]['offset']}->isEmpty() ? $paragraph->{$field_mapping[$type]['offset']}->value : NULL;
+
+    //Show Filter
+    $show_filter = $paragraph->hasField($field_mapping[$type]['show_filter']) && !$paragraph->{$field_mapping[$type]['show_filter']}->isEmpty() ? $paragraph->{$field_mapping[$type]['show_filter']}->value : NULL;
 
     // Determine the number of news items to display.
     $number_items = 0;
@@ -352,7 +356,7 @@ function utmusic_preprocess_paragraph(array &$variables) {
         $variables['content']['event_featured_item'] = utmusic_return_rendered_view('events_full_list', 'events_featured_item', null , $categories, $dynamic_title, $offset);
       }
       elseif ($paragraph_type == 'programs_full_list_dynamic') {
-        $variables['content']['programs_full_list_dynamic'] = utmusic_return_rendered_view('programs_full_list', 'programs_full_list', null , $categories, null, null, $program_types);
+        $variables['content']['programs_full_list_dynamic'] = utmusic_return_rendered_view('programs_full_list', 'programs_full_list', null , $categories, null, null, $program_types, $show_filter);
       }
     }
   }
@@ -460,7 +464,7 @@ function utmusic_preprocess_views_view_unformatted(array &$variables) {
  *
  * used to render a view allowing us to pass contextual arguments to the view.
  */
-function utmusic_return_rendered_view($view, $display, $items = NULL, $categories = [], $title = NULL, $offset = NULL, $layout = NULL, $button_url = NULL, $button_label = NULL, $button_a11y = NULL, $program_types = NULL ) {
+function utmusic_return_rendered_view($view, $display, $items = NULL, $categories = [], $title = NULL, $offset = NULL, $layout = NULL, $button_url = NULL, $button_label = NULL, $button_a11y = NULL, $program_types = NULL, $show_filter = NULL) {
   $args = [];
 
   if (isset($categories['promote'])) {
@@ -482,7 +486,8 @@ function utmusic_return_rendered_view($view, $display, $items = NULL, $categorie
     $button_url,
     $button_label,
     $button_a11y,
-    $program_types
+    $program_types,
+    $show_filter
   ]);
   
   // Get View, set number of items to display and filters.
@@ -573,7 +578,7 @@ function utmusic_form_views_exposed_form_alter(&$form, FormStateInterface $form_
         } else {
           $tid = key($option->option);
           $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
-          
+
           if (!empty($limited_args)) {
             if (in_array($tid, $limited_args)) {
               $filtered_options[$index] = $option;
@@ -583,6 +588,12 @@ function utmusic_form_views_exposed_form_alter(&$form, FormStateInterface $form_
             $filtered_options[$index] = $option;
           }
         }
+      }
+      
+      $filter_display = $view->args[4] ?? NULL;
+
+      if ($filter_display == 'hide-filter') {
+        $form[$field]['#access'] = FALSE;
       }
 
       $form[$field]['#size'] = NULL;

@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.search_result
     - field.field.node.event.field_event_area
+    - field.field.node.event.field_event_audience
     - field.field.node.event.field_event_body
     - field.field.node.event.field_event_button_a11y
     - field.field.node.event.field_event_button_label
@@ -26,6 +27,7 @@ dependencies:
     - field.field.node.event.field_event_summary_image
     - field.field.node.event.field_event_title
     - field.field.node.event.field_event_type
+    - field.field.node.event.field_events_ensembles_choirs
     - field.field.node.event.field_page_admin_help_seo
     - field.field.node.event.field_page_admin_help_social
     - field.field.node.event.field_page_meta_description
@@ -52,6 +54,7 @@ content:
     region: content
 hidden:
   field_event_area: true
+  field_event_audience: true
   field_event_body: true
   field_event_button_a11y: true
   field_event_button_label: true
@@ -73,6 +76,7 @@ hidden:
   field_event_summary_image: true
   field_event_title: true
   field_event_type: true
+  field_events_ensembles_choirs: true
   field_page_admin_help_seo: true
   field_page_admin_help_social: true
   field_page_meta_description: true

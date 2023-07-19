@@ -9,9 +9,32 @@ dependencies:
     - field.field.media.video.field_ed_video_provider
     - field.field.media.video.field_ed_video_title
     - field.field.media.video.field_ed_video_width
+    - field.field.media.video.field_video_related_area
+    - field.field.media.video.field_video_related_people
+    - field.field.media.video.field_video_related_program
     - media.type.video
   module:
+    - field_group
     - media
+third_party_settings:
+  field_group:
+    group_related_content:
+      children:
+        - field_video_related_area
+        - field_video_related_people
+        - field_video_related_program
+      label: 'Related Content'
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
 _core:
   default_config_hash: cLzO-dwkY8FN93UUabqXo4fu3j1hme31J6gaa3dVhg0
 id: media.video.default
@@ -34,6 +57,24 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_video_related_area:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_video_related_people:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_video_related_program:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
     third_party_settings: {  }
   name:
     type: string_textfield

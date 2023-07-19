@@ -21,10 +21,10 @@
 
 <div class="m-listing-item{{ variation }}">
 
-  {% if image %}
-    <div class="m-listing-item{{ variation }}__img">
+  {% if media %}
+    <div class="m-listing-item{{ variation }}__media">
       {% include "@molecules/image/image.twig" with {
-          image: image,
+          image: media,
         } only
       %}
 

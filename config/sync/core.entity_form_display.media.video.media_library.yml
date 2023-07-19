@@ -10,6 +10,9 @@ dependencies:
     - field.field.media.video.field_ed_video_provider
     - field.field.media.video.field_ed_video_title
     - field.field.media.video.field_ed_video_width
+    - field.field.media.video.field_video_related_area
+    - field.field.media.video.field_video_related_people
+    - field.field.media.video.field_video_related_program
     - media.type.video
   module:
     - media
@@ -43,6 +46,9 @@ hidden:
   field_ed_video_provider: true
   field_ed_video_title: true
   field_ed_video_width: true
+  field_video_related_area: true
+  field_video_related_people: true
+  field_video_related_program: true
   path: true
   revision_log_message: true
   status: true

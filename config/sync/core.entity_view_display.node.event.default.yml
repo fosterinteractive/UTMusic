@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.event.field_event_area
+    - field.field.node.event.field_event_audience
     - field.field.node.event.field_event_body
     - field.field.node.event.field_event_button_a11y
     - field.field.node.event.field_event_button_label
@@ -25,6 +26,7 @@ dependencies:
     - field.field.node.event.field_event_summary_image
     - field.field.node.event.field_event_title
     - field.field.node.event.field_event_type
+    - field.field.node.event.field_events_ensembles_choirs
     - field.field.node.event.field_page_admin_help_seo
     - field.field.node.event.field_page_admin_help_social
     - field.field.node.event.field_page_meta_description
@@ -50,6 +52,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 24
+    region: content
+  field_event_audience:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 35
     region: content
   field_event_body:
     type: text_default
@@ -218,6 +228,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 23
+    region: content
+  field_events_ensembles_choirs:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 34
     region: content
   field_page_meta_description:
     type: basic_string

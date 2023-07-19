@@ -6,7 +6,7 @@ dependencies:
     - field.field.media.ed_image.field_ed_image_height
     - field.field.media.ed_image.field_ed_image_image
     - field.field.media.ed_image.field_ed_image_width
-    - field.field.media.ed_image.field_img_related_event
+    - field.field.media.ed_image.field_img_related_area
     - field.field.media.ed_image.field_img_related_people
     - field.field.media.ed_image.field_img_related_program
     - image.style.large
@@ -35,13 +35,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_img_related_event:
+  field_img_related_area:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   field_img_related_people:
     type: entity_reference_label

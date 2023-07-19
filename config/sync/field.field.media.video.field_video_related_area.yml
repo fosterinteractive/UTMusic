@@ -1,0 +1,29 @@
+uuid: 10d8dd2e-a0b5-4b63-80ce-565b81d8a1be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_video_related_area
+    - media.type.video
+    - taxonomy.vocabulary.area_of_specialization
+id: media.video.field_video_related_area
+field_name: field_video_related_area
+entity_type: media
+bundle: video
+label: 'Area of Specialization'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      area_of_specialization: area_of_specialization
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

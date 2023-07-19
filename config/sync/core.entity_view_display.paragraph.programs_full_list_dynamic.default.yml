@@ -3,27 +3,37 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.programs_full_list_dynamic.field_program_full_list_show_fil
     - field.field.paragraph.programs_full_list_dynamic.field_program_full_list_stream
     - field.field.paragraph.programs_full_list_dynamic.field_program_full_list_type
     - paragraphs.paragraphs_type.programs_full_list_dynamic
+  module:
+    - options
 id: paragraph.programs_full_list_dynamic.default
 targetEntityType: paragraph
 bundle: programs_full_list_dynamic
 mode: default
 content:
+  field_program_full_list_show_fil:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_program_full_list_stream:
     type: entity_reference_entity_id
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_program_full_list_type:
     type: entity_reference_entity_id
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   search_api_excerpt: true

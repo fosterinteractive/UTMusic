@@ -1,0 +1,23 @@
+uuid: 5ba85991-14dd-408c-9e98-233c36612a4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_program_full_list_show_fil
+    - paragraphs.paragraphs_type.programs_full_list_dynamic
+  module:
+    - options
+id: paragraph.programs_full_list_dynamic.field_program_full_list_show_fil
+field_name: field_program_full_list_show_fil
+entity_type: paragraph
+bundle: programs_full_list_dynamic
+label: 'Filter Display'
+description: 'Controls displayed of <i>Program Type</i> filter to website visitors. <br>If any "Limit by Program Type" options are selected, the Program Type filter will only include those options.'
+required: true
+translatable: false
+default_value:
+  -
+    value: enable-filter
+default_value_callback: ''
+settings: {  }
+field_type: list_string

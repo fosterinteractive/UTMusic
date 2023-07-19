@@ -7,7 +7,7 @@ dependencies:
     - field.field.media.ed_image.field_ed_image_height
     - field.field.media.ed_image.field_ed_image_image
     - field.field.media.ed_image.field_ed_image_width
-    - field.field.media.ed_image.field_img_related_event
+    - field.field.media.ed_image.field_img_related_area
     - field.field.media.ed_image.field_img_related_people
     - field.field.media.ed_image.field_img_related_program
     - image.style.large
@@ -19,11 +19,10 @@ third_party_settings:
   field_group:
     group_related_content:
       children:
-        - field_img_related_event
         - field_img_related_people
         - field_img_related_program
       label: 'Related Content'
-      region: content
+      region: hidden
       parent_name: ''
       weight: 2
       format_type: fieldset
@@ -55,24 +54,6 @@ content:
       show_crop_area: true
       show_default_crop: true
     third_party_settings: {  }
-  field_img_related_event:
-    type: options_select
-    weight: 13
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_img_related_people:
-    type: options_select
-    weight: 14
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_img_related_program:
-    type: options_select
-    weight: 15
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0
@@ -85,6 +66,9 @@ hidden:
   created: true
   field_ed_image_height: true
   field_ed_image_width: true
+  field_img_related_area: true
+  field_img_related_people: true
+  field_img_related_program: true
   path: true
   revision_log_message: true
   status: true

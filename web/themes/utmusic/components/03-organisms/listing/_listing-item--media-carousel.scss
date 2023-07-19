@@ -14,11 +14,15 @@
   position: relative;
 }
 
-.m-listing-item--media-carousel__img {
+.m-listing-item--media-carousel__media {
   position: relative;
-  padding-bottom: calc(var(--spacer) * 0.5);
-  margin-bottom: calc(var(--spacer) * 0.5);
-  border-bottom: rem(1px) solid var(--c-media-carousel-border);
+
+  iframe,
+  .media-oembed-content {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .m-listing-item--media-carousel__event-date {

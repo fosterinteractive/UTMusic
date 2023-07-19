@@ -7,7 +7,7 @@ dependencies:
     - field.field.media.ed_image.field_ed_image_height
     - field.field.media.ed_image.field_ed_image_image
     - field.field.media.ed_image.field_ed_image_width
-    - field.field.media.ed_image.field_img_related_event
+    - field.field.media.ed_image.field_img_related_area
     - field.field.media.ed_image.field_img_related_people
     - field.field.media.ed_image.field_img_related_program
     - image.style.large
@@ -19,7 +19,7 @@ third_party_settings:
   field_group:
     group_related_content:
       children:
-        - field_img_related_event
+        - field_img_related_area
         - field_img_related_people
         - field_img_related_program
       label: 'Related Content'
@@ -51,21 +51,21 @@ content:
       preview_link: true
       offsets: '50,50'
     third_party_settings: {  }
-  field_img_related_event:
+  field_img_related_area:
     type: options_select
-    weight: 10
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
   field_img_related_people:
     type: options_select
-    weight: 11
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   field_img_related_program:
     type: options_select
-    weight: 12
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }

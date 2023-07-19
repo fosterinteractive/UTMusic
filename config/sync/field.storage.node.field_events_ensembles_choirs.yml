@@ -1,0 +1,20 @@
+uuid: 96033967-710a-4d55-a710-8dd41c5b7e46
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_events_ensembles_choirs
+field_name: field_events_ensembles_choirs
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
