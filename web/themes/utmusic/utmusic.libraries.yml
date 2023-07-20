@@ -84,6 +84,11 @@ accordion:
   js:
     js/accordion.js: {}
 
+priority-nav:
+  js:
+    js/libraries/priority-nav/dist/priority-nav.min.js: { minified: true }
+    js/priority-plus-menu.config.js: {}
+
 foundation_core:
   version: 6.7.4
   # css:

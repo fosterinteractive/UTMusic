@@ -1,0 +1,21 @@
+attributes:
+items:
+  - title: 'Get Prepared'
+    url: '#'
+    attributes:
+  - title: 'Choosing Courses'
+    url: '#'
+    attributes:
+  - title: 'Opportunities'
+    url: '#'
+    attributes:
+  - title: 'Finances'
+    url: '#'
+    attributes:
+    in_active_trail: true
+  - title: 'Student Life'
+    url: '#'
+    attributes:
+  - title: 'Sessional Dates'
+    url: "#"
+    attributes:

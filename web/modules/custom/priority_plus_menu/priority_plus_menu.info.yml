@@ -1,0 +1,11 @@
+
+# Module name.
+name: Priority Plus Menu
+# Module description.
+description: 'Priority Plus Menu - Level 4'
+# Module dev info.
+type: module
+package: 'Mainspring'
+core_version_requirement: ^9.2 || ^10
+# Module version.
+version: '1.0.0'
