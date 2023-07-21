@@ -615,7 +615,7 @@ function utmusic_preprocess_menu(&$variables) {
   // Main menu (Desktop).
   if (
     $variables['menu_name'] == 'main' &&
-    isset($variables['menu_block_configuration']) && 
+    isset($variables['menu_block_configuration']['suggestion']) && 
     $variables['menu_block_configuration']['suggestion'] == 'main'
   ) {
     // Mega menu builder service

@@ -11,7 +11,7 @@ _core:
 id: sociallite
 theme: utmusic
 region: hidden
-weight: 0
+weight: 4
 provider: null
 plugin: social_lite
 settings:

@@ -36,6 +36,26 @@
   z-index: 1; // ensures the main content is below when they overlap
 }
 
+.l-page__menu-priority-plus {
+  position: sticky;
+  top: -1px;
+  z-index: 1;
+  border-bottom: 1px solid palette(grey, 950);
+  background-color: palette(white);
+
+  &:empty {
+    display: none;
+  }
+
+  .contextual-region {
+    position: inherit;
+  }
+}
+
+// .l-main__utility {
+
+// }
+
 .l-page__footer {
   margin-top: auto;
   grid-area: footer;
