@@ -1,0 +1,29 @@
+uuid: fb66535f-bd7b-494d-881a-a2ad5ab13be7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_area
+    - node.type.people
+    - taxonomy.vocabulary.area_of_specialization
+id: node.people.field_people_area
+field_name: field_people_area
+entity_type: node
+bundle: people
+label: 'Area of Specialization'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      area_of_specialization: area_of_specialization
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,4 +1,4 @@
-status: 2
+status: 1
 pattern: '[node:field_page_header:entity:field_header_title_prefix] [node:field_page_header:entity:field_header_title] [node:field_page_header:entity:field_carousel_header_title_prefix] [node:field_page_header:entity:field_carousel_header_title]'
 escape: true
 preserve_titles: false

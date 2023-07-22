@@ -1,0 +1,19 @@
+uuid: 5a1597a5-124b-4dee-a4d9-97b09423bf7b
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_people_research_profile
+field_name: field_people_research_profile
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

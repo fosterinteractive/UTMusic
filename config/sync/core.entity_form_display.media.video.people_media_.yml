@@ -1,0 +1,84 @@
+uuid: 12ae95af-6524-42a4-ae48-e4e466c16641
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.people_media_
+    - field.field.media.video.field_ed_video_author
+    - field.field.media.video.field_ed_video_height
+    - field.field.media.video.field_ed_video_oembed_video
+    - field.field.media.video.field_ed_video_provider
+    - field.field.media.video.field_ed_video_title
+    - field.field.media.video.field_ed_video_width
+    - field.field.media.video.field_video_related_area
+    - field.field.media.video.field_video_related_people
+    - field.field.media.video.field_video_related_program
+    - media.type.video
+  module:
+    - field_group
+    - media
+third_party_settings:
+  field_group:
+    group_related_content:
+      children:
+        - field_video_related_area
+        - field_video_related_people
+      label: 'Related Content'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
+_core:
+  default_config_hash: cLzO-dwkY8FN93UUabqXo4fu3j1hme31J6gaa3dVhg0
+id: media.video.people_media_
+targetEntityType: media
+bundle: video
+mode: people_media_
+content:
+  field_ed_video_oembed_video:
+    type: oembed_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ed_video_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_video_related_area:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_video_related_people:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_ed_video_author: true
+  field_ed_video_height: true
+  field_ed_video_provider: true
+  field_ed_video_width: true
+  field_video_related_program: true
+  name: true
+  path: true
+  revision_log_message: true
+  status: true
+  uid: true

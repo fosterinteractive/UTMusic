@@ -1,0 +1,23 @@
+uuid: 6862a8de-02f6-4924-9822-6e3355a4f19c
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - node
+id: node.field_people_pronunciation
+field_name: field_people_pronunciation
+entity_type: node
+type: file
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

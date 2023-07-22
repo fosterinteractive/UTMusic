@@ -1,0 +1,10 @@
+uuid: f7e85f74-9636-432a-9a9d-d84187b05d5f
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.program_media
+label: 'Program Media'
+targetEntityType: media
+cache: true

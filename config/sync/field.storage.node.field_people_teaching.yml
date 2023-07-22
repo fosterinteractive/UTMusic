@@ -1,0 +1,19 @@
+uuid: eacac507-4301-4250-acfa-8006e461f7dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_people_teaching
+field_name: field_people_teaching
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

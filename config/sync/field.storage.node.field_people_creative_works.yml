@@ -1,0 +1,19 @@
+uuid: 4cf03ed6-5773-4932-adb2-785bf3f10895
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_people_creative_works
+field_name: field_people_creative_works
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

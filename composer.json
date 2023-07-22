@@ -95,7 +95,8 @@
         "drupal/smart_date": "^4.0",
         "drupal/menu_item_extras": "^3.0",
         "drupal/similarterms": "^1.6",
-        "npm-asset/tippy.js": "^6.3"
+        "npm-asset/tippy.js": "^6.3",
+        "drupal/audiorecorder": "1.0.0-rc1"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2",
@@ -186,6 +187,9 @@
             },
             "drupal/hide_revision_field": {
                 "3260101 - [PHP8.1] Deprecated function: unserialize(): Passing null to parameter #1 ($data) of type string is deprecated": "https://www.drupal.org/files/issues/2022-01-24/3260101-2.patch"
+            },
+            "drupal/audiorecorder": {
+                "3316491 - No save in theme 'Gin'": "https://www.drupal.org/files/issues/2023-04-21/audiorecorder-rc1-no-save-in-theme-gin-3316491.patch"
             }
         },
         "enable-patching": true

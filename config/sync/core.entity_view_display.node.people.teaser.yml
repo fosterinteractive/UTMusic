@@ -4,28 +4,74 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.people.body
+    - field.field.node.people.field_page_admin_help_seo
+    - field.field.node.people.field_page_admin_help_social
+    - field.field.node.people.field_page_meta_description
+    - field.field.node.people.field_page_meta_image
+    - field.field.node.people.field_page_meta_title
+    - field.field.node.people.field_people_activities
+    - field.field.node.people.field_people_area
+    - field.field.node.people.field_people_background
+    - field.field.node.people.field_people_creative_works
+    - field.field.node.people.field_people_custom_content
+    - field.field.node.people.field_people_education
+    - field.field.node.people.field_people_email
+    - field.field.node.people.field_people_enable_media
+    - field.field.node.people.field_people_faculty_position
+    - field.field.node.people.field_people_featured_media
+    - field.field.node.people.field_people_image
+    - field.field.node.people.field_people_instrument
+    - field.field.node.people.field_people_last_name
+    - field.field.node.people.field_people_name
+    - field.field.node.people.field_people_phone
+    - field.field.node.people.field_people_profile_type
+    - field.field.node.people.field_people_pronouns
+    - field.field.node.people.field_people_pronunciation
+    - field.field.node.people.field_people_research_profile
+    - field.field.node.people.field_people_role
+    - field.field.node.people.field_people_staff_position
+    - field.field.node.people.field_people_teaching
+    - field.field.node.people.field_people_website
     - node.type.people
   module:
-    - text
     - user
 id: node.people.teaser
 targetEntityType: node
 bundle: people
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 101
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
 hidden:
+  field_page_admin_help_seo: true
+  field_page_admin_help_social: true
+  field_page_meta_description: true
+  field_page_meta_image: true
+  field_page_meta_title: true
+  field_people_activities: true
+  field_people_area: true
+  field_people_background: true
+  field_people_creative_works: true
+  field_people_custom_content: true
+  field_people_education: true
+  field_people_email: true
+  field_people_enable_media: true
+  field_people_faculty_position: true
+  field_people_featured_media: true
+  field_people_image: true
+  field_people_instrument: true
+  field_people_last_name: true
+  field_people_name: true
+  field_people_phone: true
+  field_people_profile_type: true
+  field_people_pronouns: true
+  field_people_pronunciation: true
+  field_people_research_profile: true
+  field_people_role: true
+  field_people_staff_position: true
+  field_people_teaching: true
+  field_people_website: true
   search_api_excerpt: true

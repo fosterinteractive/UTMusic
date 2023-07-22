@@ -19,43 +19,44 @@
   </div>
 
   {% if image %}
-    <div class="o-hero-media__image {% if variation %}o-hero-media{{ variation }}__image{% endif %}">
+    <div class="o-hero-media{{ variation }}__image">
       {% if image and variation == '--person' %}
         {{ image }}
       {% endif %}
     </div>
   {% endif %}
 
-  <div class="o-hero-media__text {% if variation %}o-hero-media{{ variation }}__text-wrapper{% endif %}">
+  <div class="o-hero-media{{ variation }}__text-wrapper">
 
-    <div class="o-hero-media__text {% if variation %}o-hero-media{{ variation }}__text{% endif %}">
+    <div class="o-hero-media{{ variation }}__text">
       {% if title_prefix or title %}
         <h1 class="a-heading__h1">
           {% if title_prefix %}
-            <span class='o-hero-media__title-prefix {% if variation %}o-hero-media{{ variation }}__title-prefix{% endif %}'>
+            <span class='o-hero-media{{ variation }}__title-prefix'>
               {{ title_prefix }}
             </span>
           {% endif %}
           
           {% if title %}
-            <span class='o-hero-media__title'>
-              {{ title }}
-            </span>
+            <div class='o-hero-media__title'>
+              {{ title }} {% if prononun %} <span class="o-hero-media__pronoun">{{prononun}}</span>{% endif %}
+            </div>
           {% endif %}
         </h1>
       {% endif %}
 
-      {% if summary %}
-        <div class="o-hero-media__summary {% if variation %}o-hero-media{{ variation }}__summary{% endif %}">
-          {{ summary }}
+      {% if title_suffix %}
+        <div class="o-hero-media{{ variation }}__title-suffix">
+          {{ title_suffix }}
         </div>
       {% endif %}
+      
 
-      {% if categories %}
-        <div class="o-hero-media__tags {% if variation %}o-hero-media{{variation}}__tags{% endif %}">
-          {% for item in categories %}
+      {% if areas %}
+        <div class="o-hero-media{{variation}}__tags">
+          {% for item in areas %}
             {% include '@atoms/chip/chip.twig' with {
-                text: sb_demo ? item.category : item,
+                text: sb_demo ? item : item,
                 html_element: 'div',
               } only 
             %}
@@ -68,51 +69,63 @@
     <div class="o-hero-media--person-text__info-wrapper">
     {% endif %}
 
-      {% if email or phone or url_first or url_second %}
-        <div class="o-hero-media__info {% if variation %}o-hero-media{{variation}}__info{% endif %}">
+      {% if pronunciation or email or phone or discovery_url or website_url %}
+        <div class="o-hero-media{{variation}}__info">
           
-          <div class="o-hero-media__info-mail">
-            {% include "@atoms/link/link.twig" with {
-                label: email,
-                url: 'mailto:' ~ email,
-                variation: 'icon-left',
-                icon: 'mail',
-              } only
-            %}
-          </div>
+          {% if pronunciation %}
+            <div class="o-hero-media__info-pronunciation">
+              {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                  directory: directory,
+                  icon: 'volume',
+                } only 
+              %}
+              {{pronunciation}}
+            </div>
+          {% endif %}
 
-          <div class="o-hero-media__info-phone">
-            {% include "@atoms/link/link.twig" with {
-                label: phone,
-                url: 'tel:' ~ phone,
-                aria_label: aria_label_first,
-                variation: 'icon-left',
-                icon: 'phone',
-              } only
-            %}
-          </div>
+          {% if email %}
+            <div class="o-hero-media__info-mail">
+              {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                  directory: directory,
+                  icon: 'mail',
+                } only 
+              %}
+              <a class="o-hero-media__info-link" href="mailto:{{email}}"{% if aria_mail %} aria-label="{{ aria_mail }}"{% endif %}>{{email}}</a>
+            </div>
+          {% endif %}
 
-          <div class="o-hero-media__info-website-first">
-            {% include "@atoms/link/link.twig" with {
-                label: label_first,
-                url: url_first,
-                aria_label: aria_label_first,
-                variation: 'icon-left',
-                icon: 'interface_link_square',
-              } only
-            %}
-          </div>
+          {% if phone %}
+            <div class="o-hero-media__info-phone">
+              {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                  directory: directory,
+                  icon: 'phone',
+                } only 
+              %}
+              <a class="o-hero-media__info-link" href="tel:{{phone}}"{% if aria_phone %} aria-label="{{ aria_phone }}"{% endif %}>{{phone}}</a>
+            </div>
+          {% endif %}
 
-          <div class="o-hero-media__info-website-second">
-            {% include "@atoms/link/link.twig" with {
-                label: label_second,
-                url: url_second,
-                aria_label: aria_label_second,
-                variation: 'icon-left',
-                icon: 'interface_link_square',
-              } only
-            %}
-          </div>
+          {% if discovery_url %}
+            <div class="o-hero-media__info-discovery">
+              {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                  directory: directory,
+                  icon: 'book-bulb',
+                } only 
+              %}
+              <a class="o-hero-media__info-link" href="{{discovery_url}}"{% if aria_discovery %} aria-label="{{ aria_discovery }}"{% endif %}>{{discovery_url}}</a>
+            </div>
+          {% endif %}
+
+          {% if website_url %}
+            <div class="o-hero-media__info-website">
+              {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                  directory: directory,
+                  icon: 'interface_link_square',
+                } only 
+              %}
+              <a class="o-hero-media__info-link" href="{{website_url}}"{% if aria_website %} aria-label="{{ aria_website }}"{% endif %}>{{website_url}}</a>
+            </div>
+          {% endif %}
           
         </div>
       {% endif %}
@@ -124,7 +137,7 @@
   </div>
 
   {% if breadcrumbs is not empty and not is_front %}
-    <div class="o-hero-media__breadcrumbs {% if variation %}o-hero-media{{variation}}__breadcrumbs{% endif %}">
+    <div class="o-hero-media{{variation}}__breadcrumbs">
     {% if sb_demo %}
       {% include '@molecules/breadcrumbs/breadcrumbs.twig' with {
         bredcrumbs: breadcrumbs,

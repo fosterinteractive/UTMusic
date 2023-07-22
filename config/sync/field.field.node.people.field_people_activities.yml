@@ -1,0 +1,29 @@
+uuid: b1dae08b-a160-4a08-a01c-b6c7eab878f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_activities
+    - node.type.people
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - rich_text
+id: node.people.field_people_activities
+field_name: field_people_activities
+entity_type: node
+bundle: people
+label: 'Professional Activities'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '<h2 class="a-heading__h2">Professional Activities</h2><p>Insert Professional Activities information here</p>'
+    format: rich_text
+default_value_callback: ''
+settings: {  }
+field_type: text_long

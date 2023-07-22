@@ -1,0 +1,27 @@
+uuid: 0fcc7b33-67ff-40c1-a8d2-37e4e72c9dad
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_people_role
+field_name: field_people_role
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: faculty
+      label: Faculty
+    -
+      value: staff
+      label: Staff
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

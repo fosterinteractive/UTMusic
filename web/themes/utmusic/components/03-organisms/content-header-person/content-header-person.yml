@@ -3,30 +3,27 @@ variation: 'person'
 image: '<img src="https://images.unsplash.com/photo-1557315360-6a350ab4eccd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" />'
 title_prefix: 'Person title prefix'
 title: 'Mia Bach'
-summary: "Sessional Teaching Staff: Keyboard, Piano, Voice Studies"
+title_suffix: "Sessional Teaching Staff: Keyboard, Piano, Voice Studies"
+pronunciation: "Pronunciation"
 email: mia.bach@utoronto.ca
-phone: 416 123-4567 x123
-url_first: miabach.personal-website-domain.com
-label_first: miabach.personal-website-domain.com
-aria_label_first: 'Visit personal website'
-url_second: otherwebsite.com
-label_second: otherwebsite.com
-aria_label_second: 'Visit other website'
-categories: 
-  1:
-    category: Keyboard
-  2:
-    category: Voice
+phone: 416 123-4567
+discovery_url: miabach.personal-website-domain.com
+aria_label_discovery: 'Visit personal website'
+website_url: otherwebsite.com
+aria_label_website: 'Visit other website'
+areas: 
+  - Keyboard
+  - Voice
 breadcrumbs:
-  1:
+  -  
     url: "/"
     text: "Home"
-  2:
+  -
     url: "/"
     text: "People"
-  3:
+  -
     url: "/"
     text: "Faculty & Instructors"
-  4:
+  -
     url: 
     text: "Mia Bach"

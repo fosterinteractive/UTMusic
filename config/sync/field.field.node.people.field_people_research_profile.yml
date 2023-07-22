@@ -1,0 +1,23 @@
+uuid: 8b9d6984-74a1-4579-a589-f5e27c424002
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_research_profile
+    - node.type.people
+  module:
+    - link
+id: node.people.field_people_research_profile
+field_name: field_people_research_profile
+entity_type: node
+bundle: people
+label: 'DiscoverResearch Profile'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

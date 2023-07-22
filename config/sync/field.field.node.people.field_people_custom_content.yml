@@ -1,0 +1,26 @@
+uuid: a63e3db9-ee1d-49ec-a3c2-98e12f0f7bab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_custom_content
+    - node.type.people
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - rich_text
+id: node.people.field_people_custom_content
+field_name: field_people_custom_content
+entity_type: node
+bundle: people
+label: 'Main Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3052a0da036d68a23bb54541ac22391",
+    "content-hash": "57edc1a6795bcb5e3e632d7b6e34e392",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2476,6 +2476,55 @@
             }
         },
         {
+            "name": "drupal/audiorecorder",
+            "version": "1.0.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/audiorecorder.git",
+                "reference": "1.0.0-rc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/audiorecorder-1.0.0-rc1.zip",
+                "reference": "1.0.0-rc1",
+                "shasum": "7bbd9bb7994dfc8ba5b351281ff1d4c1d27b3044"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10",
+                "npm-asset/vmsg": "^0.4"
+            },
+            "require-dev": {
+                "drupal/webform": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-rc1",
+                    "datestamp": "1680722807",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "adamfranco",
+                    "homepage": "https://www.drupal.org/user/578762"
+                }
+            ],
+            "description": "Provides an audio-recorder UI for file fields.",
+            "homepage": "http://drupal.org/project/audiorecorder",
+            "support": {
+                "source": "https://git.drupalcode.org/project/audiorecorder",
+                "issues": "https://drupal.org/project/issues/audiorecorder"
+            }
+        },
+        {
             "name": "drupal/auto_entitylabel",
             "version": "3.0.0",
             "source": {
@@ -2762,10 +2811,6 @@
                 {
                     "name": "RobLoach",
                     "homepage": "https://www.drupal.org/user/61114"
-                },
-                {
-                    "name": "soxofaan",
-                    "homepage": "https://www.drupal.org/user/41478"
                 },
                 {
                     "name": "thomas.frobieter",
@@ -10184,7 +10229,7 @@
             "extra": {
                 "drupal": {
                     "version": "4.0.3",
-                    "datestamp": "1689246376",
+                    "datestamp": "1689755800",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -12767,12 +12812,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fosterinteractive/mega_menu_builder.git",
-                "reference": "1fa9458bba870837983de37a05610dea182e7893"
+                "reference": "daaa596beb2d97cb971a823fbc6d9c8cc0c50d06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fosterinteractive/mega_menu_builder/zipball/1fa9458bba870837983de37a05610dea182e7893",
-                "reference": "1fa9458bba870837983de37a05610dea182e7893",
+                "url": "https://api.github.com/repos/fosterinteractive/mega_menu_builder/zipball/daaa596beb2d97cb971a823fbc6d9c8cc0c50d06",
+                "reference": "daaa596beb2d97cb971a823fbc6d9c8cc0c50d06",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -12783,7 +12828,7 @@
                 "source": "https://github.com/fosterinteractive/mega_menu_builder/tree/1.x",
                 "issues": "https://github.com/fosterinteractive/mega_menu_builder/issues"
             },
-            "time": "2023-07-10T21:34:40+00:00"
+            "time": "2023-07-17T21:19:17+00:00"
         },
         {
             "name": "fosterinteractive/social_lite",
@@ -14378,6 +14423,18 @@
             ]
         },
         {
+            "name": "npm-asset/vmsg",
+            "version": "0.4.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/vmsg/-/vmsg-0.4.0.tgz"
+            },
+            "type": "npm-asset",
+            "license": [
+                "CC0-1.0"
+            ]
+        },
+        {
             "name": "oomphinc/composer-installers-extender",
             "version": "2.0.1",
             "source": {
@@ -14907,16 +14964,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.25",
+            "version": "1.10.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "578f4e70d117f9a90699324c555922800ac38d8c"
+                "reference": "5d660cbb7e1b89253a47147ae44044f49832351f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/578f4e70d117f9a90699324c555922800ac38d8c",
-                "reference": "578f4e70d117f9a90699324c555922800ac38d8c",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/5d660cbb7e1b89253a47147ae44044f49832351f",
+                "reference": "5d660cbb7e1b89253a47147ae44044f49832351f",
                 "shasum": ""
             },
             "require": {
@@ -14965,7 +15022,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-07-06T12:11:37+00:00"
+            "time": "2023-07-19T12:44:37+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -20393,16 +20450,16 @@
         },
         {
             "name": "drupal/coder",
-            "version": "8.3.20",
+            "version": "8.3.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pfrenssen/coder.git",
-                "reference": "88055e40931a56074b6510a631d3403794c91625"
+                "reference": "a0b76c6c8ea277b07d58fa75dcacf102a203ad51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pfrenssen/coder/zipball/88055e40931a56074b6510a631d3403794c91625",
-                "reference": "88055e40931a56074b6510a631d3403794c91625",
+                "url": "https://api.github.com/repos/pfrenssen/coder/zipball/a0b76c6c8ea277b07d58fa75dcacf102a203ad51",
+                "reference": "a0b76c6c8ea277b07d58fa75dcacf102a203ad51",
                 "shasum": ""
             },
             "require": {
@@ -20440,7 +20497,7 @@
                 "issues": "https://www.drupal.org/project/issues/coder",
                 "source": "https://www.drupal.org/project/coder"
             },
-            "time": "2023-06-15T07:16:09+00:00"
+            "time": "2023-07-17T15:36:49+00:00"
         },
         {
             "name": "drupal/core-dev",

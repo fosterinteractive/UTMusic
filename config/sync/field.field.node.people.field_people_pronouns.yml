@@ -1,0 +1,26 @@
+uuid: 2cea9b6c-72c6-42a4-80a9-9427ee34c41d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_pronouns
+    - node.type.people
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+id: node.people.field_people_pronouns
+field_name: field_people_pronouns
+entity_type: node
+bundle: people
+label: Pronouns
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

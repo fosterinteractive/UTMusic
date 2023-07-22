@@ -1,0 +1,19 @@
+uuid: 85f3ce24-3df2-4762-8d50-d2d48ec07698
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_people_background
+field_name: field_people_background
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

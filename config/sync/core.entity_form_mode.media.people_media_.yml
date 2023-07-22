@@ -1,0 +1,10 @@
+uuid: 8e6e88d7-b3c7-432f-9cff-76d4eb556c09
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.people_media_
+label: 'People Media '
+targetEntityType: media
+cache: true

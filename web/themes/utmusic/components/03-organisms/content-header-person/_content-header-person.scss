@@ -4,11 +4,15 @@
   display: grid;
 }
 
-.o-hero-media--person .o-hero-media__bg-decoration {
-  @extend %o-hero-media__bg-decoration;
+.o-hero-media--person {
+  .o-hero-media__bg-decoration {
+    @extend %o-hero-media__bg-decoration;
+  }
 }
 
 .o-hero-media--person__image {
+  @extend %o-here-media__image;
+
   grid-row: 2;
   grid-column: col 1 / span 12;
 
@@ -28,7 +32,22 @@
   }
 }
 
+.o-hero-media--person__title-prefix {
+  @extend %o-hero-media__title-prefix-core;
+}
+
+.o-hero-media__pronoun {
+  @extend %a-type--xmedium,;
+  color: palette(blue, 300);
+}
+
+.o-hero-media--person__title-suffix, 
+.o-hero-media--person__title-suffix p {
+  color: var(--c-heading-summary);
+}
+
 .o-hero-media--person__tags {
+  @extend %o-hero-media__tags;
   @extend %o-hero-media-tags-desktop-no-border;
 }
 
@@ -41,17 +60,26 @@
 }
 
 %o-hero-media--person__info-items,
+.o-hero-media__info-pronunciation,
 .o-hero-media__info-mail, 
 .o-hero-media__info-phone,
-.o-hero-media__info-website-first,
-.o-hero-media__info-website-second {
+.o-hero-media__info-discovery,
+.o-hero-media__info-website {
   display: flex;
   gap: calc(var(--spacer) * 0.5);
   align-items: center;
+  margin-bottom: rem(6px);
 
-  .a-link--icon-left {
+  %o-hero-media__info-link,
+  .o-hero-media__info-link {
+    display: block;
+    max-width: 85%;
     color: palette(blue, 300);
     text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
 
     &:hover,
     &:active,
@@ -69,4 +97,8 @@
 %o-hero-media__button, 
 .o-hero-media--person__button {
   margin-top: rem(40px);
+}
+
+.o-hero-media--person__breadcrumbs {
+  @extend %o-hero-media__breadcrumbs;
 }

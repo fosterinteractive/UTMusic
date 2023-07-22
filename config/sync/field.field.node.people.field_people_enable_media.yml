@@ -1,0 +1,23 @@
+uuid: 2ba7b17d-fd65-445c-9b1c-b873db2f9da3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_enable_media
+    - node.type.people
+  module:
+    - options
+id: node.people.field_people_enable_media
+field_name: field_people_enable_media
+entity_type: node
+bundle: people
+label: 'Enable Media'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: view
+default_value_callback: ''
+settings: {  }
+field_type: list_string

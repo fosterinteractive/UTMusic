@@ -5,8 +5,10 @@
 
 }
 
-.o-hero-media--person-text .o-hero-media__bg-decoration {
-  @extend %o-hero-media__bg-decoration;
+.o-hero-media--person-text {
+  .o-hero-media__bg-decoration {
+    @extend %o-hero-media__bg-decoration;
+  }
 }
 
 .o-hero-media--person-text__text-wrapper {
@@ -22,6 +24,15 @@
   }
 }
 
+.o-hero-media--person-text__title-prefix {
+  @extend %o-hero-media__title-prefix-core;
+}
+
+.o-hero-media--person-text__title-suffix, 
+.o-hero-media--person-text__title-suffix p {
+  color: var(--c-heading-summary);
+}
+
 .o-hero-media--person-text__info-wrapper {
   @include breakpoint($bp-tablet) {
     width: 33%;
@@ -29,6 +40,7 @@
 }
 
 .o-hero-media--person-text__tags {
+  @extend %o-hero-media__tags;
   @extend %o-hero-media-tags-no-border;
 }
 
@@ -44,4 +56,8 @@
 
 .o-hero-media--person-text__button {
   @extend %o-hero-media__button;
+}
+
+.o-hero-media--person-text__breadcrumbs {
+  @extend %o-hero-media__breadcrumbs;
 }

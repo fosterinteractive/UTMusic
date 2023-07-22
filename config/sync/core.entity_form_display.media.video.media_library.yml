@@ -15,7 +15,26 @@ dependencies:
     - field.field.media.video.field_video_related_program
     - media.type.video
   module:
-    - media
+    - field_group
+third_party_settings:
+  field_group:
+    group_related_content:
+      children:
+        - field_video_related_area
+        - field_video_related_people
+        - field_video_related_program
+      label: 'Related Content'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
 _core:
   default_config_hash: LETYeBL1Q3jo3tTfxm_ZyHuEsM2ZpSGri74asb1HUwE
 id: media.video.media_library
@@ -24,14 +43,14 @@ bundle: video
 mode: media_library
 content:
   field_ed_video_oembed_video:
-    type: oembed_textfield
+    type: string_textfield
     weight: 1
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  name:
+  field_ed_video_title:
     type: string_textfield
     weight: 0
     region: content
@@ -39,16 +58,31 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_video_related_area:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_video_related_people:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_video_related_program:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   field_ed_video_author: true
   field_ed_video_height: true
   field_ed_video_provider: true
-  field_ed_video_title: true
   field_ed_video_width: true
-  field_video_related_area: true
-  field_video_related_people: true
-  field_video_related_program: true
+  name: true
   path: true
   revision_log_message: true
   status: true

@@ -1,0 +1,9 @@
+status: 2
+pattern: '[media:field_ed_video_title]'
+escape: false
+preserve_titles: false
+save: false
+chunk: 50
+dependencies:
+  config:
+    - media.type.video

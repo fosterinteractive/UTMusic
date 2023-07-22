@@ -1,0 +1,247 @@
+uuid: 6f140f99-5f00-43c3-8413-383ad0836537
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.people.field_page_admin_help_seo
+    - field.field.node.people.field_page_admin_help_social
+    - field.field.node.people.field_page_meta_description
+    - field.field.node.people.field_page_meta_image
+    - field.field.node.people.field_page_meta_title
+    - field.field.node.people.field_people_activities
+    - field.field.node.people.field_people_area
+    - field.field.node.people.field_people_background
+    - field.field.node.people.field_people_creative_works
+    - field.field.node.people.field_people_custom_content
+    - field.field.node.people.field_people_education
+    - field.field.node.people.field_people_email
+    - field.field.node.people.field_people_enable_media
+    - field.field.node.people.field_people_faculty_position
+    - field.field.node.people.field_people_featured_media
+    - field.field.node.people.field_people_image
+    - field.field.node.people.field_people_instrument
+    - field.field.node.people.field_people_last_name
+    - field.field.node.people.field_people_name
+    - field.field.node.people.field_people_phone
+    - field.field.node.people.field_people_profile_type
+    - field.field.node.people.field_people_pronouns
+    - field.field.node.people.field_people_pronunciation
+    - field.field.node.people.field_people_research_profile
+    - field.field.node.people.field_people_role
+    - field.field.node.people.field_people_staff_position
+    - field.field.node.people.field_people_teaching
+    - field.field.node.people.field_people_website
+    - node.type.people
+  module:
+    - file
+    - layout_builder
+    - link
+    - options
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.people.full
+targetEntityType: node
+bundle: people
+mode: full
+content:
+  field_people_activities:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_people_area:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_people_background:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_people_creative_works:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_people_custom_content:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_people_education:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_people_email:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_people_enable_media:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_people_faculty_position:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_people_featured_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: carousel
+      link: false
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  field_people_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_people_instrument:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_people_last_name:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_people_name:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_people_phone:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_people_profile_type:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_people_pronouns:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_people_pronunciation:
+    type: file_audio
+    label: hidden
+    settings:
+      controls: true
+      autoplay: false
+      loop: false
+      multiple_file_display_type: tags
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_people_research_profile:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_people_role:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_people_staff_position:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_people_teaching:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_people_website:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_page_admin_help_seo: true
+  field_page_admin_help_social: true
+  field_page_meta_description: true
+  field_page_meta_image: true
+  field_page_meta_title: true
+  search_api_excerpt: true

@@ -446,6 +446,75 @@ function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_stat
       ]
     ];
   }
+
+  // The "events" add and edit forms.
+  if ($form_id == 'node_people_form' || $form_id == 'node_people_edit_form' ) {
+    // Show the "faculty position" list field
+    $form['field_people_faculty_position']['#states'] = [
+      'visible' => [
+        ':input[name="field_people_role"]' => ['value' => 'faculty'],
+      ]
+    ];
+
+    // Show the "instrument" list field
+    $form['field_people_instrument']['#states'] = [
+      'visible' => [
+        ':input[name="field_people_role"]' => ['value' => 'faculty'],
+      ]
+    ];
+
+    // Show the "staff position" list field
+    $form['field_people_staff_position']['#states'] = [
+      'visible' => [
+        ':input[name="field_people_role"]' => ['value' => 'staff'],
+      ]
+    ];
+
+    // Show the default fields if profile type is "default"
+    $form['field_people_education']['#states'] = [
+      'visible' => [
+        ':input[name="field_people_profile_type"]' => ['value' => 'default'],
+      ]
+    ];
+
+    $form['field_people_background']['#states'] = [
+      'visible' => [
+        ':input[name="field_people_profile_type"]' => ['value' => 'default'],
+      ]
+    ];
+
+    $form['field_people_activities']['#states'] = [
+      'visible' => [
+        ':input[name="field_people_profile_type"]' => ['value' => 'default'],
+      ]
+    ];
+
+    $form['field_people_teaching']['#states'] = [
+      'visible' => [
+        ':input[name="field_people_profile_type"]' => ['value' => 'default'],
+      ]
+    ];
+
+    $form['field_people_creative_works']['#states'] = [
+      'visible' => [
+        ':input[name="field_people_profile_type"]' => ['value' => 'default'],
+      ]
+    ];
+
+    // Show the custom field if profile type is "custom"
+    $form['field_people_custom_content']['#states'] = [
+      'visible' => [
+        ':input[name="field_people_profile_type"]' => ['value' => 'custom'],
+      ]
+    ];
+
+    // Show "Feature Media" field for manual pick
+    $form['field_people_featured_media']['#states'] = [
+      'visible' => [
+        ':input[name="field_people_enable_media"]' => ['value' => 'manual'],
+      ]
+    ];
+  }
 }
 
 /**

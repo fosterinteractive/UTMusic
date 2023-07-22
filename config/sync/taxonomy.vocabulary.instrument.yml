@@ -1,0 +1,8 @@
+uuid: e6ce30c2-e301-4306-a2c1-b34420f57c72
+langcode: en
+status: true
+dependencies: {  }
+name: Instrument
+vid: instrument
+description: ''
+weight: 0

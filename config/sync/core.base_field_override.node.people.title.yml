@@ -1,0 +1,18 @@
+uuid: a9fd7328-9de0-472d-8a98-d3e28c85972b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.people
+id: node.people.title
+field_name: title
+entity_type: node
+bundle: people
+label: 'Drupal Label (Auto Hidden)'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

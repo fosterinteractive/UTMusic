@@ -1,0 +1,29 @@
+uuid: 3d80c74a-f5e0-495f-a721-61d8b1025ae1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_meta_image
+    - media.type.ed_image
+    - node.type.people
+id: node.people.field_page_meta_image
+field_name: field_page_meta_image
+entity_type: node
+bundle: people
+label: 'Meta Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      ed_image: ed_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

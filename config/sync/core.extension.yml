@@ -8,6 +8,8 @@ module:
   adminspring_theme_negotiator: 0
   allowed_formats: 0
   anchor_link: 0
+  audiorecorder: 0
+  audiorecorder_webform_integration: 0
   auto_entitylabel: 0
   auto_meta_title: 0
   block: 0

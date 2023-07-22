@@ -1,0 +1,27 @@
+uuid: 614b56d9-a55f-4f1b-b024-8683ef419702
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_people_profile_type
+field_name: field_people_profile_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: default
+      label: Default
+    -
+      value: custom
+      label: Custom
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

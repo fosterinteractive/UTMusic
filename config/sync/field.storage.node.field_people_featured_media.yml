@@ -1,0 +1,21 @@
+uuid: 0bdbc3e7-dfae-4cbf-9a09-da4a03dee356
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - media_library_media_modify
+    - node
+id: node.field_people_featured_media
+field_name: field_people_featured_media
+entity_type: node
+type: entity_reference_entity_modify
+settings:
+  target_type: media
+module: media_library_media_modify
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

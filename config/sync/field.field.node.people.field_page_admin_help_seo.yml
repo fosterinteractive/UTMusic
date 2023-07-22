@@ -1,0 +1,25 @@
+uuid: d0befeda-49d6-4777-9d13-7fdc5ae9a982
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_admin_help_seo
+    - node.type.people
+  module:
+    - markup
+id: node.people.field_page_admin_help_seo
+field_name: field_page_admin_help_seo
+entity_type: node
+bundle: people
+label: 'Admin Help - SEO'
+description: ''
+required: false
+translatable: true
+default_value:
+  - {  }
+default_value_callback: ''
+settings:
+  markup:
+    value: '<p>&nbsp;<img class="m-admin-tip__image--lrg" src="/themes/adminspring-theme/assets/img/search_results_example.png" data-entity-uuid="" data-entity-type="" alt="screenshot of a google search result"></p><p>Optimize this page for search engines by customizing the <em>Meta Title</em> and <em>Meta Description</em> fields.</p><p>Use the&nbsp;<a href="https://blog.spotibo.com/serp-preview-tool/" target="_blank">Google Search Result Preview Tool</a>&nbsp;to test different content ideas.</p>'
+    format: rich_text_w_images
+field_type: markup

@@ -1,0 +1,10 @@
+uuid: f9560edf-3fdb-4de7-92f9-e2dc28a9a809
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.event_media
+label: 'Event Media'
+targetEntityType: media
+cache: true

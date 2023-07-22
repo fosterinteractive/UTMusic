@@ -1,0 +1,29 @@
+uuid: 1582e00a-9d3b-4205-a471-9bc78569d641
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_teaching
+    - node.type.people
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - rich_text
+id: node.people.field_people_teaching
+field_name: field_people_teaching
+entity_type: node
+bundle: people
+label: Teaching
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '<h2 class="a-heading__h2">Teaching</h2><p>Insert Teaching information here</p>'
+    format: rich_text
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,18 @@
+uuid: 4e840cc9-a953-4356-8b0a-0ceb10ee8114
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_people_email
+field_name: field_people_email
+entity_type: node
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

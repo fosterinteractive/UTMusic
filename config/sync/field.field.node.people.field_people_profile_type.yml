@@ -1,0 +1,23 @@
+uuid: 0984b5a4-d8be-41fe-98b2-610b762beb63
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_profile_type
+    - node.type.people
+  module:
+    - options
+id: node.people.field_people_profile_type
+field_name: field_people_profile_type
+entity_type: node
+bundle: people
+label: 'Profile Type'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

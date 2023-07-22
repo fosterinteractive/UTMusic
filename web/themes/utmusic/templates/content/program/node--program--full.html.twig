@@ -70,6 +70,8 @@
  *   in different view modes.
  */
 #}
+{# Get breadcrumbs block #}
+{% set breadcrumbs = drupal_entity('block', 'menu_breadcrumbs') %}
 
 {# Check if the feature media type exists #}
 {% if content.field_program_enable_media[0] %}

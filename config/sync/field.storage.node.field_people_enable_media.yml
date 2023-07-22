@@ -1,0 +1,27 @@
+uuid: 6c9398b8-4fe0-4305-970e-c6807ea4978a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_people_enable_media
+field_name: field_people_enable_media
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: view
+      label: 'Automatically generated'
+    -
+      value: manual
+      label: 'Manual Pick up'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

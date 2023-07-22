@@ -1,0 +1,29 @@
+uuid: 57c5acf1-267c-48e6-8d62-c6e83fbd5ee1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_staff_position
+    - node.type.people
+    - taxonomy.vocabulary.staff_roles
+id: node.people.field_people_staff_position
+field_name: field_people_staff_position
+entity_type: node
+bundle: people
+label: Position
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      staff_roles: staff_roles
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
