@@ -1,0 +1,20 @@
+uuid: 72407285-f398-4574-9c4c-2c72498c3ddc
+langcode: en
+status: true
+dependencies:
+  module:
+    - priority_plus_menu
+  theme:
+    - utmusic
+id: prioritypluscustommenublock
+theme: utmusic
+region: hidden
+weight: 3
+provider: null
+plugin: priority_plus_menu
+settings:
+  id: priority_plus_menu
+  label: 'Priority Plus Menu Block'
+  label_display: '0'
+  provider: priority_plus_menu
+visibility: {  }

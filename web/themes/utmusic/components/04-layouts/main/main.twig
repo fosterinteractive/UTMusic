@@ -40,6 +40,14 @@
       {% endif %}
     {% endif %}
 
+    {% if menu_priority_plus is not empty %}
+      {% spaceless %}
+        <div class="l-page__menu-priority-plus" data-sticky>
+          {{ menu_priority_plus }}
+        </div>
+      {% endspaceless %}
+    {% endif %}
+
     {% if messages is not empty or tabs is not empty %}
       <div class="l-main__utility l-section--[12]">
         <div class="l-section__zone-1">

@@ -11,7 +11,7 @@ dependencies:
 id: menu_footer
 theme: utmusic
 region: hidden
-weight: 0
+weight: -4
 provider: null
 plugin: 'menu_block:footer'
 settings:

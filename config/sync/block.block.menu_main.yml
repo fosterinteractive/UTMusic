@@ -11,7 +11,7 @@ dependencies:
 id: menu_main
 theme: utmusic
 region: hidden
-weight: 0
+weight: -2
 provider: null
 plugin: 'menu_block:main'
 settings:

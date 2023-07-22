@@ -1,0 +1,135 @@
+.m-menu-priority-plus__wrapper {
+
+}
+
+.m-menu-priority-plus {
+  display: flex;
+  max-width: $bp-max;
+  white-space: nowrap; // required unles a width will be set for the menu item. Otherwise text will flow in 1 word per line.
+
+  @include breakpoint($bp-max) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.m-menu-priority-plus__menu {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.m-menu-priority-plus__item {
+
+  &.is-active {
+
+  }
+}
+
+.m-menu-priority-plus__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 auto;
+  border-bottom: 3px solid palette(white);
+  padding: ru(0.25) ru(0.5);
+  color: palette(grey, 400);
+  text-decoration: none;
+
+  .is-active & {
+    border-color: palette(teal, 700);
+  }
+
+  &:hover {
+    color: palette(blue, 300);
+  }
+}
+
+// Added inside of an active link.
+.m-menu-priority-plus__icon--active {
+  // @extend %a-icon--xxsml;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 2;
+  // color: palette(red);
+  transform: translateY(40%) translateX(-50%);
+}
+
+// The dropdown wrapper created via JS. Holds the toggle button and hidden items.
+.m-menu-priority-plus .nav__dropdown-wrapper {
+  display: flex;
+  margin-left: auto; // position the dropdown button at the end (far right) of the menu.
+}
+
+// The toggle button created via JS. Toggle button to show hide the hidden drop down menu.
+.m-menu-priority-plus .nav__dropdown-toggle {
+  position: relative;
+  margin-left: ru(1);
+  border-left: 1px solid palette(grey, 950) !important;
+  padding-right: ru(1);
+  padding-left: ru(1);
+  border: 0;
+  cursor: pointer;
+  width: ru(5.5);
+  color: palette(grey, 400);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: palette(white);
+  }
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: ru(0.5);
+    margin-top: ru(-0.5);
+    border-radius: 50%;
+    background: palette(teal, 1000);
+    width: ru(1);
+    height: ru(1);
+    vertical-align: middle;
+    line-height: ru(1);
+    color: palette(teal, 700);
+    content: attr(prioritynav-count);
+  }
+
+  &.is-open {
+    box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Down arrow in toggle button.
+.m-menu-priority-plus .m-menu-priority-plus__icon {
+  // @extend %a-icon--xsml;
+  position: absolute;
+  top: 50%;
+  right: ru(0.25);
+  margin-top: ru(-0.375);
+  // color: palette(red);
+}
+
+// The drop down menu of hidden items created by JS.
+.m-menu-priority-plus .nav__dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100vw;
+  text-align: left;
+  z-index: 3;
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.3);
+  background-color: palette(white);
+
+  @include breakpoint($bp-tablet) {
+    width: auto;
+    max-width: 600px;
+  }
+}
+
+// The menu links that are inside of the dropdown menu.
+.m-menu-priority-plus .nav__dropdown .m-menu-priority-plus__link {
+  justify-content: left;
+}
