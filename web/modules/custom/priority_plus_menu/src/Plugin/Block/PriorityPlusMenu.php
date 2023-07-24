@@ -90,7 +90,7 @@ class PriorityPlusMenu extends BlockBase implements ContainerFactoryPluginInterf
       $parents_ids = $this->menuLinkManager->getParentIds($current_menu_item->getParent());
       $depth = !empty($parents_ids) ? count($parents_ids) + 1 : 1;
 
-      if ($depth != 4) {
+      if ($depth != 3 and $depth != 4) {
         return [];
       }
 
@@ -102,12 +102,22 @@ class PriorityPlusMenu extends BlockBase implements ContainerFactoryPluginInterf
         $current_menu_item->getPluginId(),
       ];
 
-      $menu_parameters->setMaxDepth(1);
-      $menu_parameters->setMinDepth(1);
+      // $menu_parameters->setMaxDepth(2);
+      // $menu_parameters->setMinDepth(1);
       $menu_parameters->setActiveTrail($current_id);
-      $menu_parameters->setRoot($current_menu_item->getParent());
-      $menu_parameters->excludeRoot();
+      if ($depth == 3) {
+        $menu_parameters->setRoot($current_menu_item->getPluginId());
+      }
+      else {
+        $menu_parameters->setRoot($current_menu_item->getParent());
+      }
+      // $menu_parameters->excludeRoot();
       $tree = $this->menuTree->load($menu_name, $menu_parameters);
+
+      $parent = reset($tree);
+      if ($parent->hasChildren == FALSE) {
+        return [];
+      }
 
       // Apply some manipulators (checking the access, sorting).
       $manipulators = [
