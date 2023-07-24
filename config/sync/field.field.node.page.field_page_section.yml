@@ -12,6 +12,7 @@ dependencies:
     - paragraphs.paragraphs_type.event_featured_item
     - paragraphs.paragraphs_type.events_full_list_dynamic
     - paragraphs.paragraphs_type.events_summary_list_dynamic
+    - paragraphs.paragraphs_type.faculty_full_list_dynamic
     - paragraphs.paragraphs_type.featured_media
     - paragraphs.paragraphs_type.image_section
     - paragraphs.paragraphs_type.message
@@ -63,99 +64,103 @@ settings:
       events_summary_list_dynamic: events_summary_list_dynamic
       event_featured_item: event_featured_item
       programs_full_list_dynamic: programs_full_list_dynamic
+      faculty_full_list_dynamic: faculty_full_list_dynamic
     negate: 0
     target_bundles_drag_drop:
       accordion:
-        weight: -52
-        enabled: true
-      accordion_item:
-        weight: -33
-        enabled: false
-      button:
-        weight: -58
-        enabled: true
-      card:
         weight: -54
         enabled: true
-      carousel_header:
-        weight: -37
-        enabled: false
-      carousel_image_group:
-        weight: -36
-        enabled: false
-      cta:
-        weight: -55
-        enabled: true
-      event_featured_item:
-        weight: -44
-        enabled: true
-      events_full_list_dynamic:
-        weight: -46
-        enabled: true
-      events_summary_list_dynamic:
-        weight: -45
-        enabled: true
-      featured_media:
-        weight: -51
-        enabled: true
-      header:
-        weight: -38
-        enabled: false
-      image_section:
-        weight: -59
-        enabled: true
-      inline_menu:
-        weight: -41
-        enabled: false
-      message:
-        weight: -57
-        enabled: true
-      news_featured_item:
-        weight: -47
-        enabled: true
-      news_full_list_dynamic:
-        weight: -49
-        enabled: true
-      news_summary_list_dynamic:
-        weight: -48
-        enabled: true
-      poster:
-        weight: -40
-        enabled: false
-      programs_full_list_dynamic:
-        weight: -43
-        enabled: true
-      quote:
-        weight: -56
-        enabled: true
-      section:
-        weight: -63
-        enabled: true
-      section_title:
-        weight: -62
-        enabled: true
-      sequence_item:
-        weight: -35
-        enabled: false
-      sequence_list:
-        weight: -53
-        enabled: true
-      sliding_menu:
-        weight: -50
-        enabled: true
-      sliding_menu_item:
+      accordion_item:
         weight: -34
         enabled: false
-      soundcloud:
-        weight: -42
-        enabled: false
-      text:
-        weight: -61
-        enabled: true
-      text_image:
+      button:
         weight: -60
         enabled: true
-      video:
+      card:
+        weight: -56
+        enabled: true
+      carousel_header:
+        weight: -38
+        enabled: false
+      carousel_image_group:
+        weight: -37
+        enabled: false
+      cta:
+        weight: -57
+        enabled: true
+      event_featured_item:
+        weight: -46
+        enabled: true
+      events_full_list_dynamic:
+        weight: -48
+        enabled: true
+      events_summary_list_dynamic:
+        weight: -47
+        enabled: true
+      faculty_full_list_dynamic:
+        weight: -44
+        enabled: true
+      featured_media:
+        weight: -53
+        enabled: true
+      header:
         weight: -39
+        enabled: false
+      image_section:
+        weight: -61
+        enabled: true
+      inline_menu:
+        weight: -42
+        enabled: false
+      message:
+        weight: -59
+        enabled: true
+      news_featured_item:
+        weight: -49
+        enabled: true
+      news_full_list_dynamic:
+        weight: -51
+        enabled: true
+      news_summary_list_dynamic:
+        weight: -50
+        enabled: true
+      poster:
+        weight: -41
+        enabled: false
+      programs_full_list_dynamic:
+        weight: -45
+        enabled: true
+      quote:
+        weight: -58
+        enabled: true
+      section:
+        weight: -65
+        enabled: true
+      section_title:
+        weight: -64
+        enabled: true
+      sequence_item:
+        weight: -36
+        enabled: false
+      sequence_list:
+        weight: -55
+        enabled: true
+      sliding_menu:
+        weight: -52
+        enabled: true
+      sliding_menu_item:
+        weight: -35
+        enabled: false
+      soundcloud:
+        weight: -43
+        enabled: false
+      text:
+        weight: -63
+        enabled: true
+      text_image:
+        weight: -62
+        enabled: true
+      video:
+        weight: -40
         enabled: false
 field_type: entity_reference_revisions

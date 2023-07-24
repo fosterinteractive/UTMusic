@@ -5,7 +5,7 @@ listing_col_layout: l-flex--4col
 listing_button_url:  
 listing_button_text:  
 listing_items:
-  1: 
+  - 
     sb_demo: true
     variation: 'people'
     title: 'Andrew Downing'
@@ -14,16 +14,12 @@ listing_items:
     url: "#"
     role: Sessional Teaching Staff
     areas_specialization:
-      0:
-        area: Keyboard
-      1:
-        area: Voice
+      - Keyboard
+      - Voice
     instruments:
-      0:
-        instrument: Voice sound 
-      1:
-        instrument: Piano
-  2: 
+      - Voice sound 
+      - Piano
+  -
     sb_demo: true
     variation: 'people'
     title: 'Brian Katz'
@@ -32,19 +28,14 @@ listing_items:
     url: "#"
     role: Sessional Teaching Staff
     areas_specialization:
-      0:
-        area: Music Education
+      - Music Education
     instruments:
-      0:
-        instrument: Guitar 
-      1:
-        instrument: Eurythmics
-      2:
-        instrument: Klezmer Ensemble 
-      3:
-        instrument: Music Education
+      - Guitar 
+      - Eurythmics
+      - Klezmer Ensemble 
+      - Music Education
 
-  3:
+  -
     sb_demo: true
     variation: 'people'
     title: 'Harry Potter'
@@ -54,17 +45,13 @@ listing_items:
     url: "#"
     role: Sessional Instructor
     areas_specialization:
-      0:
-        area: Ear Training
-      1:
-        area: Voice
+      - Ear Training
+      - Voice
     instruments:
-      0:
-        instrument: Voice sound 
-      1:
-        instrument: Piano
+      - Voice sound 
+      - Piano
 
-  4: 
+  -
     sb_demo: true
     variation: 'people'
     title: 'James Holden'
@@ -73,17 +60,13 @@ listing_items:
     url: "#"
     role: Sessional Teaching Staff
     areas_specialization:
-      0:
-        area: Keyboard
-      1:
-        area: Composition
+      - Keyboard
+      - Composition
     instruments:
-      0:
-        instrument: Voice sound 
-      1:
-        instrument: Piano
+      - Voice sound 
+      - Piano
 
-  5: 
+  - 
     sb_demo: true
     variation: 'people'
     title: 'Mia Bach'
@@ -92,17 +75,13 @@ listing_items:
     url: "#"
     role: Sessional Teaching Staff
     areas_specialization:
-      0:
-        area: Keyboard
-      1:
-        area: Voice
+      - Keyboard
+      - Voice
     instruments:
-      0:
-        instrument: Voice studies
-      1:
-        instrument: Piano
+      - Voice studies
+      - Piano
 
-  6: 
+  - 
     sb_demo: true
     variation: 'people'
     title: 'Henry Richards'
@@ -111,19 +90,14 @@ listing_items:
     url: "#"
     role: Sessional Instructor
     areas_specialization:
-      0:
-        area: Jazz
+      - Jazz
     instruments:
-      0:
-        instrument: Jazz Materials and Ear Training
-      1:
-        instrument: Jazz Bass
-      2:
-        instrument: Jazz Composition
-      3:
-        instrument: Jazz Improvisation
+      - Jazz Materials and Ear Training
+      - Jazz Bass
+      - Jazz Composition
+      - Jazz Improvisation
   
-  7: 
+  - 
     sb_demo: true
     variation: 'people'
     title: 'Jane Doe'
@@ -132,17 +106,13 @@ listing_items:
     url: "#"
     role: Sessional Teaching Staff
     areas_specialization:
-      0:
-        area: Keyboard
-      1:
-        area: Voice
+      - Keyboard
+      - Voice
     instruments:
-      0:
-        instrument: Voice sound 
-      1:
-        instrument: Piano
+      - Voice sound 
+      - Piano
 
-  8: 
+  - 
     sb_demo: true
     variation: 'people'
     title: 'Steve McCalister'
@@ -151,17 +121,13 @@ listing_items:
     url: "#"
     role: Sessional Teaching Staff
     areas_specialization:
-      0:
-        area: Keyboard
-      1:
-        area: Voice
+      - Keyboard
+      - Voice
     instruments:
-      0:
-        instrument: Voice sound 
-      1:
-        instrument: Piano
+      - Voice sound 
+      - Piano
 
-  9: 
+  - 
     sb_demo: true
     variation: 'people'
     title: 'Anette Li'
@@ -170,17 +136,13 @@ listing_items:
     url: "#"
     role: Sessional Teaching Staff
     areas_specialization:
-      0:
-        area: Keyboard
-      1:
-        area: Voice
+      - Keyboard
+      - Voice
     instruments:
-      0:
-        instrument: Voice sound 
-      1:
-        instrument: Piano
+      - Voice sound 
+      - Piano
 
-  10: 
+  - 
     sb_demo: true
     variation: 'people'
     title: 'Chucho Baretto'
@@ -189,15 +151,11 @@ listing_items:
     url: "#"
     role: Sessional Teaching Staff
     areas_specialization:
-      0:
-        area: Keyboard
-      1:
-        area: Voice
+      - Keyboard
+      - Voice
     instruments:
-      0:
-        instrument: Voice sound 
-      1:
-        instrument: Piano
+      - Voice sound 
+      - Piano
 
 pager: 
   items:

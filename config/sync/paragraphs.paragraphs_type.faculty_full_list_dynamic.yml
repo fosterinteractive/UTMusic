@@ -1,0 +1,10 @@
+uuid: 02143e18-2b87-434b-a3e1-efd9a9708002
+langcode: en
+status: true
+dependencies: {  }
+id: faculty_full_list_dynamic
+label: 'Faculty: Full List (Dynamic)'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

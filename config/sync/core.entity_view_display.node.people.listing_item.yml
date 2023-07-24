@@ -95,7 +95,7 @@ content:
     weight: 0
     region: content
   field_people_role:
-    type: list_default
+    type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }

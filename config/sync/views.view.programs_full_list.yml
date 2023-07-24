@@ -214,7 +214,8 @@ display:
       header: {  }
       footer: {  }
       display_extenders:
-        ajax_history: {  }
+        ajax_history:
+          enable_history: true
     cache_metadata:
       max-age: -1
       contexts:

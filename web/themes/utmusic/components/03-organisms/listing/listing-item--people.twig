@@ -50,7 +50,7 @@
       <div class="m-listing-item{{ variation }}__position">
         {{ role }}{% if instruments %}:{% endif %}
         {% for item in instruments %}
-          {{ item.instrument}}{% if not loop.last %},{% endif %}
+          {{ item}}{% if not loop.last %},{% endif %}
         {% endfor %}
       </div>
     {% endif %}
@@ -60,8 +60,7 @@
     <div class="m-listing-item{{ variation }}__tags">
       {% for item in areas_specialization %}
         {% include '@atoms/chip/chip.twig' with {
-            text: item.area,
-            variation: '',
+            text: item,
             html_element: 'div',
           } only 
         %}
