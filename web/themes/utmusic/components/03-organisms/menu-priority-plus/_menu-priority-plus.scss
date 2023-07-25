@@ -1,6 +1,6 @@
-.m-menu-priority-plus__wrapper {
+// .m-menu-priority-plus__wrapper {
 
-}
+// }
 
 .m-menu-priority-plus {
   display: flex;
@@ -16,18 +16,18 @@
 .m-menu-priority-plus__menu {
   display: flex;
   align-items: stretch;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: flex-end;
 }
 
-.m-menu-priority-plus__item {
+// .m-menu-priority-plus__item {
 
-  &.is-active {
+//   &.is-active {
 
-  }
-}
+//   }
+// }
 
 .m-menu-priority-plus__link {
+  @extend %a-type--small;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,23 +37,25 @@
   color: palette(grey, 400);
   text-decoration: none;
 
-  .is-active & {
-    border-color: palette(teal, 700);
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: palette(teal, 1000);
+    border-color: palette(teal, 1000);
   }
 
-  &:hover {
+  &.is-active {
     color: palette(blue, 300);
+    border-color: palette(teal, 700);
   }
 }
 
 // Added inside of an active link.
 .m-menu-priority-plus__icon--active {
-  // @extend %a-icon--xxsml;
   position: absolute;
   bottom: 0;
   left: 50%;
   z-index: 2;
-  // color: palette(red);
   transform: translateY(40%) translateX(-50%);
 }
 
@@ -65,59 +67,85 @@
 
 // The toggle button created via JS. Toggle button to show hide the hidden drop down menu.
 .m-menu-priority-plus .nav__dropdown-toggle {
+  @extend %a-type--small;
   position: relative;
-  margin-left: ru(1);
+  margin-left: 30px;
   border-left: 1px solid palette(grey, 950) !important;
-  padding-right: ru(1);
-  padding-left: ru(1);
+  padding-right: 25px;
+  padding-left: 50px;
   border: 0;
   cursor: pointer;
-  width: ru(5.5);
+  width: 140px;
   color: palette(grey, 400);
+  text-align: left;
+
+  @include breakpoint($bp-tablet) {
+    padding-right: 35px;
+    width: 160px;
+  }
 
   &:hover,
   &:focus,
   &:active {
-    background-color: palette(white);
+    background-color: palette(grey, 1000);
+
+    &::before {
+      background-color: palette(white);
+    }
   }
 
   &::before {
     display: block;
     position: absolute;
-    top: 50%;
-    left: ru(0.5);
-    margin-top: ru(-0.5);
+    top: calc(50% - 15px);
+    left: 10px;
     border-radius: 50%;
     background: palette(teal, 1000);
-    width: ru(1);
-    height: ru(1);
-    vertical-align: middle;
-    line-height: ru(1);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
     color: palette(teal, 700);
     content: attr(prioritynav-count);
+    text-align: center;
   }
 
-  &.is-open {
-    box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.2);
+  &::after {
+    position: absolute;
+    top: calc(50% - 8px);
+    right: 15px;
+    content: '';
+    background: url("../images/svg/chevron-down-solid-grey.svg") no-repeat;
+    background-size: 100% auto;
+    display: block;
+    width: 18px;
+    height: 18px;
+    color: pink;
+
+    @include breakpoint($bp-tablet) {
+
+    }
   }
+
+  // &.is-open {
+  //   box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.2);
+  // }
 }
 
 // Down arrow in toggle button.
 .m-menu-priority-plus .m-menu-priority-plus__icon {
-  // @extend %a-icon--xsml;
   position: absolute;
   top: 50%;
   right: ru(0.25);
   margin-top: ru(-0.375);
-  // color: palette(red);
 }
 
 // The drop down menu of hidden items created by JS.
 .m-menu-priority-plus .nav__dropdown {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 1px);
   right: 0;
   width: 100vw;
+  min-width: 160px;
   text-align: left;
   z-index: 3;
   box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.3);
