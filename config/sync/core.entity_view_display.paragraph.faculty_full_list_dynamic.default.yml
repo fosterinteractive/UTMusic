@@ -1,0 +1,23 @@
+uuid: db0e515b-ea37-420c-adf4-9090bb91349b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.faculty_full_list_dynamic.field_people_full_list_role
+    - paragraphs.paragraphs_type.faculty_full_list_dynamic
+  module:
+    - options
+id: paragraph.faculty_full_list_dynamic.default
+targetEntityType: paragraph
+bundle: faculty_full_list_dynamic
+mode: default
+content:
+  field_people_full_list_role:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

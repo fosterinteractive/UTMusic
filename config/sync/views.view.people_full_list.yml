@@ -8,7 +8,9 @@ dependencies:
     - field.storage.node.field_people_name
     - node.type.people
     - taxonomy.vocabulary.area_of_specialization
+    - taxonomy.vocabulary.faculty_roles
     - taxonomy.vocabulary.instrument
+    - taxonomy.vocabulary.staff_roles
   module:
     - node
     - options
@@ -225,7 +227,7 @@ display:
       tags: {  }
   faculty_full_list:
     id: faculty_full_list
-    display_title: 'Faculty Full List'
+    display_title: 'People Full List (Faculty)'
     display_plugin: block
     position: 1
     display_options:
@@ -381,6 +383,47 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
+        field_people_role_value:
+          id: field_people_role_value
+          table: node__field_people_role
+          field: field_people_role_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value:
+            faculty: faculty
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
         combine:
           id: combine
           table: views
@@ -426,27 +469,27 @@ display:
           fields:
             field_people_name: field_people_name
             field_people_last_name: field_people_last_name
-        field_people_role_value:
-          id: field_people_role_value
-          table: node__field_people_role
-          field: field_people_role_value
+        field_people_faculty_position_target_id:
+          id: field_people_faculty_position_target_id
+          table: node__field_people_faculty_position
+          field: field_people_faculty_position_target_id
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: list_field
+          plugin_id: taxonomy_index_tid
           operator: or
           value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: field_people_role_value_op
-            label: Role/Position
+            operator_id: field_people_faculty_position_target_id_op
+            label: 'Role/Position '
             description: ''
             use_operator: false
-            operator: field_people_role_value_op
+            operator: field_people_faculty_position_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_people_role
+            identifier: faculty_position
             required: false
             remember: false
             multiple: false
@@ -469,6 +512,11 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
+          vid: faculty_roles
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
         field_people_area_target_id:
           id: field_people_area_target_id
           table: node__field_people_area
@@ -489,7 +537,7 @@ display:
             operator: field_people_area_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_people_area
+            identifier: faculty_area
             required: false
             remember: false
             multiple: false
@@ -537,7 +585,7 @@ display:
             operator: field_people_instrument_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_people_instrument
+            identifier: faculty_instrument
             required: false
             remember: false
             multiple: false
@@ -561,6 +609,335 @@ display:
             group_items: {  }
           reduce_duplicates: false
           vid: instrument
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: default
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: true
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: listing_item
+      defaults:
+        style: false
+        row: false
+        fields: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders:
+        ajax_history: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_people_last_name'
+        - 'config:field.storage.node.field_people_name'
+  staff_full_list:
+    id: staff_full_list
+    display_title: 'People Full List (Staff)'
+    display_plugin: block
+    position: 1
+    display_options:
+      fields:
+        field_people_name:
+          id: field_people_name
+          table: node__field_people_name
+          field: field_people_name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_people_last_name:
+          id: field_people_last_name
+          table: node__field_people_last_name
+          field: field_people_last_name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            people: people
+          group: 1
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_people_role_value:
+          id: field_people_role_value
+          table: node__field_people_role
+          field: field_people_role_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value:
+            staff: staff
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        combine:
+          id: combine
+          table: views
+          field: combine
+          relationship: none
+          group_type: group
+          admin_label: 'Name (Combined Field)'
+          plugin_id: combine
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: combine_op
+            label: Name
+            description: ''
+            use_operator: false
+            operator: combine_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: name
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          fields:
+            field_people_name: field_people_name
+            field_people_last_name: field_people_last_name
+        field_people_staff_position_target_id:
+          id: field_people_staff_position_target_id
+          table: node__field_people_staff_position
+          field: field_people_staff_position_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_people_staff_position_target_id_op
+            label: Office/Roles
+            description: ''
+            use_operator: false
+            operator: field_people_staff_position_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: staff_position
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: staff_roles
           type: select
           hierarchy: true
           limit: true

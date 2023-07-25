@@ -1,0 +1,21 @@
+uuid: 935d1c7c-30be-474a-abe2-3a2059c6da4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.faculty_full_list_dynamic.field_people_full_list_role
+    - paragraphs.paragraphs_type.faculty_full_list_dynamic
+id: paragraph.faculty_full_list_dynamic.default
+targetEntityType: paragraph
+bundle: faculty_full_list_dynamic
+mode: default
+content:
+  field_people_full_list_role:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

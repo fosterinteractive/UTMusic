@@ -36,8 +36,21 @@
  * @ingroup themeable
  */
 #}
-{% include "@organisms/content-views/_view.twig"
-  with {
-    content: drupal_view('people_full_list', 'faculty_full_list'),
-  } only
-%}
+
+{% if content.field_people_full_list_role[0] %}
+  {% set list_role =  content.field_people_full_list_role[0]['#markup'] %}
+{% endif %}
+
+{% if list_role == 'faculty' %}
+  {% include "@organisms/content-views/_view.twig"
+    with {
+      content: drupal_view('people_full_list', 'faculty_full_list'),
+    } only
+  %}
+{% elseif list_role == 'staff' %}
+  {% include "@organisms/content-views/_view.twig"
+    with {
+      content: drupal_view('people_full_list', 'staff_full_list'),
+    } only
+  %}
+{% endif %}
