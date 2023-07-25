@@ -141,6 +141,18 @@
                   {{ 'Skip to the last item'|t }}
                 </a>
               {% endif %}
+            {% elseif variation == '--program' %}
+              {% include "@organisms/listing/listing-item--program.twig" with {
+                  directory: directory,
+                  variation: item.variation,
+                  url: item.url,
+                  title: item.title, 
+                  image: item.image,
+                  program_type: item.program_type,
+                  concentration: item.concentration,
+                  sb_demo: item.sb_demo,
+                } only
+              %}
             {% else %}
               {% include "@organisms/listing/listing-item.twig" with {
                   directory: directory,
