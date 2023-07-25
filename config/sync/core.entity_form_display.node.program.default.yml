@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.program.field_program_academic_info
     - field.field.node.program.field_program_concentration
     - field.field.node.program.field_program_enable_media
+    - field.field.node.program.field_program_faculty
     - field.field.node.program.field_program_featured_media
     - field.field.node.program.field_program_header
     - field.field.node.program.field_program_overview
@@ -120,6 +121,7 @@ third_party_settings:
         - field_program_overview
         - field_program_academic_info
         - field_program_supporting_details
+        - field_program_faculty
       label: 'Main Section'
       region: content
       parent_name: ''
@@ -237,6 +239,16 @@ content:
     weight: 14
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_program_faculty:
+    type: entity_reference_autocomplete
+    weight: 16
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_program_featured_media:
     type: media_library_media_modify_widget

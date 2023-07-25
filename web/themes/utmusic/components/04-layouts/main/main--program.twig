@@ -67,7 +67,13 @@
               %}
             </div>
 
-            {{ faculty }}
+            {% include "@organisms/listing/listing.twig" with {
+                directory: directory,
+                variation: 'people-carousel',
+                listing_items: faculty,
+                number_items: number_items
+              } only
+            %}
           </div>
         </div>
       {% endif %} 

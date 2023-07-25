@@ -64,76 +64,31 @@
  *   is an administrator.
  *
  * @see template_preprocess_node()
- *
- * @todo Remove the id attribute (or make it a class), because if that gets
- *   rendered twice on a page this is invalid CSS for example: two lists
- *   in different view modes.
- */
 #}
-{# Get breadcrumbs block #}
-{% set breadcrumbs = drupal_entity('block', 'menu_breadcrumbs') %}
 
-{# Check if the feature media type exists #}
-{% if content.field_program_enable_media[0] %}
-  {# Get value of feauture media type #}
-  {% set feature_media_list_type = content.field_program_enable_media[0]['#markup'] %}
+{% if content.field_people_name[0] and content.field_people_last_name[0] %}
+  {% set full_name = content.field_people_name[0]['#text'] ~ ' ' ~ content.field_people_last_name[0]['#text'] %}
+{% endif %}
 
-  {# If "default" get dynamic auto-generated view of realted content #}
-  {% if feature_media_list_type == 'view' %}
-    {% set featured_media = drupal_view('media_related_to_content', 'media_related_program') %}
-    {% set media_display = 'default' %}
-
-  {# If "manual", check for amount of items #}
-  {% elseif feature_media_list_type == 'manual' %}
-    {% if content.field_program_featured_media[0] %}
-      {% set media_arr = [] %}
-      
-      {# Get the number of media items #}
-      {% set media_count = content.field_program_featured_media['#items'].getIterator()|length - 1 %}
-
-      {% set media_display = 'carousel' %}
-      {# Create array with all items  #}
-      {% for i in 0..media_count %}
-        {% set media_arr = media_arr|merge([content.field_program_featured_media[i]]) %}
-      {% endfor %}
-   
-    {% endif %}
-
-    {% set featured_media = media_arr ? media_arr : media %}
+{# Check the role, position and instruments, create string #}
+{% if content.field_people_role[0] %}
+  {% set role = content.field_people_role[0]['#markup'] %}
+  
+  {% if role == 'faculty' %}
+    {% set position = content.field_people_faculty_position[0] ? content.field_people_faculty_position[0]['#plain_text'] %}
+  {% elseif role == 'staff' %}
+    {% set position = content.field_people_staff_position[0] ? content.field_people_staff_position[0]['#plain_text'] %}
   {% endif %}
 {% endif %}
 
-{# Set string of faculty from array #}
-{% if content.field_program_faculty[0] %}
-  {% set faculty = [] %}
 
-  {# Get number of items #}
-  {% if content.field_program_faculty['#items'].getIterator() %}
-    {% set faculty_count = content.field_program_faculty['#items'].getIterator()|length - 1 %}
-  {% endif %}
-
-  {# For each item add to instruments array #}
-  {% for i in 0..faculty_count %}
-    {% set faculty = faculty|merge([content.field_program_faculty[i]]) %}
-  {% endfor %}
-{% endif %}
-
-
-
-{% include "@layouts/main/main--program.twig" with {
+{% include "@organisms/listing/listing-item--people.twig" with {
     directory: 'themes/utmusic',
-    breadcrumbs: breadcrumbs,
-    messages: drupal_entity('block', 'messages'),
-    tabs: drupal_entity('block', 'tabs'),
-    hero_banner: content.field_program_header[0] ? content.field_program_header,
-    overview: content.field_program_overview[0] ? content.field_program_overview,
-    academic_info: content.field_program_academic_info[0] ? content.field_program_academic_info,
-    faculty: faculty,
-    supporting_details: content.field_program_supporting_details[0] ? content.field_program_supporting_details,
-    media_display: media_display,
-    featured_media: featured_media,
-    number_items: faculty_count
-  }
+    variation: 'people',
+    placeholder_icon: 'person',
+    title: full_name,
+    image: content.field_people_image[0] ? content.field_people_image,
+    role: position,
+  } only
 %}
 
-{{ attach_library('utmusic/carousel-media') }}

@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.program.field_program_academic_info
     - field.field.node.program.field_program_concentration
     - field.field.node.program.field_program_enable_media
+    - field.field.node.program.field_program_faculty
     - field.field.node.program.field_program_featured_media
     - field.field.node.program.field_program_header
     - field.field.node.program.field_program_overview
@@ -57,6 +58,15 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 8
+    region: content
+  field_program_faculty:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: listing_item_condensed
+      link: false
+    third_party_settings: {  }
     weight: 7
     region: content
   field_program_featured_media:
@@ -66,7 +76,7 @@ content:
       view_mode: carousel
       link: false
     third_party_settings: {  }
-    weight: 8
+    weight: 9
     region: content
   field_program_header:
     type: entity_reference_revisions_entity_view

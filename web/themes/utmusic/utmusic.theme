@@ -251,7 +251,9 @@ function utmusic_preprocess_paragraph(array &$variables) {
     $offset = $paragraph->hasField($field_mapping[$type]['offset']) && !$paragraph->{$field_mapping[$type]['offset']}->isEmpty() ? $paragraph->{$field_mapping[$type]['offset']}->value : NULL;
 
     //Show Filter
-    $show_filter = $paragraph->hasField($field_mapping[$type]['show_filter']) && !$paragraph->{$field_mapping[$type]['show_filter']}->isEmpty() ? $paragraph->{$field_mapping[$type]['show_filter']}->value : NULL;
+    if (isset($field_mapping[$type]['show_filter'])) {
+      $show_filter = $paragraph->hasField($field_mapping[$type]['show_filter']) && !$paragraph->{$field_mapping[$type]['show_filter']}->isEmpty() ? $paragraph->{$field_mapping[$type]['show_filter']}->value : NULL;
+    }
 
     // Determine the number of news items to display.
     $number_items = 0;
