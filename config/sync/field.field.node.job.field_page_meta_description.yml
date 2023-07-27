@@ -1,0 +1,19 @@
+uuid: 7ce67149-2049-4921-a62b-fead13b95df8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_meta_description
+    - node.type.job
+id: node.job.field_page_meta_description
+field_name: field_page_meta_description
+entity_type: node
+bundle: job
+label: 'Meta Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

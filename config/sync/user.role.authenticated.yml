@@ -20,6 +20,7 @@ dependencies:
     - media_entity_download
     - moderation_sidebar
     - node
+    - rabbit_hole
     - system
     - toolbar
 _core:
@@ -43,6 +44,7 @@ permissions:
   - 'edit own page content'
   - 'edit own video media'
   - 'opt-in or out of google analytics tracking'
+  - 'rabbit hole bypass node'
   - 'update media'
   - 'use moderation sidebar'
   - 'use text format header_summary'

@@ -1,0 +1,20 @@
+uuid: 987b14f4-042c-498b-9a9b-f210223fa5ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_job_closing_date
+field_name: field_job_closing_date
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

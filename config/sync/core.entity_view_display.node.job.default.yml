@@ -1,0 +1,63 @@
+uuid: a81010b1-0616-4085-abe8-f3c5c2bfed4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.job.field_job_body
+    - field.field.node.job.field_job_category
+    - field.field.node.job.field_job_closing_date
+    - field.field.node.job.field_job_title
+    - field.field.node.job.field_page_admin_help_seo
+    - field.field.node.job.field_page_admin_help_social
+    - field.field.node.job.field_page_meta_description
+    - field.field.node.job.field_page_meta_image
+    - field.field.node.job.field_page_meta_title
+    - node.type.job
+  module:
+    - datetime
+    - text
+    - user
+id: node.job.default
+targetEntityType: node
+bundle: job
+mode: default
+content:
+  field_job_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_job_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_job_closing_date:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: America/Toronto
+      date_format: 'F d, Y'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_job_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_page_admin_help_seo: true
+  field_page_admin_help_social: true
+  field_page_meta_description: true
+  field_page_meta_image: true
+  field_page_meta_title: true
+  links: true
+  search_api_excerpt: true

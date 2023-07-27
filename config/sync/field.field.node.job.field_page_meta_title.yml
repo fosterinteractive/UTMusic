@@ -1,0 +1,19 @@
+uuid: 5d02410b-5676-4a59-b943-a76e1a7e36d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_meta_title
+    - node.type.job
+id: node.job.field_page_meta_title
+field_name: field_page_meta_title
+entity_type: node
+bundle: job
+label: 'Meta Title / Page Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

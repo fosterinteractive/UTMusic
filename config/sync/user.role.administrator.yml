@@ -13,6 +13,7 @@ dependencies:
     - media.type.video
     - node.type.ed_notice
     - node.type.event
+    - node.type.job
     - node.type.news
     - node.type.page
     - taxonomy.vocabulary.ed_news_category
@@ -56,6 +57,7 @@ dependencies:
     - paragraphs_admin
     - path
     - pathauto
+    - rabbit_hole
     - recaptcha
     - redirect
     - replicate_ui
@@ -138,6 +140,7 @@ permissions:
   - 'administer paragraphs_type labels'
   - 'administer pathauto'
   - 'administer permissions'
+  - 'administer rabbit_hole settings'
   - 'administer recaptcha'
   - 'administer redirect settings'
   - 'administer redirects'
@@ -174,6 +177,7 @@ permissions:
   - 'create and edit custom blocks'
   - 'create ed_notice content'
   - 'create event content'
+  - 'create job content'
   - 'create news content'
   - 'create page content'
   - 'create terms in ed_news_category'
@@ -188,6 +192,7 @@ permissions:
   - 'delete any ed_notice content'
   - 'delete any event content'
   - 'delete any file'
+  - 'delete any job content'
   - 'delete any media'
   - 'delete any news content'
   - 'delete any page content'
@@ -197,6 +202,7 @@ permissions:
   - 'delete configuration'
   - 'delete ed_notice revisions'
   - 'delete event revisions'
+  - 'delete job revisions'
   - 'delete media'
   - 'delete news revisions'
   - 'delete orphan revisions'
@@ -204,6 +210,7 @@ permissions:
   - 'delete own ed_image media'
   - 'delete own ed_notice content'
   - 'delete own event content'
+  - 'delete own job content'
   - 'delete own news content'
   - 'delete own page content'
   - 'delete own video media'
@@ -218,6 +225,7 @@ permissions:
   - 'edit any ed_image media'
   - 'edit any ed_notice content'
   - 'edit any event content'
+  - 'edit any job content'
   - 'edit any news content'
   - 'edit any page content'
   - 'edit any video media'
@@ -226,6 +234,7 @@ permissions:
   - 'edit behavior plugin settings'
   - 'edit layout paragraphs plugin config'
   - 'edit own ed_notice content'
+  - 'edit own job content'
   - 'edit own page content'
   - 'edit own webform'
   - 'edit own webform submission'
@@ -241,11 +250,13 @@ permissions:
   - 'link to any page'
   - 'never autoplay videos'
   - 'notify of path changes'
+  - 'rabbit hole administer node'
   - 'replicate entities'
   - 'revert all revisions'
   - 'revert configuration'
   - 'revert ed_notice revisions'
   - 'revert event revisions'
+  - 'revert job revisions'
   - 'revert news revisions'
   - 'revert page revisions'
   - 'select account cancellation method'
@@ -273,6 +284,8 @@ permissions:
   - 'view ed_notice unpublished content'
   - 'view event revisions'
   - 'view event unpublished content'
+  - 'view job revisions'
+  - 'view job unpublished content'
   - 'view latest version'
   - 'view news revisions'
   - 'view news unpublished content'
