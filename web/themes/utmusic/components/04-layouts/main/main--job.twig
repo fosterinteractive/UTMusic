@@ -1,0 +1,38 @@
+{% embed "@layouts/main/main.twig" %}
+
+  {% block content_single_page %}
+    <div class="l-main--job">
+
+
+      {% include "@organisms/content-header/content-header.twig" with {
+          directory: directory,
+          variation: header_variation,
+          title: title,
+          breadcrumbs: breadcrumbs,
+        } only
+      %}
+
+      {% if messages is not empty or tabs is not empty %}
+        <div class="l-main__utility l-section--[12]">
+          <div class="l-section__zone-1">
+            {{ messages }}
+            {{ tabs }}
+          </div>
+        </div>
+
+      {% endif %}
+
+      {% if content %}
+        <div class="l-main--job__content-wrapper l-section--[8] theme--white-bg l-section-spacing-top--small l-section-spacing-bottom--small">
+          <div class="l-section__zone-1 l-flex">
+            <div class="l-main--job__content">
+              {{ content }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+    </div>
+  {% endblock content_single_page %}
+  
+{% endembed %}
