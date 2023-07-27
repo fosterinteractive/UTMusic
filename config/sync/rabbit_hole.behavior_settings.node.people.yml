@@ -1,0 +1,13 @@
+uuid: 3d4f0171-13dd-4ef1-a68b-0d058ac05407
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.people
+id: node.people
+targetEntityType: node
+bundle: people
+action: display_page
+no_bypass: false
+bypass_message: false
+configuration: {  }

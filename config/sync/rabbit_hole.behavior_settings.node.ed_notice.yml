@@ -1,0 +1,13 @@
+uuid: 87faf9b7-d930-4d84-80b8-8f818b54bb69
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.ed_notice
+id: node.ed_notice
+targetEntityType: node
+bundle: ed_notice
+action: display_page
+no_bypass: false
+bypass_message: false
+configuration: {  }

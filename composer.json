@@ -96,7 +96,8 @@
         "drupal/menu_item_extras": "^3.0",
         "drupal/similarterms": "^1.6",
         "npm-asset/tippy.js": "^6.3",
-        "drupal/audiorecorder": "1.0.0-rc1"
+        "drupal/audiorecorder": "1.0.0-rc1",
+        "drupal/rabbit_hole": "^2.0@alpha"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2",
