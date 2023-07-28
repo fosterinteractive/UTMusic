@@ -1,0 +1,25 @@
+uuid: 72997d4a-cbd2-4998-a5e1-5e8caa9b164b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_job_listing_offset
+    - paragraphs.paragraphs_type.job_listing
+id: paragraph.job_listing.field_job_listing_offset
+field_name: field_job_listing_offset
+entity_type: paragraph
+bundle: job_listing
+label: Offset
+description: 'Skip this number of items on the list'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

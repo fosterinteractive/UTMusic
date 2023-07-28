@@ -1,0 +1,33 @@
+uuid: 123b8376-cace-4735-a3f7-48cf5e57b396
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_job_listing_num_items
+field_name: field_job_listing_num_items
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '2'
+      label: 'Display 2 items'
+    -
+      value: '4'
+      label: 'Display 4 items'
+    -
+      value: '6'
+      label: 'Display 6 items'
+    -
+      value: other
+      label: 'Other number'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

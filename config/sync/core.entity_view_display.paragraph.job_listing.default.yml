@@ -1,0 +1,52 @@
+uuid: ec456627-e34f-4f17-b47c-fa51d804be30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.job_listing.field_job_listing_category
+    - field.field.paragraph.job_listing.field_job_listing_num_items
+    - field.field.paragraph.job_listing.field_job_listing_offset
+    - field.field.paragraph.job_listing.field_job_listing_other_num
+    - paragraphs.paragraphs_type.job_listing
+  module:
+    - options
+id: paragraph.job_listing.default
+targetEntityType: paragraph
+bundle: job_listing
+mode: default
+content:
+  field_job_listing_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_job_listing_num_items:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_job_listing_offset:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_job_listing_other_num:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true
