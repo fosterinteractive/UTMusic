@@ -9,11 +9,11 @@ dependencies:
     - paragraphs.paragraphs_type.button
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.cta
+    - paragraphs.paragraphs_type.curriculum
     - paragraphs.paragraphs_type.image_section
     - paragraphs.paragraphs_type.quote
-    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.section_curriculum
     - paragraphs.paragraphs_type.section_title
-    - paragraphs.paragraphs_type.sequence_list
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.text_image
     - paragraphs.paragraphs_type.video
@@ -33,108 +33,120 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      accordion: accordion
-      button: button
-      card: card
-      cta: cta
-      image_section: image_section
-      quote: quote
-      section: section
+      section_curriculum: section_curriculum
       section_title: section_title
-      sequence_list: sequence_list
+      button: button
       text: text
       text_image: text_image
+      curriculum: curriculum
+      image_section: image_section
+      card: card
+      quote: quote
       video: video
+      accordion: accordion
+      cta: cta
     negate: 0
     target_bundles_drag_drop:
       accordion:
-        weight: 31
+        weight: -59
         enabled: true
       accordion_item:
-        weight: 32
+        weight: -56
         enabled: false
       button:
-        weight: 33
+        weight: -67
         enabled: true
       card:
-        weight: 34
+        weight: -62
         enabled: true
       carousel_header:
-        weight: 35
+        weight: -57
         enabled: false
       carousel_image_group:
-        weight: 36
+        weight: -55
         enabled: false
       cta:
-        weight: 37
+        weight: -58
+        enabled: true
+      curriculum:
+        weight: -64
         enabled: true
       event_featured_item:
-        weight: 40
+        weight: -52
         enabled: false
       events_full_list_dynamic:
-        weight: 38
+        weight: -54
         enabled: false
       events_summary_list_dynamic:
-        weight: 39
+        weight: -53
+        enabled: false
+      faculty_full_list_dynamic:
+        weight: -47
         enabled: false
       featured_media:
-        weight: 41
+        weight: -51
         enabled: false
       header:
-        weight: 42
+        weight: -50
         enabled: false
       image_section:
-        weight: 43
+        weight: -63
         enabled: true
       inline_menu:
-        weight: 44
+        weight: -49
         enabled: false
       message:
-        weight: 45
+        weight: -48
         enabled: false
       news_featured_item:
-        weight: 46
+        weight: -46
         enabled: false
       news_full_list_dynamic:
-        weight: 47
+        weight: -45
         enabled: false
       news_summary_list_dynamic:
-        weight: 48
+        weight: -44
         enabled: false
       poster:
-        weight: 49
+        weight: -43
+        enabled: false
+      programs_full_list_dynamic:
+        weight: -38
         enabled: false
       quote:
-        weight: 50
+        weight: -61
         enabled: true
       section:
-        weight: 51
+        weight: -42
+        enabled: false
+      section_curriculum:
+        weight: -69
         enabled: true
       section_title:
-        weight: 52
+        weight: -68
         enabled: true
       sequence_item:
-        weight: 53
+        weight: -41
         enabled: false
       sequence_list:
-        weight: 54
-        enabled: true
+        weight: -40
+        enabled: false
       sliding_menu:
-        weight: 55
+        weight: -39
         enabled: false
       sliding_menu_item:
-        weight: 56
+        weight: -37
         enabled: false
       soundcloud:
-        weight: 57
+        weight: -36
         enabled: false
       text:
-        weight: 58
+        weight: -66
         enabled: true
       text_image:
-        weight: 59
+        weight: -65
         enabled: true
       video:
-        weight: 60
+        weight: -60
         enabled: true
 field_type: entity_reference_revisions

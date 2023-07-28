@@ -1,0 +1,93 @@
+uuid: 60ee6674-3b75-4c8e-a25a-feed7b9f53f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.curriculum.field_curriculum_btn_aria_label
+    - field.field.paragraph.curriculum.field_curriculum_btn_label
+    - field.field.paragraph.curriculum.field_curriculum_btn_target
+    - field.field.paragraph.curriculum.field_curriculum_btn_url
+    - field.field.paragraph.curriculum.field_curriculum_course
+    - field.field.paragraph.curriculum.field_curriculum_credits
+    - field.field.paragraph.curriculum.field_curriculum_title
+    - field.field.paragraph.curriculum.field_curriculum_years
+    - paragraphs.paragraphs_type.curriculum
+  module:
+    - link
+    - options
+    - text
+id: paragraph.curriculum.default
+targetEntityType: paragraph
+bundle: curriculum
+mode: default
+content:
+  field_curriculum_btn_aria_label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_curriculum_btn_label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_curriculum_btn_target:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_curriculum_btn_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_curriculum_course:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_curriculum_credits:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_curriculum_title:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_curriculum_years:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

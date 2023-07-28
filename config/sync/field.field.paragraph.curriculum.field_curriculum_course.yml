@@ -1,0 +1,26 @@
+uuid: 8fb9c2ad-c8e3-4cf5-9f17-79ce25524c5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_curriculum_course
+    - paragraphs.paragraphs_type.curriculum
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+id: paragraph.curriculum.field_curriculum_course
+field_name: field_curriculum_course
+entity_type: paragraph
+bundle: curriculum
+label: 'Course Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

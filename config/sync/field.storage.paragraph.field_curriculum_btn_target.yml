@@ -1,0 +1,24 @@
+uuid: 7590aa76-a161-4a8b-8e8c-e035e9d11b9c
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_curriculum_btn_target
+field_name: field_curriculum_btn_target
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: _blank
+      label: 'Open link in new browser tab'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

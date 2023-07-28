@@ -1,0 +1,10 @@
+uuid: 6153b376-7f98-4323-915b-27c19b058923
+langcode: en
+status: true
+dependencies: {  }
+id: curriculum
+label: Curriculum
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

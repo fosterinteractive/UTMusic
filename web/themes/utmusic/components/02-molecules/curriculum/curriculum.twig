@@ -1,0 +1,57 @@
+
+
+<div class="m-curriculum">
+
+  {% if title %}
+    <div class="m-curriculum__title">
+      {% include "@atoms/text/headings/heading.twig" with {
+          html_element: 'h2',
+          appearance: 'h2',
+          text: title
+        } only
+      %}
+    </div>
+  {% endif %}
+
+
+  <div class="m-curriculum__wrapper">
+  
+    {% if credits and years %}
+      <div class="m-curriculum__totals">
+
+        <div class="m-curriculum__credits">{{credits}}</div>
+
+
+        <div class="m-curriculum__years">Total Credits over {{years}} years</div>
+
+      </div>
+    {% endif %}
+
+    <div class="m-curriculum__courses">
+      <div class="m-curriculum__courses-decoration"></div>
+
+      <ul>
+        {% for item in courses %}
+          <li>{{item}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+  </div>
+
+  {% if btn_label and btn_url %}
+    <div class="m-curriculum__button">
+      {% include '@atoms/button/button.twig' with {
+          directory: directory,
+          base_class: 'a-button',
+          label: btn_label,
+          html_element: 'a',
+          url: btn_url,
+          aria_label: btn_aria_label,
+          target: btn_target
+        } only
+      %} 
+    </div>
+  {% endif %}
+
+</div>

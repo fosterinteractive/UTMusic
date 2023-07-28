@@ -1,0 +1,29 @@
+uuid: fc0f3d9f-5240-4528-9b3e-c6bb8f11f4a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_curriculum_title
+    - paragraphs.paragraphs_type.curriculum
+    - taxonomy.vocabulary.degree_title
+id: paragraph.curriculum.field_curriculum_title
+field_name: field_curriculum_title
+entity_type: paragraph
+bundle: curriculum
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      degree_title: degree_title
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
