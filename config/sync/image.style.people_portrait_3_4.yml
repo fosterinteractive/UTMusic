@@ -1,0 +1,18 @@
+uuid: fd3a97e8-b741-4eee-8991-dd405e0fda41
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.crop_people_3_4
+  module:
+    - crop
+name: people_portrait_3_4
+label: 'People Portrait 3:4'
+effects:
+  dd0f6502-80ca-45ce-882d-a1335e11fb5f:
+    uuid: dd0f6502-80ca-45ce-882d-a1335e11fb5f
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: crop_people_3_4
+      automatic_crop_provider: null

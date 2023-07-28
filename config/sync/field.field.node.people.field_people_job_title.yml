@@ -1,0 +1,29 @@
+uuid: 3ef5968f-031b-49a9-9e8c-b5647bddc847
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_job_title
+    - node.type.people
+    - taxonomy.vocabulary.faculty_job_titles
+id: node.people.field_people_job_title
+field_name: field_people_job_title
+entity_type: node
+bundle: people
+label: 'Job Title(s)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      faculty_job_titles: faculty_job_titles
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

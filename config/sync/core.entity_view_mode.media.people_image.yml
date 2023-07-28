@@ -1,0 +1,10 @@
+uuid: 8fdcf120-ec32-41f6-b050-0602d7a0b843
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.people_image
+label: 'People Image'
+targetEntityType: media
+cache: true

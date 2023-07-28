@@ -1,4 +1,4 @@
-uuid: a3d91ead-5020-4176-b060-7175f90b29b0
+uuid: 3ea17cb0-c433-4f26-ae4b-fdfaa1b25392
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - field.storage.node.field_people_image
     - media.type.ed_image
     - node.type.people
+  module:
+    - media_library_media_modify
 id: node.people.field_people_image
 field_name: field_people_image
 entity_type: node
@@ -26,4 +28,4 @@ settings:
       direction: ASC
     auto_create: false
     auto_create_bundle: ''
-field_type: entity_reference
+field_type: entity_reference_entity_modify

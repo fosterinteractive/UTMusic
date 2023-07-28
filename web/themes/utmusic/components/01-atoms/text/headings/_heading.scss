@@ -137,6 +137,11 @@
   text-align: center;
 }
 
+%a-heading--top-spacer,
+.a-heading--top-spacer {
+  margin-top: rem(24px);
+}
+
 
 // Titles are serif fonts used for special circumstances
 // %title--core {

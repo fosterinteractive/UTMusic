@@ -43,8 +43,8 @@ settings:
   handler_settings: {  }
   file_directory: '[date:custom:Y]-[date:custom:m]'
   file_extensions: 'png gif jpg jpeg'
-  max_filesize: ''
-  max_resolution: ''
+  max_filesize: 20MB
+  max_resolution: 3000x3000
   min_resolution: ''
   alt_field: true
   alt_field_required: true

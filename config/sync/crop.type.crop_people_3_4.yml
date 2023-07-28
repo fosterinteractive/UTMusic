@@ -1,0 +1,12 @@
+uuid: b1a4c41f-7413-4002-8781-b3b0e8e14bfc
+langcode: en
+status: true
+dependencies: {  }
+label: 'Crop People 3:4'
+id: crop_people_3_4
+description: ''
+aspect_ratio: '3:4'
+soft_limit_width: 960
+soft_limit_height: 1280
+hard_limit_width: null
+hard_limit_height: null

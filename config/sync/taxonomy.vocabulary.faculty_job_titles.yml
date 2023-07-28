@@ -1,0 +1,8 @@
+uuid: 8dde082e-97a4-40a8-ba7b-dd1901be31ec
+langcode: en
+status: true
+dependencies: {  }
+name: 'Faculty Job Titles'
+vid: faculty_job_titles
+description: ''
+weight: 0

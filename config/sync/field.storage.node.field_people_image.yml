@@ -1,17 +1,18 @@
-uuid: 612daeae-2501-4b8b-934a-7e28b90a7170
+uuid: 275217ec-db13-4a75-9339-6e9bd267ab72
 langcode: en
 status: true
 dependencies:
   module:
     - media
+    - media_library_media_modify
     - node
 id: node.field_people_image
 field_name: field_people_image
 entity_type: node
-type: entity_reference
+type: entity_reference_entity_modify
 settings:
   target_type: media
-module: core
+module: media_library_media_modify
 locked: false
 cardinality: 1
 translatable: true

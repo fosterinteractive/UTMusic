@@ -19,7 +19,7 @@ dependencies:
     - user
     - views_autosubmit
 id: people_full_list
-label: People
+label: 'People (Faculty & Staff)'
 module: views
 description: ''
 tag: ''
@@ -356,6 +356,20 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<h2 class="a-heading__h3 a-heading--top-spacer">No faculty were found.</h2>'
+            format: rich_text
+          tokenize: false
       filters:
         status:
           id: status
@@ -432,7 +446,7 @@ display:
           group_type: group
           admin_label: 'Name (Combined Field)'
           plugin_id: combine
-          operator: contains
+          operator: word
           value: ''
           group: 1
           exposed: true
@@ -629,6 +643,7 @@ display:
           relationship: none
           view_mode: listing_item
       defaults:
+        empty: false
         style: false
         row: false
         fields: false
@@ -781,6 +796,20 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<h2 class="a-heading__h3 a-heading--top-spacer">No staff were found.</h2>'
+            format: rich_text
+          tokenize: false
       filters:
         status:
           id: status
@@ -857,7 +886,7 @@ display:
           group_type: group
           admin_label: 'Name (Combined Field)'
           plugin_id: combine
-          operator: contains
+          operator: word
           value: ''
           group: 1
           exposed: true
@@ -958,6 +987,7 @@ display:
           relationship: none
           view_mode: listing_item
       defaults:
+        empty: false
         style: false
         row: false
         fields: false
