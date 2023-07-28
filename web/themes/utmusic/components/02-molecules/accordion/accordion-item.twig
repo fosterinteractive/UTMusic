@@ -39,7 +39,7 @@
                 </button>
 
                 <div class="visually-hidden" id="{{accordion__tooltip__id}}--absolute">
-                  <p>Copy link for email (Full Url)</p>
+                  <p>{{ 'Copy link for email (Full Url)'|t }}</p>
                 </div>
 
                 <span class="u-visually--hidden is-absolute-text">{{absolute_link}}</span>
@@ -58,7 +58,7 @@
                 </button>
 
                 <div class="visually-hidden" id="{{accordion__tooltip__id}}--relative">
-                  <p>Copy website link (Relative Url)</p>
+                  <p>{{ 'Copy website link (Relative Url)'|t }}</p>
                 </div>
 
                 <span class="u-visually--hidden is-relative-text">{{relative_link}}</span>
@@ -94,7 +94,7 @@
 
       {% if subtitle %}
         <span class="m-accordion-item__subtitle">
-          {{ subtitle }}
+          {% if prefix_text %}{{ prefix_text }}{% endif %}{{ subtitle }}
         </span>
       {% endif %}
     </div>

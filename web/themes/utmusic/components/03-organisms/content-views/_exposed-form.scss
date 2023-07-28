@@ -15,6 +15,12 @@
   }
 }
 
+.jobs-views-exposed-form {
+  form {
+    border-bottom: none;
+  }
+}
+
 // a11y aria for announcements after applying exposed filters 
 .offscreen {
   position: absolute !important;
