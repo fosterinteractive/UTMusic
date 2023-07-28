@@ -1,0 +1,13 @@
+uuid: 71207782-4dc2-4854-8e8e-4181b306da50
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.jobs_full_list_dynamic
+id: paragraph.jobs_full_list_dynamic.default
+targetEntityType: paragraph
+bundle: jobs_full_list_dynamic
+mode: default
+content: {  }
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,20 @@
+uuid: 9e170c64-cd61-4176-9a12-31c000484713
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - paragraphs.paragraphs_type.jobs_full_list_dynamic
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.jobs_full_list_dynamic.preview
+targetEntityType: paragraph
+bundle: jobs_full_list_dynamic
+mode: preview
+content: {  }
+hidden:
+  search_api_excerpt: true
