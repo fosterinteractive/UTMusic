@@ -1,0 +1,29 @@
+uuid: 39306125-aded-48fc-996c-c736d9a07414
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_job_listing_category
+    - paragraphs.paragraphs_type.job_listing
+    - taxonomy.vocabulary.job_category
+id: paragraph.job_listing.field_job_listing_category
+field_name: field_job_listing_category
+entity_type: paragraph
+bundle: job_listing
+label: 'Filter By Jobs Category'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      job_category: job_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

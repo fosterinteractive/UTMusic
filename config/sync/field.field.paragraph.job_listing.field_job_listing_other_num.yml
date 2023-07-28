@@ -1,0 +1,23 @@
+uuid: 65c0734b-f733-47ba-ac34-92801ef8fe67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_job_listing_other_num
+    - paragraphs.paragraphs_type.job_listing
+id: paragraph.job_listing.field_job_listing_other_num
+field_name: field_job_listing_other_num
+entity_type: paragraph
+bundle: job_listing
+label: 'Other Number of Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

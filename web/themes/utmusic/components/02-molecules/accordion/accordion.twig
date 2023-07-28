@@ -1,22 +1,26 @@
-<div class="m-accordion" data-accordion>
-  <div class="m-accordion-header-wrapper">
-    {% if title %}
-      {% include "@atoms/text/headings/heading.twig" with {
-          html_element: 'h2',
-          appearance: 'h3',
-          text: title,
-          alignment: 'left',
-          directory: directory,
-        } only
-      %}
-    {% endif %}
+{% set expand_button_label = expand_button_label|default('Expand All'|t) %}
 
-    {% if summary %}
-      <div class="m-accordion__summary">
-        {{ summary }}
-      </div>
-    {% endif %}
-  </div>
+<div class="m-accordion" data-accordion>
+  {% if title or summary %}
+    <div class="m-accordion-header-wrapper">
+      {% if title %}
+        {% include "@atoms/text/headings/heading.twig" with {
+            html_element: 'h2',
+            appearance: 'h3',
+            text: title,
+            alignment: 'left',
+            directory: directory,
+          } only
+        %}
+      {% endif %}
+
+      {% if summary %}
+        <div class="m-accordion__summary">
+          {{ summary }}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
 
   {# We show button "Expand All" only if we have 3 and more items  #}
     {% for item in items %}

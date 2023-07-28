@@ -1,0 +1,25 @@
+uuid: 36eeec6f-fa82-4ed9-a24a-e6992e8a3308
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_admin_help_social
+    - node.type.job
+  module:
+    - markup
+id: node.job.field_page_admin_help_social
+field_name: field_page_admin_help_social
+entity_type: node
+bundle: job
+label: 'Admin Help - Social Share'
+description: ''
+required: false
+translatable: true
+default_value:
+  - {  }
+default_value_callback: ''
+settings:
+  markup:
+    value: '<p><img class="m-admin-tip__image--sml" src="/themes/adminspring-theme/assets/img/linkedin_share_example.png" data-entity-uuid="" data-entity-type="" alt="screenshot of a linkedin share with selected image"></p><p>Select a <em>Meta Image</em> to tell a social media platform what image to use when sharing.</p><p>If blank, different social platforms like <strong>LinkedIn will randomly select an image</strong> on the page to appear on shared posts.</p><p>Posts with images generally perform better on social media so it is worth selecting an engaging image.</p>'
+    format: rich_text_w_images
+field_type: markup

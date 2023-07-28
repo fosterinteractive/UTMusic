@@ -169,7 +169,8 @@ function utmusic_preprocess_paragraph(array &$variables) {
     'events_summary_list_dynamic' => ['type' => 'event'],
     'news_featured_item' => ['type' => 'news_featured'],
     'event_featured_item' => ['type' => 'event_featured'],
-    'programs_full_list_dynamic' => ['type' => 'program_full']
+    'programs_full_list_dynamic' => ['type' => 'program_full'],
+    'job_listing' => ['type' => 'job_listing']
   ];
 
   if (isset($dynamic_block_paragraphs[$paragraph_type])) {
@@ -237,6 +238,15 @@ function utmusic_preprocess_paragraph(array &$variables) {
         'number_other_items' => null,
         'offset' => null,
         'status' => null,
+      ],
+      'job_listing' => [
+        'title' => null,
+        'contextual' => [
+          'category1' => 'field_job_listing_category',
+        ],
+        'number_items' => 'field_job_listing_num_items',
+        'number_other_items' => 'field_job_listing_other_num',
+        'offset' => 'field_job_listing_offset',
       ],
     ];
 
@@ -359,6 +369,9 @@ function utmusic_preprocess_paragraph(array &$variables) {
       }
       elseif ($paragraph_type == 'programs_full_list_dynamic') {
         $variables['content']['programs_full_list_dynamic'] = utmusic_return_rendered_view('programs_full_list', 'programs_full_list', null , $categories, null, null, $program_types, $show_filter);
+      }
+      elseif ($paragraph_type == 'job_listing') {
+        $variables['content']['job_listing_block'] = utmusic_return_rendered_view('jobs_full_list', 'job_listing_block', $number_items , $categories, null, $offset, null, null);
       }
     }
   }

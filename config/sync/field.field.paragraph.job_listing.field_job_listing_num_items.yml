@@ -1,0 +1,23 @@
+uuid: 1191c9b7-8800-45cf-a038-fa4d4d134a93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_job_listing_num_items
+    - paragraphs.paragraphs_type.job_listing
+  module:
+    - options
+id: paragraph.job_listing.field_job_listing_num_items
+field_name: field_job_listing_num_items
+entity_type: paragraph
+bundle: job_listing
+label: 'Number of Items'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: '4'
+default_value_callback: ''
+settings: {  }
+field_type: list_string
