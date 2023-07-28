@@ -4,6 +4,14 @@ title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
 image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
 url: '/'
 id: 'listing-item-id'
-event_date: 'Fri, May 26 2023 - Sat, May 27 2023'
-time_start: 7:30pm
-location: 'Location' 
+event_date: 'May 2-4 2023'
+time_start:  
+location:   
+price: paid
+audience: Public
+event_type: Guest Recital
+ensemble: U of T Opera
+areas:
+  - 'Comprehensive Studies'
+  - 'Conducting'
+  - 'Early Music'

@@ -4,7 +4,6 @@
 
 .m-listing-item--events-condensed__event-date {
   @extend %m-listing-item--events-date;
-  max-height: rem(70px);
 }
 
 .m-listing-item--events-condensed__event-date-month {
@@ -33,5 +32,19 @@
 
 .m-listing-item--events-condensed__tags {
   @extend %m-listing-item__tags;
+}
+
+%m-listing-item--single-tag,
+.m-listing-item--events-condensed__tags-single {
+  @extend %a-type--xsmall;
+  display: flex;
+  gap: calc(var(--spacer) * 0.2);
+  align-items: center;
+  color: var(--c-heading-link);
+
+  svg {
+    width: rem(20px);
+    height: rem(20px);
+  }
 }
 

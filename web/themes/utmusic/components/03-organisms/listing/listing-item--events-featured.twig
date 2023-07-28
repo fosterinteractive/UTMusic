@@ -40,23 +40,29 @@
         <div class="m-listing-item{{ variation }}__tags">
 
           {% if time_start %}
-            {% include '@atoms/chip/chip.twig' with {
+            <div class="m-listing-item{{ variation }}__tags-single">
+              {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
                 directory: directory,
-                text: time_start,
-                variation: 'icon-left',
+                base_class: 'a-icon',
                 icon: 'time',
-              } only 
-            %}
+                size: 'xxsmall', 
+                } only
+              %}
+              {{ time_start }}
+            </div>
           {% endif %}
 
           {% if location %}
-            {% include '@atoms/chip/chip.twig' with {
+            <div class="m-listing-item{{ variation }}__tags-single">
+              {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
                 directory: directory,
-                text: location,
-                variation: 'icon-left',
+                base_class: 'a-icon',
                 icon: 'location',
-              } only 
-            %}
+                size: 'xxsmall', 
+                } only
+              %}
+              {{ location }}
+            </div>
           {% endif %}
 
         </div>

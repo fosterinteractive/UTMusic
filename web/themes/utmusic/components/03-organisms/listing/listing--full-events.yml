@@ -18,8 +18,13 @@ listing_items:
     time_start: 12:30pm
     location: 'Walter Hall, 80 Queen’s Park' 
     price: paid
-    areas: 
-      - 'Black Feminist Conversation'
+    audience: Public
+    event_type: Guest Recital
+    ensemble: U of T Opera
+    areas:
+      - 'Comprehensive Studies'
+      - 'Conducting'
+      - 'Early Music'
 
   2: 
     sb_demo: true
@@ -33,11 +38,14 @@ listing_items:
     time_start: 7:30pm
     location: 'Walter Hall, 80 Queen’s Park' 
     price: free
-    categories: 
-      1:
-        category: Masters Performance
-      2:
-        category: 1 year
+    audience: Alumni
+    event_type: Student Recital
+    ensemble: U of T Opera
+    areas:
+      - 'Guitar'
+      - 'Harp'
+      - 'Jazz'
+  
   3: 
     sb_demo: true
     variation: 'events-condensed'
@@ -50,11 +58,14 @@ listing_items:
     time_start: 7:15pm
     location: 'Walter Hall, 80 Queen’s Park' 
     price: free
-    categories: 
-      1:
-        category: Masters Performance
-      2:
-        category: 1 year 
+    audience: Current Student
+    event_type: Workshop
+    ensemble: Chamber Choir
+    areas:
+      - 'Music Education'
+      - 'Opera'
+      - 'Piano'
+ 
   4: 
     sb_demo: true
     variation: 'events-condensed'
@@ -66,10 +77,14 @@ listing_items:
     event_date_day: '02'
     time_start: 6:45pm
     location: 'Walter Hall, 80 Queen’s Park' 
-    price: paid
-    categories: 
-      1:
-        category: Black Feminist Conversation
+    price: free
+    audience: Future Student
+    event_type: Masterclass
+    ensemble: Tenor/Bass Chorus
+    areas:
+      - 'String'
+      - 'Voice Studies'
+      - 'Woodwinds'
 
 pager: 
   items:

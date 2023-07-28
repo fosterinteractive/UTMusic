@@ -12,24 +12,32 @@
 
 {% endif %}
 
-{# {% if sb_demo %}
-  {% set directory = directory %}
-{% else %}
-  {% set directory =  'themes/utmusic' %}
-{% endif %} #}
-
 <div class="m-listing-item{{ variation }}{% if image %} has-img{% endif %}">
 
-  {# <div class="m-listing-item{{ variation }}__event-date">
+  <div class="m-listing-item{{ variation }}__event-date">
     <div class="m-listing-item{{ variation }}__event-date-month">
       {{ event_date_month }}
     </div>
     <div class="m-listing-item{{ variation }}__event-date-day">
       {{ event_date_day }}
     </div>
-  </div> #}
+  </div>
   
   <div class="m-listing-item{{ variation }}__content has-img">
+
+    <div class="m-listing-item{{ variation }}__category">
+      {% if event_date %}
+          {{- event_date -}}
+      {% endif %}{% if event_date and (areas or ensemble) %}
+        {{- ':' -}}
+      {% endif %}
+
+      {% for area in areas %}
+        {{ area }}{% if not loop.last %},{% endif %}
+      {% endfor %}
+      {% if areas and ensemble %} {{ '|' }}{% endif %}
+      {% if ensemble %}{{ ensemble }}{% endif %}
+    </div>
 
     <div class="m-listing-item{{ variation }}__title">
       {% include "@atoms/text/headings/heading.twig" with {
@@ -42,19 +50,14 @@
       %}
     </div>
 
-    {% if event_date %}
-      <div class="m-listing-item{{ variation }}__date">
-        {{ event_date }} - {{ event_end_date }}
-      </div>
-    {% endif %}
-
-    {# for condensed listing item  #}
-    {% if areas %} 
+    {# for condensed listing item and 'related' listing item #}
+    {% if audience or event_type or price %} 
       <div class="m-listing-item{{ variation }}__category">
-        {% if price == 'free' %} {{ 'Free:'|t }}{% endif %}
-        {% for area in areas %}
-          {{ area }}{% if not loop.last %},{% endif %}
-        {% endfor %}
+        {% if price == 'free' %}{{ 'Free'|t }}{% endif %}
+        {% if audience and (price == 'free') %} {{ '|' }}{% endif %}
+        {% if audience %}{{ audience }}{% endif %}
+        {% if audience and event_type %} {{ '-' }}{% endif %}
+        {% if event_type %}{{ event_type }}{% endif %}
       </div>
     {% endif %}
 
@@ -62,25 +65,29 @@
       <div class="m-listing-item{{ variation }}__tags">
 
         {% if time_start %}
-          {% include '@atoms/chip/chip.twig' with {
+          <div class="m-listing-item{{ variation }}__tags-single">
+            {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
               directory: directory,
-              text: time_start,
-              variation: 'icon-left',
+              base_class: 'a-icon',
               icon: 'time',
-              html_element: 'div',
-            } only 
-          %}
+              size: 'xxsmall', 
+              } only
+            %}
+            {{ time_start }}
+          </div>
         {% endif %}
 
         {% if location %}
-          {% include '@atoms/chip/chip.twig' with {
+          <div class="m-listing-item{{ variation }}__tags-single">
+            {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
               directory: directory,
-              text: location,
-              variation: 'icon-left',
+              base_class: 'a-icon',
               icon: 'location',
-              html_element: 'div',
-            } only 
-          %}
+              size: 'xxsmall', 
+              } only
+            %}
+            {{ location }}
+          </div>
         {% endif %}
 
       </div>

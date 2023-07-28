@@ -128,8 +128,41 @@
   {% endif %}
 {% endif %}
 
-{# Get Start Date and break it apart  #}
 {% if content.field_event_date[0] %}
+  {% set date_start = content.field_event_date[0]['#value'] %}
+  {% set date_end = content.field_event_date[0]['#end_value'] %}
+  {% set date_time = date_start|date('g:ia') %}
+
+  {% set event_date_start = date_start|date('F d, Y') %}
+  {% set event_date_end = date_end|date('F d, Y') %}
+
+  {% set month_start = event_date_start|split(' ')[0] %}
+  {% set month_end = event_date_end|split(' ')[0] %}
+
+  {% set day_start_raw = event_date_start|split(' ')[1] %}
+  {% set day_start = day_start_raw|split(',')[0] %}
+
+  {% set day_end_raw = event_date_end|split(' ')[1]  %}
+  {% set day_end = day_end_raw|split(',')[0]  %}
+
+  {% set year_start = event_date_start|split(' ')[2] %}
+  {% set year_end = event_date_end|split(' ')[2] %}
+
+  {# if in admin UI end_date is not set or it's set the same value as for date_start #}
+  {% if event_date_start == event_date_end %}
+    {% set event_date = event_date_start %}
+  {% elseif year_start == year_end and month_start == month_end %}
+    {% set event_date = month_start ~ ' ' ~ day_start ~ ' - ' ~ day_end ~ ', ' ~  year_start %}
+  {% elseif year_start == year_end and month_start != month_end %}
+    {% set event_date = month_start ~ ' ' ~ day_start ~ ' - ' ~  month_end ~ ' ' ~ day_end ~ ', ' ~  year_start %}
+  {% else %}
+    {% set event_date = event_date_start ~ ' - ' ~ event_date_end %}
+  {% endif %}
+
+{% endif %}
+
+{# Get Start Date and break it apart  #}
+{# {% if content.field_event_date[0] %}
   {% if content.field_event_date[0]['start_date'] %}
     {% set start_date = content.field_event_date[0]['start_date']['#text'] %}
   {% else %}
@@ -152,7 +185,7 @@
   {% else %}
     {% set event_date_string = event_date %}
   {% endif %}
-{% endif %}
+{% endif %} #}
 
 {# Check field target #}
 {% if content.field_event_button_target[0] %}
@@ -217,7 +250,7 @@
     image_landscape: content.field_event_header_image_landsca[0] ? content.field_event_header_image_landsca,
     image_portrait: content.field_event_header_image_portra[0] ? content.field_event_header_image_portra,
     location: location,
-    event_date: event_date_string,
+    event_date: event_date,
     event_time: date_time,
     event_types: type,
     event_areas: areas,

@@ -1,14 +1,19 @@
 sb_demo: true
 variation: 'events-condensed'
-title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
+title: 'SoundLife Scarborough Launch and Symposium: Mapping Music Pathways'
+image: 
 url: '/'
 id: 'listing-item-id'
 event_date: 
-event_date_month: December
-event_date_day: '31'
-time_start: 7:30pm
+event_date_month: May
+event_date_day: '10'
+time_start: 12:30pm
 location: 'Walter Hall, 80 Queen’s Park' 
-price: free
-areas: 
-  - 'Masters Performance'
-  - '1 year'
+price: paid
+audience: Public
+event_type: Guest Recital
+ensemble: U of T Opera
+areas:
+  - 'Comprehensive Studies'
+  - 'Conducting'
+  - 'Early Music'

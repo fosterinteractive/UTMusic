@@ -74,6 +74,60 @@
   {% set image = content.field_event_header_image_portra %}
 {% endif %}
 
+{% if content.field_event_area[0] %}
+  {% set areas = [] %}
+
+  {# Get number of items #}
+  {% if content.field_event_area['#items'].getIterator() %}
+    {% set item_count = content.field_event_area['#items'].getIterator()|length - 1 %}
+  {% endif %}
+
+  {# For each item add to areas array #}
+  {% for i in 0..item_count %}
+    {% set areas = areas|merge([content.field_event_area[i]['#plain_text']]) %}
+  {% endfor %}
+{% endif %}
+
+{# Check if event is free #}
+{% if content.field_event_price[0] %}
+  {% set price_key = content.field_event_price[0]['#markup'] %}
+  {% if price_key == 'free' %}
+    {% set price = 'free' %}
+  {% endif %}
+{% endif %}
+
+{% if content.field_event_date[0] %}
+  {% set date_start = content.field_event_date[0]['#value'] %}
+  {% set date_end = content.field_event_date[0]['#end_value'] %}
+
+  {% set event_date_start = date_start|date('F d, Y') %}
+  {% set event_date_end = date_end|date('F d, Y') %}
+
+  {% set month_start = event_date_start|split(' ')[0] %}
+  {% set month_end = event_date_end|split(' ')[0] %}
+
+  {% set day_start_raw = event_date_start|split(' ')[1] %}
+  {% set day_start = day_start_raw|split(',')[0] %}
+
+  {% set day_end_raw = event_date_end|split(' ')[1]  %}
+  {% set day_end = day_end_raw|split(',')[0]  %}
+
+  {% set year_start = event_date_start|split(' ')[2] %}
+  {% set year_end = event_date_end|split(' ')[2] %}
+
+  {# if in admin UI end_date is not set or it's set the same value as for date_start #}
+  {% if event_date_start == event_date_end %}
+    {% set event_date = event_date_start %}
+  {% elseif year_start == year_end and month_start == month_end %}
+    {% set event_date = month_start ~ ' ' ~ day_start ~ ' - ' ~ day_end ~ ', ' ~  year_start %}
+  {% elseif year_start == year_end and month_start != month_end %}
+    {% set event_date = month_start ~ ' ' ~ day_start ~ ' - ' ~  month_end ~ ' ' ~ day_end ~ ', ' ~  year_start %}
+  {% else %}
+    {% set event_date = event_date_start ~ ' - ' ~ event_date_end %}
+  {% endif %}
+
+{% endif %}
+
 {% include "@organisms/listing/listing-item--events.twig" with {
     directory: directory,
     variation: 'events',
@@ -81,14 +135,18 @@
     title: content.field_event_title[0] ? content.field_event_title[0]['#text'],
     url: url,
     link_text: 'Learn More'|t,
-    event_date: content.field_event_date[0] ? content.field_event_date[0].start_date,
-    event_end_date: content.field_event_date[0] ? content.field_event_date[0].end_date,
+    event_date: event_date,
     start_time: start_time,
     end_time: end_time,
     timezone: 'EST',
     location: content.field_event_location[0] ? content.field_event_location,
     header_variation: content.field_event_header_variation[0] ? content.field_event_header_variation[0]['#markup'],
     image: image,
-    desc: content.field_event_summary[0] ? content.field_event_summary
+    price: price,
+    audience: content.field_event_audience[0] ? content.field_event_audience[0]['#plain_text'],
+    event_type: content.field_event_type[0] ? content.field_event_type[0]['#plain_text'],
+    ensemble: content.field_events_ensembles_choirs[0] ? content.field_events_ensembles_choirs[0]['#plain_text'],
+    desc: content.field_event_summary[0] ? content.field_event_summary,
+    areas: areas,
   } only
 %}
