@@ -84,6 +84,10 @@ accordion:
   js:
     js/accordion.js: {}
 
+audio:
+  js:
+    js/audio.js: {}
+
 priority-nav:
   js:
     js/libraries/priority-nav/dist/priority-nav.min.js: { minified: true }

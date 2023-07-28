@@ -129,7 +129,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: '<h2 class="a-heading__t3" >No  News were found.</h2>'
+            value: '<h2 class="a-heading__h3 a-heading--top-spacer" >No  News were found.</h2>'
             format: rich_text
           tokenize: false
       sorts:

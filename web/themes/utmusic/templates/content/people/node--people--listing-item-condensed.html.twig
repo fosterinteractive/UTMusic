@@ -70,25 +70,31 @@
   {% set full_name = content.field_people_name[0]['#text'] ~ ' ' ~ content.field_people_last_name[0]['#text'] %}
 {% endif %}
 
-{# Check the role, position and instruments, create string #}
-{% if content.field_people_role[0] %}
-  {% set role = content.field_people_role[0]['#markup'] %}
-  
-  {% if role == 'faculty' %}
-    {% set position = content.field_people_faculty_position[0] ? content.field_people_faculty_position[0]['#plain_text'] %}
-  {% elseif role == 'staff' %}
-    {% set position = content.field_people_staff_position[0] ? content.field_people_staff_position[0]['#plain_text'] %}
-  {% endif %}
-{% endif %}
+{# Set string of job titles from array #}
+{% if content.field_people_job_title[0] %}
+  {% set job_titles_arr = [] %}
 
+  {# Get number of items #}
+  {% if content.field_people_job_title['#items'].getIterator() %}
+    {% set item_count = content.field_people_job_title['#items'].getIterator()|length - 1 %}
+  {% endif %}
+
+  {# For each item add to instruments array #}
+  {% for i in 0..item_count %}
+    {% set job_titles_arr = job_titles_arr|merge([content.field_people_job_title[i]['#plain_text']]) %}
+  {% endfor %}
+
+  {% set job_titles = job_titles_arr|join(', ') %}
+{% endif %}
 
 {% include "@organisms/listing/listing-item--people.twig" with {
     directory: 'themes/utmusic',
     variation: 'people',
     placeholder_icon: 'person',
     title: full_name,
+    url: url,
     image: content.field_people_image[0] ? content.field_people_image,
-    role: position,
+    job_titles: job_titles,
   } only
 %}
 

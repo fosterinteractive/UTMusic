@@ -46,12 +46,15 @@
       %}
     </div>
 
-    {% if role or instruments %}
+    {% if job_titles or instruments %}
       <div class="m-listing-item{{ variation }}__position">
-        {{ role }}{% if instruments %}:{% endif %}
-        {% for item in instruments %}
-          {{ item}}{% if not loop.last %},{% endif %}
-        {% endfor %}
+        {% if job_titles and instruments %}
+          {{job_titles}}: {{instruments}}
+        {% elseif job_titles and not instruments %}
+          {{job_titles}}
+        {% elseif instruments and not job_titles %}
+          {{instruments}}
+        {% endif %}
       </div>
     {% endif %}
   </div>

@@ -108,27 +108,48 @@
   {% endfor %}
 {% endif %}
 
+{# Set string of job titles from array #}
+{% if content.field_people_job_title[0] %}
+  {% set job_titles_arr = [] %}
+
+  {# Get number of items #}
+  {% if content.field_people_job_title['#items'].getIterator() %}
+    {% set item_count = content.field_people_job_title['#items'].getIterator()|length - 1 %}
+  {% endif %}
+
+  {# For each item add to instruments array #}
+  {% for i in 0..item_count %}
+    {% set job_titles_arr = job_titles_arr|merge([content.field_people_job_title[i]['#plain_text']]) %}
+  {% endfor %}
+{% endif %}
+
 {# Check the role, position and instruments, create string #}
 {% if content.field_people_role[0] %}
   {% set role = content.field_people_role[0]['#markup'] %}
 
   {% if role == 'faculty' %}
-    {% set position = content.field_people_faculty_position[0] ? content.field_people_faculty_position[0]['#plain_text'] %}
+    {% if job_titles_arr %}
+      {% set job_titles = job_titles_arr|join(', ') %}
+    {% endif %}
 
     {% if instruments_arr %}
       {% set instruments = instruments_arr|join(', ') %}
     {% endif %}
 
-    {% if position and instruments %}
-      {% set title_suffix = position ~ ': ' ~ instruments %}
+    {% if job_titles and instruments %}
+      {% set title_suffix = job_titles ~ ': ' ~ instruments %}
     {% elseif position and not instruments %}
-      {% set title_suffix = position %}
-    {% elseif instruments and not position %}
+      {% set title_suffix = job_titles %}
+    {% elseif instruments and not job_titles %}
       {% set title_suffix = instruments %}
     {% endif %}
 
   {% elseif role == 'staff' %}
-    {% set title_suffix = content.field_people_staff_position[0] ? content.field_people_staff_position[0]['#plain_text'] %}
+    {% if job_titles_arr %}
+      {% set job_titles = job_titles_arr|join(', ') %}
+    {% endif %}
+
+    {% set title_suffix = job_titles %}
   {% endif %}
 {% endif %}
 
@@ -175,7 +196,7 @@
     email: content.field_people_email[0] ? content.field_people_email[0]['#context']['value'],
     phone: content.field_people_phone[0] ? content.field_people_phone[0]['#context']['value'],
     website_url: content.field_people_website[0] ? content.field_people_website[0]['#url'],
-    discovery_url: content.field_people_research_profile[0] ? content.field_people_research_profile[0]['#url'],
+    discovery_url: research_url,
     pronunciation: content.field_people_pronunciation[0] ? content.field_people_pronunciation,
     prononun: content.field_people_pronouns[0] ? content.field_people_pronouns[0]['#text'],
     areas: areas,

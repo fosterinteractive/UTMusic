@@ -1,0 +1,32 @@
+uuid: cf175e88-a96e-4e67-a724-f8d4b96b159a
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.crop_people_3_4
+  module:
+    - crop
+    - image_effects
+    - image_style_quality
+name: people_portrait_3_4_600
+label: 'People Portrait 3:4 - (600 @ 75%)'
+effects:
+  3a156d07-35f3-4aee-9e72-1de406f2e8a0:
+    uuid: 3a156d07-35f3-4aee-9e72-1de406f2e8a0
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: crop_people_3_4
+      automatic_crop_provider: null
+  ec03a138-fd76-4e8b-bcc3-0cefb0c3c07b:
+    uuid: ec03a138-fd76-4e8b-bcc3-0cefb0c3c07b
+    id: image_effects_interlace
+    weight: 2
+    data:
+      type: Plane
+  d141e1de-fa36-4da4-b8ea-14f007616f17:
+    uuid: d141e1de-fa36-4da4-b8ea-14f007616f17
+    id: image_style_quality
+    weight: 3
+    data:
+      quality: 75

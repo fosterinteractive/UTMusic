@@ -406,6 +406,42 @@ function utmusic_preprocess_node(array &$variables) {
       $variables['content']['related_news_footer'] = $render_view;
     }
   }
+
+  // People
+  if ($node_type == 'people') {
+    if ($node_view_mode == 'full') {
+      if (isset($variables['elements']['field_people_research_profile'][0])) {
+        $research_url_og_value = $variables['elements']['field_people_research_profile'][0]['#title'];
+        
+        // Regular expression to match the domain
+        $pattern_domain = '/^https:\/\/discover\.research\.utoronto\.ca\//';
+        // Regular expression pattern to match the endings
+        $pattern_ending = '/(\/about|\/publications|\/professional|\/teaching)$/';
+
+        // Check if the string ends with any of the specified endings
+        if (preg_match($pattern_ending, $research_url_og_value, $matches)) {
+          // Get the matched ending (e.g., "/about", "/publications", etc.)
+          $matchedEnding = $matches[1];
+
+          // Remove the matched ending from the input string
+          $research_url_new_value = preg_replace($pattern_ending, '', $research_url_og_value);
+        } else {
+          $research_url_new_value = $research_url_og_value;
+        }
+
+        $variables['research_url'] = $research_url_new_value;
+
+        // // Perform the regex match. Check if url starts with "https://discover.research.utoronto.ca/"
+        // if(preg_match($pattern_domain, $research_url_new_value)) {
+        //   $research_url = $research_url_new_value;          
+        // // If url does not start with "https://discover.research.utoronto.ca/"
+        // } else {
+        //   $research_url = "does not match";
+        // }
+       
+      }
+    }
+  }
 }
 
 

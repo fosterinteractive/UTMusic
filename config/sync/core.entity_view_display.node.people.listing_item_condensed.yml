@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.people.field_people_featured_media
     - field.field.node.people.field_people_image
     - field.field.node.people.field_people_instrument
+    - field.field.node.people.field_people_job_title
     - field.field.node.people.field_people_last_name
     - field.field.node.people.field_people_name
     - field.field.node.people.field_people_phone
@@ -59,10 +60,18 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: people_image
       link: false
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_people_job_title:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_people_last_name:
     type: text_default

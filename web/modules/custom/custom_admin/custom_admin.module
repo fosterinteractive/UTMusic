@@ -437,7 +437,7 @@ function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_stat
     ];
   }
 
-  // The "events" add and edit forms.
+  // The "program" add and edit forms.
   if ($form_id == 'node_program_form' || $form_id == 'node_program_edit_form' ) {
     // Show "Feature Media" field for manual pick
     $form['field_program_featured_media']['#states'] = [
@@ -447,8 +447,12 @@ function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_stat
     ];
   }
 
-  // The "events" add and edit forms.
+  // The "people" add and edit forms.
   if ($form_id == 'node_people_form' || $form_id == 'node_people_edit_form' ) {
+    if (isset($form['field_people_research_profile']['widget'][0]['uri']['#description'])) {
+      $form['field_people_research_profile']['widget'][0]['uri']['#description'] = t('Your DiscoverResearch Profile Eg. https://discover.research.utoronto.ca/123-your-name.');
+    }
+
     // Show the "faculty position" list field
     $form['field_people_faculty_position']['#states'] = [
       'visible' => [

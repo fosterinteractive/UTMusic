@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.people.field_people_featured_media
     - field.field.node.people.field_people_image
     - field.field.node.people.field_people_instrument
+    - field.field.node.people.field_people_job_title
     - field.field.node.people.field_people_last_name
     - field.field.node.people.field_people_name
     - field.field.node.people.field_people_phone
@@ -75,6 +76,7 @@ third_party_settings:
         - field_people_role
         - field_people_faculty_position
         - field_people_staff_position
+        - field_people_job_title
         - field_people_area
         - field_people_instrument
       label: Categories
@@ -236,7 +238,7 @@ content:
         hide_guidelines: '1'
   field_people_area:
     type: options_select
-    weight: 20
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -317,17 +319,26 @@ content:
       no_edit_on_create: false
     third_party_settings: {  }
   field_people_image:
-    type: media_library_widget
+    type: media_library_media_modify_widget
     weight: 12
     region: content
     settings:
       media_types: {  }
-    third_party_settings:
-      media_library_edit:
-        show_edit: '1'
+      form_mode: contextual_crop_people
+      check_selected: false
+      replace_checkbox_by_order_indicator: false
+      multi_edit_on_create: true
+      no_edit_on_create: false
+    third_party_settings: {  }
   field_people_instrument:
     type: options_select
-    weight: 21
+    weight: 22
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_people_job_title:
+    type: options_select
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }

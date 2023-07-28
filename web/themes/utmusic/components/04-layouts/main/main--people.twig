@@ -15,6 +15,7 @@
           image: image,
           title_prefix: title_prefix,
           title: title,
+          role: role,
           title_suffix: title_suffix,
           email: email,
           phone: phone,
@@ -44,66 +45,80 @@
         </div>
       {% endif %}
 
-      {% if profile_type == 'default' %}
-      
-      {% elseif profile_type == 'custom' %}
-
-      {% endif %}
-
       <div class="l-main--event__content-wrapper l-section--[8] theme--white-bg l-section-spacing-top--small l-section-spacing-bottom--small">
         <div class="l-section__zone-1 l-flex">
-          {% if education %}
-            <div class="l-main--program__education">
-              {{education}}
-            </div>
-          {% endif %}
+          {% if profile_type == 'default' %}
+            {% if education %}
+              <div class="l-main--program__education">
+                {{education}}
+              </div>
+            {% endif %}
 
-          {% if background %}
-            <div class="l-main--program__background">
-              {{background}}
-            </div>
-          {% endif %}
+            {% if background %}
+              <div class="l-main--program__background">
+                {{background}}
+              </div>
+            {% endif %}
 
-          {% if activities %}
-            <div class="l-main--program__activities">
-              {{activities}}
-            </div>
-          {% endif %}
+            {% if activities %}
+              <div class="l-main--program__activities">
+                {{activities}}
+              </div>
+            {% endif %}
 
-          {% if teaching %}
-            <div class="l-main--program__teaching">
-              {{teaching}}
-            </div>
-          {% endif %}
+            {% if teaching %}
+              <div class="l-main--program__teaching">
+                {{teaching}}
+              </div>
+            {% endif %}
 
-          {% if discovery_url or creative_works %}
-            <div class="l-main--program__creative_works">
-              {% if creative_works %}
-                {{creative_works}}
-                <br/>  
-              {% endif %}
+            {% if discovery_url or creative_works %}
+              <div class="l-main--program__creative_works">
+                {% if creative_works %}
+                  {{creative_works}}
+                  <br/>  
+                {% endif %}
 
-              {% if discovery_url and not creative_works %}
-                <h2 class="a-heading__h2">Scholarly &amp; Creative Works</h2>
-              {% endif %}
+                {% if discovery_url and not creative_works %}
+                  <h2 class="a-heading__h2">Scholarly &amp; Creative Works</h2>
+                {% endif %}
 
-              {% if discovery_url %}
-                <div class="l-main--program__creative_works-discovery">
-                  {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
-                      directory: directory,
-                      icon: 'book-bulb',
-                    } only 
-                  %}
-                  <a class="l-main--program__creative_works-discovery-link" href="{{discovery_url}}"{% if aria_discovery %} aria-label="{{ aria_discovery }}"{% endif %}>View on Discovery Research</a>
-                </div>
-              {% endif %}
-            </div>
-          {% endif %}
+                {% if discovery_url %}
+                  <div class="l-main--program__creative_works-discovery">
+                    {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                        directory: directory,
+                        icon: 'book-bulb',
+                      } only 
+                    %}
+                    <a class="l-main--program__creative_works-discovery-link" href="{{discovery_url}}/publications"{% if aria_discovery %} aria-label="{{ aria_discovery }}"{% endif %}>View on DiscoveryResearch</a>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          
+          {% elseif profile_type == 'custom' %}
 
-          {% if custom_content %}
-            <div class="l-main--program__custom_content">
-              {{custom_content}}
-            </div>
+            {% if custom_content %}
+              <div class="l-main--program__custom_content">
+                {{custom_content}}
+              </div>
+            {% endif %}
+
+            {% if discovery_url %}
+              <div class="l-main--program__creative_works">
+                  <h2 class="a-heading__h2">Scholarly &amp; Creative Works</h2>
+
+                  <div class="l-main--program__creative_works-discovery">
+                    {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                        directory: directory,
+                        icon: 'book-bulb',
+                      } only 
+                    %}
+                    <a class="l-main--program__creative_works-discovery-link" href="{{discovery_url}}/publications"{% if aria_discovery %} aria-label="{{ aria_discovery }}"{% endif %}>View on DiscoveryResearch</a>
+                  </div>
+              </div>
+            {% endif %}
+          
           {% endif %}
         </div>
       </div>

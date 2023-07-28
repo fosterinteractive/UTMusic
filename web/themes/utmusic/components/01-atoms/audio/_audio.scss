@@ -9,9 +9,6 @@
 .m-audio__item {
   margin-bottom: ru(0.75);
 
-  &:not(:last-of-type) {
-  }
-
   h2 {
     margin-bottom: ru(0.25);
   }
@@ -19,4 +16,19 @@
 
 .m-audio__item-track iframe {
   width: 100%;
+}
+
+
+// Audio player
+.m-audio-player__wrapper {
+  display: flex;
+  gap: calc(var(--spacer) * 0.5);
+
+  .m-audio-player {
+    display: none;
+  }
+
+  button {
+    @extend %o-hero-media__info-link;
+  }
 }

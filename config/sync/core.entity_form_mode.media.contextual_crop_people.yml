@@ -1,0 +1,10 @@
+uuid: b3776210-cab1-42c5-ba93-4b8ab3a31c2c
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.contextual_crop_people
+label: 'Contextual Crop People'
+targetEntityType: media
+cache: true
