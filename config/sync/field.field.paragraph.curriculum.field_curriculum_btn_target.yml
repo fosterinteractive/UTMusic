@@ -1,0 +1,21 @@
+uuid: 0554b9c4-7a1b-4103-bc5a-1c78a359ac8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_curriculum_btn_target
+    - paragraphs.paragraphs_type.curriculum
+  module:
+    - options
+id: paragraph.curriculum.field_curriculum_btn_target
+field_name: field_curriculum_btn_target
+entity_type: paragraph
+bundle: curriculum
+label: 'Link target'
+description: 'By default links open in the current window.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

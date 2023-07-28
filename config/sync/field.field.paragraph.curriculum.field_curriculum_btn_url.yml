@@ -1,0 +1,23 @@
+uuid: 77d9b9eb-26bc-4fb9-a009-26f02f877cc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_curriculum_btn_url
+    - paragraphs.paragraphs_type.curriculum
+  module:
+    - link
+id: paragraph.curriculum.field_curriculum_btn_url
+field_name: field_curriculum_btn_url
+entity_type: paragraph
+bundle: curriculum
+label: URL
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

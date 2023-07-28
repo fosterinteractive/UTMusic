@@ -1,0 +1,77 @@
+.m-curriculum__title {
+  margin-bottom: ru(1.5);
+}
+
+.m-curriculum__wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  border-radius: rem(12px);
+  background-color: palette(white);
+  box-shadow: 0px rem(4px) rem(10px) rgba(62, 19, 77, 0.09);
+  margin-bottom: ru(1.5);
+  padding: ru(1.5) ru(1);
+}
+
+.m-curriculum__totals {
+  max-width: ru(4);
+}
+
+.m-curriculum__credits {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: rem(12px);
+  background-color: palette(pink, 1000);
+  margin-bottom: rem(12px);
+  width: rem(80px);
+  height: rem(80px);
+  text-align: center;
+  color: palette(pink);
+  font-size: rem(48px);
+  font-weight: 700;
+}
+
+.m-curriculum__years {
+  color: palette(pink);
+}
+
+.m-curriculum__courses {
+  display: flex;
+  align-items: center;
+
+  li {
+    @extend %a-type--medium;
+    color: palette(black, 200);
+
+    &:not(:last-of-type) {
+      margin-bottom: rem(15px);
+    }
+  }
+}
+
+.m-curriculum__courses-decoration {
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: '{';
+    margin: rem(-35px) rem(25px) 0 rem(15px);
+    font-size: rem(200px);
+    color: palette(grey, 850);
+  }
+}
+
+
+.m-curriculum__button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: ru(1);
+
+  .a-button {
+    margin: auto;
+  }
+}
+

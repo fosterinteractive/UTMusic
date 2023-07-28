@@ -1,0 +1,14 @@
+
+title: 'Curriculum'
+credits: '20'
+years: '4'
+courses:
+  - Classical Core Courses
+  - Music Electives Courses
+  - Music Education Electives courses
+  - Breadth Electives Courses
+  - Other courses
+btn_label: 'Courses Details and Credit Requirements'
+btn_url: '#'
+btn_target: '_blank'
+btn_aria_label: 'Optional text read aloud by screen readers'

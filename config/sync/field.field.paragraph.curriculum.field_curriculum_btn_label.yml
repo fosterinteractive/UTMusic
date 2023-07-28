@@ -1,0 +1,19 @@
+uuid: cbcbc2ee-f827-45eb-9dd4-f80d4b2d6d9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_curriculum_btn_label
+    - paragraphs.paragraphs_type.curriculum
+id: paragraph.curriculum.field_curriculum_btn_label
+field_name: field_curriculum_btn_label
+entity_type: paragraph
+bundle: curriculum
+label: Label
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

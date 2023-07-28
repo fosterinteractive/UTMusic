@@ -1,0 +1,23 @@
+uuid: 9eeecd63-6299-4bd0-8fb8-d621129ea30c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_curriculum_credits
+    - paragraphs.paragraphs_type.curriculum
+id: paragraph.curriculum.field_curriculum_credits
+field_name: field_curriculum_credits
+entity_type: paragraph
+bundle: curriculum
+label: 'Total Credits'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
