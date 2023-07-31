@@ -13,7 +13,7 @@ libraries-override:
   utmusic/global:
     css:
       theme:
-        assets/style.css: /themes/utmusic/assets/adminspring-style.css
+        dist/style.css: /themes/utmusic/dist/adminspring-preview.css
   system/base:
     css:
       component:
@@ -178,20 +178,3 @@ regions:
   sidebar_first: 'First sidebar'
 regions_hidden:
   - sidebar_first
-
-components:
-  namespaces:
-    base:
-      - components/_patterns/00-base
-    atoms:
-      - components/_patterns/01-atoms
-    molecules:
-      - components/_patterns/02-molecules
-    organisms:
-      - components/_patterns/03-organisms
-    layouts:
-      - components/_patterns/04-layouts
-    pages:
-      - components/_patterns/05-mockups
-    utilities:
-      - components/_patterns/07-utilities
