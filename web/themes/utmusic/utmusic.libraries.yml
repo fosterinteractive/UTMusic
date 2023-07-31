@@ -97,6 +97,10 @@ priority-nav:
     js/libraries/priority-nav/dist/priority-nav.min.js: { minified: true }
     js/priority-plus-menu.config.js: {}
 
+image-header-iternal:
+  js:
+    js/image-header-iternal.js: {}
+
 foundation_core:
   version: 6.7.4
   # css:

@@ -21,7 +21,7 @@
 
   @include breakpoint($bp-tablet) {
     display: flex;
-    grid-row: 2/ span 3;
+    grid-row: 3/ span 5;
     grid-column: 8 / span 6;
     align-self: flex-end;
   }
@@ -29,6 +29,10 @@
 
 .o-hero-media--event__text-wrapper {
   @extend .o-hero-media--event-text__text-wrapper;
+  @include breakpoint($bp-tablet) {
+    grid-column: col 1 / span 6;
+    flex-direction: column;
+  }
 }
 
 .o-hero-media--event__tags {

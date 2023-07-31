@@ -14,11 +14,14 @@
 {% endif %}
 
 
+{% set background_image_path = '/themes/utmusic/images/texture--header.png' %}
 
-<div class="o-hero-media{{ variation }}">
+
+<div class="o-hero-media{{ variation }} js-content-header">
 
   <div class="o-hero-media__bg-decoration">
     {# it's a placeholder for background #}
+    <img alt="" aria-hidden="true" src='{{ background_image_path}}'>
   </div>
 
   {% if breadcrumbs is not empty and not is_front %}
@@ -52,9 +55,9 @@
     </div>
   {% endif %}
 
-  <div class="o-hero-media-page__text-wrapper {% if variation %}o-hero-media{{ variation }}__text-wrapper{% endif %}">
+  <div class="o-hero-media-page__text-wrapper js-content-header-text {% if variation %}o-hero-media{{ variation }}__text-wrapper{% endif %}">
 
-    <div class="o-hero-media-page__text {% if variation %}o-hero-media{{ variation }}__text{% endif %}">
+    <div class="js-content-header-text o-hero-media-page__text {% if variation %}o-hero-media{{ variation }}__text{% endif %}">
       {% if title_prefix or title %}
         <h1 class="a-heading__h1">
           {% if title_prefix %}
@@ -110,7 +113,6 @@
       {% endif %}
 
     </div>
-
     
   </div>
 
@@ -121,3 +123,5 @@
   {% endif %}
 
 </div>
+
+{{ attach_library('utmusic/image-header-iternal') }}
