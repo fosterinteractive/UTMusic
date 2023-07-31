@@ -10,15 +10,17 @@
 }
 
 .o-hero-media--event-text__text-wrapper {
-  grid-row: 2;
+  grid-row: 4;
   grid-column: col 1 / span 12;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer);
+  padding-top: var(--spacer);
 
   @include breakpoint($bp-tablet) {
-    grid-row: 2;
     grid-column: col 1/ span 12;
-    display: flex;
     justify-content: space-between;
-    gap: var(--spacer);
+    padding-top: 0;
   }
 }
 

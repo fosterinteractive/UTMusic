@@ -11,8 +11,3 @@ label: 'Get tickets'
 aria_label: 'Get your best tickets'
 event_types: 
   - "Guest recital"
-breadcrumbs:
-  - "Concerts & Events"
-  - "Joseph Haydn’s ORFEO: The Soul of the Philosopher"
-
-

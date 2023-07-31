@@ -4,21 +4,21 @@
 }
 
 .o-hero-media--landscape__image {
-  grid-row: 2;
+  padding-top: var(--spacer);
+  grid-row: 4;
   grid-column: col 1 / span 12;
   
   @include breakpoint($bp-tablet) {
-    grid-row: 2;
+    padding-top: 0;
     grid-column: col 2 / span 10;
   }
 }
 
 .o-hero-media--landscape__text-wrapper {
-  grid-row: 5;
+  grid-row: 8;
   grid-column: col 1/ span 12;
 
   @include breakpoint($bp-tablet) {
-    grid-row: 5;
     grid-column: col 3/ span 8;
   }
 }

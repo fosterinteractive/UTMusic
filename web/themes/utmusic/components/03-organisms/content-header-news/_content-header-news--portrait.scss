@@ -9,21 +9,25 @@
 }
 
 .o-hero-media--portrait__image {
-  grid-row: 2;
+  grid-row: 4;
   grid-column: col 1 / span 12;
+  padding-top: var(--spacer);
 
   @include breakpoint($bp-tablet) {
-    grid-row: 2/ span 3;
+    padding-top: 0;
+    grid-row: 3/ span 4;
     grid-column: 8 / span 6;
   }
 }
 
 .o-hero-media--portrait__text-wrapper {
-  grid-row: 5;
+  padding-top: var(--spacer);
+  padding-bottom: var(--spacer);
+  grid-row: 8;
   grid-column: col 1/ span 12;
 
   @include breakpoint($bp-tablet) {
-    grid-row: 2;
+    grid-row: 4;
     grid-column: col 1/ span 6;
   }
 }

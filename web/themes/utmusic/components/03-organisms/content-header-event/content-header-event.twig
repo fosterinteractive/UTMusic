@@ -18,6 +18,18 @@
     {# it's a placeholder for background #}
   </div>
 
+  {% if breadcrumbs is not empty and not is_front %}
+    <div class="o-hero-media{% if variation %}{{ variation }}{% endif %}__breadcrumbs">
+    {% if sb_demo %}
+      {% include '@molecules/breadcrumbs/breadcrumbs.twig' with {
+        bredcrumbs: breadcrumbs,
+      } %}
+    {% else %}
+      {{ breadcrumbs }}
+    {% endif %}
+    </div>
+  {% endif %}
+
   {% if image_landscape or image_portrait %}
     <div class="o-hero-media{% if variation %}{{variation}}{% endif %}__image">
       {% if image_portrait and header_variation == "portrait" %}
@@ -135,17 +147,5 @@
     {% endif %}
 
   </div>
-
-  {% if breadcrumbs is not empty and not is_front %}
-    <div class="o-hero-media{% if variation %}{{ variation }}{% endif %}__breadcrumbs">
-    {% if sb_demo %}
-      {% include '@molecules/breadcrumbs/breadcrumbs.twig' with {
-        bredcrumbs: breadcrumbs,
-      } %}
-    {% else %}
-      {{ breadcrumbs }}
-    {% endif %}
-    </div>
-  {% endif %}
 
 </div>

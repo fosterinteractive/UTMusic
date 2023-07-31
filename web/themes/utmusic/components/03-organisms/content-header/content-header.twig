@@ -21,6 +21,18 @@
     {# it's a placeholder for background #}
   </div>
 
+  {% if breadcrumbs is not empty and not is_front %}
+    <div class="o-hero-media__breadcrumbs {% if variation %}o-hero-media{{variation}}__breadcrumbs{% endif %}">
+    {% if sb_demo %}
+      {% include '@molecules/breadcrumbs/breadcrumbs.twig' with {
+        bredcrumbs: breadcrumbs,
+      } %}
+    {% else %}
+      {{ breadcrumbs }}
+    {% endif %}
+    </div>
+  {% endif %}
+
   {% if video or image_portrait or image_landscape  or  image_short or image_tall %}
     <div class="o-hero-media__image {% if variation %}o-hero-media{{ variation }}__image{% endif %}">
       {% if video and variation == '--video' %}
@@ -105,18 +117,6 @@
   {% if variation == "--landscape" or variation == "--video" %}
     <div class="o-hero-media__social">
       {{ social_share }}
-    </div>
-  {% endif %}
-
-  {% if breadcrumbs is not empty and not is_front %}
-    <div class="o-hero-media__breadcrumbs {% if variation %}o-hero-media{{variation}}__breadcrumbs{% endif %}">
-    {% if sb_demo %}
-      {% include '@molecules/breadcrumbs/breadcrumbs.twig' with {
-        bredcrumbs: breadcrumbs,
-      } %}
-    {% else %}
-      {{ breadcrumbs }}
-    {% endif %}
     </div>
   {% endif %}
 

@@ -1,6 +1,6 @@
 .o-hero-media__credentials {
   color: var(--c-heading-credentials);
-  margin-top: rem(34px);
+  margin-top: calc(var(--spacer)*1.2);
 }
 
 .o-hero-media__social {
@@ -12,7 +12,7 @@
   align-items: center;
 
   @include breakpoint($bp-tablet) {
-    grid-row: 5;
+    grid-row: 8;
     grid-column: col 2/ span 1;
   }
 }

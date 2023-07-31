@@ -12,11 +12,10 @@
 }
 
 .o-hero-media--person-text__text-wrapper {
-  grid-row: 2;
+  grid-row: 4;
   grid-column: col 1 / span 12;
 
   @include breakpoint($bp-tablet) {
-    grid-row: 2;
     grid-column: col 1/ span 12;
     display: flex;
     justify-content: space-between;

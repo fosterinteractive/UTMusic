@@ -1,4 +1,5 @@
 import hero from './content-header-event.twig';
+import breadcrumbs from './breadcrumbs.yml';
 
 import contentHeaderEvent from './content-header-event.yml';
 import contentHeaderEventText from './content-header-event--text.yml';
@@ -20,5 +21,5 @@ export default {
   },
 }
 
-export const ContentHeaderEvent = () => hero(contentHeaderEvent);
-export const ContentHeaderEventText = () => hero(contentHeaderEventText);
+export const ContentHeaderEvent = () => hero({...contentHeaderEvent, ...breadcrumbs});
+export const ContentHeaderEventText = () => hero({...contentHeaderEventText, ...breadcrumbs});

@@ -1,32 +1,22 @@
 %text-wrapper-layout {
-  grid-row: 2;
+  grid-row: 4;
   grid-column: col 1/ span 12;
+  padding-top: var(--spacer);
+  padding-bottom: var(--spacer);
 
   @include breakpoint($bp-tablet) {
-    grid-row: 2;
     grid-column: col 1/ span 6;
   }
 }
 
 %two-images-breadcrumbs {
   @extend .o-hero-media__breadcrumbs;
-
-  grid-row: 6;
-
-  @include breakpoint($bp-tablet) {
-    grid-row: 4;
-  }
 }
 
 %two-images-background {
   @extend %o-hero-media__bg-decoration;
   background-size: cover;
-  grid-row: 1/span 4;
 
-  @include breakpoint($bp-tablet) {
-    grid-row: 1/span 3;
-    background-size: 100% 100%;
-  }
 }
 
 %two-images-layout {
@@ -37,8 +27,8 @@
 
   @include breakpoint($bp-tablet) {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(7, auto);
+    grid-template-columns: 1fr 1.2fr;
+    grid-template-rows: var(--spacer) repeat(3, auto) var(--spacer) var(--spacer) var(--spacer);
     gap: rem(10px);
     padding: 0;
   }
@@ -48,12 +38,6 @@
 // Top-Bottom Variation 
 .o-hero-media--top-bottom {
   @extend %o-hero-media-core;
-
-  grid-template-rows: var(--header-height) minmax(1px, min-content) auto auto rem(250px) rem(30px) auto;
-
-  @include breakpoint($bp-tablet) {
-    grid-template-rows: var(--header-height) minmax(1px, min-content) rem(70px) rem(70px) auto auto;
-  }
 }
 
 .o-hero-media--top-bottom .o-hero-media__bg-decoration {
@@ -63,11 +47,11 @@
 .o-hero-media--top-bottom__image {
   @extend %two-images-layout; 
 
-  grid-row: 3 / span 3;
+  grid-row: 5 / span 3;
   grid-column: col 1 / span 12;
 
   @include breakpoint($bp-tablet) {
-    grid-row: 2/ span 3;
+    grid-row: 3/ span 5;
     grid-column: 8 / span 6;
   }
 }
@@ -77,7 +61,7 @@
 }
 
 .o-hero-media--top-bottom__image-short {
-  grid-row: 1 / span 5;
+  grid-row: 1 / span 4;
 }
 
 .o-hero-media--top-bottom__image-tall {
@@ -91,11 +75,6 @@
 // Bottom-Top Variation 
 .o-hero-media--bottom-top {
   @extend %o-hero-media-core;
-  grid-template-rows: var(--header-height) minmax(1px, min-content) auto auto rem(250px) rem(30px) auto;
-
-  @include breakpoint($bp-tablet) {
-    grid-template-rows: var(--header-height) minmax(1px, min-content) rem(70px) rem(70px) auto auto;
-  }
 }
 
 .o-hero-media--bottom-top .o-hero-media__bg-decoration {
@@ -103,13 +82,14 @@
 }
 
 .o-hero-media--bottom-top__image {
-  @extend %two-images-layout; 
+  @extend %two-images-layout;
+  grid-template-columns: 1.2fr 1fr; 
 
-  grid-row: 3 / span 3;
+  grid-row: 5 / span 3;
   grid-column: col 1 / span 12;
 
   @include breakpoint($bp-tablet) {
-    grid-row: 2/ span 4;
+    grid-row: 3/ span 5;
     grid-column: 8 / span 6;
   }
 }

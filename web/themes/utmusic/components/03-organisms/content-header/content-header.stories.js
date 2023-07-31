@@ -1,5 +1,7 @@
 import hero from './content-header.twig';
 
+import breadcrumbs from './breadcrumbs.yml';
+
 import contentHeaderTextData from './content-header--text.yml';
 
 import contentHeaderImagePortraitData from './content-header--image-portrait.yml';
@@ -26,13 +28,13 @@ export default {
     },
   },
 }
-export const ContentHeaderText = () => hero(contentHeaderTextData);
+export const ContentHeaderText = () => hero({...contentHeaderTextData, ...breadcrumbs});
 
-export const ContentHeaderImagePortrait = () => hero(contentHeaderImagePortraitData);
-export const ContentHeaderImageLandscape = () => hero(contentHeaderImageLandscapeData);
+export const ContentHeaderImagePortrait = () => hero({...contentHeaderImagePortraitData, ...breadcrumbs});
+export const ContentHeaderImageLandscape = () => hero({...contentHeaderImageLandscapeData, ...breadcrumbs});
 
-export const ContentHeaderVideo = () => hero(contentHeaderVideoData);
+export const ContentHeaderVideo = () => hero({...contentHeaderVideoData, ...breadcrumbs});
 
-export const ContentHeaderTwoImagesTopBottom = () => hero(contentHeaderTwoImages1Data);
-export const ContentHeaderTwoImagesBottomTop = () => hero(contentHeaderTwoImages2Data);
+export const ContentHeaderTwoImagesTopBottom = () => hero({...contentHeaderTwoImages1Data, ...breadcrumbs});
+export const ContentHeaderTwoImagesBottomTop = () => hero({...contentHeaderTwoImages2Data, ...breadcrumbs});
 

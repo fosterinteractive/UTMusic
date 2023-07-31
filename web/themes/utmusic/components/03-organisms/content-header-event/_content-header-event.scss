@@ -28,13 +28,7 @@
 }
 
 .o-hero-media--event__text-wrapper {
-  grid-row: 5;
-  grid-column: col 1/ span 12;
-
-  @include breakpoint($bp-tablet) {
-    grid-row: 2;
-    grid-column: col 1/ span 6;
-  }
+  @extend .o-hero-media--event-text__text-wrapper;
 }
 
 .o-hero-media--event__tags {
@@ -43,7 +37,6 @@
 
 %o-hero-media--event__info, 
 .o-hero-media--event__info {
-  margin-top: rem(40px);
   display: flex;
   flex-direction: column;
   gap: calc(var(--spacer)/3);

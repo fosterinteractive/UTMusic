@@ -3,25 +3,34 @@
   display: grid;
   grid-template-columns: [alpha] 1fr repeat(12, [col] minmax(1px, calc((65rem - (var(--spacer) * 11)) / 12))) 1fr [omega];
   grid-column-gap: var(--spacer);
-  grid-template-rows: var(--header-height) minmax(1px, min-content) rem(70px) rem(70px) auto auto;
+  grid-template-rows: var(--header-height) var(--spacer) minmax(calc(var(--spacer)*2), auto) minmax(1px, min-content) var(--spacer) var(--spacer) var(--spacer);
+
+  @include breakpoint($bp-tablet) {
+    grid-template-rows: var(--header-height) var(--spacer) calc(var(--spacer)*2) minmax(1px, min-content) var(--spacer) var(--spacer) var(--spacer);
+  }
 }
 
 %o-hero-media__bg-decoration, 
 .o-hero-media__bg-decoration {
-  grid-row: 1/ span 3;
+  grid-row: 1/ span 6;
   grid-column: alpha / omega;
 
   background-image: var(--header-bg-image);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  z-index: -1;
+
+  @include breakpoint($bp-tablet) {
+    grid-row: 1/ span 5;
+  }
 }
 
 %o-hero-media__breadcrumbs,
 .o-hero-media__breadcrumbs {
-  grid-row: 4;
+  grid-row: 3;
   grid-column: col 1/ span 12;
-  align-self: center;
+  align-self: start;
 
   @include breakpoint($bp-tablet) {
     grid-column: col 1/ span 6;
@@ -123,6 +132,13 @@
       width: 57%;
     }
   }
+}
+
+%o-hero-media--text-wrapper,
+.o-hero-media--text__text-wrapper {
+  grid-row: 4;
+  padding-top: var(--spacer);
+  padding-bottom: var(--spacer);
 }
 
 .o-hero-media-page__text-wrapper.o-hero-media--text__text-wrapper {
