@@ -1,0 +1,12 @@
+uuid: 9bc00aad-8542-4c08-b390-26661efff07d
+langcode: en
+status: true
+dependencies: {  }
+label: 'Crop Sliding Door'
+id: crop_sliding_door
+description: ''
+aspect_ratio: '117:52'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

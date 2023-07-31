@@ -1,0 +1,92 @@
+uuid: a7fe2c0e-61cd-47d4-819b-f6d1a2949ed1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.sliding_door
+    - field.field.media.ed_image.field_ed_image_height
+    - field.field.media.ed_image.field_ed_image_image
+    - field.field.media.ed_image.field_ed_image_width
+    - field.field.media.ed_image.field_img_related_area
+    - field.field.media.ed_image.field_img_related_people
+    - field.field.media.ed_image.field_img_related_program
+    - image.style.large
+    - media.type.ed_image
+  module:
+    - field_group
+    - image_widget_crop
+third_party_settings:
+  field_group:
+    group_related_content:
+      children:
+        - field_img_related_area
+        - field_img_related_people
+        - field_img_related_program
+      label: 'Related Content'
+      region: content
+      parent_name: ''
+      weight: 5
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
+_core:
+  default_config_hash: zEhdY05QJj_PfdQgQ98By6Slvnm8RTco7VAQwLXE1JA
+id: media.ed_image.sliding_door
+targetEntityType: media
+bundle: ed_image
+mode: sliding_door
+content:
+  field_ed_image_image:
+    type: image_widget_crop
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: large
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - crop_sliding_door
+      crop_types_required: {  }
+      warn_multiple_usages: true
+      show_crop_area: true
+      show_default_crop: true
+    third_party_settings: {  }
+  field_img_related_area:
+    type: options_select
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_img_related_people:
+    type: options_select
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_img_related_program:
+    type: options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_ed_image_height: true
+  field_ed_image_width: true
+  path: true
+  revision_log_message: true
+  status: true
+  uid: true
