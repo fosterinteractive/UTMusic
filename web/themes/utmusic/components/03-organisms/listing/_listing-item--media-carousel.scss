@@ -12,6 +12,9 @@
 
 .m-listing-item--media-carousel {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacer) * 0.5);
 }
 
 .m-listing-item--media-carousel__media {
@@ -22,6 +25,7 @@
     display: block;
     width: 100%;
     height: 100%;
+    border-radius: rem(10px);
   }
 }
 
@@ -44,6 +48,7 @@
 
 .m-listing-item--media-carousel__title {
   @extend %overlay-link-card;
+  @extend .m-video__caption;
 }
 
 .m-listing-item--media-carousel__title .a-heading__h3 {

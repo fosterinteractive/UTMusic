@@ -42,7 +42,7 @@
       {% endif %}
 
       {% if content %}
-        <div class="l-main--event__content-wrapper l-section--[8] theme--white-bg l-section-spacing-top--small l-section-spacing-bottom--small">
+        <div class="l-main--event__content-wrapper l-section-wrapper l-section--[8] theme--white-bg l-section-spacing-top--small l-section-spacing-bottom--small">
           <div class="l-section__zone-1 l-flex">
             <div class="l-main--event__content">
               {{ content }}
@@ -60,7 +60,7 @@
 
 
       {% if featured_media %}
-        <div class="l-section--[8] theme--white-bg">
+        <div class="l-section--[8] l-section-wrapper theme--white-bg">
           <div class="l-main--event__media l-section__zone-1">
             {% include "@organisms/listing/listing.twig" with {
                 directory: directory,
@@ -74,7 +74,7 @@
       {% endif %}
 
       {% if related_events %}
-        <div class="l-section-bg l-section--[12] l-section--related-event theme--blue-light l-section-spacing-top--small l-section-spacing-bottom--small">
+        <div class="l-section-bg l-section-wrapper l-section--[12] l-section--related-event theme--blue-light l-section-spacing-top--small l-section-spacing-bottom--small">
           <div class="l-section-bg__bg-decoration">
             {# it's a placeholder for background #}
             <img alt="" aria-hidden="true" src="/themes/utmusic/images/blue-both-min.jpg" />

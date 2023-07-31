@@ -123,16 +123,15 @@
         </div>
       </div>
 
-
+      {% set background_image_path = '/themes/utmusic/images/texture--left-min.png' %}
 
       {% if media_display == 'default' %}
-        <div class="l-section--[12] theme--dark-blue-bg l-section-wrapper l-section-spacing-top--small l-section-spacing-bottom--small">
-          {% set background_image_path = '/themes/utmusic/images/texture--left-min.png' %}
+        <div class="l-section--[12] l-section-wrapper theme--dark-blue-bg l-section-wrapper l-section-spacing-top--small l-section-spacing-bottom--small">
           
           <div class="l-section__background">
-            <img alt="" aria-hidden="true" src='{{ background_image_path}}' />
+            <img alt="" aria-hidden="true" src='{{ background_image_path }}'>
           </div>
-          <div class="l-main--program__media l-section__zone-1 l-flex">
+          <div class="l-main--program__media l-section__zone l-section__zone-1 l-flex">
             <div class="l-main--program__media-title">
               {% include "@atoms/text/headings/heading.twig" with {
                   html_element: 'h2',
@@ -146,13 +145,12 @@
           </div>
         </div>
       {% elseif media_display == 'carousel' %}
-        <div class="l-section--[12] theme--dark-blue-bg l-section-wrapper l-section-spacing-top--small l-section-spacing-bottom--small">
-          {% set background_image_path = '/themes/utmusic/images/texture--left-min.png' %}
+        <div class="l-section--[12] l-section-wrapper theme--dark-blue-bg l-section-wrapper l-section-spacing-top--small l-section-spacing-bottom--small">
           
           <div class="l-section__background">
-            <img alt="" aria-hidden="true" src='{{ background_image_path}}' />
+            <img alt="" aria-hidden="true" src='{{ background_image_path }}'>
           </div>
-          <div class="l-main--program__media l-section__zone-1">
+          <div class="l-main--program__media l-section__zone l-section__zone-1">
             <div class="l-main--event-related__title">
               {% include "@atoms/text/headings/heading.twig" with {
                   html_element: 'h2',

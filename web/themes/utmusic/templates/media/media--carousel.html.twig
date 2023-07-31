@@ -37,7 +37,7 @@
 {% include "@organisms/listing/listing-item--media-carousel.twig" with {
     directory: 'themes/utmusic',
     variation: 'media-carousel',
-    media: content,
-    title: media.field_ed_image_image.0.alt,
+    media: content|without('field_ed_video_title'),
+    title: content.field_ed_video_title[0] ? content.field_ed_video_title[0]['#context'].value,
   } only
 %}
