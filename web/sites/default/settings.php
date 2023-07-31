@@ -19,6 +19,39 @@ include __DIR__ . "/settings.pantheon.php";
 
 $settings['config_sync_directory'] = dirname(DRUPAL_ROOT) . '/config/sync';
 
+
+$config['environment_indicator.indicator']['bg_color'] = '#cce8bc';
+$config['environment_indicator.indicator']['fg_color'] = '#000000';
+$config['environment_indicator.indicator']['name'] = 'Local';
+
+if (isset($_ENV['PANTHEON_ENVIRONMENT']) && php_sapi_name() != 'cli') {
+
+  // LIVE environment.
+  if ($_ENV['PANTHEON_ENVIRONMENT'] == 'live') {
+
+  }
+  // TEST environment.
+  elseif ($_ENV['PANTHEON_ENVIRONMENT'] == 'test') {
+    // Set environment indicator.
+    $config['environment_indicator.indicator']['bg_color'] = '#fbc673';
+    $config['environment_indicator.indicator']['fg_color'] = '#000000';
+    $config['environment_indicator.indicator']['name'] = 'Test Environment';
+  }
+  // QA environment.
+  elseif ($_ENV['PANTHEON_ENVIRONMENT'] == 'qa') {
+    // Set environment indicator.
+    $config['environment_indicator.indicator']['bg_color'] = '#efe594';
+    $config['environment_indicator.indicator']['fg_color'] = '#000000';
+    $config['environment_indicator.indicator']['name'] = 'QA Environment';
+  }
+  else {
+    // Set environment indicator.
+    $config['environment_indicator.indicator']['bg_color'] = '#7F0F05';
+    $config['environment_indicator.indicator']['fg_color'] = '#FFFFFF';
+    $config['environment_indicator.indicator']['name'] = 'Feature Environment';
+  }
+}
+
 /**
  * Skipping permissions hardening will make scaffolding
  * work better, but will also raise a warning when you
