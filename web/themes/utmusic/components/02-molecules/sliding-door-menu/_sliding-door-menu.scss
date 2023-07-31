@@ -1,57 +1,51 @@
-.m-sliding-door-menu {
+.m-sliding-door-menu-wrapper {
+  position: relative;
   border-radius: rem(12px);
   overflow: hidden;
+}
 
-  @include breakpoint($bp-tablet-small) {
+.m-sliding-door-menu {
+  @include breakpoint($bp-tablet) {
     display: flex;
-    flex-wrap: wrap;
   }
+}
 
-  @include breakpoint($bp-large) {
-    flex-wrap: nowrap;
-    height: rem(405px);
+.m-sliding-door-menu-desktop-links {
+  display: none;
+
+  @include breakpoint($bp-tablet) {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+
+    .m-sliding-item__link {
+      transition:  0.2s cubic-bezier(.12,.78,.74,.9);
+    }
   }
 }
 
 .m-sliding-door-menu .m-sliding-item {
-  .m-image,
-  .m-image__image {
-    height: 100%;
-  }
-
-  img {
-    object-fit: cover;
-    height: 100%;
-  }
-
   @include breakpoint($bp-tablet) {
-    flex: 1 1 50%;
-  }
+    position: absolute;
+    transition:  0.2s cubic-bezier(.12,.78,.74,.9);
 
-  @include breakpoint($bp-large) {
-    flex: 1 1 25%;
-    transition: flex 0.2s ease-in;
+    .m-sliding-item__link {
+      display: none;
+    }
   }
 }
 
 .m-sliding-item.highlighted-slide {
-  @include breakpoint($bp-large) {
-    flex: 1 1 50%;
+  @include breakpoint($bp-tablet) {
+    z-index: 1;
 
     .m-sliding-item__image {
       grid-area: slide;
     
       img {
         filter: saturate(1);
-      }
-    }
-
-    .a-heading__h5 a {
-      color: var(--c-sliding-menu-link--active);
-      text-decoration: underline;
-  
-      svg {
-        fill: currentColor;
       }
     }
   }

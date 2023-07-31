@@ -11,14 +11,10 @@
 
 {% endif %}
 
-<div class="m-sliding-item{{ variation }}" role="listitem">
+<div id = "{{ link_label|replace({' ': ''})|lower }}" class="m-sliding-item{{ variation }}" role="listitem">
   {% if image %}
     <div class="m-sliding-item{{ variation }}__image">
-      {% include "@molecules/image/image.twig" with {
-          directory: directory,
-          image: image,
-        } only
-      %}
+      {{ image }}
     </div>
   {% endif %}
 
@@ -34,7 +30,6 @@
           url: link_url,
           id: id,
           alignment: 'left',
-          directory: directory,
           aria_label: aria_label,
         } only
       %}
