@@ -27,6 +27,42 @@ targetEntityType: paragraph
 bundle: header
 mode: preview
 content:
+  field_header_image1:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: mode_crop_10_11
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_header_image2:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: mode_crop_10_13
+      link: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_header_image_landscape:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: news_image_landscape
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_header_image_portrait:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: news_image_portrait
+      link: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
   field_header_style:
     type: list_key
     label: hidden
@@ -39,14 +75,14 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_header_title:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_header_title_prefix:
     type: text_default
@@ -55,10 +91,14 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
+  field_header_video:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: video
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
 hidden:
-  field_header_image1: true
-  field_header_image2: true
-  field_header_image_landscape: true
-  field_header_image_portrait: true
-  field_header_video: true
   search_api_excerpt: true
