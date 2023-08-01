@@ -45,7 +45,8 @@ Drupal.behaviors.listingPeopleCarousel = {
     prevButton.style.visibility = 'hidden';
 
     // Create new region (if it doesn't not exist for screenreaders)
-    const liveregionExist = context.querySelector('.liveregion');
+    const liveregionExist = carouselContainer.closest('.o-listing--people-carousel').querySelector('.liveregion');
+
     if (!liveregionExist) {
       var liveregion = document.createElement('div');
       liveregion.setAttribute('aria-live', 'polite');
