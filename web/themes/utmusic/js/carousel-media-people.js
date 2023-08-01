@@ -32,7 +32,7 @@ Drupal.behaviors.listingPeopleCarousel = {
     let placeholdersArray = context.querySelectorAll('.m-listing-item--people .m-listing-item--people__img-illustration');
 
     placeholdersArray.forEach( placeholder => {
-      placeholder.style.height = firstImageHeight + "px";
+      placeholder.style.height = firstImageHeight ? firstImageHeight + "px": '300px';
     });
 
     const allItems = carouselContainer.querySelectorAll('.m-listing-item--people-carousel');

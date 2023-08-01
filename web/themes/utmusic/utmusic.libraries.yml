@@ -76,6 +76,10 @@ carousel-media-people:
   js:
     js/carousel-media-people.js: {}
 
+listing-full-people:
+  js:
+    js/listing-full-people.js: {}
+
 sliding-door-menu:
   js:
     js/sliding-door-menu.js: {}
