@@ -677,7 +677,20 @@ function utmusic_preprocess_menu(&$variables) {
     foreach ($items as $level1_menu_id => $item) {
       // Decide here how many columns this level 1 menu item should be.
       // Logic would be based off of if there is a panel or not.
-      $cols = 3;
+
+      // Load the full entity.
+      $menu_link_content = \Drupal\menu_link_content\Entity\MenuLinkContent::load($item['original_link']->getMetaData()['entity_id']);
+
+      if ($menu_link_content instanceof \Drupal\menu_link_content\Entity\MenuLinkContent) {
+        $field_menu_promotional_panel_value = $menu_link_content->get('field_menu_promotional_panel')->value;
+        
+        if ($field_menu_promotional_panel_value) {
+          $cols = 3;
+        }
+        else {
+          $cols = 4;
+        }
+      }
 
       $columns_data = $mega_menu_builder->build($item, $cols);
       // Add the mega menu columns data to the level 1 item.
