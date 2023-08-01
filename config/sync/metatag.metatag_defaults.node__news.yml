@@ -1,11 +1,9 @@
-uuid: 0e1877a4-fe07-4754-8291-602cc9a43647
+uuid: 816a5abd-c836-41b5-a901-366b93b94dff
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: 7mg6TD-6Xog6YiW-_2UupNtR2xyUGBiNqtAd51HoEG0
-id: node__ed_news
-label: 'Content: News'
+id: node__news
+label: 'Content: News (Article)'
 tags:
   description: '[node:field_page_meta_desc]'
   og_description: '[node:field_page_meta_desc]'

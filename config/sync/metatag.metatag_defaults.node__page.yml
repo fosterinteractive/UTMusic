@@ -1,0 +1,14 @@
+uuid: b52798ee-55e2-4364-b4d8-efe8f136da33
+langcode: en
+status: true
+dependencies: {  }
+id: node__page
+label: 'Content: Page'
+tags:
+  description: '[node:field_page_meta_description]'
+  og_description: '[node:field_page_meta_description]'
+  og_image_url: '[node:field_page_meta_image:entity:field_ed_image_image:social_image:url]'
+  og_title: '[node:field_page_meta_title]'
+  og_type: article
+  og_url: '[current-page:url:absolute]'
+  title: '[node:field_page_meta_title] | [site:name]'
