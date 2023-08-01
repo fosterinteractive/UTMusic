@@ -63,12 +63,9 @@
           {% endif %}
 
           {% if item.below %}
-            {% if item.content.field_menu_promotional_panel[0]['#markup'] == "On" %}
-              {% set promo_block = 'm-menu-main__panel-inner--promo-block' %}
-            {% endif %}
 
             <div class="m-menu-main__panel{% if item.pl_panel_active == true %} is-open {% endif %}" id="{{ panel_id }}" data-dropdown data-close-on-click="true" data-hover="true" data-hover-pane="true">
-              <div class="m-menu-main__panel-inner {{ promo_block }}">
+              <div class="m-menu-main__panel-inner {% if item.content.field_menu_promotional_panel[0]['#markup'] == "On" %}m-menu-main__panel-inner--promo-block{% endif %}">
                 {{ menus.menu_links(item.below, attributes, menu_level + 1, item.columns_data) }}
 
                 {# promotional panel #}
@@ -134,7 +131,7 @@
 
     {# Menu Level 3 #}
     {% if menu_level == 3 %}
-      <ul class="m-menu-main__list--level-3" data-main-menu-component="third-level-list">
+      <ul class="m-menu-main__list--level-3 m-menu-main__col{{ col_variation }}" data-main-menu-component="third-level-list">
       {% for item in items %}
 
         {% set classes = [
