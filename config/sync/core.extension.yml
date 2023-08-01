@@ -156,6 +156,7 @@ module:
   update: 0
   upgrade_status: 0
   user: 0
+  utmusic_auto_meta_title: 0
   video_embed_field: 0
   views_ajax_history: 0
   views_autosubmit: 0

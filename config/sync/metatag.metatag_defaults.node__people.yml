@@ -1,0 +1,14 @@
+uuid: e92ddbf3-5ba7-4a34-89c4-127fff097c00
+langcode: en
+status: true
+dependencies: {  }
+id: node__people
+label: 'Content: People'
+tags:
+  description: '[node:field_page_meta_description]'
+  og_description: '[node:field_page_meta_description]'
+  og_image_url: '[node:field_page_meta_image:entity:field_ed_image_image:social_image:url]'
+  og_title: '[node:field_page_meta_title]'
+  og_type: person
+  og_url: '[current-page:url:absolute]'
+  title: '[node:field_page_meta_title] | [site:name]'

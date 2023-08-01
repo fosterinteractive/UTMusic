@@ -442,16 +442,7 @@ function utmusic_preprocess_node(array &$variables) {
           $research_url_new_value = $research_url_og_value;
         }
 
-        $variables['research_url'] = $research_url_new_value;
-
-        // // Perform the regex match. Check if url starts with "https://discover.research.utoronto.ca/"
-        // if(preg_match($pattern_domain, $research_url_new_value)) {
-        //   $research_url = $research_url_new_value;          
-        // // If url does not start with "https://discover.research.utoronto.ca/"
-        // } else {
-        //   $research_url = "does not match";
-        // }
-       
+        $variables['research_url'] = $research_url_new_value;       
       }
     }
   }

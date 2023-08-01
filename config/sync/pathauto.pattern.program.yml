@@ -1,22 +1,22 @@
-uuid: c075ee2e-fe67-4409-a4d6-a7873f1c3a54
+uuid: 504bb031-f52b-46c0-bd1d-2886fab63d59
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: event
-label: Event
+id: program
+label: Program
 type: 'canonical_entities:node'
-pattern: 'event/[node:title]'
+pattern: 'program/[node:title]'
 selection_criteria:
-  3449b5ca-b498-4e06-9d39-87d80e234b49:
+  58e429cd-da40-4a24-b7a4-3358929be087:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 3449b5ca-b498-4e06-9d39-87d80e234b49
+    uuid: 58e429cd-da40-4a24-b7a4-3358929be087
     context_mapping:
       node: node
     bundles:
-      event: event
+      program: program
 selection_logic: and
-weight: -8
+weight: -5
 relationships: {  }

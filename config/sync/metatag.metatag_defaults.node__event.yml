@@ -1,0 +1,14 @@
+uuid: 7096d2c1-b77b-4d3a-84cb-6c7944e5289c
+langcode: en
+status: true
+dependencies: {  }
+id: node__event
+label: 'Content: Event'
+tags:
+  description: '[node:field_page_meta_description]'
+  og_description: '[node:field_page_meta_description]'
+  og_image_url: '[node:field_page_meta_image:entity:field_ed_image_image:social_image:url]'
+  og_title: '[node:field_page_meta_title]'
+  og_type: event
+  og_url: '[current-page:url:absolute]'
+  title: '[node:field_page_meta_title] | [site:name]'
