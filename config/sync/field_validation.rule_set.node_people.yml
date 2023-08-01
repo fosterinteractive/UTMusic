@@ -1,0 +1,24 @@
+uuid: 4850c256-ce47-4019-8fef-2a6203e8024c
+langcode: en
+status: true
+dependencies: {  }
+name: node_people
+label: 'node people validation'
+entity_type: node
+bundle: people
+field_validation_rules:
+  63d0ce7b-ab93-446e-b0d2-90854a31b396:
+    id: regex_field_validation_rule
+    title: 'Validate DiscoveryResearch Link'
+    data:
+      setting: '/^https:\/\/discover\.research\.utoronto\.ca\//'
+    weight: 1
+    uuid: 63d0ce7b-ab93-446e-b0d2-90854a31b396
+    field_name: field_people_research_profile
+    column: uri
+    error_message: 'URL must start with "https://discover.research.utoronto.ca/"'
+    roles: {  }
+    condition:
+      field: ''
+      operator: ''
+      value: ''
