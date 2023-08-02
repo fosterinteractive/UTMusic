@@ -50,7 +50,7 @@
           </div>
           
           {% if social_share %}
-            <div class="l-main--event__social">
+            <div class="l-main--event__social l-section__zone-1">
               {{ social_share }}
             </div>
           {% endif %}
@@ -73,14 +73,16 @@
         </div>
       {% endif %}
 
+      {% set background_image_path = '/themes/utmusic/images/texture--both-min.png' %}
+
       {% if related_events %}
-        <div class="l-section-bg l-section-wrapper l-section--[12] l-section--related-event theme--blue-light l-section-spacing-top--small l-section-spacing-bottom--small">
-          <div class="l-section-bg__bg-decoration">
+        <div class="l-section-bg l-section-wrapper l-section--[12] l-section--related-event theme--blue-both-bg l-section-spacing-top--small l-section-spacing-bottom--small">
+          <div class="l-section__background l-section-bg__bg-decoration">
             {# it's a placeholder for background #}
-            <img alt="" aria-hidden="true" src="/themes/utmusic/images/blue-both-min.jpg" />
+            <img alt="" aria-hidden="true" src='{{ background_image_path}}'>
           </div>
                   
-          <div class="l-main--event-related l-section__zone-1">
+          <div class="l-main--event-related l-section__zone l-section__zone-1">
             <div class="l-main--event-related__title">
               {% include "@atoms/text/headings/heading.twig" with {
                   html_element: 'h2',
@@ -134,3 +136,6 @@
   {% endblock content_single_page %}
   
 {% endembed %}
+
+
+{{ attach_library('utmusic/section-background') }}
