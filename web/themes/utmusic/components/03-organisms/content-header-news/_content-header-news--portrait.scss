@@ -25,6 +25,7 @@
   padding-bottom: var(--spacer);
   grid-row: 8;
   grid-column: col 1/ span 12;
+  z-index: 0;
 
   @include breakpoint($bp-tablet) {
     grid-row: 4;

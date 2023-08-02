@@ -17,6 +17,7 @@
 .o-hero-media--landscape__text-wrapper {
   grid-row: 8;
   grid-column: col 1/ span 12;
+  z-index: 0;
 
   @include breakpoint($bp-tablet) {
     grid-column: col 3/ span 8;

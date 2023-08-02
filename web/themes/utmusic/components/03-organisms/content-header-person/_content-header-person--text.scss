@@ -14,6 +14,7 @@
 .o-hero-media--person-text__text-wrapper {
   grid-row: 4;
   grid-column: col 1 / span 12;
+  z-index: 0;
 
   @include breakpoint($bp-tablet) {
     grid-column: col 1/ span 12;
