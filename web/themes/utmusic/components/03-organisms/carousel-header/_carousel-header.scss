@@ -101,6 +101,7 @@
 
   grid-column: col 1 / span 12;
   grid-row: 2;
+  z-index: 0;
 
 
   @include breakpoint($bp-tablet) {
