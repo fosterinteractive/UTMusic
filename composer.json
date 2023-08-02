@@ -98,7 +98,9 @@
         "npm-asset/tippy.js": "^6.3",
         "drupal/audiorecorder": "1.0.0-rc1",
         "drupal/field_validation": "1.1",
-        "drupal/rabbit_hole": "^2.0@alpha"
+        "drupal/rabbit_hole": "^2.0@alpha",
+        "drupal/choices": "2.1.5",
+        "bower-asset/choices.js": "10.2.0"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2",
