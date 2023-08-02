@@ -30,6 +30,9 @@
 }
 
 figcaption {
+  @extend %a-type--small;
+  line-height: 1.5;
+
   color: var(--c-figcaptions);
   margin-top: rem(10px);
   margin-bottom: 1.5rem;
