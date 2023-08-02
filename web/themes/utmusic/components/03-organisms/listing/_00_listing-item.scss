@@ -63,10 +63,6 @@
   margin-bottom: 0;
 }
 
-.m-listing-item__title .a-icon--inline {
-  // display: none;
-}
-
 %m-listing-item__tags,
 .m-listing-item__tags {
   display: flex;
@@ -78,4 +74,5 @@
 .m-listing-item__date {
   @extend %a-type--xsmall;
   color: var(--c-listing-item--date);
+  margin-left: rem(1px);
 }
