@@ -25,36 +25,40 @@
   
   <div class="m-listing-item{{ variation }}__content has-img">
 
-    <div class="m-listing-item{{ variation }}__category">
-      {% if event_date %}
-          {{- event_date -}}
-      {% endif %}{% if event_date and (areas or ensemble) %}
-        {{- ':' -}}
+    <div>
+      {% if event_date or areas or ensemble %}
+        <div class="m-listing-item{{ variation }}__category">
+          {% if event_date %}
+              {{- event_date -}}
+          {% endif %}{% if event_date and (areas or ensemble) %}
+            {{- ':' -}}
+          {% endif %}
+
+          {% for area in areas %}
+            {{ area }}{% if not loop.last %},{% endif %}
+          {% endfor %}
+          {% if areas and ensemble %} {{ '|' }}{% endif %}
+          {% if ensemble %}{{ ensemble }}{% endif %}
+        </div>
       {% endif %}
 
-      {% for area in areas %}
-        {{ area }}{% if not loop.last %},{% endif %}
-      {% endfor %}
-      {% if areas and ensemble %} {{ '|' }}{% endif %}
-      {% if ensemble %}{{ ensemble }}{% endif %}
-    </div>
-
-    <div class="m-listing-item{{ variation }}__title">
-      {% include "@atoms/text/headings/heading.twig" with {
-          directory: directory,
-          html_element: 'h3',
-          appearance: 'h3',
-          text: title,
-          url: url,          
-        } only
-      %}
+      <div class="m-listing-item{{ variation }}__title">
+        {% include "@atoms/text/headings/heading.twig" with {
+            directory: directory,
+            html_element: 'h3',
+            appearance: 'h3',
+            text: title,
+            url: url,          
+          } only
+        %}
+      </div>
     </div>
 
     {# for condensed listing item and 'related' listing item #}
     {% if audience or event_type or price %} 
       <div class="m-listing-item{{ variation }}__category">
         {% if price == 'free' %}{{ 'Free'|t }}{% endif %}
-        {% if audience and (price == 'free') %} {{ '|' }}{% endif %}
+        {% if (audience or event_type) and (price == 'free') %} {{ '|' }}{% endif %}
         {% if audience %}{{ audience }}{% endif %}
         {% if audience and event_type %} {{ '-' }}{% endif %}
         {% if event_type %}{{ event_type }}{% endif %}
