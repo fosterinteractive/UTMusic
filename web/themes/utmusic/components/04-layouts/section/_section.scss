@@ -379,6 +379,7 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
 
   grid-column: col 1/ span 12;
   grid-row: 1;
+  z-index: 0;
 
   @include breakpoint(1px $bp-tablet) {
     padding-right: var(--spacer);
@@ -387,6 +388,9 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
   }
 }
 
+.l-section__zone {
+  z-index: 0;
+}
 
 .l-section__zone-1 {
   @extend %l-section__child;
