@@ -1,6 +1,7 @@
 .o-footer {
   background-color: palette(blue, 900);
   color: palette(blue, 300);
+  grid-template-rows: repeat(2, auto);
 
   a,
   p {
@@ -10,6 +11,7 @@
       @extend %a-button--base-core;
       @extend %a-type--small;
 
+      margin-top: var(--spacer);
       padding: 2.5px 15px;
       background-color: palette(white);
       font-weight: 700;
@@ -27,26 +29,14 @@
   }
 }
 
-.o-footer__top,
+.o-footer__top {
+  grid-row: 1;
+  grid-column: col 1/ span 12;
+}
+
 .o-footer__bottom {
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: $half-gutter;
-  padding-left: $half-gutter;
-
-  @include breakpoint($bp-phone-large) {
-    padding-right: $gutter;
-    padding-left: $gutter;
-    max-width: $bp-max;
-  }
-
-  // Remove gutter when there's not any need as we're now at max-width + the width of the gutter.
-  // @todo - Aidan note - Removed gutter... Should be OK?
-  // @include breakpoint($bp-banner-max + $gutter-px) {
-  @include breakpoint($bp-banner-max) {
-    padding-right: 0;
-    padding-left: 0;
-  }
+  grid-row: 2;
+  grid-column: col 1/ span 12;
 }
 
 %o-footer_container_col {
@@ -66,10 +56,15 @@
 
   display: flex;
   flex-direction: column;
+  gap: var(--spacer);
   padding-top: rem(40px);
   padding-bottom: rem(40px);
   align-items: flex-start;
   border-bottom: 1px solid palette(grey, 850);
+
+  p {
+    @extend %a-type--xsmall;
+  }
 
   a {
     text-decoration: none;
@@ -103,6 +98,7 @@
 .o-footer__top-social {
   @extend %o-footer_container_col;
   @extend %u-remove-child--margin-top-bottom;
+  flex-basis: 25%;
 }
 
 .o-footer__menu {
@@ -185,30 +181,11 @@
     margin: 0;
     color: palette(white);
     transition: color 0.2s ease-in-out;
+    border: rem(1px) solid transparent;
+    padding: rem(8px);
     background: transparent;
     border: 0;
     font-size: rem(38px);
-
-    &:hover,
-    &:focus,
-    &:active {
-      .a-button--icon__icon  {
-        border: 1px solid palette(white);
-        border-radius: 50%;
-      }
-    }
-  }
-
-  .a-button--icon__icon  {
-    border: 2px solid transparent;
-  }
-
-  .a-button--icon   {
-    padding: 0;
-  }
-
-  .a-btn__text {
-    display: none;
   }
 }
 
@@ -216,12 +193,14 @@
   margin: ru(1) auto 0;
 
   a {
-    padding: 0;
+    padding: rem(5px);
+    border-radius: rem(10px);
 
     &:hover,
     &:focus,
     &:active {
       background: none;
+      box-shadow: 0px rem(4px) rem(10px) rgba(62, 19, 77, 0.09);
     }
   }
 }
