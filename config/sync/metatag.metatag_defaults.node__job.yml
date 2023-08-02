@@ -1,0 +1,14 @@
+uuid: 676bffdd-9fdd-48fd-9193-a9b0aba27654
+langcode: en
+status: true
+dependencies: {  }
+id: node__job
+label: 'Content: Job'
+tags:
+  description: '[node:field_page_meta_description]'
+  og_description: '[node:field_page_meta_description]'
+  og_image_url: '[node:field_page_meta_image:entity:field_ed_image_image:social_image:url]'
+  og_title: '[node:field_page_meta_title]'
+  og_type: job
+  og_url: '[current-page:url:absolute]'
+  title: '[node:field_page_meta_title] | [site:name]'

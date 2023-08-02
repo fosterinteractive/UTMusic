@@ -56,7 +56,6 @@ dependencies:
     - paragraphs
     - paragraphs_admin
     - path
-    - pathauto
     - rabbit_hole
     - recaptcha
     - redirect
@@ -138,7 +137,6 @@ permissions:
   - 'administer paragraphs settings'
   - 'administer paragraphs types'
   - 'administer paragraphs_type labels'
-  - 'administer pathauto'
   - 'administer permissions'
   - 'administer rabbit_hole settings'
   - 'administer recaptcha'
@@ -249,7 +247,6 @@ permissions:
   - 'import configuration'
   - 'link to any page'
   - 'never autoplay videos'
-  - 'notify of path changes'
   - 'rabbit hole administer node'
   - 'replicate entities'
   - 'revert all revisions'

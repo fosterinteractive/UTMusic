@@ -25,8 +25,6 @@ function utmusic_auto_meta_title_entity_presave(EntityInterface $entity) {
       // Get Value of title field.
       $title_value = $entity->getTitle();
 
-      
-
       // If the meta title field is empty.
       if ($entity->{$meta_title}->isEmpty()) {
         // Assign the title value to the meta title.
@@ -70,7 +68,7 @@ function utmusic_auto_meta_title_entity_prepare_form(EntityInterface $entity, $o
  *   An node object.
  */
 function _utmusic_auto_meta_title_get_fields($entity) {
-  // Node type. e.g. news, page.
+  /// Node type. e.g. news, page.
   $type = $entity->getType();
   // Storage array for field names.
   $fields = [];

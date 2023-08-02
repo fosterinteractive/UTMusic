@@ -1,4 +1,4 @@
-uuid: f3d091eb-90a3-4e89-86a5-06efb5be737c
+uuid: 7c1451b8-6812-4622-9d78-4c63e0a49a19
 langcode: en
 status: true
 dependencies:
@@ -9,22 +9,14 @@ label: Person
 type: 'canonical_entities:node'
 pattern: 'person/[node:title]'
 selection_criteria:
-  7536e23c-07fb-4928-8568-c60e34ceb6df:
-    id: node_type
-    negate: false
-    uuid: 7536e23c-07fb-4928-8568-c60e34ceb6df
-    context_mapping:
-      node: node
-    bundles:
-      ed_person: ed_person
-  1bc4ec73-76eb-41c8-8d3c-0b94aca48d07:
+  f92f54ec-8e11-455c-a3fa-7dd2237da921:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 1bc4ec73-76eb-41c8-8d3c-0b94aca48d07
+    uuid: f92f54ec-8e11-455c-a3fa-7dd2237da921
     context_mapping:
       node: node
     bundles:
       people: people
 selection_logic: and
-weight: -5
+weight: -7
 relationships: {  }
