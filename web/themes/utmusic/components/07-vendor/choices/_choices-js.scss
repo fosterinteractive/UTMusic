@@ -1,0 +1,15 @@
+/*
+ * Overrids for Choices.JS styles
+ * 
+ *
+ * https://github.com/Choices-js/Choices
+ * 
+ */
+
+.choices__item[data-value="_none"] {
+  display: none !important;
+}
+
+.choices__inner .choices__input {
+  width: 100% !important;
+}
