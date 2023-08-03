@@ -35,7 +35,7 @@ content:
       max_width: 0
       max_height: 0
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
   field_ed_video_title:
     type: string
@@ -43,7 +43,31 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: 4
+    region: content
+  field_video_related_area:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
     weight: 1
+    region: content
+  field_video_related_people:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_video_related_program:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
   created: true
@@ -51,9 +75,6 @@ hidden:
   field_ed_video_height: true
   field_ed_video_provider: true
   field_ed_video_width: true
-  field_video_related_area: true
-  field_video_related_people: true
-  field_video_related_program: true
   name: true
   search_api_excerpt: true
   thumbnail: true
