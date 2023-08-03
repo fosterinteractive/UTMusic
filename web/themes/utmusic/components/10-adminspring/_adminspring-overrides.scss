@@ -190,3 +190,28 @@ body.mm-wrapper {
 .layout-select__item label.form-item__label.option {
   min-width: fit-content;
 }
+
+.claro-details__content .m-form-item--checkbox-wrapper {
+  display: block;
+}
+
+.claro-details__summary--vertical-tabs-item {
+  padding: 1rem 1rem 1rem 2.25rem;
+}
+
+.entity-meta__header.claro-details {
+  padding: 0;
+}
+
+// admin UI for CKEditor 
+.ck-editor__main .ck-content {
+  ul li {
+    list-style-type: initial;
+    margin-left: 30px;
+  }
+
+  ol li {
+    list-style-type: decimal;;
+    margin-left: 30px;
+  }
+}

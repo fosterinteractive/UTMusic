@@ -5,6 +5,13 @@
  * https://github.com/Choices-js/Choices
  * 
  */
+ .choices {
+  width: 100%;
+ }
+
+ .choices__list {
+  display: block;
+ }
 
 .choices__item[data-value="_none"] {
   display: none !important;
