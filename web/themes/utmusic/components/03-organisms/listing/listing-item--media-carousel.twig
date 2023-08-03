@@ -23,10 +23,7 @@
 
   {% if media %}
     <div class="m-listing-item{{ variation }}__media">
-      {% include "@molecules/image/image.twig" with {
-          image: media,
-        } only
-      %}
+      {{ media }}
 
       {% if event__date_month or event_date_day %}
         <div class="m-listing-item{{ variation }}__event-date">
