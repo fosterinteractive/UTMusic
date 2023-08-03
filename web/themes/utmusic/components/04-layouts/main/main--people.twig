@@ -4,9 +4,9 @@
     <div class="l-main--program">
 
       {% if header_variation == 'text' %}
-        {% set variation = 'event-text' %}
+        {% set variation = 'person-text' %}
       {% else %}
-        {% set variation = 'event' %}
+        {% set variation = 'person' %}
       {% endif %}
 
       {% include "@organisms/content-header-person/content-header-person.twig" with {
@@ -123,52 +123,55 @@
         </div>
       </div>
 
-      {% set background_image_path = '/themes/utmusic/images/texture--left-min.png' %}
 
-      {% if media_display == 'default' %}
-        <div class="l-section--[12] l-section-wrapper theme--dark-blue-bg l-section-wrapper l-section-spacing-top--small l-section-spacing-bottom--small">
-          
-          <div class="l-section__background">
-            <img alt="" aria-hidden="true" src='{{ background_image_path }}'>
+      {% if featured_media %}
+
+        {% set background_image_path = '/themes/utmusic/images/texture--left-min.png' %}
+        {% if media_display == 'default' %}
+          <div class="l-section--[12] l-section-wrapper theme--dark-blue-bg l-section-wrapper l-section-spacing-top--small l-section-spacing-bottom--small">
+            
+            <div class="l-section__background">
+              <img alt="" aria-hidden="true" src='{{ background_image_path }}'>
+            </div>
+            <div class="l-main--program__media l-section__zone l-section__zone-1 l-flex">
+              <div class="l-main--program__media-title">
+                {% include "@atoms/text/headings/heading.twig" with {
+                    html_element: 'h2',
+                    appearance: 'h2',
+                    text: 'Featured Media'|t,
+                  } only
+                %}
+              </div>
+
+              {{ featured_media }}
+            </div>
           </div>
-          <div class="l-main--program__media l-section__zone l-section__zone-1 l-flex">
-            <div class="l-main--program__media-title">
-              {% include "@atoms/text/headings/heading.twig" with {
-                  html_element: 'h2',
-                  appearance: 'h2',
-                  text: 'Featured Media'|t,
+        {% elseif media_display == 'carousel' %}
+          <div class="l-section--[12] l-section-wrapper theme--dark-blue-bg l-section-wrapper l-section-spacing-top--small l-section-spacing-bottom--small">
+            
+            <div class="l-section__background">
+              <img alt="" aria-hidden="true" src='{{ background_image_path }}'>
+            </div>
+            <div class="l-main--people__media l-section__zone l-section__zone-1">
+              <div class="l-main--people-related__title">
+                {% include "@atoms/text/headings/heading.twig" with {
+                    html_element: 'h2',
+                    appearance: 'h2',
+                    text: 'Featured Media'|t,
+                  } only
+                %}
+              </div>
+
+              {% include "@organisms/listing/listing.twig" with {
+                  directory: directory,
+                  variation: 'media-carousel',
+                  listing_items: featured_media,
+                  number_items: number_items,
                 } only
               %}
             </div>
-
-            {{ featured_media }}
           </div>
-        </div>
-      {% elseif media_display == 'carousel' %}
-        <div class="l-section--[12] l-section-wrapper theme--dark-blue-bg l-section-wrapper l-section-spacing-top--small l-section-spacing-bottom--small">
-          
-          <div class="l-section__background">
-            <img alt="" aria-hidden="true" src='{{ background_image_path }}'>
-          </div>
-          <div class="l-main--program__media l-section__zone l-section__zone-1">
-            <div class="l-main--event-related__title">
-              {% include "@atoms/text/headings/heading.twig" with {
-                  html_element: 'h2',
-                  appearance: 'h2',
-                  text: 'Featured Media'|t,
-                } only
-              %}
-            </div>
-
-            {% include "@organisms/listing/listing.twig" with {
-                directory: directory,
-                variation: 'media-carousel',
-                listing_items: featured_media,
-                number_items: number_items,
-              } only
-            %}
-          </div>
-        </div>
+        {% endif %}
       {% endif %}
 
 
