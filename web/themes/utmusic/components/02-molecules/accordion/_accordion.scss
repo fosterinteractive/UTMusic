@@ -10,6 +10,7 @@
 
 .m-accordion__btn-toggle {
   margin-left: auto;
+  margin-bottom: calc(var(--spacer)*0.5);
 }
 
 .m-accordion__items {
