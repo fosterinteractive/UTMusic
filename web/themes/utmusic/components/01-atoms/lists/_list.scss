@@ -16,8 +16,8 @@
     @extend %a-list__item;
     
     position: relative;
-    margin-bottom: ru(0.5);
-    margin-left: ru(1);
+    margin-bottom: calc(var(--spacer)*0.3);
+    margin-left: var(--spacer);;
     break-inside: avoid;
     page-break-inside: avoid;
 
@@ -41,7 +41,7 @@
   li:before {
     position: absolute;
     top: 0;
-    left: ru(-1);
+    left: calc(var(--spacer)*(-0.5));
     content: '\2022 '; // Bullet symbol
   }
 }
@@ -74,7 +74,7 @@
     @extend %a-type__core;
     position: relative;
     margin-bottom: ru(0.5);
-    margin-left: ru(1.25);
+    margin-left: var(--spacer);
     list-style: decimal;
     break-inside: avoid;
     page-break-inside: avoid;
