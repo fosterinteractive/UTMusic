@@ -80,7 +80,7 @@
       {% endif %}
     </div>
 
-    {% if variation == '--person-text' %}
+    {% if variation == '--person-text' and (pronunciation or email or phone or discovery_url or website_url) %}
     <div class="js-content-header-text o-hero-media--person-text__info-wrapper">
     {% endif %}
 
