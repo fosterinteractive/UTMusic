@@ -13,10 +13,10 @@ settings:
   allowed_values:
     -
       value: view
-      label: 'Automatically generated'
+      label: 'Automatic By Tag'
     -
       value: manual
-      label: 'Manual Pick up'
+      label: 'Select media'
   allowed_values_function: ''
 module: options
 locked: false
