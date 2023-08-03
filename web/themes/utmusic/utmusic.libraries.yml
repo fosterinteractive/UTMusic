@@ -84,13 +84,15 @@ sliding-door-menu:
   js:
     js/sliding-door-menu.js: {}
 
-section-background:
-  js:
-    js/section-background.js: {}
-
 accordion:
   js:
     js/accordion.js: {}
+
+section-background:
+  js:
+    js/section-background.js: {}
+  dependencies:
+    - utmusic/accordion
 
 audio:
   js:
