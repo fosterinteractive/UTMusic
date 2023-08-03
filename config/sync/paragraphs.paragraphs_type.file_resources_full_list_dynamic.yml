@@ -1,0 +1,10 @@
+uuid: 3a3ff5cb-26ca-4aad-ae81-cd08a95cc641
+langcode: en
+status: true
+dependencies: {  }
+id: file_resources_full_list_dynamic
+label: 'File Resources: Full List (Dynamic)'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

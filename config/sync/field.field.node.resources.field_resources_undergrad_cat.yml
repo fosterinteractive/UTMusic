@@ -1,0 +1,29 @@
+uuid: 3b671f0e-15b3-40a7-b416-01f476775db2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resources_undergrad_cat
+    - node.type.resources
+    - taxonomy.vocabulary.undergraduate_forms_category
+id: node.resources.field_resources_undergrad_cat
+field_name: field_resources_undergrad_cat
+entity_type: node
+bundle: resources
+label: 'Undergrad Forms Category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      undergraduate_forms_category: undergraduate_forms_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

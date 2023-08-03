@@ -1,0 +1,29 @@
+uuid: 75b09ea8-6920-447f-82bf-37da089b9122
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resources_juries_cat
+    - node.type.resources
+    - taxonomy.vocabulary.juries_forms_category
+id: node.resources.field_resources_juries_cat
+field_name: field_resources_juries_cat
+entity_type: node
+bundle: resources
+label: 'Juries Forms Category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      juries_forms_category: juries_forms_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

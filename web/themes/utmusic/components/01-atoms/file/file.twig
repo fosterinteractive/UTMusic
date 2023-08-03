@@ -1,0 +1,15 @@
+
+<div class="a-file">
+	{% include '@atoms/link/link.twig' with {
+    directory: directory,
+    base_class: 'a-file__link',
+		url: file_url,
+		label: media_name,
+		variation: "icon-left",
+		html_element: a,
+		icon: "download",
+		} only 
+	%}
+
+  <span class="a-file__extention">[{{ file_extension }}, {{ file_size }}]</span>
+</div>

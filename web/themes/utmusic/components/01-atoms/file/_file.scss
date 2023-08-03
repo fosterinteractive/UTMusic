@@ -1,0 +1,34 @@
+.a-file__link--icon-left {
+  @extend %a-type--xmedium;
+
+  font-weight: 700;
+  text-decoration: none;
+  margin-right: rem(12px);
+
+  &:link,
+  &:visited {
+    color: var(--c-heading-link);
+    text-decoration: none;
+  }
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: var(--c-heading-link--active);
+  }
+
+  svg {
+    width: rem(32px);
+    height: rem(32px);
+    margin-right: 0;
+  }
+}
+
+.a-file__extention {
+  @extend %a-type--xsmall;
+
+  font-style: italic;
+  font-weight: 400;
+  color: palette(grey, 300);
+  text-transform: uppercase;
+}
