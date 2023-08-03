@@ -80,8 +80,23 @@
 
   {# If "default" get dynamic auto-generated view of realted content #}
   {% if feature_media_list_type == 'view' %}
-    {% set featured_media = drupal_view('media_related_to_content', 'media_related_program') %}
     {% set media_display = 'default' %}
+    
+    {% set rows = content.media_related_program['#rows'][0]['#rows'] %}
+
+    {# Check how many items in the view  #}
+    {% set auto_media_items = [] %}
+    {% for row in rows %}
+      {% set auto_media_items = auto_media_items|merge([row.content]) %}
+    {% endfor %}
+
+    {# We extract 1 because in template for carousel we count from 0 #}
+    {% set auto_number_items_media = auto_media_items|length - 1 %}
+
+    {% if auto_media_items|length  %}
+      {# We prepare view of related media to person on theme preprocess  #}
+      {% set featured_media = content.media_related_program %}
+    {% endif %}
 
   {# If "manual", check for amount of items #}
   {% elseif feature_media_list_type == 'manual' %}
@@ -129,10 +144,11 @@
     overview: content.field_program_overview[0] ? content.field_program_overview,
     academic_info: content.field_program_academic_info[0] ? content.field_program_academic_info,
     faculty: faculty,
+    number_items: faculty_count,
     supporting_details: content.field_program_supporting_details[0] ? content.field_program_supporting_details,
     media_display: media_display,
     featured_media: featured_media,
-    number_items: faculty_count
+    number_items_media: feature_media_list_type == 'manual' ? media_count : auto_number_items_media,
   }
 %}
 
