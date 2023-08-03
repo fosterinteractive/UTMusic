@@ -1,0 +1,28 @@
+.m-listing-item--resources {
+  border-bottom: rem(1px) solid palette(grey, 800);
+  display: grid;
+  column-gap: ru(1);
+  row-gap: ru(1);
+  padding: ru(1) 0;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-columns: 3fr 5fr;
+  }
+
+  .a-heading__h2 {
+    display: block;
+    width: auto;
+  }
+}
+
+.m-listing-item--resources__description {
+  margin-bottom: rem(40px);
+  display: block;
+  color: palette(grey, 300);
+}
+
+.m-listing-item--resources__files {
+  .a-file {
+    margin-bottom: ru(0.5);
+  }
+}

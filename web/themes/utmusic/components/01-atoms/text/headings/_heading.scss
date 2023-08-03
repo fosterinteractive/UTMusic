@@ -97,6 +97,19 @@
   @extend %heading--core;
   @include rfs(19.5px); // for desktop 22px
   line-height: 1.22; 
+  position: relative;
+
+  &.decoration {
+    &::before {
+      position: absolute;
+      display: block;
+      left: -15px;
+      width: 3px;
+      height: 100%;
+      background-color: var(--c-heading-decoration);
+      content: '';
+    }
+  }
 }
 
 .a-heading__h4,

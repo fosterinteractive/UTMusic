@@ -1,0 +1,17 @@
+sb_demo: true
+variation: 'resources'
+title: 'Recording request form'
+resources_description: 'Submit the form to the Registrars Office along with any supporting documentations'
+
+files:
+  1:
+    media_name: "Recording request form"
+    file_url: '/'
+    file_extension: 'PDF'
+    file_size: '260KB'
+  2:
+    media_name: "Change of last name"
+    file_url: '/'
+    file_extension: 'PDF'
+    file_size: '560KB'
+

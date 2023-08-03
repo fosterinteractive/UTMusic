@@ -1,0 +1,63 @@
+{# Set default listing-item class - 'm-listing-item' #}
+{% set variation = variation|default('resources') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+<div class="m-listing-item{{ variation }}">
+
+  <div class="m-listing-item{{ variation }}__left">
+
+    <div class="m-listing-item{{ variation }}__title">
+
+      {% if title %}
+        {% include "@atoms/text/headings/heading.twig" with {
+          directory: directory,
+          html_element: 'h3',
+          appearance: 'h3 decoration',
+          text: title,
+          url: false,
+          id: false,
+          } only
+        %}
+      {% endif %}
+
+    </div>
+  </div>
+  
+  <div class="m-listing-item{{ variation }}__right">
+
+    {% if resources_description %}
+      <div class="m-listing-item{{ variation }}__description">
+        {{ resources_description }}
+      </div>
+    {% endif %}  
+
+    {% if files %}
+      <div class="m-listing-item{{ variation }}__files">
+        {% if sb_demo %}
+          {% for item in files %}
+            {% include "@atoms/file/file.twig" with {
+              media_name: item.media_name,
+              file_url: item.link,
+              file_extension: item.file_extension,
+              file_size: item.file_size,
+              } only
+            %}
+          {% endfor %}
+          {% else %}
+            {{ files }}
+          {% endif %}
+      </div>
+    {% endif %}
+    
+  </div>
+</div>

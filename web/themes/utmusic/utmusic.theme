@@ -700,3 +700,39 @@ function utmusic_preprocess_menu(&$variables) {
     $variables['items'] = $items;
   }
 }
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function utmusic_preprocess_field(&$variables) {
+  if ($variables['field_name'] == 'field_media_file') {
+    // Get the file entity.
+    $file_entity = $variables['items'][0]['content']['#file'];
+
+    if ($file_entity) {
+      // Get the file size.
+      $variables['file_size'] = format_size($file_entity->getSize());
+
+      // Get the file extension.
+      $variables['file_extension'] = pathinfo($file_entity->getFileUri(), PATHINFO_EXTENSION);
+
+      // Get the link to the file.
+      $uri = $file_entity->getFileUri();
+      $url = file_create_url($uri);
+      $variables['link'] = $url;
+      
+      // Query the media entity referencing this file.
+      $media_ids = \Drupal::entityQuery('media')
+        ->condition('field_media_file.target_id', $file_entity->id())
+        ->execute();
+        
+      if (!empty($media_ids)) {
+        $media_id = reset($media_ids);
+        $media = \Drupal::entityTypeManager()->getStorage('media')->load($media_id);
+
+        // Get the media name.
+        $variables['media_name'] = $media->getName();
+      }
+    }
+  }
+}
