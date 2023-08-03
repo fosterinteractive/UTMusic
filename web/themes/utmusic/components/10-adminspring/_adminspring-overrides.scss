@@ -88,6 +88,7 @@ body.mm-wrapper {
       background-size: cover;
       transition: all .15s linear;
       -webkit-appearance: none;
+      appearance: none;
       border-radius: 50%;
 
       &:first-of-type {
@@ -129,6 +130,7 @@ body.mm-wrapper {
       color: #63666a;
       transition: border-color .3s ease-out,color .3s ease .5s;
       -webkit-appearance: none;
+      appearance: none;
     }
 
     .lpb-component-list__group--content {
