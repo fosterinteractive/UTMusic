@@ -1,0 +1,29 @@
+uuid: 99fae3e1-0647-4477-a4f8-62e00cff20f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource_upload
+    - media.type.resources_files
+    - node.type.resources
+id: node.resources.field_resource_upload
+field_name: field_resource_upload
+entity_type: node
+bundle: resources
+label: 'PDF upload'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      resources_files: resources_files
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ed_file
+field_type: entity_reference

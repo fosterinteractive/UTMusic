@@ -1,0 +1,26 @@
+uuid: 317670c8-e1be-4b77-bbb4-501092a278ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resources_description
+    - node.type.resources
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_text
+id: node.resources.field_resources_description
+field_name: field_resources_description
+entity_type: node
+bundle: resources
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

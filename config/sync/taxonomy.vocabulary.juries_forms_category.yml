@@ -1,0 +1,8 @@
+uuid: 5c9c90ef-633b-4706-89cc-2414e926867e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Juries Forms Category'
+vid: juries_forms_category
+description: ''
+weight: 0

@@ -1,0 +1,13 @@
+uuid: 8df7b96c-7cbb-4b75-900e-375b04ea9b89
+langcode: en
+status: true
+dependencies: {  }
+id: resources_files
+label: 'Resources files'
+description: ''
+source: file
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_file
+field_map: {  }

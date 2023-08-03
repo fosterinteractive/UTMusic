@@ -1,0 +1,50 @@
+uuid: 58026a57-a1b9-4d9a-8caf-0c11af5eb442
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.resources.field_resource_upload
+    - field.field.node.resources.field_resources_category
+    - field.field.node.resources.field_resources_description
+    - field.field.node.resources.field_resources_juries_cat
+    - field.field.node.resources.field_resources_title
+    - field.field.node.resources.field_resources_undergrad_cat
+    - node.type.resources
+  module:
+    - text
+    - user
+id: node.resources.teaser
+targetEntityType: node
+bundle: resources
+mode: teaser
+content:
+  field_resource_upload:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_resources_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_resources_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_resources_category: true
+  field_resources_juries_cat: true
+  field_resources_undergrad_cat: true
+  links: true
+  search_api_excerpt: true

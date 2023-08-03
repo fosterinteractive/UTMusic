@@ -14,6 +14,7 @@ dependencies:
     - paragraphs.paragraphs_type.events_summary_list_dynamic
     - paragraphs.paragraphs_type.faculty_full_list_dynamic
     - paragraphs.paragraphs_type.featured_media
+    - paragraphs.paragraphs_type.file_resources_full_list_dynamic
     - paragraphs.paragraphs_type.image_section
     - paragraphs.paragraphs_type.job_listing
     - paragraphs.paragraphs_type.jobs_full_list_dynamic
@@ -69,6 +70,7 @@ settings:
       faculty_full_list_dynamic: faculty_full_list_dynamic
       jobs_full_list_dynamic: jobs_full_list_dynamic
       job_listing: job_listing
+      file_resources_full_list_dynamic: file_resources_full_list_dynamic
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -92,6 +94,9 @@ settings:
       cta:
         weight: -61
         enabled: true
+      curriculum:
+        weight: 45
+        enabled: false
       event_featured_item:
         weight: -50
         enabled: true
@@ -106,6 +111,9 @@ settings:
         enabled: true
       featured_media:
         weight: -57
+        enabled: true
+      file_resources_full_list_dynamic:
+        weight: 51
         enabled: true
       header:
         weight: -41
@@ -146,6 +154,9 @@ settings:
       section:
         weight: -69
         enabled: true
+      section_curriculum:
+        weight: 65
+        enabled: false
       section_title:
         weight: -68
         enabled: true

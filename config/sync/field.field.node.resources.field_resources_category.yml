@@ -1,0 +1,23 @@
+uuid: 81ea734a-9834-4369-bd64-b1fd580885ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resources_category
+    - node.type.resources
+  module:
+    - options
+id: node.resources.field_resources_category
+field_name: field_resources_category
+entity_type: node
+bundle: resources
+label: Category
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: undergrad
+default_value_callback: ''
+settings: {  }
+field_type: list_string
