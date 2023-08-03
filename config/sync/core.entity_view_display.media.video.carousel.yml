@@ -47,7 +47,7 @@ content:
     region: content
   field_video_related_area:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -55,7 +55,7 @@ content:
     region: content
   field_video_related_people:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -63,7 +63,7 @@ content:
     region: content
   field_video_related_program:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
