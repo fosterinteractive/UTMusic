@@ -123,6 +123,18 @@
       scroll-snap-align: center !important;
     }
   }
+
+  .m-listing-item--media-carousel__title {
+    width: rem(280px);
+
+    @include breakpoint($bp-tablet-small) {
+      width: rem(400px);
+    }
+
+    @include breakpoint($bp-tablet) {
+      width: rem(470px);
+    }
+  }
 }
 
 .o-listing--media-carousel {

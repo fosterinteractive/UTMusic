@@ -444,6 +444,19 @@ function utmusic_preprocess_node(array &$variables) {
 
         $variables['research_url'] = $research_url_new_value;       
       }
+
+      if ((isset($variables['elements']['field_people_enable_media']))&&$variables['elements']['field_people_enable_media']['0']['#markup'] == 'view' ) {
+        $variables['content']['media_related_people'] = utmusic_return_rendered_view('media_related_to_content', 'media_related_people');
+      }
+    }
+  }
+
+  //Program
+  if ($node_type == 'program') {
+    if ($node_view_mode == 'full') {
+      if ((isset($variables['elements']['field_program_enable_media']))&&$variables['elements']['field_program_enable_media']['0']['#markup'] == 'view' ) {
+        $variables['content']['media_related_program'] = utmusic_return_rendered_view('media_related_to_content', 'media_related_program');
+      }
     }
   }
 }

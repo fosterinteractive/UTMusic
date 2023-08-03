@@ -160,8 +160,23 @@
 
   {# If "default" get dynamic auto-generated view of realted content #}
   {% if feature_media_list_type == 'view' %}
-    {% set featured_media = drupal_view('media_related_to_content', 'media_related_program') %}
     {% set media_display = 'default' %}
+
+    {% set rows = content.media_related_people['#rows'][0]['#rows'] %}
+
+    {# Check how many items in the view  #}
+    {% set auto_media_items = [] %}
+    {% for row in rows %}
+      {% set auto_media_items = auto_media_items|merge([row.content]) %}
+    {% endfor %}
+
+    {# We extract 1 because in template for carousel we count from 0 #}
+    {% set auto_number_items_media = auto_media_items|length - 1 %}
+
+    {% if auto_media_items|length  %}
+      {# We prepare view of related media to person on theme preprocess  #}
+      {% set featured_media = content.media_related_people %}
+    {% endif %}
 
   {# If "manual", check for amount of items #}
   {% elseif feature_media_list_type == 'manual' %}
@@ -192,7 +207,7 @@
     header_variation: content.field_people_image[0] ? 'person' : 'person-text',
     image: content.field_people_image[0] ? content.field_people_image,
     title: full_name,
-    title_suffix: title_suffix,
+    title_suffix: title_suffix ? title_suffix : false,
     email: content.field_people_email[0] ? content.field_people_email[0]['#context']['value'],
     phone: content.field_people_phone[0] ? content.field_people_phone[0]['#context']['value'],
     website_url: content.field_people_website[0] ? content.field_people_website[0]['#url'],
@@ -209,7 +224,7 @@
     custom_content: content.field_people_custom_content[0] ? content.field_people_custom_content,
     media_display: media_display,
     featured_media: featured_media,
-    number_items: media_count
+    number_items: feature_media_list_type == 'manual' ? media_count : auto_number_items_media,
   }
 %}
 
