@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.people.field_people_image
     - field.field.node.people.field_people_instrument
     - field.field.node.people.field_people_job_title
+    - field.field.node.people.field_people_job_title_staff
     - field.field.node.people.field_people_last_name
     - field.field.node.people.field_people_name
     - field.field.node.people.field_people_phone
@@ -79,6 +80,7 @@ third_party_settings:
         - field_people_faculty_position
         - field_people_staff_position
         - field_people_job_title
+        - field_people_job_title_staff
         - field_people_area
         - field_people_instrument
       label: Categories
@@ -240,7 +242,7 @@ content:
         hide_guidelines: '1'
   field_people_area:
     type: choices_widget
-    weight: 21
+    weight: 22
     region: content
     settings:
       configuration_options: ''
@@ -354,7 +356,7 @@ content:
     third_party_settings: {  }
   field_people_instrument:
     type: choices_widget
-    weight: 22
+    weight: 23
     region: content
     settings:
       configuration_options: ''
@@ -377,12 +379,51 @@ content:
             effect_options: {  }
             selector: ''
   field_people_job_title:
-    type: choices_widget
+    type: options_select
     weight: 20
     region: content
-    settings:
-      configuration_options: ''
-    third_party_settings: {  }
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        983c6a34-0b63-4d69-a58a-d4c8ffe0d774:
+          entity_type: node
+          bundle: people
+          dependee: field_people_role
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 3
+            value: ''
+            values: faculty
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_people_job_title_staff:
+    type: options_select
+    weight: 21
+    region: content
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        3a7dbb76-fc0e-4337-8a91-7ae77dc92eea:
+          entity_type: node
+          bundle: people
+          dependee: field_people_role
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 3
+            value: ''
+            values: staff
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_people_last_name:
     type: text_textfield
     weight: 11
