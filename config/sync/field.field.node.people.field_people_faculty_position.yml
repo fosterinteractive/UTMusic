@@ -10,7 +10,7 @@ id: node.people.field_people_faculty_position
 field_name: field_people_faculty_position
 entity_type: node
 bundle: people
-label: Position
+label: 'Faculty Position'
 description: ''
 required: false
 translatable: false

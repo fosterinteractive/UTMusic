@@ -100,7 +100,8 @@
         "drupal/field_validation": "1.1",
         "drupal/rabbit_hole": "^2.0@alpha",
         "drupal/choices": "2.1.5",
-        "bower-asset/choices.js": "10.2.0"
+        "bower-asset/choices.js": "10.2.0",
+        "drupal/conditional_fields": "4.0.0-alpha3"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2",
