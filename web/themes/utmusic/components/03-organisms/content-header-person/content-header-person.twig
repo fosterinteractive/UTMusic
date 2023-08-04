@@ -60,9 +60,10 @@
         </h1>
       {% endif %}
 
-      {% if title_suffix %}
+      {% if title_suffix_faculty or title_suffix_staff %}
         <div class="o-hero-media{{ variation }}__title-suffix">
-          {{ title_suffix }}
+          {% if title_suffix_faculty %}<p>{{ title_suffix_faculty }}</p>{% endif %}
+          {% if title_suffix_staff %}<p>{{ title_suffix_staff }}</p>{% endif %}
         </div>
       {% endif %}
       
@@ -120,7 +121,7 @@
               {% else %}
                 {% set phone_number = '+1' ~ phone_number %}
               {% endif %}  
-              
+
               <a class="o-hero-media__info-link" href="tel:{{phone_number}}"{% if aria_phone %} aria-label="{{ aria_phone }}"{% endif %}>{{phone}}</a>
             </div>
           {% endif %}

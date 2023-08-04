@@ -123,11 +123,33 @@
   {% endfor %}
 {% endif %}
 
+{# Set string of job titles for Staff from array #}
+{% if content.field_people_job_title_staff[0] %}
+  {% set staff_job_titles_arr = [] %}
+
+  {# Get number of items #}
+  {% if content.field_people_job_title_staff['#items'].getIterator() %}
+    {% set item_count = content.field_people_job_title_staff['#items'].getIterator()|length - 1 %}
+  {% endif %}
+
+  {# For each item add to instruments array #}
+  {% for i in 0..item_count %}
+    {% set staff_job_titles_arr = staff_job_titles_arr|merge([content.field_people_job_title_staff[i]['#plain_text']]) %}
+  {% endfor %}
+{% endif %}
+
 {# Check the role, position and instruments, create string #}
 {% if content.field_people_role[0] %}
-  {% set role = content.field_people_role[0]['#markup'] %}
+  {% set role_faculty = content.field_people_role[0]['#markup'] %}
+  {% set role_staff = content.field_people_role[1]['#markup'] %}
 
-  {% if role == 'faculty' %}
+
+  {% if role_faculty == 'faculty' %}
+   
+    {% if content.field_people_faculty_position[0] %}
+      {% set position_faculty = content.field_people_faculty_position[0]['#plain_text'] %}
+    {% endif %}
+
     {% if job_titles_arr %}
       {% set job_titles = job_titles_arr|join(', ') %}
     {% endif %}
@@ -136,20 +158,45 @@
       {% set instruments = instruments_arr|join(', ') %}
     {% endif %}
 
-    {% if job_titles and instruments %}
-      {% set title_suffix = job_titles ~ ': ' ~ instruments %}
-    {% elseif position and not instruments %}
-      {% set title_suffix = job_titles %}
-    {% elseif instruments and not job_titles %}
-      {% set title_suffix = instruments %}
+    {% if job_titles and instruments and position_faculty %}
+      {% set title_suffix_faculty = role_faculty|capitalize ~ ': ' ~ position_faculty ~ ': ' ~ job_titles ~ ': ' ~ instruments %}
+    {% elseif position_faculty and job_titles and not instruments %}
+      {% set title_suffix_faculty = role_faculty|capitalize ~ ': ' ~ position_faculty ~ ': ' ~ job_titles %}
+    {% elseif position_faculty and instruments  and not job_titles  %}
+      {% set title_suffix_faculty = role_faculty|capitalize ~ ': ' ~ position_faculty ~ ': ' ~ instruments %}
+    {% elseif job_titles and instruments  and not  position_faculty %}
+      {% set title_suffix_faculty = role_faculty|capitalize ~ ': '  ~ job_titles ~ ': ' ~ instruments %}
+    {% elseif position_faculty and not (instruments  or job_titles) %}
+      {% set title_suffix_faculty = role_faculty|capitalize ~ ': ' ~ position_faculty %}
+    {% elseif job_titles and not (instruments  or position_faculty) %}
+      {% set title_suffix_faculty = role_faculty|capitalize ~ ': ' ~ job_titles %}
+    {% elseif instruments and not (job_titles  or position_faculty) %}
+      {% set title_suffix_faculty = role_faculty|capitalize ~ ': ' ~ instruments %}
+    {% else %}
+      {% set title_suffix_faculty = role_faculty|capitalize %}
     {% endif %}
 
-  {% elseif role == 'staff' %}
-    {% if job_titles_arr %}
-      {% set job_titles = job_titles_arr|join(', ') %}
+  {% endif %}
+
+  {% if role_staff == 'staff' %}
+    {% if staff_job_titles_arr %}
+      {% set job_titles_staff = staff_job_titles_arr|join(', ') %}
     {% endif %}
 
-    {% set title_suffix = job_titles %}
+    {% if content.field_people_staff_position[0] %}
+      {% set position_staff = content.field_people_staff_position[0]['#plain_text'] %}
+    {% endif %}
+
+    {% if position_staff and job_titles_staff %}
+      {% set title_suffix_staff = role_staff|capitalize ~ ': ' ~ position_staff ~ ': ' ~ job_titles_staff %}
+    {% elseif job_titles_staff and not position_staff %}
+      {% set title_suffix_staff = role_staff|capitalize  ~ ': ' ~ job_titles_staff %}
+    {% elseif position_staff and not job_titles_staff %}
+      {% set title_suffix_staff = role_staff|capitalize  ~ ': ' ~ position_staff %}
+    {% else %}
+      {% set title_suffix_staff = role_staff|capitalize %}
+    {% endif %}
+
   {% endif %}
 {% endif %}
 
@@ -207,7 +254,8 @@
     header_variation: content.field_people_image[0] ? 'person' : 'person-text',
     image: content.field_people_image[0] ? content.field_people_image,
     title: full_name,
-    title_suffix: title_suffix ? title_suffix : false,
+    title_suffix_faculty: title_suffix_faculty,
+    title_suffix_staff: title_suffix_staff,
     email: content.field_people_email[0] ? content.field_people_email[0]['#context']['value'],
     phone: content.field_people_phone[0] ? content.field_people_phone[0]['#context']['value'],
     website_url: content.field_people_website[0] ? content.field_people_website[0]['#url'],

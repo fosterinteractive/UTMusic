@@ -95,9 +95,14 @@
   flex-wrap: wrap;
   gap: calc(var(--spacer) / 2);
   margin-top: rem(26px);
+  margin-bottom: var(--spacer);
 }
 
 %o-hero-media-tags-no-border {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--spacer)*0.3);
+  
   .a-chip {
     border: none;
   }
