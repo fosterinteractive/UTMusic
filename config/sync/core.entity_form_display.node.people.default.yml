@@ -37,6 +37,7 @@ dependencies:
     - allowed_formats
     - audiorecorder
     - choices
+    - conditional_fields
     - field_group
     - hide_revision_field
     - link
@@ -307,7 +308,26 @@ content:
     weight: 18
     region: content
     settings: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        56f86bf0-5f3a-4777-af1a-db0218741dee:
+          entity_type: node
+          bundle: people
+          dependee: field_people_role
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 3
+            value: ''
+            values: faculty
+            value_form:
+              -
+                value: faculty
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_people_featured_media:
     type: media_library_media_modify_widget
     weight: 30
@@ -338,7 +358,24 @@ content:
     region: content
     settings:
       configuration_options: ''
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        b0870c85-7fe9-44c3-a0c7-eb2aa07a0563:
+          entity_type: node
+          bundle: people
+          dependee: field_people_role
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 3
+            value: ''
+            values: faculty
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_people_job_title:
     type: choices_widget
     weight: 20
@@ -409,18 +446,36 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
   field_people_role:
-    type: choices_widget
+    type: options_buttons
     weight: 17
     region: content
-    settings:
-      configuration_options: ''
+    settings: {  }
     third_party_settings: {  }
   field_people_staff_position:
     type: options_select
     weight: 19
     region: content
     settings: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        db5757e7-8efe-41df-9699-daf5cd23b62f:
+          entity_type: node
+          bundle: people
+          dependee: field_people_role
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 3
+            value: ''
+            values: staff
+            value_form:
+              -
+                value: staff
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_people_teaching:
     type: text_textarea
     weight: 26

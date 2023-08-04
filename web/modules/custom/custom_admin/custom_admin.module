@@ -453,27 +453,6 @@ function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_stat
       $form['field_people_research_profile']['widget'][0]['uri']['#description'] = t('Your DiscoverResearch Profile Eg. https://discover.research.utoronto.ca/123-your-name.');
     }
 
-    // Show the "faculty position" list field
-    $form['field_people_faculty_position']['#states'] = [
-      'visible' => [
-        ':input[name="field_people_role"]' => ['value' => 'faculty'],
-      ]
-    ];
-
-    // Show the "instrument" list field
-    $form['field_people_instrument']['#states'] = [
-      'visible' => [
-        ':input[name="field_people_role"]' => ['value' => 'faculty'],
-      ]
-    ];
-
-    // Show the "staff position" list field
-    $form['field_people_staff_position']['#states'] = [
-      'visible' => [
-        ':input[name="field_people_role"]' => ['value' => 'staff'],
-      ]
-    ];
-
     // Show the default fields if profile type is "default"
     $form['field_people_education']['#states'] = [
       'visible' => [
