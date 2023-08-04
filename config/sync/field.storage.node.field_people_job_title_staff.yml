@@ -1,12 +1,12 @@
-uuid: 95446ff9-cb39-4a09-82bf-e841ac1abbd8
+uuid: 283dc7dd-599a-43e7-9105-8e297c9232b8
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - taxonomy
-id: node.field_people_job_title
-field_name: field_people_job_title
+id: node.field_people_job_title_staff
+field_name: field_people_job_title_staff
 entity_type: node
 type: entity_reference
 settings:

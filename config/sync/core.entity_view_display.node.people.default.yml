@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.people.field_people_image
     - field.field.node.people.field_people_instrument
     - field.field.node.people.field_people_job_title
+    - field.field.node.people.field_people_job_title_staff
     - field.field.node.people.field_people_last_name
     - field.field.node.people.field_people_name
     - field.field.node.people.field_people_phone
@@ -180,6 +181,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 130
+    region: content
+  field_people_job_title_staff:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 132
     region: content
   field_people_last_name:
     type: text_default
