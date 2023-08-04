@@ -138,66 +138,80 @@
   {% endfor %}
 {% endif %}
 
-{# Check the role, position and instruments, create string #}
+
+{# Set string of Roles from array #}
 {% if content.field_people_role[0] %}
-  {% set role_faculty = content.field_people_role[0]['#markup'] %}
-  {% set role_staff = content.field_people_role[1]['#markup'] %}
+  {% set roles = [] %}
 
+  {# Get number of items #}
+  {% if content.field_people_role['#items'].getIterator() %}
+    {% set item_count = content.field_people_role['#items'].getIterator()|length - 1 %}
+  {% endif %}
 
-  {% if role_faculty == 'faculty' %}
-   
-    {% if content.field_people_faculty_position[0] %}
-      {% set position_faculty = content.field_people_faculty_position[0]['#plain_text'] %}
+  {# For each item add to instruments array #}
+  {% for i in 0..item_count %}
+    {% set roles = roles|merge([content.field_people_role[i]['#markup']]) %}
+  {% endfor %}
+
+  {% if roles %}
+    {% if roles[0] == 'faculty' %}
+  
+      {% if content.field_people_faculty_position[0] %}
+        {% set position_faculty = content.field_people_faculty_position[0]['#plain_text'] %}
+      {% endif %}
+
+      {% if job_titles_arr %}
+        {% set job_titles = job_titles_arr|join(', ') %}
+      {% endif %}
+
+      {% if instruments_arr %}
+        {% set instruments = instruments_arr|join(', ') %}
+      {% endif %}
+
+      {% if job_titles and instruments and position_faculty %}
+        {% set title_suffix_faculty = roles[0]|capitalize ~ ': ' ~ position_faculty ~ ': ' ~ job_titles ~ ': ' ~ instruments %}
+      {% elseif position_faculty and job_titles and not instruments %}
+        {% set title_suffix_faculty = roles[0]|capitalize ~ ': ' ~ position_faculty ~ ': ' ~ job_titles %}
+      {% elseif position_faculty and instruments  and not job_titles  %}
+        {% set title_suffix_faculty = roles[0]|capitalize ~ ': ' ~ position_faculty ~ ': ' ~ instruments %}
+      {% elseif job_titles and instruments  and not  position_faculty %}
+        {% set title_suffix_faculty = roles[0]|capitalize ~ ': '  ~ job_titles ~ ': ' ~ instruments %}
+      {% elseif position_faculty and not (instruments  or job_titles) %}
+        {% set title_suffix_faculty = roles[0]|capitalize ~ ': ' ~ position_faculty %}
+      {% elseif job_titles and not (instruments  or position_faculty) %}
+        {% set title_suffix_faculty = roles[0]|capitalize ~ ': ' ~ job_titles %}
+      {% elseif instruments and not (job_titles  or position_faculty) %}
+        {% set title_suffix_faculty = roles[0]|capitalize ~ ': ' ~ instruments %}
+      {% else %}
+        {% set title_suffix_faculty = roles[0]|capitalize %}
+      {% endif %}
+
     {% endif %}
 
-    {% if job_titles_arr %}
-      {% set job_titles = job_titles_arr|join(', ') %}
-    {% endif %}
+    {% if roles[0] == 'staff' or roles[1] == 'staff' %}
 
-    {% if instruments_arr %}
-      {% set instruments = instruments_arr|join(', ') %}
-    {% endif %}
+      {% if staff_job_titles_arr %}
+        {% set job_titles_staff = staff_job_titles_arr|join(', ') %}
+      {% endif %}
 
-    {% if job_titles and instruments and position_faculty %}
-      {% set title_suffix_faculty = role_faculty|capitalize ~ ': ' ~ position_faculty ~ ': ' ~ job_titles ~ ': ' ~ instruments %}
-    {% elseif position_faculty and job_titles and not instruments %}
-      {% set title_suffix_faculty = role_faculty|capitalize ~ ': ' ~ position_faculty ~ ': ' ~ job_titles %}
-    {% elseif position_faculty and instruments  and not job_titles  %}
-      {% set title_suffix_faculty = role_faculty|capitalize ~ ': ' ~ position_faculty ~ ': ' ~ instruments %}
-    {% elseif job_titles and instruments  and not  position_faculty %}
-      {% set title_suffix_faculty = role_faculty|capitalize ~ ': '  ~ job_titles ~ ': ' ~ instruments %}
-    {% elseif position_faculty and not (instruments  or job_titles) %}
-      {% set title_suffix_faculty = role_faculty|capitalize ~ ': ' ~ position_faculty %}
-    {% elseif job_titles and not (instruments  or position_faculty) %}
-      {% set title_suffix_faculty = role_faculty|capitalize ~ ': ' ~ job_titles %}
-    {% elseif instruments and not (job_titles  or position_faculty) %}
-      {% set title_suffix_faculty = role_faculty|capitalize ~ ': ' ~ instruments %}
-    {% else %}
-      {% set title_suffix_faculty = role_faculty|capitalize %}
+      {% if content.field_people_staff_position[0] %}
+        {% set position_staff = content.field_people_staff_position[0]['#plain_text'] %}
+      {% endif %}
+
+      {% if position_staff and job_titles_staff %}
+        {% set title_suffix_staff = (roles[0] == 'staff'? roles[0]|capitalize : roles[1]|capitalize) ~ ': ' ~ position_staff ~ ': ' ~ job_titles_staff %}
+      {% elseif job_titles_staff and not position_staff %}
+        {% set title_suffix_staff = (roles[0] == 'staff'? roles[0]|capitalize : roles[1]|capitalize)  ~ ': ' ~ job_titles_staff %}
+      {% elseif position_staff and not job_titles_staff %}
+        {% set title_suffix_staff = (roles[0]== 'staff'? roles[0]|capitalize : roles[1]|capitalize)  ~ ': ' ~ position_staff %}
+      {% else %}
+        {% set title_suffix_staff = (roles[0]== 'staff'? roles[0]|capitalize : roles[1]|capitalize) %}
+      {% endif %}
+
     {% endif %}
 
   {% endif %}
 
-  {% if role_staff == 'staff' %}
-    {% if staff_job_titles_arr %}
-      {% set job_titles_staff = staff_job_titles_arr|join(', ') %}
-    {% endif %}
-
-    {% if content.field_people_staff_position[0] %}
-      {% set position_staff = content.field_people_staff_position[0]['#plain_text'] %}
-    {% endif %}
-
-    {% if position_staff and job_titles_staff %}
-      {% set title_suffix_staff = role_staff|capitalize ~ ': ' ~ position_staff ~ ': ' ~ job_titles_staff %}
-    {% elseif job_titles_staff and not position_staff %}
-      {% set title_suffix_staff = role_staff|capitalize  ~ ': ' ~ job_titles_staff %}
-    {% elseif position_staff and not job_titles_staff %}
-      {% set title_suffix_staff = role_staff|capitalize  ~ ': ' ~ position_staff %}
-    {% else %}
-      {% set title_suffix_staff = role_staff|capitalize %}
-    {% endif %}
-
-  {% endif %}
 {% endif %}
 
 {# Check if the feature media type exists #}
