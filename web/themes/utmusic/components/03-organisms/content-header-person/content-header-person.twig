@@ -111,7 +111,17 @@
                   icon: 'phone',
                 } only 
               %}
-              <a class="o-hero-media__info-link" href="tel:{{phone}}"{% if aria_phone %} aria-label="{{ aria_phone }}"{% endif %}>{{phone}}</a>
+
+              {# set validation for phone number  #}
+              {% set phone_number = phone|replace({'-': '', '.': '', '(': '', ')': '', ' ': ''})|number_format|replace({',':'', }) %}
+
+              {% if phone_number starts with '+' %}
+                {% set phone_number = phone_number %}
+              {% else %}
+                {% set phone_number = '+1' ~ phone_number %}
+              {% endif %}  
+              
+              <a class="o-hero-media__info-link" href="tel:{{phone_number}}"{% if aria_phone %} aria-label="{{ aria_phone }}"{% endif %}>{{phone}}</a>
             </div>
           {% endif %}
 
