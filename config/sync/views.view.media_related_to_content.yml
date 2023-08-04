@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.carousel
+    - media.type.ed_image
     - media.type.video
   module:
     - media
@@ -159,44 +160,14 @@ display:
           id: bundle
           table: media_field_data
           field: bundle
-          relationship: none
-          group_type: group
-          admin_label: ''
           entity_type: media
           entity_field: bundle
           plugin_id: bundle
-          operator: in
           value:
-            video: video
-          group: 1
-          exposed: false
+            ed_image: ed_image
           expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
             operator_limit_selection: false
             operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
       style:
         type: default
         options:
@@ -243,137 +214,6 @@ display:
           relationship: none
           group_type: group
           admin_label: 'Media Video Related to Event'
-          plugin_id: numeric
-          default_action: default
-          exception:
-            value: all
-            title_enable: false
-            title: All
-          title_enable: false
-          title: ''
-          default_argument_type: node
-          default_argument_options: {  }
-          default_argument_skip_url: false
-          summary_options:
-            base_path: ''
-            count: true
-            override: false
-            items_per_page: 25
-          summary:
-            sort_order: asc
-            number_of_records: 0
-            format: default_summary
-          specify_validation: false
-          validate:
-            type: none
-            fail: 'not found'
-          validate_options: {  }
-          break_phrase: false
-          not: false
-      filters:
-        status:
-          id: status
-          table: media_field_data
-          field: status
-          entity_type: media
-          entity_field: status
-          plugin_id: boolean
-          value: '1'
-          group: 1
-          expose:
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-        bundle:
-          id: bundle
-          table: media_field_data
-          field: bundle
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: media
-          entity_field: bundle
-          plugin_id: bundle
-          operator: in
-          value:
-            video: video
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-      style:
-        type: default
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          uses_fields: false
-      row:
-        type: 'entity:media'
-        options:
-          relationship: none
-          view_mode: carousel
-      defaults:
-        style: false
-        row: false
-        arguments: false
-        filters: false
-        filter_groups: false
-      display_description: ''
-      display_extenders:
-        ajax_history: {  }
-      block_hide_empty: true
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - user.permissions
-      tags: {  }
-  media_related_people:
-    id: media_related_people
-    display_title: 'Media Video Related to People'
-    display_plugin: block
-    position: 1
-    display_options:
-      arguments:
-        field_video_related_people_target_id:
-          id: field_video_related_people_target_id
-          table: media__field_video_related_people
-          field: field_video_related_people_target_id
-          relationship: none
-          group_type: group
-          admin_label: 'Media Video Related to People'
           plugin_id: numeric
           default_action: default
           exception:
