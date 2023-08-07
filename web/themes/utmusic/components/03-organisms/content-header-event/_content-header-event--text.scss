@@ -27,6 +27,10 @@
 }
 
 .o-hero-media--event-text__info_and_button {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacer)/3);
+  
   @include breakpoint($bp-tablet) {
     width: 33%;
   }

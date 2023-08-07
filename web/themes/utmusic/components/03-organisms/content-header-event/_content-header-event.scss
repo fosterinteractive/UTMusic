@@ -16,7 +16,7 @@
 .o-hero-media--event__image {
   @extend %o-here-media__image;
 
-  grid-row: 2;
+  grid-row: 2/span 2;
   grid-column: col 1 / span 12;
 
   @include breakpoint($bp-tablet) {
@@ -61,10 +61,6 @@
   }
 }
 
-%o-hero-media__button, 
-.o-hero-media--event__button {
-  margin-top: rem(40px);
-}
 
 .o-hero-media--event__breadcrumbs,
 .o-hero-media--event-text__breadcrumbs {
