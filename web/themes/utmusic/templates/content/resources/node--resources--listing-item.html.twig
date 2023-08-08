@@ -68,8 +68,11 @@
 
 {% include "@organisms/listing/listing-item--resources.twig" with {
     directory: 'themes/utmusic',
-    files:  content.field_resource_upload[0] ? content.field_resource_upload,
+    files: content.field_resource_upload[0] ? content.field_resource_upload,
+    from_title: content.field_resources_form[0] ? content.field_resources_form[0]['#title'],
+    from_url: content.field_resources_form[0] ? content.field_resources_form[0]['#url'],
     resources_description:  content.field_resources_description[0] ? content.field_resources_description,
     title: content.field_resources_title[0] ? content.field_resources_title[0]['#text'],
   } only
 %}
+

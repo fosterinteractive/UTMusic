@@ -1,0 +1,25 @@
+uuid: 0cdbd962-22bf-487d-8904-1d226bb3629e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resources_form
+    - node.type.resources
+  module:
+    - webform
+id: node.resources.field_resources_form
+field_name: field_resources_form
+entity_type: node
+bundle: resources
+label: Form
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform
