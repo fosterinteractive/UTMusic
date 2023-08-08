@@ -55,8 +55,12 @@
   justify-content: space-between;
   width: 100%;
   color: var(--c-accordion-item-label);
+  text-align: left;
+  gap: calc(var(--spacer)*0.3);
 
   svg {
+    min-width: rem(37px);
+    min-height: rem(37px);
     width: rem(37px);
     height: rem(37px);
     color: var(--c-accordion-item-svg);
