@@ -1,0 +1,20 @@
+uuid: a0745e86-e9d7-4664-8c1b-b091f062587c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - webform
+id: node.field_resources_form
+field_name: field_resources_form
+entity_type: node
+type: webform
+settings:
+  target_type: webform
+module: webform
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
