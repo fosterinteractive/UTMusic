@@ -58,6 +58,19 @@
           {% endif %}
       </div>
     {% endif %}
-    
+
+    {% if from_url %}
+      {% include '@atoms/link/link.twig' with {
+        directory: directory,
+        base_class: 'a-file__link',
+        url: from_url,
+        label: from_title,
+        variation: "icon-left",
+        html_element: a,
+        icon: "wpforms",
+        } only 
+      %}
+    {% endif %}
+
   </div>
 </div>
