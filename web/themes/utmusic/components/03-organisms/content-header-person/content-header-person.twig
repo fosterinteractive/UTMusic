@@ -62,8 +62,8 @@
 
       {% if title_suffix_faculty or title_suffix_staff %}
         <div class="o-hero-media{{ variation }}__title-suffix">
-          {% if title_suffix_faculty %}<p>{{ title_suffix_faculty }}</p>{% endif %}
-          {% if title_suffix_staff %}<p>{{ title_suffix_staff }}</p>{% endif %}
+          {% if title_suffix_faculty %}{{ title_suffix_faculty }}{% endif %}{% if title_suffix_faculty and title_suffix_staff %}{{- ','}} {% endif %}
+          {% if title_suffix_staff %}{{ title_suffix_staff }}{% endif %}
         </div>
       {% endif %}
       
