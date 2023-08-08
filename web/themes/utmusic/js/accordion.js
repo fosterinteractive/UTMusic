@@ -94,10 +94,10 @@ Drupal.behaviors.accordion = {
 
           if (expandButtonState === 'true') {
             collapse(item, button, panel);
-            expandButton.innerHTML = Drupal.t('Expand All <svg class="a-icon--xsmall" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/utmusic/dist/icons.svg#chevron-down-solid"></use></svg>');
+            expandButton.innerHTML = Drupal.t('Expand All') + '<svg class="a-icon--xsmall" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/utmusic/dist/icons.svg#chevron-down-solid"></use></svg>';
           } else {
             expand(item, button, panel);
-            expandButton.innerHTML = Drupal.t('Collapse All <svg class="a-icon--xsmall" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/utmusic/dist/icons.svg#chevron-down-solid"></use></svg>');
+            expandButton.innerHTML = Drupal.t('Collapse All') + '<svg class="a-icon--xsmall" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/themes/utmusic/dist/icons.svg#chevron-down-solid"></use></svg>';
           }
         });
 
