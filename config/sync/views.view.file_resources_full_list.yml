@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.listing_item
-    - field.storage.node.field_resource_upload
     - field.storage.node.field_resources_description
+    - field.storage.node.field_resources_form
     - node.type.resources
   module:
     - node
@@ -13,6 +13,7 @@ dependencies:
     - text
     - user
     - views_autosubmit
+    - webform
 id: file_resources_full_list
 label: 'File Resources Full List'
 module: views
@@ -138,10 +139,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_resource_upload:
-          id: field_resource_upload
-          table: node__field_resource_upload
-          field: field_resource_upload
+        field_resources_form:
+          id: field_resources_form
+          table: node__field_resources_form
+          field: field_resources_form
           relationship: none
           group_type: group
           admin_label: ''
@@ -188,13 +189,13 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: entity_reference_label
+          type: webform_entity_reference_entity_view
           settings:
-            link: true
-          group_column: target_id
+            source_entity: true
+          group_column: ''
           group_columns: {  }
           group_rows: true
-          delta_limit: 10
+          delta_limit: 0
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
@@ -386,6 +387,7 @@ display:
           fields:
             title: title
             field_resources_description: field_resources_description
+            field_resources_form: field_resources_form
         field_resources_category_value:
           id: field_resources_category_value
           table: node__field_resources_category
@@ -470,8 +472,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_resource_upload'
         - 'config:field.storage.node.field_resources_description'
+        - 'config:field.storage.node.field_resources_form'
   block_full_list:
     id: block_full_list
     display_title: Block
@@ -492,5 +494,5 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_resource_upload'
         - 'config:field.storage.node.field_resources_description'
+        - 'config:field.storage.node.field_resources_form'
