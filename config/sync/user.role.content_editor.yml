@@ -38,6 +38,7 @@ dependencies:
     - taxonomy.vocabulary.program_type
     - taxonomy.vocabulary.promote_on_news
     - taxonomy.vocabulary.promoted_on_events
+    - taxonomy.vocabulary.staff_job_titles
     - taxonomy.vocabulary.staff_roles
     - taxonomy.vocabulary.undergraduate_forms_category
     - workflows.workflow.editorial
@@ -45,10 +46,12 @@ dependencies:
     - cacheflush
     - content_moderation
     - contextual
+    - dropzonejs
     - entity_browser
     - file
     - filter
     - media
+    - media_file_delete
     - node
     - path
     - replicate_ui
@@ -94,6 +97,7 @@ permissions:
   - 'create terms in program_type'
   - 'create terms in promote_on_news'
   - 'create terms in promoted_on_events'
+  - 'create terms in staff_job_titles'
   - 'create terms in staff_roles'
   - 'create terms in undergraduate_forms_category'
   - 'create url aliases'
@@ -101,6 +105,7 @@ permissions:
   - 'delete any ed_file media'
   - 'delete any ed_image media'
   - 'delete any event content'
+  - 'delete any file'
   - 'delete any illustration media'
   - 'delete any job content'
   - 'delete any media'
@@ -149,8 +154,10 @@ permissions:
   - 'delete terms in program_type'
   - 'delete terms in promote_on_news'
   - 'delete terms in promoted_on_events'
+  - 'delete terms in staff_job_titles'
   - 'delete terms in staff_roles'
   - 'delete terms in undergraduate_forms_category'
+  - 'dropzone upload files'
   - 'edit any ed_file media'
   - 'edit any ed_image media'
   - 'edit any event content'
@@ -189,6 +196,7 @@ permissions:
   - 'edit terms in program_type'
   - 'edit terms in promote_on_news'
   - 'edit terms in promoted_on_events'
+  - 'edit terms in staff_job_titles'
   - 'edit terms in staff_roles'
   - 'edit terms in undergraduate_forms_category'
   - 'replicate entities'

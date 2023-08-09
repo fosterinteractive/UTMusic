@@ -9,10 +9,16 @@ dependencies:
     - filter.format.simple_text
     - media.type.ed_file
     - media.type.ed_image
+    - media.type.illustration
+    - media.type.resources_files
     - media.type.video
     - node.type.event
+    - node.type.job
     - node.type.news
     - node.type.page
+    - node.type.people
+    - node.type.program
+    - node.type.resources
   module:
     - filter
     - google_analytics
@@ -36,12 +42,19 @@ permissions:
   - 'create ed_file media'
   - 'create ed_image media'
   - 'create media'
+  - 'delete media'
   - 'download media'
   - 'edit own ed_file media'
   - 'edit own ed_image media'
   - 'edit own event content'
+  - 'edit own illustration media'
+  - 'edit own job content'
   - 'edit own news content'
   - 'edit own page content'
+  - 'edit own people content'
+  - 'edit own program content'
+  - 'edit own resources content'
+  - 'edit own resources_files media'
   - 'edit own video media'
   - 'opt-in or out of google analytics tracking'
   - 'rabbit hole bypass node'
