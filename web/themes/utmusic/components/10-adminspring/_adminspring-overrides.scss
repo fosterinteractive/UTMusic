@@ -236,3 +236,22 @@ body.mm-wrapper {
     margin-left: 30px;
   }
 }
+
+/*******
+ * Media Library
+ *************/
+
+ .media-library-views-form__rows,
+ .media-library-selection {
+   .media-library-item__preview-wrapper .media-library-item__preview {
+     display: flex;
+     flex-flow: column;
+     align-items: center;
+     background-color: #ebebeb;
+     padding: 0 5px 15px 5px;
+   }
+ 
+   .media-library-item--grid:before {
+     box-sizing: initial;
+   }
+ }
