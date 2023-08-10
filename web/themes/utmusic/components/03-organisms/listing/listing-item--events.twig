@@ -25,7 +25,7 @@
     </div>
   {% endif %}
   
-  <div class="m-listing-item{{ variation }}__content has-img">
+  <div class="m-listing-item{{ variation }}__content {% if image %} has-img{% endif %}">
 
     <div>
       {% if event_date or areas or ensemble %}
