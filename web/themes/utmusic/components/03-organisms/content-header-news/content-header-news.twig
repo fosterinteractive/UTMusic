@@ -19,6 +19,13 @@
     {# it's a placeholder for background #}
   </div>
 
+  {% if tabs is not empty or messages is not empty  %}
+    <div class="o-hero-media__tabs o-hero-media{% if variation %}{{ variation }}{% endif %}__tabs">
+     {{ messages }}
+     {{ tabs }}
+    </div>
+  {% endif %}
+
   {% if breadcrumbs is not empty and not is_front %}
     <div class="o-hero-media__breadcrumbs {% if variation %}o-hero-media{{variation}}__breadcrumbs{% endif %}">
     {% if sb_demo %}

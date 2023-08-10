@@ -20,6 +20,13 @@
     {# it's a placeholder for background #}
   </div>
 
+  {% if tabs is not empty or messages is not empty %}
+    <div class="o-hero-media__tabs o-hero-media{% if variation %}{{ variation }}{% endif %}__tabs">
+     {{ messages }}
+     {{ tabs }}
+    </div>
+  {% endif %}
+
   {% if image_group %}
     <div class="o-hero-media--carousel__image">
       {% if sb_demo %}

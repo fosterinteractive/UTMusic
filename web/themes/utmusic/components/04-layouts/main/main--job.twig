@@ -9,18 +9,10 @@
           variation: header_variation,
           title: title,
           breadcrumbs: breadcrumbs,
+          messages: messages,
+          tabs: tabs,
         } only
       %}
-
-      {% if messages is not empty or tabs is not empty %}
-        <div class="l-main__utility l-section--[12]">
-          <div class="l-section__zone-1">
-            {{ messages }}
-            {{ tabs }}
-          </div>
-        </div>
-
-      {% endif %}
 
       {% if content %}
         <div class="l-main--job__content-wrapper l-section--[8] theme--white-bg l-section-spacing-top--small l-section-spacing-bottom--small">

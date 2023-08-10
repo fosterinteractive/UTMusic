@@ -8,15 +8,7 @@
     {# Check if there is a banner #}
     {% if hero_banner %}
       {{ hero_banner }}
-
-      {# {% if breadcrumbs is not empty and not is_front %}
-        <div class="l-main__breadcrumbs l-section--[12]">
-          <div class="l-section__zone-1">
-            {{ breadcrumbs }}
-          </div>
-        </div>
-      {% endif %} #}
-      {# Else print heading title #}
+      
     {% else %}
       <div class="l-main__header">
         <div class="l-main__header-title">
@@ -48,14 +40,6 @@
       {% endspaceless %}
     {% endif %}
 
-    {% if messages is not empty or tabs is not empty %}
-      <div class="l-main__utility l-section--[12]">
-        <div class="l-section__zone-1">
-          {{ messages }}
-          {{ tabs }}
-        </div>
-      </div>
-    {% endif %}
 
     {% if moderation %}
       <div class="l-main__moderation">

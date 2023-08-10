@@ -3,10 +3,10 @@
   display: grid;
   grid-template-columns: [alpha] 1fr repeat(12, [col] minmax(1px, calc((65rem - (var(--spacer) * 11)) / 12))) 1fr [omega];
   grid-column-gap: var(--spacer);
-  grid-template-rows: var(--header-height) var(--spacer) minmax(calc(var(--spacer)*2), auto) minmax(1px, min-content) var(--spacer) var(--spacer) var(--spacer);
+  grid-template-rows: var(--header-height) minmax(var(--spacer), auto) minmax(calc(var(--spacer)*2), auto) minmax(1px, min-content) var(--spacer) var(--spacer) var(--spacer);
 
   @include breakpoint($bp-tablet) {
-    grid-template-rows: var(--header-height) var(--spacer) calc(var(--spacer)*2) minmax(1px, min-content) var(--spacer) var(--spacer) var(--spacer);
+    grid-template-rows: var(--header-height) minmax(var(--spacer), auto) calc(var(--spacer)*2) minmax(1px, min-content) var(--spacer) var(--spacer) var(--spacer);
   }
 }
 
@@ -17,7 +17,7 @@
   background-image: url('../images/header.png');
   background-color: palette(teal, 1000);
   background-repeat: no-repeat;
-  background-size: 200% 200%;
+  background-size: 400% 200%;
   background-blend-mode: color-burn;
   background-position: -300px center;
   
@@ -36,6 +36,21 @@
 
   @include breakpoint($bp-tablet) {
     grid-column: col 1/ span 6;
+  }
+}
+
+%o-hero-media__tabs,
+.o-hero-media__tabs {
+  grid-row: 2;
+  grid-column: col 1/ span 12;
+  margin-bottom: var(--spacer);
+
+  @include breakpoint($bp-tablet) {
+    grid-column: col 1/ span 12;
+  }
+
+  .m-tabs--primary {
+    background-color: palette(white);
   }
 }
 

@@ -40,9 +40,16 @@
 {# Get breadcrumbs block #}
 {% set breadcrumbs = drupal_entity('block', 'menu_breadcrumbs') %}
 
+{% set messages = drupal_entity('block', 'messages') %}
+{% set tabs = drupal_entity('block', 'tabs') %}
+    
 {% include "@organisms/content-header/content-header.twig" with {
     directory: 'themes/utmusic',
     breadcrumbs: breadcrumbs,
+    tabs: tabs,
+    messages: messages,
+    is_front: is_front,
+
     variation: content.field_header_style[0] ? content.field_header_style[0]['#markup'],
 
     title_prefix: content.field_header_title_prefix[0] ? content.field_header_title_prefix[0]['#text'],

@@ -67,6 +67,11 @@
   @extend %o-hero-media__breadcrumbs;
 }
 
+.o-hero-media--event__tabs,
+.o-hero-media--event-text__tabs {
+  @extend %o-hero-media__tabs;
+}
+
 .o-hero-media--event-text__info {
   @extend %o-hero-media--event__info;
 
