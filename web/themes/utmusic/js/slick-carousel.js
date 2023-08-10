@@ -14,11 +14,10 @@
         slidesToScroll: 1,
         arrows: false,
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 5000,
         fade: true,
-        speed: 600,
-        cssEase: 'cubic-bezier(0,15,1,10)',
-        // easing: 'linear',
+        speed: 1000,
+        cssEase: 'cubic-bezier(.17,.67,.83,.67)',
       });
 
       $(controlButton).on('click', () => {
@@ -36,7 +35,6 @@
           $(controlButton).attr('aria-pressed', false);
         }
       });
-
 
     }
   };

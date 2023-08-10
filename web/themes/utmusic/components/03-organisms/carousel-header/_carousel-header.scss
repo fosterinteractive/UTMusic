@@ -92,7 +92,14 @@
 }
 
 .o-hero-media--carousel__image-slick-carousel .slick-track {
-  display: flex;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-areas: "slide";
+
+  .slick-slide {
+    grid-area: slide;
+    left: 0 !important;
+  }
 }
 
 .o-hero-media--carousel__text-wrapper {
@@ -129,55 +136,78 @@
 
 
 //animation
-.m-carousel-img-group.slick-slide {
-  opacity: 0;
+// @for $i from 1 through 100 {
+//   .slick-slide:nth-child(#{$i}) {
+//     z-index: calc(900 - #{$i}) !important;
+//   }
+// }
+
+// .slick-slide.slick-active {
+//   z-index: 999 !important;
+//   // animation: slideFadeOut ease-in-out 600ms;
+// }
+
+.slick-track {
+  width: fit-content !important;
 }
 
-.m-carousel-img-group.slick-current {
-  animation: slideFadeIn ease 600ms;
+.slick-slide {
+  // opacity: 100% !important;
+
+  &[aria-hidden="true"] {
+    img {
+      opacity: 0;
+    }
+  }
+
+  &[aria-hidden="false"] {
+    img {
+      opacity: 100%;
+    }
+  }
 }
 
 %image-fade {
-  animation: imageFadeIn ease 600ms;
+  animation: 1200ms imageFadeOut cubic-bezier(.17,.67,0,.17);
 }
 
-.m-carousel-img-group.slick-active {
+.slick-active {
   .m-carousel-img-group__image_1 img {
     @extend %image-fade;
   }
   
   .m-carousel-img-group__image_2 img {
     @extend %image-fade;
-    animation-delay: 100ms;
+    animation-delay: 300ms;
   }
   
   .m-carousel-img-group__image_3 img {
     @extend %image-fade;
-    animation-delay: 200ms;
+    animation-delay: 600ms;
   }
   
   .m-carousel-img-group__image_4 img {
     @extend %image-fade;
-    animation-delay: 300ms;
+    animation-delay: 900ms;
   }
 }
 
 
 
-@keyframes imageFadeIn {
+@keyframes imageFadeOut {
   0% {
     opacity: 0;
   }
   100% {
-    opacity: 1;
+    opacity: 100%;
   }
 }
 
-@keyframes slideFadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
+// @keyframes slideFadeOut {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 100%;
+//   }
+// }
