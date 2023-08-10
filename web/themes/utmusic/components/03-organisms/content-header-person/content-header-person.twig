@@ -12,13 +12,11 @@
 
 {% endif %}
 
-{% set background_image_path = '/themes/utmusic/images/texture--header.png' %}
 
 <div class="o-hero-media{{ variation }} js-content-header">
 
   <div class="o-hero-media__bg-decoration">
     {# it's a placeholder for background #}
-    <img alt="" aria-hidden="true" src='{{ background_image_path}}'>
   </div>
 
   {% if breadcrumbs is not empty and not is_front %}
@@ -159,5 +157,3 @@
 
   </div>
 </div>
-
-{{ attach_library('utmusic/image-header-iternal') }}
