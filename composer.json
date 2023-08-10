@@ -80,7 +80,7 @@
         "drupal/media_contextual_crop_embed": "1.2.1",
         "fosterinteractive/adminspring-theme": "dev-10.0.x-dev#4c1266c46f64137dbe2675c39c564aec510ece4a",
         "fosterinteractive/mainspring-profile": "9.2.0-beta1",
-        "fosterinteractive/mega_menu_builder": "1.x-dev",
+        "fosterinteractive/mega_menu_builder": "1.0.0",
         "fosterinteractive/social_lite": "2.0.0",
         "pantheon-systems/drupal-integrations": "^9",
         "mnsami/composer-custom-directory-installer": "^2.0",
@@ -89,16 +89,16 @@
         "topfloor/composer-cleanup-vcs-dirs": "^1",
         "cweagans/composer-patches": "^1.7",
         "drush/drush": "^10 || ^11 || ^12",
-        "drupal/views_autosubmit": "^1.5",
-        "drupal/smart_trim": "^2.1",
-        "drupal/media_file_delete": "^1.3",
-        "drupal/smart_date": "^4.0",
-        "drupal/menu_item_extras": "^3.0",
-        "drupal/similarterms": "^1.6",
-        "npm-asset/tippy.js": "^6.3",
+        "drupal/views_autosubmit": "1.5",
+        "drupal/smart_trim": "2.1.0",
+        "drupal/media_file_delete": "1.3.0",
+        "drupal/smart_date": "4.0.3",
+        "drupal/menu_item_extras": "3.0.2",
+        "drupal/similarterms": "1.6",
+        "npm-asset/tippy.js": "6.3.7",
         "drupal/audiorecorder": "1.0.0-rc1",
         "drupal/field_validation": "1.1",
-        "drupal/rabbit_hole": "^2.0@alpha",
+        "drupal/rabbit_hole": "2.0.0-alpha4",
         "drupal/choices": "2.1.5",
         "bower-asset/choices.js": "10.2.0",
         "drupal/conditional_fields": "4.0.0-alpha3"
@@ -189,9 +189,6 @@
             },
             "drupal/focal_point": {
                 "2906631 - After changing focal point, image doesn't change until you click preview": "https://www.drupal.org/files/issues/2022-06-10/2906631-12_0.patch"
-            },
-            "drupal/hide_revision_field": {
-                "3260101 - [PHP8.1] Deprecated function: unserialize(): Passing null to parameter #1 ($data) of type string is deprecated": "https://www.drupal.org/files/issues/2022-01-24/3260101-2.patch"
             },
             "drupal/audiorecorder": {
                 "3316491 - No save in theme 'Gin'": "https://www.drupal.org/files/issues/2023-04-21/audiorecorder-rc1-no-save-in-theme-gin-3316491.patch"
