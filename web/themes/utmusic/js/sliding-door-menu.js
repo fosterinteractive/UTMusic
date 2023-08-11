@@ -56,6 +56,26 @@ const linkResetState = (slideLinks, allItemsDoor) => {
   });
 }
 
+const hideLinks = (link) => {
+  let allLinks = link.closest('.m-sliding-door-menu-desktop-links').querySelectorAll('.m-sliding-item__link a');
+
+  allLinks.forEach((hiddenLink) =>{
+    if (link != hiddenLink) {
+      hiddenLink.classList.add('js-hidden');
+    }
+  });
+}
+
+const showLinks = (link) => {
+  let allLinks = link.closest('.m-sliding-door-menu-desktop-links').querySelectorAll('.m-sliding-item__link a');
+
+  allLinks.forEach((hiddenLink) =>{
+    if (link != hiddenLink) {
+      hiddenLink.classList.remove('js-hidden');
+    }
+  });
+}
+
 const mainFunctionality = (slidingDoorWrapper) => {
   if (window.innerWidth >= 768) {
     let wrapperWidth = slidingDoorWrapper.offsetWidth;
@@ -77,22 +97,26 @@ const mainFunctionality = (slidingDoorWrapper) => {
       let relatedItem = link.closest('.m-sliding-door-menu-wrapper').querySelector(`#${linkId}`);
 
       link.addEventListener('mouseenter', () => {
+        hideLinks(link);
         setHoverState(allItemsDoor, relatedItem, itemWidth, link);
         linkHoverState(link, allItemsDoor );
       });
 
       link.addEventListener('mouseleave', () => {
+        showLinks(link);
         resetImageState(allItemsDoor, itemWidth);
         resetState(link);
         linkResetState(slideLinks, allItemsDoor);
       });
 
       link.addEventListener('focus', () => {
+        hideLinks(link);
         setHoverState(allItemsDoor, relatedItem, itemWidth, link);
         linkHoverState(link, allItemsDoor);
       });
 
       link.addEventListener('blur', () => {
+        showLinks(link);
         resetImageState(allItemsDoor, itemWidth);
         resetState(link);
         linkResetState(slideLinks, allItemsDoor);
