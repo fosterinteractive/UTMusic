@@ -20,15 +20,15 @@
   {% if variation == '--illustration' %}
     {% if illustration %}
       <div class="m-card__image-illustration">
+        <div class="m-card__image-illustration-bg"></div>
         {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
-          directory: directory,
-          base_class: 'a-icon',
-          icon_file_type: illustration_file_type,
-          icon: illustration,
-          size: illustration_size, 
+            directory: directory,
+            base_class: 'a-icon',
+            icon_file_type: illustration_file_type,
+            icon: illustration,
+            size: illustration_size, 
           } only
         %}
-        <div class="m-card__image-illustration-bg"></div>
       </div>
     {% endif %}
   {% else %}
@@ -103,7 +103,18 @@
 
   {% if link_url and link_label %}
     <div class="m-card{{ variation }}__link">
-        {% include '@atoms/button/button.twig' with {
+        {% include "@atoms/text/headings/heading.twig" with {
+            html_element: 'div',
+            appearance: 'h5',
+            text: link_label,
+            url: link_url,
+            alignment: 'left',
+            aria_label: aria_label,
+            directory: directory,
+          } only
+        %}
+
+        {# {% include '@atoms/button/button.twig' with {
             directory: directory,
             base_class: 'a-button',
             label: link_label,
@@ -113,7 +124,7 @@
             aria_label: aria_label,
             alignment: 'left',
           } only
-        %} 
+        %}  #}
     </div>
   {% endif %}
 </div>

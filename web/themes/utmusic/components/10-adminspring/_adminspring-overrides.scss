@@ -217,3 +217,9 @@ body.mm-wrapper {
     margin-left: 30px;
   }
 }
+
+
+// admin UI for content-header
+.js .dropbutton .dropbutton__item input {
+  min-height: unset;
+}

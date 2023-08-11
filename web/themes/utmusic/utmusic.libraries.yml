@@ -30,43 +30,21 @@ global:
 #   js:
 #     //use.typekit.net/txu0qxj.js: { every_page: true }
 
-mmenu:
+accordion:
   js:
-    js/libraries/mmenu/mmenu.js: {}
-    js/libraries/mmenu.config.js: {}
-
-read-more:
-  license:
-      name: MIT
-      url: https://github.com/jasonujmaalvis/show-more#readme
-  js:
-    js/read-more.js: {}
+    js/accordion.js: {}
 
 announcement:
   js:
     js/exposed-filters-a11y.js: {}
 
-slick-carousel:
-  license:
-      name: MIT
-      url: https://kenwheeler.github.io/slick/
+audio:
   js:
-    https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js: { type: external,  minified: true }
-    js/slick-carousel.js: {}
+    js/audio.js: {}
 
-tippyjs:
-  header: true
+card:
   js:
-    /libraries/popperjs--core/dist/umd/popper.min.js: {}
-    /libraries/tippy.js/dist/tippy-bundle.umd.min.js: {}
-    
-tooltip:
-  js:
-    js/libraries/tooltips.config.js: {}
-
-featured-media:
-  js:
-    js/featured-media.js: {}
+    js/card.js: {}
 
 carousel-media:
   js:
@@ -76,32 +54,9 @@ carousel-media-people:
   js:
     js/carousel-media-people.js: {}
 
-listing-full-people:
+featured-media:
   js:
-    js/listing-full-people.js: {}
-
-sliding-door-menu:
-  js:
-    js/sliding-door-menu.js: {}
-
-accordion:
-  js:
-    js/accordion.js: {}
-
-section-background:
-  js:
-    js/section-background.js: {}
-  dependencies:
-    - utmusic/accordion
-
-audio:
-  js:
-    js/audio.js: {}
-
-priority-nav:
-  js:
-    js/libraries/priority-nav/dist/priority-nav.min.js: { minified: true }
-    js/priority-plus-menu.config.js: {}
+    js/featured-media.js: {}
 
 foundation_core:
   version: 6.7.4
@@ -131,6 +86,56 @@ foundation_dropdown:
     js/libraries/foundation.config.js: {}
   dependencies:
   - utmusic/foundation_core
+
+slick-carousel:
+  license:
+      name: MIT
+      url: https://kenwheeler.github.io/slick/
+  js:
+    https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js: { type: external,  minified: true }
+    js/slick-carousel.js: {}
+
+tippyjs:
+  header: true
+  js:
+    /libraries/popperjs--core/dist/umd/popper.min.js: {}
+    /libraries/tippy.js/dist/tippy-bundle.umd.min.js: {}
+    
+tooltip:
+  js:
+    js/libraries/tooltips.config.js: {}
+
+listing-full-people:
+  js:
+    js/listing-full-people.js: {}
+
+mmenu:
+  js:
+    js/libraries/mmenu/mmenu.js: {}
+    js/libraries/mmenu.config.js: {}
+
+priority-nav:
+  js:
+    js/libraries/priority-nav/dist/priority-nav.min.js: { minified: true }
+    js/priority-plus-menu.config.js: {}
+
+read-more:
+  license:
+      name: MIT
+      url: https://github.com/jasonujmaalvis/show-more#readme
+  js:
+    js/read-more.js: {}
+
+section-background:
+  js:
+    js/section-background.js: {}
+  dependencies:
+    - utmusic/accordion
+
+sliding-door-menu:
+  js:
+    js/sliding-door-menu.js: {}
+
 
 # COMPONENT_NAME:
 #   css:
