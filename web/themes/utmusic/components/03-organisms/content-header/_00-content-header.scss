@@ -136,6 +136,11 @@
 
 
 // Text Veriation for content Header on Advanced Pages
+.o-hero-media--text {
+  @extend %o-hero-media-core;
+  grid-template-rows: var(--header-height) minmax(var(--spacer), auto) minmax(calc(var(--spacer)*2), auto) minmax(1px, min-content) var(--spacer);
+}
+
 .o-hero-media-page__text.o-hero-media--text__text {
   @include breakpoint($bp-tablet) {
     display: flex;
@@ -159,8 +164,6 @@
 %o-hero-media--text-wrapper,
 .o-hero-media--text__text-wrapper {
   grid-row: 4;
-  padding-top: var(--spacer);
-  padding-bottom: var(--spacer);
   z-index: 0;
 }
 
@@ -186,8 +189,4 @@
   .a-chip {
     margin-bottom: 0;
   }
-}
-
-.js-content-header-text {
-  height: fit-content;
 }

@@ -12,7 +12,7 @@
 
 {% endif %}
 
-<div class="o-hero-media{{ variation }} js-content-header">
+<div class="o-hero-media{{ variation }}">
 
   <div class="o-hero-media__bg-decoration">
     {# it's a placeholder for background #}
@@ -47,9 +47,9 @@
     </div>
   {% endif %}
 
-  <div class="o-hero-media{% if variation %}{{ variation }}{% endif %}__text-wrapper js-content-header-text">
+  <div class="o-hero-media{% if variation %}{{ variation }}{% endif %}__text-wrapper">
 
-    <div class="js-content-header-text o-hero-media{% if variation %}{{ variation }}{% endif %}__text">
+    <div class="o-hero-media{% if variation %}{{ variation }}{% endif %}__text">
       {% if title_prefix or title %}
         <h1 class="a-heading__h1">          
           {% if title %}
