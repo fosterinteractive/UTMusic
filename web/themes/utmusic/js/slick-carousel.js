@@ -16,7 +16,7 @@
         autoplay: true,
         autoplaySpeed: 5000,
         fade: true,
-        speed: 1000,
+        speed: 200,
         cssEase: 'cubic-bezier(.17,.67,.83,.67)',
       });
 
