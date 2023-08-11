@@ -159,17 +159,17 @@
   opacity: 100% !important;
 }
 
-.slick-slide:first-child {
-  z-index: 997 !important;
+// .slick-slide:first-child {
+//   z-index: 997 !important;
 
-  img {
-    opacity: 50%;
-  }
+//   img {
+//     opacity: 50%;
+//   }
 
-  &.slick-current {
-    z-index: 999 !important;
-  }
-}
+//   &.slick-current {
+//     z-index: 999 !important;
+//   }
+// }
 
 .slick-track {
   width: fit-content !important;
@@ -180,7 +180,7 @@
 }
 
 %image-fade {
-  animation: 5000ms imageFadeOut cubic-bezier(.17,.67,0,.17) 2700ms;
+  animation: 5000ms imageFadeOut cubic-bezier(.17,.67,0,.17) 2800ms;
 }
 
 .slick-current {
