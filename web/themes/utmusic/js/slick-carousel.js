@@ -9,7 +9,7 @@
 
       $(carousel).slick({
         pauseOnHover: false,
-        slidesToShow: 1,
+        slidesToShow: 2,
         infinite: true,
         slidesToScroll: 1,
         arrows: false,
