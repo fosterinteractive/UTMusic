@@ -151,7 +151,7 @@
   opacity: 100% !important;
 
   img {
-    opacity: 50%;
+    opacity: 75%;
   }
 }
 
@@ -180,7 +180,7 @@
 }
 
 %image-fade {
-  animation: 5000ms imageFadeOut cubic-bezier(.17,.67,0,.17) 2800ms;
+  animation: 5010ms imageFadeOut cubic-bezier(.17,.67,0,.17) 2800ms;
 }
 
 .slick-current {
@@ -216,5 +216,18 @@
   }
   100% {
     opacity: 0;
+  }
+}
+
+
+@media (prefers-reduced-motion) {
+  /* styles to apply if a user's device settings are set to reduced motion */
+  .m-carousel-img-group__image_1,
+  .m-carousel-img-group__image_2,
+  .m-carousel-img-group__image_3,
+  .m-carousel-img-group__image_4 {
+    img {
+      animation: none;
+    }
   }
 }
