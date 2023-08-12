@@ -41,12 +41,13 @@ const linkHoverState = (link, allItemsDoor) => {
 
   link.closest('.m-sliding-item__link').setAttribute('style', `flex-basis: calc(${100/allItemsDoor.length}% + 100px)`);
 
-  if (previousLink) {
+  if (previousLink && nextLink) {
     previousLink.setAttribute('style', `flex-basis: calc(${100/allItemsDoor.length}% - 50px)`);
-  }
-
-  if (nextLink) {
     nextLink.setAttribute('style', `flex-basis: calc(${100/allItemsDoor.length}% - 50px)`);
+  } else if (previousLink) {
+    previousLink.setAttribute('style', `flex-basis: calc(${100/allItemsDoor.length}% - 100px)`);
+  } else if (nextLink) {
+    nextLink.setAttribute('style', `flex-basis: calc(${100/allItemsDoor.length}% - 100px)`);
   }
 }
 
