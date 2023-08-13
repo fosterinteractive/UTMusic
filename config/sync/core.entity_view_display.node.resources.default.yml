@@ -3,10 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.resources.field_resource_upload
     - field.field.node.resources.field_resources_category
     - field.field.node.resources.field_resources_description
     - field.field.node.resources.field_resources_form
+    - field.field.node.resources.field_resources_item
     - field.field.node.resources.field_resources_juries_cat
     - field.field.node.resources.field_resources_title
     - field.field.node.resources.field_resources_undergrad_cat
@@ -21,15 +21,6 @@ targetEntityType: node
 bundle: resources
 mode: default
 content:
-  field_resource_upload:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 6
-    region: content
   field_resources_category:
     type: list_key
     label: hidden
@@ -53,6 +44,15 @@ content:
       attributes: {  }
     third_party_settings: {  }
     weight: 7
+    region: content
+  field_resources_item:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_resources_juries_cat:
     type: entity_reference_label

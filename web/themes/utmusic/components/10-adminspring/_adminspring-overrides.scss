@@ -188,6 +188,25 @@ body.mm-wrapper {
   }
 }
 
+/*******
+ * Media Library
+ *************/
+
+.media-library-views-form__rows,
+.media-library-selection {
+  .media-library-item__preview-wrapper .media-library-item__preview {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: #ebebeb;
+    padding: 0 5px 15px 5px;
+  }
+
+  .media-library-item--grid:before {
+    box-sizing: initial;
+  }
+}
+
 
 .layout-select__item label.form-item__label.option {
   min-width: fit-content;

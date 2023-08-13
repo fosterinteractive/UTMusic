@@ -1,18 +1,19 @@
-uuid: 99fae3e1-0647-4477-a4f8-62e00cff20f7
+uuid: bbc26d07-cd32-4354-a602-1d86643605a1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_resource_upload
+    - field.storage.node.field_resources_item
     - media.type.resources_files
+    - media.type.resources_link_to_form
     - node.type.resources
-id: node.resources.field_resource_upload
-field_name: field_resource_upload
+id: node.resources.field_resources_item
+field_name: field_resources_item
 entity_type: node
 bundle: resources
-label: 'PDF upload'
+label: Resources
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -21,9 +22,10 @@ settings:
   handler_settings:
     target_bundles:
       resources_files: resources_files
+      resources_link_to_form: resources_link_to_form
     sort:
       field: _none
       direction: ASC
-    auto_create: false
-    auto_create_bundle: ed_file
+    auto_create: true
+    auto_create_bundle: resources_files
 field_type: entity_reference

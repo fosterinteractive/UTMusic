@@ -98,10 +98,11 @@
         "npm-asset/tippy.js": "6.3.7",
         "drupal/audiorecorder": "1.0.0-rc1",
         "drupal/field_validation": "1.1",
-        "drupal/rabbit_hole": "2.0.0-alpha4",
+        "drupal/rabbit_hole": "^2.0@alpha",
         "drupal/choices": "2.1.5",
         "bower-asset/choices.js": "10.2.0",
-        "drupal/conditional_fields": "4.0.0-alpha3"
+        "drupal/conditional_fields": "4.0.0-alpha3",
+        "drupal/media_entity_link": "^2.0"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2",
@@ -192,6 +193,9 @@
             },
             "drupal/audiorecorder": {
                 "3316491 - No save in theme 'Gin'": "https://www.drupal.org/files/issues/2023-04-21/audiorecorder-rc1-no-save-in-theme-gin-3316491.patch"
+            },
+            "drupal/media_entity_link": {
+                "3223918 - PHP8 error validateUriElement() must be static": "https://www.drupal.org/files/issues/2021-07-16/static_function_validateurielement-3223918-02.patch"
             }
         },
         "enable-patching": true
