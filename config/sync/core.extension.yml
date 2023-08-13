@@ -95,6 +95,7 @@ module:
   media_contextual_crop_fp_adapter: 0
   media_contextual_crop_iwc_adapter: 0
   media_entity_download: 0
+  media_entity_link: 0
   media_entity_svg: 0
   media_entity_twitter: 0
   media_file_delete: 0
