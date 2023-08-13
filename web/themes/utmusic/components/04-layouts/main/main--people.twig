@@ -25,18 +25,11 @@
           pronunciation: pronunciation,
           prononun: prononun,
           instruments: instruments,
-          breadcrumbs: breadcrumbs
+          breadcrumbs: breadcrumbs,
+          messages: messages,
+          tabs: tabs,
         } only
       %}
-
-      {% if messages is not empty or tabs is not empty %}
-        <div class="l-main__utility l-section--[12]">
-          <div class="l-section__zone-1">
-            {{ messages }}
-            {{ tabs }}
-          </div>
-        </div>
-      {% endif %}
 
       {% if moderation %}
         <div class="l-main__moderation">

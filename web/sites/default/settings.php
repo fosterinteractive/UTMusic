@@ -40,14 +40,14 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT']) && php_sapi_name() != 'cli') {
   // QA environment.
   elseif ($_ENV['PANTHEON_ENVIRONMENT'] == 'qa') {
     // Set environment indicator.
-    $config['environment_indicator.indicator']['bg_color'] = '#efe594';
-    $config['environment_indicator.indicator']['fg_color'] = '#000000';
+    $config['environment_indicator.indicator']['bg_color'] = '#7F0F05';
+    $config['environment_indicator.indicator']['fg_color'] = '#FFFFFF';
     $config['environment_indicator.indicator']['name'] = 'QA Environment';
   }
   else {
     // Set environment indicator.
-    $config['environment_indicator.indicator']['bg_color'] = '#7F0F05';
-    $config['environment_indicator.indicator']['fg_color'] = '#FFFFFF';
+    $config['environment_indicator.indicator']['bg_color'] = '#efe594';
+    $config['environment_indicator.indicator']['fg_color'] = '#000000';
     $config['environment_indicator.indicator']['name'] = 'Feature Environment';
   }
 }

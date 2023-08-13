@@ -17,6 +17,7 @@
       {% for item in sliding_menu_items_links %}
         <div class="m-sliding-item{{ variation }}__link">
           {% include "@atoms/text/headings/heading.twig" with {
+              directory: directory,
               html_element: 'h3',
               appearance: 'h5',
               text: item.label,

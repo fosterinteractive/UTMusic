@@ -7,18 +7,15 @@
 %m-card__image-illustration,
 .m-card__image-illustration {
   display: grid;
-  grid-template-columns: auto rem(15px) auto;
+  grid-template-columns: minmax(min-content, auto) rem(15px) minmax(min-content, auto);
   color: var(--c-card--illustration);
   margin-left: -15px;
-  justify-content: start;
-  align-items: center;
+  position: relative;
 
-  .a-icon-external--xsmall,
-  svg {
+  & > svg,
+  .a-icon-external--xsmall {
     grid-column: col 1 /span 2;
     grid-row: 1;
-    z-index: 1;
-    justify-self: end;
   }
 }
 
@@ -30,6 +27,11 @@
   background-color: var(--c-card--illustration-bg);
   grid-column: col 2 / span 2;
   grid-row: 1;
+  transition: 0.2s cubic-bezier(.12,.78,.74,.9);
+
+  .active & {
+    margin-left: rem(20px);
+  }
 }
   
 .m-card--illustration__title {
@@ -63,13 +65,26 @@
 }
 
 .m-card--illustration__link {
-  a {
-    padding-left: 0;
-    padding-right: 0;
-    text-align: left;
-    
+  .a-heading__h5 {
+    @extend %overlay-link-card;
+  }
+
+  .a-heading__h5 a {
+    color: palette(blue);
+
     svg {
-      bottom: rem(9px);
+      color: palette(teal, 300);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: palette(teal, 300);
+      text-decoration: none;
+      
+      svg {
+        color: palette(blue);
+      }
     }
   }
 }

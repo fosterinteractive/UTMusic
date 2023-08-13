@@ -2,18 +2,18 @@
 .o-hero-media--carousel {
   display: grid;
   grid-template-columns: [alpha] 1fr repeat(12, [col] minmax(1px, calc((65rem - (var(--spacer) * 11)) / 12))) 1fr [omega];
-  grid-template-rows: var(--header-height) auto auto auto;
+  grid-template-rows: var(--header-height) minmax(var(--spacer), auto) auto auto auto;
   grid-column-gap: var(--spacer);
   row-gap: var(--spacer);
 
 
   @include breakpoint($bp-tablet) {
-    grid-template-rows: var(--header-height) auto rem(70px) rem(70px) auto;
+    grid-template-rows: var(--header-height) minmax(var(--spacer), auto) auto rem(70px) rem(70px) auto;
     row-gap: 0;
   }
 
   @include breakpoint($bp-large) {
-    grid-template-rows: var(--header-height) 1fr rem(50px) rem(250px) auto;
+    grid-template-rows: var(--header-height) minmax(var(--spacer), auto) 1fr rem(50px) rem(250px) auto;
     row-gap: 0;
   }
 }
@@ -21,11 +21,7 @@
 .o-hero-media--carousel__bg-decoration {
   @extend %o-hero-media__bg-decoration;
 
-  grid-row: 1/ span 2 !important;
-  
-  img {
-    max-height: rem(900px);
-  }
+  grid-row: 1/ span 3 !important;
 }
 
 .o-hero-media--carousel__image {
@@ -33,20 +29,26 @@
   position: relative;
 
   @include breakpoint($bp-tablet) {
-    grid-row: 2 / span 3;
+    grid-row: 3 / span 3;
     grid-column: col 7/ span 6;
+    padding-top: var(--spacer);
   }
 }
 
 .o-hero-media--carousel__image-button {
   position: absolute;
   right: 0;
+  top: calc(var(--spacer)*1.2);
   z-index: 1;
   width: rem(55px);
   height: rem(55px);
   background-color: palette(white);
   border-radius: 50%;
   filter: drop-shadow(0px 15px 30px rgba(30, 56, 102, 0.1));
+  
+  @include breakpoint($bp-tablet) {
+    top: calc(var(--spacer)*1.65);
+  }
 
   &:hover,
   &:focus,
@@ -90,7 +92,14 @@
 }
 
 .o-hero-media--carousel__image-slick-carousel .slick-track {
-  display: flex;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-areas: "slide";
+
+  .slick-slide {
+    grid-area: slide;
+    left: 0 !important;
+  }
 }
 
 .o-hero-media--carousel__text-wrapper {
@@ -100,13 +109,14 @@
   padding: 0 0 rem(20px);
 
   grid-column: col 1 / span 12;
-  grid-row: 2;
+  grid-row: 3;
   z-index: 0;
 
 
   @include breakpoint($bp-tablet) {
     grid-column: col 1 / span 6;
-    grid-row: 2;
+    grid-row: 3;
+    padding-top: var(--spacer);
   }
 }
 
@@ -115,8 +125,8 @@
   grid-column: col 1 / span 12;
   
   @include breakpoint($bp-tablet) {
-    grid-row: 4/ span 2;
-  grid-column: col 1 / span 9;
+    grid-row: 5/ span 2;
+    grid-column: col 1 / span 9;
   }
 }
 
@@ -125,56 +135,99 @@
 }
 
 
-//animation
-.m-carousel-img-group.slick-slide {
-  opacity: 0;
+// animation
+@for $i from 1 through 900 {
+  .slick-slide:nth-child(#{$i}) {
+    z-index: calc(900 - #{$i}) !important;
+  }
 }
 
-.m-carousel-img-group.slick-current {
-  animation: slideFadeIn ease 600ms;
+.slick-slide.slick-current {
+  z-index: 999 !important;
+}
+
+.slick-slide.slick-current + .slick-slide {
+  z-index: 998 !important;
+  opacity: 100% !important;
+
+  img {
+    opacity: 75%;
+  }
+}
+
+.slick-slide.slick-active {
+  opacity: 100% !important;
+}
+
+// .slick-slide:first-child {
+//   z-index: 997 !important;
+
+//   img {
+//     opacity: 50%;
+//   }
+
+//   &.slick-current {
+//     z-index: 999 !important;
+//   }
+// }
+
+.slick-track {
+  width: fit-content !important;
+}
+
+.slick-slide {
+  width: 100% !important;
 }
 
 %image-fade {
-  animation: imageFadeIn ease 600ms;
+  animation: 5010ms imageFadeOut cubic-bezier(.17,.67,0,.17) 2800ms;
 }
 
-.m-carousel-img-group.slick-active {
+.slick-current {
   .m-carousel-img-group__image_1 img {
-    @extend %image-fade;
-  }
-  
-  .m-carousel-img-group__image_2 img {
-    @extend %image-fade;
-    animation-delay: 100ms;
-  }
-  
-  .m-carousel-img-group__image_3 img {
     @extend %image-fade;
     animation-delay: 200ms;
   }
   
+  .m-carousel-img-group__image_2 img {
+    @extend %image-fade;
+    animation-delay: 400ms;
+  }
+  
+  .m-carousel-img-group__image_3 img {
+    @extend %image-fade;
+    animation-delay: 600ms;
+  }
+  
   .m-carousel-img-group__image_4 img {
     @extend %image-fade;
-    animation-delay: 300ms;
+    animation-delay: 800ms;
   }
 }
 
 
 
-@keyframes imageFadeIn {
+@keyframes imageFadeOut {
   0% {
+    opacity: 100%;
+  }
+  90% {
+    opacity: 100%;
+  }
+  100% {
     opacity: 0;
   }
-  100% {
-    opacity: 1;
-  }
 }
 
-@keyframes slideFadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
+
+@media (prefers-reduced-motion) {
+  /* styles to apply if a user's device settings are set to reduced motion */
+  .m-carousel-img-group__image_1,
+  .m-carousel-img-group__image_2,
+  .m-carousel-img-group__image_3,
+  .m-carousel-img-group__image_4 {
+    img {
+      animation: none;
+    }
   }
 }

@@ -48,13 +48,14 @@
     height: 100%;
     display: grid;
     align-items: end;
-    padding-left: var(--spacer);
-    padding-bottom: var(--spacer);
     margin-bottom: 0;
   }
 
   .a-heading__h5 a {
     color: var(--c-sliding-menu-link);
+    padding-left: var(--spacer);
+    padding-bottom: var(--spacer);
+    transition: display 0.2s cubic-bezier(.12,.78,.74,.9);
 
     svg {
       fill: currentColor;
@@ -64,10 +65,15 @@
     &:focus,
     &:active {
       color: var(--c-sliding-menu-link--active);
+      text-decoration: none;
 
       svg {
         fill: currentColor;
       }
+    }
+
+    &.js-hidden {
+      display: none;
     }
   }
 }

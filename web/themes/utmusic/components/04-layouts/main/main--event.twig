@@ -27,19 +27,10 @@
           event_types: event_types,
           event_areas: event_areas,
           breadcrumbs: breadcrumbs,
-
+          tabs: tabs,
+          messages: messages,
         } only
       %}
-
-      {% if messages is not empty or tabs is not empty %}
-        <div class="l-main__utility l-section--[12]">
-          <div class="l-section__zone-1">
-            {{ messages }}
-            {{ tabs }}
-          </div>
-        </div>
-
-      {% endif %}
 
       {% if content %}
         <div class="l-main--event__content-wrapper l-section-wrapper l-section--[8] theme--white-bg l-section-spacing-top--small l-section-spacing-bottom--small">

@@ -37,11 +37,22 @@
  */
 #}
 
-    
+{# Get breadcrumbs block #}
+{% set breadcrumbs = drupal_entity('block', 'menu_breadcrumbs') %}
+
+{% set messages = drupal_entity('block', 'messages') %}
+{% if directory != "themes/adminspring-theme" %}
+  {% set tabs = drupal_entity('block', 'tabs') %}
+{% endif %}
+
 {% set section_layout = content.field_carousel_header_sec_layout[0] ? content.field_carousel_header_sec_layout[0]['#markup'] %}
 
 {% include "@organisms/carousel-header/carousel-header.twig" with {
     directory: 'themes/utmusic',
+    tabs: tabs,
+    messages: messages,
+    breadcrumbs: breadcrumbs,
+    is_front: is_front,
 
     title_prefix: content.field_carousel_header_title_pref[0] ? content.field_carousel_header_title_pref[0],
     title: content.field_carousel_header_title[0] ? content.field_carousel_header_title[0]['#text'],

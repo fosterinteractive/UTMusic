@@ -1,16 +1,12 @@
 :root {
-  --header-height: #{rem(133px)};
-
-  @include breakpoint($bp-tablet) {
-    --header-height: #{rem(140px)};
-  }
+  --header-height: #{rem(94px)};
 
   @include breakpoint($bp-full-nav) {
-    --header-height: #{rem(250px)};
+    --header-height: #{rem(161px)};
   }
 
   @include breakpoint($bp-large) {
-    --header-height: #{rem(285px)};
+    --header-height: #{rem(195px)};
   }
 }
 
@@ -28,7 +24,7 @@
   grid-area: main;
   width: 100%;
   z-index: 2; // ensures the header is on top when they overlap
-  height: var(--header-height);
+  height: fit-content;
 }
 
 .l-page__main {
@@ -52,10 +48,6 @@
     position: inherit;
   }
 }
-
-// .l-main__utility {
-
-// }
 
 .l-page__footer {
   margin-top: auto;

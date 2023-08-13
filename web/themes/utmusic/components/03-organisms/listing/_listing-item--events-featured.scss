@@ -7,10 +7,16 @@
   box-shadow: 0px rem(15px) rem(30px) rgba(62, 19, 77, 0.09);
 
   @include breakpoint($bp-tablet) {
-    padding: calc(var(--spacer) * 0.5) calc(var(--spacer) * 0.5) calc(var(--spacer) * 0.5) calc(var(--spacer) * 1.5)  ;
+    padding: calc(var(--spacer) * 1.5)  ;
     justify-content: space-between;
     gap: calc(var(--spacer) * 2);
     align-items: center;
+  }
+
+  &.has-img {
+    @include breakpoint($bp-tablet) {
+      padding: calc(var(--spacer) * 0.5) calc(var(--spacer) * 0.5) calc(var(--spacer) * 0.5) calc(var(--spacer) * 1.5)  ;
+    }
   }
 }
 
@@ -20,8 +26,13 @@
   gap: var(--spacer);
 
   @include breakpoint($bp-tablet) {
-    width: 50%;
     padding: var(--spacer) 0;
+  }
+
+  &.has-img {
+    @include breakpoint($bp-tablet) {
+      width: 50%;
+    }
   }
 }
 

@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   align-items: center;
   margin-top: ru(1);
-  border-bottom: rem(2px) solid palette(grey, 900);
+  border-bottom: rem(2px) solid palette(grey, 850);
 
   @include breakpoint($bp-tablet-small) {
     flex-wrap: nowrap;
@@ -22,21 +22,21 @@
   padding: ru(0.25) ru(0.75);
   font-size: $base-font-size;
   font-weight: 600;
-  color: palette(grey, 400);
+  color: palette(grey, 300);
   text-decoration: none;
   transition: color 0.2s, border-bottom-color 0.2s;
 
   &:hover,
   &:focus,
   &:active {
-    border-bottom-color: palette(grey, 300);
-    color: palette(grey, 300);
+    border-bottom-color: palette(teal, 300);
+    color: palette(teal, 300);
   }
 }
 
 .m-tabs__item .is-active  {
-  border-bottom-color:  #ffc200;
-  color: palette(grey, 300);
+  border-bottom-color:  palette(blue, 300);
+  color: palette(blue, 300);
   cursor: default;
 }
 

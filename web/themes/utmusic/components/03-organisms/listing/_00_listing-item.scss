@@ -1,15 +1,19 @@
 %m-listing-item,
 .m-listing-item {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacer);
+ 
   border-bottom: rem(1px) solid var(--c-listing-item--border);
   overflow: hidden;
   padding-bottom: calc(var(--spacer) * 2/3);
 
-  @include breakpoint($bp-tablet) {
-    flex-direction: row;
+  &.has-img {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer);
+
+    @include breakpoint($bp-tablet) {
+      flex-direction: row;
+    }
   }
 }
 

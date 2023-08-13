@@ -3,10 +3,10 @@
   display: grid;
   grid-template-columns: [alpha] 1fr repeat(12, [col] minmax(1px, calc((65rem - (var(--spacer) * 11)) / 12))) 1fr [omega];
   grid-column-gap: var(--spacer);
-  grid-template-rows: var(--header-height) var(--spacer) minmax(calc(var(--spacer)*2), auto) minmax(1px, min-content) var(--spacer) var(--spacer) var(--spacer);
+  grid-template-rows: var(--header-height) minmax(var(--spacer), auto) minmax(calc(var(--spacer)*2), auto) minmax(1px, min-content) var(--spacer) var(--spacer) var(--spacer);
 
   @include breakpoint($bp-tablet) {
-    grid-template-rows: var(--header-height) var(--spacer) calc(var(--spacer)*2) minmax(1px, min-content) var(--spacer) var(--spacer) var(--spacer);
+    grid-template-rows: var(--header-height) minmax(var(--spacer), auto) calc(var(--spacer)*2) minmax(1px, min-content) var(--spacer) var(--spacer) var(--spacer);
   }
 }
 
@@ -14,19 +14,17 @@
 .o-hero-media__bg-decoration {
   grid-row: 1/ span 6;
   grid-column: alpha / omega;
+  background-image: url('../images/header.png');
   background-color: palette(teal, 1000);
-
-  img {
-    opacity: 70%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    mix-blend-mode: color-burn;
-    pointer-events: none;
-  }
-
+  background-repeat: no-repeat;
+  background-size: 400% 200%;
+  background-blend-mode: color-burn;
+  background-position: -300px center;
+  
   @include breakpoint($bp-tablet) {
     grid-row: 1/ span 5;
+    background-position: center;
+    background-size: 100% 100%;
   }
 }
 
@@ -38,6 +36,21 @@
 
   @include breakpoint($bp-tablet) {
     grid-column: col 1/ span 6;
+  }
+}
+
+%o-hero-media__tabs,
+.o-hero-media__tabs {
+  grid-row: 2;
+  grid-column: col 1/ span 12;
+  margin-bottom: var(--spacer);
+
+  @include breakpoint($bp-tablet) {
+    grid-column: col 1/ span 12;
+  }
+
+  .m-tabs--primary {
+    background-color: palette(white);
   }
 }
 
@@ -123,6 +136,11 @@
 
 
 // Text Veriation for content Header on Advanced Pages
+.o-hero-media--text {
+  @extend %o-hero-media-core;
+  grid-template-rows: var(--header-height) minmax(var(--spacer), auto) minmax(calc(var(--spacer)*2), auto) minmax(1px, min-content) var(--spacer);
+}
+
 .o-hero-media-page__text.o-hero-media--text__text {
   @include breakpoint($bp-tablet) {
     display: flex;
@@ -146,8 +164,6 @@
 %o-hero-media--text-wrapper,
 .o-hero-media--text__text-wrapper {
   grid-row: 4;
-  padding-top: var(--spacer);
-  padding-bottom: var(--spacer);
   z-index: 0;
 }
 
@@ -173,8 +189,4 @@
   .a-chip {
     margin-bottom: 0;
   }
-}
-
-.js-content-header-text {
-  height: fit-content;
 }

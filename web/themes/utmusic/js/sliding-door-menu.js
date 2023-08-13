@@ -41,12 +41,13 @@ const linkHoverState = (link, allItemsDoor) => {
 
   link.closest('.m-sliding-item__link').setAttribute('style', `flex-basis: calc(${100/allItemsDoor.length}% + 100px)`);
 
-  if (previousLink) {
+  if (previousLink && nextLink) {
     previousLink.setAttribute('style', `flex-basis: calc(${100/allItemsDoor.length}% - 50px)`);
-  }
-
-  if (nextLink) {
     nextLink.setAttribute('style', `flex-basis: calc(${100/allItemsDoor.length}% - 50px)`);
+  } else if (previousLink) {
+    previousLink.setAttribute('style', `flex-basis: calc(${100/allItemsDoor.length}% - 100px)`);
+  } else if (nextLink) {
+    nextLink.setAttribute('style', `flex-basis: calc(${100/allItemsDoor.length}% - 100px)`);
   }
 }
 
@@ -56,34 +57,36 @@ const linkResetState = (slideLinks, allItemsDoor) => {
   });
 }
 
-Drupal.behaviors.slidingDoorDrupal = {
-  attach(context) {
-    if (window.innerWidth < 768) {
-     return;
-    }
+const hideLinks = (link) => {
+  let allLinks = link.closest('.m-sliding-door-menu-desktop-links').querySelectorAll('.m-sliding-item__link a');
 
-    const slidingDoorWrapper = context.querySelector('.m-sliding-door-menu-wrapper');
-    if (!slidingDoorWrapper) {
-      return;
+  allLinks.forEach((hiddenLink) =>{
+    if (link != hiddenLink) {
+      hiddenLink.classList.add('js-hidden');
     }
+  });
+}
 
+const showLinks = (link) => {
+  let allLinks = link.closest('.m-sliding-door-menu-desktop-links').querySelectorAll('.m-sliding-item__link a');
+
+  allLinks.forEach((hiddenLink) =>{
+    if (link != hiddenLink) {
+      hiddenLink.classList.remove('js-hidden');
+    }
+  });
+}
+
+const mainFunctionality = (slidingDoorWrapper) => {
+  if (window.innerWidth >= 768) {
     let wrapperWidth = slidingDoorWrapper.offsetWidth;
     // ratio for image x:y = 117:52
     slidingDoorWrapper.style.height = (wrapperWidth * 52 / 117) + 'px';
 
-    const allItemsDoor = slidingDoorWrapper.querySelectorAll('.m-sliding-item');
-    const itemWidth = wrapperWidth / allItemsDoor.length;
-    resetImageState(allItemsDoor, itemWidth);
+    let allItemsDoor = slidingDoorWrapper.querySelectorAll('.m-sliding-item');
 
-    window.addEventListener('resize', ()=> {
-      if (window.innerWidth < 768) {
-        return;
-      }
-      let wrapperWidth = slidingDoorWrapper.offsetWidth;
-      const itemWidth = wrapperWidth / allItemsDoor.length;
-      resetImageState(allItemsDoor, itemWidth);
-    });
-    
+    let itemWidth = wrapperWidth / allItemsDoor.length;
+    resetImageState(allItemsDoor, itemWidth);
 
     let slideLinks = slidingDoorWrapper.querySelectorAll('.m-sliding-door-menu-desktop-links .m-sliding-item__link a');
 
@@ -95,26 +98,86 @@ Drupal.behaviors.slidingDoorDrupal = {
       let relatedItem = link.closest('.m-sliding-door-menu-wrapper').querySelector(`#${linkId}`);
 
       link.addEventListener('mouseenter', () => {
+        hideLinks(link);
         setHoverState(allItemsDoor, relatedItem, itemWidth, link);
         linkHoverState(link, allItemsDoor );
       });
 
       link.addEventListener('mouseleave', () => {
+        showLinks(link);
         resetImageState(allItemsDoor, itemWidth);
         resetState(link);
         linkResetState(slideLinks, allItemsDoor);
       });
 
       link.addEventListener('focus', () => {
+        hideLinks(link);
         setHoverState(allItemsDoor, relatedItem, itemWidth, link);
         linkHoverState(link, allItemsDoor);
       });
 
       link.addEventListener('blur', () => {
+        showLinks(link);
         resetImageState(allItemsDoor, itemWidth);
         resetState(link);
         linkResetState(slideLinks, allItemsDoor);
       });
+    });
+  }
+}
+
+Drupal.behaviors.slidingDoorDrupal = {
+  attach(context) {
+
+    let slidingDoorWrapper = context.querySelector('.m-sliding-door-menu-wrapper');
+    if (!slidingDoorWrapper) {
+      return;
+    }
+
+    mainFunctionality(slidingDoorWrapper);
+
+    window.addEventListener('resize', ()=> {
+      let slidingDoorWrapper = context.querySelector('.m-sliding-door-menu-wrapper');
+      let allItemsDoor = slidingDoorWrapper.querySelectorAll('.m-sliding-item');
+
+
+      // if mobile or tablet - we should remove all styles which were applied from desktop
+      if (window.innerWidth < 768) {
+        //we don't restrict the height for container
+        slidingDoorWrapper.style.height = 'auto';
+
+        let slideLinks = slidingDoorWrapper.querySelectorAll('.m-sliding-door-menu-desktop-links .m-sliding-item__link a');
+
+
+        slideLinks.forEach(link => {
+          link.closest('.m-sliding-item__link').setAttribute('style', `flex-basis: unset;`);
+    
+          // Get Id of current link and find related item by id
+          const linkId = link.getAttribute('id').replace('link-','');
+          let relatedItem = link.closest('.m-sliding-door-menu-wrapper').querySelector(`#${linkId}`);
+          
+          relatedItem.classList.remove('highlighted-slide');
+
+          // unset clip-path for each item
+          for (let i = 0; i < allItemsDoor.length; i++) {
+            allItemsDoor[i].setAttribute('style', `clip-path: unset`);
+          }
+        });
+
+      } else if (window.innerWidth >= 768) {
+
+        //Calculate the width of container with sliding doors
+        let wrapperWidth = slidingDoorWrapper.offsetWidth;
+        let itemWidth = wrapperWidth / allItemsDoor.length;
+
+        // we should recalculate the height accordinly to ratio
+        slidingDoorWrapper.style.height = (wrapperWidth * 52 / 117) + 'px';
+
+        resetImageState(allItemsDoor, itemWidth);
+      }
+
+      mainFunctionality(slidingDoorWrapper);
+
     });
   },
 };

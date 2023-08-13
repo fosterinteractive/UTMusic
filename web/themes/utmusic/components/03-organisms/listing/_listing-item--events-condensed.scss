@@ -1,5 +1,13 @@
 .m-listing-item--events-condensed {
   @extend %m-listing-item;
+    
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer);
+
+  @include breakpoint($bp-tablet) {
+    flex-direction: row;
+  }
 }
 
 .m-listing-item--events-condensed__event-date {

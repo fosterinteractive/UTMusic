@@ -17,18 +17,10 @@
           summary: summary,
           social_share: social_share,
           breadcrumbs: breadcrumbs,
+          messages: messages,
+          tabs: tabs,
         } only
       %}
-
-      {% if messages is not empty or tabs is not empty %}
-        <div class="l-main__utility l-section--[12]">
-          <div class="l-section__zone-1">
-            {{ messages }}
-            {{ tabs }}
-          </div>
-        </div>
-
-      {% endif %}
 
       <div class="l-section-bg l-section--[8] l-section-spacing-top--medium l-section-spacing-bottom--medium">
         

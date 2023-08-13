@@ -5,6 +5,7 @@ import cardDataIllustrationTags from './card--illustration-with-tags.yml';
 
 import cardDataImage from './card--image.yml';
 
+import './card';
 
 /**
  * Storybook Definition.
