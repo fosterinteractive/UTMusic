@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "35b17a4d08d1fee456c62faf836b0d5b",
+    "content-hash": "662106c29de0f653e34b066b130dd0ef",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -8540,6 +8540,52 @@
             "homepage": "https://www.drupal.org/project/media_entity_instagram",
             "support": {
                 "source": "https://git.drupalcode.org/project/media_entity_instagram"
+            }
+        },
+        {
+            "name": "drupal/media_entity_link",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/media_entity_link.git",
+                "reference": "2.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/media_entity_link-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "2ad0cb1c608a7c2781908b3a94c4f9a475d74e75"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0",
+                    "datestamp": "1663669498",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Disha Bhadra (dishabhadra)",
+                    "homepage": "https://www.drupal.org/u/dishabhadra",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Provides a media entity of type link to add external/internal link.",
+            "homepage": "https://www.drupal.org/project/media_entity_link",
+            "support": {
+                "source": "https://git.drupalcode.org/project/media_entity_link",
+                "issues": "https://www.drupal.org/project/issues/media_entity_link"
             }
         },
         {
@@ -24161,7 +24207,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "pantheon-upstreams/upstream-configuration": 20,
-        "fosterinteractive/adminspring-theme": 20
+        "fosterinteractive/adminspring-theme": 20,
+        "drupal/rabbit_hole": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
@@ -24170,5 +24217,5 @@
     "platform-overrides": {
         "php": "8.1.13"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.1.0"
 }
