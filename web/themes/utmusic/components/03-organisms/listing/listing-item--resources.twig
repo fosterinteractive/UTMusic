@@ -41,8 +41,8 @@
       </div>
     {% endif %}  
 
-    {% if files %}
-      <div class="m-listing-item{{ variation }}__files">
+    {% if resources %}
+      <div class="m-listing-item{{ variation }}__items">
         {% if sb_demo %}
           {% for item in files %}
             {% include "@atoms/file/file.twig" with {
@@ -54,23 +54,23 @@
             %}
           {% endfor %}
           {% else %}
-            {{ files }}
+            {{ resources }}
           {% endif %}
       </div>
     {% endif %}
 
-    {% if from_url %}
+    {# {% if from_url %}
       {% include '@atoms/link/link.twig' with {
         directory: directory,
         base_class: 'a-file__link',
-        url: from_url,
-        label: from_title,
+        url: file_url,
+        label: media_name,
         variation: "icon-left",
         html_element: a,
-        icon: "wpforms",
+        icon: "download",
         } only 
       %}
-    {% endif %}
+    {% endif %} #}
 
   </div>
 </div>
