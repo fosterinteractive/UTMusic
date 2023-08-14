@@ -2,7 +2,7 @@ uuid: 4ba43986-9f44-4aaf-8162-8bd6604cf680
 langcode: en
 status: true
 dependencies: {  }
-name: 'Staff Roles'
+name: 'Staff Category'
 vid: staff_roles
 description: ''
 weight: 0

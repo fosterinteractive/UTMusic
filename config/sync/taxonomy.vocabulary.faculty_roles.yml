@@ -2,7 +2,7 @@ uuid: 44e4efe6-3588-49e5-9c22-0ebd18d3146a
 langcode: en
 status: true
 dependencies: {  }
-name: 'Faculty Roles'
+name: 'Faculty Category'
 vid: faculty_roles
 description: ''
 weight: 0
