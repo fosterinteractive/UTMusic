@@ -8,9 +8,11 @@
 .m-card__image-illustration {
   display: grid;
   grid-template-columns: minmax(min-content, auto) rem(15px) minmax(min-content, auto);
+  align-items: center;
   color: var(--c-card--illustration);
   margin-left: -15px;
   position: relative;
+  width: fit-content;
 
   & > svg,
   .a-icon-external--xsmall {

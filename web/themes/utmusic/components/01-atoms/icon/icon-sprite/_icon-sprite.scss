@@ -95,8 +95,8 @@ $icon-size: 0.6em;
 .a-icon-external--xsmall svg {
   @extend %a-icon-external-svg;
 
-  width: rem(42px);
-  height: rem(37px);
+  max-width: rem(37px);
+  max-height: rem(37px);
 }
 
 // %a-icon-external--small svg,
