@@ -131,7 +131,12 @@
 {% if content.field_event_date[0] %}
   {% set date_start = content.field_event_date[0]['#value'] %}
   {% set date_end = content.field_event_date[0]['#end_value'] %}
-  {% set date_time = date_start|date('g:ia') %}
+
+  {% if date_end %}
+    {% set date_time = date_start|date('g:ia') ~ ' - ' ~ date_end|date('g:ia') %}
+  {% else %}
+    {% set date_time = date_start|date('g:ia') %}
+  {% endif %}
 
   {% set event_date_start = date_start|date('F d, Y') %}
   {% set event_date_end = date_end|date('F d, Y') %}
