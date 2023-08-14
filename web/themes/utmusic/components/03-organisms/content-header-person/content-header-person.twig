@@ -140,7 +140,9 @@
                   icon: 'book-bulb',
                 } only 
               %}
-              <a class="o-hero-media__info-link" href="{{discovery_url}}"{% if aria_discovery %} aria-label="{{ aria_discovery }}"{% endif %}>DiscoveryResearch Profile</a>
+              <a class="o-hero-media__info-link" href="{{discovery_url}}"{% if aria_discovery %} aria-label="{{ aria_discovery }}"{% endif %}>
+                {{ 'DiscoverResearch Profile'|t }}
+              </a>
             </div>
           {% endif %}
 

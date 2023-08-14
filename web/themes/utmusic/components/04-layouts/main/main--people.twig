@@ -1,7 +1,7 @@
 {% embed "@layouts/main/main.twig" %}
 
   {% block content_single_page %}
-    <div class="l-main--program">
+    <div class="l-main--people">
 
       {% if header_variation == 'text' %}
         {% set variation = 'person-text' %}
@@ -41,31 +41,31 @@
         <div class="l-section__zone-1 l-flex">
           {% if profile_type == 'default' %}
             {% if education %}
-              <div class="l-main--program__education">
+              <div class="l-main--people__education">
                 {{education}}
               </div>
             {% endif %}
 
             {% if background %}
-              <div class="l-main--program__background">
+              <div class="l-main--people__background">
                 {{background}}
               </div>
             {% endif %}
 
             {% if activities %}
-              <div class="l-main--program__activities">
+              <div class="l-main--people__activities">
                 {{activities}}
               </div>
             {% endif %}
 
             {% if teaching %}
-              <div class="l-main--program__teaching">
+              <div class="l-main--people__teaching">
                 {{teaching}}
               </div>
             {% endif %}
 
             {% if discovery_url or creative_works %}
-              <div class="l-main--program__creative_works">
+              <div class="l-main--people__creative_works">
                 {% if creative_works %}
                   {{creative_works}}
                   <br/>  
@@ -76,13 +76,16 @@
                 {% endif %}
 
                 {% if discovery_url %}
-                  <div class="l-main--program__creative_works-discovery">
-                    {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
-                        directory: directory,
-                        icon: 'book-bulb',
-                      } only 
-                    %}
-                    <a class="l-main--program__creative_works-discovery-link" href="{{discovery_url}}/publications"{% if aria_discovery %} aria-label="{{ aria_discovery }}"{% endif %}>View on DiscoveryResearch</a>
+                  <div class="l-main--people__creative_works-discovery">
+                    
+                    <a class="l-main--people__creative_works-discovery-link" href="{{discovery_url}}/publications"{% if aria_discovery %} aria-label="{{ aria_discovery }}"{% endif %}>
+                      {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                          directory: directory,
+                          icon: 'book-bulb',
+                        } only 
+                      %}
+                      {{ 'View on DiscoverResearch'|t }}
+                    </a>
                   </div>
                 {% endif %}
               </div>
@@ -91,22 +94,29 @@
           {% elseif profile_type == 'custom' %}
 
             {% if custom_content %}
-              <div class="l-main--program__custom_content">
+              <div class="l-main--people__custom_content">
                 {{custom_content}}
               </div>
             {% endif %}
 
             {% if discovery_url %}
-              <div class="l-main--program__creative_works">
+              <div class="l-main--people__creative_works">
                   <h2 class="a-heading__h2">Scholarly &amp; Creative Works</h2>
 
-                  <div class="l-main--program__creative_works-discovery">
-                    {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                  <div class="l-main--people__creative_works-discovery">
+                    {# {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
                         directory: directory,
                         icon: 'book-bulb',
                       } only 
-                    %}
-                    <a class="l-main--program__creative_works-discovery-link" href="{{discovery_url}}/publications"{% if aria_discovery %} aria-label="{{ aria_discovery }}"{% endif %}>View on DiscoveryResearch</a>
+                    %} #}
+                    <a class="l-main--people__creative_works-discovery-link" href="{{discovery_url}}/publications"{% if aria_discovery %} aria-label="{{ aria_discovery }}"{% endif %}>
+                      {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                          directory: directory,
+                          icon: 'book-bulb',
+                        } only 
+                      %}
+                      {{ 'View on DiscoverResearch'|t }}
+                    </a>
                   </div>
               </div>
             {% endif %}

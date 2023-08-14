@@ -71,40 +71,43 @@
 }
 
 //Person Variation
-%l-main--program__content {
+%l-main--people__content {
   margin-bottom: ru(1);
 }
 
-.l-main--program__education {
-  @extend %l-main--program__content;
+.l-main--people__education {
+  @extend %l-main--people__content;
 }
 
-.l-main--program__background {
-  @extend %l-main--program__content;
+.l-main--people__background {
+  @extend %l-main--people__content;
 }
 
-.l-main--program__activities {
-  @extend %l-main--program__content;
+.l-main--people__activities {
+  @extend %l-main--people__content;
 }
 
-.l-main--program__teaching {
-  @extend %l-main--program__content;
+.l-main--people__teaching {
+  @extend %l-main--people__content;
 }
 
-.l-main--program__creative_works {
-  @extend %l-main--program__content;
+.l-main--people__creative_works {
+  @extend %l-main--people__content;
 }
 
-.l-main--program__custom_content {
-  @extend %l-main--program__content;
+.l-main--people__custom_content {
+  @extend %l-main--people__content;
 }
 
-.l-main--program__creative_works-discovery {
+.l-main--people__creative_works-discovery {
   @extend %o-hero-media--person__info-items;
   color: palette(grey, 300);
 
-  .l-main--program__creative_works-discovery-link {
+  .l-main--people__creative_works-discovery-link {
     @extend %o-hero-media__info-link;
+
+    display: flex;
+    gap: calc(var(--spacer)*0.5);
 
     color: palette(grey, 300);
   }
