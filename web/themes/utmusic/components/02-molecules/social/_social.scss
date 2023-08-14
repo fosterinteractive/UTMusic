@@ -24,7 +24,6 @@
   &:focus,
   &:active {
     border: rem(1px) solid var(--c-social-svg--active);
-    // box-shadow: 0px rem(4px) rem(10px) rgba(62, 19, 77, 0.09);
 
     .m-share__icon-svg svg {
       color: var(--c-social-svg--active);
