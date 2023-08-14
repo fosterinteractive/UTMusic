@@ -1,0 +1,25 @@
+uuid: b93a7c67-8176-45a8-826a-948978d2ea95
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.table
+  module:
+    - ckeditor5
+format: table
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - bold
+      - italic
+      - insertTable
+      - bulletedList
+      - link
+  plugins:
+    ckeditor5_list:
+      reversed: true
+      startIndex: true
+    linkit_extension:
+      linkit_enabled: false
+image_upload: {  }

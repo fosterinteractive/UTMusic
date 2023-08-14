@@ -7,6 +7,7 @@ dependencies:
     - filter.format.rich_text
     - filter.format.rich_text_w_images
     - filter.format.simple_text
+    - filter.format.table
     - media.type.ed_file
     - media.type.ed_image
     - media.type.illustration
@@ -217,6 +218,7 @@ permissions:
   - 'use text format rich_text'
   - 'use text format rich_text_w_images'
   - 'use text format simple_text'
+  - 'use text format table'
   - 'view all media revisions'
   - 'view any unpublished content'
   - 'view ed_notice revisions'

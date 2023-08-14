@@ -1,0 +1,23 @@
+uuid: 3bb4a57d-d5f6-4200-811c-670448615669
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_table_row_background
+    - paragraphs.paragraphs_type.tables
+  module:
+    - options
+id: paragraph.tables.field_table_row_background
+field_name: field_table_row_background
+entity_type: paragraph
+bundle: tables
+label: 'Row Background'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: background
+default_value_callback: ''
+settings: {  }
+field_type: list_string

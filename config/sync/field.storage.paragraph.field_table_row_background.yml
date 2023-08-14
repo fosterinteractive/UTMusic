@@ -1,0 +1,24 @@
+uuid: 315b9b59-4ddf-4f1e-a14d-28ae67a9d304
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_table_row_background
+field_name: field_table_row_background
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: background
+      label: 'Show background for odd rows'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
