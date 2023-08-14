@@ -48,6 +48,7 @@
   display: flex;
   gap: calc(var(--spacer) * 0.2);
   align-items: center;
+  color: var(--c-listing-item--date);
   
   svg {
     color: var(--c-heading-link);

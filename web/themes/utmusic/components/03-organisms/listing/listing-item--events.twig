@@ -28,21 +28,23 @@
   <div class="m-listing-item{{ variation }}__content {% if image %} has-img{% endif %}">
 
     <div>
-      {% if event_date or areas or ensemble %}
-        <div class="m-listing-item{{ variation }}__category">
-          {% if event_date %}
-              {{- event_date -}}
-          {% endif %}{% if event_date and (areas or ensemble) %}
-            {{- ':' -}}
-          {% endif %}
+      {#       
+        {% if event_date or areas or ensemble %}
+          <div class="m-listing-item{{ variation }}__category">
+            {% if event_date %}
+                {{- event_date -}}
+            {% endif %}{% if event_date and (areas or ensemble) %}
+              {{- ':' -}}
+            {% endif %}
 
-          {% for area in areas %}
-            {{ area }}{% if not loop.last %},{% endif %}
-          {% endfor %}
-          {% if areas and ensemble %} {{ '|' }}{% endif %}
-          {% if ensemble %}{{ ensemble }}{% endif %}
-        </div>
-      {% endif %}
+            {% for area in areas %}
+              {{ area }}{% if not loop.last %},{% endif %}
+            {% endfor %}
+            {% if areas and ensemble %} {{ '|' }}{% endif %}
+            {% if ensemble %}{{ ensemble }}{% endif %}
+          </div>
+        {% endif %} 
+      #}
 
       <div class="m-listing-item{{ variation }}__title">
         {% include "@atoms/text/headings/heading.twig" with {
