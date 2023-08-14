@@ -15,14 +15,16 @@
   max-width: rem(60px);
   height: auto;
   max-height: rem(60px);
-  padding: rem(20px) rem(15px);
+  padding: rem(15px) rem(10px);
   border-radius: rem(12px);
+  border: rem(1px) solid transparent;
   background-color: var(--c-social-background);  
 
   &:hover,
   &:focus,
   &:active {
-    box-shadow: 0px rem(4px) rem(10px) rgba(62, 19, 77, 0.09);
+    border: rem(1px) solid var(--c-social-svg--active);
+    // box-shadow: 0px rem(4px) rem(10px) rgba(62, 19, 77, 0.09);
 
     .m-share__icon-svg svg {
       color: var(--c-social-svg--active);
