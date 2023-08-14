@@ -64,12 +64,11 @@
 .m-listing-item--events-featured__wrapper-title-date {
   display: flex;
   flex-direction: column;
-  gap: calc(var(--spacer) * 0.3);
+  gap: calc(var(--spacer) * 0.4);
 }
 
 .m-listing-item--events-featured__date {
   @extend %m-listing-item__date;
-  // text-transform: uppercase;
 }
 
 .m-listing-item--events-featured__title .a-heading__h2 {

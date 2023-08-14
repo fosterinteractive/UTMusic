@@ -35,7 +35,7 @@
 }
 
 .m-listing-item--events-condensed__category {
-  @extend %m-listing-item__date;
+  @extend .m-listing-item--events__category;
 }
 
 .m-listing-item--events-condensed__tags {
@@ -52,6 +52,8 @@
   
   svg {
     color: var(--c-heading-link);
+    min-width: rem(20px);
+    min-height: rem(20px);
     width: rem(20px);
     height: rem(20px);
   }

@@ -146,7 +146,7 @@
 
   // @organisms/listing
   --c-listing-item--border: #{palette(grey, 800)};
-  --c-listing-item--date: #{palette(grey, 300)};
+  --c-listing-item--date: #{palette(grey, 400)};
 
   //@organisms/listing/listing-item-featured
   --c-news-featured-title:  #{palette(teal, 300)};
@@ -220,7 +220,7 @@
   
   // @organisms/listing
   --c-listing-item--border: #{palette(teal, 700)};
-  --c-listing-item--date: #{palette(grey, 300)};
+  --c-listing-item--date: #{palette(grey, 400)};
 }
 
 .theme--dark-blue-bg {

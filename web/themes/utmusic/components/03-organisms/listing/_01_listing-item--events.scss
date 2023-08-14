@@ -47,5 +47,6 @@
 
 
 .m-listing-item--events__category {
-  @extend %m-listing-item__date;
+  @extend %a-type--xsmall;
+  color: palette(grey, 300);
 }

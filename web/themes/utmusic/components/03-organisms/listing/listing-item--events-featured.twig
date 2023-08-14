@@ -35,6 +35,26 @@
         %}
         <div class="m-listing-item{{ variation }}__illustration-bg"></div>
       </div>
+    </div>
+    
+    <div class="m-listing-item{{ variation }}__wrapper-title-date">
+
+      {# {% if event_date %}
+        <div class="m-listing-item{{ variation }}__date">
+          {{ event_date }}
+        </div>
+      {% endif %} #}
+
+      {% if title %}
+        <div class="m-listing-item{{ variation }}__title">
+          {% include "@atoms/text/headings/heading.twig" with {
+              html_element: 'h2',
+              appearance: 'h2',
+              text: title,
+            } only
+          %}
+        </div>
+      {% endif  %}
 
       {% if time_start or location %}
         <div class="m-listing-item{{ variation }}__tags">
@@ -67,27 +87,6 @@
 
         </div>
       {% endif %}
-
-    </div>
-    
-    <div class="m-listing-item{{ variation }}__wrapper-title-date">
-
-      {% if event_date %}
-        <div class="m-listing-item{{ variation }}__date">
-          {{ event_date }}
-        </div>
-      {% endif %}
-
-      {% if title %}
-        <div class="m-listing-item{{ variation }}__title">
-          {% include "@atoms/text/headings/heading.twig" with {
-              html_element: 'h2',
-              appearance: 'h2',
-              text: title,
-            } only
-          %}
-        </div>
-      {% endif  %}
     </div>
 
     {% if summary %}

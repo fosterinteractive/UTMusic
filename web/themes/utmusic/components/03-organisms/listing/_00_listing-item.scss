@@ -70,7 +70,7 @@
 %m-listing-item__tags,
 .m-listing-item__tags {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: calc(var(--spacer) * 0.5);
 }
 

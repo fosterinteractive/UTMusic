@@ -110,7 +110,15 @@
 
   {% set date_day = start_date|date('j') %}
   {% set date_month = start_date|date('F') %}
-  {% set date_time = start_date|date('g:ia') %}
+  
+  {% set date_start = content.field_event_date[0]['#value'] %}
+  {% set date_end = content.field_event_date[0]['#end_value'] %}
+   
+  {% if date_end %}
+    {% set date_time = date_start|date('g:ia') ~ ' - ' ~ date_end|date('g:ia') %}
+  {% else %}
+    {% set date_time = date_start|date('g:ia') %}
+  {% endif %}
 {% endif %}
 
 

@@ -99,6 +99,12 @@
 {% if content.field_event_date[0] %}
   {% set date_start = content.field_event_date[0]['#value'] %}
   {% set date_end = content.field_event_date[0]['#end_value'] %}
+   
+  {% if date_end %}
+    {% set date_time = date_start|date('g:ia') ~ ' - ' ~ date_end|date('g:ia') %}
+  {% else %}
+    {% set date_time = date_start|date('g:ia') %}
+  {% endif %}
 
   {% set event_date_start = date_start|date('F d, Y') %}
   {% set event_date_end = date_end|date('F d, Y') %}
@@ -136,8 +142,6 @@
     url: url,
     link_text: 'Learn More'|t,
     event_date: event_date,
-    start_time: start_time,
-    end_time: end_time,
     timezone: 'EST',
     location: content.field_event_location[0] ? content.field_event_location,
     header_variation: content.field_event_header_variation[0] ? content.field_event_header_variation[0]['#markup'],
