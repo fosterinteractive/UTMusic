@@ -223,3 +223,8 @@ body.mm-wrapper {
 .js .dropbutton .dropbutton__item input {
   min-height: unset;
 }
+
+// styles for contextual edit lins on LB sections
+.lpb-controls {
+  flex-wrap: wrap;
+}
