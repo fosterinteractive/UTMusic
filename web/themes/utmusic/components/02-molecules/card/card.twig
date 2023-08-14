@@ -87,19 +87,22 @@
         {{ description }}
       </div>
     {% endif %}
-  </div>
 
-  {% if categories %}
-    <div class="m-card__tags {% if variation %}m-card{{ variation }}__tags{% endif %}">
-      {% for item in categories %}
-        {% include '@atoms/chip/chip.twig' with {
-            text: sb_demo ? item.category : item,
-            html_element: 'div',
-          } only 
-        %}
-      {% endfor %}
-    </div>
-  {% endif %}
+    {% if categories %}
+      <div class="m-card__tags {% if variation %}m-card{{ variation }}__tags{% endif %}">
+        {% for item in categories %}
+          {# {% include '@atoms/chip/chip.twig' with {
+              text: sb_demo ? item.category : item,
+              html_element: 'div',
+            } only 
+          %} #}
+          {{ item }}
+          {% if not loop.last %} <span class="m-card__tags-pipe">{{ '|' }}</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
 
   {% if link_url and link_label %}
     <div class="m-card{{ variation }}__link">
