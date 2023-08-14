@@ -69,22 +69,16 @@
 
 .m-listing-item--events-featured__date {
   @extend %m-listing-item__date;
+  font-weight: 700;
 }
 
 .m-listing-item--events-featured__title .a-heading__h2 {
   margin: 0;
   color: var(--c-events-featured-title);
-
-  &::before {
-    content: unset;
-  } 
-
-  .a-icon--inline {
-    display: none;
-  }
 }
 
 .m-listing-item--events-featured__summary {
+  @extend %a-type--small;
   color: var(--c-text);
 }
 

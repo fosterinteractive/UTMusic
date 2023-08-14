@@ -39,11 +39,11 @@
     
     <div class="m-listing-item{{ variation }}__wrapper-title-date">
 
-      {# {% if event_date %}
+      {% if event_date %}
         <div class="m-listing-item{{ variation }}__date">
           {{ event_date }}
         </div>
-      {% endif %} #}
+      {% endif %}
 
       {% if title %}
         <div class="m-listing-item{{ variation }}__title">
@@ -122,7 +122,7 @@
         } only
       %}
 
-      {% if event_date_month or event_date_day %}
+      {# {% if event_date_month or event_date_day %}
         <div class="m-listing-item{{ variation }}__event-date">
           <div class="m-listing-item{{ variation }}__event-date-month">
             {{ event_date_month }}
@@ -131,7 +131,7 @@
             {{ event_date_day }}
           </div>
         </div>
-      {% endif %}
+      {% endif %} #}
     </div>
   {% endif %}
 </div>

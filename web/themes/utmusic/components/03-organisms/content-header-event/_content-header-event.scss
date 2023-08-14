@@ -55,7 +55,7 @@
   gap: calc(var(--spacer) * 0.5);
   align-items: center;
   color: palette(blue, 300);
-  color: var(--c-listing-item--date);
+  color: var(--c-listing-item--metainfo);
 
   svg {
     color: var(--c-heading-link);

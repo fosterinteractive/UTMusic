@@ -57,18 +57,14 @@
         {% endif %}
       </div>
     {% endif %}
-  </div>
-    
-  {% if areas_specialization %}
+
+    {% if areas_specialization %}
     <div class="m-listing-item{{ variation }}__tags">
       {% for item in areas_specialization %}
-        {% include '@atoms/chip/chip.twig' with {
-            text: item,
-            html_element: 'div',
-          } only 
-        %}
+        
+        {{ item }}{% if not loop.last %}{{ ',' }}{% endif %}
       {% endfor %}
     </div>
   {% endif %}
-  
+  </div>
 </div>

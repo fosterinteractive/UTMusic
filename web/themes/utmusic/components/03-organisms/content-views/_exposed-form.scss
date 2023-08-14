@@ -1,4 +1,5 @@
 .m-exposed-form__wrapper {
+  margin-bottom: calc(var(--spacer)*2);
   @include breakpoint($bp-phone-large) {
     padding: 0;
   }

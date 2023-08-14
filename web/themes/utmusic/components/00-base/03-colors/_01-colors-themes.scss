@@ -36,7 +36,7 @@
   --c-button-icon-bg--active: #{palette(white)};
 
   // @atoms/chip
-  --c-chip: #{palette(grey, 300)};
+  --c-chip: #{palette(grey, 400)};
   --c-chip--active: #{palette(grey, 300)};
   --c-chip-border: #{palette(grey, 800)};
   --c-chip-border--active: #{palette(grey, 900)};
@@ -144,7 +144,6 @@
   --c-sliding-menu-link: #{palette(white)};
   --c-sliding-menu-link--active: #{palette(teal, 700)};
 
-
   // @organisms/listing
   --c-listing-item--border: #{palette(grey, 800)};
   --c-listing-item--date: #{palette(grey, 400)};
@@ -165,6 +164,7 @@
 
   --c-people-title: #{palette(blue, 300)};
   --c-people-title--active: #{palette(teal, 300)};
+  --c-listing-item--metainfo: #{palette(grey, 300)};
 
   //pager
   --c-pager--btn: #{palette(blue, 300)};

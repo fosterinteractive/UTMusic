@@ -1,4 +1,5 @@
 select {
+  @extend %a-type--small;
   border-image: none;
   // background-image: url("./svg-src/svg-art/ico-chevron-down--red-minified.svg");
   // Minfied with https://vecta.io/nano

@@ -11,16 +11,13 @@
   gap: calc(var(--spacer) * 0.1);
 }
 
-.m-listing-item--people__position {
-  @extend %a-type--xsmall;
-}
 
 .m-listing-item--people__title .a-heading__last-word svg {
   display: none;
 }
 
 .m-listing-item--people__content .a-heading__h3 {
-  @extend %a-type--medium;
+  @extend %a-type--large;
   font-weight: normal;
   margin-bottom: 0;
   color: var(--c-people-title);
@@ -38,6 +35,9 @@
 
 .m-listing-item--people__tags {
   @extend %m-listing-item__tags;
+  @extend %a-type--xxsmall;
+  color: palette(grey, 600);
+  text-transform: uppercase;
 }
 
 .m-listing-item--people__img-demo img {
