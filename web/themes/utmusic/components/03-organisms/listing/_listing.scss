@@ -85,6 +85,16 @@
   }
 }
 
+.o-listing--news .m-listing-item {
+  padding-bottom: calc(var(--spacer) * 2/3);
+  border-bottom: rem(1px) solid var(--c-listing-item--border);
+
+  .m-listing-item__content {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
 .o-listing--news .o-listing__items {
   gap: 0;
 }

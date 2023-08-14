@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacer);
+  padding-bottom: calc(var(--spacer) * 2/3);
+  border-bottom: rem(1px) solid var(--c-listing-item--border);
 
   @include breakpoint($bp-tablet) {
     flex-direction: row;
@@ -24,6 +26,8 @@
 
 .m-listing-item--events-condensed__content {
   @extend  %m-listing-item__content;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .m-listing-item--events-condensed__title  h3 {

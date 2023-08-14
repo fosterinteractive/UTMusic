@@ -32,49 +32,28 @@
         } only
       %}
     </div>
-
-    {% if date_string and variation != '--news-condensed' %}
-      <div class="m-listing-item{{ variation }}__date">
-        {{ date_string }}
-      </div>
-    {% endif %}
-
-    {% if variation == '--news-condensed' %}
-    <div class="m-listing-item{{variation}}__wrapper-tags-date">
-    {% endif %}
-
-      {% if news_categories or areas_study %}
-        <div class="m-listing-item{{ variation }}__tags">
-
-          {% for item in news_categories %}
-            {% include '@atoms/chip/chip.twig' with {
-                text: sb_demo ? item.category : item,
-                html_element: 'div',
-              } only 
-            %}
-          {% endfor %}
-
-          {% for item in areas_study %}
-            {% include '@atoms/chip/chip.twig' with {
-                text: sb_demo ? item.area : item,
-                html_element: 'div',
-              } only 
-            %}
-          {% endfor %}
-
-        </div>
-        
-      {% endif %}
-
-      {% if date_string and variation == '--news-condensed' %}
-        <div class="m-listing-item{{ variation }}__date">
+      
+    {% if date_string or news_categories or areas_study %}
+      <div class="m-listing-item{{variation}}__date">
+        {% if date_string  %}
           {{ date_string }}
-        </div>
-      {% endif %}
-
-      {% if variation == '--news-condensed' %}
+        {% endif %}
+        {% if date_string and (news_categories or areas_study) %}
+          {{ "|" }}
+        {% endif %}
+        {% if news_categories %}
+          {% for item in news_categories %}
+            {{item}}{% if not loop.last %}{{','}}{% endif %}{% endfor %}{% endif %}{% if news_categories and areas_study %}{{-',' -}}
+        {% endif %}
+        {% if areas_study %}
+          {% for item in areas_study %}
+            {{ item }}{% if not loop.last %}{{','}}{% endif %}
+          {% endfor %}
+        {% endif %}
       </div>
-      {% endif %}
+    {% endif %}
+
+
 
         {# {% if text %}
       <div class="m-listing-item{{ variation }}__text" data-dotdotdot="elipsis">

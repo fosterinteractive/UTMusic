@@ -22,24 +22,12 @@
 .m-listing-item--program__type {
   @extend %a-type--headings;
   @extend %a-type--xsmall;
-
+  font-weight: 700;
   margin-bottom: rem(6px);
-  color: var(--c-heading-decoration);
-  text-transform: uppercase
-}
-
-.m-listing-item--program__title {
-  .a-heading__h3 a {
-    color: var(--c-button);
-
-    .a-icon--inline {
-      fill: var(--c-button);
-    }
-  }
 }
 
 .m-listing-item--program__concentration {
-  @extend %a-type--xsmall;
+  @extend %a-type--xxsmall;
 }
 
 .m-listing-item--program__img {

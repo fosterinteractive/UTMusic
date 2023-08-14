@@ -102,11 +102,7 @@
 
 {# Get Start Date and break it apart  #}
 {% if content.field_event_date[0] %}
-  {% if content.field_event_date[0]['start_date'] %}
-    {% set start_date = content.field_event_date[0]['start_date']['#text'] %}
-  {% else %}
-    {% set start_date = content.field_event_date[0]['#text'] %}
-  {% endif %}
+  {% set start_date = content.field_event_date[0]['#value'] %}
 
   {% set date_day = start_date|date('j') %}
   {% set date_month = start_date|date('F') %}
@@ -120,7 +116,6 @@
     {% set date_time = date_start|date('g:ia') %}
   {% endif %}
 {% endif %}
-
 
 {% include "@organisms/listing/listing-item--events.twig" with {
     directory: directory,

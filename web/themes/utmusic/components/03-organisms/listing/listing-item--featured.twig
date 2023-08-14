@@ -35,30 +35,6 @@
         %}
         <div class="m-listing-item{{ variation }}__illustration-bg"></div>
       </div>
-
-      {% if news_categories or areas_study %}
-        <div class="m-listing-item{{ variation }}__tags">
-
-          {% for item in news_categories %}
-            {% include '@atoms/chip/chip.twig' with {
-                text: sb_demo ? item.category : item,
-                html_element: 'div',
-              } only 
-            %}
-          {% endfor %}
-
-          {% for item in areas_study %}
-            {% include '@atoms/chip/chip.twig' with {
-                text: sb_demo ? item.area : item,
-                html_element: 'div',
-              } only 
-            %}
-          {% endfor %}
-
-        </div>
-        
-      {% endif %}
-
     </div>
     
     <div class="m-listing-item{{ variation }}__wrapper-title-date">
@@ -79,6 +55,21 @@
           %}
         </div>
       {% endif  %}
+
+      {% if news_categories or areas_study %}
+        <div class="m-listing-item{{ variation }}__tags">
+          {% if news_categories %}
+            {% for item in news_categories %}
+              {{item}}{% if not loop.last %}{{','}}{% endif %}{% endfor %}{% endif %}{% if news_categories and areas_study %}{{-',' -}}
+          {% endif %}
+
+          {% if areas_study %}
+            {% for item in areas_study %}
+              {{ item }}{% if not loop.last %}{{','}}{% endif %}
+            {% endfor %}
+          {% endif %}
+        </div>
+      {% endif %}
     </div>
 
     {% if summary %}
