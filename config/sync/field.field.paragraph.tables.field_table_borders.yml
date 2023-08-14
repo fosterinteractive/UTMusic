@@ -1,0 +1,21 @@
+uuid: 7cff6811-d8a6-4d09-b5f4-b464b484a276
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_table_borders
+    - paragraphs.paragraphs_type.tables
+  module:
+    - options
+id: paragraph.tables.field_table_borders
+field_name: field_table_borders
+entity_type: paragraph
+bundle: tables
+label: 'Table Borders'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

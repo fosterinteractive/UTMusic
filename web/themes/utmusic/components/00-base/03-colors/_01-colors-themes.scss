@@ -60,7 +60,8 @@
   --c-list-bullet: #{palette(blue, 900)};
 
   // @atoms/table
-
+  --c-table-background: #{palette(teal, 1000)};
+  --c-table-text: #{palette(grey, 300)};
 
   // @atoms/text
   --c-text: #{palette(grey, 300)};

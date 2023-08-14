@@ -1,0 +1,10 @@
+uuid: ea94e127-a1fd-4da4-83d6-e2a009ed4a9f
+langcode: en
+status: true
+dependencies: {  }
+id: tables
+label: Tables
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

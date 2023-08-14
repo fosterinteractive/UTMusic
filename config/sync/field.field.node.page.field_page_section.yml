@@ -28,6 +28,7 @@ dependencies:
     - paragraphs.paragraphs_type.section_title
     - paragraphs.paragraphs_type.sequence_list
     - paragraphs.paragraphs_type.sliding_menu
+    - paragraphs.paragraphs_type.tables
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.text_image
   module:
@@ -71,6 +72,7 @@ settings:
       jobs_full_list_dynamic: jobs_full_list_dynamic
       job_listing: job_listing
       file_resources_full_list_dynamic: file_resources_full_list_dynamic
+      tables: tables
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -175,6 +177,9 @@ settings:
       soundcloud:
         weight: -45
         enabled: false
+      tables:
+        weight: 73
+        enabled: true
       text:
         weight: -67
         enabled: true
