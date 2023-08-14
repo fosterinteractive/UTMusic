@@ -16,7 +16,7 @@
     @extend %a-list__item;
     
     position: relative;
-    margin-bottom: calc(var(--spacer)*0.3);
+    // margin-bottom: calc(var(--spacer)*0.3);
     margin-left: var(--spacer);;
     break-inside: avoid;
     page-break-inside: avoid;
