@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Theme override for a link to a file.
+ *
+ * Available variables:
+ * - attributes: The HTML attributes for the containing element.
+ * - link: A link to the file.
+ * - file_size: The size of the file.
+ *
+ * @see template_preprocess_file_link()
+ * @see stable_preprocess_image_widget()
+ */
+#}
+
+{% set url = items[0].content['#url'] %}
+{% set text = items[0].content['#title'] %}
+
+<div class="resources-link-to-form">
+  {% include '@atoms/link/link.twig' with {
+    directory: directory,
+    base_class: 'a-external__link',
+    url: url,
+    label: text,
+    variation: "icon-left",
+    html_element: a,
+    target: 'blank',
+    icon: "external link",
+    } only 
+  %}
+</div>

@@ -1,12 +1,12 @@
-uuid: 77f1f9b4-6a59-431e-bbc8-af8514ac5d57
+uuid: 45031b24-1b7c-460c-a289-ccda46e09ee1
 langcode: en
 status: true
 dependencies:
   module:
     - media
     - node
-id: node.field_resource_upload
-field_name: field_resource_upload
+id: node.field_resources_item
+field_name: field_resources_item
 entity_type: node
 type: entity_reference
 settings:

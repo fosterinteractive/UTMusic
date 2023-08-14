@@ -3,10 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.resources.field_resource_upload
     - field.field.node.resources.field_resources_category
     - field.field.node.resources.field_resources_description
     - field.field.node.resources.field_resources_form
+    - field.field.node.resources.field_resources_item
     - field.field.node.resources.field_resources_juries_cat
     - field.field.node.resources.field_resources_title
     - field.field.node.resources.field_resources_undergrad_cat
@@ -14,9 +14,9 @@ dependencies:
   module:
     - hide_revision_field
     - media_library
+    - media_library_edit
     - path
     - text
-    - webform
 id: node.resources.default
 targetEntityType: node
 bundle: resources
@@ -24,16 +24,9 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_resource_upload:
-    type: media_library_widget
-    weight: 3
-    region: content
-    settings:
-      media_types: {  }
     third_party_settings: {  }
   field_resources_category:
     type: options_select
@@ -49,17 +42,20 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_resources_form:
-    type: webform_entity_reference_select
-    weight: 4
+  field_resources_item:
+    type: media_library_widget
+    weight: 5
     region: content
     settings:
-      default_data: false
-      webforms: {  }
-    third_party_settings: {  }
+      media_types:
+        - resources_files
+        - resources_link_to_form
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   field_resources_juries_cat:
     type: options_select
-    weight: 6
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -73,19 +69,19 @@ content:
     third_party_settings: {  }
   field_resources_undergrad_cat:
     type: options_select
-    weight: 5
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   revision_log:
     type: hide_revision_field_log_widget
-    weight: 13
+    weight: 12
     region: content
     settings:
       rows: 5
@@ -96,27 +92,27 @@ content:
       allow_user_settings: true
     third_party_settings: {  }
   simple_sitemap:
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 14
+    weight: 13
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 10
+    weight: 9
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS
@@ -125,10 +121,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 12
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_resources_form: true
   promote: true
   title: true

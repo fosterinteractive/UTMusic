@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.listing_item
-    - field.field.node.resources.field_resource_upload
     - field.field.node.resources.field_resources_category
     - field.field.node.resources.field_resources_description
     - field.field.node.resources.field_resources_form
+    - field.field.node.resources.field_resources_item
     - field.field.node.resources.field_resources_juries_cat
     - field.field.node.resources.field_resources_title
     - field.field.node.resources.field_resources_undergrad_cat
@@ -17,7 +17,6 @@ dependencies:
     - options
     - text
     - user
-    - webform
 third_party_settings:
   layout_builder:
     enabled: false
@@ -27,15 +26,6 @@ targetEntityType: node
 bundle: resources
 mode: listing_item
 content:
-  field_resource_upload:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 6
-    region: content
   field_resources_category:
     type: list_key
     label: hidden
@@ -50,15 +40,14 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  field_resources_form:
-    type: webform_entity_reference_link
+  field_resources_item:
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      label: '[webform:title]'
-      dialog: ''
-      attributes: {  }
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 7
+    weight: 6
     region: content
   field_resources_juries_cat:
     type: entity_reference_label
@@ -89,4 +78,5 @@ content:
     weight: 1
     region: content
 hidden:
+  field_resources_form: true
   search_api_excerpt: true
