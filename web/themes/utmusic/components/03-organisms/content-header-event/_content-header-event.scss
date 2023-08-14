@@ -35,7 +35,8 @@
   }
 }
 
-.o-hero-media--event__tags {
+.o-hero-media--event__tags,
+.o-hero-media--event__button {
   @extend %o-hero-media-tags-desktop-no-border;
 }
 
