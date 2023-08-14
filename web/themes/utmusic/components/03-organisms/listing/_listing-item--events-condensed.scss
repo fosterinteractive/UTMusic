@@ -48,9 +48,9 @@
   display: flex;
   gap: calc(var(--spacer) * 0.2);
   align-items: center;
-  color: var(--c-heading-link);
-
+  
   svg {
+    color: var(--c-heading-link);
     width: rem(20px);
     height: rem(20px);
   }
