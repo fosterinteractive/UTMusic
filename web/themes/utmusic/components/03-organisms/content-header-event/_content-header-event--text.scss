@@ -1,8 +1,7 @@
 // Event variation
 .o-hero-media--event-text {
   @extend %o-hero-media-core;
-  display: grid;
-
+  grid-template-rows: var(--header-height) minmax(var(--spacer), auto) calc(var(--spacer)*2) minmax(1px, min-content) var(--spacer) !important;
 }
 
 .o-hero-media--event-text .o-hero-media__bg-decoration {
@@ -23,6 +22,12 @@
     grid-column: col 1/ span 12;
     justify-content: space-between;
     padding-top: 0;
+  }
+}
+
+.o-hero-media--event-text__text {
+  @include breakpoint($bp-tablet) {
+    max-width: 50%;
   }
 }
 
