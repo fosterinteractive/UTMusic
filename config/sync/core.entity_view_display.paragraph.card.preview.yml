@@ -35,14 +35,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 9
+    weight: 4
     region: content
   field_card_button_label:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 10
+    weight: 5
     region: content
   field_card_button_url:
     type: link
@@ -54,14 +54,22 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    weight: 11
+    weight: 6
+    region: content
+  field_card_categories:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 9
     region: content
   field_card_description:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 2
     region: content
   field_card_illustration:
     type: entity_reference_entity_view
@@ -70,7 +78,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 7
+    weight: 3
     region: content
   field_card_title:
     type: text_default
@@ -84,14 +92,14 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 12
+    weight: 7
     region: content
   field_card_title_html_element:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 13
+    weight: 8
     region: content
   field_card_variation:
     type: list_key
@@ -101,5 +109,4 @@ content:
     weight: 0
     region: content
 hidden:
-  field_card_categories: true
   search_api_excerpt: true
