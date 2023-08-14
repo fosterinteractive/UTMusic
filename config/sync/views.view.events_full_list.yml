@@ -9,6 +9,7 @@ dependencies:
     - node.type.event
     - taxonomy.vocabulary.area_of_specialization
     - taxonomy.vocabulary.event_type
+    - taxonomy.vocabulary.news_area_of_study
   module:
     - datetime
     - node
@@ -246,7 +247,7 @@ display:
           exposed: true
           expose:
             operator_id: field_event_area_target_id_op
-            label: 'Area of specialization'
+            label: 'Area of Study'
             description: ''
             use_operator: false
             operator: field_event_area_target_id_op
@@ -275,7 +276,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          vid: area_of_specialization
+          vid: news_area_of_study
           type: select
           hierarchy: true
           limit: true
@@ -1135,7 +1136,7 @@ display:
           exposed: true
           expose:
             operator_id: field_event_area_target_id_op
-            label: 'Area of specialization'
+            label: 'Area of Study'
             description: ''
             use_operator: false
             operator: field_event_area_target_id_op
@@ -1164,7 +1165,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          vid: area_of_specialization
+          vid: news_area_of_study
           type: select
           hierarchy: true
           limit: true

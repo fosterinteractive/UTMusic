@@ -7,9 +7,9 @@ dependencies:
     - field.storage.node.field_people_last_name
     - field.storage.node.field_people_name
     - node.type.people
-    - taxonomy.vocabulary.area_of_specialization
     - taxonomy.vocabulary.faculty_roles
     - taxonomy.vocabulary.instrument
+    - taxonomy.vocabulary.news_area_of_study
     - taxonomy.vocabulary.staff_roles
   module:
     - node
@@ -545,7 +545,7 @@ display:
           exposed: true
           expose:
             operator_id: field_people_area_target_id_op
-            label: 'Area of Specialization'
+            label: 'Area of Study'
             description: ''
             use_operator: false
             operator: field_people_area_target_id_op
@@ -574,7 +574,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          vid: area_of_specialization
+          vid: news_area_of_study
           type: select
           hierarchy: true
           limit: true

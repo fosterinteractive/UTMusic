@@ -5,12 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_people_area
     - node.type.people
-    - taxonomy.vocabulary.area_of_specialization
+    - taxonomy.vocabulary.news_area_of_study
 id: node.people.field_people_area
 field_name: field_people_area
 entity_type: node
 bundle: people
-label: 'Area of Specialization'
+label: 'Area of Study'
 description: ''
 required: false
 translatable: false
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      area_of_specialization: area_of_specialization
+      news_area_of_study: news_area_of_study
     sort:
       field: name
       direction: asc

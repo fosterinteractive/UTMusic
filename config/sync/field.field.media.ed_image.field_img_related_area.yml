@@ -5,12 +5,12 @@ dependencies:
   config:
     - field.storage.media.field_img_related_area
     - media.type.ed_image
-    - taxonomy.vocabulary.area_of_specialization
+    - taxonomy.vocabulary.news_area_of_study
 id: media.ed_image.field_img_related_area
 field_name: field_img_related_area
 entity_type: media
 bundle: ed_image
-label: 'Area of Specialization'
+label: 'Area of Study'
 description: ''
 required: false
 translatable: false
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      area_of_specialization: area_of_specialization
+      news_area_of_study: news_area_of_study
     sort:
       field: name
       direction: asc
