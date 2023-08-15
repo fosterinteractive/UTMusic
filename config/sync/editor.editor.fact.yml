@@ -1,0 +1,35 @@
+uuid: 31d8325d-163c-469c-a516-33a086e2091d
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.fact
+  module:
+    - ckeditor5
+format: fact
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - superscript
+      - subscript
+      - specialCharacters
+      - removeFormat
+      - style
+      - '|'
+      - sourceEditing
+  plugins:
+    ckeditor5_style:
+      styles:
+        -
+          label: 'P (Small)'
+          element: '<p class="a-type--small">'
+        -
+          label: 'P (Large)'
+          element: '<p class="a-type--large">'
+        -
+          label: 'P (x Large)'
+          element: '<p class="a-type--xlarge">'
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+image_upload: {  }

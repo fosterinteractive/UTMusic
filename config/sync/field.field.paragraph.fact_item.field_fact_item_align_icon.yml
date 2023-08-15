@@ -1,0 +1,23 @@
+uuid: 6d10aaac-ce59-4047-b7b7-16e629d8f211
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fact_item_align_icon
+    - paragraphs.paragraphs_type.fact_item
+  module:
+    - options
+id: paragraph.fact_item.field_fact_item_align_icon
+field_name: field_fact_item_align_icon
+entity_type: paragraph
+bundle: fact_item
+label: 'Illustration Alignment'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: left
+default_value_callback: ''
+settings: {  }
+field_type: list_string

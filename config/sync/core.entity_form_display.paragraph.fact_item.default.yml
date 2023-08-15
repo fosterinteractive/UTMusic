@@ -1,0 +1,74 @@
+uuid: 0fcc6e64-12e0-4be1-b214-d0454c5bb4e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fact_item.field_fact_item_align_icon
+    - field.field.paragraph.fact_item.field_fact_item_description
+    - field.field.paragraph.fact_item.field_fact_item_divider
+    - field.field.paragraph.fact_item.field_fact_item_illustration
+    - field.field.paragraph.fact_item.field_fact_item_value
+    - field.field.paragraph.fact_item.field_fact_item_variation
+    - paragraphs.paragraphs_type.fact_item
+  module:
+    - allowed_formats
+    - media_library
+    - media_library_edit
+    - text
+id: paragraph.fact_item.default
+targetEntityType: paragraph
+bundle: fact_item
+mode: default
+content:
+  field_fact_item_align_icon:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_fact_item_description:
+    type: text_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+  field_fact_item_divider:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_fact_item_illustration:
+    type: media_library_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
+  field_fact_item_value:
+    type: text_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+  field_fact_item_variation:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,66 @@
+uuid: 2c7099af-ddac-4fe6-9865-6913b1e51fb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fact_item.field_fact_item_align_icon
+    - field.field.paragraph.fact_item.field_fact_item_description
+    - field.field.paragraph.fact_item.field_fact_item_divider
+    - field.field.paragraph.fact_item.field_fact_item_illustration
+    - field.field.paragraph.fact_item.field_fact_item_value
+    - field.field.paragraph.fact_item.field_fact_item_variation
+    - paragraphs.paragraphs_type.fact_item
+  module:
+    - options
+    - text
+id: paragraph.fact_item.default
+targetEntityType: paragraph
+bundle: fact_item
+mode: default
+content:
+  field_fact_item_align_icon:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_fact_item_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_fact_item_divider:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_fact_item_illustration:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_fact_item_value:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_fact_item_variation:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,23 @@
+uuid: fce4e890-f247-4d29-aee1-5324b702dd4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fact_item_variation
+    - paragraphs.paragraphs_type.fact_item
+  module:
+    - options
+id: paragraph.fact_item.field_fact_item_variation
+field_name: field_fact_item_variation
+entity_type: paragraph
+bundle: fact_item
+label: Variation
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: vertical
+default_value_callback: ''
+settings: {  }
+field_type: list_string

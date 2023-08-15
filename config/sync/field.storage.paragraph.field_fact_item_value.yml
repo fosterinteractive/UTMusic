@@ -1,0 +1,20 @@
+uuid: b59778e1-46ab-4f56-a67a-2298b113ed01
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_fact_item_value
+field_name: field_fact_item_value
+entity_type: paragraph
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,26 @@
+uuid: 7137a55f-bf97-4a0a-bf97-b65974f3f923
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fact_item_value
+    - paragraphs.paragraphs_type.fact_item
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
+id: paragraph.fact_item.field_fact_item_value
+field_name: field_fact_item_value
+entity_type: paragraph
+bundle: fact_item
+label: 'Fact Value '
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

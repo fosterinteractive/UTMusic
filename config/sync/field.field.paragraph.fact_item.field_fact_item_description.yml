@@ -1,0 +1,26 @@
+uuid: f5db53b2-c003-4f43-b3ea-c094a1117a91
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fact_item_description
+    - paragraphs.paragraphs_type.fact_item
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - fact
+id: paragraph.fact_item.field_fact_item_description
+field_name: field_fact_item_description
+entity_type: paragraph
+bundle: fact_item
+label: Description
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
