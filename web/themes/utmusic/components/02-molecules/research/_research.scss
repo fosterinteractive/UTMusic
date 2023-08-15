@@ -1,0 +1,26 @@
+.m-research {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacer)*0.5);
+  padding-bottom: calc(var(--spacer)*1.5);
+  border-bottom: rem(1px) solid palette(teal, 700); 
+}
+
+.m-research__content {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacer)*0.5);
+}
+
+.m-research__title h3 {
+  margin-bottom: 0;
+}
+
+.m-research__subtitle {
+  color: palette(grey, 400);
+  font-weight: bold;
+}
+
+.m-research__description {
+  color: palette(grey, 300);
+}

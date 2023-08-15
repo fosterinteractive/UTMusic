@@ -1,0 +1,7 @@
+sb_demo: true
+title: 'ICM'
+subtitle:  'Institute for Canadian Music '
+description: '<p>MaHRC is a synergistic and collaborative group of researchers exploring connections of sound to the human experience of health.</p>'
+url: 'https://google.com'
+label: 'Learn more'
+aria_label: test aa11y label
