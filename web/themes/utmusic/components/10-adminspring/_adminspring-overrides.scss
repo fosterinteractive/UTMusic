@@ -247,3 +247,9 @@ body.mm-wrapper {
 .lpb-controls {
   flex-wrap: wrap;
 }
+
+// links inside CKEditor 5
+.ui-widget-content .ck-editor__main a {
+  @extend %a-external-link !optional;
+  color: #003ecc;
+}

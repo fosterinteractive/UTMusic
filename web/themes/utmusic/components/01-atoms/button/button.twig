@@ -18,7 +18,11 @@
 {% endif %}
 
 {# Set default icon all icon variations #}
-{% set icon = icon|default('link-shevron') %}
+{% if external_link %}
+  {% set icon = icon|default('external_link') %}
+{% else %}
+  {% set icon = icon|default('link-shevron') %}
+{% endif %}
 
 {# Component can be either <a> (default) or <button> #}
 {% set html_element = html_element|default('a') %}
