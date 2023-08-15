@@ -1,0 +1,20 @@
+uuid: 31aad12b-ac20-41e2-8c0f-c084962e35cc
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_research_btn_a11y
+field_name: field_research_btn_a11y
+entity_type: paragraph
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,84 @@
+uuid: fb34e407-4e84-47d2-95fd-d031b42eac6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.research.field_research_btn_a11y
+    - field.field.paragraph.research.field_research_btn_label
+    - field.field.paragraph.research.field_research_btn_target
+    - field.field.paragraph.research.field_research_btn_url
+    - field.field.paragraph.research.field_research_description
+    - field.field.paragraph.research.field_research_subtitle
+    - field.field.paragraph.research.field_research_title
+    - paragraphs.paragraphs_type.research
+  module:
+    - layout_builder
+    - link
+    - options
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.research.preview
+targetEntityType: paragraph
+bundle: research
+mode: preview
+content:
+  field_research_btn_a11y:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_research_btn_label:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_research_btn_target:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_research_btn_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_research_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_research_subtitle:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_research_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

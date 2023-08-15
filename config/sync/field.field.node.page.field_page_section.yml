@@ -24,6 +24,7 @@ dependencies:
     - paragraphs.paragraphs_type.news_summary_list_dynamic
     - paragraphs.paragraphs_type.programs_full_list_dynamic
     - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.research
     - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.section_title
     - paragraphs.paragraphs_type.sequence_list
@@ -61,6 +62,8 @@ settings:
       accordion: accordion
       featured_media: featured_media
       sliding_menu: sliding_menu
+      tables: tables
+      research: research
       news_full_list_dynamic: news_full_list_dynamic
       news_summary_list_dynamic: news_summary_list_dynamic
       news_featured_item: news_featured_item
@@ -72,121 +75,123 @@ settings:
       jobs_full_list_dynamic: jobs_full_list_dynamic
       job_listing: job_listing
       file_resources_full_list_dynamic: file_resources_full_list_dynamic
-      tables: tables
     negate: 0
     target_bundles_drag_drop:
       accordion:
-        weight: -58
-        enabled: true
-      accordion_item:
-        weight: -36
-        enabled: false
-      button:
-        weight: -64
-        enabled: true
-      card:
-        weight: -60
-        enabled: true
-      carousel_header:
-        weight: -40
-        enabled: false
-      carousel_image_group:
-        weight: -39
-        enabled: false
-      cta:
-        weight: -61
-        enabled: true
-      curriculum:
-        weight: 45
-        enabled: false
-      event_featured_item:
-        weight: -50
-        enabled: true
-      events_full_list_dynamic:
-        weight: -52
-        enabled: true
-      events_summary_list_dynamic:
-        weight: -51
-        enabled: true
-      faculty_full_list_dynamic:
-        weight: -48
-        enabled: true
-      featured_media:
-        weight: -57
-        enabled: true
-      file_resources_full_list_dynamic:
-        weight: 51
-        enabled: true
-      header:
-        weight: -41
-        enabled: false
-      image_section:
-        weight: -65
-        enabled: true
-      inline_menu:
-        weight: -44
-        enabled: false
-      job_listing:
-        weight: -46
-        enabled: true
-      jobs_full_list_dynamic:
-        weight: -47
-        enabled: true
-      message:
-        weight: -63
-        enabled: true
-      news_featured_item:
-        weight: -53
-        enabled: true
-      news_full_list_dynamic:
-        weight: -55
-        enabled: true
-      news_summary_list_dynamic:
-        weight: -54
-        enabled: true
-      poster:
-        weight: -43
-        enabled: false
-      programs_full_list_dynamic:
-        weight: -49
-        enabled: true
-      quote:
-        weight: -62
-        enabled: true
-      section:
-        weight: -69
-        enabled: true
-      section_curriculum:
-        weight: 65
-        enabled: false
-      section_title:
         weight: -68
         enabled: true
-      sequence_item:
-        weight: -38
+      accordion_item:
+        weight: -43
         enabled: false
-      sequence_list:
+      button:
+        weight: -74
+        enabled: true
+      card:
+        weight: -70
+        enabled: true
+      carousel_header:
+        weight: -47
+        enabled: false
+      carousel_image_group:
+        weight: -46
+        enabled: false
+      cta:
+        weight: -71
+        enabled: true
+      curriculum:
+        weight: -42
+        enabled: false
+      event_featured_item:
+        weight: -58
+        enabled: true
+      events_full_list_dynamic:
+        weight: -60
+        enabled: true
+      events_summary_list_dynamic:
         weight: -59
         enabled: true
-      sliding_menu:
+      faculty_full_list_dynamic:
         weight: -56
         enabled: true
-      sliding_menu_item:
-        weight: -37
-        enabled: false
-      soundcloud:
-        weight: -45
-        enabled: false
-      tables:
-        weight: 73
-        enabled: true
-      text:
+      featured_media:
         weight: -67
         enabled: true
-      text_image:
+      file_resources_full_list_dynamic:
+        weight: -53
+        enabled: true
+      header:
+        weight: -48
+        enabled: false
+      image_section:
+        weight: -75
+        enabled: true
+      inline_menu:
+        weight: -51
+        enabled: false
+      job_listing:
+        weight: -54
+        enabled: true
+      jobs_full_list_dynamic:
+        weight: -55
+        enabled: true
+      message:
+        weight: -73
+        enabled: true
+      news_featured_item:
+        weight: -61
+        enabled: true
+      news_full_list_dynamic:
+        weight: -63
+        enabled: true
+      news_summary_list_dynamic:
+        weight: -62
+        enabled: true
+      poster:
+        weight: -50
+        enabled: false
+      programs_full_list_dynamic:
+        weight: -57
+        enabled: true
+      quote:
+        weight: -72
+        enabled: true
+      research:
+        weight: -64
+        enabled: true
+      section:
+        weight: -79
+        enabled: true
+      section_curriculum:
+        weight: -41
+        enabled: false
+      section_title:
+        weight: -78
+        enabled: true
+      sequence_item:
+        weight: -45
+        enabled: false
+      sequence_list:
+        weight: -69
+        enabled: true
+      sliding_menu:
         weight: -66
         enabled: true
+      sliding_menu_item:
+        weight: -44
+        enabled: false
+      soundcloud:
+        weight: -52
+        enabled: false
+      tables:
+        weight: -65
+        enabled: true
+      text:
+        weight: -77
+        enabled: true
+      text_image:
+        weight: -76
+        enabled: true
       video:
-        weight: -42
+        weight: -49
         enabled: false
 field_type: entity_reference_revisions

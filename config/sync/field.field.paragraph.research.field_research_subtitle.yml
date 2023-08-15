@@ -1,0 +1,26 @@
+uuid: 076d7d46-159e-4e2b-8c0c-40dc3d84bf39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_research_subtitle
+    - paragraphs.paragraphs_type.research
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
+id: paragraph.research.field_research_subtitle
+field_name: field_research_subtitle
+entity_type: paragraph
+bundle: research
+label: Subtitle
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

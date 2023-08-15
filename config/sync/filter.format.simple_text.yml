@@ -1,7 +1,9 @@
 uuid: 3a7c3b53-2678-43ee-bc51-dea3daa97d4a
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - linkit
 _core:
   default_config_hash: RmO1jIHyjCygkWuSM_OtNLOvfN-PNkzczOvKwOyccv0
 name: 'Simple text'
@@ -14,6 +16,20 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<sup> <sub> <em> <i> <strong> <br>'
+      allowed_html: '<br> <p> <i> <a title href data-entity-type data-entity-uuid data-entity-substitution> <strong> <em> <u> <sub> <sup> <ul> <ol> <li>'
       filter_html_help: true
       filter_html_nofollow: false
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: null
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: 0
+    settings:
+      title: true

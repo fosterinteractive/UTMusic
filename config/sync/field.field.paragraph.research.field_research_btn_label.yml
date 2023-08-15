@@ -1,0 +1,26 @@
+uuid: f22c3e4a-04b0-44ca-be4b-421e9ed62f89
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_research_btn_label
+    - paragraphs.paragraphs_type.research
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
+id: paragraph.research.field_research_btn_label
+field_name: field_research_btn_label
+entity_type: paragraph
+bundle: research
+label: Label
+description: 'Visually displayed text'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

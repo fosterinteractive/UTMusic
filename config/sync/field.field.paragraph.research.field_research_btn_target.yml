@@ -1,0 +1,21 @@
+uuid: 94ddcaea-7940-4e21-b47e-987e39edffed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_research_btn_target
+    - paragraphs.paragraphs_type.research
+  module:
+    - options
+id: paragraph.research.field_research_btn_target
+field_name: field_research_btn_target
+entity_type: paragraph
+bundle: research
+label: Target
+description: 'By default links open in the current window.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

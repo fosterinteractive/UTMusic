@@ -1,27 +1,38 @@
-uuid: 71095915-6df0-4481-9e24-4f30b177459e
+uuid: 2e08aef7-1dae-4455-8b79-592772c8b95c
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.simple_text
   module:
-    - ckeditor
-_core:
-  default_config_hash: TYbW8584G63ff829_GvDFU0OHLZHqS5Co2GEDF0ukbo
+    - ckeditor5
 format: simple_text
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatting
-          items:
-            - Bold
-            - Italic
-            - Superscript
-            - Subscript
-  plugins: {  }
+    items:
+      - bold
+      - italic
+      - superscript
+      - subscript
+      - underline
+      - removeFormat
+      - '|'
+      - bulletedList
+      - link
+      - '|'
+      - sourceEditing
+  plugins:
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<i>'
+        - '<a title>'
+    ckeditor5_list:
+      reversed: false
+      startIndex: false
+    linkit_extension:
+      linkit_enabled: true
+      linkit_profile: default
 image_upload:
   status: false
   scheme: public
