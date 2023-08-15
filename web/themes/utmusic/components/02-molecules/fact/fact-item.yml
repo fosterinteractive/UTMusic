@@ -1,0 +1,8 @@
+sb_demo: true
+variation: 'vertical'
+divider: 'divider'
+alignment: right
+illustration: building
+illustration_size: xsmall
+value: '#1'
+description: 'University in canada'

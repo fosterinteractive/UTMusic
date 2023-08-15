@@ -1,0 +1,65 @@
+{% set variation = variation|default('vertical') %}
+
+{% set illustration_size = illustration_size|default('medium') %}
+{% set title_appearance = title_appearance|default('h3') %}
+{% set title_html_element = title_html_element|default('h3') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+{# url is coming for title #}
+<div class="m-fact-item{{ variation }} {% if variation == '--vertical' and alignment %}{{alignment}}{% endif %}">
+  {# wrap into container for horizontal variation  #}
+      {% if variation == '--horizontal' %}
+      <div class="m-fact-item{{ variation }}__main">
+      {% endif %}
+  
+    {% if illustration %}
+      <div class="m-fact-item{{ variation }}__illustration">
+        {# <div class="m-fact-item__image-illustration-bg"></div> #}
+        {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+            directory: directory,
+            base_class: 'a-icon',
+            icon_file_type: illustration_file_type,
+            icon: illustration,
+            size: 'small', 
+          } only
+        %}
+      </div>
+    {% endif %}
+
+  {# wrap into container for vertical variation  #}
+      {% if variation == '--vertical' %}
+      <div class="m-fact-item{{ variation }}__main {% if divider %}{{divider}}{% endif %} ">
+      {% endif %}
+
+      {% if value %}
+        <div class="m-fact-item{{ variation }}__value">
+          {{ value }}
+        </div>
+      {% endif %}
+
+    {# wrap into container for horizontal variation  #}
+      {% if variation == '--horizontal' %}
+      </div>
+      {% endif %}
+
+      {% if description  %}
+        <div class="m-fact-item{{ variation }}__description {% if variation == '--horizontal' and divider %}{{divider}}{% endif %}">
+          {{ description }}
+        </div>
+      {% endif %}
+
+  {# wrap into container for vertical variation  #}
+      {% if variation == '--vertical' %}
+      </div>
+      {% endif %}
+</div>
