@@ -3,14 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - block.block.jobs_no_results_behaviour
     - core.entity_view_mode.node.teaser
     - node.type.job
     - taxonomy.vocabulary.job_category
   content:
-    - 'taxonomy_term:job_category:3da6bb01-98c7-4cde-bbc9-dbf96f5cfb17'
-    - 'taxonomy_term:job_category:74af16bc-2644-4a78-bccc-a53acb306cf1'
-    - 'taxonomy_term:job_category:ab6916da-f7d4-4917-9492-f579309bdbe3'
-    - 'taxonomy_term:job_category:db61afb6-7c99-4fb4-aebd-3f3f4f0f2d02'
+    - 'taxonomy_term:event_type:2eb5c77e-2f86-430d-b475-ff44d2975869'
+    - 'taxonomy_term:event_type:a9820b47-cc08-4046-901d-5b71c3895f61'
+    - 'taxonomy_term:event_type:b747fb50-995e-426b-bc56-9c7893ab1227'
+    - 'taxonomy_term:event_type:f250aa95-8683-4f5b-a1db-59bfd28ae8f0'
   module:
     - datetime
     - node
@@ -103,19 +104,19 @@ display:
         type: tag
         options: {  }
       empty:
-        area:
-          id: area
+        entity_block:
+          id: entity_block
           table: views
-          field: area
+          field: entity_block
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: text
+          plugin_id: entity
           empty: true
-          content:
-            value: '<h2 class="a-heading__h3">No jobs were found.</h2>'
-            format: rich_text
+          target: jobs_no_results_behaviour
+          view_mode: default
           tokenize: false
+          bypass_access: false
       sorts:
         field_job_closing_date_value:
           id: field_job_closing_date_value
@@ -292,7 +293,8 @@ display:
     position: 1
     display_options:
       display_extenders:
-        ajax_history: {  }
+        ajax_history:
+          enable_history: true
       block_description: 'Jobs Full List '
     cache_metadata:
       max-age: -1

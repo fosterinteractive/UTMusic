@@ -1,0 +1,25 @@
+uuid: 9f8aaee8-6cb9-4cc8-81ec-30b2b3a5c3ab
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:no_views_results_behaviour:7986d5f0-fb8f-467c-86df-9403ce6b1732'
+  module:
+    - block_content
+  theme:
+    - utmusic
+id: jobs_no_results_behaviour
+theme: utmusic
+region: hidden
+weight: 7
+provider: null
+plugin: 'block_content:7986d5f0-fb8f-467c-86df-9403ce6b1732'
+settings:
+  id: 'block_content:7986d5f0-fb8f-467c-86df-9403ce6b1732'
+  label: 'Jobs No Results Behaviour'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
