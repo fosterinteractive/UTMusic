@@ -57,6 +57,7 @@
   justify-content: space-between;
   gap: var(--spacer);
   align-items: center;
+  width: 100%;
 
   &.divider--top {
     border-top: rem(1px) solid palette(grey, 800);
