@@ -11,8 +11,8 @@ id: paragraph.fact_item.field_fact_item_align_icon
 field_name: field_fact_item_align_icon
 entity_type: paragraph
 bundle: fact_item
-label: 'Illustration Alignment'
-description: ''
+label: Alignment
+description: 'Option is available only for Vertical variation'
 required: false
 translatable: false
 default_value:

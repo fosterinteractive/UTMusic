@@ -297,6 +297,18 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
     }
   }
 
+  if($bundle == 'fact_item') {
+    if ($field_name == 'field_fact_item_align_icon') {
+      $element['#states'] = [
+        'visible' => [
+          ':input[name="field_fact_item_variation"]' => [
+            'value' => 'vertical',
+          ],
+        ],
+      ];
+    }
+  }
+
   if ($bundle == 'carousel_header') {
     if ($field_name == 'field_carousel_header_sec_title') {
       $element['#states'] = [

@@ -1,0 +1,25 @@
+uuid: 6237d39d-c5e3-4d8c-945e-4577c83a6b26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fact_group.field_fact_group_items
+    - paragraphs.paragraphs_type.fact_group
+  module:
+    - entity_reference_revisions
+id: paragraph.fact_group.default
+targetEntityType: paragraph
+bundle: fact_group
+mode: default
+content:
+  field_fact_group_items:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

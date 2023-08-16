@@ -253,3 +253,7 @@ body.mm-wrapper {
   @extend %a-external-link !optional;
   color: #003ecc;
 }
+
+.js-media-library-edit-link {
+  position: absolute !important;
+}

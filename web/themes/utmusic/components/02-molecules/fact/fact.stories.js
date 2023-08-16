@@ -1,9 +1,9 @@
 import factItem from './fact-item.twig';
+import factGroup from './fact-group.twig';
 
 import factItemData from './fact-item.yml';
 import factItemHorizontalData from './fact-item--horizontal.yml';
-
-
+import factGroupData from './fact-group.yml';
 
 /**
  * Storybook Definition.
@@ -140,3 +140,5 @@ export const FactItemDemo = ({
 
 export const FactItemVertical = () => factItem(factItemData);
 export const FactItemHorizontal = () => factItem(factItemHorizontalData);
+
+export const FactGroup = () => factGroup(factGroupData);

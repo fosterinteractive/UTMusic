@@ -1,0 +1,38 @@
+sb_demo: true
+items:
+  1:
+    sb_demo: true
+    variation: 'vertical'
+    divider: 'divider'
+    alignment: right
+    illustration: building
+    illustration_size: xsmall
+    value: '#1'
+    description: 'University in canada'
+  2:
+    sb_demo: true
+    variation: 'vertical'
+    divider: 'divider'
+    alignment: right
+    illustration: building
+    illustration_size: xsmall
+    value: '#1'
+    description: 'University in canada'
+  3:
+    sb_demo: true
+    variation: 'vertical'
+    divider: 'divider'
+    alignment: right
+    illustration: building
+    illustration_size: xsmall
+    value: '#1'
+    description: 'University in canada'
+  4:
+    sb_demo: true
+    variation: 'vertical'
+    divider: 'divider'
+    alignment: right
+    illustration: building
+    illustration_size: xsmall
+    value: '#1'
+    description: 'University in canada'

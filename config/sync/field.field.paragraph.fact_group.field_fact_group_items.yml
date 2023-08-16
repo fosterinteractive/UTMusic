@@ -1,0 +1,151 @@
+uuid: 23b02b04-8df7-4444-bac7-97fa7de2b6b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fact_group_items
+    - paragraphs.paragraphs_type.fact_group
+    - paragraphs.paragraphs_type.fact_item
+  module:
+    - entity_reference_revisions
+id: paragraph.fact_group.field_fact_group_items
+field_name: field_fact_group_items
+entity_type: paragraph
+bundle: fact_group
+label: Facts
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      fact_item: fact_item
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 42
+        enabled: false
+      accordion_item:
+        weight: 43
+        enabled: false
+      button:
+        weight: 44
+        enabled: false
+      card:
+        weight: 45
+        enabled: false
+      carousel_header:
+        weight: 46
+        enabled: false
+      carousel_image_group:
+        weight: 47
+        enabled: false
+      cta:
+        weight: 48
+        enabled: false
+      curriculum:
+        weight: 49
+        enabled: false
+      event_featured_item:
+        weight: 52
+        enabled: false
+      events_full_list_dynamic:
+        weight: 50
+        enabled: false
+      events_summary_list_dynamic:
+        weight: 51
+        enabled: false
+      fact_group:
+        weight: 53
+        enabled: false
+      fact_item:
+        weight: 54
+        enabled: true
+      faculty_full_list_dynamic:
+        weight: 55
+        enabled: false
+      featured_media:
+        weight: 56
+        enabled: false
+      file_resources_full_list_dynamic:
+        weight: 57
+        enabled: false
+      header:
+        weight: 58
+        enabled: false
+      image_section:
+        weight: 59
+        enabled: false
+      inline_menu:
+        weight: 60
+        enabled: false
+      job_listing:
+        weight: 62
+        enabled: false
+      jobs_full_list_dynamic:
+        weight: 61
+        enabled: false
+      message:
+        weight: 63
+        enabled: false
+      news_featured_item:
+        weight: 64
+        enabled: false
+      news_full_list_dynamic:
+        weight: 65
+        enabled: false
+      news_summary_list_dynamic:
+        weight: 66
+        enabled: false
+      poster:
+        weight: 67
+        enabled: false
+      programs_full_list_dynamic:
+        weight: 68
+        enabled: false
+      quote:
+        weight: 69
+        enabled: false
+      research:
+        weight: 70
+        enabled: false
+      section:
+        weight: 71
+        enabled: false
+      section_curriculum:
+        weight: 72
+        enabled: false
+      section_title:
+        weight: 73
+        enabled: false
+      sequence_item:
+        weight: 74
+        enabled: false
+      sequence_list:
+        weight: 75
+        enabled: false
+      sliding_menu:
+        weight: 76
+        enabled: false
+      sliding_menu_item:
+        weight: 77
+        enabled: false
+      soundcloud:
+        weight: 78
+        enabled: false
+      tables:
+        weight: 79
+        enabled: false
+      text:
+        weight: 80
+        enabled: false
+      text_image:
+        weight: 81
+        enabled: false
+      video:
+        weight: 82
+        enabled: false
+field_type: entity_reference_revisions

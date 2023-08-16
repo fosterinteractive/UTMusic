@@ -29,14 +29,21 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 3
+    region: content
+  field_fact_item_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_fact_item_divider:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_fact_item_illustration:
     type: entity_reference_entity_view
@@ -59,8 +66,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
 hidden:
-  field_fact_item_description: true
   search_api_excerpt: true

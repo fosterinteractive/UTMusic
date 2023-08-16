@@ -1,0 +1,31 @@
+uuid: 721e69af-ba2e-4c4e-8ccf-25ab35510ec5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.fact_group.field_fact_group_items
+    - paragraphs.paragraphs_type.fact_group
+  module:
+    - entity_reference_revisions
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.fact_group.preview
+targetEntityType: paragraph
+bundle: fact_group
+mode: preview
+content:
+  field_fact_group_items:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true
