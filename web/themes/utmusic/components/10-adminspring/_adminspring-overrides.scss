@@ -254,6 +254,16 @@ body.mm-wrapper {
   color: #003ecc;
 }
 
-.js-media-library-edit-link {
+.media-library-edit__link {
   position: absolute !important;
+  transition: 0.2s border-color !important;
+  color: transparent !important;
+  text-decoration: none !important;
+  text-decoration-thickness: unset !important;
+}
+
+
+//clean preview for nested paragraphs
+.form-wrapper .paragraph-top .paragraph-type {
+  display: none;
 }

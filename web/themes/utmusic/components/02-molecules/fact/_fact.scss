@@ -15,6 +15,11 @@
   font-size: rem(50px);
   font-weight: 800;
   line-height: 1;
+
+  sup {
+    top: -1.5em;
+    font-size: 40%;
+  }
 }
 
 %m-fact-item__description {
@@ -40,7 +45,7 @@
   }
 }
 
-.m-fact-item--vertical__value {
+.m-fact-item--vertical__value p {
  @extend %m-fact-item__value;
 }
 
@@ -73,7 +78,7 @@
   gap: calc(var(--spacer)*0.9);
 }
 
-.m-fact-item--horizontal__value {
+.m-fact-item--horizontal__value p {
   @extend %m-fact-item__value;
  }
 
