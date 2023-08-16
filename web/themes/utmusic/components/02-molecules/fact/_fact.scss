@@ -42,6 +42,10 @@
 
   &.right {
     align-items: flex-end;
+
+    .m-fact-item--vertical__description {
+      text-align: right;
+    }
   }
 }
 
