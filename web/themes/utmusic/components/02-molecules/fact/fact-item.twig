@@ -37,7 +37,7 @@
 
   {# wrap into container for vertical variation  #}
       {% if variation == '--vertical' %}
-      <div class="m-fact-item{{ variation }}__main {% if divider %}{{divider}}{% endif %} ">
+      <div class="m-fact-item{{ variation }}__main {% if divider %}{{divider}}--top{% endif %} ">
       {% endif %}
 
       {% if value %}
@@ -52,7 +52,7 @@
       {% endif %}
 
       {% if description  %}
-        <div class="m-fact-item{{ variation }}__description {% if variation == '--horizontal' and divider %}{{divider}}{% endif %}">
+        <div class="m-fact-item{{ variation }}__description {% if variation == '--horizontal' and divider %}{{divider}}--left{% endif %}">
           {{ description }}
         </div>
       {% endif %}

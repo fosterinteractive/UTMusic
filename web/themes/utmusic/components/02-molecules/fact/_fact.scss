@@ -58,7 +58,7 @@
   gap: var(--spacer);
   align-items: center;
 
-  &.divider {
+  &.divider--top {
     border-top: rem(1px) solid palette(grey, 800);
     padding-top: var(--spacer);
   }
@@ -90,7 +90,7 @@
 .m-fact-item--horizontal__description {
   @extend %m-fact-item__description;
   
-  &.divider {
+  &.divider--left {
     border-left: rem(1px) solid palette(grey, 800);
     padding-left: calc(var(--spacer)*0.9);
   }
