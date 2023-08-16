@@ -1,0 +1,23 @@
+uuid: 7284e1a0-90d9-4109-92ec-80aa1a2448c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.fact_value
+  module:
+    - ckeditor5
+format: fact_value
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - subscript
+      - superscript
+      - specialCharacters
+      - removeFormat
+      - '|'
+      - sourceEditing
+  plugins:
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+image_upload: {  }

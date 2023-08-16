@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.fact
+    - filter.format.fact_value
     - filter.format.header_summary
     - filter.format.rich_text
     - filter.format.rich_text_w_images
@@ -62,6 +63,7 @@ permissions:
   - 'update media'
   - 'use moderation sidebar'
   - 'use text format fact'
+  - 'use text format fact_value'
   - 'use text format header_summary'
   - 'use text format rich_text'
   - 'use text format rich_text_w_images'

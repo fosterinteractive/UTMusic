@@ -1,0 +1,17 @@
+uuid: 817e0db6-f201-4d8e-9f53-55edd97fad2d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Fact Value'
+format: fact_value
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<br> <p> <sub> <sup>'
+      filter_html_help: true
+      filter_html_nofollow: false

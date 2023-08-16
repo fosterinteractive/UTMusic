@@ -13,7 +13,6 @@ dependencies:
     - paragraphs.paragraphs_type.events_full_list_dynamic
     - paragraphs.paragraphs_type.events_summary_list_dynamic
     - paragraphs.paragraphs_type.fact_group
-    - paragraphs.paragraphs_type.fact_item
     - paragraphs.paragraphs_type.faculty_full_list_dynamic
     - paragraphs.paragraphs_type.featured_media
     - paragraphs.paragraphs_type.file_resources_full_list_dynamic
@@ -60,7 +59,6 @@ settings:
       quote: quote
       cta: cta
       card: card
-      fact_item: fact_item
       fact_group: fact_group
       sequence_list: sequence_list
       accordion: accordion
@@ -119,7 +117,7 @@ settings:
         enabled: true
       fact_item:
         weight: -73
-        enabled: true
+        enabled: false
       faculty_full_list_dynamic:
         weight: -58
         enabled: true

@@ -53,11 +53,11 @@ content:
       media_library_edit:
         show_edit: '1'
   field_fact_item_value:
-    type: text_textfield
+    type: text_textarea
     weight: 4
     region: content
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings:
       allowed_formats:

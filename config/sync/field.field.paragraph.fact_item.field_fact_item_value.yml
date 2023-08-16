@@ -1,4 +1,4 @@
-uuid: 7137a55f-bf97-4a0a-bf97-b65974f3f923
+uuid: 3923b567-8feb-4419-8a96-6becd68d3824
 langcode: en
 status: true
 dependencies:
@@ -11,16 +11,16 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - plain_text
+      - fact_value
 id: paragraph.fact_item.field_fact_item_value
 field_name: field_fact_item_value
 entity_type: paragraph
 bundle: fact_item
-label: 'Fact Value '
+label: 'Fact Value'
 description: ''
 required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text
+field_type: text_long

@@ -1,4 +1,4 @@
-uuid: b59778e1-46ab-4f56-a67a-2298b113ed01
+uuid: d2743d6f-5eb4-486d-ba13-3998a7ef1e54
 langcode: en
 status: true
 dependencies:
@@ -8,9 +8,8 @@ dependencies:
 id: paragraph.field_fact_item_value
 field_name: field_fact_item_value
 entity_type: paragraph
-type: text
-settings:
-  max_length: 255
+type: text_long
+settings: {  }
 module: text
 locked: false
 cardinality: 1

@@ -53,7 +53,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 7
     region: content
   field_fact_item_variation:
     type: list_key
