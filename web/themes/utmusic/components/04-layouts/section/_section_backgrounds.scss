@@ -1,15 +1,18 @@
+%l-section__background {
+  grid-row: 1/ span 3;
+  grid-column: alpha / omega;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-blend-mode: color-burn;
+  background-position:  center;
+}
+
 .theme--dark-blue-bg {
   .l-section__background {
+    @extend %l-section__background;
+    background-image: url('../images/texture-left.png');
     background-color: palette(black, 200);
-
-    img {
-      opacity: 20%;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      mix-blend-mode: hard-light;
-      pointer-events: none;
-    }
+    background-blend-mode: soft-light;
   }
 }
 
@@ -17,16 +20,9 @@
   @extend %theme--blue-light;
 
   .l-section__background {
+    @extend %l-section__background;
+    background-image: url('../images/texture-right.png');
     background-color: palette(teal, 1000);
-
-    img {
-      opacity: 40%;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      mix-blend-mode: color-burn;
-      pointer-events: none;
-    }
   }
 }
 
@@ -34,16 +30,9 @@
   @extend %theme--blue-light;
 
   .l-section__background {
+    @extend %l-section__background;
+    background-image: url('../images/texture-left.png');
     background-color: palette(teal, 1000);
-
-    img {
-      opacity: 40%;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      mix-blend-mode: color-burn;
-      pointer-events: none;
-    }
   }
 }
 
@@ -51,15 +40,8 @@
   @extend %theme--blue-light;
 
   .l-section__background {
+    @extend %l-section__background;
+    background-image: url('../images/texture-both.png');
     background-color: palette(teal, 1000);
-
-    img {
-      opacity: 40%;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      mix-blend-mode: color-burn;
-      pointer-events: none;
-    }
   }
 }

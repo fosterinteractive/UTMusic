@@ -126,11 +126,11 @@ read-more:
   js:
     js/read-more.js: {}
 
-section-background:
-  js:
-    js/section-background.js: {}
-  dependencies:
-    - utmusic/accordion
+# section-background:
+#   js:
+#     js/section-background.js: {}
+#   dependencies:
+#     - utmusic/accordion
 
 sliding-door-menu:
   js:
