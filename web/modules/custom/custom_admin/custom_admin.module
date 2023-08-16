@@ -306,6 +306,16 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
           ],
         ],
       ];
+
+      $item_number = $element['#field_parents'][1];
+      $selector = ':input[name="field_fact_group_items[' . $item_number . '][subform][field_fact_item_variation]"]';
+      $element['#states'] = [
+        'visible' => [
+          $selector => [
+            'value' => 'vertical',
+          ],
+        ],
+      ];
     }
   }
 
