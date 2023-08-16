@@ -181,10 +181,10 @@
     margin: 0;
     color: palette(white);
     transition: color 0.2s ease-in-out;
-    border: rem(1px) solid transparent;
+    // border: rem(1px) solid transparent;
     padding: rem(8px);
     background: transparent;
-    border: 0;
+    // border: 0;
     font-size: rem(38px);
   }
 }
@@ -195,12 +195,13 @@
   a {
     padding: rem(5px);
     border-radius: rem(10px);
+    border: rem(1px) solid transparent;
 
     &:hover,
     &:focus,
     &:active {
       background: none;
-      box-shadow: 0px rem(4px) rem(10px) rgba(62, 19, 77, 0.09);
+      border: rem(1px) solid palette(teal, 300);
     }
   }
 }

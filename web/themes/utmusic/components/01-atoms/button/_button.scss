@@ -106,6 +106,7 @@
   border: rem(1px) solid var(--c-button-border--secondary);
   color: var(--c-button-text--secondary);
   border-radius: rem(10px);
+  border: rem(1px) solid transparent;
   background-color: rgba(#F0FCFF, 0.7);
 
   svg {
@@ -116,10 +117,11 @@
   &:hover,
   &:focus,
   &:active {
-    border: rem(1px) solid var(--c-button-border--secondary--active);
+    border: rem(1px) solid palette(teal, 300);
+    // border: rem(1px) solid var(--c-button-border--secondary--active);
     color: var(--c-button-text--secondary--active);
     background-color: var(--c-button-icon-bg--active);
-    box-shadow: 0px rem(4px) rem(10px) rgba(62, 19, 77, 0.09);
+    // box-shadow: 0px rem(4px) rem(10px) rgba(62, 19, 77, 0.09);
 
     svg {
       fill: var(--c-button-text--secondary--active);
