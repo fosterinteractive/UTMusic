@@ -47,7 +47,7 @@
 {% if not node %}
   {% include '@layouts/page/_page--system.twig'
     with {
-      directory: directory,
+      directory: 'themes/utmusic',
       logo_image_url: site_logo_image_url,
       logo_image_width: site_logo_image_width,
       logo_image_height: site_logo_image_height,
@@ -80,7 +80,7 @@
 {% else %}
   {% include '@layouts/page/page.twig'
     with {
-      directory: directory,
+      directory: 'themes/utmusic',
       logo_image_url: site_logo_image_url,
       logo_image_width: site_logo_image_width,
       logo_image_height: site_logo_image_height,

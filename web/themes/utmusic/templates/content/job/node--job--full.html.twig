@@ -66,19 +66,6 @@
  * @see template_preprocess_node()
 #}
 
-{# {% include "@organisms/listing/listing-item--jobs.twig" with {
-    variation: 'jobs',
-    directory: directory,
-    id: node.id,
-    title: content.field_job_title[0] ? content.field_job_title[0]['#text'],
-    date: content.field_job_published_date[0] ? content.field_job_published_date,
-    location: content.field_job_location[0] ? content.field_job_location,
-    company: content.field_job_company[0] ? content.field_job_company,
-    feature: content.field_job_featured[0] ? content.field_job_featured[0]['#markup'],
-    url: content.field_job_link[0] ? content.field_job_link[0]['#url_title']
-  } only
-%} #}
-
 {# Get breadcrumbs block #}
 {% set breadcrumbs = drupal_entity('block', 'menu_breadcrumbs') %}
 

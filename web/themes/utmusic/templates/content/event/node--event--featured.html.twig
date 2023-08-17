@@ -156,7 +156,7 @@
 {% set aria_label = 'Learn more about ' ~ content.field_event_title[0]['#text'] %}
 
 {% include "@organisms/listing/listing-item--events-featured.twig" with {
-    directory: directory,
+    directory: 'themes/utmusic',
     variation: 'events-featured',
     icon: 'featured_event',
     title: content.field_event_title[0] ? content.field_event_title,

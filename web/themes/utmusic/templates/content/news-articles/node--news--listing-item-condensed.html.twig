@@ -88,7 +88,7 @@
 {% set variation = variation|default('condensed') %}
 
 {% include "@organisms/listing/listing-item.twig" with {
-    directory: directory,
+    directory: 'themes/utmusic',
     variation: 'news-condensed',
     id: node.id,
     title: content.field_news_title[0] ? content.field_news_title[0]['#text'],
