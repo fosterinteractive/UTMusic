@@ -419,9 +419,9 @@ content:
             reset: false
             condition: value
             grouping: AND
-            values_set: 1
+            values_set: 3
             value: ''
-            values: {  }
+            values: library
             value_form:
               -
                 value: library

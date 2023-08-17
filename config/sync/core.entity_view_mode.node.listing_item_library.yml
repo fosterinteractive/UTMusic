@@ -1,0 +1,10 @@
+uuid: 69b02fd7-83cf-4531-84c4-44ec301bb080
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.listing_item_library
+label: 'Listing Item Library'
+targetEntityType: node
+cache: true

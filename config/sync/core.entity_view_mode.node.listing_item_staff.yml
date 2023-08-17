@@ -1,0 +1,10 @@
+uuid: ffbe46a6-5081-4574-b24b-016c7c6669f3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.listing_item_staff
+label: 'Listing Item Staff'
+targetEntityType: node
+cache: true
