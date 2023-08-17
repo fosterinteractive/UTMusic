@@ -105,3 +105,9 @@
     padding-left: calc(var(--spacer)*0.9);
   }
 }
+
+
+//admin UI
+#field-fact-group-items-add-more-wrapper .form-actions {
+  display: none;
+}
