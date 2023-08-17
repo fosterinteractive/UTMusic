@@ -30,6 +30,26 @@ global:
 #   js:
 #     //use.typekit.net/txu0qxj.js: { every_page: true }
 
+datatables_config:
+  js:
+    js/datatables.config.js: {}
+  dependencies:
+    - utmusic/datatables
+
+# https://datatables.net/
+datatables:
+  version: '5.4.4'
+  js:
+    js/libraries/DataTables/datatables.min.js: {minified: true}
+  css:
+    base:
+      js/libraries/DataTables/datatables.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - core/drupal
+    - core/jquery.once
+
 accordion:
   js:
     js/accordion.js: {}
