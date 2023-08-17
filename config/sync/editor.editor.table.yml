@@ -11,12 +11,26 @@ editor: ckeditor5
 settings:
   toolbar:
     items:
+      - style
+      - insertTable
       - bold
       - italic
-      - insertTable
-      - bulletedList
+      - superscript
+      - subscript
       - link
+      - bulletedList
   plugins:
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Color dark-blue'
+          element: '<span class="a-table--dark-blue-text">'
+        -
+          label: 'Color blue'
+          element: '<span class="a-table--blue-text">'
+        -
+          label: 'One line text'
+          element: '<span class="a-table--one-line-text">'
     ckeditor5_list:
       reversed: true
       startIndex: true

@@ -5,4 +5,13 @@ dependencies: {  }
 name: Table
 format: table
 weight: 0
-filters: {  }
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: false
+    weight: -10
+    settings:
+      allowed_html: '<span class="a-table--dark-blue-text a-table--blue-text a-table--one-line-text">'
+      filter_html_help: true
+      filter_html_nofollow: false
