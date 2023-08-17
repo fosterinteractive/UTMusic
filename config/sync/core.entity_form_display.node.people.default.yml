@@ -408,7 +408,26 @@ content:
     weight: 23
     region: content
     settings: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        6cc33243-6655-4e6b-8f70-727f3422ae61:
+          entity_type: node
+          bundle: people
+          dependee: field_people_role
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: library
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_people_job_title_staff:
     type: options_select
     weight: 22
