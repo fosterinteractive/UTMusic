@@ -24,7 +24,6 @@ dependencies:
     - node.type.people
     - node.type.program
     - node.type.resources
-    - taxonomy.vocabulary.area_of_specialization
     - taxonomy.vocabulary.audience
     - taxonomy.vocabulary.degree_title
     - taxonomy.vocabulary.ed_news_category
@@ -246,7 +245,6 @@ permissions:
   - 'create program content'
   - 'create resources content'
   - 'create resources_files media'
-  - 'create terms in area_of_specialization'
   - 'create terms in audience'
   - 'create terms in degree_title'
   - 'create terms in ed_news_category'
@@ -317,7 +315,6 @@ permissions:
   - 'delete people revisions'
   - 'delete program revisions'
   - 'delete resources revisions'
-  - 'delete terms in area_of_specialization'
   - 'delete terms in audience'
   - 'delete terms in degree_title'
   - 'delete terms in ed_news_category'
@@ -370,7 +367,6 @@ permissions:
   - 'edit own resources_files media'
   - 'edit own webform'
   - 'edit own webform submission'
-  - 'edit terms in area_of_specialization'
   - 'edit terms in audience'
   - 'edit terms in degree_title'
   - 'edit terms in ed_news_category'
