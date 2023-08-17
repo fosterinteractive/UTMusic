@@ -7,7 +7,6 @@ dependencies:
     - core.entity_view_mode.node.listing_item
     - core.entity_view_mode.node.listing_item_condensed
     - node.type.event
-    - taxonomy.vocabulary.area_of_specialization
     - taxonomy.vocabulary.event_type
     - taxonomy.vocabulary.news_area_of_study
   module:
@@ -448,8 +447,8 @@ display:
             fail: 'not found'
           validate_options:
             bundles:
-              area_of_specialization: area_of_specialization
               event_type: event_type
+              news_area_of_study: news_area_of_study
             access: false
             operation: view
             multiple: 1
@@ -691,8 +690,8 @@ display:
             fail: 'not found'
           validate_options:
             bundles:
-              area_of_specialization: area_of_specialization
               event_type: event_type
+              news_area_of_study: news_area_of_study
             access: false
             operation: view
             multiple: 1
@@ -878,8 +877,8 @@ display:
             fail: 'not found'
           validate_options:
             bundles:
-              area_of_specialization: area_of_specialization
               event_type: event_type
+              news_area_of_study: news_area_of_study
             access: false
             operation: view
             multiple: 1
@@ -1353,8 +1352,8 @@ display:
           break_phrase: false
           not: false
           vocabularies:
-            area_of_specialization: area_of_specialization
             event_type: event_type
+            news_area_of_study: news_area_of_study
           include_args: false
       filters:
         status:
