@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.people.field_people_image
     - field.field.node.people.field_people_instrument
     - field.field.node.people.field_people_job_title
+    - field.field.node.people.field_people_job_title_library
     - field.field.node.people.field_people_job_title_staff
     - field.field.node.people.field_people_last_name
     - field.field.node.people.field_people_name
@@ -73,6 +74,14 @@ content:
       link: false
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_people_job_title_library:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_people_job_title_staff:
     type: entity_reference_label

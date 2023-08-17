@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.people.field_people_image
     - field.field.node.people.field_people_instrument
     - field.field.node.people.field_people_job_title
+    - field.field.node.people.field_people_job_title_library
     - field.field.node.people.field_people_job_title_staff
     - field.field.node.people.field_people_last_name
     - field.field.node.people.field_people_name
@@ -66,6 +67,7 @@ hidden:
   field_people_image: true
   field_people_instrument: true
   field_people_job_title: true
+  field_people_job_title_library: true
   field_people_job_title_staff: true
   field_people_last_name: true
   field_people_name: true

@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.people.field_people_image
     - field.field.node.people.field_people_instrument
     - field.field.node.people.field_people_job_title
+    - field.field.node.people.field_people_job_title_library
     - field.field.node.people.field_people_job_title_staff
     - field.field.node.people.field_people_last_name
     - field.field.node.people.field_people_name
@@ -56,7 +57,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 20
+    weight: 21
     region: content
   field_people_area:
     type: entity_reference_label
@@ -64,35 +65,35 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 15
+    weight: 16
     region: content
   field_people_background:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 19
+    weight: 20
     region: content
   field_people_creative_works:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 22
+    weight: 23
     region: content
   field_people_custom_content:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 23
+    weight: 24
     region: content
   field_people_education:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 18
+    weight: 19
     region: content
   field_people_email:
     type: basic_string
@@ -106,7 +107,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 24
+    weight: 25
     region: content
   field_people_faculty_position:
     type: entity_reference_label
@@ -123,7 +124,7 @@ content:
       view_mode: carousel
       link: false
     third_party_settings: {  }
-    weight: 25
+    weight: 26
     region: content
   field_people_image:
     type: entity_reference_entity_view
@@ -140,7 +141,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 16
+    weight: 17
     region: content
   field_people_job_title:
     type: entity_reference_label
@@ -149,6 +150,14 @@ content:
       link: false
     third_party_settings: {  }
     weight: 13
+    region: content
+  field_people_job_title_library:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 15
     region: content
   field_people_job_title_staff:
     type: entity_reference_label
@@ -185,7 +194,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 17
+    weight: 18
     region: content
   field_people_pronouns:
     type: text_default
@@ -237,7 +246,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 21
+    weight: 22
     region: content
   field_people_website:
     type: link

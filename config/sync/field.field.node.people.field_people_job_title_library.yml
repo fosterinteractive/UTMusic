@@ -1,0 +1,29 @@
+uuid: 4f6edb5b-3dfc-4b30-8adb-bd345a217c30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_job_title_library
+    - node.type.people
+    - taxonomy.vocabulary.librarians_library_staff_job_tit
+id: node.people.field_people_job_title_library
+field_name: field_people_job_title_library
+entity_type: node
+bundle: people
+label: 'Librarians Job Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      librarians_library_staff_job_tit: librarians_library_staff_job_tit
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.people.field_people_image
     - field.field.node.people.field_people_instrument
     - field.field.node.people.field_people_job_title
+    - field.field.node.people.field_people_job_title_library
     - field.field.node.people.field_people_job_title_staff
     - field.field.node.people.field_people_last_name
     - field.field.node.people.field_people_name
@@ -82,6 +83,7 @@ third_party_settings:
         - field_people_instrument
         - field_people_staff_position
         - field_people_job_title_staff
+        - field_people_job_title_library
         - field_people_area
       label: Categories
       region: content
@@ -242,7 +244,7 @@ content:
         hide_guidelines: '1'
   field_people_area:
     type: choices_widget
-    weight: 23
+    weight: 24
     region: content
     settings:
       configuration_options: ''
@@ -401,6 +403,12 @@ content:
             effect: show
             effect_options: {  }
             selector: ''
+  field_people_job_title_library:
+    type: options_select
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_people_job_title_staff:
     type: options_select
     weight: 22

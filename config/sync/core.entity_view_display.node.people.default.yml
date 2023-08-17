@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.people.field_people_image
     - field.field.node.people.field_people_instrument
     - field.field.node.people.field_people_job_title
+    - field.field.node.people.field_people_job_title_library
     - field.field.node.people.field_people_job_title_staff
     - field.field.node.people.field_people_last_name
     - field.field.node.people.field_people_name
@@ -39,6 +40,7 @@ dependencies:
     - link
     - markup
     - options
+    - telephone
     - text
     - user
 id: node.people.default
@@ -48,28 +50,28 @@ mode: default
 content:
   field_page_admin_help_seo:
     type: markup
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 123
     region: content
   field_page_admin_help_social:
     type: markup
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 124
     region: content
   field_page_meta_description:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 126
     region: content
   field_page_meta_image:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -77,7 +79,7 @@ content:
     region: content
   field_page_meta_title:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -85,14 +87,14 @@ content:
     region: content
   field_people_activities:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 117
     region: content
   field_people_area:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -100,49 +102,49 @@ content:
     region: content
   field_people_background:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 116
     region: content
   field_people_creative_works:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 119
     region: content
   field_people_custom_content:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 120
     region: content
   field_people_education:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 115
     region: content
   field_people_email:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 105
     region: content
   field_people_enable_media:
     type: list_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 121
     region: content
   field_people_faculty_position:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -150,7 +152,7 @@ content:
     region: content
   field_people_featured_media:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false
@@ -159,7 +161,7 @@ content:
     region: content
   field_people_image:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false
@@ -168,7 +170,7 @@ content:
     region: content
   field_people_instrument:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -176,15 +178,23 @@ content:
     region: content
   field_people_job_title:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     weight: 130
     region: content
+  field_people_job_title_library:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 133
+    region: content
   field_people_job_title_staff:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -192,42 +202,43 @@ content:
     region: content
   field_people_last_name:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 102
     region: content
   field_people_name:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 101
     region: content
   field_people_phone:
-    type: basic_string
-    label: above
-    settings: {  }
+    type: telephone_link
+    label: hidden
+    settings:
+      title: ''
     third_party_settings: {  }
     weight: 128
     region: content
   field_people_profile_type:
     type: list_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 114
     region: content
   field_people_pronouns:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 104
     region: content
   field_people_pronunciation:
     type: file_default
-    label: above
+    label: hidden
     settings:
       use_description_as_link_text: true
     third_party_settings: {  }
@@ -235,7 +246,7 @@ content:
     region: content
   field_people_research_profile:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -247,14 +258,14 @@ content:
     region: content
   field_people_role:
     type: list_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 108
     region: content
   field_people_staff_position:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -262,14 +273,14 @@ content:
     region: content
   field_people_teaching:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 118
     region: content
   field_people_website:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false

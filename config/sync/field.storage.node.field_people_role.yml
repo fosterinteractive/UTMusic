@@ -17,6 +17,9 @@ settings:
     -
       value: staff
       label: Staff
+    -
+      value: library
+      label: 'Librarians & Library Staff'
   allowed_values_function: ''
 module: options
 locked: false
