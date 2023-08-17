@@ -39,5 +39,10 @@
 {% extends "/themes/utmusic/templates/paragraphs/adminspring-preview.html.twig" %}
 
 {% block content %}
-  {% include "paragraph--tables.html.twig" %}
+  {% include "@atoms/table/table.twig" with {
+      table: content.field_table_content[0] ? content.field_table_content[0],
+      background: content.field_table_row_background[0] ? content.field_table_row_background[0]['#markup'],
+      borders: content.field_table_borders[0] ? content.field_table_borders[0]['#markup'],
+    } only
+  %}
 {% endblock %}
