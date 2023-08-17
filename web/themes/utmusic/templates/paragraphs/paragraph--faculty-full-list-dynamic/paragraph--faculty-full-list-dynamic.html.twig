@@ -53,4 +53,10 @@
       content: drupal_view('people_full_list', 'staff_full_list'),
     } only
   %}
+{% elseif list_role == 'library' %}
+  {% include "@organisms/content-views/_view.twig"
+    with {
+      content: drupal_view('people_full_list', 'library_full_list'),
+    } only
+  %}
 {% endif %}

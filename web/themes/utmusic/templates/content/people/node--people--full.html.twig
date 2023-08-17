@@ -138,6 +138,21 @@
   {% endfor %}
 {% endif %}
 
+{# Set string of job titles for Librarians from array #}
+{% if content.field_people_job_title_library[0] %}
+  {% set library_job_titles_arr = [] %}
+
+  {# Get number of items #}
+  {% if content.field_people_job_title_library['#items'].getIterator() %}
+    {% set item_count = content.field_people_job_title_library['#items'].getIterator()|length - 1 %}
+  {% endif %}
+
+  {# For each item add to instruments array #}
+  {% for i in 0..item_count %}
+    {% set library_job_titles_arr = library_job_titles_arr|merge([content.field_people_job_title_library[i]['#plain_text']]) %}
+  {% endfor %}
+{% endif %}
+
 
 {# Set string of Roles from array #}
 {% if content.field_people_role[0] %}
@@ -222,6 +237,18 @@
 
     {% endif %}
 
+    {% if roles[0] == 'library' or roles[1] == 'library' or roles[2] == 'library' %}
+
+      {% if library_job_titles_arr %}
+        {% set job_titles_library = library_job_titles_arr|join(', ') %}
+      {% endif %}
+
+
+
+      {% if job_titles_library %}
+        {% set title_suffix_library = job_titles_library %}
+      {% endif %}
+    {% endif %}
   {% endif %}
 
 {% endif %}
@@ -282,6 +309,7 @@
     title: full_name,
     title_suffix_faculty: title_suffix_faculty,
     title_suffix_staff: title_suffix_staff,
+    title_suffix_library: title_suffix_library,
     email: content.field_people_email[0] ? content.field_people_email[0]['#context']['value'],
     phone: content.field_people_phone[0] ? content.field_people_phone[0]['#context']['value'],
     website_url: content.field_people_website[0] ? content.field_people_website[0]['#url'],
@@ -301,6 +329,5 @@
     number_items: feature_media_list_type == 'manual' ? media_count : auto_number_items_media,
   }
 %}
-
 {{ attach_library('utmusic/carousel-media') }}
 {# {{ attach_library('utmusic/section-background') }} #}
