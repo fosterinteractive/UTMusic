@@ -36,11 +36,11 @@
     color: var(--c-link-icon-external);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 0.7rem;
+    width: 0.7em;
     height: 1em;
     white-space: nowrap;
     content: '';
-    background-position-y: rem(5px);
+    background-position-y: 0.3em;
   }
 }
 
