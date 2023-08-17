@@ -269,3 +269,34 @@ body.mm-wrapper {
 .form-wrapper .paragraph-top .paragraph-type {
   display: none;
 }
+
+.paragraph-type-top .paragraphs-dropbutton-wrapper .dropbutton {
+  margin: 0;
+  position: relative;
+
+  .edit {
+    margin: 0;
+   
+    &::before {
+      content: unset;
+    }
+  }
+
+  .dropbutton-toggle {
+    width: rem(24px);
+    height: rem(24px);
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    &::before {
+      content: unset;
+    }
+  }
+
+  .remove {
+    &::before {
+      content: unset;
+    }
+  }
+}
