@@ -81,10 +81,10 @@ third_party_settings:
         - field_people_faculty_position
         - field_people_job_title
         - field_people_instrument
+        - field_people_area
         - field_people_staff_position
         - field_people_job_title_staff
         - field_people_job_title_library
-        - field_people_area
       label: Categories
       region: content
       parent_name: ''
@@ -244,11 +244,28 @@ content:
         hide_guidelines: '1'
   field_people_area:
     type: choices_widget
-    weight: 24
+    weight: 21
     region: content
     settings:
       configuration_options: ''
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        cd833561-ea6c-4ba4-a06c-d7b196daa420:
+          entity_type: node
+          bundle: people
+          dependee: field_people_role
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 3
+            value: ''
+            values: faculty
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_people_background:
     type: text_textarea
     weight: 24
@@ -405,7 +422,7 @@ content:
             selector: ''
   field_people_job_title_library:
     type: options_select
-    weight: 23
+    weight: 24
     region: content
     settings: {  }
     third_party_settings:
@@ -430,7 +447,7 @@ content:
             selector: ''
   field_people_job_title_staff:
     type: options_select
-    weight: 22
+    weight: 23
     region: content
     settings: {  }
     third_party_settings:
@@ -521,7 +538,7 @@ content:
     third_party_settings: {  }
   field_people_staff_position:
     type: options_select
-    weight: 21
+    weight: 22
     region: content
     settings: {  }
     third_party_settings:

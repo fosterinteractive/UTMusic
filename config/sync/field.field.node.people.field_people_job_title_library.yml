@@ -10,7 +10,7 @@ id: node.people.field_people_job_title_library
 field_name: field_people_job_title_library
 entity_type: node
 bundle: people
-label: 'Librarians Job Title'
+label: 'Librarians & Library Staff Job Title'
 description: ''
 required: false
 translatable: false
