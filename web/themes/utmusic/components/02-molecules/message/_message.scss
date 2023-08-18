@@ -143,9 +143,9 @@ $statuses: (
   @extend %m-message-admission;
 }
 
-.m-message--blue__content {
+.m-message__content--divider {
   position: relative;
-
+  
   &::before {
     content: '';
     display: block;

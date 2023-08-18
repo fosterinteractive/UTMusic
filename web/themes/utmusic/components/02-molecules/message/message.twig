@@ -27,7 +27,7 @@
     </div>
   {% endif %}
 
-  <div class="m-message{{ variation }}__content">
+  <div class="m-message{{ variation }}__content {% if divider %}m-message__content--{{ divider }}{% endif %}">
     {% if title %}
       <div class="m-message{{ variation }}__title">
         {% include "@atoms/text/headings/heading.twig" with {

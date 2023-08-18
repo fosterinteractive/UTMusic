@@ -401,6 +401,18 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
       ];
     }
   }
+
+  if($bundle == 'message') {
+    if ($field_name == 'field_message_divider') {
+      $element['#states'] = [
+        'visible' => [
+          ':input[name="field_message_variation"]' => [
+            'value' => 'blue',
+          ],
+        ],
+      ];
+    }
+  }
 }
 
 
