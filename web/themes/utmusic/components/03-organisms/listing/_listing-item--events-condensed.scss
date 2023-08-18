@@ -50,9 +50,13 @@
 .m-listing-item--events-condensed__tags-single {
   @extend %a-type--xsmall;
   display: flex;
-  gap: calc(var(--spacer) * 0.2);
+  gap: calc(var(--spacer) * 0.1);
   align-items: center;
   color: var(--c-listing-item--date);
+
+  &:first-child {
+    min-width: 32%;
+  }
   
   svg {
     color: var(--c-heading-link);
