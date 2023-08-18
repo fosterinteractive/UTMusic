@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.message.field_message_divider
     - field.field.paragraph.message.field_message_icon
     - field.field.paragraph.message.field_message_text
     - field.field.paragraph.message.field_message_title
@@ -22,6 +23,13 @@ targetEntityType: paragraph
 bundle: message
 mode: preview
 content:
+  field_message_divider:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_message_icon:
     type: entity_reference_entity_view
     label: hidden

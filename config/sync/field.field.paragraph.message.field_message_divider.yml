@@ -1,0 +1,21 @@
+uuid: be2ea1ca-9c49-46fe-8d1b-957b236f6a97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_message_divider
+    - paragraphs.paragraphs_type.message
+  module:
+    - options
+id: paragraph.message.field_message_divider
+field_name: field_message_divider
+entity_type: paragraph
+bundle: message
+label: 'Vertical Line'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
