@@ -1,6 +1,13 @@
-{% if background or borders is not empty %}
+{% if background is not empty %}
 	{% set background = 'a-table--' ~ background %}
+{% endif %}
+
+{% if borders is not empty %}
 	{% set borders = 'a-table--' ~ borders %}
+{% endif %}
+
+{% if mobile_table_display is not empty %}
+	{% set mobile_table_display = 'a-table--' ~ mobile_table_display %}
 {% endif %}
 
 {% if sb_demo %}
@@ -36,7 +43,7 @@
 		</tbody>
 	</table>
 {% else %}
-	<div class="a-table-wrapper {{ background }} {{ borders }}">
+	<div class="a-table-wrapper {{ background }} {{ borders }} {{ mobile_table_display }}">
 		{{ table }}
 	</div>
 {% endif %}
