@@ -88,6 +88,10 @@ tr {
   }
 }
 
+.a-table--scroll {
+  overflow-x: auto;
+}
+
 // text editor style.
 .a-table--dark-blue-text {
   color: palette(blue, 300);

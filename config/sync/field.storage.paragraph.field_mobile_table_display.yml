@@ -1,0 +1,27 @@
+uuid: 84c2bd5c-10ce-4d88-8a18-2d19e15aecda
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_mobile_table_display
+field_name: field_mobile_table_display
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: scroll
+      label: 'Horizontal scroll'
+    -
+      value: dataTable
+      label: 'Accordion (First column is label)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
