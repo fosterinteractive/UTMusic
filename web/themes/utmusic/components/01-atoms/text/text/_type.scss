@@ -136,3 +136,18 @@ sup {
   font-family: $title-font-family;
   font-weight: bold;
 }
+
+
+
+/// HIghlighting text
+.a-type--pink {
+  color: palette(pink, 400);
+}
+
+.a-type--teal {
+  color: palette(teal, 300);
+}
+
+.a-type--blue {
+  color: palette(blue, 300);
+}

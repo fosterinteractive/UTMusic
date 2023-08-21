@@ -71,6 +71,15 @@ settings:
         -
           label: 'P (x Large)'
           element: '<p class="a-type--xlarge">'
+        -
+          label: 'Teal Color Text'
+          element: '<span class="a-type--teal">'
+        -
+          label: 'Pink Color Text'
+          element: '<span class="a-type--pink">'
+        -
+          label: 'Dark Blue Color Text'
+          element: '<span class="a-type--blue">'
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<strike>'
