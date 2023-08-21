@@ -13,8 +13,9 @@
 
 .m-accordion-item__copy-btn {
   background-color: palette(teal, 1000);
-  border-radius: 5px;
-  padding: 6px;  
+  border-radius: rem(5px);
+  padding: rem(6px);  
+  border: rem(1px) solid transparent;
 
   .a-button--icon__icon {
     display: block;
@@ -27,6 +28,7 @@
   &:active,
   &:visited {
     background-color: palette(blue, 900);
+    border: rem(1px) solid palette(teal, 300);
   }
 }
 
