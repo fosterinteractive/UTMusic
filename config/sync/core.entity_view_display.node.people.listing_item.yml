@@ -28,7 +28,7 @@ dependencies:
     - field.field.node.people.field_people_name
     - field.field.node.people.field_people_phone
     - field.field.node.people.field_people_profile_type
-    - field.field.node.people.field_people_programs
+    - field.field.node.people.field_people_program
     - field.field.node.people.field_people_pronouns
     - field.field.node.people.field_people_pronunciation
     - field.field.node.people.field_people_research_profile
@@ -106,6 +106,14 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_people_program:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
   field_people_role:
     type: list_key
     label: hidden
@@ -131,7 +139,6 @@ hidden:
   field_people_job_title_staff: true
   field_people_phone: true
   field_people_profile_type: true
-  field_people_programs: true
   field_people_pronouns: true
   field_people_pronunciation: true
   field_people_research_profile: true

@@ -27,7 +27,7 @@ dependencies:
     - field.field.node.people.field_people_name
     - field.field.node.people.field_people_phone
     - field.field.node.people.field_people_profile_type
-    - field.field.node.people.field_people_programs
+    - field.field.node.people.field_people_program
     - field.field.node.people.field_people_pronouns
     - field.field.node.people.field_people_pronunciation
     - field.field.node.people.field_people_research_profile
@@ -186,7 +186,7 @@ third_party_settings:
         required_fields: false
     group_programs_list:
       children:
-        - field_people_programs
+        - field_people_program
       label: 'Programs List'
       region: content
       parent_name: ''
@@ -519,9 +519,9 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_people_programs:
+  field_people_program:
     type: options_buttons
-    weight: 13
+    weight: 48
     region: content
     settings: {  }
     third_party_settings: {  }

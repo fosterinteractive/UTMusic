@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.program.field_program_academic_info
     - field.field.node.program.field_program_concentration
     - field.field.node.program.field_program_enable_media
-    - field.field.node.program.field_program_faculty
     - field.field.node.program.field_program_featured_media
     - field.field.node.program.field_program_header
     - field.field.node.program.field_program_overview
@@ -42,7 +41,6 @@ hidden:
   field_program_academic_info: true
   field_program_concentration: true
   field_program_enable_media: true
-  field_program_faculty: true
   field_program_featured_media: true
   field_program_header: true
   field_program_overview: true

@@ -28,7 +28,7 @@ dependencies:
     - field.field.node.people.field_people_name
     - field.field.node.people.field_people_phone
     - field.field.node.people.field_people_profile_type
-    - field.field.node.people.field_people_programs
+    - field.field.node.people.field_people_program
     - field.field.node.people.field_people_pronouns
     - field.field.node.people.field_people_pronunciation
     - field.field.node.people.field_people_research_profile
@@ -74,7 +74,7 @@ hidden:
   field_people_name: true
   field_people_phone: true
   field_people_profile_type: true
-  field_people_programs: true
+  field_people_program: true
   field_people_pronouns: true
   field_people_pronunciation: true
   field_people_research_profile: true
