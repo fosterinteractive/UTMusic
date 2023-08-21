@@ -37,11 +37,14 @@
  */
 #}
 
-{{ attach_library('utmusic/datatables_config') }}
+{% if content.field_mobile_table_display[0]['#markup'] %}
+  {{ attach_library('utmusic/datatables_config') }}
+{% endif %}
 
 {% include "@atoms/table/table.twig" with {
     table: content.field_table_content[0] ? content.field_table_content[0],
     background: content.field_table_row_background[0] ? content.field_table_row_background[0]['#markup'],
     borders: content.field_table_borders[0] ? content.field_table_borders[0]['#markup'],
+    mobile_table_display: content.field_mobile_table_display[0] ? content.field_mobile_table_display[0]['#markup'],
   } only
 %}

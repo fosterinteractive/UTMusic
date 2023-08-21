@@ -20,7 +20,10 @@ label: Table
 description: ''
 required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: '<table><thead><tr><th>Header Row 1</th><th>Header Row 2</th><th>Header Row 3</th></tr></thead><tbody><tr><td>Column Content</td><td>Column Content</td><td>Column Content</td></tr><tr><td>You can delete this table, but make</td><td>sure you add a header row</td><td>as it''s required for accessibility</td></tr></tbody></table>'
+    format: table
 default_value_callback: ''
 settings: {  }
 field_type: text_long

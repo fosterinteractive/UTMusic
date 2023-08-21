@@ -3,17 +3,26 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.tables.field_mobile_table_display
     - field.field.paragraph.tables.field_table_borders
     - field.field.paragraph.tables.field_table_content
+    - field.field.paragraph.tables.field_table_help_text
     - field.field.paragraph.tables.field_table_row_background
     - paragraphs.paragraphs_type.tables
   module:
+    - markup
     - text
 id: paragraph.tables.default
 targetEntityType: paragraph
 bundle: tables
 mode: default
 content:
+  field_mobile_table_display:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_table_borders:
     type: options_select
     weight: 0
@@ -22,11 +31,17 @@ content:
     third_party_settings: {  }
   field_table_content:
     type: text_textarea
-    weight: 2
+    weight: 4
     region: content
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_table_help_text:
+    type: markup
+    weight: 3
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_table_row_background:
     type: options_select

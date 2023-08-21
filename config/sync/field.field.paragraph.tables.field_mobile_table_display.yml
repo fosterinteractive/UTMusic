@@ -1,0 +1,23 @@
+uuid: dd4b51b9-ce62-461a-832b-9393316e8e8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mobile_table_display
+    - paragraphs.paragraphs_type.tables
+  module:
+    - options
+id: paragraph.tables.field_mobile_table_display
+field_name: field_mobile_table_display
+entity_type: paragraph
+bundle: tables
+label: 'Mobile Table Display'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: dataTable
+default_value_callback: ''
+settings: {  }
+field_type: list_string

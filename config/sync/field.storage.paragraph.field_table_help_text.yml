@@ -1,0 +1,19 @@
+uuid: ec02bacf-4c31-476a-af27-c9b76b939c00
+langcode: en
+status: true
+dependencies:
+  module:
+    - markup
+    - paragraphs
+id: paragraph.field_table_help_text
+field_name: field_table_help_text
+entity_type: paragraph
+type: markup
+settings: {  }
+module: markup
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
