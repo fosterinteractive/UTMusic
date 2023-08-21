@@ -29,7 +29,7 @@
             {% if absolute_link %}
 
               <div class="m-accordion-item__copy-link">
-                <button class="m-accordion-item__copy-btn is-absolute data-trigger" data-template="{{accordion__tooltip__id}}--absolute" type="button">
+                <button aria-labelledby="{{accordion__tooltip__id}}--absolute" class="m-accordion-item__copy-btn is-absolute data-trigger" data-template="{{accordion__tooltip__id}}--absolute" type="button">
                   {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
                       directory: directory,
                       icon: 'envelope',
@@ -39,7 +39,7 @@
                 </button>
 
                 <div class="visually-hidden" id="{{accordion__tooltip__id}}--absolute">
-                  <p>{{ 'Copy link for email (Full Url)'|t }}</p>
+                  <p>{{ 'Copy absolute link to clipboard for '|t }}{{ title }}</p>
                 </div>
 
                 <span class="u-visually--hidden is-absolute-text">{{absolute_link}}</span>
@@ -48,7 +48,7 @@
 
             {% if relative_link %}
               <div class="m-accordion-item__copy-link">
-                <button class="m-accordion-item__copy-btn is-relative data-trigger" data-template="{{accordion__tooltip__id}}--relative" type="button">
+                <button aria-labelledby="{{accordion__tooltip__id}}--relative" class="m-accordion-item__copy-btn is-relative data-trigger" data-template="{{accordion__tooltip__id}}--relative" type="button">
                   {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
                       directory: directory,
                       icon: 'link-simple',
@@ -58,7 +58,7 @@
                 </button>
 
                 <div class="visually-hidden" id="{{accordion__tooltip__id}}--relative">
-                  <p>{{ 'Copy website link (Relative Url)'|t }}</p>
+                  <p>{{ 'Copy relative link to clipboard for '|t }}{{ title }}</p>
                 </div>
 
                 <span class="u-visually--hidden is-relative-text">{{relative_link}}</span>

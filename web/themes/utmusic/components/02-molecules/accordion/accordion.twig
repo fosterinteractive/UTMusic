@@ -38,8 +38,9 @@
       {% endif %}
     {% endfor %}
 
-  <div id="{{ id }}" class="m-accordion__items" data-accordion-component="items">
+  <ul aria-label="{{ 'Accordion Control Button Group'|t }}" id="{{ id }}" class="m-accordion__items" data-accordion-component="items">
     {% for item in items %}
+    <li>
       {% if sb_demo %}
         {% include '@molecules/accordion/accordion-item.twig' with {
             title: item.title,
@@ -50,6 +51,7 @@
       {% else %}
         {{ item }}
       {% endif %}
+    </li>
     {% endfor %}
-  </div>
+  </ul>
 </div>
