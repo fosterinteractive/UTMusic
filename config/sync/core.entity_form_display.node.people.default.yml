@@ -27,6 +27,7 @@ dependencies:
     - field.field.node.people.field_people_name
     - field.field.node.people.field_people_phone
     - field.field.node.people.field_people_profile_type
+    - field.field.node.people.field_people_programs
     - field.field.node.people.field_people_pronouns
     - field.field.node.people.field_people_pronunciation
     - field.field.node.people.field_people_research_profile
@@ -109,7 +110,7 @@ third_party_settings:
       label: Content
       region: content
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: details
       format_settings:
         classes: ''
@@ -125,7 +126,7 @@ third_party_settings:
       label: 'Featured Media'
       region: content
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: details
       format_settings:
         classes: ''
@@ -144,7 +145,7 @@ third_party_settings:
       label: 'Search Engines & Social Share (Advanced)'
       region: content
       parent_name: ''
-      weight: 4
+      weight: 5
       format_type: details
       format_settings:
         classes: ''
@@ -183,6 +184,21 @@ third_party_settings:
         open: false
         description: ''
         required_fields: false
+    group_programs_list:
+      children:
+        - field_people_programs
+      label: 'Programs List'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
 id: node.people.default
 targetEntityType: node
 bundle: people
@@ -190,7 +206,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -503,6 +519,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_people_programs:
+    type: options_buttons
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_people_pronouns:
     type: text_textfield
     weight: 14
@@ -582,13 +604,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   revision_log:
     type: hide_revision_field_log_widget
-    weight: 10
+    weight: 11
     region: content
     settings:
       rows: 5
@@ -599,20 +621,20 @@ content:
       allow_user_settings: true
     third_party_settings: {  }
   simple_sitemap:
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 11
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS
@@ -621,7 +643,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
