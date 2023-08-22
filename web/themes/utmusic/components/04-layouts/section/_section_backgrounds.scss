@@ -1,18 +1,34 @@
 %l-section__background {
   grid-row: 1/ span 3;
   grid-column: alpha / omega;
-  background-repeat: no-repeat;
-  background-size: 110% 115%;
-  background-blend-mode: color-burn;
-  background-position:  center;
+  background-repeat: repeat, no-repeat;
+  background-blend-mode: color-dodge, normal; 
+
+  background-size: 100px 100px, 1000% 1000%;
+  background-position: center, center; 
+
+  @include breakpoint($bp-tablet) {
+    background-size: 100px 100px, 400% 400%;
+  }
+
+  @include breakpoint($bp-large) {
+    background-size: 100px 100px, 300% 300%;
+    background-position: center, 60% center; 
+  }
 }
 
 .theme--dark-blue-bg {
   .l-section__background {
     @extend %l-section__background;
-    background-image: url('../images/texture-left.png');
+    background-image: url('../images/noise.svg'), url('../images/texture-left.svg');
     background-color: palette(black, 200);
-    background-blend-mode: soft-light;
+    background-blend-mode: soft-light, soft-light;
+    background-size: 100px 100px, 200% 200%;
+    background-position: center, 100% 50%;
+
+    @include breakpoint($bp-max) {
+      background-position: center, 70% 50%;
+    }
   }
 }
 
@@ -21,8 +37,12 @@
 
   .l-section__background {
     @extend %l-section__background;
-    background-image: url('../images/texture-right.png');
-    background-color: palette(teal, 1000);
+    background-image: url('../images/noise.svg'), url('../images/texture-right.svg');
+    background-color: #A6DCF2;
+
+    @include breakpoint($bp-tablet) {
+      background-position: center, 30% center; 
+    }
   }
 }
 
@@ -31,8 +51,12 @@
 
   .l-section__background {
     @extend %l-section__background;
-    background-image: url('../images/texture-left.png');
-    background-color: palette(teal, 1000);
+    background-image: url('../images/noise.svg'), url('../images/texture-left.svg');
+    background-color: #A6DCF2;
+    
+    @include breakpoint($bp-tablet) {
+      background-position: center, 60% center; 
+    }
   }
 }
 
@@ -41,7 +65,12 @@
 
   .l-section__background {
     @extend %l-section__background;
-    background-image: url('../images/texture-both.png');
-    background-color: palette(teal, 1000);
+    background-image: url('../images/noise.svg'), url('../images/texture-both.svg');
+    background-color: #A6DCF2;
+  
+    @include breakpoint($bp-max) {
+      background-size: 100px 100px, 300% 300%;
+      background-position: center, center; 
+    }
   }
 }

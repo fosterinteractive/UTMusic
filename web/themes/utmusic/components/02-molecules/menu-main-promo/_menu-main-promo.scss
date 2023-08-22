@@ -4,13 +4,13 @@
   background-position: right bottom;
   background-repeat: no-repeat;
   min-height: rem(370px);
-
   height: 100%;
-  background-image: url('../images/texture-right.png');
-  background-color: palette(teal, 1000);
-  background-size: 205% 130%;
-  background-blend-mode: color-burn;
-  background-position: 100% center;
+  background-image: url('../images/noise.svg'), url('../images/texture-right.svg');
+  background-color: #A6DCF2;
+  background-repeat: repeat, no-repeat;
+  background-size: 100px 100px, 200% 200%;
+  background-blend-mode: color-dodge, normal; 
+  background-position: center, 15% 50%;
   
   @include breakpoint($bp-max) {
     padding: ru(2) ru(1.25);

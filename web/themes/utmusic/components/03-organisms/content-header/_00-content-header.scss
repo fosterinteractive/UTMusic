@@ -14,17 +14,15 @@
 .o-hero-media__bg-decoration {
   grid-row: 1/ span 6;
   grid-column: alpha / omega;
-  background-image: url('../images/header.png');
+  background-image: url('../images/noise.svg'), url('../images/header-texture.svg');
   background-color: palette(teal, 1000);
-  background-repeat: no-repeat;
-  background-size: 400% 200%;
-  background-blend-mode: color-burn;
-  background-position: -300px center;
+  background-repeat: repeat, no-repeat;
+  background-blend-mode: color-dodge, color-burn; 
+  background-size: 100px 100px, cover;
+  background-position: center, center;
   
   @include breakpoint($bp-tablet) {
     grid-row: 1/ span 5;
-    background-position: center;
-    background-size: 100% 100%;
   }
 }
 
