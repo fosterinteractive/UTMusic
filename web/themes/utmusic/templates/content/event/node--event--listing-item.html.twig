@@ -106,8 +106,8 @@
     {% set date_time = date_start|date('g:ia') %}
   {% endif %}
 
-  {% set event_date_start = date_start|date('F d, Y') %}
-  {% set event_date_end = date_end|date('F d, Y') %}
+  {% set event_date_start = date_start|date('M d, Y') %}
+  {% set event_date_end = date_end|date('M d, Y') %}
 
   {% set month_start = event_date_start|split(' ')[0] %}
   {% set month_end = event_date_end|split(' ')[0] %}

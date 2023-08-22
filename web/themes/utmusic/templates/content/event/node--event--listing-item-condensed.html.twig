@@ -110,10 +110,38 @@
   {% set date_start = content.field_event_date[0]['#value'] %}
   {% set date_end = content.field_event_date[0]['#end_value'] %}
    
-  {% if date_end %}
+  {# {% if date_end %}
     {% set date_time = date_start|date('g:ia') ~ ' - ' ~ date_end|date('g:ia') %}
   {% else %}
     {% set date_time = date_start|date('g:ia') %}
+  {% endif %} #}
+
+  {% set event_date_start = date_start|date('M d, Y') %}
+  {% set event_date_end = date_end|date('M d, Y') %}
+
+  {% set month_start = event_date_start|split(' ')[0] %}
+  {% set month_end = event_date_end|split(' ')[0] %}
+
+  {% set day_start_raw = event_date_start|split(' ')[1] %}
+  {% set day_start = day_start_raw|split(',')[0] %}
+
+  {% set day_end_raw = event_date_end|split(' ')[1]  %}
+  {% set day_end = day_end_raw|split(',')[0]  %}
+
+  {% set year_start = event_date_start|split(' ')[2] %}
+  {% set year_end = event_date_end|split(' ')[2] %}
+
+  {# if event is one-day event then into template we pass time-range and day&month #}
+  {% if day_start == day_end and month_start == month_end and year_start == year_end %}
+    {% set time_range = date_start|date('g:ia') ~ ' - ' ~ date_end|date('g:ia') %}
+  {% else %}
+    {% if year_start == year_end and month_start == month_end %}
+      {% set date_range = month_start|date('M') ~ ' ' ~ day_start ~ ' - ' ~ day_end %}
+    {% elseif year_start == year_end and month_start != month_end %}
+      {% set date_range = month_start|date('M') ~ ' ' ~ day_start ~ ' - ' ~  month_end|date('M') ~ ' ' ~ day_end  %}
+    {% else %}
+      {% set date_range = event_date_start ~ ' - ' ~ event_date_end %}
+    {% endif %}
   {% endif %}
 {% endif %}
 
@@ -124,9 +152,10 @@
     url: url,
     id: 'listing-item-id-' ~ node.id(),
     event_date: "",
-    event_date_month: date_month,
+    event_date_month: date_month|date('M'),
     event_date_day: date_day,
-    time_start: date_time,
+    time_range: time_range,
+    date_range: date_range,
     location: location,
     price: price,
     audience: content.field_event_audience[0] ? content.field_event_audience[0]['#plain_text'],

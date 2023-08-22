@@ -78,7 +78,18 @@
     {% if time_start or location %}
       <div class="m-listing-item{{ variation }}__tags">
 
-        {% if time_start %}
+        {% if date_range %}
+          <div class="m-listing-item{{ variation }}__tags-single">
+            {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+              directory: directory,
+              base_class: 'a-icon',
+              icon: 'calendar',
+              size: 'xxsmall', 
+              } only
+            %}
+            {{ date_range }}
+          </div>
+        {% else %}
           <div class="m-listing-item{{ variation }}__tags-single">
             {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
               directory: directory,
@@ -87,7 +98,7 @@
               size: 'xxsmall', 
               } only
             %}
-            {{ time_start }}
+            {{ time_range }}
           </div>
         {% endif %}
 
