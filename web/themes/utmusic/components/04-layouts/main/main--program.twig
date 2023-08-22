@@ -46,8 +46,9 @@
         </div>
       {% endif %} 
 
-      {% if faculty %}
+      {% if faculty and number_items >= 0 %}
         <div class="l-section--[12] theme--white-bg l-section-spacing-top--medium l-section-spacing-bottom--medium">
+          
           <div class="l-main--program__faculty l-section__zone-1 l-flex">
             <div class="l-main--program__media-title">
               {% include "@atoms/text/headings/heading.twig" with {
@@ -58,13 +59,7 @@
               %}
             </div>
 
-            {% include "@organisms/listing/listing.twig" with {
-                directory: directory,
-                variation: 'people-carousel',
-                listing_items: faculty,
-                number_items: number_items
-              } only
-            %}
+            {{ faculty }}
           </div>
         </div>
       {% endif %} 

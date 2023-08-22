@@ -22,14 +22,21 @@
   {% set items = items|merge([row.content]) %}
 {% endfor %}
 
-{% include "@organisms/listing/listing.twig"
-  with {
+{% if view.current_display == 'people_related_to_programs' %}
+  {% set variation = 'people-carousel' %}
+  {% set number_items = items|length - 1 %}
+  {{ attach_library('utmusic/carousel-media-people') }}
+{% else %}
+  {% set variation = 'people' %}
+  {% set listing_col_layout = 'l-flex--4col' %}
+  {{ attach_library('utmusic/listing-full-people') }}
+{% endif %}
+
+{% include "@organisms/listing/listing.twig" with {
     directory: 'themes/utmusic',
-    variation: 'people',
-    listing_col_layout: 'l-flex--4col',
+    variation: variation,
+    listing_col_layout: listing_col_layout,
     listing_items: items,
+    number_items: number_items,
   } only
 %}
-
-
-{{ attach_library('utmusic/listing-full-people') }}

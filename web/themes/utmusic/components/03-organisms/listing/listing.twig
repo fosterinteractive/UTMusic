@@ -33,7 +33,7 @@
     </div>
   {% endif %}
 
-  {% if (variation == '--media-carousel' and number_items > 0) or (variation == '--people-carousel' and number_items > 0) %}
+  {% if (variation == '--media-carousel' and number_items > 0) or (variation == '--people-carousel' and number_items > 1) %}
     {% if number_items > 1 %}
       <div class="o-listing{{ variation }}__items-next-btn">
         {% include "@atoms/button/button.twig" with {
@@ -51,7 +51,7 @@
     {% endif %}
   {% endif %}
 
-  {% if (variation == '--media-carousel' and number_items > 0) or (variation == '--people-carousel' and number_items > 0) %}
+  {% if (variation == '--media-carousel' and number_items > 0) or (variation == '--people-carousel' and number_items > 1) %}
     {% if number_items > 1 %}
       <div class="o-listing{{ variation }}__items-prev-btn">
           {% include "@atoms/button/button.twig" with {
@@ -69,9 +69,9 @@
     {% endif %}
   {% endif %}
 
-  {% if (number_items > 0 and variation == '--people-carousel') or ( number_items > 0 and variation == '--media-carousel') %}
-    <div role="region" aria-label="{{ title }}" class="o-listing{{ variation }}__items {{ listing_col_layout }}"  {% if number_items > 1 %}style="scroll-snap-type: x mandatory; overflow-x: scroll; overscroll-behavior-x: contain; scroll-behavior: smooth;"{% endif %}> 
-  {% elseif (number_items == 0 and variation == '--people-carousel') or ( number_items == 0 and variation == '--media-carousel') %}
+  {% if (number_items >= 0 and variation == '--people-carousel') or ( number_items > 0 and variation == '--media-carousel') %}
+    <div role="region" aria-label="{{ title }}" class="o-listing{{ variation }}__items {{ listing_col_layout }}"  {% if (number_items > 1 and variation == '--media-carousel') or (number_items > 1 and variation == '--people-carousel')  %}style="scroll-snap-type: x mandatory; overflow-x: scroll; overscroll-behavior-x: contain; scroll-behavior: smooth;"{% endif %}> 
+  {% elseif ( number_items == 0 and variation == '--media-carousel') %}
     <div class="o-listing{{ variation }}__single-item">
   {% else %}
     <div role="region" aria-label="{{ title }}" class="o-listing{{ variation }}__items {{ listing_col_layout }}"> 

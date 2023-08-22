@@ -133,6 +133,21 @@
   {% endfor %}
 {% endif %}
 
+{# Lets get faculty array of people #}
+{% set people_view_rows = content.people_related_to_programs['#rows'][0]['#rows'] %}
+{# Check how many items in the view  #}
+{% set people_view_items = [] %}
+{% for row in people_view_rows %}
+  {% set people_view_items = people_view_items|merge([row.content]) %}
+{% endfor %}
+
+{# We extract 1 because in template for carousel we count from 0 #}
+{% set auto_people_view_items = people_view_items|length - 1 %}
+
+{% if auto_people_view_items|length  %}
+  {# We prepare view of related people to program on theme preprocess  #}
+  {% set faculty = content.people_related_to_programs %}
+{% endif %}
 
 
 {% include "@layouts/main/main--program.twig" with {
@@ -144,7 +159,7 @@
     overview: content.field_program_overview[0] ? content.field_program_overview,
     academic_info: content.field_program_academic_info[0] ? content.field_program_academic_info,
     faculty: faculty,
-    number_items: faculty_count,
+    number_items: auto_people_view_items,
     supporting_details: content.field_program_supporting_details[0] ? content.field_program_supporting_details,
     media_display: media_display,
     featured_media: featured_media,
@@ -153,5 +168,4 @@
 %}
 
 {{ attach_library('utmusic/carousel-media') }}
-{{ attach_library('utmusic/carousel-media-people') }}
 {# {{ attach_library('utmusic/section-background') }} #}
