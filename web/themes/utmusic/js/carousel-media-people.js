@@ -24,10 +24,7 @@ const hideControlButtons = (carouselContainer, nextButton, prevButton) => {
 
   total_width = total_width + 30 * (total_items.length - 1);
 
-  console.log(total_width)
-
   if (carouselContainer.clientWidth > total_width) {
-    console.log('test')
 
     if (prevButton) {
       //On loading page we hide previous button
@@ -40,20 +37,35 @@ const hideControlButtons = (carouselContainer, nextButton, prevButton) => {
     }
 
     carouselContainer.style.overflowX = 'unset';
+    carouselContainer.closest('.o-listing--people-carousel').style.paddingTop = '0';
+  } 
+  else {
 
-  } else {
     if (prevButton) {
-      //On loading page we hide previous button
-      prevButton.style.visibility = 'visible';
+      //On loading page we show previous button
+        const carousel = prevButton.closest('.o-listing--people-carousel').querySelector('.o-listing--people-carousel__items');
+
+        const itemWidth = carousel.firstElementChild.getBoundingClientRect().width;
+        // this line scrolls the items
+        carousel.scrollLeft -= itemWidth;
+  
+        const isStartOfScroll = carousel.scrollLeft === 0;
+        prevButton.style.visibility = isStartOfScroll ? 'hidden' : 'visible';
     }
 
     if (nextButton) {
-      //On loading page we hide previous button
-      nextButton.style.visibility = 'visible';
+      //On loading page we show next button
+      const carousel = nextButton.closest('.o-listing--people-carousel').querySelector('.o-listing--people-carousel__items');
+      const itemWidth = carousel.firstElementChild.getBoundingClientRect().width;
+      // this line scrolls the items
+      carousel.scrollLeft += itemWidth;
+      const isEndOfScroll = carousel.scrollWidth - carousel.scrollLeft === carousel.clientWidth;
+
+      nextButton.style.visibility = isEndOfScroll ? 'hidden' : 'visible';
     }
 
     carouselContainer.style.overflowX = 'scroll';
-
+    carouselContainer.closest('.o-listing--people-carousel').style.paddingTop = '70px';
   }
 }
 

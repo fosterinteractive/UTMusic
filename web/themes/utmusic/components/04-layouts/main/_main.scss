@@ -60,7 +60,6 @@
 
 .l-main--event__media {
   grid-column: 2 / 15;
-  padding-bottom: calc(var(--spacer) * 2);
   padding-left: calc(var(--spacer) * 1);
   overflow: hidden;
 
@@ -69,6 +68,7 @@
     padding-left: 0;
   }
 }
+// End Event Main
 
 //Person Variation
 %l-main--people__content {
@@ -112,3 +112,4 @@
     color: palette(grey, 300);
   }
 }
+// End Person Variation

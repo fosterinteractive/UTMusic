@@ -159,17 +159,22 @@
 .o-listing--media-carousel__items-prev-btn {
   @extend %carousel-controls-btn;
   
-  left: var(--spacer);
+  left: 0;
 }
 
 .o-listing--media-carousel__items-next-btn {
   @extend %carousel-controls-btn;
   
-  right: var(--spacer);
+  right: 0;
 }
 
 
 // carousel People Items
+.o-listing--people-carousel {
+  @extend %carousel-container;
+  overflow: hidden;
+}
+
 .o-listing--people-carousel__items {
   @extend %o-listing--carousel;
 
@@ -185,11 +190,6 @@
   }
 }
 
-.o-listing--people-carousel {
-  @extend %carousel-container;
-  overflow: hidden;
-}
-
 .o-listing--people-carousel__item {
   width: fit-content !important;
   max-width: rem(280px);
@@ -197,13 +197,11 @@
 
 .o-listing--people-carousel__items-prev-btn {
   @extend %carousel-controls-btn;
-  
   left: var(--spacer);
 }
 
 .o-listing--people-carousel__items-next-btn {
   @extend %carousel-controls-btn;
-  
   right: var(--spacer);
 }
 

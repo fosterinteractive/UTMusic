@@ -1,18 +1,34 @@
 %carousel-controls-btn {
   position: absolute;
-  top: 40%;
+  top: 0;
   z-index: 1;
 
+  button {
+    padding: 0;
+    border-radius: 50%;
+    background-color: palette(white);
+  }
+
   svg {
+    display: block;
+    border-radius: 50%;
     pointer-events: none;
+    fill: palette(pink, 400);
+    min-width: rem(44px);
+    min-height: rem(44px);
   }
 }
 
 %carousel-container {
   position: relative;
+  padding-top: calc(var(--spacer)*3);
 
   scrollbar-width: thin;
   scrollbar-color: #6FC7EA #F3F3F1;
+
+  @include breakpoint($bp-tablet) {
+    padding-top: calc(var(--spacer)*2);
+  }
 
   /* height */
   ::-webkit-scrollbar {
@@ -42,10 +58,19 @@
 
 .m-featured-media {
   @extend %carousel-container;
-
+  padding-top: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--spacer);
+  gap: calc(var(--spacer)*0.5);
+}
+
+.m-featured-media__items-wrapper {
+  position: relative;
+  padding-top: calc(var(--spacer)*3);
+
+  @include breakpoint($bp-tablet) {
+    padding-top: calc(var(--spacer)*2);
+  }
 }
 
 .m-featured-media__title h2 {
@@ -65,13 +90,11 @@
 
 .m-featured-media__items-prev-btn {
   @extend %carousel-controls-btn;
-  
   left: calc(var(--spacer) * 0.3);
 }
 
 .m-featured-media__items-next-btn {
   @extend %carousel-controls-btn;
-  
   right: calc(var(--spacer) * 0.3);
 }
 

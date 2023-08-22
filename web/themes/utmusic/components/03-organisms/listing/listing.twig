@@ -33,15 +33,15 @@
     </div>
   {% endif %}
 
-  {% if (variation == '--media-carousel' and number_items > 0) or (variation == '--people-carousel' and number_items > 1) %}
-    {% if number_items > 1 %}
+  {% if (variation == '--media-carousel' and number_items > 0) or (variation == '--people-carousel' and number_items > 0) %}
+    {% if number_items > 1 or (variation == '--people-carousel' and number_items > 0) %}
       <div class="o-listing{{ variation }}__items-next-btn">
         {% include "@atoms/button/button.twig" with {
             directory: directory,
             label: label,
             html_element: 'button',
             variation: 'icon',
-            icon: 'chevron-right-solid',
+            icon: 'circle-caret-right',
             url: '#',
             aria_label: "Next"|t,
             alignment: 'left'
@@ -51,15 +51,15 @@
     {% endif %}
   {% endif %}
 
-  {% if (variation == '--media-carousel' and number_items > 0) or (variation == '--people-carousel' and number_items > 1) %}
-    {% if number_items > 1 %}
+  {% if (variation == '--media-carousel' and number_items > 0) or (variation == '--people-carousel' and number_items > 0) %}
+    {% if number_items > 1 or (variation == '--people-carousel' and number_items > 0) %}
       <div class="o-listing{{ variation }}__items-prev-btn">
           {% include "@atoms/button/button.twig" with {
             directory: directory,
             label: label,
             html_element: 'button',
             variation: 'icon',
-            icon: 'chevron-left-solid',
+            icon: 'circle-caret-left',
             url: '#',
             aria_label: "Previous"|t,
             alignment: 'left'

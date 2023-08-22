@@ -51,7 +51,7 @@
 
 
       {% if featured_media %}
-        <div class="{% if number_items < 1 %}l-section--[8]{% else %}l-section--[12]{% endif %} l-section-wrapper theme--white-bg">
+        <div class="{% if number_items < 1 %}l-section--[8]{% else %}l-section--[12]{% endif %} l-section-spacing-top--small l-section-spacing-bottom--small l-section-wrapper theme--white-bg">
           <div class="l-main--event__media l-section__zone l-section__zone-1">
             {% include "@organisms/listing/listing.twig" with {
                 directory: directory,
