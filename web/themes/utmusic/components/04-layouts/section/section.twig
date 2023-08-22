@@ -68,16 +68,6 @@
     {% set theme = 'theme--white-bg' %}
 {% endif %}
 
-{# {% if theme == 'theme--dark-blue-bg' %}
-  {% set background_image_path = '/themes/utmusic/images/texture--left-min.png' %}
-{% elseif theme == 'theme--blue-right-bg' %}
-  {% set background_image_path = '/themes/utmusic/images/texture--right-min.png' %}
-{% elseif theme == 'theme--blue-left-bg' %}
-  {% set background_image_path = '/themes/utmusic/images/texture--left-min.png' %}
-{% elseif theme == 'theme--blue-both-bg' %}
-  {% set background_image_path = '/themes/utmusic/images/texture--both-min.png' %}
-{% endif %} #}
-
 
 {% if spacing_top is not empty %}
   {# Add BEM variation '--' prefix if missing #}
@@ -116,7 +106,6 @@
   
   {# {% if background_image_path %} #}
     <div class="l-section__background">
-      {# <img alt="" aria-hidden="true" src='{{ background_image_path}}'> #}
     </div>
   {# {% endif %} #}
 
