@@ -43,7 +43,7 @@
   {% endif %}
 
   {# Class #}
-  class="{{ base_class }}{{ variation }} {{ extra_classes }} a-button--{{ alignment }}"
+  class="{{ base_class }}{{ variation }} {{ extra_classes }} a-button--{{ alignment }} {% if external_link %}a-button--external-link{% endif %}"
 
   {% if data_attribute %}
     {{ data_attribute|raw }}

@@ -224,6 +224,13 @@
   margin: 0 auto;
 }
 
+.a-button--external-link {
+  svg {
+    width: 0.7em;
+    height: 0.8em;
+  }
+}
+
 // Text Button appear visually like a-links
 // They are used when text buttons appear next to buttons to allow them align vertically
 
