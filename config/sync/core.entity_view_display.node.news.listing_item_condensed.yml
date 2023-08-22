@@ -59,7 +59,7 @@ content:
     label: hidden
     settings:
       timezone_override: America/Toronto
-      date_format: 'F j, Y'
+      date_format: 'M j, Y'
     third_party_settings: {  }
     weight: 1
     region: content

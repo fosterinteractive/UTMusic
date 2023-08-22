@@ -79,7 +79,7 @@ content:
     settings:
       timezone_override: America/Toronto
       format_type: medium
-      format: default
+      format: compact
       force_chronological: false
       add_classes: false
       time_wrapper: true
@@ -87,7 +87,7 @@ content:
       parts:
         start: start
         end: end
-        duration: '0'
+        duration: duration
       duration:
         separator: ' | '
         unit: ''

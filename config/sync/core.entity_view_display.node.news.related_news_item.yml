@@ -55,11 +55,11 @@ content:
     weight: 6
     region: content
   field_news_date:
-    type: datetime_default
+    type: datetime_custom
     label: hidden
     settings:
-      timezone_override: ''
-      format_type: news_date
+      timezone_override: America/Toronto
+      date_format: 'M j, Y'
     third_party_settings: {  }
     weight: 2
     region: content
