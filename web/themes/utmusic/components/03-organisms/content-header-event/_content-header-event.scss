@@ -59,11 +59,15 @@
 
   svg {
     color: var(--c-heading-link);
+    min-width: $base-line-height;
     width: $base-line-height;
     height: $base-line-height;
   }
 }
 
+.o-hero-media__info-location svg  {
+  align-self: flex-start;
+}
 
 .o-hero-media--event__breadcrumbs,
 .o-hero-media--event-text__breadcrumbs {
