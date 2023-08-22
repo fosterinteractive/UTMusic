@@ -87,6 +87,7 @@
 
   @include breakpoint($bp-tablet) {
     width: 50%;
+    min-width: 50%;
   }
 }
 

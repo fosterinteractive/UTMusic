@@ -21,6 +21,7 @@
 
   @include breakpoint($bp-tablet) {
     width: 50%;
+    min-width: 50%;
     padding: var(--spacer) 0;
   }
 }
@@ -80,6 +81,7 @@
 .m-listing-item--news-featured__img {
   @include breakpoint($bp-tablet) {
     width: 50%;
+    min-width: 50%;
   }
 }
 

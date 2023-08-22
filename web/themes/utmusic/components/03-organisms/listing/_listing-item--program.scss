@@ -33,5 +33,6 @@
 .m-listing-item--program__img {
   @include breakpoint($bp-tablet) {
     width: 30%;
+    min-width: 30%;
   }
 }
