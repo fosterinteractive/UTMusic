@@ -5,10 +5,13 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.fact_group.field_fact_group_items
+    - field.field.paragraph.fact_group.field_fact_group_items_variation
+    - field.field.paragraph.fact_group.field_facts_group_color
     - paragraphs.paragraphs_type.fact_group
   module:
     - entity_reference_revisions
     - layout_builder
+    - options
 third_party_settings:
   layout_builder:
     enabled: false
@@ -26,6 +29,20 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_fact_group_items_variation:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_facts_group_color:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   search_api_excerpt: true

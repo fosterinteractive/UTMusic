@@ -1,0 +1,21 @@
+uuid: 177b6201-2204-440a-845c-d4852ff17ce6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fact_group_items_variation
+    - paragraphs.paragraphs_type.fact_group
+  module:
+    - options
+id: paragraph.fact_group.field_fact_group_items_variation
+field_name: field_fact_group_items_variation
+entity_type: paragraph
+bundle: fact_group
+label: 'Items Appearance'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

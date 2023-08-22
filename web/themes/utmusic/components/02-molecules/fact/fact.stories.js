@@ -2,8 +2,9 @@ import factItem from './fact-item.twig';
 import factGroup from './fact-group.twig';
 
 import factItemData from './fact-item.yml';
-import factItemHorizontalData from './fact-item--horizontal.yml';
-import factGroupData from './fact-group.yml';
+import factItemLineData from './fact-item--line.yml';
+import factGroupCardData from './fact-group--card.yml';
+import factGroupLineData from './fact-group--line.yml';
 
 /**
  * Storybook Definition.
@@ -23,25 +24,43 @@ export default {
 
   argTypes: {
     variation: {
-      defaultValue: 'vertical',
+      defaultValue: 'card',
       description: 'Fact Item Layout',
       type: { required: 'true' },
       control: {
         type: 'select',
         options: { 
-          'Vertical': 'vertical', 
-          'Horizontal': 'horizontal',
+          'Card': 'card', 
+          'Line': 'line',
         },
       },
       table: {
         type: {
-          summary: ' vertical | horizontal ',
+          summary: ' card | line ',
         },
-        defaultValue: { summary: 'vertical' },
+        defaultValue: { summary: 'card' },
+      },
+    },
+    color: {
+      defaultValue: 'teal',
+      description: 'Fact Item Color',
+      type: { required: 'true' },
+      control: {
+        type: 'select',
+        options: { 
+          'Teal': 'teal', 
+          'Magenta': 'magenta',
+        },
+      },
+      table: {
+        type: {
+          summary: ' teal | magenta ',
+        },
+        defaultValue: { summary: 'teal' },
       },
     },
     illustration: {
-      defaultValue: 'building',
+      defaultValue: 'graduate',
       description: 'Fact Item Illustration',
       type: { required: true },
       control: {
@@ -53,42 +72,7 @@ export default {
         },
       },
     },
-    alignment: {
-      defaultValue: factItemData.alignment,
-      description: 'Fact Item Alignmentt',
-      type: { required: false },
-      control: {
-        type: 'select',
-        options: { 
-          'Left': 'left', 
-          'Right': 'right',
-        },
-      },
-      table: {
-        type: {
-          summary: ' left | right ',
-        },
-        defaultValue: { summary: 'left' },
-      },
-    },
-    divider: {
-      defaultValue: factItemData.divider,
-      description: 'Fact Item Divider',
-      type: { required: false },
-      control: {
-        type: 'select',
-        options: { 
-          'None': false, 
-          'Divider': 'divider',
-        },
-      },
-      table: {
-        type: {
-          summary: ' false | divider ',
-        },
-        defaultValue: { summary: 'false' },
-      },
-    },
+    
     value: {
       defaultValue: factItemData.value,
       description: 'Fact item Value',
@@ -126,7 +110,8 @@ export const FactItemDemo = ({
   alignment,
   divider,
   value,
-  description
+  description,
+  color,
 
 }) => factItem({
   variation,
@@ -134,11 +119,13 @@ export const FactItemDemo = ({
   alignment,
   divider,
   value,
-  description
+  description,
+  color,
 });
 
 
-export const FactItemVertical = () => factItem(factItemData);
-export const FactItemHorizontal = () => factItem(factItemHorizontalData);
+export const FactItemCard = () => factItem(factItemData);
+export const FactItemLine = () => factItem(factItemLineData);
 
-export const FactGroup = () => factGroup(factGroupData);
+export const FactGroupCard = () => factGroup(factGroupCardData);
+export const FactGroupLine = () => factGroup(factGroupLineData);

@@ -50,5 +50,7 @@
 {% include "@molecules/fact/fact-group.twig" with {
     directory: 'themes/utmusic',
     items: facts,
+    variation: content.field_fact_group_items_variation[0] ? content.field_fact_group_items_variation[0]['#markup'],
+    color: content.field_facts_group_color[0] ? content.field_facts_group_color[0]['#markup'],
   }
 %}

@@ -1,0 +1,21 @@
+uuid: 72ec477b-9301-4506-ac9d-4742bdcd542a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_facts_group_color
+    - paragraphs.paragraphs_type.fact_group
+  module:
+    - options
+id: paragraph.fact_group.field_facts_group_color
+field_name: field_facts_group_color
+entity_type: paragraph
+bundle: fact_group
+label: Color
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

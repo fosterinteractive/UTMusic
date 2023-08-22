@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.fact_group.field_fact_group_items
+    - field.field.paragraph.fact_group.field_fact_group_items_variation
+    - field.field.paragraph.fact_group.field_facts_group_color
     - paragraphs.paragraphs_type.fact_group
   module:
     - paragraphs
@@ -14,7 +16,7 @@ mode: default
 content:
   field_fact_group_items:
     type: paragraphs
-    weight: 0
+    weight: 2
     region: content
     settings:
       title: Paragraph
@@ -30,6 +32,18 @@ content:
         add_above: '0'
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  field_fact_group_items_variation:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_facts_group_color:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true

@@ -297,34 +297,6 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
     }
   }
 
-  if($bundle == 'fact_item') {
-    //working for field inside paragraph
-    if ($field_name == 'field_fact_item_align_icon') {
-      $element['#states'] = [
-        'visible' => [
-          ':input[name="field_fact_item_variation"]' => [
-            'value' => 'vertical',
-          ],
-        ],
-      ];
-
-      //working for the field of paragraph which is nested into parent paragaph
-      
-      //lets find the number position of current child paragraph
-      $item_number = $element['#field_parents'][1];
-
-      //selector for the field of nested paragraph
-      $selector = ':input[name="field_fact_group_items[' . $item_number . '][subform][field_fact_item_variation]"]';
-      $element['#states'] = [
-        'visible' => [
-          $selector => [
-            'value' => 'vertical',
-          ],
-        ],
-      ];
-    }
-  }
-
   if ($bundle == 'carousel_header') {
     if ($field_name == 'field_carousel_header_sec_title') {
       $element['#states'] = [

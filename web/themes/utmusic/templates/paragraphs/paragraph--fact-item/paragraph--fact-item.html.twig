@@ -39,12 +39,8 @@
 
 
 
-{% set variation = content.field_fact_item_variation[0] ? content.field_fact_item_variation[0]['#markup'] %}
-{% set divider = content.field_fact_item_divider[0] ? content.field_fact_item_divider[0]['#markup'] %}
-
 {% set illustration_file_type = content.field_fact_item_illustration[0] ? content.field_fact_item_illustration[0]['#media'].field_media_image.entity.filemime.value %}
 {% set illustration = content.field_fact_item_illustration[0] ? content.field_fact_item_illustration %}
-{% set alignment = content.field_fact_item_align_icon[0] ? content.field_fact_item_align_icon[0]['#markup'] %}
 
 {% set value = content.field_fact_item_value[0] ? content.field_fact_item_value %}
 {% set description = content.field_fact_item_description[0] ? content.field_fact_item_description %}
@@ -52,11 +48,8 @@
 
 {% include "@molecules/fact/fact-item.twig" with {
     directory: 'themes/utmusic',
-    variation: variation,
-    divider: divider,
     illustration_file_type: illustration_file_type,
     illustration: illustration,
-    alignment: alignment,
     value: value,
     description: description,
   }

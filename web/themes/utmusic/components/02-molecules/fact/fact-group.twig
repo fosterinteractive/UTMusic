@@ -1,13 +1,22 @@
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
 {% if items %}
-  <div class="m-fact-group l-flex--3col">
+  <div class="m-fact-group{{variation}} {{color}} l-flex--3col">
       {% for item in items %}
         {% if sb_demo %} 
           {% include '@molecules/fact/fact-item.twig' with {
-              variation: item.variation,
+              variation: variation,
               value: item.value,
               description: item.description,
-              alignment: item.alignment,
-              divider: item.divider,
               illustration: item.illustration,
               sb_demo: item.sb_demo,
             } only

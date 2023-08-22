@@ -1,64 +1,37 @@
-{% set variation = variation|default('vertical') %}
-
-{% set illustration_size = illustration_size|default('medium') %}
+{% set illustration_size = illustration_size|default('xsmall') %}
 {% set title_appearance = title_appearance|default('h3') %}
 {% set title_html_element = title_html_element|default('h3') %}
 
-{% if variation is not empty %}
+<div class="m-fact-item">
+  {% if illustration %}
+    <div class="m-fact-item__illustration">
+      <div class="m-fact-item__image-illustration-bg"></div>
+      {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+          directory: directory,
+          base_class: 'a-icon',
+          icon_file_type: illustration_file_type,
+          icon: illustration,
+          size: 'small', 
+        } only
+      %}
+    </div>
+  {% endif %}
 
-  {# Add BEM variation '--' prefix if missing #}
-  {% if variation starts with '--' %}
-    {# Do nothing #}
-  {% else %}
-    {% set variation = '--' ~ variation %}
-  {% endif %} 
+  <div class="m-fact-item__main">
 
-{% endif %}
-
-<div class="m-fact-item{{ variation }} {% if variation == '--vertical' and alignment %}{{alignment}}{% endif %}">
-  {# wrap into container for horizontal variation  #}
-      {% if variation == '--horizontal' %}
-      <div class="m-fact-item{{ variation }}__main">
-      {% endif %}
-  
-    {% if illustration %}
-      <div class="m-fact-item{{ variation }}__illustration">
-        {# <div class="m-fact-item__image-illustration-bg"></div> #}
-        {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
-            directory: directory,
-            base_class: 'a-icon',
-            icon_file_type: illustration_file_type,
-            icon: illustration,
-            size: 'small', 
-          } only
-        %}
+    {% if value %}
+      <div class="m-fact-item__value">
+        {{ value }}
       </div>
     {% endif %}
 
-  {# wrap into container for vertical variation  #}
-      {% if variation == '--vertical' %}
-      <div class="m-fact-item{{ variation }}__main {% if divider %}{{divider}}--top{% endif %} ">
-      {% endif %}
-
-      {% if value %}
-        <div class="m-fact-item{{ variation }}__value">
-          {{ value }}
-        </div>
-      {% endif %}
-
-    {# wrap into container for horizontal variation  #}
-      {% if variation == '--horizontal' %}
-      </div>
-      {% endif %}
-
-      {% if description  %}
-        <div class="m-fact-item{{ variation }}__description {% if variation == '--horizontal' and divider %}{{divider}}--left{% endif %}">
+    {% if description  %}
+      <div class="m-fact-item__description-wrapper">
+        <div class="m-fact-item__description">
           {{ description }}
         </div>
-      {% endif %}
-
-  {# wrap into container for vertical variation  #}
-      {% if variation == '--vertical' %}
       </div>
-      {% endif %}
+    {% endif %}
+
+  </div>
 </div>

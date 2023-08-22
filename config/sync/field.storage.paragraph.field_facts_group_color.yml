@@ -1,22 +1,22 @@
-uuid: 2236f2ff-5f19-426a-8054-9a0ca2c6f8a2
+uuid: bc23457a-f589-4e97-b4be-742ef78d15a6
 langcode: en
 status: true
 dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.field_fact_item_align_icon
-field_name: field_fact_item_align_icon
+id: paragraph.field_facts_group_color
+field_name: field_facts_group_color
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
-      value: left
-      label: Left
+      value: teal
+      label: Teal
     -
-      value: right
-      label: Right
+      value: magenta
+      label: Magenta
   allowed_values_function: ''
 module: options
 locked: false

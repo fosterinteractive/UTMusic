@@ -1,19 +1,22 @@
-uuid: ecb0f20e-984f-47cc-88a8-74809826134f
+uuid: ce848ce3-8801-414b-a583-29a9be6c2566
 langcode: en
 status: true
 dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.field_fact_item_divider
-field_name: field_fact_item_divider
+id: paragraph.field_fact_group_items_variation
+field_name: field_fact_group_items_variation
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
-      value: divider
-      label: Line
+      value: card
+      label: Card
+    -
+      value: line
+      label: 'Left Line'
   allowed_values_function: ''
 module: options
 locked: false

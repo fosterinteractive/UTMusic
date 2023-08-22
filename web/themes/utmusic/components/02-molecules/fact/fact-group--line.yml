@@ -1,0 +1,28 @@
+sb_demo: true
+variation: line
+color: teal
+items:
+  1:
+    sb_demo: true
+    illustration: graduate
+    illustration_size: xsmall
+    value: '#1'
+    description: 'University in canada'
+  2:
+    sb_demo: true
+    illustration: graduate
+    illustration_size: xsmall
+    value: '#1'
+    description: 'University in canada'
+  3:
+    sb_demo: true
+    illustration: graduate
+    illustration_size: xsmall
+    value: '#1'
+    description: 'University in canada'
+  4:
+    sb_demo: true
+    illustration: graduate
+    illustration_size: xsmall
+    value: '#1'
+    description: 'University in canada'
