@@ -90,40 +90,26 @@
 {% endif %}
 
 {# Get check if custom location or listed #}
-{% if content.field_event_location[0] %}
-  {% set location_key = content.field_event_location[0]['#markup'] %}
-  {% if location_key == 'Custom' %}
-    {% if content.field_event_custom_location[0] %}
-      {% set location = content.field_event_custom_location %}
+{% if content.field_event_location_settings[0] %}
+  {% set location_key = content.field_event_location_settings[0]['#markup'] %}
+  {% if location_key == 'custom' %}
+  {# for custom value we have three field from event CT  #}
+    
+    {% if content.field_event_location_short_title[0] %}
+      {% set location_short = content.field_event_location_short_title[0]['#text'] %}
     {% endif %}
+
   {% else %}
-    {% set location = content.field_event_location[0]['#markup'] %}
+  {# for default value we ptint taxonomy entity  #}
+    {% if content.field_event_location[0] %}
+      {% set location_taxonomy = content.field_event_location[0]['#plain_text'] %}
+    {% endif %}
   {% endif %}
 {% endif %}
-
-{# Get Start Date and break it apart  #}
-{# {% if content.field_event_date[0] %}
-  {% if content.field_event_date[0]['start_date'] %}
-    {% set start_date = content.field_event_date[0]['start_date']['#text'] %}
-  {% else %}
-    {% set start_date = content.field_event_date[0]['#text'] %}
-  {% endif %}
-
-  {% set event_date = start_date|date('M j Y') %}
-  {% set date_day = start_date|date('j') %}
-  {% set date_month = start_date|date('F') %}
-  {% set date_time = start_date|date('g:ia') %}
-{% endif %} #}
 
 {% if content.field_event_date[0] %}
   {% set date_start = content.field_event_date[0]['#value'] %}
   {% set date_end = content.field_event_date[0]['#end_value'] %}
-  
-  {# {% if date_end %}
-    {% set date_time = date_start|date('g:ia') ~ ' - ' ~ date_end|date('g:ia') %}
-  {% else %}
-    {% set date_time = date_start|date('g:ia') %}
-  {% endif %} #}
 
   {% set event_date_start = date_start|date('F d, Y') %}
   {% set event_date_end = date_end|date('F d, Y') %}
@@ -171,7 +157,8 @@
     label: 'Learn more',
     aria_label: aria_label,
     time_start: date_time,
-    location: location,
+    location_short: location_short,
+    location_taxonomy: location_taxonomy,
   } only
 %}
 

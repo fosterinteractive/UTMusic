@@ -56,7 +56,7 @@
         </div>
       {% endif  %}
 
-      {% if time_start or location %}
+      {% if time_start or location_short or  location_taxonomy %}
         <div class="m-listing-item{{ variation }}__tags">
 
           {% if time_start %}
@@ -72,7 +72,7 @@
             </div>
           {% endif %}
 
-          {% if location %}
+          {% if location_short or location_taxonomy  %}
             <div class="m-listing-item{{ variation }}__tags-single">
               {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
                 directory: directory,
@@ -81,7 +81,11 @@
                 size: 'xxsmall', 
                 } only
               %}
-              {{ location }}
+              {% if location_short %}
+                {{ location_short }}
+              {% else %}
+                {{ location_taxonomy }}
+              {% endif %}
             </div>
           {% endif %}
 

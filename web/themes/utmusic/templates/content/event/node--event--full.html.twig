@@ -117,14 +117,29 @@
 
 
 {# Get check if custom location or listed #}
-{% if content.field_event_location[0] %}
-  {% set location_key = content.field_event_location[0]['#markup'] %}
-  {% if location_key == 'Custom' %}
-    {% if content.field_event_custom_location[0] %}
-      {% set location = content.field_event_custom_location %}
+{% if content.field_event_location_settings[0] %}
+  {% set location_key = content.field_event_location_settings[0]['#markup'] %}
+  {% if location_key == 'custom' %}
+  {# for custom value we have three field from event CT  #}
+    
+    {% if content.field_event_location_short_title[0] %}
+      {% set location_short = content.field_event_location_short_title[0]['#text'] %}
     {% endif %}
+
+    {% if content.field_event_location_long_desc[0] %}
+      {% set location_long = content.field_event_location_long_desc %}
+    {% endif %}
+
+    {% if content.field_even_location_link_map[0] %}
+      {% set location_link = content.field_even_location_link_map[0]['#url'] %}
+    {% endif %}
+
   {% else %}
-    {% set location = content.field_event_location[0]['#markup'] %}
+  {# for default value we ptint taxonomy entity  #}
+    {% if content.field_event_location[0] %}
+      {% set location_taxonomy = content.field_event_location %}
+    {% endif %}
+
   {% endif %}
 {% endif %}
 
@@ -165,32 +180,6 @@
   {% endif %}
 
 {% endif %}
-
-{# Get Start Date and break it apart  #}
-{# {% if content.field_event_date[0] %}
-  {% if content.field_event_date[0]['start_date'] %}
-    {% set start_date = content.field_event_date[0]['start_date']['#text'] %}
-  {% else %}
-    {% set start_date = content.field_event_date[0]['#text'] %}
-  {% endif %}
-
-  {% set event_date = start_date|date('D, M j Y') %}
-  {% set date_day = start_date|date('j') %}
-  {% set date_month = start_date|date('F') %}
-  {% set date_time = start_date|date('g:ia') %}
-
-  {% if content.field_event_date[0]['end_date'] %}
-    {% set end_date = content.field_event_date[0]['end_date']['#text'] %}
-
-    {% set event_end_date = end_date|date('D, M j Y') %}
-  {% endif %}
-
-  {% if event_date is defined and event_end_date is defined %}
-    {% set event_date_string = event_date ~ ' - ' ~ event_end_date %}
-  {% else %}
-    {% set event_date_string = event_date %}
-  {% endif %}
-{% endif %} #}
 
 {# Check field target #}
 {% if content.field_event_button_target[0] %}
@@ -244,6 +233,7 @@
   {% endif %}
 {% endif %}
 
+
 {% include "@layouts/main/main--event.twig" with {
     directory: 'themes/utmusic',
     social_share: social_share,
@@ -254,7 +244,10 @@
     title: content.field_event_title[0] ? content.field_event_title,
     image_landscape: content.field_event_header_image_landsca[0] ? content.field_event_header_image_landsca,
     image_portrait: content.field_event_header_image_portra[0] ? content.field_event_header_image_portra,
-    location: location,
+    location_short: location_short,
+    location_long: location_long,
+    location_link: location_link,
+    location_taxonomy: location_taxonomy,
     event_date: event_date,
     event_time: date_time,
     event_types: type,
@@ -272,6 +265,5 @@
     number_items: media_count,
   }
 %}
-
 
 {{ attach_library('utmusic/carousel-media') }}

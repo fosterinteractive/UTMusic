@@ -89,14 +89,20 @@
 {% endif %}
 
 {# Get check if custom location or listed #}
-{% if content.field_event_location[0] %}
-  {% set location_key = content.field_event_location[0]['#markup'] %}
-  {% if location_key == 'Custom' %}
-    {% if content.field_event_custom_location[0] %}
-      {% set location = content.field_event_custom_location %}
+{% if content.field_event_location_settings[0] %}
+  {% set location_key = content.field_event_location_settings[0]['#markup'] %}
+  {% if location_key == 'custom' %}
+  {# for custom value we have three field from event CT  #}
+    
+    {% if content.field_event_location_short_title[0] %}
+      {% set location_short = content.field_event_location_short_title[0]['#text'] %}
     {% endif %}
+
   {% else %}
-    {% set location = content.field_event_location[0]['#markup'] %}
+  {# for default value we ptint taxonomy entity  #}
+    {% if content.field_event_location[0] %}
+      {% set location_taxonomy = content.field_event_location[0]['#plain_text'] %}
+    {% endif %}
   {% endif %}
 {% endif %}
 
@@ -156,7 +162,8 @@
     event_date_day: date_day,
     time_range: time_range,
     date_range: date_range,
-    location: location,
+    location_short: location_short,
+    location_taxonomy: location_taxonomy,
     price: price,
     audience: content.field_event_audience[0] ? content.field_event_audience[0]['#plain_text'],
     event_type: content.field_event_type[0] ? content.field_event_type[0]['#plain_text'],

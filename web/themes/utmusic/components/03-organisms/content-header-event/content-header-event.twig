@@ -93,32 +93,60 @@
     <div class="o-hero-media--event-text__info_and_button">
     {% endif %}
 
-      {% if event_date or event_time or event_location %}
+      {% if event_date or event_time or location_short or location_long  %}
         <div class="o-hero-media{% if variation %}{{ variation }}{% endif %}__info">
-          <div class="o-hero-media__info-date">
-            {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
-                directory: directory,
-                icon: 'calendar',
-              } only 
-            %}
-            {{ event_date }}
-          </div>
-          <div class="o-hero-media__info-time">
-            {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
-                directory: directory,
-                icon: 'timer',
-              } only 
-            %}
-            {{ event_time }}
-          </div>
-          <div class="o-hero-media__info-location">
-            {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
-                directory: directory,
-                icon: 'location',
-              } only 
-            %}
-            {{ event_location }}
-          </div>
+          {% if event_date %}
+            <div class="o-hero-media__info-date">
+              {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                  directory: directory,
+                  icon: 'calendar',
+                } only 
+              %}
+              {{ event_date }}
+            </div>
+          {% endif %}
+          
+          {% if event_time %}
+            <div class="o-hero-media__info-time">
+              {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                  directory: directory,
+                  icon: 'timer',
+                } only 
+              %}
+              {{ event_time }}
+            </div>
+          {% endif %}
+
+          {# location_short: location_short,
+          location_long: location_long,
+          location_link: location_link, #}
+
+          {% if location_short or location_long or location_taxonomy %}
+            <div class="o-hero-media__info-location">
+              {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                  directory: directory,
+                  icon: 'location',
+                } only 
+              %}
+
+              {% if location_short or location_long %}
+                {% if location_link %}
+                  <a target="_blank" aria-labelledby="location-link-aria" class="o-hero-media__info-location-link" href={{ location_link }}>
+                {% endif %}
+                  {{ location_short }}{% if location_long and location_short %}<br>{% endif %}
+                  {{ location_long }}
+                {% if location_link %}
+                  </a>
+                  <span id='location-link-aria' class="u-visually--hidden">
+                    {{ location_short }} {{location_long }} {{ "View location on Google map"|t }}
+                  </span>
+                {% endif %}
+              {% else %}
+                {{ location_taxonomy }}
+              {% endif %}
+            </div>
+          {% endif %}
+            
           
         </div>
       {% endif %}

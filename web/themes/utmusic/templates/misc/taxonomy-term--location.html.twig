@@ -1,0 +1,12 @@
+{% set location_long = content.field_long_location_description[0] ? content.field_long_location_description %}
+{% set location_link = content.field_long_location_link[0] ? content.field_long_location_link[0]['#url'] %}
+{% set location_short = name[0]['#context'].value %}
+
+
+<a target="_blank" aria-labelledby="location-link-aria" class="o-hero-media__info-location-link" href={{ location_link }}>
+  {{ location_short }}{% if location_long and location_short %}<br>{% endif %}
+  {{ location_long }}
+</a>
+<span id='location-link-aria' class="u-visually--hidden">
+  {{ location_short }} {{location_long }} {{ "View location on Google map"|t }}
+</span>
