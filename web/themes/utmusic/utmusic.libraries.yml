@@ -137,7 +137,7 @@ mmenu:
 priority-nav:
   js:
     js/libraries/priority-nav/dist/priority-nav.min.js: { minified: true }
-    js/priority-plus-menu.config.js: {}
+    dist/js/03-organisms/menu-priority-plus/priority-plus-menu.config.js: {}
 
 read-more:
   license:

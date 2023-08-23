@@ -30,6 +30,7 @@
     {% endif %}
 
     {% for item in items %}
+
       {% set classes = [
           'm-menu-priority-plus__item',
           item.below and item.in_active_trail == TRUE ? 'has-secondary-menu' : '',

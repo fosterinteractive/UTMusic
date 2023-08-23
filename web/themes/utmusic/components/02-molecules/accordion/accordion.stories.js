@@ -4,7 +4,6 @@ import accordionItemData from './accordion-item.yml';
 import accordion from './accordion.twig';
 import accordionData from './accordion.yml';
 
-
 import './accordion';
 
 /**
