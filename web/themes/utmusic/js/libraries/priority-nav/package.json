@@ -1,18 +1,56 @@
 {
-  "name": "priority-nav",
-  "title": "priority-nav",
-  "version": "1.0.13",
-  "main": "dist/priority-nav.js",
-  "description": "Priority+ pattern navigation that hides menu items if they don't fit on screen.",
-  "homepage": "http://gijsroge.github.io/priority-nav.js/",
+  "_args": [
+    [
+      "priority-nav@1.0.13",
+      "/Users/Shared/_work/UTMusic/_utmusic/web/themes/utmusic"
+    ]
+  ],
+  "_from": "priority-nav@1.0.13",
+  "_id": "priority-nav@1.0.13",
+  "_inBundle": false,
+  "_integrity": "sha512-WXo7Hv03kIXrvnYmZhfziZ5bJqR6vj42Spu+6xbm/TiJkk8T+NAb7uLkUUObtjd6TvnkaKgIb6FYleKqdqon8w==",
+  "_location": "/priority-nav",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "priority-nav@1.0.13",
+    "name": "priority-nav",
+    "escapedName": "priority-nav",
+    "rawSpec": "1.0.13",
+    "saveSpec": null,
+    "fetchSpec": "1.0.13"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/priority-nav/-/priority-nav-1.0.13.tgz",
+  "_spec": "1.0.13",
+  "_where": "/Users/Shared/_work/UTMusic/_utmusic/web/themes/utmusic",
   "author": {
     "name": "Gijs Rogé",
     "url": "http://twitter.com/gijsroge"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gijsroge/priority-navigation.git"
+  "bugs": {
+    "url": "https://github.com/gijsroge/priority-navigation/issues"
   },
+  "description": "Priority+ pattern navigation that hides menu items if they don't fit on screen.",
+  "devDependencies": {
+    "crayola": "0.0.1",
+    "grunt": "1.0.2",
+    "grunt-bump": "0.8.0",
+    "grunt-contrib-concat": "1.0.1",
+    "grunt-contrib-jshint": "1.1.0",
+    "grunt-contrib-uglify": "3.3.0",
+    "grunt-contrib-watch": "1.0.1",
+    "grunt-sass": "2.1.0",
+    "jshint-stylish": "2.2.1",
+    "load-grunt-tasks": "3.5.2"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "homepage": "http://gijsroge.github.io/priority-nav.js/",
   "keywords": [
     "priority+",
     "responsive",
@@ -22,25 +60,15 @@
     "type": "MIT",
     "url": "https://github.com/gijsroge/priority-navigation/blob/master/LICENSE"
   },
-  "bugs": {
-    "url": "https://github.com/gijsroge/priority-navigation/issues"
-  },
-  "engines": {
-    "node": ">=0.8.0"
-  },
-  "devDependencies": {
-    "load-grunt-tasks": "3.5.2",
-    "crayola": "0.0.1",
-    "grunt": "1.0.2",
-    "grunt-bump": "0.8.0",
-    "grunt-contrib-concat": "1.0.1",
-    "grunt-contrib-jshint": "1.1.0",
-    "grunt-contrib-uglify": "3.3.0",
-    "grunt-contrib-watch": "1.0.1",
-    "jshint-stylish": "2.2.1",
-    "grunt-sass": "2.1.0"
+  "main": "dist/priority-nav.js",
+  "name": "priority-nav",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gijsroge/priority-navigation.git"
   },
   "scripts": {
     "test": "grunt jshint"
-  }
+  },
+  "title": "priority-nav",
+  "version": "1.0.13"
 }
