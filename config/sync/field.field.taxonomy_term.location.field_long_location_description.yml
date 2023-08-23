@@ -1,0 +1,26 @@
+uuid: 9efe6bb3-89c8-42d2-a068-4e2781238c8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_long_location_description
+    - taxonomy.vocabulary.location
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - fact_value
+id: taxonomy_term.location.field_long_location_description
+field_name: field_long_location_description
+entity_type: taxonomy_term
+bundle: location
+label: 'Long Location Description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

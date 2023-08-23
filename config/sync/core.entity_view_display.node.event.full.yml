@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
+    - field.field.node.event.field_even_location_link_map
     - field.field.node.event.field_event_area
     - field.field.node.event.field_event_audience
     - field.field.node.event.field_event_body
@@ -11,7 +12,6 @@ dependencies:
     - field.field.node.event.field_event_button_label
     - field.field.node.event.field_event_button_target
     - field.field.node.event.field_event_button_url
-    - field.field.node.event.field_event_custom_location
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_featured_media
     - field.field.node.event.field_event_featured_media_pick
@@ -19,6 +19,9 @@ dependencies:
     - field.field.node.event.field_event_header_image_portra
     - field.field.node.event.field_event_header_variation
     - field.field.node.event.field_event_location
+    - field.field.node.event.field_event_location_long_desc
+    - field.field.node.event.field_event_location_settings
+    - field.field.node.event.field_event_location_short_title
     - field.field.node.event.field_event_price
     - field.field.node.event.field_event_promote
     - field.field.node.event.field_event_related_events
@@ -51,6 +54,18 @@ targetEntityType: node
 bundle: event
 mode: full
 content:
+  field_even_location_link_map:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 23
+    region: content
   field_event_area:
     type: entity_reference_label
     label: hidden
@@ -65,7 +80,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 15
+    weight: 13
     region: content
   field_event_body:
     type: text_default
@@ -109,13 +124,6 @@ content:
     third_party_settings: {  }
     weight: 10
     region: content
-  field_event_custom_location:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 11
-    region: content
   field_event_date:
     type: smartdate_default
     label: hidden
@@ -146,14 +154,14 @@ content:
       view_mode: carousel
       link: false
     third_party_settings: {  }
-    weight: 18
+    weight: 16
     region: content
   field_event_featured_media_pick:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 17
+    weight: 15
     region: content
   field_event_header_image_landsca:
     type: entity_reference_entity_view
@@ -181,18 +189,41 @@ content:
     weight: 0
     region: content
   field_event_location:
-    type: list_default
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_event_location_long_desc:
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 12
+    weight: 21
+    region: content
+  field_event_location_settings:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_event_location_short_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 20
     region: content
   field_event_price:
     type: list_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 13
+    weight: 11
     region: content
   field_event_related_events:
     type: entity_reference_entity_view
@@ -201,14 +232,14 @@ content:
       view_mode: listing_item
       link: false
     third_party_settings: {  }
-    weight: 20
+    weight: 18
     region: content
   field_event_related_pick:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 19
+    weight: 17
     region: content
   field_event_title:
     type: text_default
@@ -223,7 +254,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 14
+    weight: 12
     region: content
   field_events_ensembles_choirs:
     type: entity_reference_label
@@ -231,7 +262,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 16
+    weight: 14
     region: content
 hidden:
   field_event_promote: true

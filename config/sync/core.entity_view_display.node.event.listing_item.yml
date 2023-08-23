@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.listing_item
+    - field.field.node.event.field_even_location_link_map
     - field.field.node.event.field_event_area
     - field.field.node.event.field_event_audience
     - field.field.node.event.field_event_body
@@ -11,7 +12,6 @@ dependencies:
     - field.field.node.event.field_event_button_label
     - field.field.node.event.field_event_button_target
     - field.field.node.event.field_event_button_url
-    - field.field.node.event.field_event_custom_location
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_featured_media
     - field.field.node.event.field_event_featured_media_pick
@@ -19,6 +19,9 @@ dependencies:
     - field.field.node.event.field_event_header_image_portra
     - field.field.node.event.field_event_header_variation
     - field.field.node.event.field_event_location
+    - field.field.node.event.field_event_location_long_desc
+    - field.field.node.event.field_event_location_settings
+    - field.field.node.event.field_event_location_short_title
     - field.field.node.event.field_event_price
     - field.field.node.event.field_event_promote
     - field.field.node.event.field_event_related_events
@@ -161,15 +164,18 @@ content:
     weight: 7
     region: content
 hidden:
+  field_even_location_link_map: true
   field_event_body: true
   field_event_button_a11y: true
   field_event_button_label: true
   field_event_button_target: true
   field_event_button_url: true
-  field_event_custom_location: true
   field_event_featured_media: true
   field_event_featured_media_pick: true
   field_event_location: true
+  field_event_location_long_desc: true
+  field_event_location_settings: true
+  field_event_location_short_title: true
   field_event_promote: true
   field_event_related_events: true
   field_event_related_pick: true

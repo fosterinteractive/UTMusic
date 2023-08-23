@@ -1,0 +1,50 @@
+uuid: 715d6fae-c803-4131-803f-30c0e3b9ac7a
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.token
+    - field.field.taxonomy_term.location.field_long_location_description
+    - field.field.taxonomy_term.location.field_long_location_link
+    - taxonomy.vocabulary.location
+  module:
+    - layout_builder
+    - link
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: taxonomy_term.location.token
+targetEntityType: taxonomy_term
+bundle: location
+mode: token
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_long_location_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_long_location_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

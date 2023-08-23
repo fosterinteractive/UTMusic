@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.event.field_even_location_link_map
     - field.field.node.event.field_event_area
     - field.field.node.event.field_event_audience
     - field.field.node.event.field_event_body
@@ -10,7 +11,6 @@ dependencies:
     - field.field.node.event.field_event_button_label
     - field.field.node.event.field_event_button_target
     - field.field.node.event.field_event_button_url
-    - field.field.node.event.field_event_custom_location
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_featured_media
     - field.field.node.event.field_event_featured_media_pick
@@ -18,6 +18,9 @@ dependencies:
     - field.field.node.event.field_event_header_image_portra
     - field.field.node.event.field_event_header_variation
     - field.field.node.event.field_event_location
+    - field.field.node.event.field_event_location_long_desc
+    - field.field.node.event.field_event_location_settings
+    - field.field.node.event.field_event_location_short_title
     - field.field.node.event.field_event_price
     - field.field.node.event.field_event_promote
     - field.field.node.event.field_event_related_events
@@ -45,6 +48,18 @@ targetEntityType: node
 bundle: event
 mode: default
 content:
+  field_even_location_link_map:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 39
+    region: content
   field_event_area:
     type: entity_reference_label
     label: above
@@ -103,13 +118,6 @@ content:
     third_party_settings: {  }
     weight: 17
     region: content
-  field_event_custom_location:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 15
-    region: content
   field_event_date:
     type: daterange_default
     label: hidden
@@ -162,11 +170,33 @@ content:
     weight: 31
     region: content
   field_event_location:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 40
+    region: content
+  field_event_location_long_desc:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 38
+    region: content
+  field_event_location_settings:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 14
+    weight: 36
+    region: content
+  field_event_location_short_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 37
     region: content
   field_event_price:
     type: list_default

@@ -1,0 +1,56 @@
+uuid: 7492eb2b-c499-4c5d-bf0f-330240cc28fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.location.field_long_location_description
+    - field.field.taxonomy_term.location.field_long_location_link
+    - taxonomy.vocabulary.location
+  module:
+    - allowed_formats
+    - link
+    - text
+id: taxonomy_term.location.default
+targetEntityType: taxonomy_term
+bundle: location
+mode: default
+content:
+  field_long_location_description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+  field_long_location_link:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true
+  revision_log_message: true
+  simple_sitemap: true

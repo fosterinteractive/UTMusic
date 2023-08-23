@@ -1,17 +1,17 @@
-uuid: b465f4a0-7321-4326-945e-bae58142b37d
+uuid: fa8e091d-4fef-432e-b801-4c0e103a895b
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
-id: node.field_event_location
-field_name: field_event_location
+    - text
+id: node.field_event_location_short_title
+field_name: field_event_location_short_title
 entity_type: node
-type: entity_reference
+type: text
 settings:
-  target_type: taxonomy_term
-module: core
+  max_length: 255
+module: text
 locked: false
 cardinality: 1
 translatable: true

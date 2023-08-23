@@ -1,12 +1,12 @@
-uuid: 06320d57-ab08-4389-9339-10b6152ced03
+uuid: cce2c53a-e95a-4758-b3cd-7857692405a3
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - text
-id: node.field_event_custom_location
-field_name: field_event_custom_location
+id: node.field_event_location_long_desc
+field_name: field_event_location_long_desc
 entity_type: node
 type: text_long
 settings: {  }
