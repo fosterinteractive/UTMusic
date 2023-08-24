@@ -893,7 +893,7 @@ display:
           exposed: true
           expose:
             operator_id: field_people_job_title_library_target_id_op
-            label: 'Librarians & Library Staff Job Title'
+            label: 'Librarians & Library Staff Title'
             description: ''
             use_operator: false
             operator: field_people_job_title_library_target_id_op
