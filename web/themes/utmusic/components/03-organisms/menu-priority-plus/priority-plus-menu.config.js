@@ -5,6 +5,8 @@
   Drupal.behaviors.priorityPlusMenuConfiguration = {
     attach: function attach(context, settings) {
 
+      console.log('priority plus config');
+
       // Bug on iOS devices where priority plus nav items are not corretly split into dorp down because of the timming of the javascript so need to throttle it more.
       var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
       var throttle = iOS ? 750 : 50;
