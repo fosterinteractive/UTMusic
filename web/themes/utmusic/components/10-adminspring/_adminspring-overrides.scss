@@ -294,7 +294,10 @@ body.mm-wrapper {
     }
   }
 
-  .remove {
+  .remove,
+  .collapse {
+    margin-left: 0;
+    
     &::before {
       content: unset;
     }
