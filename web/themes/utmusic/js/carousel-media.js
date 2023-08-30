@@ -55,7 +55,7 @@ Drupal.behaviors.listingEventsCarousel = {
   
         let currentItem = currentIndex(carouselContainer, itemWidth) + 1;
         // Message for screen-reader in the visually-hidden region
-        e.target.closest('.o-listing--media-carousela').querySelector('.liveregion').innerText = Drupal.t('Item ' + currentItem + ' of ' + allItems.length);
+        e.target.closest('.o-listing--media-carousel').querySelector('.liveregion').innerText = Drupal.t('Item ' + currentItem + ' of ' + allItems.length);
   
         const isEndOfScroll = carousel.scrollWidth - carousel.scrollLeft === carousel.clientWidth;
         nextButton.style.visibility = isEndOfScroll ? 'hidden' : 'visible';
