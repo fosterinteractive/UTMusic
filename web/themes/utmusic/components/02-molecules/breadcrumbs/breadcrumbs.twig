@@ -10,13 +10,9 @@
         {% include '@molecules/breadcrumbs/breadcrumbs-item.twig' with {
             url: item.url,
             text: item.text,
+            item_divider: loop.last ? false : true,
           } only 
         %}
-
-        {% if not loop.last %}
-          {# Use non-breaking space so if can't wrap #}
-          {{ "&nbsp;>&nbsp;" }}
-        {% endif %}
       {% endfor %}
       
     </ol>
