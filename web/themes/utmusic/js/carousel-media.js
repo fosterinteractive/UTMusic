@@ -26,6 +26,10 @@ Drupal.behaviors.listingEventsCarousel = {
     
       const nextButton = context.querySelector('.o-listing--media-carousel__items-next-btn');
       const prevButton = context.querySelector('.o-listing--media-carousel__items-prev-btn');
+
+      if ((!prevButton)||(!nextButton)) {
+        return;
+      }
   
       //On loading page we hide previous button
       prevButton.style.visibility = 'hidden';
@@ -51,7 +55,7 @@ Drupal.behaviors.listingEventsCarousel = {
   
         let currentItem = currentIndex(carouselContainer, itemWidth) + 1;
         // Message for screen-reader in the visually-hidden region
-        e.target.closest('.o-listing--media-carousel').querySelector('.liveregion').innerText = ('Item ' + currentItem + ' of ' + allItems.length);
+        e.target.closest('.o-listing--media-carousela').querySelector('.liveregion').innerText = Drupal.t('Item ' + currentItem + ' of ' + allItems.length);
   
         const isEndOfScroll = carousel.scrollWidth - carousel.scrollLeft === carousel.clientWidth;
         nextButton.style.visibility = isEndOfScroll ? 'hidden' : 'visible';
@@ -69,7 +73,7 @@ Drupal.behaviors.listingEventsCarousel = {
   
         let currentItem = currentIndex(carouselContainer, itemWidth) + 1;
         // Message for screen-reader in the visually-hidden region
-        e.target.closest('.o-listing--media-carousel').querySelector('.liveregion').innerText = ('Item ' + currentItem + ' of ' + allItems.length);
+        e.target.closest('.o-listing--media-carousel').querySelector('.liveregion').innerText = Drupal.t('Item ' + currentItem + ' of ' + allItems.length);
   
         const isStartOfScroll = carousel.scrollLeft === 0;
         prevButton.style.visibility = isStartOfScroll ? 'hidden' : 'visible';
@@ -81,7 +85,7 @@ Drupal.behaviors.listingEventsCarousel = {
   
         let currentItem = currentIndex(carouselContainer, itemWidth) + 1;
         // Message for screen-reader in the visually-hidden region
-        e.target.closest('.o-listing--media-carousel').querySelector('.liveregion').innerText = ('Item ' + currentItem + ' of ' + allItems.length);
+        e.target.closest('.o-listing--media-carousel').querySelector('.liveregion').innerText = Drupal.t('Item ' + currentItem + ' of ' + allItems.length);
         
         const isEndOfScroll = carouselContainer.scrollWidth - carouselContainer.scrollLeft === carouselContainer.clientWidth;
         nextButton.style.visibility = isEndOfScroll ? 'hidden' : 'visible';
