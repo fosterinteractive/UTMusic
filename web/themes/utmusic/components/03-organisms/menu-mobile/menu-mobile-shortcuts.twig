@@ -35,27 +35,27 @@
       <ul>
     {% endif %}
 
-    {% for item in items %}
-      {% set classes = [
-          'm-menu-mobile__section-item--level-' ~ menu_level,
-          'mm-listitem',
-          item.in_active_trail == TRUE ? 'is-active',
-        ]
-      %}
-
-      <li{{ item.attributes.addClass(classes) }}>
-        {% set link_classes = [
-            'm-menu-mobile__section-link--level-' ~ menu_level,
-            'mm-listitem__text',
+      {% for item in items %}
+        {% set classes = [
+            'm-menu-mobile__section-item--level-' ~ menu_level,
+            'mm-listitem',
+            item.in_active_trail == TRUE ? 'is-active',
           ]
         %}
-        {{ link(item.title, item.url, { 'class' : link_classes}) }}
 
-        {% if item.below %}
-          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-        {% endif %}
-      </li>
-    {% endfor %}
+        <li{{ item.attributes.addClass(classes) }}>
+          {% set link_classes = [
+              'm-menu-mobile__section-link--level-' ~ menu_level,
+              'mm-listitem__text',
+            ]
+          %}
+          {{ link(item.title, item.url, { 'class' : link_classes}) }}
+
+          {% if item.below %}
+            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+          {% endif %}
+        </li>
+      {% endfor %}
     </ul>
   {% endif %}
 {% endmacro %}

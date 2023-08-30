@@ -21,20 +21,20 @@
 
   {% if tabs is not empty or messages is not empty %}
     <div class="o-hero-media__tabs o-hero-media{% if variation %}{{ variation }}{% endif %}__tabs">
-     {{ messages }}
-     {{ tabs }}
+      {{ messages }}
+      {{ tabs }}
     </div>
   {% endif %}
 
   {% if breadcrumbs is not empty and not is_front %}
     <div class="o-hero-media{{variation}}__breadcrumbs">
-    {% if sb_demo %}
-      {% include '@molecules/breadcrumbs/breadcrumbs.twig' with {
-        bredcrumbs: breadcrumbs,
-      } %}
-    {% else %}
-      {{ breadcrumbs }}
-    {% endif %}
+      {% if sb_demo %}
+        {% include '@molecules/breadcrumbs/breadcrumbs.twig' with {
+          bredcrumbs: breadcrumbs,
+        } %}
+      {% else %}
+        {{ breadcrumbs }}
+      {% endif %}
     </div>
   {% endif %}
 
@@ -90,7 +90,7 @@
     </div>
 
     {% if variation == '--person-text' and (pronunciation or email or phone or discovery_url or website_url) %}
-    <div class="o-hero-media--person-text__info-wrapper">
+      <div class="o-hero-media--person-text__info-wrapper">
     {% endif %}
 
       {% if pronunciation or email or phone or discovery_url or website_url %}
@@ -161,8 +161,8 @@
         </div>
       {% endif %}
 
-    {% if variation == '--person-text' %}
-    </div>
+    {% if variation == '--person-text' and (pronunciation or email or phone or discovery_url or website_url) %}
+      </div>
     {% endif %}
 
   </div>

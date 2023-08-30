@@ -82,11 +82,11 @@
   {% if variation == '--icon-right' or variation == '--icon' or variation == '--secondary' or variation == '' %}
     {% if icon %}
       {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
-        directory: directory,
-        icon: icon,
-        base_class: 'a-button' ~ variation ~ '__icon',
-      } only
-    %}
+          directory: directory,
+          icon: icon,
+          base_class: 'a-button' ~ variation ~ '__icon',
+        } only
+      %}
     {% endif %}
   {% endif %}
 

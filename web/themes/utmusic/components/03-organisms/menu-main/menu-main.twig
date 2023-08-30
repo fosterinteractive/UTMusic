@@ -34,59 +34,60 @@
 
 {% macro menu_links(items, attributes, menu_level, columns_data) %}
   {% import _self as menus %}
+  
   {% if items %}
 
     {# Level 1 menu items #}
     {% if menu_level == 1 %}
       <ul class="m-menu-main__list--level-1" data-dropdown-menu>
-      {% for item in items %}
-        {% set panel_id = 'panel-id-' ~ item.original_link.getDerivativeId() %}
-        {% set classes = [
-            'm-menu-main__item--level-1',
-            item.in_active_trail == TRUE ? 'is-active',
-          ]
-        %}
+        {% for item in items %}
+          {% set panel_id = 'panel-id-' ~ item.original_link.getDerivativeId() %}
+          {% set classes = [
+              'm-menu-main__item--level-1',
+              item.in_active_trail == TRUE ? 'is-active',
+            ]
+          %}
 
-        <li{{ item.attributes.addClass(classes) }}>
-          {% if item.url == '<nolink>' or (item.url.isRouted() and item.url.getRouteName == '<nolink>') %}
-            <button class="m-menu-main__link--level-1{% if item.in_active_trail == TRUE %} is-active{% endif %}" {% if item.below %}data-toggle="{{ panel_id }}"{% endif %}>{{ item.title }}</button>
-          {% else %}
-            {% set options = {
-              'class': ['m-menu-main__link--level-1'],
-              } 
-            %}
+          <li{{ item.attributes.addClass(classes) }}>
+            {% if item.url == '<nolink>' or (item.url.isRouted() and item.url.getRouteName == '<nolink>') %}
+              <button class="m-menu-main__link--level-1{% if item.in_active_trail == TRUE %} is-active{% endif %}" {% if item.below %}data-toggle="{{ panel_id }}"{% endif %}>{{ item.title }}</button>
+            {% else %}
+              {% set options = {
+                'class': ['m-menu-main__link--level-1'],
+                } 
+              %}
+
+              {% if item.below %}
+                {% set options = options|merge({'data-toggle': panel_id}) %}
+              {% endif %}
+              {{ link(item.title, item.url, options) }}
+            {% endif %}
 
             {% if item.below %}
-              {% set options = options|merge({'data-toggle': panel_id}) %}
-            {% endif %}
-            {{ link(item.title, item.url, options) }}
-          {% endif %}
 
-          {% if item.below %}
+              <div class="m-menu-main__panel{% if item.pl_panel_active == true %} is-open {% endif %}" id="{{ panel_id }}" data-dropdown data-close-on-click="true" data-hover="true" data-hover-pane="true">
+                <div class="m-menu-main__panel-inner {% if item.content.field_menu_promotional_panel[0]['#markup'] == "On" %}m-menu-main__panel-inner--promo-block{% endif %}">
+                  {{ menus.menu_links(item.below, attributes, menu_level + 1, item.columns_data) }}
 
-            <div class="m-menu-main__panel{% if item.pl_panel_active == true %} is-open {% endif %}" id="{{ panel_id }}" data-dropdown data-close-on-click="true" data-hover="true" data-hover-pane="true">
-              <div class="m-menu-main__panel-inner {% if item.content.field_menu_promotional_panel[0]['#markup'] == "On" %}m-menu-main__panel-inner--promo-block{% endif %}">
-                {{ menus.menu_links(item.below, attributes, menu_level + 1, item.columns_data) }}
+                  {# promotional panel #}
+                  {% if item.content.field_menu_promotional_panel[0]['#markup'] == "On" %}
+                    <div class="m-menu-main__promo">
+                      {% include "@molecules/menu-main-promo/menu-main-promo.twig" with {
+                          title: item.content.field_menu_promo_title[0]['#text'],
+                          description: item.content.field_menu_promo_body[0],
+                          link_label: item.content.field_menu_promo_button[0]['#title'],
+                          link_url: item.content.field_menu_promo_button[0]['#url_title'],
+                          directory: 'themes/utmusic',
+                        } only
+                      %}
+                    </div>
+                  {% endif %}
 
-                {# promotional panel #}
-                {% if item.content.field_menu_promotional_panel[0]['#markup'] == "On" %}
-                  <div class="m-menu-main__promo">
-                    {% include "@molecules/menu-main-promo/menu-main-promo.twig" with {
-                        title: item.content.field_menu_promo_title[0]['#text'],
-                        description: item.content.field_menu_promo_body[0],
-                        link_label: item.content.field_menu_promo_button[0]['#title'],
-                        link_url: item.content.field_menu_promo_button[0]['#url_title'],
-                        directory: 'themes/utmusic',
-                      } only
-                    %}
-                  </div>
-                {% endif %}
-
+                </div>
               </div>
-            </div>
-          {% endif %}
-        </li>
-      {% endfor %}
+            {% endif %}
+          </li>
+        {% endfor %}
       </ul>
     {% endif %}
 
@@ -102,26 +103,26 @@
 
           <div class="m-menu-main__col{{ col_variation }}">
             <ul class="m-menu-main__list--level-2" data-main-menu-component="second-level-list">
-            {% for section in column %}
-              {% set classes = [
-                'm-menu-main__item--level-' ~ menu_level,
-                item.in_active_trail == TRUE ? 'is-active',
-                ]
-              %}
+              {% for section in column %}
+                {% set classes = [
+                  'm-menu-main__item--level-' ~ menu_level,
+                  item.in_active_trail == TRUE ? 'is-active',
+                  ]
+                %}
 
-              <li{{ items[section].attributes.addClass(classes) }}>
-                {% if items[section].url == '<nolink>' or (items[section].url.isRouted() and items[section].url.getRouteName == '<nolink>') %}
-                  {{ link(items[section].title, items[section].url, { 'class' : ['m-menu-main__label--level-2']}) }}
-                {% else %}
-                  {{ link(items[section].title, items[section].url, { 'class' : ['m-menu-main__link--level-2']}) }}
-                {% endif %}
+                <li{{ items[section].attributes.addClass(classes) }}>
+                  {% if items[section].url == '<nolink>' or (items[section].url.isRouted() and items[section].url.getRouteName == '<nolink>') %}
+                    {{ link(items[section].title, items[section].url, { 'class' : ['m-menu-main__label--level-2']}) }}
+                  {% else %}
+                    {{ link(items[section].title, items[section].url, { 'class' : ['m-menu-main__link--level-2']}) }}
+                  {% endif %}
 
-                {% if items[section].below %}
-                  {{ menus.menu_links(items[section].below, attributes, menu_level + 1) }}
-                {% endif %}
-              </li>
-              
-            {% endfor %}
+                  {% if items[section].below %}
+                    {{ menus.menu_links(items[section].below, attributes, menu_level + 1) }}
+                  {% endif %}
+                </li>
+                
+              {% endfor %}
             </ul>
           </div>
         {% endfor %}
@@ -132,22 +133,22 @@
     {# Menu Level 3 #}
     {% if menu_level == 3 %}
       <ul class="m-menu-main__list--level-3 m-menu-main__col{{ col_variation }}" data-main-menu-component="third-level-list">
-      {% for item in items %}
+        {% for item in items %}
 
-        {% set classes = [
-            'm-menu-main__item--level-3',
-            item.in_active_trail == TRUE ? 'is-active',
-          ]
-        %}
+          {% set classes = [
+              'm-menu-main__item--level-3',
+              item.in_active_trail == TRUE ? 'is-active',
+            ]
+          %}
 
-        <li{{ item.attributes.addClass(classes) }}>
-          {% if item.url == '<nolink>' or (item.url.isRouted() and item.url.getRouteName == '<nolink>') %}
-            {{ link(item.title, item.url, { 'class' : ['m-menu-main__label--level-3']}) }}
-          {% else %}
-            {{ link(item.title, item.url, { 'class' : ['m-menu-main__link--level-3']}) }}
-          {% endif %}
-        </li>
-      {% endfor %}
+          <li{{ item.attributes.addClass(classes) }}>
+            {% if item.url == '<nolink>' or (item.url.isRouted() and item.url.getRouteName == '<nolink>') %}
+              {{ link(item.title, item.url, { 'class' : ['m-menu-main__label--level-3']}) }}
+            {% else %}
+              {{ link(item.title, item.url, { 'class' : ['m-menu-main__link--level-3']}) }}
+            {% endif %}
+          </li>
+        {% endfor %}
       </ul>
     {% endif %}
 

@@ -102,23 +102,18 @@
 
             {% if discovery_url %}
               <div class="l-main--people__creative_works">
-                  <h2 class="a-heading__h2">Scholarly &amp; Creative Works</h2>
+                <h2 class="a-heading__h2">Scholarly &amp; Creative Works</h2>
 
-                  <div class="l-main--people__creative_works-discovery">
-                    {# {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                <div class="l-main--people__creative_works-discovery">
+                  <a class="l-main--people__creative_works-discovery-link" href="{{discovery_url}}/publications"{% if aria_discovery %} aria-label="{{ aria_discovery }}"{% endif %}>
+                    {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
                         directory: directory,
                         icon: 'book-bulb',
                       } only 
-                    %} #}
-                    <a class="l-main--people__creative_works-discovery-link" href="{{discovery_url}}/publications"{% if aria_discovery %} aria-label="{{ aria_discovery }}"{% endif %}>
-                      {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
-                          directory: directory,
-                          icon: 'book-bulb',
-                        } only 
-                      %}
-                      {{ 'View on DiscoverResearch'|t }}
-                    </a>
-                  </div>
+                    %}
+                    {{ 'View on DiscoverResearch'|t }}
+                  </a>
+                </div>
               </div>
             {% endif %}
           
@@ -132,6 +127,7 @@
           <div class="{% if auto_number_items_media < 1 %}l-section--[8]{% else %}l-section--[12]{% endif %} l-section-wrapper theme--dark-blue-bg l-section-spacing-top--small l-section-spacing-bottom--small">
             
             <div class="l-section__background">
+              {# placeholder for background  #}
             </div>
             <div class="l-main--people__media l-section__zone l-section__zone-1 l-flex">
               <div class="l-main--people__media-title">
@@ -150,7 +146,9 @@
           <div class="{% if number_items < 1 %}l-section--[8]{% else %}l-section--[12]{% endif %}  l-section-wrapper theme--dark-blue-bg l-section-spacing-top--small l-section-spacing-bottom--small">
             
             <div class="l-section__background">
+              {# placeholder for background  #}
             </div>
+
             <div class="l-main--people__media l-section__zone l-section__zone-1 l-flex">
               <div class="l-main--people-related__title">
                 {% include "@atoms/text/headings/heading.twig" with {
@@ -170,7 +168,7 @@
               %}
             </div>
           </div>
-          {{ attach_library('utmusic/carousel-media') }}
+          {# {{ attach_library('utmusic/carousel-media') }} #}
 
         {% endif %}
       {% endif %}
