@@ -31,6 +31,10 @@
         const nextButton = carouselContainer.closest('.m-featured-media__items-wrapper').querySelector('.m-featured-media__items-next-btn');
         const prevButton = carouselContainer.closest('.m-featured-media__items-wrapper').querySelector('.m-featured-media__items-prev-btn');
   
+        if ((!prevButton)||(!nextButton)) {
+          return;
+        }
+
         //On loading page we hide previous button
         prevButton.style.visibility = 'hidden';
         
