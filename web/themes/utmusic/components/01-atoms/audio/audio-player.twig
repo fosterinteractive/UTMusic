@@ -8,7 +8,7 @@
     %}
 
     {% if btn_label %}
-      <button type="button" data-file-component="play">{{btn_label}}{% if aria_label%} <div class="u-visually--hidden">{{ aria_label|t }}</div>{% endif %}</button>
+      <button type="button" data-file-component="play">{{btn_label}}{% if aria_label %} <span class="u-visually--hidden">{{ aria_label|t }}</span>{% endif %}</button>
     {% endif %}
 
     {% for item in items %}
