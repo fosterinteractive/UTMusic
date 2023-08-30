@@ -34,7 +34,7 @@
 {% endif %}
 
 {% if url %}
-  <a class="m-logo{{ variation }}" href="{{ url }}" aria-label="{{ logo_aria_label }}">
+  <a class="m-logo{{ variation }}" href="{{ url }}" {% if logo_aria_label %}aria-label="{{ logo_aria_label }}{% endif %}">
 {% endif %}
 
   {# If using image logo #}
