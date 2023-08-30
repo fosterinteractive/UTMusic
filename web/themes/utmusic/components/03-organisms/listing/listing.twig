@@ -177,7 +177,7 @@
             {% endif %}
           {% else %}
           
-          {# Because for Drupal we include listing-item or listing-item--event on the level of Node #}
+            {# Because for Drupal we include listing-item or listing-item--event on the level of Node #}
             {{ item }}
 
             {% if variation == '--media-carousel' or variation == '--people-carousel' %}
@@ -189,12 +189,12 @@
             {% endif %}
           {% endif %}
           
-          {% if variation == '--media-carousel' or variation == '--people-carousel' %}
+        {% if variation == '--media-carousel' or variation == '--people-carousel' %}
           </div>
-          {% endif %}
+        {% endif %}
 
       {% endfor %}
-  </div>
+    </div>
 
   {% if listing_button_url and listing_button_text %}
     <div class="o-listing__button">
