@@ -5,4 +5,4 @@ theme:
 demo_class_section: 
 demo_class_zone: 
 content:
-  zone1: '<div class="storybook-section__demo--red"><p> CONTENT OF ZONE 1 <br/> Item 1A </p></div> <div class="storybook-section__demo--red"><p> CONTENT OF ZONE 1 <br/><br/><br/> Item 1B  </p></div>'
+  zone1: '<div class="storybook-section__demo--red"><p> CONTENT OF ZONE 1 <br> Item 1A </p></div> <div class="storybook-section__demo--red"><p> CONTENT OF ZONE 1 <br><br><br> Item 1B  </p></div>'

@@ -5,8 +5,8 @@ content:
   <p>It could also have <a href="#">inline links</a>. Pellentesque rhoncus molestie nisl quis blandit. Nam a <a href="#">euismod</a> velit, eu tincidunt orci.</p>
   <p>The general link style will apply unless custom btn styles are added in WYSIWIYG; like </p>
   <a href="#" class="a-btn">a-btn style</a>
-  <br/>
-  <br/>
+  <br>
+  <br>
   <p>Lists, both unordered and ordered will be styled as well.</p>
   <h4>Unorderd Lists</h4>
   <ul>

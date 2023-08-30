@@ -107,7 +107,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{{ title }}\r\n<br/>\r\n{{ view_node }}"
+            text: "{{ title }}\r\n<br>\r\n{{ view_node }}"
             make_link: false
             path: ''
             absolute: false

@@ -524,7 +524,7 @@ display:
               sortable: true
               default_sort_order: asc
               align: ''
-              separator: '<br/>'
+              separator: '<br>'
               empty_column: false
               responsive: ''
             field_ed_file_file:

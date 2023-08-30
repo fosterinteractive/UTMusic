@@ -22,12 +22,12 @@
         <li class="storybook-colors__swatch{% if base_tone == tone_name %}--base{% endif %}">
           <div class="storybook-colors__color" style="background: {{ tone_value }};"></div>
           <div class="storybook-colors__info">
-            <span>{{ tone_value }}</span> <br/>
+            <span>{{ tone_value }}</span> <br>
             <code class="storybook-colors__function">
             {# If this is the base tone write out an extra function call #}
 
             {% if base_tone == tone_name %}
-              palette({{ palette_name }})<br/>
+              palette({{ palette_name }})<br>
             {% endif %}
 
             
