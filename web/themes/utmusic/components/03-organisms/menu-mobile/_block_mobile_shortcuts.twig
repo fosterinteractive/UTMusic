@@ -27,12 +27,14 @@
 #}
 
 {# Create a unique ID for each mobile shortcuts #}
-{% set unique_id = random('1234567890') ~ random('1234567890') ~ random('1234567890') ~ random('1234567890') %}
-{% set block_menu_mobile_shortcuts__id = 'block-menu-mobile-shortcuts--dynamic--' ~ unique_id %}
+{# {% set unique_id = random('1234567890') ~ random('1234567890') ~ random('1234567890') ~ random('1234567890') %} #}
+{# {% set block_menu_mobile_shortcuts__id = 'block-menu-mobile-shortcuts--dynamic--' ~ unique_id %} #}
 
 {# Add Wrapper if there's attributes or a label #}
 {% if attributes is not empty or label is not empty %}
-  <div{{ attributes.setAttribute('id', block_menu_mobile_shortcuts__id) }}>
+  {# <div{{ attributes.setAttribute('id', block_menu_mobile_shortcuts__id) }}> #}
+
+  <div class="block-menu-mobile-shortcuts">
     {{ title_prefix }}
     {% if label %}
       <h2{{ title_attributes.addClass('heading-2') }}>{{ label }}</h2>
