@@ -101,6 +101,12 @@
   flex-basis: 25%;
 }
 
+// links shoulb be accessible
+.o-footer__top-contact a {
+  display: block;
+  min-height: rem(24px);
+}
+
 .o-footer__menu {
   margin-bottom: ru(1);
 }
