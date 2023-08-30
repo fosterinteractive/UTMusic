@@ -14,7 +14,7 @@ rows:
             pattern: molecules-card
             with:
               pl_class: ''
-              image: '<img src="https://source.unsplash.com/dZ_RWzk5sSA/300x200" />'
+              image: '<img src="https://source.unsplash.com/dZ_RWzk5sSA/300x200" >'
               title: 'Card With A Very Long Title Which Should Wrap Lines'
               body: '<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p><p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>'
               link_url: '#'
@@ -31,7 +31,7 @@ rows:
             pattern: molecules-card
             with:
               pl_class: ''
-              image: '<img src="https://source.unsplash.com/dZ_RWzk5sSA/300x200" />'
+              image: '<img src="https://source.unsplash.com/dZ_RWzk5sSA/300x200" >'
               title: 'Card With A Very Long Title Which Should Wrap Lines'
               body: '<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p><p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>'
               link_url: '#'

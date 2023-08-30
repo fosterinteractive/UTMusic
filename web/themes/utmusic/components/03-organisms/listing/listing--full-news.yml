@@ -10,7 +10,7 @@ listing_items:
     variation: 'news'
     title: 'Faculty of Music at the 2022 AMS/SEM/SMT Joint Annual Meeting'
     date_string: 'June 10, 2023'
-    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" >'
     id: 'listing-item-news'
     url: "#"
     news_categories: 
@@ -24,7 +24,7 @@ listing_items:
     variation: 'news'
     title: '‘Anything is possible’: Future Sound 6ix music workshops draw youth from across Toronto'
     date_string: 'May 29, 2023'
-    image: '<img src="https://images.unsplash.com/photo-1538402074774-8e624f3f7e5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80" />'
+    image: '<img src="https://images.unsplash.com/photo-1538402074774-8e624f3f7e5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80" >'
     id: 'listing-item-news'
     url: "#"
     news_categories: 
@@ -38,7 +38,7 @@ listing_items:
     variation: 'news'
     title: '‘Anything is possible’: Future Sound 6ix music workshops draw youth from across Toronto'
     date_string: 'May 29, 2023'
-    image: '<img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3570&q=80" />'
+    image: '<img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3570&q=80" >'
     id: 'listing-item-news'
     url: "#"
     news_categories: 

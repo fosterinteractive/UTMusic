@@ -1,7 +1,7 @@
 variation:
 poster_layout:
-image: '<img src="https://source.unsplash.com/X0OoHrPvgXE/1600x500"/>'
-content_image: '<img src="https://source.unsplash.com/FpDGCjoW_S4/300x300" />'
+image: '<img src="https://source.unsplash.com/X0OoHrPvgXE/1600x500">'
+content_image: '<img src="https://source.unsplash.com/FpDGCjoW_S4/300x300" >'
 title: 'Poster Title  Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
 title_prefix:
 summary: <p>Poster Body Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut orci a turpis hendrerit elementum.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut orci a turpis hendrerit elementum.</p>

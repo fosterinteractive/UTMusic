@@ -10,49 +10,49 @@ listing_items:
     variation: 'program'
     title: 'Music Education'
     url: "#"
-    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" >'
     program_type: 'Bachelor of Music'
     concentration: 'Cello, Double Bass, Viola, Violin'
   -
     sb_demo: true
     variation: 'program'
     title: 'Music Education'
-    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" >'
     program_type: 'Bachelor of Music'
     concentration: 'Cello, Double Bass, Viola, Violin'
   -
     sb_demo: true
     variation: 'program'
     title: 'Music Education'
-    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" >'
     program_type: 'Bachelor of Music'
     concentration: 'Cello, Double Bass, Viola, Violin'
   -
     sb_demo: true
     variation: 'program'
     title: 'Music Education'
-    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" >'
     program_type: 'Bachelor of Music'
     concentration: 'Cello, Double Bass, Viola, Violin'
   -
     sb_demo: true
     variation: 'program'
     title: 'Music Education'
-    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" >'
     program_type: 'Bachelor of Music'
     concentration: 'Cello, Double Bass, Viola, Violin'
   -
     sb_demo: true
     variation: 'program'
     title: 'Music Education'
-    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" >'
     program_type: 'Bachelor of Music'
     concentration: 'Cello, Double Bass, Viola, Violin'
   -
     sb_demo: true
     variation: 'program'
     title: 'Music Education'
-    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" >'
     program_type: 'Bachelor of Music'
     concentration: 'Cello, Double Bass, Viola, Violin'
 pager: 

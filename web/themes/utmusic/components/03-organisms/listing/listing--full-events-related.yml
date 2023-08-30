@@ -9,7 +9,7 @@ listing_items:
     sb_demo: true
     variation: 'events'
     title: 'Jazz and Justice: Transformative, Equitable Futures in Music'
-    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" >'
     url: '/'
     id: 'listing-item-id'
     event_date: 'Fri, May 26 2023 - Sat, May 27 2023'
@@ -21,7 +21,7 @@ listing_items:
     sb_demo: true
     variation: 'events'
     title: 'SoundLife Scarborough Launch and Symposium: Mapping Music Pathways'
-    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" >'
     url: '/'
     id: 'listing-item-id'
     event_date: 'Fri, May 26 2023 - Sat, May 27 2023'
@@ -33,7 +33,7 @@ listing_items:
     sb_demo: true
     variation: 'events'
     title: '2023 Choral Conducting Symposium'
-    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" >'
     url: '/'
     id: 'listing-item-id'
     event_date: 'Fri, May 26 2023 - Sat, May 27 2023'
@@ -45,7 +45,7 @@ listing_items:
     sb_demo: true
     variation: 'events'
     title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
-    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+    image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" >'
     url: '/'
     id: 'listing-item-id'
     event_date: 'Fri, May 26 2023 - Sat, May 27 2023'

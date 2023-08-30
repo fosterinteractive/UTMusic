@@ -1,7 +1,7 @@
 sb_demo: true
 variation: 'events'
 title: 'Joseph Haydn’s ORFEO: The Soul of the Philosopher'
-image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111" />'
+image: '<img src="https://images.unsplash.com/photo-1674592309639-39067f6a8111">'
 url: '/'
 id: 'listing-item-id'
 event_date: 'May 2-4 2023'

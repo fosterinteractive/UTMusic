@@ -1,6 +1,6 @@
 sb_demo: true
 variation: 'person' 
-image: '<img src="https://images.unsplash.com/photo-1557315360-6a350ab4eccd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" />'
+image: '<img src="https://images.unsplash.com/photo-1557315360-6a350ab4eccd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" >'
 title_prefix: 'Person title prefix'
 title: 'Mia Bach'
 title_suffix: "Sessional Teaching Staff: Keyboard, Piano, Voice Studies"

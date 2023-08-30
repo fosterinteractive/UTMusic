@@ -19,10 +19,10 @@
   {% if icon_name %}
     <div class="m-input--{{ icon_name }}__wrapper m-input__icon-wrapper">
       <i class="m-input__icon fas fa-{{ icon_name }}"></i>
-      <input {{ attributes.addClass(classes) }} />{{ children }}
+      <input {{ attributes.addClass(classes) }} >{{ children }}
     </div>
   {% else %}
-    <input {{ attributes.addClass(classes) }} />{{ children }}
+    <input {{ attributes.addClass(classes) }} >{{ children }}
   {% endif %}
 
 {% endif %}

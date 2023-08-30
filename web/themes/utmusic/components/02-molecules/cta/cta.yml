@@ -1,6 +1,6 @@
 sb_demo: true
 variation: 'image'
-image: "<img src='https://picsum.photos/id/57/700/700' alt='alt text example'/>"
+image: "<img src='https://picsum.photos/id/57/700/700' alt='alt text example'>"
 title: 'Book a tour'
 description:  We bring together the brightest researchers, educators, creators and performers. We welcome you to join us.
 
