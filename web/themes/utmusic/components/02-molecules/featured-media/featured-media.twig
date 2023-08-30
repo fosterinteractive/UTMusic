@@ -66,7 +66,7 @@
 
         {% for item in featured_media_items %}
           {% if item.video %}
-            <div class="m-featured-media__item" aria-label="{{ item.caption }}" {% if loop.last %} id="last-item-media"{% endif %}  tabindex="0" >
+            <div class="m-featured-media__item" aria-label="{{ item.caption }}" {% if loop.last %} id="last-item-media"{% endif %} >
               {% include '@atoms/videos/video.twig' with {
                   video_type: item.video_type,
                   video: item.video,

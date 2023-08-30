@@ -79,7 +79,7 @@
 
       {% for item in listing_items %}
         {% if variation == '--media-carousel' or variation == '--people-carousel' %}
-          <div class="o-listing{{variation}}__item" {% if loop.last %} id="last-item-{{variation}}"{% endif %} tabindex="0">
+          <div class="o-listing{{variation}}__item" {% if loop.last %} id="last-item-{{variation}}"{% endif %} >
         {% endif %}
 
           {% if sb_demo %}
