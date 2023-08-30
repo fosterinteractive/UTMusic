@@ -79,7 +79,7 @@
 
       {% for item in listing_items %}
         {% if variation == '--media-carousel' or variation == '--people-carousel' %}
-          <div class="o-listing{{variation}}__item" {% if loop.last %} id="last-item"{% endif %} tabindex="0">
+          <div class="o-listing{{variation}}__item" {% if loop.last %} id="last-item-{{variation}}"{% endif %} tabindex="0">
         {% endif %}
 
           {% if sb_demo %}
@@ -123,7 +123,7 @@
                 } only
               %}
               {% if loop.index == 3 and loop.length > 3 and variation == '--media-carousel'  %} 
-                <a href="#last-item" class="u-visually--hidden visually-hidden focusable skip-link">
+                <a href="#last-item-{{variation}}" class="u-visually--hidden visually-hidden focusable skip-link">
                   {{ 'Skip to the last item'|t }}
                 </a>
               {% endif %}
@@ -144,7 +144,7 @@
               %}
 
               {% if loop.index == 3 and loop.length > 3 and variation == '--people-carousel'  %} 
-                <a href="#last-item" class="u-visually--hidden visually-hidden focusable skip-link">
+                <a href="#last-item-{{variation}}" class="u-visually--hidden visually-hidden focusable skip-link">
                   {{ 'Skip to the last item'|t }}
                 </a>
               {% endif %}
@@ -182,7 +182,7 @@
 
             {% if variation == '--media-carousel' or variation == '--people-carousel' %}
               {% if loop.index == 3 and loop.length > 3  %} 
-                <a href="#last-item" class="u-visually--hidden visually-hidden focusable skip-link">
+                <a href="#last-item-{{variation}}" class="u-visually--hidden visually-hidden focusable skip-link">
                   {{ 'Skip to the last item'|t }}
                 </a>
               {% endif %}
