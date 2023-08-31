@@ -38,7 +38,7 @@
     {% endif %}
 
 
-    {% if text or source %}
+    {% if text or source or additional_info %}
       <div class="m-quote{{ variation }}__content-wrapper">
         <div class="m-quote{{ variation }}__illustration">
           {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
@@ -52,16 +52,24 @@
         </div>
 
         {% if text %}
-          <div class="m-quote__text m-quote__text--{{ text_size }} m-quote{{ variation }}__text">
+          <div class="m-quote__text m-quote{{ variation }}__text">
             {{ text }}
           </div>
         {% endif %}
 
-        {% if source %} 
+        {% if source or additional_info %} 
           <cite class="m-quote{{ variation }}__source">
             {{" – "}}{{ source }} 
+
+            {% if additional_info %}
+              <div class="m-quote__text-additional m-quote{{ variation }}__text-additional">
+                {{ additional_info }}
+              </div>
+            {% endif %}
           </cite>
         {% endif %}
+
+        
 
         {% if url and label %}
           {% include '@atoms/button/button.twig' with {

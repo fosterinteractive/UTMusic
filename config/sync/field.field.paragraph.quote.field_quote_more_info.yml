@@ -1,0 +1,26 @@
+uuid: 043bfb13-386c-4159-bf37-eae9eb0c02e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_quote_more_info
+    - paragraphs.paragraphs_type.quote
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - fact_value
+id: paragraph.quote.field_quote_more_info
+field_name: field_quote_more_info
+entity_type: paragraph
+bundle: quote
+label: 'Additional Information'
+description: 'e.g. Name, Program, Degree of Study, Instrument, Year of Graduation (or intended graduation)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

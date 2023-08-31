@@ -61,3 +61,11 @@
   font-style: normal;
 }
 
+.m-quote__text-additional {
+  @extend %a-type--xsmall;
+
+  p {
+    color: inherit;
+  }
+}
+

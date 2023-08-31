@@ -9,9 +9,9 @@ dependencies:
     - field.field.paragraph.quote.field_quote_button_url
     - field.field.paragraph.quote.field_quote_image_main
     - field.field.paragraph.quote.field_quote_image_small
+    - field.field.paragraph.quote.field_quote_more_info
     - field.field.paragraph.quote.field_quote_source_name
     - field.field.paragraph.quote.field_quote_text
-    - field.field.paragraph.quote.field_quote_text_size
     - field.field.paragraph.quote.field_quote_variation
     - paragraphs.paragraphs_type.quote
   module:
@@ -74,6 +74,13 @@ content:
     third_party_settings: {  }
     weight: 6
     region: content
+  field_quote_more_info:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
   field_quote_source_name:
     type: text_default
     label: hidden
@@ -87,13 +94,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_quote_text_size:
-    type: list_key
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 7
     region: content
   field_quote_variation:
     type: list_key
