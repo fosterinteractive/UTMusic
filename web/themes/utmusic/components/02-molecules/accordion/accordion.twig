@@ -38,7 +38,7 @@
       {% endif %}
     {% endfor %}
 
-  <ul aria-label="{{ 'Accordion Control Button Group'|t }}" id="{{ id }}" class="m-accordion__items" data-accordion-component="items">
+  <ul aria-label="{{ 'Accordion Control Button Group'|t }}" {% if id %}id="{{ id }}"{% endif %} class="m-accordion__items" data-accordion-component="items">
     {% for item in items %}
     <li>
       {% if sb_demo %}
