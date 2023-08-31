@@ -13,7 +13,7 @@ function currentIndex(carouselContainer, itemWidth) {
   return currentIndex;
 }
 
-Drupal.behaviors.listingEventsCarousel = {
+Drupal.behaviors.listingMediaCarouselDrupal = {
   attach(context) {
     // Find carousel container with controls buttons and items
     const carouselContainers = document.querySelectorAll('.o-listing--media-carousel__items');
