@@ -14,6 +14,10 @@
 
 {% endif %}
 
+{% if variation == '--media-carousel' or variation == '--people-carousel' %}
+  {% set aria_label_items = title|default('Featured media'|t)%} 
+{% endif %}
+ 
 <div class="o-listing{{ variation }}">
   {% if title %}
     <div class="o-listing__header">
@@ -74,7 +78,7 @@
   {% elseif ( number_items == 0 and variation == '--media-carousel') %}
     <div class="o-listing{{ variation }}__single-item">
   {% else %}
-    <div role="region" aria-label="{{ title }}" class="o-listing{{ variation }}__items {{ listing_col_layout }}"> 
+    <div role="region" {% if aria_label_items %}aria-label="{{ aria_label_items }}"{% endif %} class="o-listing{{ variation }}__items {{ listing_col_layout }}"> 
   {% endif %}
 
       {% for item in listing_items %}
