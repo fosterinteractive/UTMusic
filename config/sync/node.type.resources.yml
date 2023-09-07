@@ -9,7 +9,7 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: Resources
+name: Resource
 type: resources
 description: ''
 help: ''
