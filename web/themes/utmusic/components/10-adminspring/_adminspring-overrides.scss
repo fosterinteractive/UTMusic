@@ -309,3 +309,10 @@ body.mm-wrapper {
   align-items: center;
   gap: var(--spacer);
 }
+
+.focal-point-wrapper {
+  position: static !important;
+  width: unset !important;
+  height: unset !important;
+  clip: unset !important;
+}
