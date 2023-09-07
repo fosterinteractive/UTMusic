@@ -1,7 +1,5 @@
-// Event variation
 .o-hero-media--person {
-  @extend %o-hero-media-core;
-  display: grid;
+  @extend .o-hero-media--person-text;
 }
 
 .o-hero-media--person {

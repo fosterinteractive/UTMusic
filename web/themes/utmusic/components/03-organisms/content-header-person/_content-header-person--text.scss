@@ -3,6 +3,11 @@
   @extend %o-hero-media-core;
   display: grid;
 
+  grid-template-rows: var(--header-height) minmax(var(--spacer), auto) minmax(calc(var(--spacer)*2), auto) minmax(1px, min-content) var(--spacer) var(--spacer) !important;
+
+  @include breakpoint($bp-tablet) {
+    grid-template-rows: var(--header-height) minmax(var(--spacer), auto) calc(var(--spacer)*2) minmax(1px, min-content) var(--spacer) !important;
+  }
 }
 
 .o-hero-media--person-text {
