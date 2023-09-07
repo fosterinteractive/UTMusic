@@ -154,7 +154,9 @@
                   icon: 'interface_link_square',
                 } only 
               %}
-              <a class="o-hero-media__info-link" href="{{website_url}}"{% if aria_website %} aria-label="{{ aria_website }}"{% endif %}>{{website_url}}</a>
+              <a class="o-hero-media__info-link" href="{{website_url}}" {% if website_url_is_external %}target="_blank"{% endif %} {% if aria_website %} aria-label="{{ aria_website }}"{% endif %}>
+                {{website_url}}
+              </a>
             </div>
           {% endif %}
           

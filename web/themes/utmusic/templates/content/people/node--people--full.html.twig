@@ -355,6 +355,7 @@
     email: content.field_people_email[0] ? content.field_people_email[0]['#context']['value'],
     phone: content.field_people_phone[0] ? content.field_people_phone[0]['#context']['value'],
     website_url: content.field_people_website[0] ? content.field_people_website[0]['#url'],
+    website_url_is_external: content.field_people_website[0] ? content.field_people_website[0]['#url'].external,
     discovery_url: research_url,
     pronunciation: content.field_people_pronunciation[0] ? content.field_people_pronunciation,
     prononun: content.field_people_pronouns[0] ? content.field_people_pronouns[0]['#text'],
