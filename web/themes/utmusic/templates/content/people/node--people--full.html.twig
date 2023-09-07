@@ -333,7 +333,7 @@
 
 
 {% if content.field_people_creative_works[0] %}
-  {% if content.field_people_creative_works[0]['#text'] == '<h2 class="a-heading__h2">Scholarly &amp; Creative Works</h2><p>Information goes here...</p>' %}
+  {% if content.field_people_creative_works[0]['#text'] == '<h2 class="a-heading__h2">Scholarly &amp; Creative Works</h2>' %}
     {% set creative_works = false %}
   {% else %}
     {% set creative_works = content.field_people_creative_works %}

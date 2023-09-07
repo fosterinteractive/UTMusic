@@ -9,10 +9,10 @@ label: Person
 type: 'canonical_entities:node'
 pattern: 'person/[node:title]'
 selection_criteria:
-  f92f54ec-8e11-455c-a3fa-7dd2237da921:
+  c11a66bd-db7d-4073-98a4-633d4e9c944e:
     id: 'entity_bundle:node'
     negate: false
-    uuid: f92f54ec-8e11-455c-a3fa-7dd2237da921
+    uuid: c11a66bd-db7d-4073-98a4-633d4e9c944e
     context_mapping:
       node: node
     bundles:
