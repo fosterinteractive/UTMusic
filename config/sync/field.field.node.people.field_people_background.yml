@@ -16,13 +16,13 @@ id: node.people.field_people_background
 field_name: field_people_background
 entity_type: node
 bundle: people
-label: Background
+label: Biography
 description: ''
 required: false
 translatable: false
 default_value:
   -
-    value: '<h2 class="a-heading__h2">Background</h2><p>Insert Background information here</p>'
+    value: '<h2 class="a-heading__h2">Biography</h2><p>Insert Biography information here</p>'
     format: rich_text
 default_value_callback: ''
 settings: {  }

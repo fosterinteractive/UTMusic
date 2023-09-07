@@ -303,3 +303,9 @@ body.mm-wrapper {
     }
   }
 }
+
+
+.node-form > .form-actions {
+  align-items: center;
+  gap: var(--spacer);
+}

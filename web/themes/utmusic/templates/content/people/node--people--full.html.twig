@@ -298,6 +298,48 @@
   {% endif %}
 {% endif %}
 
+{# let check if fields have default text inside - then we hide them #}
+{% if content.field_people_education[0] %}
+  {% if content.field_people_education[0]['#text'] == '<h2 class="a-heading__h2">Education</h2><p>Insert Education information here</p>' %}
+    {% set education = false %}
+  {% else %}
+    {% set education = content.field_people_education %}
+  {% endif %}
+{% endif %}
+
+{% if content.field_people_background[0] %}
+  {% if content.field_people_background[0]['#text'] == '<h2 class="a-heading__h2">Biography</h2><p>Insert Biography information here</p>' %}
+    {% set background = false %}
+  {% else %}
+    {% set background = content.field_people_background %}
+  {% endif %}
+{% endif %}
+
+{% if content.field_people_activities[0] %}
+  {% if content.field_people_activities[0]['#text'] == '<h2 class="a-heading__h2">Professional Activities</h2><p>Insert Professional Activities information here</p>' %}
+    {% set activities = false %}
+  {% else %}
+    {% set activities = content.field_people_activities %}
+  {% endif %}
+{% endif %}
+
+{% if content.field_people_teaching[0] %}
+  {% if content.field_people_teaching[0]['#text'] == '<h2 class="a-heading__h2">Teaching</h2><p>Insert Teaching information here</p>' %}
+    {% set teaching = false %}
+  {% else %}
+    {% set teaching = content.field_people_teaching %}
+  {% endif %}
+{% endif %}
+
+
+{% if content.field_people_creative_works[0] %}
+  {% if not research_url and content.field_people_creative_works[0]['#text'] == '<h2 class="a-heading__h2">Scholarly &amp; Creative Works</h2>' %}
+    {% set creative_works = false %}
+  {% else %}
+    {% set creative_works = content.field_people_creative_works %}
+  {% endif %}
+{% endif %}
+
 
 {% include "@layouts/main/main--people.twig" with {
     directory: 'themes/utmusic',
@@ -318,11 +360,11 @@
     prononun: content.field_people_pronouns[0] ? content.field_people_pronouns[0]['#text'],
     areas: areas,
     profile_type: content.field_people_profile_type[0] ? content.field_people_profile_type[0]['#markup'],
-    education: content.field_people_education[0] ? content.field_people_education,
-    background: content.field_people_background[0] ? content.field_people_background,
-    activities: content.field_people_activities[0] ? content.field_people_activities,
-    teaching: content.field_people_teaching[0] ? content.field_people_teaching,
-    creative_works: content.field_people_creative_works[0] ? content.field_people_creative_works,
+    education: education,
+    background: background,
+    activities: activities,
+    teaching: teaching,
+    creative_works: creative_works,
     custom_content: content.field_people_custom_content[0] ? content.field_people_custom_content,
     media_display: media_display,
     featured_media: featured_media,

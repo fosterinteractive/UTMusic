@@ -16,7 +16,7 @@ id: node.people.field_people_name
 field_name: field_people_name
 entity_type: node
 bundle: people
-label: Name
+label: 'First Name'
 description: ''
 required: true
 translatable: false
