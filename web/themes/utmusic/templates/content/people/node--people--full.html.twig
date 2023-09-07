@@ -202,7 +202,7 @@
       {% endif %} #}
 
       {% if job_titles and instruments %}
-        {% set title_suffix_faculty = job_titles ~ ': ' ~ instruments %}
+        {% set title_suffix_faculty = job_titles ~ ', ' ~ instruments %}
       {% elseif job_titles and not instruments %}
         {% set title_suffix_faculty = job_titles %}
       {% elseif instruments  and not job_titles  %}

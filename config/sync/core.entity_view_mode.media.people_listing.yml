@@ -1,0 +1,10 @@
+uuid: 82798727-9279-4bb0-9eef-403dd4f3df76
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.people_listing
+label: 'People Listing'
+targetEntityType: media
+cache: true
