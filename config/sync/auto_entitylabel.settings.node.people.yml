@@ -1,8 +1,8 @@
 status: 1
 pattern: '[node:field_people_name] [node:field_people_last_name]'
-escape: true
+escape: false
 preserve_titles: false
-save: false
+save: true
 chunk: 50
 dependencies:
   config:
