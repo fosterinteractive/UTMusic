@@ -14,7 +14,7 @@ dependencies:
     - paragraphs.paragraphs_type.events_summary_list_dynamic
   module:
     - allowed_formats
-    - term_reference_tree
+    - choices
     - text
 id: paragraph.events_summary_list_dynamic.default
 targetEntityType: paragraph
@@ -22,21 +22,18 @@ bundle: events_summary_list_dynamic
 mode: default
 content:
   field_event_context_area:
-    type: term_reference_tree
+    type: choices_widget
     weight: 6
     region: content
     settings:
-      start_minimized: true
-      leaves_only: false
-      select_parents: false
-      cascading_selection: 0
-      max_depth: 0
+      configuration_options: ''
     third_party_settings: {  }
   field_events_category:
-    type: options_select
+    type: choices_widget
     weight: 5
     region: content
-    settings: {  }
+    settings:
+      configuration_options: ''
     third_party_settings: {  }
   field_events_number_of_items:
     type: options_select
