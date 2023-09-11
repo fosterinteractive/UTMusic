@@ -1,14 +1,14 @@
-uuid: 421430f1-5264-4780-82b8-4f5b22ab4b98
+uuid: 67ca402f-a103-47ee-b309-4b77c12477ef
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: people_menu_position
-label: People
+id: programs
+label: Programs
 menu_name: main
-parent: 'menu_link_content:7840a1d6-cc5e-4376-a8e8-4294ae8075c8'
-menu_link: 'menu_position_link:people_menu_position'
+parent: 'menu_link_content:08657405-228a-4877-aa63-482762d5a90d'
+menu_link: 'menu_position_link:programs'
 enabled: true
 weight: null
 conditions:
@@ -18,4 +18,4 @@ conditions:
     context_mapping:
       node: '@node.node_route_context:node'
     bundles:
-      people: people
+      program: program

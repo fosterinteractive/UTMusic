@@ -1,14 +1,14 @@
-uuid: cc796a7c-360a-431e-a6b0-726c8908930a
+uuid: 59e7d820-bccc-4add-a681-32f9d7a6dd99
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: events
-label: 'Events TEst'
+id: people
+label: People
 menu_name: main
-parent: 'menu_link_content:a615e183-ae76-4eec-8732-a9e64e685ed2'
-menu_link: 'menu_position_link:events'
+parent: 'menu_link_content:7840a1d6-cc5e-4376-a8e8-4294ae8075c8'
+menu_link: 'menu_position_link:people'
 enabled: true
 weight: null
 conditions:
@@ -18,4 +18,4 @@ conditions:
     context_mapping:
       node: '@node.node_route_context:node'
     bundles:
-      event: event
+      people: people

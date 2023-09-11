@@ -1,14 +1,14 @@
-uuid: e0768e7a-dfc3-4d77-a1f7-ca0054a5fdc6
+uuid: 2f48e157-4299-49a6-9c8d-6b67d9b854c7
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: news
-label: News
+id: event
+label: Event
 menu_name: main
-parent: 'menu_link_content:5ade2a78-7165-4e36-aa1e-be2f169cd3df'
-menu_link: 'menu_position_link:news'
+parent: 'menu_link_content:a615e183-ae76-4eec-8732-a9e64e685ed2'
+menu_link: 'menu_position_link:event'
 enabled: true
 weight: null
 conditions:
@@ -18,4 +18,4 @@ conditions:
     context_mapping:
       node: '@node.node_route_context:node'
     bundles:
-      news: news
+      event: event
