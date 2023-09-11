@@ -54,10 +54,6 @@
   align-items: center;
   color: var(--c-listing-item--date);
 
-  &:first-child {
-    min-width: 32%;
-  }
-  
   svg {
     color: var(--c-heading-link);
     min-width: rem(20px);
