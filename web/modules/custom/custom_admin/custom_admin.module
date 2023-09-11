@@ -385,6 +385,31 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
       ];
     }
   }
+
+  // PT: Card 
+  if($bundle == 'card') {
+    if ($field_name == 'field_card_illustration') {
+      $element['#states'] = [
+        'visible' => [
+          ':input[name="field_card_variation"]' => [
+            'value' => 'illustration',
+          ],
+        ],
+      ];
+    }
+  }
+
+  if($bundle == 'card') {
+    if ($field_name == 'field_card_image') {
+      $element['#states'] = [
+        'visible' => [
+          ':input[name="field_card_variation"]' => [
+            'value' => 'image',
+          ],
+        ],
+      ];
+    }
+  }
 }
 
 

@@ -37,27 +37,29 @@
  */
 #}
 {# Check if there is an image #}
-{% if content.field_card_image[0] %}
+{# {% if content.field_card_image[0] %} #}
   {# Get image path, alt and image style field #}
-  {% set image_file_path = content.field_card_image[0]['#media'].field_ed_image_image.entity.uri.value %}
+  {# {% set image_file_path = content.field_card_image[0]['#media'].field_ed_image_image.entity.uri.value %}
   {% set image_file_alt = content.field_card_image[0]['#media'].field_ed_image_image.0.alt %}
   {% set image_file_width = content.field_card_image[0]['#media'].field_ed_image_image.0.width %}
   {% set image_file_height = content.field_card_image[0]['#media'].field_ed_image_image.0.height %}
-  {% set image_style_field = content.field_card_image_crop[0] ? content.field_card_image_crop[0]['#markup'] %}
+  {% set image_style_field = content.field_card_image_crop[0] ? content.field_card_image_crop[0]['#markup'] %} #}
 
   {# If there are image_stye and image_width values, create responsive_image_style #}
-  {% if image_style_field is not empty %}
-    {% set responsive_image_style = 'card_' ~ image_style_field %}
+  {# {% if image_style_field is not empty %}
+    {% set responsive_image_style = 'card_' ~ image_style_field %} #}
   {# Else, the default will be full width of column image style #}
-  {% else %}
+  {# {% else %}
     {% set responsive_image_style = 'card_scale_width' %}
-  {% endif %}
+  {% endif %} #}
 
-  {% if responsive_image_style %}
+  {# {% if responsive_image_style %} #}
     {# create responsive image #}
-    {% set image = drupal_image(image_file_path, responsive_image_style, {'alt': image_file_alt, 'width': image_file_width, 'height': image_file_height} ,responsive=true) %}
+    {# {% set image = drupal_image(image_file_path, responsive_image_style, {'alt': image_file_alt, 'width': image_file_width, 'height': image_file_height} ,responsive=true) %}
   {% endif %}
-{% endif %}
+{% endif %} #}
+
+{% set image = content.field_card_image[0] ? content.field_card_image %}
 
 {# Get categories #}
 {% set categories = [] %}

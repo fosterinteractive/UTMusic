@@ -1,99 +1,54 @@
 .m-card--image {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: calc(var(--spacer) / 2);
-
-  .a-heading__last-word {
-    padding-right: 0;
-  }
+  @extend %m-card;
+  border-left: unset;
+  padding-left: 0;
 }
 
 .m-card--image__main {
   @extend %m-card__main;
-
-  text-align: center;    
 }
 
-.m-card--image__title,
-.m-card--image__title.below,
-.m-card--image__title.above {
+// Image variation
+.m-card--image__title {
+  @extend %m-card__title;
+
+  text-align: center;
 
   h2, h3, span {
-    text-align: center;
-    color: var(--c-card--image-text); 
-    display: inline-block; 
+    display: inline-block;
   }
 
-  a {
-    color: var(--c-card--image-text);
+  h2 a, h3 a, span a {
+    color: var(--c-card-title) !important;
     
-    &:hover {
-      color: var(--c-card--image-text);
-      .a-heading__last-word {
-        text-decoration: underline;
-      }
-    }
-
     span {
       padding: 0;
     }
   }
 
   svg {
-    fill: var(--c-card--image-text);
+    fill: var(--c-card-title) !important;
   }
 }
 
-.m-card--image__image.highlight-below {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  border-radius: rem(10px);
-  overflow: hidden;
 
-  & > div {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .m-card--image__title {
-    @extend %overlay-link-card;
-    align-self: self-end;
-    background-color: var(--c-card--image-highlight-below-bg);
-  }
-
-  .m-card--image__title h2,
-  .m-card--image__title h3,
-  .m-card--image__title span {
-    padding: rem(13px) 0;
-    color: var(--c-card--image-highlight-below-text);
-
-    a {
-      color: var(--c-card--image-highlight-below-text);
-      
-      &:hover {
-        .a-heading__last-word {
-          text-decoration: underline;
-        }
-      }
-      span {
-        padding: 0;
-      }
-    }
+.m-card--image__link {
+  .a-heading__h5 a {
+    color: palette(blue);
 
     svg {
-      fill: var(--c-card--image-highlight-below-text);
+      color: palette(teal, 300);
     }
-  }
-}
 
-.m-card--image.m-card--bordered {
-  .m-card--image__title {
-    color: var(--c-card--bordered-illustration);
-  }
-
-  .m-card--image__description {
-    color: var(--c-card--bordered-illustration);
+    &:hover,
+    &:focus,
+    &:active {
+      color: palette(teal, 300);
+      text-decoration: none;
+      
+      svg {
+        color: palette(blue);
+      }
+    }
   }
 }
