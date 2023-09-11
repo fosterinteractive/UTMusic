@@ -391,8 +391,17 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
     if ($field_name == 'field_card_illustration') {
       $element['#states'] = [
         'visible' => [
-          ':input[name="field_card_variation"]' => [
-            'value' => 'illustration',
+          [
+            ':input[name="field_card_variation"]' => ['value' => 'illustration'],
+          ],
+          [
+            ':input[name="field_page_header[0][subform][field_carousel_header_card1][0][subform][field_card_variation]"]' => ['value' => 'illustration'],
+          ],
+          [
+            ':input[name="field_page_header[0][subform][field_carousel_header_card2][0][subform][field_card_variation]"]' => ['value' => 'illustration'],
+          ],
+          [
+            ':input[name="field_page_header[0][subform][field_carousel_header_card3][0][subform][field_card_variation]"]' => ['value' => 'illustration'],
           ],
         ],
       ];
@@ -402,9 +411,18 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
   if($bundle == 'card') {
     if ($field_name == 'field_card_image') {
       $element['#states'] = [
-        'visible' => [
-          ':input[name="field_card_variation"]' => [
-            'value' => 'image',
+        'visible' => [ 
+          [
+            ':input[name="field_card_variation"]' => ['value' => 'image'],
+          ], 
+          [
+            ':input[name="field_page_header[0][subform][field_carousel_header_card1][0][subform][field_card_variation]"]' => ['value' => 'image'],
+          ],
+          [
+            ':input[name="field_page_header[0][subform][field_carousel_header_card2][0][subform][field_card_variation]"]' => ['value' => 'image'],
+          ],
+          [
+            ':input[name="field_page_header[0][subform][field_carousel_header_card3][0][subform][field_card_variation]"]' => ['value' => 'image'],
           ],
         ],
       ];
