@@ -98,7 +98,7 @@ full_2_col:
         'top': 'Top'
         'center': 'Center'
         'stretch': 'Stretch'
-      description: 'Alignment across columns (not all components can strech in height)'
+      description: 'Alignment across columns (not all components can stretch in height)'
     theme:
       label: 'Background Color'
       multiple: false
@@ -168,7 +168,7 @@ full_3_col:
         'top': 'Top'
         'center': 'Center'
         'stretch': 'Stretch'
-      description: 'Alignment across columns (not all components can strech in height)'
+      description: 'Alignment across columns (not all components can stretch in height)'
     theme:
       label: 'Background Color'
       multiple: false
@@ -239,7 +239,7 @@ full_4_col:
         'top': 'Top'
         'center': 'Center'
         'stretch': 'Stretch'
-      description: 'Alignment across columns (not all components can strech in height)'
+      description: 'Alignment across columns (not all components can stretch in height)'
     theme:
       label: 'Background Color'
       multiple: false
@@ -324,7 +324,7 @@ full_grid_2col:
         'none': 'None'
         'stretch': 'Stretch'
         'center': 'Center'
-      description: 'Alignment across columns (not all components can strech in height)'
+      description: 'Alignment across columns (not all components can stretch in height)'
     theme:
       label: 'Background Color'
       multiple: false
@@ -403,7 +403,7 @@ full_grid_3col:
         'none': 'None'
         'stretch': 'Stretch'
         'center': 'Center'
-      description: 'Alignment across columns (not all components can strech in height)'
+      description: 'Alignment across columns (not all components can stretch in height)'
     theme:
       label: 'Background Color'
       multiple: false
@@ -481,7 +481,7 @@ full_grid_4col:
         'none': 'None'
         'stretch': 'Stretch'
         'center': 'Center'
-      description: 'Alignment across columns (not all components can strech in height)'
+      description: 'Alignment across columns (not all components can stretch in height)'
     theme:
       label: 'Background Color'
       multiple: false
