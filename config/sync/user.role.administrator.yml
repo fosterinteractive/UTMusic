@@ -36,9 +36,12 @@ dependencies:
     - taxonomy.vocabulary.instrument
     - taxonomy.vocabulary.job_category
     - taxonomy.vocabulary.juries_forms_category
+    - taxonomy.vocabulary.librarians_library_staff_job_tit
+    - taxonomy.vocabulary.location
     - taxonomy.vocabulary.news_area_of_study
     - taxonomy.vocabulary.program_stream
     - taxonomy.vocabulary.program_type
+    - taxonomy.vocabulary.programs_list
     - taxonomy.vocabulary.promote_on_news
     - taxonomy.vocabulary.promoted_on_events
     - taxonomy.vocabulary.staff_job_titles
@@ -257,9 +260,12 @@ permissions:
   - 'create terms in instrument'
   - 'create terms in job_category'
   - 'create terms in juries_forms_category'
+  - 'create terms in librarians_library_staff_job_tit'
+  - 'create terms in location'
   - 'create terms in news_area_of_study'
   - 'create terms in program_stream'
   - 'create terms in program_type'
+  - 'create terms in programs_list'
   - 'create terms in promote_on_news'
   - 'create terms in promoted_on_events'
   - 'create terms in staff_job_titles'
@@ -327,9 +333,12 @@ permissions:
   - 'delete terms in instrument'
   - 'delete terms in job_category'
   - 'delete terms in juries_forms_category'
+  - 'delete terms in librarians_library_staff_job_tit'
+  - 'delete terms in location'
   - 'delete terms in news_area_of_study'
   - 'delete terms in program_stream'
   - 'delete terms in program_type'
+  - 'delete terms in programs_list'
   - 'delete terms in promote_on_news'
   - 'delete terms in promoted_on_events'
   - 'delete terms in staff_job_titles'
@@ -379,9 +388,12 @@ permissions:
   - 'edit terms in instrument'
   - 'edit terms in job_category'
   - 'edit terms in juries_forms_category'
+  - 'edit terms in librarians_library_staff_job_tit'
+  - 'edit terms in location'
   - 'edit terms in news_area_of_study'
   - 'edit terms in program_stream'
   - 'edit terms in program_type'
+  - 'edit terms in programs_list'
   - 'edit terms in promote_on_news'
   - 'edit terms in promoted_on_events'
   - 'edit terms in staff_job_titles'

@@ -2,6 +2,15 @@ uuid: 5d21689d-e598-4c97-ac9b-8eaa50c586f5
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.ed_notice
+    - node.type.event
+    - node.type.job
+    - node.type.news
+    - node.type.page
+    - node.type.people
+    - node.type.program
+    - node.type.resources
   module:
     - content_moderation
 _core:
@@ -59,5 +68,14 @@ type_settings:
         - archived
       to: draft
       weight: 3
-  entity_types: {  }
+  entity_types:
+    node:
+      - ed_notice
+      - event
+      - job
+      - news
+      - page
+      - people
+      - program
+      - resources
   default_moderation_state: draft
