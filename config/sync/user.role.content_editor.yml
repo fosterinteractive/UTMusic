@@ -55,6 +55,7 @@ dependencies:
     - entity_browser
     - file
     - filter
+    - markerio
     - media
     - media_file_delete
     - node
@@ -71,6 +72,7 @@ permissions:
   - 'access contextual links'
   - 'access ed_file entity browser pages'
   - 'access files overview'
+  - 'access markerio'
   - 'access media overview'
   - 'access taxonomy overview'
   - 'administer media'
