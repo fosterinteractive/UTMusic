@@ -20,7 +20,12 @@
   {% endif %}
 
   {# Set default icon for headings with links #}
-  {% set icon = icon|default('link-shevron') %}
+  {# check out - if type of url is external from Drupal #}
+  {% if url.external %}
+    {% set icon = icon|default('external_link') %}
+  {% else %}
+    {% set icon = icon|default('link-shevron') %}
+  {% endif %}
 
   {# heading id used for aria roles or anchor links. not rendered by default and  #}
   <{{ html_element }}
