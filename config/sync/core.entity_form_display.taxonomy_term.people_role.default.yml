@@ -1,0 +1,25 @@
+uuid: d28e2504-7937-46ee-b6c9-a7b3223e4dc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.people_role
+id: taxonomy_term.people_role.default
+targetEntityType: taxonomy_term
+bundle: people_role
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true
+  revision_log_message: true
+  simple_sitemap: true
+  status: true
