@@ -86,6 +86,7 @@ module:
   link: 0
   linkit: 0
   mainspring_cache: 0
+  markerio: 0
   markup: 0
   media: 0
   media_bulk_upload: 0

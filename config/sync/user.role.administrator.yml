@@ -78,6 +78,7 @@ dependencies:
     - image
     - layout_builder
     - linkit
+    - markerio
     - media
     - media_bulk_upload
     - media_file_delete
@@ -120,6 +121,7 @@ permissions:
   - 'access ed_file entity browser pages'
   - 'access environment indicator'
   - 'access files overview'
+  - 'access markerio'
   - 'access media overview'
   - 'access own webform configuration'
   - 'access revision field'
@@ -169,6 +171,7 @@ permissions:
   - 'administer import_entity fields'
   - 'administer import_entity form display'
   - 'administer linkit profiles'
+  - 'administer markerio configuration'
   - 'administer media'
   - 'administer media display'
   - 'administer media fields'
