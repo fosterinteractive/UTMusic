@@ -33,6 +33,7 @@ dependencies:
     - field.field.node.people.field_people_pronunciation
     - field.field.node.people.field_people_research_profile
     - field.field.node.people.field_people_role
+    - field.field.node.people.field_people_role_new
     - field.field.node.people.field_people_staff_position
     - field.field.node.people.field_people_teaching
     - field.field.node.people.field_people_website
@@ -51,6 +52,11 @@ targetEntityType: node
 bundle: people
 mode: listing_item_condensed
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_people_faculty_position:
     type: entity_reference_label
     label: hidden
@@ -143,6 +149,7 @@ hidden:
   field_people_pronouns: true
   field_people_pronunciation: true
   field_people_research_profile: true
+  field_people_role_new: true
   field_people_teaching: true
   field_people_website: true
   links: true

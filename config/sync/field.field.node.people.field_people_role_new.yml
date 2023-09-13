@@ -1,0 +1,29 @@
+uuid: 5c20306e-8ce1-42c8-98c2-ebdc743d1e82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_role_new
+    - node.type.people
+    - taxonomy.vocabulary.people_role
+id: node.people.field_people_role_new
+field_name: field_people_role_new
+entity_type: node
+bundle: people
+label: Role
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      people_role: people_role
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

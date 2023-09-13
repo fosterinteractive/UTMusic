@@ -11,7 +11,7 @@ id: node.people.field_people_role
 field_name: field_people_role
 entity_type: node
 bundle: people
-label: Role
+label: Category
 description: ''
 required: true
 translatable: false

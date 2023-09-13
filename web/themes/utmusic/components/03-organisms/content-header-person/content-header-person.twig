@@ -65,8 +65,15 @@
         </h1>
       {% endif %}
 
-      {% if title_suffix_faculty or title_suffix_staff or  title_suffix_library %}
+      {% if new_roles or title_suffix_faculty or title_suffix_staff or  title_suffix_library %}
         <div class="o-hero-media{{ variation }}__title-suffix">
+          
+          {% if new_roles %}
+            {% for role in new_roles %}
+              <div>{{ role }}</div>
+            {% endfor %}
+          {% endif %}
+
           <p>
             {% if title_suffix_staff %}{{ title_suffix_staff }}{% endif %}{% if title_suffix_staff and (title_suffix_faculty or title_suffix_library)%}{{- ','}} {% endif %}
             {% if title_suffix_faculty %}{{ title_suffix_faculty }}{% endif %}{% if title_suffix_faculty and title_suffix_library %}{{- ','}} {% endif %}

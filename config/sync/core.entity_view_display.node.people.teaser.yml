@@ -33,6 +33,7 @@ dependencies:
     - field.field.node.people.field_people_pronunciation
     - field.field.node.people.field_people_research_profile
     - field.field.node.people.field_people_role
+    - field.field.node.people.field_people_role_new
     - field.field.node.people.field_people_staff_position
     - field.field.node.people.field_people_teaching
     - field.field.node.people.field_people_website
@@ -44,6 +45,11 @@ targetEntityType: node
 bundle: people
 mode: teaser
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -79,6 +85,7 @@ hidden:
   field_people_pronunciation: true
   field_people_research_profile: true
   field_people_role: true
+  field_people_role_new: true
   field_people_staff_position: true
   field_people_teaching: true
   field_people_website: true

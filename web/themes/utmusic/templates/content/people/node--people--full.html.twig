@@ -154,7 +154,7 @@
 {% endif %}
 
 
-{# Set string of Roles from array #}
+{# Set string of Category (Former Role) from array #}
 {% if content.field_people_role[0] %}
   {% set roles = [] %}
 
@@ -251,6 +251,21 @@
     {% endif %}
   {% endif %}
 
+{% endif %}
+
+{# Set string of Roles (New Taxonomy) of specialization from array #}
+{% if content.field_people_role_new[0] %}
+  {% set new_roles = [] %}
+
+  {# Get number of items #}
+  {% if content.field_people_role_new['#items'].getIterator() %}
+    {% set item_count = content.field_people_role_new['#items'].getIterator()|length - 1 %}
+  {% endif %}
+
+  {# For each item add to areas array #}
+  {% for i in 0..item_count %}
+    {% set new_roles = new_roles|merge([content.field_people_role_new[i]['#plain_text']]) %}
+  {% endfor %}
 {% endif %}
 
 {# Check if the feature media type exists #}
@@ -360,6 +375,7 @@
     pronunciation: content.field_people_pronunciation[0] ? content.field_people_pronunciation,
     prononun: content.field_people_pronouns[0] ? content.field_people_pronouns[0]['#text'],
     areas: areas,
+    new_roles: new_roles,
     profile_type: content.field_people_profile_type[0] ? content.field_people_profile_type[0]['#markup'],
     education: education,
     background: background,

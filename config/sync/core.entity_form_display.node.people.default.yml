@@ -32,15 +32,18 @@ dependencies:
     - field.field.node.people.field_people_pronunciation
     - field.field.node.people.field_people_research_profile
     - field.field.node.people.field_people_role
+    - field.field.node.people.field_people_role_new
     - field.field.node.people.field_people_staff_position
     - field.field.node.people.field_people_teaching
     - field.field.node.people.field_people_website
     - node.type.people
+    - workflows.workflow.editorial
   module:
     - allowed_formats
     - audiorecorder
     - choices
     - conditional_fields
+    - content_moderation
     - field_group
     - hide_revision_field
     - link
@@ -79,6 +82,7 @@ third_party_settings:
     group_categories:
       children:
         - field_people_role
+        - field_people_role_new
         - field_people_faculty_position
         - field_people_job_title
         - field_people_instrument
@@ -260,7 +264,7 @@ content:
         hide_guidelines: '1'
   field_people_area:
     type: choices_widget
-    weight: 21
+    weight: 22
     region: content
     settings:
       configuration_options: ''
@@ -342,7 +346,7 @@ content:
     third_party_settings: {  }
   field_people_faculty_position:
     type: options_select
-    weight: 18
+    weight: 19
     region: content
     settings: {  }
     third_party_settings:
@@ -391,7 +395,7 @@ content:
     third_party_settings: {  }
   field_people_instrument:
     type: choices_widget
-    weight: 20
+    weight: 21
     region: content
     settings:
       configuration_options: ''
@@ -415,7 +419,7 @@ content:
             selector: ''
   field_people_job_title:
     type: options_select
-    weight: 19
+    weight: 20
     region: content
     settings: {  }
     third_party_settings:
@@ -438,7 +442,7 @@ content:
             selector: ''
   field_people_job_title_library:
     type: options_select
-    weight: 24
+    weight: 25
     region: content
     settings: {  }
     third_party_settings:
@@ -463,7 +467,7 @@ content:
             selector: ''
   field_people_job_title_staff:
     type: options_select
-    weight: 23
+    weight: 24
     region: content
     settings: {  }
     third_party_settings:
@@ -558,9 +562,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_people_role_new:
+    type: options_buttons
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_people_staff_position:
     type: options_select
-    weight: 22
+    weight: 23
     region: content
     settings: {  }
     third_party_settings:
@@ -601,6 +611,12 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path

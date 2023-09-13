@@ -1,0 +1,20 @@
+uuid: 91ef693f-2763-4b49-aff1-1433c8c99911
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_people_role_new
+field_name: field_people_role_new
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
