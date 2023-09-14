@@ -10,7 +10,7 @@ field_name: field_menu_promotional_panel
 entity_type: menu_link_content
 bundle: main
 label: 'Show Promotional Panel'
-description: ''
+description: "This setting applies only to the primary level of the menu. \r\nYou can modify the level of the menu item to incorporate this setting if it is disabled."
 required: false
 translatable: false
 default_value:
