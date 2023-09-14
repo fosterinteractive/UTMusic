@@ -578,7 +578,7 @@ function custom_admin_form_alter(&$form, FormStateInterface $form_state, $form_i
   if ($form_id == 'menu_link_content_main_form') {
 
     // Define the fields we want to show/hide.
-    $fields_to_modify = ['field_menu_promo_title', 'field_menu_promo_body', 'field_menu_promo_button', 'field_promotional_panel_help'];
+    $fields_to_modify = ['field_menu_promo_title', 'field_menu_promo_body', 'field_menu_promo_button'];
 
     // The condition for visibility
     $visibility_condition = [
@@ -591,5 +591,53 @@ function custom_admin_form_alter(&$form, FormStateInterface $form_state, $form_i
     foreach ($fields_to_modify as $field) {
       $form[$field]['#states'] = $visibility_condition;
     }
+
+    // Hidden unnecessary menu fields
+    $form['menu_parent']['#access'] = FALSE;
+    $form['weight']['#access'] = FALSE;
+    $form['expanded']['#access'] = FALSE;
+  
+    // Hiding fields depending on item menu level.
+    // Get the menu link content entity and parent ID
+    $menu_link_content = $form_state->getFormObject()->getEntity();
+    $parent_id = $menu_link_content->getParentId();
+
+    // Check if it's a top-level menu item
+    $hasColon = strpos($parent_id, ':') !== FALSE;
+
+    if (!$hasColon) {
+        $menu_level = 'first';
+        \Drupal::messenger()->addMessage(t('You are now in the first level of the menu.'));
+    } else {
+        // Try to determine if it's a second-level menu item
+        $uuid = explode(':', $parent_id)[1];
+        
+        // Load the parent menu link entity
+        $parent_menu_link_content = \Drupal::entityTypeManager()
+            ->getStorage('menu_link_content')
+            ->loadByProperties(['uuid' => $uuid]);
+
+        if ($parent_menu_link_content && !strpos(reset($parent_menu_link_content)->getParentId(), ':')) {
+            $menu_level = 'second';
+            \Drupal::messenger()->addMessage(t('You are now in the second level of the menu.'));
+        } else {
+          $menu_level = 'other';
+          \Drupal::messenger()->addMessage(t('You are now in the third level of the menu or deeper.'));
+        }
+    }
+
+    // First level of menu.
+    if ($menu_level != 'first') {
+      // Execute code when $menu_level is not 'first'
+      $fields_for_first_lvl = ['field_menu_promo_title', 'field_menu_promo_body', 'field_menu_promo_button', 'field_menu_promotional_panel'];
+
+      // Loop through the fields and set #access
+      foreach ($fields_for_first_lvl as $field_name) {
+        if (isset($form[$field_name])) {
+          $form[$field_name]['#disabled'] = TRUE;
+        }
+      }
+    }
+    // End Hiding fields depending on item menu level.
   }
 }
