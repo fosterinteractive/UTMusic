@@ -31,6 +31,7 @@
     <css-placeholder token="{{ placeholder_token|raw }}">
     <js-placeholder token="{{ placeholder_token|raw }}">
   </head>
+
   <body{{ attributes }}>
     <a href="#main-content" class="u-visually--hidden visually-hidden focusable skip-link">
       {{ 'Skip to main content'|t }}
@@ -40,12 +41,8 @@
     {{ page }}
     {{ page_bottom }}
 
-    <link rel="stylesheet" href="https://use.typekit.net/cow6dnb.css">
+    <link rel="stylesheet" href="https://use.typekit.net/cow6dnb.css" rel="preload" as="font">
     <js-bottom-placeholder token="{{ placeholder_token|raw }}">
-    
-    {# Site Custome Scripts #}
-    {% if site_custom_script %}
-      {{site_custom_script|raw}}
-    {% endif %}
+
   </body>
 </html>

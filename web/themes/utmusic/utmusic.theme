@@ -53,19 +53,6 @@ function utmusic_preprocess(&$variables, $hook) {
 /**
  * Implements template_preprocess_page().
  */
-function utmusic_preprocess_html(&$variables) {
-  // Load the site name out of configuration.
-  $config = \Drupal::config('system.site');
-  // Custom site configuration.
-  $custom_site_settings = ConfigPages::config('custom_site_settings');
-
-  // Site Custom Script.
-  $variables['site_custom_script'] = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_custom_scripts') && !$custom_site_settings->get('field_site_custom_scripts')->isEmpty() ? $custom_site_settings->get('field_site_custom_scripts')->first()->getValue()['value'] : NULL;
-}
-
-/**
- * Implements template_preprocess_page().
- */
 function utmusic_preprocess_page(&$variables) {
 
   // Load the site name out of configuration.
