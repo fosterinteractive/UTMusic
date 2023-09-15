@@ -9,7 +9,7 @@ full_1_col:
       label: 'Content Width'
       multiple: false
       required: true
-      # default: '[12]'
+      default: '[12]'
       options:
         '[6]': '[6] of 12 columns Wide'
         '[8]': '[8] of 12 columns Wide'
@@ -69,7 +69,7 @@ full_2_col:
       label: 'Content Width'
       multiple: false
       required: true
-      # default: '[4|8]'
+      default: '[4|8]'
       options:
         '[3|8]': '[3|8] of 12 columns Wide'
         '[3|9]': '[3|9] of 12 columns Wide'
@@ -154,7 +154,7 @@ full_3_col:
       label: 'Content Width'
       multiple: false
       required: true
-      # default: '[4|4|4]'
+      default: '[4|4|4]'
       options:
         '[4|4|4]': '[4|4|4] of 12 columns Wide'
       description: 'Select the width for this section.'
@@ -225,7 +225,7 @@ full_4_col:
       label: 'Content Width'
       multiple: false
       required: true
-      # default: '[3|3|3|3]'
+      default: '[3|3|3|3]'
       options:
         '[3|3|3|3]': '[3|3|3|3] of 12 columns Wide'
       description: 'Select the width for this section.'
@@ -308,7 +308,7 @@ full_grid_2col:
       label: 'Content Width'
       multiple: false
       required: true
-      # default: '[10]'
+      default: '[10]'
       options:
         '[6]': '[6] of 12 columns Wide'
         '[8]': '[8] of 12 columns Wide'
@@ -388,7 +388,7 @@ full_grid_3col:
       label: 'Content Width'
       multiple: false
       required: true
-      # default: '[10]'
+      default: '[10]'
       options:
         '[8]': '[8] of 12 columns Wide'
         '[10]': '[10] of 12 columns Wide'
@@ -467,7 +467,7 @@ full_grid_4col:
       label: 'Content Width'
       multiple: false
       required: true
-      # default: '[10]'
+      default: '[10]'
       options:
         '[10]': '[10] of 12 columns Wide'
         '[12]': '[12] of 12 columns Wide'
