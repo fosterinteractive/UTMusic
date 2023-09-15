@@ -524,10 +524,11 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_people_program:
-    type: options_buttons
+    type: choices_widget
     weight: 48
     region: content
-    settings: {  }
+    settings:
+      configuration_options: ''
     third_party_settings: {  }
   field_people_pronouns:
     type: text_textfield
