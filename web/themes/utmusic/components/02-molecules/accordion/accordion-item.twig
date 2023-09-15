@@ -29,7 +29,7 @@
             {% if absolute_link %}
 
               <div class="m-accordion-item__copy-link">
-                <button aria-labelledby="{{accordion__tooltip__id}}--absolute" class="m-accordion-item__copy-btn is-absolute data-trigger" data-template="{{accordion__tooltip__id}}--absolute" type="button">
+                <button aria-labelledby="{{ accordion__tooltip__id }}--absolute" class="m-accordion-item__copy-btn is-absolute data-trigger" data-template="{{ accordion__tooltip__id }}--absolute" type="button">
                   {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
                       directory: directory,
                       icon: 'envelope',
@@ -38,17 +38,17 @@
                   %}
                 </button>
 
-                <div class="visually-hidden" id="{{accordion__tooltip__id}}--absolute">
+                <div class="visually-hidden" id="{{ accordion__tooltip__id }}--absolute">
                   <p>{{ 'Copy absolute link to clipboard for '|t }}{{ title }}</p>
                 </div>
 
-                <span class="u-visually--hidden is-absolute-text">{{absolute_link}}</span>
+                <span class="u-visually--hidden is-absolute-text">{{ absolute_link }}</span>
               </div>              
             {% endif %}
 
             {% if relative_link %}
               <div class="m-accordion-item__copy-link">
-                <button aria-labelledby="{{accordion__tooltip__id}}--relative" class="m-accordion-item__copy-btn is-relative data-trigger" data-template="{{accordion__tooltip__id}}--relative" type="button">
+                <button aria-labelledby="{{ accordion__tooltip__id }}--relative" class="m-accordion-item__copy-btn is-relative data-trigger" data-template="{{ accordion__tooltip__id }}--relative" type="button">
                   {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
                       directory: directory,
                       icon: 'link-simple',
@@ -57,11 +57,11 @@
                   %}
                 </button>
 
-                <div class="visually-hidden" id="{{accordion__tooltip__id}}--relative">
+                <div class="visually-hidden" id="{{ accordion__tooltip__id }}--relative">
                   <p>{{ 'Copy relative link to clipboard for '|t }}{{ title }}</p>
                 </div>
 
-                <span class="u-visually--hidden is-relative-text">{{relative_link}}</span>
+                <span class="u-visually--hidden is-relative-text">{{ relative_link }}</span>
               </div>  
             {% endif %}
           </div>
@@ -70,7 +70,7 @@
 
       {% if title %}
         <h4>
-          <button class="m-accordion-item__label toggle js-accordion-item__toggle" aria-expanded="false" id="{{accordion__header__id}}" aria-controls="{{accordion__panel__id}}" >
+          <button class="m-accordion-item__label toggle js-accordion-item__toggle" aria-expanded="false" id="{{ accordion__header__id }}" aria-controls="{{ accordion__panel__id }}" >
             {{ title }}
 
             {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
@@ -102,7 +102,7 @@
 
   {# Panel  #}
   {% if content %}
-    <section class="m-accordion-item__content s-wysiwyg js-accordion-item__panel" data-accordion-component="content" aria-hidden="true" aria-labelledby="{{accordion__header__id}}" id="{{accordion__panel__id}}" >
+    <section class="m-accordion-item__content s-wysiwyg js-accordion-item__panel" data-accordion-component="content" aria-hidden="true" aria-labelledby="{{ accordion__header__id }}" id="{{ accordion__panel__id }}" >
       {{ content }}
     </section>
   {% endif %}

@@ -62,40 +62,6 @@ function utmusic_preprocess_page(&$variables) {
   // Custom site configuration.
   $custom_site_settings = ConfigPages::config('custom_site_settings');
 
-  $variables['site_logo_image_url'] = NULL;
-  $variables['site_logo_image_width'] = NULL;
-  $variables['site_logo_image_height'] = NULL;
-  if (!empty($custom_site_settings) && $custom_site_settings->hasField('field_site_logo') && !$custom_site_settings->get('field_site_logo')->isEmpty()) {
-    $image_values = $custom_site_settings->get('field_site_logo')->first()->getValue();
-    $fid = $image_values['target_id'];
-    $file = File::load($fid);
-    $variables['site_logo_image_url'] = $file->createFileUrl();
-    $variables['site_logo_image_width'] = $image_values['width'];
-    $variables['site_logo_image_height'] = $image_values['height'];
-  }
-
-  // Custom site slogan.
-  $variables['site_slogan'] = NULL;
-  $site_slogan = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_slogan') && !$custom_site_settings->get('field_site_slogan')->isEmpty() ? $custom_site_settings->get('field_site_slogan')->first()->getValue() : NULL;
-  if ($site_slogan) {
-    $variables['site_slogan'] = [
-      '#type' => 'processed_text',
-      '#text' => $site_slogan['value'],
-      '#format' => $site_slogan['format'],
-    ];
-  }
-
-  // Custom site footer text.
-  $variables['site_footer'] = NULL;
-  $site_footer = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_footer') && !$custom_site_settings->get('field_site_footer')->isEmpty() ? $custom_site_settings->get('field_site_footer')->first()->getValue() : NULL;
-  if ($site_footer) {
-    $variables['site_footer'] = [
-      '#type' => 'processed_text',
-      '#text' => $site_footer['value'],
-      '#format' => $site_footer['format'],
-    ];
-  }
-
   // Site Facebook URL.
   $variables['site_facebook'] = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_facebook') && !$custom_site_settings->get('field_site_facebook')->isEmpty() ? $custom_site_settings->get('field_site_facebook')->getString() : NULL;
   // Site Linkedin URL.
@@ -106,39 +72,6 @@ function utmusic_preprocess_page(&$variables) {
   $variables['site_youtube'] = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_youtube') && !$custom_site_settings->get('field_site_youtube')->isEmpty() ? $custom_site_settings->get('field_site_youtube')->getString() : NULL;
   // Site Instagram URL.
   $variables['site_instagram'] = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_instagram') && !$custom_site_settings->get('field_site_instagram')->isEmpty() ? $custom_site_settings->get('field_site_instagram')->getString() : NULL;
-
-
-  // Student Assistance
-  $variables['student_assistance_url'] = NULL;
-  $variables['student_assistance_theme'] = NULL;
-  $variables['student_assistance_label'] = NULL;
-  if (
-    !empty($custom_site_settings) && 
-    $custom_site_settings->hasField('field_site_student_assist_enable') &&
-    !$custom_site_settings->get('field_site_student_assist_enable')->isEmpty() &&
-    $custom_site_settings->get('field_site_student_assist_enable')->value == 1
-  ) {
-    if (!empty($custom_site_settings) && $custom_site_settings->hasField('field_site_student_assist_link') && !$custom_site_settings->get('field_site_student_assist_link')->isEmpty()) {
-      $student_assistance_label = $custom_site_settings->get('field_site_student_assist_link')->first()->getValue()['title'];
-      $variables['student_assistance_label'] = !empty($student_assistance_label) ? $student_assistance_label : t('Student Assistance');
-      $variables['student_assistance_url'] = $custom_site_settings->get('field_site_student_assist_link')->first()->getUrl()->toString();
-    }
-    $variables['student_assistance_theme'] = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_student_assist_theme') && !$custom_site_settings->get('field_site_student_assist_theme')->isEmpty() ? $custom_site_settings->get('field_site_student_assist_theme')->value : NULL;
-  }
-}
-
-/**
- * Implements template_preprocess_image().
- */
-function utmusic_preprocess_image(&$variables) {
-  // Checks for data-load attr.
-  if (isset($variables['attributes']['data-load'])) {
-    // Check if the lazyload should be done with tiny-slider.
-    if ($variables['attributes']['data-load'] == 'tiny_slider') {
-      // Attaches tiny_slider "tinyslider.js" library.
-      $variables['#attached']['library'][] = 'utmusic/tiny_slider';
-    }
-  }
 }
 
 /**

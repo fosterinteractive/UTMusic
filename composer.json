@@ -103,7 +103,8 @@
         "bower-asset/choices.js": "10.2.0",
         "drupal/conditional_fields": "4.0.0-alpha3",
         "drupal/media_entity_link": "^2.0",
-        "drupal/markerio": "^1.0"
+        "drupal/markerio": "^1.0",
+        "drupal/webprofiler": "9.0.2"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2",
