@@ -16,7 +16,7 @@
     return currentIndex;
   }
 
-  Drupal.behaviors.featuredMediaDrupal = {
+  Drupal.behaviors.featuredMedia = {
     attach(context) {
       // Find carousel container with controls buttons and items
       const carouselContainers = context.querySelectorAll('.m-featured-media__items');

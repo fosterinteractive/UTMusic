@@ -3,13 +3,7 @@ global:
     theme:
       dist/style.css: {}
   js:
-    # dist/js/_patterns/02-molecules/accordion/accordion.js: {}
-    # dist/js/_patterns/02-molecules/form/input-file/input-file.js: {}
-    # dist/js/_patterns/02-molecules/readmore/readmore.js: {}
     dist/js/01-atoms/videos/video-embed.js: {}
-    # dist/js/02-molecules/tabs/tabs.js: {}
-    # dist/js/06-utilities/readmore/readmore.js: {}
-    js/site.config.js: {}
     js/skip-link.js: {}
   dependencies:
     - core/jquery
@@ -76,7 +70,7 @@ carousel-media-people:
 
 featured-media:
   js:
-    js/featured-media.js: {}
+    dist/js/02-molecules/featured-media/featured-media.js: {}
 
 foundation_core:
   version: 6.7.4
