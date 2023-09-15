@@ -7,4 +7,4 @@ target: ""
 aria_label: Optional text read aloud by screen readers
 aria_labelledby:
 alignment: center
-icon: 'link-shevron'
+icon: 'link-chevron'

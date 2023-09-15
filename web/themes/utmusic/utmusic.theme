@@ -24,6 +24,16 @@ use Drupal\mega_menu_builder\MegaMenuBuilder;
 function utmusic_preprocess(&$variables, $hook) {
   // Add base_path variable to all template files.
   $variables['base_path'] = base_path();
+  // Get the path to the default theme, which is our frontend theme. We use the
+  // default theme so this path is the same when it is used in adminspring.
+  $theme_handler = \Drupal::service('theme_handler');
+  $theme = $theme_handler->getDefault();
+  $theme_info = $theme_handler->listInfo();
+  $default_theme_info = $theme_info[$theme];
+  $theme_path = $default_theme_info->getPath();
+  // Pass the path to the theme as a global variable to all twig files.
+  // e.g. 'themes/my-theme'
+  $variables['directory'] = $theme_path;
 
   // Custom site configuration.
   $custom_site_settings = ConfigPages::config('custom_site_settings');

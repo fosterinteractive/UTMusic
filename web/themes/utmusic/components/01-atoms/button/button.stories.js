@@ -109,7 +109,7 @@ export default {
     // Icon
     icon: {
       description: 'SVG symbol ID generated from images/filename.svg',
-      defaultValue: 'link-shevron',
+      defaultValue: 'link-chevron',
       control: {
         type: 'text'
       },
