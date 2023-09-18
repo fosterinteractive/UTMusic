@@ -320,3 +320,8 @@ body.mm-wrapper {
 .claro-details .m-form-group .l-form-item+.l-form-item {
   margin-top: rem(15px);
 }
+
+.claro-details .m-label--is-required {
+  font-size: 14px;
+  text-transform: none;
+}
