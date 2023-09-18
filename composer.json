@@ -74,9 +74,6 @@
         "ckeditor/fakeobjects": "4.16.2",
         "ckeditor/link": "4.16.2",
         "composer/installers": "^1.9",
-        "drupal/console": "^1",
-        "drupal/core-composer-scaffold": "^9.2",
-        "drupal/core-recommended": "^9.2",
         "drupal/media_contextual_crop_embed": "1.2.1",
         "fosterinteractive/adminspring-theme": "dev-10.0.x-dev#4c1266c46f64137dbe2675c39c564aec510ece4a",
         "fosterinteractive/mainspring-profile": "9.2.0-beta1",
@@ -104,7 +101,8 @@
         "drupal/conditional_fields": "4.0.0-alpha3",
         "drupal/media_entity_link": "^2.0",
         "drupal/markerio": "^1.0",
-        "drupal/webprofiler": "9.0.2"
+        "drupal/webprofiler": "9.0.2",
+        "drupal/jquery_ui_autocomplete": "2.0.0"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2",
