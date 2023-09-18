@@ -202,68 +202,6 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
         ];
       }
     }
-
-    // If this is a dynamic news block paragraph.
-    if ($paragraph_type == 'news_summary_list_dynamic') {
-      // Check if the form as number of items field.
-      if (isset($element['subform']['field_news_number_of_items'])) {
-        // Get parent paragraph delta.
-        $parent_delta = $element['subform']['field_news_number_of_items']['widget']['#parents'][1];
-
-        // Show field "Other Number of Items" if field "Number of Items" is set
-        // to "Other".
-        $element['subform']['field_news_other_number_of_items']['#states'] = [
-          'visible' => [
-            ':input[name="field_page_section[' . $parent_delta . '][subform][field_news_number_of_items]"]' => [
-              'value' => 'other',
-            ],
-          ],
-        ];
-
-        // Set field "Other Number of Items" to required is field "Number of
-        // Items" is set to "Other".
-        $element['subform']['field_news_other_number_of_items']['widget'][0]['value']['#states'] = [
-          'required' => [
-            ':input[name="field_page_section[' . $parent_delta . '][subform][field_ed_news_number_of_items]"]' => [
-              'value' => 'other',
-            ],
-          ],
-        ];
-      }
-    }
-
-    // If these are the dynamic events blocks we want to change the states based
-    // on the input values.
-    if (
-      $paragraph_type == 'ed_event_dynamic_block_upcoming' ||
-      $paragraph_type == 'ed_event_dynamic_block_past'
-    ) {
-      // Checkout if the subform as the number of items field.
-      if (isset($element['subform']['field_ed_event_num_items'])) {
-        // Get parent paragraph delta.
-        $parent_delta = $element['subform']['field_ed_event_num_items']['widget']['#parents'][1];
-
-        // Show field "Other Number of Items" if field "Number of Items" is set
-        // to "Other".
-        $element['subform']['field_ed_event_other_num_items']['#states'] = [
-          'visible' => [
-            ':input[name="field_ed_page_body[' . $parent_delta . '][subform][field_ed_event_num_items]"]' => [
-              'value' => 'other',
-            ],
-          ],
-        ];
-
-        // Set field "Other Number of Items" to required is field "Number of
-        // Items" is set to "Other".
-        $element['subform']['field_ed_event_other_num_items']['widget'][0]['value']['#states'] = [
-          'required' => [
-            ':input[name="field_ed_page_body[' . $parent_delta . '][subform][field_ed_event_num_items]"]' => [
-              'value' => 'other',
-            ],
-          ],
-        ];
-      }
-    }
   }
 
   /** @var \Drupal\Core\Field\FieldDefinitionInterface $field_definition */
@@ -406,9 +344,7 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
         ],
       ];
     }
-  }
 
-  if($bundle == 'card') {
     if ($field_name == 'field_card_image') {
       $element['#states'] = [
         'visible' => [ 
@@ -639,5 +575,29 @@ function custom_admin_form_alter(&$form, FormStateInterface $form_state, $form_i
       }
     }
     // End Hiding fields depending on item menu level.
+  }
+}
+
+/**
+ * Implements hook_field_group_build_pre_render_alter().
+ */
+function custom_admin_field_group_form_process_build_alter(&$element) {
+
+  // Hide news field group if news content type is disabled.
+  if (isset($element['group_news'])) {
+    $element['group_news']['#states'] = [
+      'invisible' => [
+        ':input[name="field_site_disable_content[ed_news]"]' => ['checked' => TRUE]
+      ]
+    ];
+  }
+
+  // Hide Events field group if events content type is disabled.
+  if (isset($element['group_events'])) {
+    $element['group_events']['#states'] = [
+      'invisible' => [
+        ':input[name="field_site_disable_content[ed_event]"]' => ['checked' => TRUE]
+      ]
+    ];
   }
 }

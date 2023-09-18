@@ -40,7 +40,6 @@ module:
   crop: 0
   ctools: 0
   custom_admin: 0
-  custom_configuration: 0
   date_all_day: 0
   date_range_formatter: 0
   datetime: 0

@@ -1,5 +1,5 @@
 name: Custom Configuration
-description: 'Adds support for custom site configuration.'
+description: 'DO NOT USE Adds support for custom site configuration.'
 package: 'Custom'
 dependencies:
   - config_pages:config_pages
