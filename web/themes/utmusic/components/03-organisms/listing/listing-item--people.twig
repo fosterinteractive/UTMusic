@@ -49,7 +49,7 @@
     {% if job_titles or instruments %}
       <div class="m-listing-item{{ variation }}__position">
         {% if job_titles and instruments %}
-          {{job_titles}}: {{instruments}}
+          {{job_titles}}{{','}} {{instruments}}
         {% elseif job_titles and not instruments %}
           {{job_titles}}
         {% elseif instruments and not job_titles %}

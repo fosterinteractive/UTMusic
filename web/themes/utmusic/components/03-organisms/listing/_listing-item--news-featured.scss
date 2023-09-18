@@ -8,9 +8,15 @@
 
   @include breakpoint($bp-tablet) {
     padding: calc(var(--spacer) * 0.5) calc(var(--spacer) * 0.5) calc(var(--spacer) * 0.5) calc(var(--spacer) * 1.5)  ;
-    justify-content: space-between;
-    gap: calc(var(--spacer) * 2);
     align-items: center;
+  }
+
+  &.has-img {
+    @include breakpoint($bp-tablet) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: calc(var(--spacer) * 2);
+    }
   }
 }
 
@@ -20,9 +26,13 @@
   gap: var(--spacer);
 
   @include breakpoint($bp-tablet) {
-    width: 50%;
-    min-width: 50%;
     padding: var(--spacer) 0;
+  }
+
+  &.has-img {
+    @include breakpoint($bp-tablet) {
+      grid-column: 1;
+    }
   }
 }
 
@@ -80,8 +90,11 @@
 
 .m-listing-item--news-featured__img {
   @include breakpoint($bp-tablet) {
-    width: 50%;
-    min-width: 50%;
+    grid-column: 2;
+  }
+
+  img {
+    border-radius: rem(12px);
   }
 }
 

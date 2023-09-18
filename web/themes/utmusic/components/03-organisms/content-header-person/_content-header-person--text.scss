@@ -23,13 +23,10 @@
   height: fit-content;
   display: flex;
   flex-direction: column;
-  gap: var(--spacer);
 
   @include breakpoint($bp-tablet) {
     grid-column: col 1/ span 12;
-    flex-direction: row;
     justify-content: space-between;
-    gap: var(--spacer);
   }
 }
 
@@ -51,6 +48,7 @@
 .o-hero-media--person-text__tags {
   @extend %o-hero-media__tags;
   @extend %o-hero-media-tags-no-border;
+  margin-bottom: 0;
 }
 
 .o-hero-media--person-text__info {

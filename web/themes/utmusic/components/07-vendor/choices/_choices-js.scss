@@ -20,3 +20,8 @@
 .choices__inner .choices__input {
   width: 100% !important;
 }
+
+.choices__list--dropdown, .choices__list[aria-expanded] {
+  z-index: calc( var(--ck-z-default) + 1);
+  background-color: palette(white);
+}

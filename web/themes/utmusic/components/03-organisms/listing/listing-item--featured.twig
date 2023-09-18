@@ -100,10 +100,7 @@
 
   {% if image %}
     <div class="m-listing-item{{ variation }}__img">
-      {% include "@molecules/image/image.twig" with {
-          image: image,
-        } only
-      %}
+      {{ image }}
     </div>
   {% endif %}
 </div>
