@@ -316,3 +316,7 @@ body.mm-wrapper {
   height: unset !important;
   clip: unset !important;
 }
+
+.claro-details .m-form-group .l-form-item+.l-form-item {
+  margin-top: rem(15px);
+}
