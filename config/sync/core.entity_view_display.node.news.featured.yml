@@ -39,6 +39,11 @@ targetEntityType: node
 bundle: news
 mode: featured
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_news_area_study:
     type: entity_reference_label
     label: hidden
@@ -68,7 +73,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: news_image_landscape
+      view_mode: news_image
       link: false
     third_party_settings: {  }
     weight: 6
@@ -77,7 +82,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: news_image_portrait
+      view_mode: news_image
       link: false
     third_party_settings: {  }
     weight: 7
