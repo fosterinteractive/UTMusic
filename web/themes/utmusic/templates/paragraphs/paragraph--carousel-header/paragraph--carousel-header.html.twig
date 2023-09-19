@@ -41,7 +41,7 @@
 {% set breadcrumbs = drupal_entity('block', 'menu_breadcrumbs') %}
 
 {% set messages = drupal_entity('block', 'messages') %}
-{% if directory != "themes/adminspring-theme" %}
+{% if view_mode != "preview" %}
   {% set tabs = drupal_entity('block', 'tabs') %}
 {% endif %}
 
