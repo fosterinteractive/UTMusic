@@ -10,7 +10,7 @@ id: node.people.field_people_program
 field_name: field_people_program
 entity_type: node
 bundle: people
-label: Program
+label: 'Program name'
 description: ''
 required: false
 translatable: false
