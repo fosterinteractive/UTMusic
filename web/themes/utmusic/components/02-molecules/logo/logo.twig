@@ -41,8 +41,9 @@
   {% if variation == '--image' %}
     <img class="m-logo{{ variation }}__img" src="/{{ directory }}/{{ logo_image_src }}" alt="{{ logo_alt|t }}"
 
-      {% if width %} width="{{ width }}"{% endif %}
+      {% if width %} width="{{ width }}" {% endif %}
       {% if height %} height="{{ height }}" {% endif %}
+      {% if lazy %} loading="lazy" {% endif %}
     >
       
   {% elseif logo_icon %}
