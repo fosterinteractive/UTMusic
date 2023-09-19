@@ -66,3 +66,7 @@
   @extend %m-quote--source;
 }
 
+// admin UI
+.m-quote--image .contextual .trigger {
+  display: none !important;
+}
