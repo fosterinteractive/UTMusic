@@ -325,3 +325,15 @@ body.mm-wrapper {
   font-size: 14px;
   text-transform: none;
 }
+
+// URL alias in admin UI
+.claro-details__content {
+  label {
+    @extend %a-type--small;
+    margin-bottom: calc(var(--spacer)*0.3);
+  }
+
+  .m-form-item__description {
+    @extend %a-type--xsmall;
+  }
+}
