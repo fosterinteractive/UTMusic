@@ -37,8 +37,10 @@ dependencies:
     - field.field.node.event.field_page_meta_title
     - field.field.node.event.field_show_related_events
     - node.type.event
+    - workflows.workflow.editorial
   module:
     - allowed_formats
+    - content_moderation
     - date_all_day
     - field_group
     - hide_revision_field
@@ -580,12 +582,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   moderation_state:
-    type: string_textfield
-    weight: 15
+    type: moderation_state_default
+    weight: 16
     region: content
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
@@ -595,7 +595,7 @@ content:
     third_party_settings: {  }
   revision_log:
     type: hide_revision_field_log_widget
-    weight: 16
+    weight: 17
     region: content
     settings:
       rows: 5
