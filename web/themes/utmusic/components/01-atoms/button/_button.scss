@@ -213,18 +213,19 @@
   &:focus,
   &:active {
     .a-button--icon-left__icon {
-      transform: translate(-20px, 50%);
+      transform: translate( -45%, 50%);
     }
   }
 }
 
 .a-button--icon-left__icon {
   @extend %a-button__icon--core;
-  width: 0.6em;
-  height: 0.7em;
+  width: rem(27px);
+  height: rem(27px);
   position: absolute;
   bottom: 50%;
-  transform: translate(-25px, 50%);
+  left: rem(25px);
+  transform: translate( -50%, 50%);
 }
 
 .a-button--icon {

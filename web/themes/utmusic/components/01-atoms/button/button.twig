@@ -21,7 +21,11 @@
 {% if external_link %}
   {% set icon = icon|default('external_link') %}
 {% else %}
-  {% set icon = icon|default('link-chevron') %}
+  {% if variation == '--icon-left' %}
+    {% set icon = icon|default('arrow-right') %}
+  {% else %}
+    {% set icon = icon|default('link-chevron') %}
+  {% endif %}
 {% endif %}
 
 {# Component can be either <a> (default) or <button> #}
