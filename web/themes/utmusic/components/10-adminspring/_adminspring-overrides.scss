@@ -329,11 +329,11 @@ body.mm-wrapper {
 // URL alias in admin UI
 .claro-details__content {
   label {
-    @extend %a-type--small;
+    @extend %a-type--small !optional;
     margin-bottom: calc(var(--spacer)*0.3);
   }
 
   .m-form-item__description {
-    @extend %a-type--xsmall;
+    @extend %a-type--xsmall !optional;
   }
 }
