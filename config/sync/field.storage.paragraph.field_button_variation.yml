@@ -17,6 +17,9 @@ settings:
     -
       value: secondary
       label: Secondary
+    -
+      value: icon-left
+      label: 'Bordered w/ icon on the left'
   allowed_values_function: ''
 module: options
 locked: false

@@ -175,6 +175,23 @@
   vertical-align: middle;
 }
 
+%a-button--bordered {
+  border: rem(1px) solid palette(teal);
+  color: palette(teal);
+  border-radius: rem(10px);
+  transition: 0.2s cubic-bezier(.12,.78,.74,.9);
+  height: rem(57px);
+  display: flex;
+  align-items: center;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: palette(white);
+    background-color: palette(teal);
+  }
+}
+
 .a-button--icon-right {
   @extend %a-button--core;
   @extend %a-button--padding;
@@ -188,13 +205,26 @@
 
 .a-button--icon-left {
   @extend %a-button--core;
-  @extend %a-button--padding;
   @extend %a-button;
+  @extend %a-button--bordered;
+  padding: rem(4px) rem(20px) rem(4px) rem(40px);
+
+  &:hover,
+  &:focus,
+  &:active {
+    .a-button--icon-left__icon {
+      transform: translate(-20px, 50%);
+    }
+  }
 }
 
 .a-button--icon-left__icon {
   @extend %a-button__icon--core;
-  margin-right: ru(0.5);
+  width: 0.6em;
+  height: 0.7em;
+  position: absolute;
+  bottom: 50%;
+  transform: translate(-25px, 50%);
 }
 
 .a-button--icon {
