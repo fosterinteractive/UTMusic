@@ -338,3 +338,20 @@ body.mm-wrapper {
     @extend %a-type--xsmall !optional;
   }
 }
+
+.ck-form__details .ck-form__details__summary {
+  @extend %a-type--small;
+  border-image: none;
+  border: 1px solid #232429 !important;
+  // background-image: url("./svg-src/svg-art/ico-chevron-down--red-minified.svg");
+  // Minfied with https://vecta.io/nano
+  // URL encoded with https://yoksel.github.io/url-encoder/
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjciIGhlaWdodD0iMjciIHZpZXdCb3g9IjAgMCAyNyAyNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEzLjQ5OTQgMTguNjQyNkMxMy4xNzA0IDE4LjY0MjYgMTIuODQxMyAxOC41MTcxIDEyLjU5MDYgMTguMjY2TDQuODc2NjYgMTAuNTUyQzQuMzc0NDUgMTAuMDQ5OCA0LjM3NDQ1IDkuMjM2MjMgNC44NzY2NiA4LjczNDAyQzUuMzc4ODcgOC4yMzE4MSA2LjE5MjQ1IDguMjMxODEgNi42OTQ2NiA4LjczNDAyTDEzLjQ5OTQgMTUuNTQxTDIwLjMwNTMgOC43MzUwMkMyMC44MDc2IDguMjMyODEgMjEuNjIxMSA4LjIzMjgxIDIyLjEyMzMgOC43MzUwMkMyMi42MjU2IDkuMjM3MjMgMjIuNjI1NiAxMC4wNTA4IDIyLjEyMzMgMTAuNTUzTDE0LjQwOTQgMTguMjY3QzE0LjE1ODMgMTguNTE4MSAxMy44Mjg4IDE4LjY0MjYgMTMuNDk5NCAxOC42NDI2WiIgZmlsbD0iIzRENEQ0RCIvPgo8L3N2Zz4K') !important;
+  background-repeat: no-repeat !important;
+  background-position: right ru(0.75) center !important;
+  background-size: ru(0.75) ru(0.75) !important;
+  padding: 0 ru(2) 0 ru(0.25) !important;
+  // border-radius: rem(10px);
+  cursor: pointer;
+  appearance: none;
+}

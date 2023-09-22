@@ -98,7 +98,7 @@ settings:
         - '<p class="a-type--medium">'
         - '<ul start class="a-list--*">'
         - '<ol class="a-list-*">'
-        - '<a hreflang accesskey id rel target title name>'
+        - '<a hreflang accesskey id rel aria-label target title name>'
         - '<img srcset sizes data-entity-substitution data-responsive-image-style class>'
         - '<drupal-media title>'
     ckeditor5_list:
@@ -113,6 +113,10 @@ settings:
       allow_resize: true
     media_media:
       allow_view_mode_override: false
+    editor_advanced_link_link:
+      enabled_attributes:
+        - aria-label
+        - target
     linkit_extension:
       linkit_enabled: true
       linkit_profile: default

@@ -48,6 +48,7 @@ module:
   dropzonejs: 0
   dropzonejs_eb_widget: 0
   editor: 0
+  editor_advanced_link: 0
   embed: 0
   entity_browser: 0
   entity_browser_entity_form: 0

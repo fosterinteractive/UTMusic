@@ -16,7 +16,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<br> <p> <i> <a title href data-entity-type data-entity-uuid data-entity-substitution> <strong> <em> <u> <sub> <sup> <ul> <ol> <li>'
+      allowed_html: '<br> <p> <i> <a target href title aria-label data-entity-type data-entity-uuid data-entity-substitution> <strong> <em> <u> <sub> <sup> <ul> <ol> <li>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_url:
