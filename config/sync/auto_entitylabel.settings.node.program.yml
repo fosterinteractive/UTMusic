@@ -1,6 +1,6 @@
 status: 1
-pattern: '[node:field_program_header:entity:field_header_title_prefix] [node:field_program_header:entity:field_header_title] [node:field_program_header:entity:field_carousel_header_title_prefix] [node:field_program_header:entity:field_carousel_header_title]'
-escape: true
+pattern: '[node:field_program_header:entity:field_header_title_prefix], [node:field_program_header:entity:field_header_title] [node:field_program_header:entity:field_carousel_header_title_prefix][node:field_program_header:entity:field_carousel_header_title]'
+escape: false
 preserve_titles: false
 save: false
 chunk: 50
