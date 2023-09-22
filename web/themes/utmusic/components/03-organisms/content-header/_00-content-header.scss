@@ -76,7 +76,7 @@
   position: relative;
   display: inline-block;
   margin-bottom: calc(var(--spacer) / 2);
-  text-transform: uppercase;
+  // text-transform: uppercase;
   color: var(--c-heading-prefix);
 
   &::before {
