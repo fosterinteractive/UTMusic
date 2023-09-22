@@ -148,13 +148,13 @@
 
   .a-heading__h1 {
     @include breakpoint($bp-tablet) {
-      width: 40%;
+      width: 50%;
     }
   }
 
   .o-hero-media__summary {
     @include breakpoint($bp-tablet) {
-      width: 57%;
+      width: calc(50% - #{var(--spacer)});
     }
   }
 }
