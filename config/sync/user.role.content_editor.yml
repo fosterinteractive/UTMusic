@@ -57,7 +57,9 @@ dependencies:
     - filter
     - markerio
     - media
+    - media_bulk_upload
     - media_file_delete
+    - moderated_content_bulk_publish
     - node
     - path
     - replicate_ui
@@ -212,6 +214,11 @@ permissions:
   - 'edit terms in staff_job_titles'
   - 'edit terms in staff_roles'
   - 'edit terms in undergraduate_forms_category'
+  - 'moderated content bulk archive'
+  - 'moderated content bulk pin content'
+  - 'moderated content bulk publish'
+  - 'moderated content bulk unpin content'
+  - 'moderated content bulk unpublish'
   - 'replicate entities'
   - 'revert event revisions'
   - 'revert job revisions'
@@ -221,6 +228,7 @@ permissions:
   - 'revert program revisions'
   - 'revert resources revisions'
   - 'update any media'
+  - 'use ed_image_bulk_upload bulk upload form'
   - 'use editorial transition archive'
   - 'use editorial transition create_new_draft'
   - 'use editorial transition publish'

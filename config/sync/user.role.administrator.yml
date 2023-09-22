@@ -85,6 +85,7 @@ dependencies:
     - menu_link_content
     - menu_position
     - metatag
+    - moderated_content_bulk_publish
     - moderation_sidebar
     - node
     - paragraphs
@@ -411,6 +412,11 @@ permissions:
   - 'import configuration'
   - 'link to any page'
   - 'merge taxonomy terms'
+  - 'moderated content bulk archive'
+  - 'moderated content bulk pin content'
+  - 'moderated content bulk publish'
+  - 'moderated content bulk unpin content'
+  - 'moderated content bulk unpublish'
   - 'never autoplay videos'
   - 'notify of path changes'
   - 'rabbit hole administer node'
