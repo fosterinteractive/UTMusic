@@ -1,0 +1,27 @@
+uuid: f76393fb-60d9-4138-b345-e47b82187e09
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_image_section_variation
+field_name: field_image_section_variation
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: Default
+    -
+      value: paralax
+      label: 'Large w/ Paralax'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

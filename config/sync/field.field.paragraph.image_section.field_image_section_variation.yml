@@ -1,0 +1,23 @@
+uuid: fe1ddb31-564b-49f5-b102-0bdecccbdea8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_section_variation
+    - paragraphs.paragraphs_type.image_section
+  module:
+    - options
+id: paragraph.image_section.field_image_section_variation
+field_name: field_image_section_variation
+entity_type: paragraph
+bundle: image_section
+label: Variation
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: none
+default_value_callback: ''
+settings: {  }
+field_type: list_string
