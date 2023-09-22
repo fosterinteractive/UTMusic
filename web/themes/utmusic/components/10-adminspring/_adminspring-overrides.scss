@@ -340,7 +340,7 @@ body.mm-wrapper {
 }
 
 .ck-form__details .ck-form__details__summary {
-  @extend %a-type--small;
+  @extend %a-type--small !optional;
   border-image: none;
   border: 1px solid #232429 !important;
   // background-image: url("./svg-src/svg-art/ico-chevron-down--red-minified.svg");
