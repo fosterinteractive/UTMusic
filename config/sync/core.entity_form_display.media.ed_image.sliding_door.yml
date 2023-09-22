@@ -19,13 +19,13 @@ third_party_settings:
   field_group:
     group_related_content:
       children:
+        - field_img_related_area
         - field_img_related_people
         - field_img_related_program
-        - field_img_related_area
       label: 'Related Content'
       region: hidden
       parent_name: ''
-      weight: 4
+      weight: 9
       format_type: details
       format_settings:
         classes: ''
@@ -43,7 +43,7 @@ mode: sliding_door
 content:
   field_ed_image_image:
     type: image_widget_crop
-    weight: 1
+    weight: 0
     region: content
     settings:
       progress_indicator: throbber
@@ -56,14 +56,6 @@ content:
       show_crop_area: true
       show_default_crop: true
     third_party_settings: {  }
-  name:
-    type: string_textfield
-    weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
 hidden:
   created: true
   field_ed_image_height: true
@@ -71,6 +63,7 @@ hidden:
   field_img_related_area: true
   field_img_related_people: true
   field_img_related_program: true
+  name: true
   path: true
   revision_log_message: true
   status: true
