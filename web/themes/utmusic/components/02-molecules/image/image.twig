@@ -12,9 +12,14 @@
 {% endif %}
 
 {% if image %}
-  <div class="m-image{{ variation }}">
-    <div class="m-image__image {% if variation %}m-image{{ variation }}__image{% endif %}">
-      {{ image }}
-    </div>
+  <div class="m-image">
+    {% if variation == '--paralax' %}
+      <div class="m-image{{variation}}__image" style="background-image:url('{{ image_bg_path }}')">
+      </div>
+    {% else %}
+      <div class="m-image__image">
+        {{ image }}
+      </div>
+    {% endif %}
   </div>
 {% endif %}

@@ -324,6 +324,18 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
     }
   }
 
+  if($bundle == 'image_section') {
+    if ($field_name == 'field_image_section_image_crop') {
+      $element['#states'] = [
+        'visible' => [
+          ':input[name="field_image_section_variation"]' => [
+            'value' => 'none',
+          ],
+        ],
+      ];
+    }
+  }
+
   // PT: Card 
   if($bundle == 'card') {
     if ($field_name == 'field_card_illustration') {

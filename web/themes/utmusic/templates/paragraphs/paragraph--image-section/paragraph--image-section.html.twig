@@ -66,19 +66,18 @@
     {# create responsive image #}
     {% set image = drupal_image(image_file_path, responsive_image_style, {'alt': image_file_alt, 'width': image_file_width, 'height': image_file_height} ,responsive=true) %}
   {% endif %}
+
+  {% set image_bg_path = file_url(content.field_image_section_image[0]['#media'].field_ed_image_image.entity.fileuri) %}
+
+
 {% endif %}
 
 
-{% set icon_file_type = content.field_image_section_icon[0] ? content.field_image_section_icon[0]['#media'].field_media_image.entity.filemime.value %}
-{% set icon = content.field_image_section_icon[0] ? content.field_image_section_icon %}
 
 {% include "@molecules/image/image.twig" with {
     directory: 'themes/utmusic',
     image: image,
-    variation: content.field_image_section_img_decor[0] ? content.field_image_section_img_decor[0]['#markup'],
-    icon_file_type: icon_file_type,
-    icon: icon,
-    icon_size: content.field_image_section_icon[0] ? content.field_image_section_icon[0]['#media'].field_media_image_svg_size.0.value,
-    icon_alignment: content.field_image_section_icon_align[0] ? content.field_image_section_icon_align[0]['#markup'],
+    variation: content.field_image_section_variation[0] ? content.field_image_section_variation[0]['#markup'],
+    image_bg_path: image_bg_path
   } only
 %}

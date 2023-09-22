@@ -18,3 +18,27 @@ picture {
     border-radius: rem(12px);
   }
 }
+
+.m-image--paralax__image {
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  width: 100%;
+  background-attachment: fixed;
+
+  @include breakpoint($bp-tablet) {
+    padding-top: 250px;
+    padding-bottom: 250px;
+  }
+
+  @include breakpoint($bp-large) {
+    padding-top: 300px;
+    padding-bottom: 300px;
+  }
+
+
+}
