@@ -48,17 +48,20 @@
             ]
           %}
 
+          {% set target = item.url.external ? "_blank": "_self"  %}
+
           <li{{ item.attributes.addClass(classes) }}>
             {% if item.url == '<nolink>' or (item.url.isRouted() and item.url.getRouteName == '<nolink>') %}
               <button class="m-menu-main__link--level-1{% if item.in_active_trail == TRUE %} is-active{% endif %}" {% if item.below %}data-toggle="{{ panel_id }}"{% endif %}>{{ item.title }}</button>
             {% else %}
               {% set options = {
                 'class': ['m-menu-main__link--level-1'],
+                'target': target
                 } 
               %}
 
               {% if item.below %}
-                {% set options = options|merge({'data-toggle': panel_id}) %}
+                {% set options = options|merge({'data-toggle': panel_id, 'target': target}) %}
               {% endif %}
               {{ link(item.title, item.url, options) }}
             {% endif %}

@@ -39,9 +39,10 @@
           item.in_active_trail == TRUE ? 'is-active',
         ]
       %}
+      {% set target = item.url.external ? "_blank": "_self"  %}
 
       <li{{ item.attributes.addClass(classes) }}>
-        {{ link(item.title, item.url, { 'class' : ['m-menu-header-shortcuts__link', item.in_active_trail == TRUE ? 'is-active']}) }}
+        {{ link(item.title, item.url, { 'class' : ['m-menu-header-shortcuts__link', item.in_active_trail == TRUE ? 'is-active'], 'target': target }) }}
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}

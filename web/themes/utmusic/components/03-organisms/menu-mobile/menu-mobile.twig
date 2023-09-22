@@ -53,7 +53,10 @@
                 item.below ? 'is-toggle',
               ]
             %}
-            {{ link(item.title, item.url, { 'class' : link_classes}) }}
+
+            {% set target = item.url.external ? "_blank": "_self"  %}
+
+            {{ link(item.title, item.url, { 'class' : link_classes, 'target': target }) }}
           {% endif %}
 
           {% if item.below %}

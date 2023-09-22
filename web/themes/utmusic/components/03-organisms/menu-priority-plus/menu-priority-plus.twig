@@ -45,8 +45,9 @@
             {{ item.title }}
           {% endset %}
         {% endif %}
+        {% set target = item.url.external ? "_blank": "_self"  %}
 
-        {{ link(title, item.url, { 'class' : ['m-menu-priority-plus__link']}) }}
+        {{ link(title, item.url, { 'class' : ['m-menu-priority-plus__link'], 'target': target }) }}
       </li>
 
       {% if item.below %}
