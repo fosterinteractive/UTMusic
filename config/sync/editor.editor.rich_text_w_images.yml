@@ -38,6 +38,11 @@ settings:
       - underline
       - horizontalLine
   plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - left
+        - center
+        - right
     ckeditor5_heading:
       enabled_headings:
         - heading2
@@ -45,6 +50,38 @@ settings:
         - heading4
         - heading5
         - heading6
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<strike>'
+        - '<dl>'
+        - '<dt>'
+        - '<dd>'
+        - '<h5 id class="a-heading* text-align-left text-align-center text-align-right">'
+        - '<h6 id class="a-heading* text-align-left text-align-center text-align-right">'
+        - '<span class="a-type--*">'
+        - '<figure alt data-entity-type data-entity-uuid data-entity-substitution data-align data-caption data-responsive-image-style class>'
+        - '<figcaption class>'
+        - '<iframe src title aria-describedby tabindex allowtransparency frameborder class>'
+        - '<drupal-entity data-entity-type data-entity-uuid data-view-mode data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title>'
+        - '<div class>'
+        - '<table class="a-table* tablecentred tablenoborders tableposter tabletopleft">'
+        - '<th width class="a-table*">'
+        - '<td class="a-table*">'
+        - '<blockquote class="m-quote*">'
+        - '<h3 id class="a-heading*">'
+        - '<h4 id class="a-heading*">'
+        - '<br aria-hidden>'
+        - '<p class="a-type--medium">'
+        - '<ul start class="a-list--*">'
+        - '<ol class="a-list-*">'
+        - '<a hreflang accesskey id rel aria-label target title name>'
+        - '<img srcset sizes data-entity-substitution data-responsive-image-style class>'
+        - '<drupal-media title>'
     ckeditor5_style:
       styles:
         -
@@ -74,45 +111,6 @@ settings:
         -
           label: 'P (x Large)'
           element: '<p class="a-type--xlarge">'
-    ckeditor5_sourceEditing:
-      allowed_tags:
-        - '<strike>'
-        - '<dl>'
-        - '<dt>'
-        - '<dd>'
-        - '<h5 id class="a-heading* text-align-left text-align-center text-align-right">'
-        - '<h6 id class="a-heading* text-align-left text-align-center text-align-right">'
-        - '<span class="a-type--*">'
-        - '<figure alt data-entity-type data-entity-uuid data-entity-substitution data-align data-caption data-responsive-image-style class>'
-        - '<figcaption class>'
-        - '<iframe src title aria-describedby tabindex allowtransparency frameborder class>'
-        - '<drupal-entity data-entity-type data-entity-uuid data-view-mode data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button alt title>'
-        - '<div class>'
-        - '<table class="a-table* tablecentred tablenoborders tableposter tabletopleft">'
-        - '<th width class="a-table*">'
-        - '<td class="a-table*">'
-        - '<blockquote class="m-quote*">'
-        - '<h3 id class="a-heading*">'
-        - '<h4 id class="a-heading*">'
-        - '<br aria-hidden>'
-        - '<p class="a-type--medium">'
-        - '<ul start class="a-list--*">'
-        - '<ol class="a-list-*">'
-        - '<a hreflang accesskey id rel aria-label target title name>'
-        - '<img srcset sizes data-entity-substitution data-responsive-image-style class>'
-        - '<drupal-media title>'
-    ckeditor5_list:
-      reversed: false
-      startIndex: true
-    ckeditor5_alignment:
-      enabled_alignments:
-        - left
-        - center
-        - right
-    ckeditor5_imageResize:
-      allow_resize: true
-    media_media:
-      allow_view_mode_override: false
     editor_advanced_link_link:
       enabled_attributes:
         - aria-label
@@ -122,6 +120,8 @@ settings:
       linkit_profile: default
     media_contextual_crop_embed_MCCE:
       view_mode: default
+    media_media:
+      allow_view_mode_override: false
 image_upload:
   status: true
   scheme: public

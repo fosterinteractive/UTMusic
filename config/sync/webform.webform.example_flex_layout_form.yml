@@ -11,7 +11,7 @@ archive: false
 id: example_flex_layout_form
 title: 'Example Flex Layout Form'
 description: ''
-category: ''
+categories: {  }
 elements: |-
   flexbox_1col:
     '#type': webform_flexbox
@@ -183,6 +183,8 @@ settings:
   wizard_toggle: false
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''

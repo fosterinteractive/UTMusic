@@ -109,3 +109,9 @@ filters:
         news_image_portrait: news_image_portrait
       allowed_media_types:
         ed_image: ed_image
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: -45
+    settings: {  }

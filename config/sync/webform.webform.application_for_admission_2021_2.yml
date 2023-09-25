@@ -11,7 +11,7 @@ archive: false
 id: application_for_admission_2021_2
 title: 'Application Form'
 description: ''
-category: ''
+categories: {  }
 elements: |-
   page_2:
     '#type': webform_wizard_page
@@ -696,6 +696,8 @@ settings:
   wizard_toggle: false
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''

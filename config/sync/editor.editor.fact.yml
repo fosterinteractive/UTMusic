@@ -19,6 +19,8 @@ settings:
       - '|'
       - sourceEditing
   plugins:
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
     ckeditor5_style:
       styles:
         -
@@ -30,6 +32,4 @@ settings:
         -
           label: 'P (x Large)'
           element: '<p class="a-type--xlarge">'
-    ckeditor5_sourceEditing:
-      allowed_tags: {  }
 image_upload: {  }

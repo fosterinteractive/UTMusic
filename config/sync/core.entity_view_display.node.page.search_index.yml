@@ -23,7 +23,12 @@ id: node.page.search_index
 targetEntityType: node
 bundle: page
 mode: search_index
-content: {  }
+content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   field_page_admin_help_seo: true
   field_page_admin_help_social: true

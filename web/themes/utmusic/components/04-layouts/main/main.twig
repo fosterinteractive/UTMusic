@@ -33,11 +33,7 @@
     {% endif %}
 
     {% if menu_priority_plus is not empty %}
-      {% spaceless %}
-        <div class="l-page__menu-priority-plus" data-sticky>
-          {{ menu_priority_plus }}
-        </div>
-      {% endspaceless %}
+      <div class="l-page__menu-priority-plus" data-sticky>{{ menu_priority_plus }}</div>
     {% endif %}
 
     {% if moderation %}

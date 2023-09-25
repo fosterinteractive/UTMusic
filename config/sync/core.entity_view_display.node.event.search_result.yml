@@ -50,6 +50,11 @@ targetEntityType: node
 bundle: event
 mode: search_result
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   search_api_excerpt:
     settings: {  }
     third_party_settings: {  }

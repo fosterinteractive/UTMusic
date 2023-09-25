@@ -20,6 +20,9 @@ settings:
       - link
       - bulletedList
   plugins:
+    ckeditor5_list:
+      reversed: true
+      startIndex: true
     ckeditor5_style:
       styles:
         -
@@ -31,9 +34,6 @@ settings:
         -
           label: 'One line text'
           element: '<span class="a-table--one-line-text">'
-    ckeditor5_list:
-      reversed: true
-      startIndex: true
     linkit_extension:
       linkit_enabled: false
 image_upload: {  }

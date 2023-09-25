@@ -23,13 +23,13 @@ settings:
       - '|'
       - sourceEditing
   plugins:
+    ckeditor5_list:
+      reversed: false
+      startIndex: false
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<i>'
         - '<a target href title aria-label>'
-    ckeditor5_list:
-      reversed: false
-      startIndex: false
     editor_advanced_link_link:
       enabled_attributes:
         - aria-label

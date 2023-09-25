@@ -53,14 +53,12 @@ dependencies:
     - auto_entitylabel
     - block
     - block_content
-    - cacheflush
     - captcha
     - config
     - config_pages
     - config_split
     - config_update_ui
     - content_moderation
-    - content_synchronizer
     - contextual
     - crop
     - dropzonejs
@@ -116,6 +114,7 @@ weight: 3
 is_admin: null
 permissions:
   - 'access any webform configuration'
+  - 'access block library'
   - 'access config_pages overview'
   - 'access content overview'
   - 'access contextual links'
@@ -134,10 +133,10 @@ permissions:
   - 'access webform overview'
   - 'access webform submission user'
   - 'add JS snippets for google analytics'
-  - 'add export entity entities'
-  - 'add import entities'
   - 'administer CAPTCHA settings'
   - 'administer account settings'
+  - 'administer block content'
+  - 'administer block types'
   - 'administer block_content display'
   - 'administer block_content fields'
   - 'administer block_content form display'
@@ -158,19 +157,11 @@ permissions:
   - 'administer embed buttons'
   - 'administer entity browsers'
   - 'administer environment indicator settings'
-  - 'administer export entity entities'
-  - 'administer export_entity display'
-  - 'administer export_entity fields'
-  - 'administer export_entity form display'
   - 'administer field validation rule set'
   - 'administer filters'
   - 'administer flood unblock'
   - 'administer google analytics'
   - 'administer image styles'
-  - 'administer import entities'
-  - 'administer import_entity display'
-  - 'administer import_entity fields'
-  - 'administer import_entity form display'
   - 'administer linkit profiles'
   - 'administer markerio configuration'
   - 'administer media'
@@ -237,7 +228,6 @@ permissions:
   - 'assign all roles'
   - 'assign content_editor role'
   - 'bypass node access'
-  - 'cacheflush clear cache'
   - 'cancel account'
   - 'change own username'
   - 'configure any layout'
@@ -300,8 +290,6 @@ permissions:
   - 'delete configuration'
   - 'delete ed_notice revisions'
   - 'delete event revisions'
-  - 'delete export entity entities'
-  - 'delete import entities'
   - 'delete job revisions'
   - 'delete media'
   - 'delete news revisions'
@@ -310,6 +298,7 @@ permissions:
   - 'delete own ed_image media'
   - 'delete own ed_notice content'
   - 'delete own event content'
+  - 'delete own files'
   - 'delete own illustration media'
   - 'delete own job content'
   - 'delete own news content'
@@ -367,9 +356,6 @@ permissions:
   - 'edit behavior plugin settings'
   - 'edit config_pages entity'
   - 'edit custom_site_settings config page entity'
-  - 'edit export entity entities'
-  - 'edit import entities'
-  - 'edit layout paragraphs plugin config'
   - 'edit own ed_notice content'
   - 'edit own illustration media'
   - 'edit own job content'
@@ -476,11 +462,7 @@ permissions:
   - 'view people unpublished content'
   - 'view program revisions'
   - 'view program unpublished content'
-  - 'view published export entity entities'
-  - 'view published import entities'
   - 'view resources revisions'
   - 'view resources unpublished content'
-  - 'view unpublished export entity entities'
-  - 'view unpublished import entities'
   - 'view unpublished paragraphs'
   - 'view user email addresses'

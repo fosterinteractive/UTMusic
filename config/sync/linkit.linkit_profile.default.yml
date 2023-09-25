@@ -8,7 +8,7 @@ _core:
   default_config_hash: dAQ3rd2Ogpu9NMcyyrkyzkygj6CtjFQ4Hpn5BXLg1Dg
 label: Default
 id: default
-description: 'Linking to content that has full page displays and media files (Typically PDF''s)'
+description: "Linking to content that has full page displays and media files (Typically PDF's)"
 matchers:
   556010a3-e317-48b3-b4ed-854c10f4b950:
     id: 'entity:node'

@@ -22,6 +22,7 @@ dependencies:
     - node.type.program
     - node.type.resources
   module:
+    - file
     - filter
     - google_analytics
     - media
@@ -45,6 +46,7 @@ permissions:
   - 'create ed_image media'
   - 'create media'
   - 'delete media'
+  - 'delete own files'
   - 'download media'
   - 'edit own ed_file media'
   - 'edit own ed_image media'

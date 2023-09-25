@@ -35,7 +35,12 @@ id: node.news.search_index
 targetEntityType: node
 bundle: news
 mode: search_index
-content: {  }
+content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   field_news_area_study: true
   field_news_body: true

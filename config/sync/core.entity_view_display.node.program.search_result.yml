@@ -33,6 +33,11 @@ targetEntityType: node
 bundle: program
 mode: search_result
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_program_header:
     type: entity_reference_revisions_entity_view
     label: hidden

@@ -33,6 +33,11 @@ targetEntityType: node
 bundle: program
 mode: listing_item
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_program_concentration:
     type: text_default
     label: hidden

@@ -12,7 +12,7 @@ field_name: field_button_variation
 entity_type: paragraph
 bundle: button
 label: Variation
-description: 'Button''s visual appearance'
+description: "Button's visual appearance"
 required: true
 translatable: false
 default_value:

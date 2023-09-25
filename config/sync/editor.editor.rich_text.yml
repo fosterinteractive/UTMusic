@@ -35,6 +35,11 @@ settings:
       - heading
       - '|'
   plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - left
+        - center
+        - right
     ckeditor5_heading:
       enabled_headings:
         - heading2
@@ -42,6 +47,35 @@ settings:
         - heading4
         - heading5
         - heading6
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<strike>'
+        - '<dl>'
+        - '<dt>'
+        - '<dd>'
+        - '<h5 id class="a-heading*">'
+        - '<h6 id class="a-heading*">'
+        - '<span class="a-type--*">'
+        - '<img src srcset alt sizes data-entity-type data-entity-uuid data-entity-substitution data-align data-caption data-responsive-image-style class>'
+        - '<figure alt data-entity-type data-entity-uuid data-entity-substitution data-align data-caption data-responsive-image-style class>'
+        - '<figcaption class>'
+        - '<iframe src title aria-describedby tabindex allowtransparency frameborder class>'
+        - '<drupal-entity data-entity-type data-entity-uuid data-view-mode data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button>'
+        - '<div class>'
+        - '<blockquote class="m-quote*">'
+        - '<h4 id class="a-heading*">'
+        - '<h2 aria-live id class="a-heading*">'
+        - '<h3 aria-live id class="a-heading*">'
+        - '<ul start class="a-list--*">'
+        - '<ol class="a-list-*">'
+        - '<br aria-hidden>'
+        - '<a hreflang accesskey id rel aria-label target title name>'
+        - '<table class="a-table* tablecentred tablenoborders tableposter tabletopleft">'
+        - '<th width class="a-table*">'
+        - '<td class="a-table*">'
     ckeditor5_style:
       styles:
         -
@@ -80,40 +114,6 @@ settings:
         -
           label: 'Dark Blue Color Text'
           element: '<span class="a-type--blue">'
-    ckeditor5_sourceEditing:
-      allowed_tags:
-        - '<strike>'
-        - '<dl>'
-        - '<dt>'
-        - '<dd>'
-        - '<h5 id class="a-heading*">'
-        - '<h6 id class="a-heading*">'
-        - '<span class="a-type--*">'
-        - '<img src srcset alt sizes data-entity-type data-entity-uuid data-entity-substitution data-align data-caption data-responsive-image-style class>'
-        - '<figure alt data-entity-type data-entity-uuid data-entity-substitution data-align data-caption data-responsive-image-style class>'
-        - '<figcaption class>'
-        - '<iframe src title aria-describedby tabindex allowtransparency frameborder class>'
-        - '<drupal-entity data-entity-type data-entity-uuid data-view-mode data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button>'
-        - '<div class>'
-        - '<blockquote class="m-quote*">'
-        - '<h4 id class="a-heading*">'
-        - '<h2 aria-live id class="a-heading*">'
-        - '<h3 aria-live id class="a-heading*">'
-        - '<ul start class="a-list--*">'
-        - '<ol class="a-list-*">'
-        - '<br aria-hidden>'
-        - '<a hreflang accesskey id rel aria-label target title name>'
-        - '<table class="a-table* tablecentred tablenoborders tableposter tabletopleft">'
-        - '<th width class="a-table*">'
-        - '<td class="a-table*">'
-    ckeditor5_list:
-      reversed: false
-      startIndex: true
-    ckeditor5_alignment:
-      enabled_alignments:
-        - left
-        - center
-        - right
     editor_advanced_link_link:
       enabled_attributes:
         - aria-label

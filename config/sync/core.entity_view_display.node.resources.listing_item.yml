@@ -26,6 +26,11 @@ targetEntityType: node
 bundle: resources
 mode: listing_item
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_resources_category:
     type: list_key
     label: hidden

@@ -1,8 +1,7 @@
 name: Adminspring
 type: theme
 description: Admin content editing theme based off of mainspring theme.
-core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 base theme: utmusic
 
 libraries:
@@ -108,8 +107,6 @@ libraries-extend:
     - claro/ckeditor-editor
   ckeditor/drupal.ckeditor.admin:
     - claro/ckeditor-admin
-  core/ckeditor:
-    - claro/ckeditor-dialog
   core/drupal.collapse:
     - claro/details-focus
   core/drupal.dialog:

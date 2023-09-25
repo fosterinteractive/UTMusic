@@ -1,9 +1,7 @@
-
-{% spaceless %}
-
+{% apply spaceless %}
   {% if icon_name %}
-  <div class="m-select--{{ icon_name }}__wrapper m-select__icon-wrapper">
-    <i class="m-select__icon fas fa-{{ icon_name }}"></i>
+    <div class="m-select--{{ icon_name }}__wrapper m-select__icon-wrapper">
+      <i class="m-select__icon fas fa-{{ icon_name }}"></i>
   {% endif %}
 
     <select{{ attributes.addClass('m-select', classes) }}  {% if sb_class %}class="m-select"{% endif %}>
@@ -19,7 +17,8 @@
         {% endif %}
       {% endfor %}
     </select>
+
   {% if icon_name %}
-  </div>
+    </div>
   {% endif %}
-{% endspaceless %}
+{% endapply %}
