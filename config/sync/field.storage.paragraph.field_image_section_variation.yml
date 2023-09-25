@@ -16,7 +16,7 @@ settings:
       label: Default
     -
       value: paralax
-      label: 'Large w/ Paralax'
+      label: 'Scroll Image - Parallax'
   allowed_values_function: ''
 module: options
 locked: false
