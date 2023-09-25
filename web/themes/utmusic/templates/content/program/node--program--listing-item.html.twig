@@ -71,17 +71,9 @@
     variation: 'program',
     id: node.id,
     url: url,
-    title: label[0] ? label[0]['#context']['value'],
+    title: content.field_program_header_title[0] ? content.field_program_header_title[0]['#text'],
     image: content.field_program_summary_image[0] ? content.field_program_summary_image,
     program_type: content.field_program_type[0] ? content.field_program_type[0]['#plain_text'],
     concentration: content.field_program_concentration[0] ? content.field_program_concentration
   } only
 %}
-
-
-{# {{kint(content.field_program_concentration[0])}} #}
-
-{# {{label[0] ? label[0]['#context']['value']}} #}
-
-{# content.field_program_summary_image[0] ? content.field_program_summary_image #}
-{# content.field_program_type[0] ? content.field_program_type #}
