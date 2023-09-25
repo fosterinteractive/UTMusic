@@ -13,6 +13,14 @@ dependencies:
     - field.field.node.program.field_program_enable_media
     - field.field.node.program.field_program_featured_media
     - field.field.node.program.field_program_header
+    - field.field.node.program.field_program_header_image1
+    - field.field.node.program.field_program_header_image2
+    - field.field.node.program.field_program_header_image_lands
+    - field.field.node.program.field_program_header_image_port
+    - field.field.node.program.field_program_header_style
+    - field.field.node.program.field_program_header_summary
+    - field.field.node.program.field_program_header_title
+    - field.field.node.program.field_program_header_video
     - field.field.node.program.field_program_overview
     - field.field.node.program.field_program_stream
     - field.field.node.program.field_program_summary_image
@@ -30,6 +38,11 @@ targetEntityType: node
 bundle: program
 mode: default
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_page_admin_help_seo:
     type: markup
     label: above
@@ -107,6 +120,72 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_program_header_image1:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 119
+    region: content
+  field_program_header_image2:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  field_program_header_image_lands:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 117
+    region: content
+  field_program_header_image_port:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 118
+    region: content
+  field_program_header_style:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 116
+    region: content
+  field_program_header_summary:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 121
+    region: content
+  field_program_header_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 122
+    region: content
+  field_program_header_video:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 123
     region: content
   field_program_overview:
     type: entity_reference_revisions_entity_view

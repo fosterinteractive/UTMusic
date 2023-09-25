@@ -155,6 +155,19 @@
     breadcrumbs: breadcrumbs,
     messages: drupal_entity('block', 'messages'),
     tabs: drupal_entity('block', 'tabs'),
+    is_front: is_front,
+    variation: content.field_program_header_style[0] ? content.field_program_header_style[0]['#markup'],
+    title: content.field_program_header_title[0] ? content.field_program_header_title[0]['#text'],
+    title_prefix: content.field_program_type[0] ? content.field_program_type[0]['#plain_text'],
+
+    summary: content.field_program_header_summary[0] ? content.field_program_header_summary,
+
+    video: content.field_program_header_video[0] ? content.field_program_header_video,
+    image_portrait: content.field_program_header_image_port[0] ? content.field_program_header_image_port,
+    image_landscape: content.field_program_header_image_lands[0] ? content.field_program_header_image_lands,
+    image_short: content.field_program_header_image1[0] ? content.field_program_header_image1,
+    image_tall: content.field_program_header_image2[0] ? content.field_program_header_image2,
+
     hero_banner: content.field_program_header[0] ? content.field_program_header,
     overview: content.field_program_overview[0] ? content.field_program_overview,
     academic_info: content.field_program_academic_info[0] ? content.field_program_academic_info,

@@ -1,0 +1,26 @@
+uuid: 4cd7b2e9-8003-45f9-9096-dbebb2279eb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_header_title
+    - node.type.program
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
+id: node.program.field_program_header_title
+field_name: field_program_header_title
+entity_type: node
+bundle: program
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
