@@ -265,7 +265,26 @@ content:
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: false
       no_edit_on_create: false
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        c806df40-687c-4aa4-80fc-da426924b149:
+          entity_type: node
+          bundle: program
+          dependee: field_program_enable_media
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: manual
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_program_header_image1:
     type: media_library_media_modify_widget
     weight: 6

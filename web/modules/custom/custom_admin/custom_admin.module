@@ -417,12 +417,7 @@ function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_stat
 
   // The "program" add and edit forms.
   if ($form_id == 'node_program_form' || $form_id == 'node_program_edit_form' ) {
-    // Show "Feature Media" field for manual pick
-    $form['field_program_featured_media']['#states'] = [
-      'visible' => [
-        ':input[name="field_program_enable_media"]' => ['value' => 'manual'],
-      ]
-    ];
+    // placeholder for program 
   }
 
   // The "people" add and edit forms.
