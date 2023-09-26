@@ -3,14 +3,18 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.image_section.field_image_section_cap_position
+    - field.field.paragraph.image_section.field_image_section_caption
     - field.field.paragraph.image_section.field_image_section_image
     - field.field.paragraph.image_section.field_image_section_image_crop
     - field.field.paragraph.image_section.field_image_section_variation
     - paragraphs.paragraphs_type.image_section
   module:
+    - allowed_formats
     - field_group
     - media_library
     - media_library_edit
+    - text
 third_party_settings:
   field_group:
     group_image:
@@ -34,6 +38,23 @@ targetEntityType: paragraph
 bundle: image_section
 mode: default
 content:
+  field_image_section_cap_position:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image_section_caption:
+    type: text_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
   field_image_section_image:
     type: media_library_widget
     weight: 3

@@ -78,6 +78,8 @@
     directory: 'themes/utmusic',
     image: image,
     variation: content.field_image_section_variation[0] ? content.field_image_section_variation[0]['#markup'],
-    image_bg_path: image_bg_path
+    image_bg_path: image_bg_path,
+    caption: content.field_image_section_caption[0] ? content.field_image_section_caption[0]['#text'],
+    caption_position: content.field_image_section_cap_position[0] ? content.field_image_section_cap_position[0]['#markup'],
   } only
 %}

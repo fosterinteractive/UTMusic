@@ -325,7 +325,28 @@ function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$fo
   }
 
   if($bundle == 'image_section') {
+    // do not show next fields for Paralax variation 
     if ($field_name == 'field_image_section_image_crop') {
+      $element['#states'] = [
+        'visible' => [
+          ':input[name="field_image_section_variation"]' => [
+            'value' => 'none',
+          ],
+        ],
+      ];
+    }
+
+    if ($field_name == 'field_image_section_caption') {
+      $element['#states'] = [
+        'visible' => [
+          ':input[name="field_image_section_variation"]' => [
+            'value' => 'none',
+          ],
+        ],
+      ];
+    }
+
+    if ($field_name == 'field_image_section_cap_position') {
       $element['#states'] = [
         'visible' => [
           ':input[name="field_image_section_variation"]' => [
