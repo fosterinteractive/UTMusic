@@ -407,27 +407,7 @@ function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_stat
 
   // The "news" add and edit forms.
   if ($form_id == 'node_news_form' || $form_id == 'node_news_edit_form' ) {
-
-    // Show "Image Landscape" field if the "variation" field is set to landscape.
-    $form['field_news_header_image_landscap']['#states'] = [
-      'visible' => [
-        ':input[name="field_news_header_variation"]' => ['value' => 'landscape'],
-      ],
-    ];
-
-    // Show "Image Portrait" field if the "variation" field is set to portrait.
-    $form['field_news_header_image_portrait']['#states'] = [
-      'visible' => [
-        ':input[name="field_news_header_variation"]' => ['value' => 'portrait'],
-      ],
-    ];
-
-    // Show "Video" field if the "variation" field is set to video.
-    $form['field_news_header_video']['#states'] = [
-      'visible' => [
-        ':input[name="field_news_header_variation"]' => ['value' => 'video'],
-      ],
-    ];
+    // placeholder for news  
   }
 
   // The "events" add and edit forms.
