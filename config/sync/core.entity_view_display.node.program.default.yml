@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.program.field_program_concentration
     - field.field.node.program.field_program_enable_media
     - field.field.node.program.field_program_featured_media
-    - field.field.node.program.field_program_header
     - field.field.node.program.field_program_header_image1
     - field.field.node.program.field_program_header_image2
     - field.field.node.program.field_program_header_image_lands
@@ -227,5 +226,4 @@ content:
     weight: 1
     region: content
 hidden:
-  field_program_header: true
   search_api_excerpt: true

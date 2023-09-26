@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.program.field_program_concentration
     - field.field.node.program.field_program_enable_media
     - field.field.node.program.field_program_featured_media
-    - field.field.node.program.field_program_header
     - field.field.node.program.field_program_header_image1
     - field.field.node.program.field_program_header_image2
     - field.field.node.program.field_program_header_image_lands
@@ -186,7 +185,6 @@ hidden:
   field_page_meta_description: true
   field_page_meta_image: true
   field_page_meta_title: true
-  field_program_header: true
   field_program_summary_image: true
   links: true
   search_api_excerpt: true

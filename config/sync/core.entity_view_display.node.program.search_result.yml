@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.program.field_program_concentration
     - field.field.node.program.field_program_enable_media
     - field.field.node.program.field_program_featured_media
-    - field.field.node.program.field_program_header
     - field.field.node.program.field_program_header_image1
     - field.field.node.program.field_program_header_image2
     - field.field.node.program.field_program_header_image_lands
@@ -29,7 +28,6 @@ dependencies:
     - field.field.node.program.field_program_type
     - node.type.program
   module:
-    - entity_reference_revisions
     - layout_builder
     - user
 third_party_settings:
@@ -45,15 +43,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: -20
-    region: content
-  field_program_header:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 101
     region: content
   links:
     settings: {  }
