@@ -53,6 +53,11 @@ targetEntityType: node
 bundle: event
 mode: listing_item
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_event_area:
     type: entity_reference_label
     label: hidden

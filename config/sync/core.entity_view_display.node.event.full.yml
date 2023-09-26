@@ -54,6 +54,11 @@ targetEntityType: node
 bundle: event
 mode: full
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_even_location_link_map:
     type: link
     label: hidden
