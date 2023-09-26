@@ -40,6 +40,7 @@ dependencies:
     - workflows.workflow.editorial
   module:
     - allowed_formats
+    - choices
     - content_moderation
     - date_all_day
     - field_group
@@ -279,10 +280,11 @@ content:
             effect_options: {  }
             selector: ''
   field_event_area:
-    type: options_select
+    type: choices_widget
     weight: 40
     region: content
-    settings: {  }
+    settings:
+      configuration_options: ''
     third_party_settings: {  }
   field_event_audience:
     type: options_select
@@ -360,7 +362,26 @@ content:
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: true
       no_edit_on_create: false
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        fcbef636-a032-4e30-8831-680676b9b4e1:
+          entity_type: node
+          bundle: event
+          dependee: field_event_header_variation
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: landscape
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_event_header_image_portra:
     type: media_library_media_modify_widget
     weight: 23
@@ -372,7 +393,26 @@ content:
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: true
       no_edit_on_create: false
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        f4277253-5ab5-4dee-a6f4-c2a63252514f:
+          entity_type: node
+          bundle: event
+          dependee: field_event_header_variation
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: portrait
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_event_header_variation:
     type: options_select
     weight: 20
@@ -491,7 +531,26 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        6a9c7b8a-f1f2-4d3a-8ff7-fc0e162534c5:
+          entity_type: node
+          bundle: event
+          dependee: field_event_related_pick
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: manual
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_event_related_pick:
     type: options_select
     weight: 25
