@@ -11496,21 +11496,21 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:fosterinteractive/adminspring-theme.git",
-                "reference": "1698e6517eb7f7d2db43f4e5403c16360f192abd"
+                "reference": "0274ccd437dfa230c3a69f1d2ae4401c82697e6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fosterinteractive/adminspring-theme/zipball/1698e6517eb7f7d2db43f4e5403c16360f192abd",
-                "reference": "1698e6517eb7f7d2db43f4e5403c16360f192abd",
+                "url": "https://api.github.com/repos/fosterinteractive/adminspring-theme/zipball/0274ccd437dfa230c3a69f1d2ae4401c82697e6f",
+                "reference": "0274ccd437dfa230c3a69f1d2ae4401c82697e6f",
                 "shasum": ""
             },
             "type": "drupal-theme",
             "description": "Admin Content Editor Theme based on Claro",
             "support": {
-                "source": "https://github.com/fosterinteractive/adminspring-theme/tree/10.0.2",
+                "source": "https://github.com/fosterinteractive/adminspring-theme/tree/10.0.x",
                 "issues": "https://github.com/fosterinteractive/adminspring-theme/issues"
             },
-            "time": "2023-09-27T17:04:45+00:00"
+            "time": "2023-09-27T19:17:20+00:00"
         },
         {
             "name": "fosterinteractive/mainspring-profile",
