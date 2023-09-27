@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e8c5eb3212090c7b2cb2896bbe00da81",
+    "content-hash": "4f6efb8a40f685e34c1d281996c27b2d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -11492,7 +11492,7 @@
         },
         {
             "name": "fosterinteractive/adminspring-theme",
-            "version": "10.0.2",
+            "version": "10.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "git@github.com:fosterinteractive/adminspring-theme.git",
@@ -17800,7 +17800,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "fosterinteractive/adminspring-theme": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
