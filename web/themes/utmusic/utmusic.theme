@@ -654,11 +654,12 @@ function utmusic_preprocess_field(&$variables) {
 
       // Get the link to the file.
       $uri = $file_entity->getFileUri();
-      $url = file_create_url($uri);
+      $url = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
       $variables['link'] = $url;
       
       // Query the media entity referencing this file.
       $media_ids = \Drupal::entityQuery('media')
+        ->accessCheck(TRUE)
         ->condition('field_media_file.target_id', $file_entity->id())
         ->execute();
         

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f6efb8a40f685e34c1d281996c27b2d",
+    "content-hash": "e8c5eb3212090c7b2cb2896bbe00da81",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -11492,7 +11492,7 @@
         },
         {
             "name": "fosterinteractive/adminspring-theme",
-            "version": "10.0.x-dev",
+            "version": "10.0.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:fosterinteractive/adminspring-theme.git",
@@ -11507,7 +11507,7 @@
             "type": "drupal-theme",
             "description": "Admin Content Editor Theme based on Claro",
             "support": {
-                "source": "https://github.com/fosterinteractive/adminspring-theme/tree/10.0.x",
+                "source": "https://github.com/fosterinteractive/adminspring-theme/tree/10.0.2",
                 "issues": "https://github.com/fosterinteractive/adminspring-theme/issues"
             },
             "time": "2023-09-27T19:17:20+00:00"
@@ -17800,9 +17800,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "fosterinteractive/adminspring-theme": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
