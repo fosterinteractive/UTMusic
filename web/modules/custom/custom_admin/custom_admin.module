@@ -77,19 +77,24 @@ function custom_admin_field_widget_complete_form_alter(&$field_widget_complete_f
 
   if (
     $field_definition->getType() == 'entity_reference_revisions' &&
-    $field_definition->getName() == 'field_page_header'
+    (
+      $field_definition->getName() == 'field_page_header' ||
+      $field_definition->getName() == 'field_program_header'
+    )
   ) {
+
+    $parents = $elements['#parents'];
     // Loop through the array children. We don't have a way to get the parent
     // delta so we need to loop through all of the possible children. This is
     // due to an AJAX form inserting or deleting and reinserting always
     // increasing the delta.
     foreach (Element::children($elements) as $key) {
-
+      $parents = $elements['#parents'];
       // Video field in page header.
       if (isset($elements[$key]['subform']['field_header_video'])) {
         $elements[$key]['subform']['field_header_video']['#states'] = [
           'visible' => [
-            ':input[name="field_page_header[' . $key . '][subform][field_header_style]"]' => [
+            ':input[name="' . $parents[0] . '[' . $key . '][subform][field_header_style]"]' => [
               'value' => 'video',
             ],
           ],
@@ -100,7 +105,7 @@ function custom_admin_field_widget_complete_form_alter(&$field_widget_complete_f
       if (isset($elements[$key]['subform']['field_header_image_portrait'])) {
         $elements[$key]['subform']['field_header_image_portrait']['#states'] = [
           'visible' => [
-            ':input[name="field_page_header[' . $key . '][subform][field_header_style]"]' => [
+            ':input[name="' . $parents[0] . '[' . $key . '][subform][field_header_style]"]' => [
               'value' => 'portrait',
             ],
           ],
@@ -111,7 +116,7 @@ function custom_admin_field_widget_complete_form_alter(&$field_widget_complete_f
       if (isset($elements[$key]['subform']['field_header_image_landscape'])) {
         $elements[$key]['subform']['field_header_image_landscape']['#states'] = [
           'visible' => [
-            ':input[name="field_page_header[' . $key . '][subform][field_header_style]"]' => [
+            ':input[name="' . $parents[0] . '[' . $key . '][subform][field_header_style]"]' => [
               'value' => 'landscape',
             ],
           ],
@@ -122,7 +127,7 @@ function custom_admin_field_widget_complete_form_alter(&$field_widget_complete_f
       if (isset($elements[$key]['subform']['field_header_image1'])) {
         $elements[$key]['subform']['field_header_image1']['#states'] = [
           'visible' => [
-            ':input[name="field_page_header[' . $key . '][subform][field_header_style]"]' => [
+            ':input[name="' . $parents[0] . '[' . $key . '][subform][field_header_style]"]' => [
               ['value' => 'top-bottom'],
               ['value' => 'bottom-top'],
             ],
@@ -134,7 +139,7 @@ function custom_admin_field_widget_complete_form_alter(&$field_widget_complete_f
       if (isset($elements[$key]['subform']['field_header_image2'])) {
         $elements[$key]['subform']['field_header_image2']['#states'] = [
           'visible' => [
-            ':input[name="field_page_header[' . $key . '][subform][field_header_style]"]' => [
+            ':input[name="' . $parents[0] . '[' . $key . '][subform][field_header_style]"]' => [
               ['value' => 'top-bottom'],
               ['value' => 'bottom-top'],
             ],
@@ -146,7 +151,7 @@ function custom_admin_field_widget_complete_form_alter(&$field_widget_complete_f
       if (isset($elements[$key]['subform']['field_carousel_header_sec_title'])) {
         $elements[$key]['subform']['field_carousel_header_sec_title']['#states'] = [
           'visible' => [
-            ':input[name="field_page_header[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
+            ':input[name="' . $parents[0] . '[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
               'value' => 'cards_3',
             ],
           ],
@@ -157,7 +162,7 @@ function custom_admin_field_widget_complete_form_alter(&$field_widget_complete_f
       if (isset($elements[$key]['subform']['field_carousel_header_card1'])) {
         $elements[$key]['subform']['field_carousel_header_card1']['#states'] = [
           'visible' => [
-            ':input[name="field_page_header[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
+            ':input[name="' . $parents[0] . '[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
               'value' => 'cards_3',
             ],
           ],
@@ -168,7 +173,7 @@ function custom_admin_field_widget_complete_form_alter(&$field_widget_complete_f
       if (isset($elements[$key]['subform']['field_carousel_header_card2'])) {
         $elements[$key]['subform']['field_carousel_header_card2']['#states'] = [
           'visible' => [
-            ':input[name="field_page_header[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
+            ':input[name="' . $parents[0] . '[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
               'value' => 'cards_3',
             ],
           ],
@@ -179,7 +184,7 @@ function custom_admin_field_widget_complete_form_alter(&$field_widget_complete_f
       if (isset($elements[$key]['subform']['field_carousel_header_card3'])) {
         $elements[$key]['subform']['field_carousel_header_card3']['#states'] = [
           'visible' => [
-            ':input[name="field_page_header[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
+            ':input[name="' . $parents[0] . '[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
               'value' => 'cards_3',
             ],
           ],
@@ -190,7 +195,7 @@ function custom_admin_field_widget_complete_form_alter(&$field_widget_complete_f
       if (isset($elements[$key]['subform']['field_carousel_header_card3'])) {
         $elements[$key]['subform']['field_carousel_header_card3']['#states'] = [
           'visible' => [
-            ':input[name="field_page_header[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
+            ':input[name="' . $parents[0] . '[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
               'value' => 'cards_3',
             ],
           ],
