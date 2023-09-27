@@ -1,0 +1,21 @@
+uuid: 73d5866e-1fc9-4587-a677-edb583440ca8
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - media_library_media_modify
+    - node
+id: node.field_program_header_image2
+field_name: field_program_header_image2
+entity_type: node
+type: entity_reference_entity_modify
+settings:
+  target_type: media
+module: media_library_media_modify
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

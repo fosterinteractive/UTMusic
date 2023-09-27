@@ -23,8 +23,11 @@ dependencies:
     - field.field.node.news.field_page_meta_image
     - field.field.node.news.field_page_meta_title
     - node.type.news
+    - workflows.workflow.editorial
   module:
     - allowed_formats
+    - conditional_fields
+    - content_moderation
     - datetime
     - field_group
     - hide_revision_field
@@ -218,7 +221,26 @@ content:
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: true
       no_edit_on_create: false
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        4728fd12-43e1-4848-bb48-8741ff4edf11:
+          entity_type: node
+          bundle: news
+          dependee: field_news_header_variation
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: landscape
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_news_header_image_portrait:
     type: media_library_media_modify_widget
     weight: 32
@@ -230,7 +252,26 @@ content:
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: true
       no_edit_on_create: false
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        586f99da-3b08-4ded-b9d8-581a66d2799d:
+          entity_type: node
+          bundle: news
+          dependee: field_news_header_variation
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: portrait
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_news_header_title_prefix:
     type: text_textfield
     weight: 28
@@ -257,6 +298,25 @@ content:
     third_party_settings:
       media_library_edit:
         show_edit: '1'
+      conditional_fields:
+        a44aea31-fa5e-4155-b684-d3389b62dacf:
+          entity_type: node
+          bundle: news
+          dependee: field_news_header_variation
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: video
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_news_image:
     type: media_library_widget
     weight: 25

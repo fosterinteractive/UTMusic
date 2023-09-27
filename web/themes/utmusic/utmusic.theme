@@ -139,7 +139,7 @@ function utmusic_preprocess_paragraph(array &$variables) {
         'contextual' => [
           'promote' => 'field_events_promote',
           'category1' => 'field_events_category',
-          'category2' => 'field_events_promote'
+          'category2' => 'field_event_context_area'
         ],
         'number_items' => 'field_events_number_of_items',
         'number_other_items' => 'field_events_other_number_items',

@@ -1,0 +1,26 @@
+uuid: 13bd1b17-d854-40d0-8178-3d7d7c569f3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_header_summary
+    - node.type.program
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - header_summary
+id: node.program.field_program_header_summary
+field_name: field_program_header_summary
+entity_type: node
+bundle: program
+label: Summary
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

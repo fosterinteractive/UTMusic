@@ -19,6 +19,18 @@ picture {
   }
 }
 
+.m-image--center__caption {
+  text-align: center;
+}
+
+.m-image--left__caption {
+  text-align: left;
+}
+
+.m-image--right__caption {
+  text-align: right;
+}
+
 .m-image--paralax__image {
   position: relative;
   overflow: hidden;

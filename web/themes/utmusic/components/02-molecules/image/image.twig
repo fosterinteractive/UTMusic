@@ -11,15 +11,34 @@
 
 {% endif %}
 
+{% if caption_position is not empty %}
+
+  {# Add BEM caption_position '--' prefix if missing #}
+  {% if caption_position starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set caption_position = '--' ~ caption_position %}
+  {% endif %} 
+
+{% endif %}
+
+{% set html_element = caption ? 'figure' : 'div' %}
+
 {% if image %}
   <div class="m-image">
     {% if variation == '--paralax' %}
       <div class="m-image{{variation}}__image" style="background-image:url('{{ image_bg_path }}')">
       </div>
     {% else %}
-      <div class="m-image__image">
+      <{{ html_element }} class="m-image__image">
         {{ image }}
-      </div>
+
+        {% if caption %}
+          <figcaption class="m-image{{caption_position}}__caption">
+            {{ caption }}
+          </figcaption>
+        {% endif %}
+      </{{ html_element }}>
     {% endif %}
   </div>
 {% endif %}

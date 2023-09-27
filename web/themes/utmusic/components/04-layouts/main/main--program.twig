@@ -3,7 +3,28 @@
   {% block content_single_page %}
     <div class="l-main--program">
 
-      {% if hero_banner %}
+      {% include "@organisms/content-header/content-header.twig" with {
+          directory: directory,
+          breadcrumbs: breadcrumbs,
+          tabs: tabs,
+          messages: messages,
+          is_front: is_front,
+
+          variation: variation,
+
+          title_prefix: title_prefix,
+          title: title,
+          summary: summary,
+
+          video: video,
+          image_portrait: image_portrait,
+          image_landscape: image_landscape,
+          image_short: image_short,
+          image_tall: image_tall,
+        } only
+      %}
+
+      {# {% if hero_banner %}
         {{ hero_banner }}
       {% else %}
         <div class="l-main__header">
@@ -26,7 +47,8 @@
             </div>
           </div>
         {% endif %}
-      {% endif %}
+      {% endif %} #}
+
 
       {% if moderation %}
         <div class="l-main__moderation">

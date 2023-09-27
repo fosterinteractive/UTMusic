@@ -262,6 +262,25 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+      conditional_fields:
+        691de23b-16a9-4b1d-8dfb-880bc59cb502:
+          entity_type: node
+          bundle: people
+          dependee: field_people_profile_type
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: default
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_people_area:
     type: choices_widget
     weight: 22
@@ -297,6 +316,25 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+      conditional_fields:
+        79f4cfc7-21ae-4fd6-b75f-3e10c865c0c1:
+          entity_type: node
+          bundle: people
+          dependee: field_people_profile_type
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: default
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_people_creative_works:
     type: text_textarea
     weight: 27
@@ -308,6 +346,25 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+      conditional_fields:
+        c910f67b-4709-4a05-8459-43cbac7676f4:
+          entity_type: node
+          bundle: people
+          dependee: field_people_profile_type
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: default
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_people_custom_content:
     type: text_textarea
     weight: 28
@@ -319,6 +376,25 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+      conditional_fields:
+        4fe0f9c0-dc25-4478-bc3e-667ca9fd83a2:
+          entity_type: node
+          bundle: people
+          dependee: field_people_profile_type
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: custom
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_people_education:
     type: text_textarea
     weight: 23
@@ -330,6 +406,25 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+      conditional_fields:
+        89eb4767-9502-40ca-b601-78d53c94bfcd:
+          entity_type: node
+          bundle: people
+          dependee: field_people_profile_type
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: default
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_people_email:
     type: email_default
     weight: 15
@@ -380,7 +475,26 @@ content:
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: true
       no_edit_on_create: false
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        c3241c67-3d75-42e5-b8f0-9d13a359a751:
+          entity_type: node
+          bundle: people
+          dependee: field_people_enable_media
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: manual
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_people_image:
     type: media_library_media_modify_widget
     weight: 12
@@ -606,6 +720,25 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+      conditional_fields:
+        87843f62-30df-496f-a8e3-0f260adce53c:
+          entity_type: node
+          bundle: people
+          dependee: field_people_profile_type
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: default
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_people_website:
     type: link_default
     weight: 18

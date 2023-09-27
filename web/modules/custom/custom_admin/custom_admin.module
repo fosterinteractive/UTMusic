@@ -412,6 +412,22 @@ function custom_admin_form_layout_paragraphs_component_form_alter(array &$form, 
         ],
       ],
     ];
+
+    $form['field_image_section_caption']['#states'] = [
+      'visible' => [
+        ':input[name="field_image_section_variation"]' => [
+          'value' => 'none',
+        ],
+      ],
+    ];
+
+    $form['field_image_section_cap_position']['#states'] = [
+      'visible' => [
+        ':input[name="field_image_section_variation"]' => [
+          'value' => 'none',
+        ],
+      ],
+    ];
   }
 
   // Card paragraph.
@@ -441,115 +457,11 @@ function custom_admin_form_layout_paragraphs_component_form_alter(array &$form, 
  */
 function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
-  // The "news" add and edit forms.
-  if ($form_id == 'node_news_form' || $form_id == 'node_news_edit_form' ) {
-
-    // Show "Image Landscape" field if the "variation" field is set to landscape.
-    $form['field_news_header_image_landscap']['#states'] = [
-      'visible' => [
-        ':input[name="field_news_header_variation"]' => ['value' => 'landscape'],
-      ],
-    ];
-
-    // Show "Image Portrait" field if the "variation" field is set to portrait.
-    $form['field_news_header_image_portrait']['#states'] = [
-      'visible' => [
-        ':input[name="field_news_header_variation"]' => ['value' => 'portrait'],
-      ],
-    ];
-
-    // Show "Video" field if the "variation" field is set to video.
-    $form['field_news_header_video']['#states'] = [
-      'visible' => [
-        ':input[name="field_news_header_variation"]' => ['value' => 'video'],
-      ],
-    ];
-  }
-
-  // The "events" add and edit forms.
-  if ($form_id == 'node_event_form' || $form_id == 'node_event_edit_form' ) {
-    // Show the "landscape" field
-    $form['field_event_header_image_landsca']['#states'] = [
-      'visible' => [
-        ':input[name="field_event_header_variation"]' => ['value' => 'landscape'],
-      ]
-    ];
-
-    // Show the "portrait" image field
-    $form['field_event_header_image_portra']['#states'] = [
-      'visible' => [
-        ':input[name="field_event_header_variation"]' => ['value' => 'portrait'],
-      ]
-    ];
-
-    // Show "Related Events" field for manual pick
-    $form['field_event_related_events']['#states'] = [
-      'visible' => [
-        ':input[name="field_event_related_pick"]' => ['value' => 'manual'],
-      ]
-    ];
-  }
-
-  // The "program" add and edit forms.
-  if ($form_id == 'node_program_form' || $form_id == 'node_program_edit_form' ) {
-    // Show "Feature Media" field for manual pick
-    $form['field_program_featured_media']['#states'] = [
-      'visible' => [
-        ':input[name="field_program_enable_media"]' => ['value' => 'manual'],
-      ]
-    ];
-  }
-
   // The "people" add and edit forms.
   if ($form_id == 'node_people_form' || $form_id == 'node_people_edit_form' ) {
     if (isset($form['field_people_research_profile']['widget'][0]['uri']['#description'])) {
       $form['field_people_research_profile']['widget'][0]['uri']['#description'] = t('Your DiscoverResearch Profile Eg. https://discover.research.utoronto.ca/123-your-name.');
     }
-
-    // Show the default fields if profile type is "default"
-    $form['field_people_education']['#states'] = [
-      'visible' => [
-        ':input[name="field_people_profile_type"]' => ['value' => 'default'],
-      ]
-    ];
-
-    $form['field_people_background']['#states'] = [
-      'visible' => [
-        ':input[name="field_people_profile_type"]' => ['value' => 'default'],
-      ]
-    ];
-
-    $form['field_people_activities']['#states'] = [
-      'visible' => [
-        ':input[name="field_people_profile_type"]' => ['value' => 'default'],
-      ]
-    ];
-
-    $form['field_people_teaching']['#states'] = [
-      'visible' => [
-        ':input[name="field_people_profile_type"]' => ['value' => 'default'],
-      ]
-    ];
-
-    $form['field_people_creative_works']['#states'] = [
-      'visible' => [
-        ':input[name="field_people_profile_type"]' => ['value' => 'default'],
-      ]
-    ];
-
-    // Show the custom field if profile type is "custom"
-    $form['field_people_custom_content']['#states'] = [
-      'visible' => [
-        ':input[name="field_people_profile_type"]' => ['value' => 'custom'],
-      ]
-    ];
-
-    // Show "Feature Media" field for manual pick
-    $form['field_people_featured_media']['#states'] = [
-      'visible' => [
-        ':input[name="field_people_enable_media"]' => ['value' => 'manual'],
-      ]
-    ];
   }
 }
 

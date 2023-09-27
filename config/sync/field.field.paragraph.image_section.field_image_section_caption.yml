@@ -1,0 +1,26 @@
+uuid: afb2de57-5f62-463e-a024-5fd8643bcd31
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_section_caption
+    - paragraphs.paragraphs_type.image_section
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
+id: paragraph.image_section.field_image_section_caption
+field_name: field_image_section_caption
+entity_type: paragraph
+bundle: image_section
+label: Caption
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

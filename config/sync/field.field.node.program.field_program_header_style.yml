@@ -1,0 +1,23 @@
+uuid: 7a42f2db-d1a8-4042-996e-24234d4efb83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_header_style
+    - node.type.program
+  module:
+    - options
+id: node.program.field_program_header_style
+field_name: field_program_header_style
+entity_type: node
+bundle: program
+label: 'Header Style'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: text
+default_value_callback: ''
+settings: {  }
+field_type: list_string

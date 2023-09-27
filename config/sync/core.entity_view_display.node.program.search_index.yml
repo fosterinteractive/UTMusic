@@ -13,7 +13,14 @@ dependencies:
     - field.field.node.program.field_program_concentration
     - field.field.node.program.field_program_enable_media
     - field.field.node.program.field_program_featured_media
-    - field.field.node.program.field_program_header
+    - field.field.node.program.field_program_header_image1
+    - field.field.node.program.field_program_header_image2
+    - field.field.node.program.field_program_header_image_lands
+    - field.field.node.program.field_program_header_image_port
+    - field.field.node.program.field_program_header_style
+    - field.field.node.program.field_program_header_summary
+    - field.field.node.program.field_program_header_title
+    - field.field.node.program.field_program_header_video
     - field.field.node.program.field_program_overview
     - field.field.node.program.field_program_stream
     - field.field.node.program.field_program_summary_image
@@ -21,7 +28,6 @@ dependencies:
     - field.field.node.program.field_program_type
     - node.type.program
   module:
-    - entity_reference_revisions
     - layout_builder
     - user
 third_party_settings:
@@ -34,18 +40,9 @@ bundle: program
 mode: search_index
 content:
   content_moderation_control:
-    weight: -20
     settings: {  }
     third_party_settings: {  }
-    region: content
-  field_program_header:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 101
+    weight: -20
     region: content
   links:
     settings: {  }
@@ -62,6 +59,14 @@ hidden:
   field_program_concentration: true
   field_program_enable_media: true
   field_program_featured_media: true
+  field_program_header_image1: true
+  field_program_header_image2: true
+  field_program_header_image_lands: true
+  field_program_header_image_port: true
+  field_program_header_style: true
+  field_program_header_summary: true
+  field_program_header_title: true
+  field_program_header_video: true
   field_program_overview: true
   field_program_stream: true
   field_program_summary_image: true

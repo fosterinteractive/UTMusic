@@ -3,17 +3,34 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.image_section.field_image_section_cap_position
+    - field.field.paragraph.image_section.field_image_section_caption
     - field.field.paragraph.image_section.field_image_section_image
     - field.field.paragraph.image_section.field_image_section_image_crop
     - field.field.paragraph.image_section.field_image_section_variation
     - paragraphs.paragraphs_type.image_section
   module:
     - options
+    - text
 id: paragraph.image_section.default
 targetEntityType: paragraph
 bundle: image_section
 mode: default
 content:
+  field_image_section_cap_position:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_image_section_caption:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_image_section_image:
     type: entity_reference_entity_view
     label: hidden

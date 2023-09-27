@@ -39,5 +39,7 @@
 {% extends "/themes/utmusic/templates/paragraphs/adminspring-preview.html.twig" %}
 
 {% block content %}
-  {% include "paragraph--events-summary-list-dynamic.html.twig" %}
+  <div class="utmusic-paragraph-wrapper">
+    {% include "paragraph--events-summary-list-dynamic.html.twig" %}
+  </div>
 {% endblock %}

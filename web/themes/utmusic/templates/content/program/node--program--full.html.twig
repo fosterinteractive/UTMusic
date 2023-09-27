@@ -155,7 +155,19 @@
     breadcrumbs: breadcrumbs,
     messages: drupal_entity('block', 'messages'),
     tabs: drupal_entity('block', 'tabs'),
-    hero_banner: content.field_program_header[0] ? content.field_program_header,
+    is_front: is_front,
+    variation: content.field_program_header_style[0] ? content.field_program_header_style[0]['#markup'],
+    title: content.field_program_header_title[0] ? content.field_program_header_title[0]['#text'],
+    title_prefix: content.field_program_type[0] ? content.field_program_type[0]['#plain_text'],
+
+    summary: content.field_program_header_summary[0] ? content.field_program_header_summary,
+
+    video: content.field_program_header_video[0] ? content.field_program_header_video,
+    image_portrait: content.field_program_header_image_port[0] ? content.field_program_header_image_port,
+    image_landscape: content.field_program_header_image_lands[0] ? content.field_program_header_image_lands,
+    image_short: content.field_program_header_image1[0] ? content.field_program_header_image1,
+    image_tall: content.field_program_header_image2[0] ? content.field_program_header_image2,
+
     overview: content.field_program_overview[0] ? content.field_program_overview,
     academic_info: content.field_program_academic_info[0] ? content.field_program_academic_info,
     faculty: faculty,
@@ -166,5 +178,3 @@
     number_items_media: feature_media_list_type == 'manual' ? media_count : auto_number_items_media,
   }
 %}
-
-{{ attach_library('utmusic/carousel-media') }}
