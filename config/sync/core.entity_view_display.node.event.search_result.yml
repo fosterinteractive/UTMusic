@@ -51,9 +51,9 @@ bundle: event
 mode: search_result
 content:
   content_moderation_control:
-    weight: -20
     settings: {  }
     third_party_settings: {  }
+    weight: -20
     region: content
   search_api_excerpt:
     settings: {  }
