@@ -188,6 +188,10 @@
             "drupal/media_entity_link": {
                 "3223918 - PHP8 error validateUriElement() must be static": "https://www.drupal.org/files/issues/2021-07-16/static_function_validateurielement-3223918-02.patch"
             }
+            ,
+            "drupal/views_autosubmit": {
+                "3354745 - [Drupal 10] Change jQuery/once to drupal core/once": "https://www.drupal.org/files/issues/2023-04-17/3354745-jquery-once_2.patch"
+            }
         },
         "enable-patching": true
     },
