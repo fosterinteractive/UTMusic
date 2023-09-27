@@ -20,6 +20,6 @@ default_value:
 default_value_callback: ''
 settings:
   markup:
-    value: '<p><img class="m-admin-tip__image--sml" src="/themes/adminspring-theme/assets/img/linkedin_share_example.png" data-entity-uuid="" data-entity-type="" alt="screenshot of a linkedin share with selected image"></p><p>Select a <em>Meta Image</em> to tell a social media platform what image to use when sharing.</p><p>If blank, different social platforms like <strong>LinkedIn will randomly select an image</strong> on the page to appear on shared posts.</p><p>Posts with images generally perform better on social media so it is worth selecting an engaging image.</p>'
+    value: '<p><img class="m-admin-tip__image--sml" src="/themes/adminspring-theme/images/linkedin_share_example.png" data-entity-uuid="" data-entity-type="" alt="screenshot of a linkedin share with selected image"></p><p>Select a <em>Meta Image</em> to tell a social media platform what image to use when sharing.</p><p>If blank, different social platforms like <strong>LinkedIn will randomly select an image</strong> on the page to appear on shared posts.</p><p>Posts with images generally perform better on social media so it is worth selecting an engaging image.</p>'
     format: rich_text_w_images
 field_type: markup

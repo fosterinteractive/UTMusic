@@ -71,13 +71,13 @@
 
 // disabled state.
 .m-input-checkbox:disabled {
-  @include root-prop(--checkmark-color, var(--color-disabled));
+  @include root-prop(--checkmark-color, var(--b-color-disabled));
 
-  border-color: var(--color-disabled);
+  border-color: var(--b-color-disabled);
   cursor: not-allowed;
 
   + label {
-    color: var(--color-disabled);
+    color: var(--b-color-disabled);
     cursor: not-allowed;;
   }
 }

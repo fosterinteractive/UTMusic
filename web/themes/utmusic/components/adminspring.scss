@@ -1,6 +1,23 @@
+/**
+ * @file
+ *
+ * This file is used to override our paragraphs style in layout builder.
+ *
+ * Sometimes it is required to modify a paragraphs style in the backend to fix
+ * a bug. e.g. if a paragraph has negative margin but that will mess with
+ * layout builder we could reset that margin here.
+ */
+
 // External Libraries
 @import '~breakpoint-sass/stylesheets/breakpoint.scss';
 
 // Components
-@import '10-adminspring/**/*.scss';
+@import '00-base/00-functions/*.scss';
+@import '00-base/01-variables/*.scss';
 
+/******************************************************************************/
+
+// Add Styles here.
+// .adminspring-preview .some-class {
+//   outline: 1px solid blue;
+// }

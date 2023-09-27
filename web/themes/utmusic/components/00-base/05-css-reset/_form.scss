@@ -1,26 +1,26 @@
 :root {
   // font-size & padding
-  @include root-prop(--input-font-size, rem(20px));
-  @include root-prop(--input-line-height, rem(24px));
-  @include root-prop(--input-padding, rem(15px));
+  @include root-prop(--b-input-font-size, rem(20px));
+  @include root-prop(--b-input-line-height, rem(24px));
+  @include root-prop(--b-input-padding, rem(15px));
 
   // border
-  @include root-prop(--input-border-width, rem(2px));
-  @include root-prop(--input-border-radius, rem(10px));
-  @include root-prop(--input-border-color, palette(blue, 900));
-  @include root-prop(--input-focus-border-color, palette(blue, 300));
+  @include root-prop(--b-input-border-width, rem(2px));
+  @include root-prop(--b-input-border-radius, rem(10px));
+  @include root-prop(--b-input-border-color, palette(blue, 900));
+  @include root-prop(--b-input-focus-border-color, palette(blue, 300));
 
   // disabled
-  @include root-prop(--color-disabled, palette(grey, 400));
+  @include root-prop(--b-color-disabled, palette(grey, 400));
 
   // text color
-  @include root-prop(--input-text-color, palette(grey, 400));
-  @include root-prop(--input-placeholder-text-color, palette(grey, 300));
+  @include root-prop(--b-input-text-color, palette(grey, 400));
+  @include root-prop(--b-input-placeholder-text-color, palette(grey, 300));
 
 }
 
 // variable with base input height
-$input-height: calc(var(--input-line-height) + (var(--input-padding) * 2) + (var(--input-border-width) * 2));
+$input-height: calc(var(--b-input-line-height) + (var(--b-input-padding) * 2) + (var(--b-input-border-width) * 2));
 
 /* Form Elements Reset
 --------------------------------------------- */
@@ -49,20 +49,20 @@ input[type='url'],
 input[type='week'],
 select,
 textarea {
-  font-size: var(--input-font-size);
-  border: var(--input-border-width) solid var(--input-border-color);
-  border-radius: var(--input-border-radius);
+  font-size: var(--b-input-font-size);
+  border: var(--b-input-border-width) solid var(--b-input-border-color);
+  border-radius: var(--b-input-border-radius);
   background-color: palette(white);
-  padding: var(--input-padding);
+  padding: var(--b-input-padding);
   width: 100%;
-  line-height: var(--input-line-height);
-  color: var(--input-text-color);
+  line-height: var(--b-input-line-height);
+  color: var(--b-input-text-color);
   transition: border-color 0.3s ease-out, color 0.3s ease 0.5s;
   -webkit-appearance: none;
 
   &:disabled {
-    @include root-prop(--input-border-color, var(--color-disabled));
-    @include root-prop(--input-text-color, var(--color-disabled));
+    @include root-prop(--b-input-border-color, var(--b-color-disabled));
+    @include root-prop(--b-input-text-color, var(--b-color-disabled));
   }
 }
 
@@ -83,7 +83,7 @@ input[type='url']:focus,
 input[type='week']:focus,
 textarea:focus,
 select:focus {
-  @include root-prop(--input-border-color, var(--input-focus-border-color));
+  @include root-prop(--b-input-border-color, var(--b-input-focus-border-color));
 }
 
 input[type='checkbox'],
@@ -98,7 +98,7 @@ input[type='radio'] {
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
-  color: var(--input-placeholder-text-color);
+  color: var(--b-input-placeholder-text-color);
 }
 
 // Checkboxes & Radios

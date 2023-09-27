@@ -368,15 +368,6 @@ $max-col-width: calc((#{rem($bp-max)} - (var(--spacer) * 11)) / 12);
 
 
 %l-section__child {
-  // Set vertical spacing for elements when stacked in grid
-
-  // Adminspring / Paragraphs layouts child div needs to scale to the height of the parent
-  // Assumes dragula library is enabled 
-  > .is-dragula-enabled {
-    height: 100%;
-    overflow: hidden;
-  }
-
   grid-column: col 1/ span 12;
   grid-row: 1;
   z-index: 0;

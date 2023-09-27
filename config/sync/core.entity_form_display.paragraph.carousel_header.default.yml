@@ -162,7 +162,7 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: preview
+      edit_mode: open
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: card
@@ -174,7 +174,7 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: preview
+      edit_mode: open
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: card
@@ -186,7 +186,7 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: preview
+      edit_mode: open
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: card
@@ -198,7 +198,7 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: preview
+      edit_mode: open
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: carousel_image_group

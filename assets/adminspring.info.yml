@@ -6,44 +6,40 @@ base theme: utmusic
 
 libraries:
   - adminspring/global
+  - core/drupal.message
+  - core/normalize
   - claro/global-styling
 
 libraries-override:
   utmusic/global:
     css:
       theme:
-        assets/style.css: /themes/utmusic/assets/adminspring-style.css
+        dist/style.css: /themes/utmusic/dist/adminspring-preview.css
+        
   system/base:
     css:
       component:
-        /core/themes/stable/css/system/components/ajax-progress.module.css: /core/themes/claro/css/components/ajax-progress.module.css
-        /core/themes/stable/css/system/components/autocomplete-loading.module.css: /core/themes/claro/css/components/autocomplete-loading.module.css
-        /core/themes/stable/css/system/components/system-status-counter.css: /core/themes/claro/css/components/system-status-counter.css
-        /core/themes/stable/css/system/components/system-status-report-counters.css: /core/themes/claro/css/components/system-status-report-counters.css
-        /core/themes/stable/css/system/components/system-status-report-general-info.css: /core/themes/claro/css/components/system-status-report-general-info.css
-        /core/themes/stable/css/system/components/tabledrag.module.css: /core/themes/claro/css/components/tabledrag.css
+        css/components/ajax-progress.module.css: /core/themes/claro/css/components/ajax-progress.module.css
+        css/components/autocomplete-loading.module.css: /core/themes/claro/css/components/autocomplete-loading.module.css
+        css/components/system-status-counter.css: /core/themes/claro/css/components/system-status-counter.css
+        css/components/system-status-report-counters.css: /core/themes/claro/css/components/system-status-report-counters.css
+        css/components/system-status-report-general-info.css: /core/themes/claro/css/components/system-status-report-general-info.css
+        css/components/tabledrag.module.css: /core/themes/claro/css/components/tabledrag.css
 
   system/admin:
     css:
       theme:
-        /core/themes/stable/css/system/system.admin.css: false
-
-  core/drupal.dialog.off_canvas:
-    css:
-      base:
-       /core/themes/stable/css/core/dialog/off-canvas.theme.css: /core/themes/claro/css/base/off-canvas.theme.css
+        css/system.admin.css: false
 
   core/drupal.dropbutton:
     css:
       component:
-        /core/themes/stable/css/core/dropbutton/dropbutton.css: /core/themes/claro/css/components/dropbutton.css
+        misc/dropbutton/dropbutton.css: /themes/adminspring-theme/css/components/dropbutton.css
 
   core/drupal.vertical-tabs:
     css:
       component:
-        /core/themes/stable/css/core/vertical-tabs.css: false
-    js:
-      misc/vertical-tabs.js: /core/themes/claro/js/vertical-tabs.js
+        misc/vertical-tabs.css: false
 
   core/drupal.autocomplete:
     css:
@@ -70,7 +66,7 @@ libraries-override:
   field_ui/drupal.field_ui:
     css:
       theme:
-        /core/themes/stable/css/field_ui/field_ui.admin.css: /core/themes/claro/css/theme/field-ui.admin.css
+        css/field_ui.admin.css: /core/themes/claro/css/theme/field-ui.admin.css
 
   node/drupal.node:
     css:
@@ -98,15 +94,36 @@ libraries-override:
   views_ui/admin.styling:
     css:
       component:
-          /core/themes/stable/css/views_ui/css/views_ui.admin.css: /core/themes/claro/css/components/views_ui.admin.css
+        css/views_ui.admin.css: /core/themes/claro/css/components/views_ui.admin.css
       theme:
-        /core/themes/stable/css/views_ui/views_ui.admin.theme.css: /core/themes/claro/css/theme/views_ui.admin.theme.css
+        css/views_ui.admin.theme.css: /core/themes/claro/css/theme/views_ui.admin.theme.css
+
+  # Use our adminspring css for this library.
+  claro/node-form:
+    css:
+      layout:
+        css/layout/node-add.css: css/layout/node-add.css
+
+  claro/views:
+    css:
+      component:
+        css/components/views-exposed-form.css: false
+
+  claro/global-styling:
+    css:
+      base:
+        css/base/elements.css: css/base/elements.css
+      component:
+        css/components/button.css: css/components/button.css
+        css/components/form.css: css/components/form.css
+        css/components/form--text.css: css/components/form--text.css
+
+  layout_paragraphs/layout_select:
+    css:
+      layout:
+        css/layout-select.css: css/layout-select.css
 
 libraries-extend:
-  ckeditor/drupal.ckeditor:
-    - claro/ckeditor-editor
-  ckeditor/drupal.ckeditor.admin:
-    - claro/ckeditor-admin
   core/drupal.collapse:
     - claro/details-focus
   core/drupal.dialog:
@@ -118,10 +135,14 @@ libraries-extend:
     - claro/checkbox
   core/drupal.message:
     - claro/messages
+  core/drupal.progress:
+    - claro/progress
   core/drupal.tabbingmanager:
     - claro/claro.jquery.ui
   core/drupal.tabledrag:
     - claro/claro.tabledrag
+  core/drupal.tableselect:
+    - claro/tableselect
   core/drupal.vertical-tabs:
     - claro/vertical-tabs
   file/drupal.file:
@@ -154,41 +175,15 @@ libraries-extend:
   media_library/widget:
     - claro/media_library.theme
 
-quickedit_stylesheets:
-  - /core/themes/claro/css/components/quickedit.css
-
-ckeditor_stylesheets:
-  - css/base/elements.css
-  - css/base/typography.css
-  - css/theme/ckeditor-frame.css
-  - css/classy/components/media-embed-error.css
-
 regions:
-  header: 'Header'
-  pre_content: 'Pre-content'
+  header: Header
+  pre_content: Pre-content
   breadcrumb: Breadcrumb
   highlighted: Highlighted
   help: Help
   content: Content
-  page_top: 'Page top'
-  page_bottom: 'Page bottom'
-  sidebar_first: 'First sidebar'
+  page_top: Page top
+  page_bottom: Page bottom
+  sidebar_first: First sidebar
 regions_hidden:
   - sidebar_first
-
-components:
-  namespaces:
-    base:
-      - components/_patterns/00-base
-    atoms:
-      - components/_patterns/01-atoms
-    molecules:
-      - components/_patterns/02-molecules
-    organisms:
-      - components/_patterns/03-organisms
-    layouts:
-      - components/_patterns/04-layouts
-    pages:
-      - components/_patterns/05-mockups
-    utilities:
-      - components/_patterns/07-utilities

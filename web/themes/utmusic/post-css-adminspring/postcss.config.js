@@ -5,7 +5,7 @@ const prepend = require('prepend-selector-postcss')({
   selector: '.adminspring-preview ',
   
   // optional can be omitted
-  // exclude: ['.living_classname_to_prevent_from_prefixing '],
+  exclude: [':root '],
   
   // optional can be omitted
   // excludePart: ['.grid-'],

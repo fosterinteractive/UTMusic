@@ -20,6 +20,6 @@ default_value:
 default_value_callback: ''
 settings:
   markup:
-    value: "<p>&nbsp;<img alt=\"screenshot of a google search result\" class=\"m-admin-tip__image--lrg\" data-entity-type=\"\" data-entity-uuid=\"\" src=\"/themes/adminspring-theme/assets/img/search_results_example.png\" /></p>\r\n\r\n<p>Optimize this page for search engines by customizing the <em>Meta Title</em> and <em>Meta Description</em> fields.</p>\r\n\r\n<p>Use the&nbsp;<a href=\"https://blog.spotibo.com/serp-preview-tool/\" target=\"_blank\">Google Search Result Preview Tool</a>&nbsp;to test different content ideas.</p>\r\n"
+    value: "<p>&nbsp;<img alt=\"screenshot of a google search result\" class=\"m-admin-tip__image--lrg\" data-entity-type=\"\" data-entity-uuid=\"\" src=\"/themes/adminspring-theme/images/search_results_example.png\" /></p>\r\n\r\n<p>Optimize this page for search engines by customizing the <em>Meta Title</em> and <em>Meta Description</em> fields.</p>\r\n\r\n<p>Use the&nbsp;<a href=\"https://blog.spotibo.com/serp-preview-tool/\" target=\"_blank\">Google Search Result Preview Tool</a>&nbsp;to test different content ideas.</p>\r\n"
     format: rich_text_w_images
 field_type: markup

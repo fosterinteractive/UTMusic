@@ -80,7 +80,7 @@
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
         "drush/drush": "^10 || ^11",
-        "fosterinteractive/adminspring-theme": "dev-10.0.x-dev#4c1266c46f64137dbe2675c39c564aec510ece4a",
+        "fosterinteractive/adminspring-theme": "10.0.2",
         "fosterinteractive/mainspring-profile": "10.0.4",
         "mnsami/composer-custom-directory-installer": "^2.0",
         "npm-asset/tippy.js": "6.3.7",

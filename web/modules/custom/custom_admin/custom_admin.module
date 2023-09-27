@@ -11,6 +11,7 @@
  * It can be renamed before installing to your_project_admin.
  */
 
+use Drupal\Core\Render\Element;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -68,314 +69,365 @@ function custom_admin_preprocess_views_view(&$variables) {
 }
 
 /**
- * Implements hook_field_widget_form_alter().
+ * Implements hook_field_widget_complete_form_alter().
  */
-function custom_admin_field_widget_form_alter(&$element, FormStateInterface &$form_state, $context) {
-  if (isset($element['#paragraph_type'])) {
-    $paragraph_type = isset($element['#paragraph_type']) ? $element['#paragraph_type'] : FALSE;
+function custom_admin_field_widget_complete_form_alter(&$field_widget_complete_form, FormStateInterface $form_state, $context) {
+  $elements = &$field_widget_complete_form['widget'];
+  $field_definition = $context['items']->getFieldDefinition();
 
-    // Hero banner
-    // Check if the paragraph type is 'header' and the '#parents' element is set in the element.
-    if ($paragraph_type === 'header' && isset($element['subform']['#parents'])) {
+  if (
+    $field_definition->getType() == 'entity_reference_revisions' &&
+    $field_definition->getName() == 'field_page_header'
+  ) {
+    // Loop through the array children. We don't have a way to get the parent
+    // delta so we need to loop through all of the possible children. This is
+    // due to an AJAX form inserting or deleting and reinserting always
+    // increasing the delta.
+    foreach (Element::children($elements) as $key) {
 
-      // Define an array of parent fields to check.
-      $parent_fields = ['field_page_header', 'field_program_header'];
-
-      // Initialize the parent field variable to NULL.
-      $parent_field = NULL;
-
-      // Loop through each parent field and check if it is present in the '#parents' element.
-      foreach ($parent_fields as $field_name) {
-        if (in_array($field_name, $element['subform']['#parents'], TRUE)) {
-          $parent_field = $field_name;
-          break; // Once we find the parent field, we can exit the loop.
-        }
-      }
-
-      // If the parent field is found, set the 'visible' state of the 'field_header_image' element.
-      if ($parent_field !== NULL) {
-
-        // Get the parent paragraph delta.
-        $parent_delta = $element['subform']['field_header_style']['widget']['#parents'][1];
-
-        $element['subform']['field_header_video']['#states'] = [
+      // Video field in page header.
+      if (isset($elements[$key]['subform']['field_header_video'])) {
+        $elements[$key]['subform']['field_header_video']['#states'] = [
           'visible' => [
-            ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => [
+            ':input[name="field_page_header[' . $key . '][subform][field_header_style]"]' => [
               'value' => 'video',
             ],
           ],
         ];
+      }
 
-        $element['subform']['field_header_image_portrait']['#states'] = [
+      // Image portrait field in page header.
+      if (isset($elements[$key]['subform']['field_header_image_portrait'])) {
+        $elements[$key]['subform']['field_header_image_portrait']['#states'] = [
           'visible' => [
-            ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => [
+            ':input[name="field_page_header[' . $key . '][subform][field_header_style]"]' => [
               'value' => 'portrait',
             ],
           ],
         ];
+      }
 
-        $element['subform']['field_header_image_landscape']['#states'] = [
+      // Image landscape field in page header.
+      if (isset($elements[$key]['subform']['field_header_image_landscape'])) {
+        $elements[$key]['subform']['field_header_image_landscape']['#states'] = [
           'visible' => [
-            ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => [
+            ':input[name="field_page_header[' . $key . '][subform][field_header_style]"]' => [
               'value' => 'landscape',
             ],
           ],
         ];
-
-        $element['subform']['field_header_image1']['#states'] = [
-          'visible' => [
-            [
-              ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => ['value' => 'top-bottom'],
-            ],
-            [
-              ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => ['value' => 'bottom-top'],
-            ],
-          ],
-        ];
-
-        $element['subform']['field_header_image2']['#states'] = [
-          'visible' => [
-            [
-              ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => ['value' => 'top-bottom'],
-            ],
-            [
-              ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_header_style]"]' => ['value' => 'bottom-top'],
-            ],
-          ],
-        ];
-        
-      }
-    }
-
-    if ($paragraph_type === 'carousel_header' && isset($element['subform']['#parents'])) {
-
-      // Define an array of parent fields to check.
-      $parent_fields = ['field_page_header'];
-
-      // Initialize the parent field variable to NULL.
-      $parent_field = NULL;
-
-      // Loop through each parent field and check if it is present in the '#parents' element.
-      foreach ($parent_fields as $field_name) {
-        if (in_array($field_name, $element['subform']['#parents'], TRUE)) {
-          $parent_field = $field_name;
-          break; // Once we find the parent field, we can exit the loop.
-        }
       }
 
-      // If the parent field is found, set the 'visible' state of the 'field_header_image' element.
-      if ($parent_field !== NULL) {
-
-        // Get the parent paragraph delta.
-        $parent_delta = $element['subform']['field_carousel_header_sec_layout']['widget']['#parents'][1];
-
-        $element['subform']['field_carousel_header_sec_title']['#states'] = [
+      // Image 1 header field in page header.
+      if (isset($elements[$key]['subform']['field_header_image1'])) {
+        $elements[$key]['subform']['field_header_image1']['#states'] = [
           'visible' => [
-            ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_carousel_header_sec_layout]"]' => [
-              'value' => 'cards_3',
+            ':input[name="field_page_header[' . $key . '][subform][field_header_style]"]' => [
+              ['value' => 'top-bottom'],
+              ['value' => 'bottom-top'],
             ],
           ],
         ];
+      }
 
-        $element['subform']['field_carousel_header_card1']['#states'] = [
+      // Image 2 header field in page header.
+      if (isset($elements[$key]['subform']['field_header_image2'])) {
+        $elements[$key]['subform']['field_header_image2']['#states'] = [
           'visible' => [
-            ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_carousel_header_sec_layout]"]' => [
-              'value' => 'cards_3',
+            ':input[name="field_page_header[' . $key . '][subform][field_header_style]"]' => [
+              ['value' => 'top-bottom'],
+              ['value' => 'bottom-top'],
             ],
           ],
         ];
+      }
 
-        $element['subform']['field_carousel_header_card2']['#states'] = [
+      // Image 2 header field in page header.
+      if (isset($elements[$key]['subform']['field_carousel_header_sec_title'])) {
+        $elements[$key]['subform']['field_carousel_header_sec_title']['#states'] = [
           'visible' => [
-            ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_carousel_header_sec_layout]"]' => [
-              'value' => 'cards_3',
-            ],
-          ],
-        ];
-
-        $element['subform']['field_carousel_header_card3']['#states'] = [
-          'visible' => [
-            ':input[name="' . $parent_field . '[' . $parent_delta . '][subform][field_carousel_header_sec_layout]"]' => [
+            ':input[name="field_page_header[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
               'value' => 'cards_3',
             ],
           ],
         ];
       }
+
+      // Carousel Card 1 field in page header.
+      if (isset($elements[$key]['subform']['field_carousel_header_card1'])) {
+        $elements[$key]['subform']['field_carousel_header_card1']['#states'] = [
+          'visible' => [
+            ':input[name="field_page_header[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
+              'value' => 'cards_3',
+            ],
+          ],
+        ];
+      }
+
+      // Carousel Card 2 field in page header.
+      if (isset($elements[$key]['subform']['field_carousel_header_card2'])) {
+        $elements[$key]['subform']['field_carousel_header_card2']['#states'] = [
+          'visible' => [
+            ':input[name="field_page_header[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
+              'value' => 'cards_3',
+            ],
+          ],
+        ];
+      }
+
+      // Carousel Card 3 field in page header.
+      if (isset($elements[$key]['subform']['field_carousel_header_card3'])) {
+        $elements[$key]['subform']['field_carousel_header_card3']['#states'] = [
+          'visible' => [
+            ':input[name="field_page_header[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
+              'value' => 'cards_3',
+            ],
+          ],
+        ];
+      }
+
+      // Carousel Card 3 field in page header.
+      if (isset($elements[$key]['subform']['field_carousel_header_card3'])) {
+        $elements[$key]['subform']['field_carousel_header_card3']['#states'] = [
+          'visible' => [
+            ':input[name="field_page_header[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
+              'value' => 'cards_3',
+            ],
+          ],
+        ];
+      }
+  
     }
   }
 
-  /** @var \Drupal\Core\Field\FieldDefinitionInterface $field_definition */
+  // Carousel header card 1.
+  if (
+    $field_definition->getType() == 'entity_reference_revisions' &&
+    $field_definition->getName() == 'field_carousel_header_card1'
+  ) {
 
-  $field_definition = $context['items']->getFieldDefinition();
-  $entity_type = $field_definition->getTargetEntityTypeId();
-  $bundle = $field_definition->getTargetBundle();
-  $field_name = $context['items']->getName();
-
-  if($bundle == 'news_summary_list_dynamic') {
-    if ($field_name == 'field_news_other_number_of_items') {
-      $element['value']['#states'] = [
-        'visible' => [
-          ':input[name="field_news_number_of_items"]' => [
-            'value' => 'other',
+    $parents = $field_widget_complete_form['#parents'];
+    foreach (Element::children($elements) as $key) {
+      
+      // Illustration field in card 1.
+      if (isset($elements[$key]['subform']['field_card_illustration'])) {
+        $elements[$key]['subform']['field_card_illustration']['#states'] = [
+          'visible' => [
+            ':input[name="field_page_header[' . $parents[1] . '][subform][field_carousel_header_card1][' . $key . '][subform][field_card_variation]"]' => [
+              'value' => 'illustration',
+            ],
           ],
-        ],
-      ];
+        ];
+      }
+
+      // Image field in card 1.
+      if (isset($elements[$key]['subform']['field_card_image'])) {
+        $elements[$key]['subform']['field_card_image']['#states'] = [
+          'visible' => [
+            ':input[name="field_page_header[' . $parents[1] . '][subform][field_carousel_header_card1][' . $key . '][subform][field_card_variation]"]' => [
+              'value' => 'image',
+            ],
+          ],
+        ];
+      }
+
     }
   }
 
-  if($bundle == 'events_summary_list_dynamic') {
-    if ($field_name == 'field_events_other_number_items') {
-      $element['value']['#states'] = [
-        'visible' => [
-          ':input[name="field_events_number_of_items"]' => [
-            'value' => 'other',
+  // Carousel header card 2.
+  if (
+    $field_definition->getType() == 'entity_reference_revisions' &&
+    $field_definition->getName() == 'field_carousel_header_card2'
+  ) {
+
+    $parents = $field_widget_complete_form['#parents'];
+    foreach (Element::children($elements) as $key) {
+      
+      // Illustration field in card 2.
+      if (isset($elements[$key]['subform']['field_card_illustration'])) {
+        $elements[$key]['subform']['field_card_illustration']['#states'] = [
+          'visible' => [
+            ':input[name="field_page_header[' . $parents[1] . '][subform][field_carousel_header_card2][' . $key . '][subform][field_card_variation]"]' => [
+              'value' => 'illustration',
+            ],
           ],
-        ],
-      ];
+        ];
+      }
+
+      // Image field in card 2.
+      if (isset($elements[$key]['subform']['field_card_image'])) {
+        $elements[$key]['subform']['field_card_image']['#states'] = [
+          'visible' => [
+            ':input[name="field_page_header[' . $parents[1] . '][subform][field_carousel_header_card2][' . $key . '][subform][field_card_variation]"]' => [
+              'value' => 'image',
+            ],
+          ],
+        ];
+      }
+
     }
   }
 
-  if ($bundle == 'carousel_header') {
-    if ($field_name == 'field_carousel_header_sec_title') {
-      $element['#states'] = [
-        'visible' => [
-          ':input[name="field_carousel_header_sec_layout"]' => [
-            'value' => 'cards_3',
-          ],
-        ],
-      ];
-    }
+  // Carousel header card 3.
+  if (
+    $field_definition->getType() == 'entity_reference_revisions' &&
+    $field_definition->getName() == 'field_carousel_header_card3'
+  ) {
 
-    if ($field_name == 'field_carousel_header_card1') {
-      $element['#states'] = [
-        'visible' => [
-          ':input[name="field_carousel_header_sec_layout"]' => [
-            'value' => 'cards_3',
+    $parents = $field_widget_complete_form['#parents'];
+    foreach (Element::children($elements) as $key) {
+      
+      // Illustration field in card 3.
+      if (isset($elements[$key]['subform']['field_card_illustration'])) {
+        $elements[$key]['subform']['field_card_illustration']['#states'] = [
+          'visible' => [
+            ':input[name="field_page_header[' . $parents[1] . '][subform][field_carousel_header_card3][' . $key . '][subform][field_card_variation]"]' => [
+              'value' => 'illustration',
+            ],
           ],
-        ],
-      ];
-    }
+        ];
+      }
 
-    if ($field_name == 'field_carousel_header_card2') {
-      $element['#states'] = [
-        'visible' => [
-          ':input[name="field_carousel_header_sec_layout"]' => [
-            'value' => 'cards_3',
+      // Image field in card 3.
+      if (isset($elements[$key]['subform']['field_card_image'])) {
+        $elements[$key]['subform']['field_card_image']['#states'] = [
+          'visible' => [
+            ':input[name="field_page_header[' . $parents[1] . '][subform][field_carousel_header_card3][' . $key . '][subform][field_card_variation]"]' => [
+              'value' => 'image',
+            ],
           ],
-        ],
-      ];
-    }
+        ];
+      }
 
-    if ($field_name == 'field_carousel_header_card3') {
-      $element['#states'] = [
-        'visible' => [
-          ':input[name="field_carousel_header_sec_layout"]' => [
-            'value' => 'cards_3',
-          ],
-        ],
-      ];
     }
   }
 
-  if ($bundle == 'cta') {
-    if ($field_name == 'field_cta_image') {
-      $element['#states'] = [
-        'visible' => [
-          ':input[name="field_cta_variation"]' => [
-            'value' => 'image',
-          ],
+}
+
+/**
+ * Implements hook_form_layout_paragraphs_component_form_alter().
+ */
+function custom_admin_form_layout_paragraphs_component_form_alter(array &$form, FormStateInterface &$form_state) {
+  $paragraph = $form['#paragraph'];
+  $paragraph_type = $paragraph->getType();
+
+  // Dynamic news paragraph.
+  if ($paragraph_type == 'news_summary_list_dynamic') {
+    // Show field "Other Number of Items" if field "Number of Items" is set
+    // to "Other".
+    $form['field_news_other_number_of_items']['#states'] = [
+      'visible' => [
+        ':input[name="field_news_number_of_items"]' => [
+          'value' => 'other',
         ],
-      ];
-    }
+      ],
+    ];
+
+    // Set field "Other Number of Items" to required is field "Number of
+    // Items" is set to "Other".
+    $form['field_news_other_number_of_items']['widget'][0]['value']['#states'] = [
+      'required' => [
+        ':input[name="field_news_number_of_items"]' => [
+          'value' => 'other',
+        ],
+      ],
+    ];
   }
 
-  //Quote PT 
-  if ($bundle == 'quote') {
-    if ($field_name == 'field_quote_image_main') {
-      $element['#states'] = [
-        'visible' => [
-          ':input[name="field_quote_variation"]' => [
-            'value' => 'image',
-          ],
+  // Dynamic events paragraph.
+  if ($paragraph_type == 'events_summary_list_dynamic') {
+    // Show field "Other Number of Items" if field "Number of Items" is set
+    // to "Other".
+    $form['field_events_other_number_items']['#states'] = [
+      'visible' => [
+        ':input[name="field_events_number_of_items"]' => [
+          'value' => 'other',
         ],
-      ];
-    }
+      ],
+    ];
 
-    if ($field_name == 'field_quote_image_small') {
-      $element['#states'] = [
-        'visible' => [
-          ':input[name="field_quote_variation"]' => [
-            'value' => 'image',
-          ],
+    // Set field "Other Number of Items" to required is field "Number of
+    // Items" is set to "Other".
+    $form['field_events_other_number_items']['widget'][0]['value']['#states'] = [
+      'required' => [
+        ':input[name="field_events_number_of_items"]' => [
+          'value' => 'other',
         ],
-      ];
-    }
+      ],
+    ];
   }
 
-  if($bundle == 'message') {
-    if ($field_name == 'field_message_divider') {
-      $element['#states'] = [
-        'visible' => [
-          ':input[name="field_message_variation"]' => [
-            'value' => 'blue',
-          ],
+  // Call to action paragraph.
+  if ($paragraph_type == 'cta') {
+    $form['field_cta_image']['#states'] = [
+      'visible' => [
+        ':input[name="field_cta_variation"]' => [
+          'value' => 'image',
         ],
-      ];
-    }
+      ],
+    ];
   }
 
-  if($bundle == 'image_section') {
-    if ($field_name == 'field_image_section_image_crop') {
-      $element['#states'] = [
-        'visible' => [
-          ':input[name="field_image_section_variation"]' => [
-            'value' => 'none',
-          ],
+  // Quote paragraph.
+  if ($paragraph_type == 'quote') {
+    $form['field_quote_image_main']['#states'] = [
+      'visible' => [
+        ':input[name="field_quote_variation"]' => [
+          'value' => 'image',
         ],
-      ];
-    }
+      ],
+    ];
+
+    $form['field_quote_image_small']['#states'] = [
+      'visible' => [
+        ':input[name="field_quote_variation"]' => [
+          'value' => 'image',
+        ],
+      ],
+    ];
   }
 
-  // PT: Card 
-  if($bundle == 'card') {
-    if ($field_name == 'field_card_illustration') {
-      $element['#states'] = [
-        'visible' => [
-          [
-            ':input[name="field_card_variation"]' => ['value' => 'illustration'],
-          ],
-          [
-            ':input[name="field_page_header[0][subform][field_carousel_header_card1][0][subform][field_card_variation]"]' => ['value' => 'illustration'],
-          ],
-          [
-            ':input[name="field_page_header[0][subform][field_carousel_header_card2][0][subform][field_card_variation]"]' => ['value' => 'illustration'],
-          ],
-          [
-            ':input[name="field_page_header[0][subform][field_carousel_header_card3][0][subform][field_card_variation]"]' => ['value' => 'illustration'],
-          ],
+  // Message paragraph.
+  if ($paragraph_type == 'message') {
+    $form['field_message_divider']['#states'] = [
+      'visible' => [
+        ':input[name="field_message_variation"]' => [
+          'value' => 'blue',
         ],
-      ];
-    }
-
-    if ($field_name == 'field_card_image') {
-      $element['#states'] = [
-        'visible' => [ 
-          [
-            ':input[name="field_card_variation"]' => ['value' => 'image'],
-          ], 
-          [
-            ':input[name="field_page_header[0][subform][field_carousel_header_card1][0][subform][field_card_variation]"]' => ['value' => 'image'],
-          ],
-          [
-            ':input[name="field_page_header[0][subform][field_carousel_header_card2][0][subform][field_card_variation]"]' => ['value' => 'image'],
-          ],
-          [
-            ':input[name="field_page_header[0][subform][field_carousel_header_card3][0][subform][field_card_variation]"]' => ['value' => 'image'],
-          ],
-        ],
-      ];
-    }
+      ],
+    ];
   }
+
+  // Image section paragraph.
+  if ($paragraph_type == 'image_section') {
+    $form['field_image_section_image_crop']['#states'] = [
+      'visible' => [
+        ':input[name="field_image_section_variation"]' => [
+          'value' => 'none',
+        ],
+      ],
+    ];
+  }
+
+  // Card paragraph.
+  if ($paragraph_type == 'card') {
+    $form['field_card_illustration']['#states'] = [
+      'visible' => [
+        ':input[name="field_card_variation"]' => [
+          'value' => 'illustration',
+        ],
+      ],
+    ];
+
+    $form['field_card_image']['#states'] = [
+      'visible' => [
+        ':input[name="field_card_variation"]' => [
+          'value' => 'image',
+        ],
+      ],
+    ];
+  }
+
 }
 
 
@@ -422,13 +474,6 @@ function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_stat
     $form['field_event_header_image_portra']['#states'] = [
       'visible' => [
         ':input[name="field_event_header_variation"]' => ['value' => 'portrait'],
-      ]
-    ];
-
-    // Show the "custom location" field
-    $form['field_event_custom_location']['#states'] = [
-      'visible' => [
-        ':input[name="field_event_location"]' => ['value' => 'custom'],
       ]
     ];
 
@@ -509,11 +554,14 @@ function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_stat
 function custom_admin_field_group_form_process(array &$element, &$group, &$complete_form) {
   $form = $complete_form;
 
-  $form['group_link']['#states'] = [
-    'visible' => [[
-      ':input[name="field_event_price"]' => ['value' => 'paid']
-    ]]
-  ];
+  if (isset($form['group_link'])) {
+    $form['group_link']['#states'] = [
+      'visible' => [[
+        ':input[name="field_event_price"]' => ['value' => 'paid']
+      ]]
+    ];
+  }
+
 }
 
 
@@ -587,29 +635,5 @@ function custom_admin_form_alter(&$form, FormStateInterface $form_state, $form_i
       }
     }
     // End Hiding fields depending on item menu level.
-  }
-}
-
-/**
- * Implements hook_field_group_build_pre_render_alter().
- */
-function custom_admin_field_group_form_process_build_alter(&$element) {
-
-  // Hide news field group if news content type is disabled.
-  if (isset($element['group_news'])) {
-    $element['group_news']['#states'] = [
-      'invisible' => [
-        ':input[name="field_site_disable_content[ed_news]"]' => ['checked' => TRUE]
-      ]
-    ];
-  }
-
-  // Hide Events field group if events content type is disabled.
-  if (isset($element['group_events'])) {
-    $element['group_events']['#states'] = [
-      'invisible' => [
-        ':input[name="field_site_disable_content[ed_event]"]' => ['checked' => TRUE]
-      ]
-    ];
   }
 }
