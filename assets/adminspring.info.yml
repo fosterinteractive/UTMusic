@@ -117,6 +117,7 @@ libraries-override:
         css/components/button.css: css/components/button.css
         css/components/form.css: css/components/form.css
         css/components/form--text.css: css/components/form--text.css
+        css/components/form--select.css: css/components/form--select.css
 
   layout_paragraphs/layout_select:
     css:
