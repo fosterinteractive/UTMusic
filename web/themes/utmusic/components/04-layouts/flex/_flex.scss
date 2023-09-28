@@ -24,11 +24,11 @@
     width: 100%;
   }
 
-  > *:first-child {
+  &.l-section__zone > *:first-child {
     margin-top: 0;
   }
 
-  > *:last-child {
+  &.l-section__zone > *:last-child {
     margin-bottom: 0;
   }
 
