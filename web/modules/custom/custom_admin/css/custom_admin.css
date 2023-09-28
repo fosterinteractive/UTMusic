@@ -1,15 +1,23 @@
-
-/* 
- * CKeditor 
- *
- */
+/*******
+ * CKEditor
+ *************/
 
 /* Adjust the size for the style panel */
 .cke_combo__styles .cke_combo_button .cke_combo_text {
-    width: 125px !important;
-  }
+  width: 125px !important;
+}
   
-  .cke_combopanel__styles {
-    width: 350px !important;
-  }
-  
+.cke_combopanel__styles {
+  width: 350px !important;
+}
+
+/*******
+ * Focal Point
+ *************/
+
+/**
+ * @see https://www.drupal.org/project/media_library_media_modify/issues/3382992
+ */
+.focal-point-preview-link {
+  display: none !important;
+}

@@ -15,6 +15,13 @@ use Drupal\Core\Render\Element;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
+ * Implements hook_page_attachments().
+ */
+function custom_admin_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'custom_admin/custom_admin';
+}
+
+/**
  * Implements template_preprocess_page().
  */
 function custom_admin_preprocess_html(&$variables) {
@@ -25,13 +32,6 @@ function custom_admin_preprocess_html(&$variables) {
       $variables['html_attributes']->addClass('is-loggedin');  
     }
   }
-}
-
-/**
- * Implements hook_page_attachments().
- */
-function custom_admin_page_attachments(array &$attachments) {
-  $attachments['#attached']['library'][] = 'custom_admin/custom_admin';
 }
 
 /**
