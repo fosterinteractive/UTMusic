@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d171c88409512aa91a3cfe6835088e76",
+    "content-hash": "63f825182591f878e8273ae9a5a662a2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -11492,25 +11492,25 @@
         },
         {
             "name": "fosterinteractive/adminspring-theme",
-            "version": "10.0.x-dev",
+            "version": "10.0.4",
             "source": {
                 "type": "git",
                 "url": "git@github.com:fosterinteractive/adminspring-theme.git",
-                "reference": "176b82a9c8ca79c30c7d81b3093c7afa4ac2223e"
+                "reference": "db8ec18907c5d4c770278e06fa680ffb2cc957b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fosterinteractive/adminspring-theme/zipball/176b82a9c8ca79c30c7d81b3093c7afa4ac2223e",
-                "reference": "176b82a9c8ca79c30c7d81b3093c7afa4ac2223e",
+                "url": "https://api.github.com/repos/fosterinteractive/adminspring-theme/zipball/db8ec18907c5d4c770278e06fa680ffb2cc957b4",
+                "reference": "db8ec18907c5d4c770278e06fa680ffb2cc957b4",
                 "shasum": ""
             },
             "type": "drupal-theme",
             "description": "Admin Content Editor Theme based on Claro",
             "support": {
-                "source": "https://github.com/fosterinteractive/adminspring-theme/tree/10.0.x",
+                "source": "https://github.com/fosterinteractive/adminspring-theme/tree/10.0.4",
                 "issues": "https://github.com/fosterinteractive/adminspring-theme/issues"
             },
-            "time": "2023-09-29T18:52:33+00:00"
+            "time": "2023-09-29T19:14:07+00:00"
         },
         {
             "name": "fosterinteractive/mainspring-profile",
@@ -17800,9 +17800,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "fosterinteractive/adminspring-theme": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
