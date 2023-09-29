@@ -11496,12 +11496,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:fosterinteractive/adminspring-theme.git",
-                "reference": "3bcac67e0c17e47ffbeec641c9a2f20cbcfac650"
+                "reference": "176b82a9c8ca79c30c7d81b3093c7afa4ac2223e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fosterinteractive/adminspring-theme/zipball/3bcac67e0c17e47ffbeec641c9a2f20cbcfac650",
-                "reference": "3bcac67e0c17e47ffbeec641c9a2f20cbcfac650",
+                "url": "https://api.github.com/repos/fosterinteractive/adminspring-theme/zipball/176b82a9c8ca79c30c7d81b3093c7afa4ac2223e",
+                "reference": "176b82a9c8ca79c30c7d81b3093c7afa4ac2223e",
                 "shasum": ""
             },
             "type": "drupal-theme",
@@ -11510,7 +11510,7 @@
                 "source": "https://github.com/fosterinteractive/adminspring-theme/tree/10.0.x",
                 "issues": "https://github.com/fosterinteractive/adminspring-theme/issues"
             },
-            "time": "2023-09-29T18:31:09+00:00"
+            "time": "2023-09-29T18:52:33+00:00"
         },
         {
             "name": "fosterinteractive/mainspring-profile",
