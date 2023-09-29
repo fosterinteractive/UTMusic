@@ -11496,12 +11496,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:fosterinteractive/adminspring-theme.git",
-                "reference": "b353732a136772ddf3f851c1bb2e9ec4885a2c73"
+                "reference": "fc361174005fa4572002b4e0a9ee0890755f5ce2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fosterinteractive/adminspring-theme/zipball/b353732a136772ddf3f851c1bb2e9ec4885a2c73",
-                "reference": "b353732a136772ddf3f851c1bb2e9ec4885a2c73",
+                "url": "https://api.github.com/repos/fosterinteractive/adminspring-theme/zipball/fc361174005fa4572002b4e0a9ee0890755f5ce2",
+                "reference": "fc361174005fa4572002b4e0a9ee0890755f5ce2",
                 "shasum": ""
             },
             "type": "drupal-theme",
@@ -11510,7 +11510,7 @@
                 "source": "https://github.com/fosterinteractive/adminspring-theme/tree/10.0.x",
                 "issues": "https://github.com/fosterinteractive/adminspring-theme/issues"
             },
-            "time": "2023-09-28T15:05:25+00:00"
+            "time": "2023-09-29T15:19:06+00:00"
         },
         {
             "name": "fosterinteractive/mainspring-profile",
@@ -13889,16 +13889,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.35",
+            "version": "1.10.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "e730e5facb75ffe09dfb229795e8c01a459f26c3"
+                "reference": "ffa3089511121a672e62969404e4fddc753f9b15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/e730e5facb75ffe09dfb229795e8c01a459f26c3",
-                "reference": "e730e5facb75ffe09dfb229795e8c01a459f26c3",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/ffa3089511121a672e62969404e4fddc753f9b15",
+                "reference": "ffa3089511121a672e62969404e4fddc753f9b15",
                 "shasum": ""
             },
             "require": {
@@ -13947,7 +13947,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-09-19T15:27:56+00:00"
+            "time": "2023-09-29T14:07:45+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
