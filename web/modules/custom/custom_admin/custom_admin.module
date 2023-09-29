@@ -462,6 +462,24 @@ function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_stat
     if (isset($form['field_people_research_profile']['widget'][0]['uri']['#description'])) {
       $form['field_people_research_profile']['widget'][0]['uri']['#description'] = t('Your DiscoverResearch Profile Eg. https://discover.research.utoronto.ca/123-your-name.');
     }
+
+    if (isset($form['field_people_role_new']['widget'])) {
+      // Remove none option from choices.
+      unset($form['field_people_role_new']['widget']['#options']['_none']);
+    }
+
+    if (isset($form['field_people_program']['widget'])) {
+      // Remove none option from choices.
+      unset($form['field_people_program']['widget']['#options']['_none']);
+    }
+  }
+
+  // Event edit / add form.
+  if ($form_id == 'node_event_form' || $form_id == 'node_event_edit_form' ) {
+    if (isset($form['field_event_area']['widget'])) {
+      // Remove none option from choices.
+      unset($form['field_event_area']['widget']['#options']['_none']);
+    }
   }
 }
 

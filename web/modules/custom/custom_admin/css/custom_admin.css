@@ -21,3 +21,46 @@
 .focal-point-preview-link {
   display: none !important;
 }
+
+/*******
+ * Choices
+ *************/
+
+.choices {
+  width: 400px;
+}
+
+.choices__list--multiple .choices__item {
+  display: flex;
+  margin-right: 0;
+  background-color: #003ecc;
+  background-color: var(--color-blue-600);
+  border-color: #003ecc;
+  border-color: var(--color-blue-600);
+}
+
+.choices__list--multiple .choices__item.is-highlighted {
+  background-color: var(--color-blue-800);
+  border-color: var(--color-blue-800);
+}
+
+.choices[data-type*=select-multiple] .choices__button,
+.choices[data-type*=text] .choices__button {
+  margin-left: auto;
+  border-left-color: #ffffff;
+  border-left-color: var(--color-white);
+  background-size: 10px;
+}
+
+.choices__input {
+  width: 100% !important;
+  background-color: #ffffff !important;
+  background-color: var(--color-white) !important;
+  border: 1px solid var(--input-border-color);
+}
+
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+  word-break: normal;
+  word-wrap: break-word;
+}
