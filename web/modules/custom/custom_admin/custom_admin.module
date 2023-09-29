@@ -472,6 +472,16 @@ function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_stat
       // Remove none option from choices.
       unset($form['field_people_program']['widget']['#options']['_none']);
     }
+
+    if (isset($form['field_people_instrument']['widget'])) {
+      // Remove none option from choices.
+      unset($form['field_people_instrument']['widget']['#options']['_none']);
+    }
+
+    if (isset($form['field_people_area']['widget'])) {
+      // Remove none option from choices.
+      unset($form['field_people_area']['widget']['#options']['_none']);
+    }
   }
 
   // Event edit / add form.
