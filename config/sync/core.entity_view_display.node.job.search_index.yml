@@ -1,8 +1,9 @@
-uuid: a81010b1-0616-4085-abe8-f3c5c2bfed4a
+uuid: a15b51cd-278c-46a8-8cb0-86efd610ba06
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_index
     - field.field.node.job.field_job_body
     - field.field.node.job.field_job_category
     - field.field.node.job.field_job_closing_date
@@ -15,12 +16,17 @@ dependencies:
     - node.type.job
   module:
     - datetime
+    - layout_builder
     - text
     - user
-id: node.job.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.job.search_index
 targetEntityType: node
 bundle: job
-mode: default
+mode: search_index
 content:
   content_moderation_control:
     settings: {  }

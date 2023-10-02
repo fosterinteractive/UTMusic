@@ -1,0 +1,328 @@
+uuid: bfa9ab20-bc5b-485f-a699-149f52d8836b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.people.field_page_admin_help_seo
+    - field.field.node.people.field_page_admin_help_social
+    - field.field.node.people.field_page_meta_description
+    - field.field.node.people.field_page_meta_image
+    - field.field.node.people.field_page_meta_title
+    - field.field.node.people.field_people_activities
+    - field.field.node.people.field_people_area
+    - field.field.node.people.field_people_background
+    - field.field.node.people.field_people_creative_works
+    - field.field.node.people.field_people_custom_content
+    - field.field.node.people.field_people_education
+    - field.field.node.people.field_people_email
+    - field.field.node.people.field_people_enable_media
+    - field.field.node.people.field_people_faculty_position
+    - field.field.node.people.field_people_featured_media
+    - field.field.node.people.field_people_image
+    - field.field.node.people.field_people_instrument
+    - field.field.node.people.field_people_job_title
+    - field.field.node.people.field_people_job_title_library
+    - field.field.node.people.field_people_job_title_staff
+    - field.field.node.people.field_people_last_name
+    - field.field.node.people.field_people_name
+    - field.field.node.people.field_people_phone
+    - field.field.node.people.field_people_profile_type
+    - field.field.node.people.field_people_program
+    - field.field.node.people.field_people_pronouns
+    - field.field.node.people.field_people_pronunciation
+    - field.field.node.people.field_people_research_profile
+    - field.field.node.people.field_people_role
+    - field.field.node.people.field_people_role_new
+    - field.field.node.people.field_people_staff_position
+    - field.field.node.people.field_people_teaching
+    - field.field.node.people.field_people_website
+    - node.type.people
+  module:
+    - file
+    - layout_builder
+    - link
+    - markup
+    - options
+    - telephone
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.people.search_index
+targetEntityType: node
+bundle: people
+mode: search_index
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_page_admin_help_seo:
+    type: markup
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 123
+    region: content
+  field_page_admin_help_social:
+    type: markup
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 124
+    region: content
+  field_page_meta_description:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 126
+    region: content
+  field_page_meta_image:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 127
+    region: content
+  field_page_meta_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 125
+    region: content
+  field_people_activities:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 117
+    region: content
+  field_people_area:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_people_background:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 116
+    region: content
+  field_people_creative_works:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 119
+    region: content
+  field_people_custom_content:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  field_people_education:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_people_email:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_people_enable_media:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 121
+    region: content
+  field_people_faculty_position:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_people_featured_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 122
+    region: content
+  field_people_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 131
+    region: content
+  field_people_instrument:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_people_job_title:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 130
+    region: content
+  field_people_job_title_library:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 133
+    region: content
+  field_people_job_title_staff:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 132
+    region: content
+  field_people_last_name:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_people_name:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_people_phone:
+    type: telephone_link
+    label: hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+    weight: 128
+    region: content
+  field_people_profile_type:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_people_program:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 134
+    region: content
+  field_people_pronouns:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_people_pronunciation:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 129
+    region: content
+  field_people_research_profile:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_people_role:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_people_role_new:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 135
+    region: content
+  field_people_staff_position:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_people_teaching:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 118
+    region: content
+  field_people_website:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

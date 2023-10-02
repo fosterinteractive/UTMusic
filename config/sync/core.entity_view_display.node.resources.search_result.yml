@@ -1,8 +1,9 @@
-uuid: 7d08cd1e-15a5-49c2-bb17-46554396f7b2
+uuid: d5e9edcb-95d8-4287-911c-b2e1e4d5187b
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_result
     - field.field.node.resources.field_resources_category
     - field.field.node.resources.field_resources_description
     - field.field.node.resources.field_resources_form
@@ -12,14 +13,19 @@ dependencies:
     - field.field.node.resources.field_resources_undergrad_cat
     - node.type.resources
   module:
+    - layout_builder
     - options
     - text
     - user
     - webform
-id: node.resources.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.resources.search_result
 targetEntityType: node
 bundle: resources
-mode: default
+mode: search_result
 content:
   content_moderation_control:
     settings: {  }

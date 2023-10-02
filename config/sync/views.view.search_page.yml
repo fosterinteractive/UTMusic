@@ -231,11 +231,14 @@ display:
         options:
           view_modes:
             'entity:node':
-              ed_event: search_result
-              ed_landing_page: search_result
-              ed_news: search_result
-              ed_page: search_result
-              ed_person: search_result
+              ed_notice: search_result
+              event: search_result
+              job: search_result
+              news: search_result
+              page: search_result
+              people: search_result
+              program: search_result
+              resources: search_result
       query:
         type: search_api_query
         options:
@@ -256,6 +259,7 @@ display:
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.content_index'
+        - 'search_api_list:content_index'
   search_page:
     id: search_page
     display_title: Page
@@ -275,3 +279,4 @@ display:
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.content_index'
+        - 'search_api_list:content_index'

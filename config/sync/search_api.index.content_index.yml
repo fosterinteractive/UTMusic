@@ -90,13 +90,8 @@ field_settings:
 datasource_settings:
   'entity:node':
     bundles:
-      default: false
-      selected:
-        - ed_event
-        - ed_landing_page
-        - ed_news
-        - ed_page
-        - ed_person
+      default: true
+      selected: {  }
     languages:
       default: true
       selected: {  }
@@ -107,12 +102,14 @@ processor_settings:
     weights:
       preprocess_query: -30
   entity_status: {  }
+  entity_type: {  }
   highlight:
     weights:
       postprocess_query: 0
     prefix: '<strong>'
     suffix: '</strong>'
     excerpt: true
+    excerpt_always: false
     excerpt_length: 256
     exclude_fields: {  }
     highlight: always
