@@ -185,6 +185,9 @@
             "drupal/audiorecorder": {
                 "3316491 - No save in theme 'Gin'": "https://www.drupal.org/files/issues/2023-04-21/audiorecorder-rc1-no-save-in-theme-gin-3316491.patch"
             },
+            "drupal/media_contextual_crop": {
+                "3390497 - Performance issues with many images on page": "https://git.drupalcode.org/project/media_contextual_crop/-/commit/b9eeb66e8f22b5fd0d2c17994f3a0feb7d739c19.patch"
+            },
             "drupal/media_entity_link": {
                 "3223918 - PHP8 error validateUriElement() must be static": "https://www.drupal.org/files/issues/2021-07-16/static_function_validateurielement-3223918-02.patch"
             }
