@@ -18,6 +18,16 @@
 /******************************************************************************/
 
 // Add Styles here.
-// .adminspring-preview .some-class {
-//   outline: 1px solid blue;
+// .adminspring-preview .m-text {
+//   outline: 1px solid pink;
 // }
+
+// Header paragraphs.
+.field--name-field-page-header .adminspring-preview {
+  margin: 15px 0 0 0 !important;
+  padding: 0 !important;
+}
+
+.adminspring-preview .o-hero-media__tabs {
+  display: none;
+}

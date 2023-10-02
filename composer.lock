@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d171c88409512aa91a3cfe6835088e76",
+    "content-hash": "63f825182591f878e8273ae9a5a662a2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -11492,25 +11492,25 @@
         },
         {
             "name": "fosterinteractive/adminspring-theme",
-            "version": "10.0.x-dev",
+            "version": "10.0.4",
             "source": {
                 "type": "git",
                 "url": "git@github.com:fosterinteractive/adminspring-theme.git",
-                "reference": "b353732a136772ddf3f851c1bb2e9ec4885a2c73"
+                "reference": "db8ec18907c5d4c770278e06fa680ffb2cc957b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fosterinteractive/adminspring-theme/zipball/b353732a136772ddf3f851c1bb2e9ec4885a2c73",
-                "reference": "b353732a136772ddf3f851c1bb2e9ec4885a2c73",
+                "url": "https://api.github.com/repos/fosterinteractive/adminspring-theme/zipball/db8ec18907c5d4c770278e06fa680ffb2cc957b4",
+                "reference": "db8ec18907c5d4c770278e06fa680ffb2cc957b4",
                 "shasum": ""
             },
             "type": "drupal-theme",
             "description": "Admin Content Editor Theme based on Claro",
             "support": {
-                "source": "https://github.com/fosterinteractive/adminspring-theme/tree/10.0.x",
+                "source": "https://github.com/fosterinteractive/adminspring-theme/tree/10.0.4",
                 "issues": "https://github.com/fosterinteractive/adminspring-theme/issues"
             },
-            "time": "2023-09-28T15:05:25+00:00"
+            "time": "2023-09-29T19:14:07+00:00"
         },
         {
             "name": "fosterinteractive/mainspring-profile",
@@ -13889,16 +13889,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.35",
+            "version": "1.10.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "e730e5facb75ffe09dfb229795e8c01a459f26c3"
+                "reference": "ffa3089511121a672e62969404e4fddc753f9b15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/e730e5facb75ffe09dfb229795e8c01a459f26c3",
-                "reference": "e730e5facb75ffe09dfb229795e8c01a459f26c3",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/ffa3089511121a672e62969404e4fddc753f9b15",
+                "reference": "ffa3089511121a672e62969404e4fddc753f9b15",
                 "shasum": ""
             },
             "require": {
@@ -13947,7 +13947,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-09-19T15:27:56+00:00"
+            "time": "2023-09-29T14:07:45+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -17800,9 +17800,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "fosterinteractive/adminspring-theme": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],

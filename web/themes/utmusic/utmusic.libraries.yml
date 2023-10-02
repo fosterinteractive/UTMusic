@@ -14,10 +14,10 @@ global:
     - core/jquery.once
     - core/drupal.announce
 
-# adminspring:
-#   css:
-#     theme:
-#       adminspring/overrides.css: {}
+adminspring:
+  css:
+    theme:
+      dist/adminspring.css: {}
 
 # typekit:
 #   header: true

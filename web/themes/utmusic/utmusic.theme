@@ -521,6 +521,18 @@ function utmusic_get_node_from_route() {
 }
 
 /**
+ * Implements hook_form_alter().
+ */
+function utmusic_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $active_theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
+  // Add the adminspring overrides to the forms that use the adminspring theme.
+  if ($active_theme == 'adminspring') {
+    // Ad the css variable colors to the form.
+    $form['#attached']['library'][] = 'utmusic/adminspring';
+  }
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function utmusic_theme_suggestions_menu_alter(array &$suggestions, array $variables) {

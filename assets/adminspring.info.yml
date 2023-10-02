@@ -116,6 +116,7 @@ libraries-override:
       component:
         css/components/button.css: css/components/button.css
         css/components/form.css: css/components/form.css
+        css/components/form--checkbox-radio.css: css/components/form--checkbox-radio.css
         css/components/form--text.css: css/components/form--text.css
         css/components/form--select.css: css/components/form--select.css
 
