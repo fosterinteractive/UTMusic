@@ -262,6 +262,25 @@
   }
 }
 
+.adminspring-preview {
+  .a-button--left {
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  
+  .a-button--center {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .a-button--right {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
 // Text Button appear visually like a-links
 // They are used when text buttons appear next to buttons to allow them align vertically
 
