@@ -375,6 +375,20 @@ display:
         options:
           offset: 0
           items_per_page: 1
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<h2 class="a-heading__h3 a-heading--top-spacer">“No featured event was found.”</h2>'
+            format: rich_text
+          tokenize: false
       arguments:
         field_event_promote_target_id:
           id: field_event_promote_target_id
@@ -570,6 +584,7 @@ display:
           relationship: none
           view_mode: featured
       defaults:
+        empty: false
         title: false
         pager: false
         style: false
