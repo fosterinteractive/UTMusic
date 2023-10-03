@@ -141,13 +141,15 @@
   {% set people_view_items = people_view_items|merge([row.content]) %}
 {% endfor %}
 
-{# We extract 1 because in template for carousel we count from 0 #}
-{% set auto_people_view_items = people_view_items|length - 1 %}
 
-{% if auto_people_view_items|length  %}
+{# hide Faculty section  #}
+{# We extract 1 because in template for carousel we count from 0 #}
+{# {% set auto_people_view_items = people_view_items|length - 1 %} #}
+
+{# {% if auto_people_view_items|length  %} #}
   {# We prepare view of related people to program on theme preprocess  #}
-  {% set faculty = content.people_related_to_programs %}
-{% endif %}
+  {# {% set faculty = content.people_related_to_programs %} #}
+{# {% endif %} #}
 
 
 {% include "@layouts/main/main--program.twig" with {
