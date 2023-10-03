@@ -114,7 +114,7 @@ third_party_settings:
       label: Content
       region: content
       parent_name: ''
-      weight: 3
+      weight: 2
       format_type: details
       format_settings:
         classes: ''
@@ -130,7 +130,7 @@ third_party_settings:
       label: 'Featured Media'
       region: content
       parent_name: ''
-      weight: 4
+      weight: 3
       format_type: details
       format_settings:
         classes: ''
@@ -149,7 +149,7 @@ third_party_settings:
       label: 'Search Engines & Social Share (Advanced)'
       region: content
       parent_name: ''
-      weight: 5
+      weight: 4
       format_type: details
       format_settings:
         classes: ''
@@ -192,9 +192,9 @@ third_party_settings:
       children:
         - field_people_program
       label: 'Programs List'
-      region: content
+      region: hidden
       parent_name: ''
-      weight: 2
+      weight: 15
       format_type: details
       format_settings:
         classes: ''
@@ -210,7 +210,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -637,13 +637,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_people_program:
-    type: choices_widget
-    weight: 48
-    region: content
-    settings:
-      configuration_options: ''
-    third_party_settings: {  }
   field_people_pronouns:
     type: text_textfield
     weight: 14
@@ -749,19 +742,19 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   revision_log:
     type: hide_revision_field_log_widget
-    weight: 12
+    weight: 11
     region: content
     settings:
       rows: 5
@@ -772,20 +765,20 @@ content:
       allow_user_settings: true
     third_party_settings: {  }
   simple_sitemap:
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 9
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 9
     region: content
     settings:
       match_operator: CONTAINS
@@ -794,11 +787,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_people_program: true
   promote: true
   sticky: true
   title: true
