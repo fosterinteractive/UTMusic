@@ -26,11 +26,13 @@
  * Choices
  *************/
 
-.choices {
-  width: 400px;
+.choices,
+.layout-paragraphs-component-form .choices {
+  width: 350px;
 }
 
-.choices__list--multiple .choices__item {
+.choices__list--multiple .choices__item,
+.layout-paragraphs-component-form .choices__list--multiple .choices__item {
   display: flex;
   margin-right: 0;
   background-color: #003ecc;
@@ -39,20 +41,24 @@
   border-color: var(--color-blue-600);
 }
 
-.choices__list--multiple .choices__item.is-highlighted {
+.choices__list--multiple .choices__item.is-highlighted,
+.layout-paragraphs-component-form .choices__list--multiple .choices__item.is-highlighted {
   background-color: var(--color-blue-800);
   border-color: var(--color-blue-800);
 }
 
 .choices[data-type*=select-multiple] .choices__button,
-.choices[data-type*=text] .choices__button {
+.choices[data-type*=text] .choices__button,
+.layout-paragraphs-component-form .choices[data-type*=select-multiple] .choices__button,
+.layout-paragraphs-component-form .choices[data-type*=text] .choices__button {
   margin-left: auto;
   border-left-color: #ffffff;
   border-left-color: var(--color-white);
   background-size: 10px;
 }
 
-.choices__input {
+.choices__input,
+.layout-paragraphs-component-form .choices__input {
   width: 100% !important;
   background-color: #ffffff !important;
   background-color: var(--color-white) !important;
@@ -60,7 +66,9 @@
 }
 
 .choices__list--dropdown,
-.choices__list[aria-expanded] {
+.choices__list[aria-expanded],
+.layout-paragraphs-component-form .choices__list--dropdown,
+.layout-paragraphs-component-form .choices__list[aria-expanded] {
   word-break: normal;
   word-wrap: break-word;
 }

@@ -360,6 +360,16 @@ function custom_admin_form_layout_paragraphs_component_form_alter(array &$form, 
         ],
       ],
     ];
+
+    if (isset($form['field_event_context_area']['widget'])) {
+      // Remove none option from choices.
+      unset($form['field_event_context_area']['widget']['#options']['_none']);
+    }
+
+    if (isset($form['field_events_category']['widget'])) {
+      // Remove none option from choices.
+      unset($form['field_events_category']['widget']['#options']['_none']);
+    }
   }
 
   // Call to action paragraph.

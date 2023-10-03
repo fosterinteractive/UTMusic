@@ -79,6 +79,7 @@ function utmusic_preprocess_page(&$variables) {
  */
 function utmusic_preprocess_paragraph(array &$variables) {
   $paragraph = $variables['paragraph'];
+  $pid = $paragraph->id();
   $paragraph_type = $paragraph->getType();
   $paragraph_view_mode = $variables['view_mode'];
 
@@ -289,9 +290,9 @@ function utmusic_preprocess_paragraph(array &$variables) {
         $status = $paragraph->hasField($field_mapping[$type]['status']) && !$paragraph->{$field_mapping[$type]['status']}->isEmpty() ? $paragraph->{$field_mapping[$type]['status']}->value : NULL;
 
         if ($status == 'upcoming') {
-          $variables['content']['events_summary_list_upcoming'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_upcoming', $number_items, $categories, $dynamic_title, $offset);
+          $variables['content']['events_summary_list_upcoming'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_upcoming', $number_items, $categories, $dynamic_title, $offset, NULL, NULL, NULL, NULL, NULL, NULL, 'paragraph:' . $pid);
         } else {
-          $variables['content']['events_summary_list_past'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_past', $number_items, $categories,  $dynamic_title, $offset);
+          $variables['content']['events_summary_list_past'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_past', $number_items, $categories,  $dynamic_title, $offset, NULL, NULL, NULL, NULL, NULL, NULL, 'paragraph:' . $pid);
         }
       }
       elseif ($paragraph_type == 'event_featured_item') {
@@ -451,7 +452,7 @@ function utmusic_preprocess_views_view_unformatted(array &$variables) {
  *
  * used to render a view allowing us to pass contextual arguments to the view.
  */
-function utmusic_return_rendered_view($view, $display, $items = NULL, $categories = [], $title = NULL, $offset = NULL, $layout = NULL, $button_url = NULL, $button_label = NULL, $button_a11y = NULL, $program_types = NULL, $show_filter = NULL) {
+function utmusic_return_rendered_view($view, $display, $items = NULL, $categories = [], $title = NULL, $offset = NULL, $layout = NULL, $button_url = NULL, $button_label = NULL, $button_a11y = NULL, $program_types = NULL, $show_filter = NULL, $cache_key = NULL) {
   $args = [];
 
   if (isset($categories['promote'])) {
@@ -486,6 +487,11 @@ function utmusic_return_rendered_view($view, $display, $items = NULL, $categorie
   
   // Render filtered view.
   $render_view = $filtered_view->render();
+  dpm($cache_key);
+  if ($cache_key) {
+    $render_view['#cache']['keys'][] = $cache_key;
+  }
+  dpm($render_view);
 
   return $render_view;
 }
