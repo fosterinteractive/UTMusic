@@ -466,8 +466,6 @@ function utmusic_return_rendered_view($view, $display, $items = NULL, $categorie
     $args[] = $categories['category2'];
   }
 
-  ksm($categories['category1']);
-
   $args = array_merge($args, [
     $items,
     $title,
