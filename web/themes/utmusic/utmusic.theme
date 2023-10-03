@@ -487,11 +487,10 @@ function utmusic_return_rendered_view($view, $display, $items = NULL, $categorie
   
   // Render filtered view.
   $render_view = $filtered_view->render();
-  dpm($cache_key);
+
   if ($cache_key) {
     $render_view['#cache']['keys'][] = $cache_key;
   }
-  dpm($render_view);
 
   return $render_view;
 }
