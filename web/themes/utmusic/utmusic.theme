@@ -162,8 +162,8 @@ function utmusic_preprocess_paragraph(array &$variables) {
         'title' => null,
         'contextual' => [
           'category1' => 'field_program_full_list_stream',
+          'category2' => 'field_program_full_list_type',
         ],
-        'program_type' => 'field_program_full_list_type',
         'show_filter' => 'field_program_full_list_show_fil',
         'number_items' => null,
         'number_other_items' => null,
@@ -205,27 +205,6 @@ function utmusic_preprocess_paragraph(array &$variables) {
       $number_items = $number_items_value;
     }
 
-    // Check if the value for program_type is defined 
-    if (isset($field_mapping[$type]['program_type'])) {
-      $program_types = '';
-
-      // Get value of field "program_type"
-      $contextual_type = $paragraph->hasField($field_mapping[$type]['program_type']) && !$paragraph->{$field_mapping[$type]['program_type']}->isEmpty() ? $paragraph->{$field_mapping[$type]['program_type']} : '';
-
-      $type_args = 'all';
-      $program_type_ids = '';
-      if (!empty($contextual_type)) {
-        foreach ($contextual_type as $filter_type) {
-          $id = $filter_type->get('target_id')->getValue();
-          $program_type_ids .= $id . '+';
-        }
-
-        $type_args = substr($program_type_ids, 0, -1);
-      }
-
-      $program_types =  $type_args;
-    }
-
     // Set the contextual filters. These filters are setup to be the 1st
     // argument on the view and multiple fields (taxonomies) are combined.
     $categories = [];
@@ -243,12 +222,7 @@ function utmusic_preprocess_paragraph(array &$variables) {
         }
         $arg = substr($category_ids, 0, -1);
       // if the contextual filters are empty
-      } else {
-        // Check if the program_types is set
-        if (isset($program_types)){
-          $arg = $program_types;
-        }
-      }
+      } 
 
       $categories[$field_type] = $arg;
     }
@@ -299,7 +273,7 @@ function utmusic_preprocess_paragraph(array &$variables) {
         $variables['content']['event_featured_item'] = utmusic_return_rendered_view('events_full_list', 'events_featured_item', null , $categories, $dynamic_title, $offset);
       }
       elseif ($paragraph_type == 'programs_full_list_dynamic') {
-        $variables['content']['programs_full_list_dynamic'] = utmusic_return_rendered_view('programs_full_list', 'programs_full_list', null , $categories, null, null, $program_types, $show_filter);
+        $variables['content']['programs_full_list_dynamic'] = utmusic_return_rendered_view('programs_full_list', 'programs_full_list', null , $categories, null, null, $show_filter);
       }
       elseif ($paragraph_type == 'job_listing') {
         $variables['content']['job_listing_block'] = utmusic_return_rendered_view('jobs_full_list', 'job_listing_block', $number_items , $categories, null, $offset, null, null);
@@ -452,7 +426,7 @@ function utmusic_preprocess_views_view_unformatted(array &$variables) {
  *
  * used to render a view allowing us to pass contextual arguments to the view.
  */
-function utmusic_return_rendered_view($view, $display, $items = NULL, $categories = [], $title = NULL, $offset = NULL, $layout = NULL, $button_url = NULL, $button_label = NULL, $button_a11y = NULL, $program_types = NULL, $show_filter = NULL, $cache_key = NULL) {
+function utmusic_return_rendered_view($view, $display, $items = NULL, $categories = [], $title = NULL, $offset = NULL, $layout = NULL, $button_url = NULL, $button_label = NULL, $button_a11y = NULL, $show_filter = NULL, $cache_key = NULL) {
   $args = [];
 
   if (isset($categories['promote'])) {
@@ -474,7 +448,6 @@ function utmusic_return_rendered_view($view, $display, $items = NULL, $categorie
     $button_url,
     $button_label,
     $button_a11y,
-    $program_types,
     $show_filter
   ]);
   
