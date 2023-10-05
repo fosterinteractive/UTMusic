@@ -617,6 +617,20 @@ display:
         options:
           offset: 0
           items_per_page: 4
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<h2 class="a-heading__h3 a-heading--top-spacer">No past events were found.</h2>'
+            format: rich_text
+          tokenize: false
       sorts:
         field_event_date_value:
           id: field_event_date_value
@@ -843,6 +857,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         title: false
         pager: false
         sorts: false
@@ -874,6 +889,20 @@ display:
         options:
           offset: 0
           items_per_page: 4
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<h2 class="a-heading__h3 a-heading--top-spacer">No upcoming events were found.</h2>'
+            format: rich_text
+          tokenize: false
       arguments:
         field_event_promote_target_id:
           id: field_event_promote_target_id
@@ -1057,6 +1086,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         title: false
         pager: false
         arguments: false
@@ -1101,6 +1131,20 @@ display:
             offset: false
             offset_label: Offset
           quantity: 9
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<h2 class="a-heading__h3 a-heading--top-spacer">No past events were found.</h2>'
+            format: rich_text
+          tokenize: false
       sorts:
         field_event_date_value:
           id: field_event_date_value
@@ -1312,6 +1356,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         pager: false
         sorts: false
         filters: false
@@ -1589,6 +1634,20 @@ display:
             offset: false
             offset_label: Offset
           quantity: 9
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<h2 class="a-heading__h3 a-heading--top-spacer">No upcoming events were found.</h2>'
+            format: rich_text
+          tokenize: false
       filters:
         status:
           id: status
@@ -1769,6 +1828,7 @@ display:
           relationship: none
           view_mode: listing_item_condensed
       defaults:
+        empty: false
         pager: false
         style: false
         row: false
