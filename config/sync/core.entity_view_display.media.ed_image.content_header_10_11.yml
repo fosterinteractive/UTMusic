@@ -10,11 +10,11 @@ dependencies:
     - field.field.media.ed_image.field_img_related_area
     - field.field.media.ed_image.field_img_related_people
     - field.field.media.ed_image.field_img_related_program
+    - image.style.image_10_11_400x440
     - media.type.ed_image
-    - responsive_image.styles.carousel_content_header_10_11
   module:
     - layout_builder
-    - svg_image_responsive
+    - svg_image
 third_party_settings:
   layout_builder:
     enabled: false
@@ -27,11 +27,11 @@ bundle: ed_image
 mode: content_header_10_11
 content:
   field_ed_image_image:
-    type: responsive_image
+    type: image
     label: hidden
     settings:
-      responsive_image_style: carousel_content_header_10_11
       image_link: ''
+      image_style: image_10_11_400x440
       image_loading:
         attribute: lazy
       svg_attributes:
