@@ -13,8 +13,8 @@ effects:
     id: focal_point_crop
     weight: -10
     data:
-      width: 800
-      height: 880
+      width: 400
+      height: 440
       crop_type: focal_point
   88239f39-3b3a-4c4a-84bb-46dfc3d8434a:
     uuid: 88239f39-3b3a-4c4a-84bb-46dfc3d8434a
@@ -22,11 +22,3 @@ effects:
     weight: -8
     data:
       quality: 80
-  0a0cb24a-de17-4bcf-9132-d6f65751d790:
-    uuid: 0a0cb24a-de17-4bcf-9132-d6f65751d790
-    id: image_scale
-    weight: -9
-    data:
-      width: 400
-      height: 440
-      upscale: false
