@@ -11,7 +11,7 @@ effects:
   99c72f55-3c7a-46d3-beb5-1fffc7530ddf:
     uuid: 99c72f55-3c7a-46d3-beb5-1fffc7530ddf
     id: focal_point_crop
-    weight: 1
+    weight: -10
     data:
       width: 400
       height: 560
@@ -19,6 +19,6 @@ effects:
   64cdb08c-7557-45d8-b498-9c057caa8694:
     uuid: 64cdb08c-7557-45d8-b498-9c057caa8694
     id: image_style_quality
-    weight: 2
+    weight: -8
     data:
       quality: 80

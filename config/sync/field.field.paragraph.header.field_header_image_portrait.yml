@@ -13,7 +13,7 @@ field_name: field_header_image_portrait
 entity_type: paragraph
 bundle: header
 label: Image
-description: 'Choose image from Media library and then press "edit" button for specifying its alternative text and crop Portrait shape, then press save '
+description: ''
 required: false
 translatable: false
 default_value: {  }
