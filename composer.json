@@ -104,7 +104,8 @@
         "drupal/similarterms": "1.6",
         "drupal/views_autosubmit": "1.5",
         "rvtraveller/qs-composer-installer": "^1.2",
-        "topfloor/composer-cleanup-vcs-dirs": "^1"
+        "topfloor/composer-cleanup-vcs-dirs": "^1",
+        "drupal/media_library_media_modify_focal_point": "1.0.0-alpha1"
     },
     "require-dev": {
         "drupal/coder": "^8.3"

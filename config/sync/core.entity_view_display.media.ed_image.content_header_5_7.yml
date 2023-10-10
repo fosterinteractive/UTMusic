@@ -1,43 +1,43 @@
-uuid: 9091a03f-6761-4c4e-a9ec-21396f30d597
+uuid: bf99e3e8-b859-40f3-b9cd-60ffb53ea5e6
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.mode_crop_10_11
+    - core.entity_view_mode.media.content_header_5_7
     - field.field.media.ed_image.field_ed_image_height
     - field.field.media.ed_image.field_ed_image_image
     - field.field.media.ed_image.field_ed_image_width
     - field.field.media.ed_image.field_img_related_area
     - field.field.media.ed_image.field_img_related_people
     - field.field.media.ed_image.field_img_related_program
-    - image.style.crop_style_10_11
     - media.type.ed_image
+    - responsive_image.styles.carousel_header_5_7
   module:
     - layout_builder
-    - svg_image
+    - svg_image_responsive
 third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
 _core:
   default_config_hash: 4Q96_wsD8CxvQk3QzgFNJctxtmU-GosAA4ioTkO2MMw
-id: media.ed_image.mode_crop_10_11
+id: media.ed_image.content_header_5_7
 targetEntityType: media
 bundle: ed_image
-mode: mode_crop_10_11
+mode: content_header_5_7
 content:
   field_ed_image_image:
-    type: image
+    type: responsive_image
     label: hidden
     settings:
+      responsive_image_style: carousel_header_5_7
       image_link: ''
-      image_style: crop_style_10_11
+      image_loading:
+        attribute: lazy
       svg_attributes:
         width: null
         height: null
       svg_render_as_image: true
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content

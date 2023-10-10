@@ -1,0 +1,24 @@
+uuid: 8f3a830b-cd41-4075-a5f5-370e68c7c0b6
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+    - image_style_quality
+name: sliding_door_9_4_1170x520
+label: 'Sliding Door 9:4 (1170x520 @80%)'
+effects:
+  a75a84e1-c599-4c9b-8d04-d3c36d4911aa:
+    uuid: a75a84e1-c599-4c9b-8d04-d3c36d4911aa
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1170
+      height: 520
+      crop_type: focal_point
+  8aaafbe8-eb74-4172-b14a-82182a7585ef:
+    uuid: 8aaafbe8-eb74-4172-b14a-82182a7585ef
+    id: image_style_quality
+    weight: 2
+    data:
+      quality: 80

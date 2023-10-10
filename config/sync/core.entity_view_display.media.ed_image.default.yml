@@ -26,43 +26,22 @@ content:
     settings:
       image_link: ''
       image_style: large
+      image_loading:
+        attribute: lazy
       svg_attributes:
         width: null
         height: null
       svg_render_as_image: true
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_img_related_area:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_img_related_people:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_img_related_program:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 3
     region: content
 hidden:
   created: true
   field_ed_image_height: true
   field_ed_image_width: true
+  field_img_related_area: true
+  field_img_related_people: true
+  field_img_related_program: true
   name: true
   search_api_excerpt: true
   thumbnail: true

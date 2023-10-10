@@ -1,0 +1,24 @@
+uuid: 0bc72c53-e315-4ab4-bfec-f22635607639
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+    - image_style_quality
+name: quote_small_image_10_11_300x330
+label: 'Quote Small Image 10:11 (300x330 @80%)'
+effects:
+  d72ace4b-bd1b-446a-89c0-f73b15edd842:
+    uuid: d72ace4b-bd1b-446a-89c0-f73b15edd842
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 330
+      crop_type: focal_point
+  6b6049c4-ae6a-4812-afd6-07c8f0c069b7:
+    uuid: 6b6049c4-ae6a-4812-afd6-07c8f0c069b7
+    id: image_style_quality
+    weight: 2
+    data:
+      quality: 80

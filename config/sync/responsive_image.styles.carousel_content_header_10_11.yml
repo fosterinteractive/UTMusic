@@ -1,0 +1,21 @@
+uuid: 5760824c-f0e0-4fdd-a106-99fd6637948f
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.image_10_11_300x330
+    - image.style.image_10_11_400x440
+id: carousel_content_header_10_11
+label: 'Carousel / Content Header 10:11'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width:768px) 280px, 50vw'
+      sizes_image_styles:
+        - image_10_11_300x330
+        - image_10_11_400x440
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: image_10_11_400x440

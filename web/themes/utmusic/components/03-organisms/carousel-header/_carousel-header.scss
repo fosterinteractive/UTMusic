@@ -21,7 +21,7 @@
 .o-hero-media--carousel__bg-decoration {
   @extend %o-hero-media__bg-decoration;
 
-  grid-row: 1/ span 3 !important;
+  grid-row: 1 / span 3 !important;
 }
 
 .o-hero-media--carousel__image {
@@ -29,8 +29,8 @@
   position: relative;
 
   @include breakpoint($bp-tablet) {
-    grid-row: 3 / span 3;
-    grid-column: col 7/ span 6;
+    grid-column: 7 col / span 6;
+    grid-row:  3 / span 3;
     padding-top: var(--spacer);
   }
 }
@@ -38,7 +38,7 @@
 .o-hero-media--carousel__image-button {
   position: absolute;
   right: 0;
-  top: calc(var(--spacer)*1.2);
+  top: calc(var(--spacer) * 1.2);
   z-index: 1;
   width: rem(55px);
   height: rem(55px);

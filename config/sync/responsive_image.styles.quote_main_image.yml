@@ -1,0 +1,23 @@
+uuid: c0b23825-d5d2-45f6-8802-5486981fa292
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.landscape_13_10_500x385
+    - image.style.landscape_13_10_600x462
+  theme:
+    - utmusic
+id: quote_main_image
+label: 'Quote Main Image'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width:768px) 470px, 100vw.'
+      sizes_image_styles:
+        - landscape_13_10_500x385
+        - landscape_13_10_600x462
+    breakpoint_id: utmusic.small
+    multiplier: 1x
+breakpoint_group: utmusic
+fallback_image_style: landscape_13_10_600x462

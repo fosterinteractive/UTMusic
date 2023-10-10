@@ -60,7 +60,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: ed_card
+      view_mode: quote_main_image
       link: false
     third_party_settings: {  }
     weight: 5
@@ -69,7 +69,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: mode_crop_10_11
+      view_mode: quote_small_image
       link: false
     third_party_settings: {  }
     weight: 6
