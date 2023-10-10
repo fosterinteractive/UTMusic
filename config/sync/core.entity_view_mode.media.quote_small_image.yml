@@ -1,10 +1,10 @@
-uuid: ff1b6840-0408-40dc-9832-d73a70f3d192
+uuid: da56792d-8594-44ba-941f-c4298875e86f
 langcode: en
 status: true
 dependencies:
   module:
     - media
-id: media.mode_crop_10_13
-label: 'Mode Crop 10:13'
+id: media.quote_small_image
+label: 'Quote Small Image'
 targetEntityType: media
 cache: true

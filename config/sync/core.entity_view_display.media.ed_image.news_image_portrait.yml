@@ -10,7 +10,7 @@ dependencies:
     - field.field.media.ed_image.field_img_related_area
     - field.field.media.ed_image.field_img_related_people
     - field.field.media.ed_image.field_img_related_program
-    - image.style.image_style_crop_portrait
+    - image.style.square_1_1_1200
     - media.type.ed_image
   module:
     - layout_builder
@@ -31,13 +31,13 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: image_style_crop_portrait
+      image_style: square_1_1_1200
+      image_loading:
+        attribute: lazy
       svg_attributes:
         width: null
         height: null
       svg_render_as_image: true
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content

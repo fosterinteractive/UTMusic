@@ -144,8 +144,7 @@ third_party_settings:
         description: ''
         required_fields: true
     group_footer:
-      children:
-        - field_news_related_articles
+      children: {  }
       label: Footer
       region: content
       parent_name: ''
@@ -216,7 +215,7 @@ content:
     region: content
     settings:
       media_types: {  }
-      form_mode: crop_widget_mode
+      form_mode: default
       check_selected: false
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: true
@@ -247,7 +246,7 @@ content:
     region: content
     settings:
       media_types: {  }
-      form_mode: contextual_crop_portrait
+      form_mode: default
       check_selected: false
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: true

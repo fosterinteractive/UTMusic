@@ -2,15 +2,11 @@ uuid: f63796ec-9180-4e03-b76e-a712e4fc11ed
 langcode: en
 status: true
 dependencies:
-  config:
-    - core.entity_view_mode.media.news_image_landscape
-    - core.entity_view_mode.media.news_image_portrait
   module:
     - editor
     - entity_embed
     - linkit
     - media
-    - media_contextual_crop_embed
 name: 'Rich Text (w/ images)'
 format: rich_text_w_images
 weight: -10
@@ -95,18 +91,6 @@ filters:
       default_view_mode: default
       allowed_view_modes:
         default: default
-      allowed_media_types:
-        ed_image: ed_image
-  media_contextual_crop_embed:
-    id: media_contextual_crop_embed
-    provider: media_contextual_crop_embed
-    status: false
-    weight: -38
-    settings:
-      default_view_mode: news_image_landscape
-      allowed_view_modes:
-        news_image_landscape: news_image_landscape
-        news_image_portrait: news_image_portrait
       allowed_media_types:
         ed_image: ed_image
   filter_image_lazy_load:

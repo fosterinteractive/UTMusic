@@ -29,11 +29,11 @@
 %o-hero-media__breadcrumbs,
 .o-hero-media__breadcrumbs {
   grid-row: 3;
-  grid-column: col 1/ span 12;
+  grid-column: col 1 / span 12;
   align-self: start;
 
   @include breakpoint($bp-tablet) {
-    grid-column: col 1/ span 6;
+    grid-column: col 1 / span 6;
   }
 }
 
@@ -44,7 +44,7 @@
   margin-bottom: var(--spacer);
 
   @include breakpoint($bp-tablet) {
-    grid-column: col 1/ span 12;
+    grid-column: col 1 / span 12;
   }
 
   .m-tabs--primary {
@@ -132,7 +132,6 @@
   color: var(--c-heading-summary);
 }
 
-
 // Text Veriation for content Header on Advanced Pages
 .o-hero-media--text {
   @extend %o-hero-media-core;
@@ -166,6 +165,7 @@
 }
 
 .o-hero-media-page__text-wrapper.o-hero-media--text__text-wrapper {
+
   @include breakpoint($bp-tablet) {
     grid-column: col 1 / span 12;
   }

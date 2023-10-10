@@ -291,7 +291,7 @@ content:
     region: content
     settings:
       media_types: {  }
-      form_mode: context_crop_header_10_11
+      form_mode: default
       check_selected: false
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: true
@@ -322,7 +322,7 @@ content:
     region: content
     settings:
       media_types: {  }
-      form_mode: context_crop_header_10_13
+      form_mode: default
       check_selected: false
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: true
@@ -353,7 +353,7 @@ content:
     region: content
     settings:
       media_types: {  }
-      form_mode: crop_widget_mode
+      form_mode: default
       check_selected: false
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: true
@@ -384,7 +384,7 @@ content:
     region: content
     settings:
       media_types: {  }
-      form_mode: contextual_crop_portrait
+      form_mode: default
       check_selected: false
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: true

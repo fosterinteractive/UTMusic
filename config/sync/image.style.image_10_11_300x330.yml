@@ -1,0 +1,24 @@
+uuid: 663fe2ce-d77f-4a29-9dd0-42083f838216
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+    - image_style_quality
+name: image_10_11_300x330
+label: 'Focal Point Crop 10:11 (300x330 @80%)'
+effects:
+  8d9af35f-e0a5-4f5d-a1a3-4a64e7b285a8:
+    uuid: 8d9af35f-e0a5-4f5d-a1a3-4a64e7b285a8
+    id: focal_point_crop
+    weight: 1
+    data:
+      width: 300
+      height: 330
+      crop_type: focal_point
+  f3fa12c0-2029-4e95-9c99-75b278342ba2:
+    uuid: f3fa12c0-2029-4e95-9c99-75b278342ba2
+    id: image_style_quality
+    weight: 2
+    data:
+      quality: 80

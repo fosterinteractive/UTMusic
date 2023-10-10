@@ -35,7 +35,7 @@ content:
     region: content
     settings:
       media_types: {  }
-      form_mode: sliding_door
+      form_mode: default
       check_selected: false
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: true

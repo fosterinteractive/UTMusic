@@ -1,16 +1,16 @@
-uuid: 38238a10-ae71-4bcd-8f85-39011a4f898e
+uuid: b4e12def-ab22-4a1c-b167-097b83c504a6
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.mode_crop_10_13
+    - core.entity_view_mode.media.quote_small_image
     - field.field.media.ed_image.field_ed_image_height
     - field.field.media.ed_image.field_ed_image_image
     - field.field.media.ed_image.field_ed_image_width
     - field.field.media.ed_image.field_img_related_area
     - field.field.media.ed_image.field_img_related_people
     - field.field.media.ed_image.field_img_related_program
-    - image.style.crop_style_10_13
+    - image.style.quote_small_image_10_11_300x330
     - media.type.ed_image
   module:
     - layout_builder
@@ -21,23 +21,23 @@ third_party_settings:
     allow_custom: false
 _core:
   default_config_hash: 4Q96_wsD8CxvQk3QzgFNJctxtmU-GosAA4ioTkO2MMw
-id: media.ed_image.mode_crop_10_13
+id: media.ed_image.quote_small_image
 targetEntityType: media
 bundle: ed_image
-mode: mode_crop_10_13
+mode: quote_small_image
 content:
   field_ed_image_image:
     type: image
     label: hidden
     settings:
       image_link: ''
-      image_style: crop_style_10_13
+      image_style: quote_small_image_10_11_300x330
+      image_loading:
+        attribute: lazy
       svg_attributes:
         width: null
         height: null
       svg_render_as_image: true
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
