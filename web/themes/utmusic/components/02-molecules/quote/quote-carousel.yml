@@ -1,0 +1,31 @@
+
+sb_demo: true
+items:
+  1:
+    variation: 'text'
+    text: '“Thank you for being a safe space to land whenever I was facing a challenge, and thank you for helping me learn to take those challenges as learning opportunities.”'
+    source_name: 'Jenn MacNeil'
+    image: '<img src="https://picsum.photos/300/320">'
+    link_url: "#"
+    link_label: Learn more
+  2:
+    variation: 'text'
+    text: '“Thank you for being a safe space to land whenever I was facing a challenge, and thank you for helping me learn to take those challenges as learning opportunities.”'
+    source_name: 'Jenn MacNeil'
+    image: '<img src="https://picsum.photos/300/320">'
+    link_url: "#"
+    link_label: Learn more
+  3:
+    variation: 'text'
+    text: '“Thank you for being a safe space to land whenever I was facing a challenge, and thank you for helping me learn to take those challenges as learning opportunities.”'
+    source_name: 'Jenn MacNeil'
+    image: '<img src="https://picsum.photos/300/320">'
+    link_url: "#"
+    link_label: Learn more
+  4:
+    variation: 'text'
+    text: '“Thank you for being a safe space to land whenever I was facing a challenge, and thank you for helping me learn to take those challenges as learning opportunities.”'
+    source_name: 'Jenn MacNeil'
+    image: '<img src="https://picsum.photos/300/320">'
+    link_url: "#"
+    link_label: Learn more

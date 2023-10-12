@@ -250,5 +250,9 @@
   //@organisms/listing & listing-item
   --c-events-carousel-title: #{palette(white)};
   --c-events-carousel-border: #{palette(teal, 300)};
+
+    // @molecules/quote
+    --c-quote: #{palette(white)};
+    --c-quote-text-border: #{palette(white)};
 }
 

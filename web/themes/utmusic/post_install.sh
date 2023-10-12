@@ -5,7 +5,7 @@
 npx patch-package
 
 # Copy the libraries from the node_modules folder to our themes js/libraries
-# folder where we include them as libraries in Drupal. 
+# folder where we include them as libraries in Drupal.
 #
 # Foundation
 # rm -rf ./js/libraries/foundation
@@ -16,3 +16,4 @@ npx patch-package
 # PriorityNav
 rm -rf ./js/libraries/priority-nav
 cp -r ./node_modules/priority-nav ./js/libraries/priority-nav
+cp -r ./node_modules/slick-carousel ./js/libraries/slick-carousel

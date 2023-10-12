@@ -58,7 +58,9 @@
 %m-quote--source,
 .m-quote--text__source {
   @extend %a-type--small;
+
   font-style: normal;
+  color: var(--c-quote);
 }
 
 .m-quote__text-additional {

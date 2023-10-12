@@ -37,6 +37,30 @@
  */
 #}
 
+{# {% if is_inside_carousel %}
+  {% set main_image_data = {} %}
+  {% set small_image_data = {} %}
+  {% set carousel = 'true' %}
+  
+  {% if content.field_quote_image_main[0] %}
+    {% set main_image_data = {
+      'path': content.field_quote_image_main[0]['#media'].field_ed_image_image.entity.uri.value,
+      'alt': content.field_quote_image_main[0]['#media'].field_ed_image_image.0.alt,
+      'width': content.field_quote_image_main[0]['#media'].field_ed_image_image.0.width,
+      'height': content.field_quote_image_main[0]['#media'].field_ed_image_image.0.height
+    } %}
+  {% endif %}
+
+  {% if content.field_quote_image_small[0] %}
+    {% set small_image_data = {
+      'path': content.field_quote_image_small[0]['#media'].field_ed_image_image.entity.uri.value,
+      'alt': content.field_quote_image_small[0]['#media'].field_ed_image_image.0.alt,
+      'width': content.field_quote_image_small[0]['#media'].field_ed_image_image.0.width,
+      'height': content.field_quote_image_small[0]['#media'].field_ed_image_image.0.height
+    } %}
+  {% endif %}
+{% endif %} #}
+
 {% include "@molecules/quote/quote.twig" with {
     directory: 'themes/utmusic',
     variation: content.field_quote_variation[0] ? content.field_quote_variation[0]['#markup'],
@@ -51,3 +75,7 @@
     aria_label: content.field_quote_button_a11y[0] ? content.field_quote_button_a11y[0]['#text'],
   } only
 %}
+
+    {# carousel: carousel,
+    main_image_data: main_image_data,
+    small_image_data: small_image_data, #}

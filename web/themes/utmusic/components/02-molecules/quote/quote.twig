@@ -16,27 +16,50 @@
 
 {% if text %}
   <blockquote class="m-quote{{ variation }}">
-    
     {% if image_main and variation == '--image' %}
-      <div class="m-quote{{ variation }}__images">
-        <div class="m-quote{{ variation }}__image-main">
-          {% include "@molecules/image/image.twig" with {
-              image: image_main,
-            } only
-          %}
-        </div>
+      {# {% if carousel == 'true' %}
+        <div class="m-quote{{ variation }}__images">
+          {% if main_image_data %}
+            <div class="m-quote{{ variation }}__image-main">
+              <div class="m-image">
+                <div class="m-image__image">
+                  <img data-lazy="{{ file_url(main_image_data.path) }}" alt="{{ main_image_data.alt }}" width="{{ main_image_data.width }}" height="{{ main_image_data.height }}" />
+                </div>
+              </div>
+            </div>
+          {% endif %}
 
-        {% if image_small %}
-          <div class="m-quote{{ variation }}__image-small">
+          {% if small_image_data %}
+            <div class="m-quote{{ variation }}__image-small">
+              <div class="m-image">
+                <div class="m-image__image">
+                  <img data-lazy="{{ file_url(small_image_data.path) }}" alt="{{ small_image_data.alt }}" width="{{ small_image_data.width }}" height="{{ small_image_data.height }}" />
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      {% else %} #}
+        <div class="m-quote{{ variation }}__images">
+          <div class="m-quote{{ variation }}__image-main">
             {% include "@molecules/image/image.twig" with {
-                image: image_small,
+                image: image_main,
               } only
             %}
           </div>
-        {% endif %}
-      </div>
-    {% endif %}
 
+          {% if image_small %}
+            <div class="m-quote{{ variation }}__image-small">
+              {% include "@molecules/image/image.twig" with {
+                  image: image_small,
+                } only
+              %}
+            </div>
+          {% endif %}
+        </div>
+      {# {% endif %} #}
+    {% endif %}  
+    
 
     {% if text or source or additional_info %}
       <div class="m-quote{{ variation }}__content-wrapper">
