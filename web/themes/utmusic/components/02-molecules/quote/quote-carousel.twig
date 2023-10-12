@@ -6,10 +6,14 @@
         {% include '@molecules/quote/quote.twig' with {
           variation: item.variation,
           text: item.text,
-          source_name: item.source_name,
-          image: item.image,
-          link_url: item.link_url,
-          link_label: item.link_label,
+          image_main: item.image_main,
+          image_small: item.image_small,
+          icon: item.icon,
+          text_size: item.text_size,
+          source: item.source,
+          url: item.url,
+          label: item.label,
+          directory: directory,
           } only 
         %}
       {% else %}

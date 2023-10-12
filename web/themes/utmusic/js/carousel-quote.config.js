@@ -13,7 +13,6 @@
 
         if (prevArrow && nextArrow) {
           $(wrapper).slick({
-              // lazyLoad: 'ondemand',
               infinite: false,
               slidesToShow: 1,
               slidesToScroll: 1,
