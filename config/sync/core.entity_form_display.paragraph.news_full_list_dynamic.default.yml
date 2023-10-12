@@ -1,0 +1,20 @@
+uuid: e9b2cc95-d0e5-470f-b907-66affe31a736
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.news_full_list_dynamic
+id: paragraph.news_full_list_dynamic.default
+targetEntityType: paragraph
+bundle: news_full_list_dynamic
+mode: default
+content:
+  status:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true

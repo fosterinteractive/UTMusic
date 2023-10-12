@@ -1,0 +1,20 @@
+uuid: 8e472e82-5746-4334-816d-8d3048968b0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.jobs_full_list_dynamic
+id: paragraph.jobs_full_list_dynamic.default
+targetEntityType: paragraph
+bundle: jobs_full_list_dynamic
+mode: default
+content:
+  status:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true
