@@ -18,7 +18,6 @@
               slidesToScroll: 1,
               arrows: true,
               accessibility: true,
-              adaptiveHeight: true,
               prevArrow: prevArrow,
               nextArrow: nextArrow,
           });
