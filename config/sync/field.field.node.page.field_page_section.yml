@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.button
     - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.carousel_quote
     - paragraphs.paragraphs_type.cta
     - paragraphs.paragraphs_type.event_featured_item
     - paragraphs.paragraphs_type.events_full_list_dynamic
@@ -77,6 +78,7 @@ settings:
       jobs_full_list_dynamic: jobs_full_list_dynamic
       job_listing: job_listing
       file_resources_full_list_dynamic: file_resources_full_list_dynamic
+      carousel_quote: carousel_quote
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -97,6 +99,9 @@ settings:
       carousel_image_group:
         weight: -48
         enabled: false
+      carousel_quote:
+        weight: 47
+        enabled: true
       cta:
         weight: -75
         enabled: true
@@ -154,9 +159,6 @@ settings:
       news_summary_list_dynamic:
         weight: -64
         enabled: true
-      poster:
-        weight: -52
-        enabled: false
       programs_full_list_dynamic:
         weight: -59
         enabled: true
@@ -186,9 +188,6 @@ settings:
         enabled: true
       sliding_menu_item:
         weight: -46
-        enabled: false
-      soundcloud:
-        weight: -54
         enabled: false
       tables:
         weight: -67

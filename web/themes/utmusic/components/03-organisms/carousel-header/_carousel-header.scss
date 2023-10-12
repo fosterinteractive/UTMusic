@@ -1,4 +1,12 @@
 // Home Page header
+.o-hero-media--carousel__image-slick-carousel {
+  display: none;
+
+  .slick-initialized {
+    display: block;
+  }
+}
+
 .o-hero-media--carousel {
   display: grid;
   grid-template-columns: [alpha] 1fr repeat(12, [col] minmax(1px, calc((65rem - (var(--spacer) * 11)) / 12))) 1fr [omega];
@@ -137,16 +145,16 @@
 
 // animation
 @for $i from 1 through 900 {
-  .slick-slide:nth-child(#{$i}) {
+  .o-hero-media--carousel__image-slick-carousel .slick-slide:nth-child(#{$i}) {
     z-index: calc(900 - #{$i}) !important;
   }
 }
 
-.slick-slide.slick-current {
+.o-hero-media--carousel__image-slick-carousel .slick-slide.slick-current {
   z-index: 999 !important;
 }
 
-.slick-slide.slick-current + .slick-slide {
+.o-hero-media--carousel__image-slick-carousel .slick-slide.slick-current + .slick-slide {
   z-index: 998 !important;
   opacity: 100% !important;
 
@@ -155,7 +163,7 @@
   }
 }
 
-.slick-slide.slick-active {
+.o-hero-media--carousel__image-slick-carousel .slick-slide.slick-active {
   opacity: 100% !important;
 }
 
@@ -171,11 +179,11 @@
 //   }
 // }
 
-.slick-track {
+.o-hero-media--carousel__image-slick-carousel .slick-track {
   width: fit-content !important;
 }
 
-.slick-slide {
+.o-hero-media--carousel__image-slick-carousel .slick-slide {
   width: 100% !important;
 }
 
@@ -183,7 +191,7 @@
   animation: 5010ms imageFadeOut cubic-bezier(.17,.67,0,.17) 2800ms;
 }
 
-.slick-current {
+.o-hero-media--carousel__image-slick-carousel .slick-current {
   .m-carousel-img-group__image_1 img {
     @extend %image-fade;
     animation-delay: 200ms;

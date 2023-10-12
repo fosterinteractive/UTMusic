@@ -1,0 +1,10 @@
+uuid: f283af85-ec85-4d8f-8e43-8b47eee7a42a
+langcode: en
+status: true
+dependencies: {  }
+id: carousel_quote
+label: 'Carousel Quote'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

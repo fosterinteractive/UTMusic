@@ -1,0 +1,70 @@
+// Carousel.
+.m-quote__carousel {
+  position: relative;
+}
+
+.m-quote__carousel-items {
+  display: none;
+
+  &.slick-initialized {
+    display: block;
+  }
+
+  .slick-list {
+    @include breakpoint($bp-tablet-small) {
+      margin-right: rem(59px);
+      margin-left: rem(59px);
+    }
+  }
+}
+
+// Carousel arrows.
+%slick-button {
+  @extend %carousel-controls-btn;
+
+  &.slick-disabled {
+    button {
+      display: none;
+    }
+  }
+}
+
+.m-quote__carousel-buttons  {
+  @include breakpoint(0 $bp-tablet-small) {
+    display: flex;
+    justify-content: space-between;
+    margin-top: ru(1);
+  }
+}
+
+.m-quote__carousel-prev-btn,
+.m-quote__carousel-next-btn {
+  @extend %slick-button;
+  position: relative;
+
+  @include breakpoint($bp-tablet-small) {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+.m-quote__carousel-prev-btn {
+  
+  @include breakpoint($bp-tablet-small) {
+    left: 0;
+  }
+}
+
+.m-quote__carousel-next-btn {
+  
+  @include breakpoint($bp-tablet-small) {
+    right: 0;
+  }
+}
+
+.m-quote__carousel-items .m-quote--image__images {
+  img {
+    filter: unset;
+  }
+}

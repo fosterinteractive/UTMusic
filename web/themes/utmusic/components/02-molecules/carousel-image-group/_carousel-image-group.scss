@@ -1,10 +1,14 @@
-.m-carousel-img-group {
-  display: grid;
+.m-carousel-img-group.slick-slide {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(9, 1fr);
   gap: calc(var(--spacer) * 0.33);
   width: 100%;
   height: 100%;
+  display: none;
+
+  .slick-initialized & {
+    display: grid;
+  }
 }
 
 .m-carousel-img-group__image_1 {

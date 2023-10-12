@@ -48,6 +48,17 @@ accordion:
   js:
     js/accordion.js: {}
 
+slick-js:
+  js:
+    js/libraries/slick-carousel/slick/slick.min.js: { minified: true }
+    # js/slick.config.js: {}
+
+slick-css:
+  css:
+    theme:
+      js/libraries/slick-carousel/slick/slick.css: {}
+      js/libraries/slick-carousel/slick/slick-theme.css: {}
+
 announcement:
   js:
     js/exposed-filters-a11y.js: {}
@@ -101,13 +112,18 @@ foundation_dropdown:
   dependencies:
   - utmusic/foundation_core
 
-slick-carousel:
-  license:
-      name: MIT
-      url: https://kenwheeler.github.io/slick/
+carousel-header:
   js:
-    https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js: { type: external,  minified: true }
     js/slick-carousel.js: {}
+  dependencies:
+  - utmusic/slick-js
+
+carousel-quote:
+  js:
+    js/carousel-quote.config.js: {}
+  dependencies:
+  - utmusic/slick-js
+  - utmusic/slick-css
 
 tippyjs:
   header: true

@@ -16,7 +16,6 @@
 
 {% if text %}
   <blockquote class="m-quote{{ variation }}">
-    
     {% if image_main and variation == '--image' %}
       <div class="m-quote{{ variation }}__images">
         <div class="m-quote{{ variation }}__image-main">
@@ -35,8 +34,7 @@
           </div>
         {% endif %}
       </div>
-    {% endif %}
-
+    {% endif %}  
 
     {% if text or source or additional_info %}
       <div class="m-quote{{ variation }}__content-wrapper">
