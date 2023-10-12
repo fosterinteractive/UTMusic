@@ -1,17 +1,15 @@
-uuid: 935d1c7c-30be-474a-abe2-3a2059c6da4e
+uuid: 94b7f93e-e975-4d0b-833c-0c141b487d59
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.faculty_full_list_dynamic.field_people_full_list_role
-    - paragraphs.paragraphs_type.faculty_full_list_dynamic
-id: paragraph.faculty_full_list_dynamic.default
+    - paragraphs.paragraphs_type.section_curriculum
+id: paragraph.section_curriculum.default
 targetEntityType: paragraph
-bundle: faculty_full_list_dynamic
+bundle: section_curriculum
 mode: default
 content:
-  field_people_full_list_role:
-    type: options_select
+  layout_paragraphs_fields:
     weight: 0
     region: content
     settings: {  }

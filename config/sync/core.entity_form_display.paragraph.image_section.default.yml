@@ -40,13 +40,13 @@ mode: default
 content:
   field_image_section_cap_position:
     type: options_select
-    weight: 4
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   field_image_section_caption:
     type: text_textfield
-    weight: 3
+    weight: 2
     region: content
     settings:
       size: 60
@@ -76,6 +76,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
 hidden:
   created: true
-  status: true

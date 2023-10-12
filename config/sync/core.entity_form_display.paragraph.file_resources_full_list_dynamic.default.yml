@@ -1,0 +1,20 @@
+uuid: 3f9fb186-dc15-40ff-9f1d-c5a947670de9
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.file_resources_full_list_dynamic
+id: paragraph.file_resources_full_list_dynamic.default
+targetEntityType: paragraph
+bundle: file_resources_full_list_dynamic
+mode: default
+content:
+  status:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true
