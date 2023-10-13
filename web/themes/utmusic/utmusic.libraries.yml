@@ -117,6 +117,7 @@ carousel-header:
     js/slick-carousel.js: {}
   dependencies:
   - utmusic/slick-js
+  - utmusic/slick-css
 
 carousel-quote:
   js:
