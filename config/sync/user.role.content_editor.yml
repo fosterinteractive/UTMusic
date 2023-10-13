@@ -57,10 +57,12 @@ dependencies:
     - markerio
     - media
     - media_bulk_upload
+    - menu_position
     - moderated_content_bulk_publish
     - node
     - path
     - replicate_ui
+    - system
     - taxonomy
     - unpublished_node_permissions
 id: content_editor
@@ -76,6 +78,8 @@ permissions:
   - 'access media overview'
   - 'access taxonomy overview'
   - 'administer media'
+  - 'administer menu'
+  - 'administer menu positions'
   - 'create event content'
   - 'create illustration media'
   - 'create job content'
