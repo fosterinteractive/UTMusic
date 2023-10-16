@@ -17,7 +17,6 @@ dependencies:
     - paragraphs.paragraphs_type.card
   module:
     - allowed_formats
-    - choices
     - field_group
     - link
     - media_library
@@ -169,11 +168,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_card_variation:
-    type: choices_widget
+    type: options_select
     weight: 0
     region: content
-    settings:
-      configuration_options: ''
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
