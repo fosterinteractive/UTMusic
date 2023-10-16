@@ -628,7 +628,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: '<h2 class="a-heading__h3 a-heading--top-spacer">No past events were found.</h2>'
+            value: '<h2 class="a-heading__h3 a-heading--top-spacer">No events were found.</h2>'
             format: rich_text
           tokenize: false
       sorts:
@@ -900,7 +900,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: '<h2 class="a-heading__h3 a-heading--top-spacer">No upcoming events were found.</h2>'
+            value: '<h2 class="a-heading__h3 a-heading--top-spacer">No events were found.</h2>'
             format: rich_text
           tokenize: false
       arguments:
@@ -1142,7 +1142,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: '<h2 class="a-heading__h3 a-heading--top-spacer">No past events were found.</h2>'
+            value: '<h2 class="a-heading__h3 a-heading--top-spacer">No events were found.</h2>'
             format: rich_text
           tokenize: false
       sorts:
@@ -1645,7 +1645,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: '<h2 class="a-heading__h3 a-heading--top-spacer">No upcoming events were found.</h2>'
+            value: '<h2 class="a-heading__h3 a-heading--top-spacer">No events were found.</h2>'
             format: rich_text
           tokenize: false
       filters:
