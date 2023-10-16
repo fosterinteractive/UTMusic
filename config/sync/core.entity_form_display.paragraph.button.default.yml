@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.button.field_button_target
     - field.field.paragraph.button.field_button_url
     - field.field.paragraph.button.field_button_variation
+    - field.field.paragraph.button.field_button_width
     - paragraphs.paragraphs_type.button
   module:
     - field_group
@@ -22,7 +23,7 @@ third_party_settings:
       label: 'Advanced Settings'
       region: content
       parent_name: ''
-      weight: 4
+      weight: 5
       format_type: details
       format_settings:
         classes: ''
@@ -78,9 +79,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_button_width:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 5
+    weight: 6
     region: content
     settings:
       display_label: true

@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.button.field_button_target
     - field.field.paragraph.button.field_button_url
     - field.field.paragraph.button.field_button_variation
+    - field.field.paragraph.button.field_button_width
     - paragraphs.paragraphs_type.button
   module:
     - link
@@ -66,6 +67,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_button_width:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
     region: content
 hidden:
   search_api_excerpt: true
