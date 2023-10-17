@@ -11,13 +11,11 @@ id: paragraph.button.field_button_width
 field_name: field_button_width
 entity_type: paragraph
 bundle: button
-label: Width
+label: Layout
 description: ''
 required: false
 translatable: false
-default_value:
-  -
-    value: width-content
+default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: list_string

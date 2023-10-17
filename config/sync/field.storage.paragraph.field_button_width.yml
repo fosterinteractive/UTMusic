@@ -13,7 +13,7 @@ settings:
   allowed_values:
     -
       value: width-100
-      label: '100% Width'
+      label: Stacked
   allowed_values_function: ''
 module: options
 locked: false
