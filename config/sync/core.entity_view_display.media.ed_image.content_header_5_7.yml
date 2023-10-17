@@ -33,7 +33,7 @@ content:
       image_link: ''
       image_style: image_5_7_400x560
       image_loading:
-        attribute: lazy
+        attribute: eager
       svg_attributes:
         width: null
         height: null
