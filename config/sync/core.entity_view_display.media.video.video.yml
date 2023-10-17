@@ -32,6 +32,14 @@ content:
       loading:
         attribute: eager
     third_party_settings: {  }
+    weight: 1
+    region: content
+  field_ed_video_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
     weight: 0
     region: content
 hidden:
@@ -39,7 +47,6 @@ hidden:
   field_ed_video_author: true
   field_ed_video_height: true
   field_ed_video_provider: true
-  field_ed_video_title: true
   field_ed_video_width: true
   field_video_related_area: true
   field_video_related_people: true
