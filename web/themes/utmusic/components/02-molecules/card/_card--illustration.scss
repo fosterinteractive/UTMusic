@@ -82,9 +82,9 @@
     &:focus,
     &:active {
       color: palette(teal, 300);
-      text-decoration: none;
       
       svg {
+        transform: translateX(0);
         color: palette(blue);
       }
     }
