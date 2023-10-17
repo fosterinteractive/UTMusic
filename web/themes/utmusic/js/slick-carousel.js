@@ -7,6 +7,8 @@
       const controlButton = $(context).find('.o-hero-media--carousel__image-button');
       const carousel = $(controlButton).next();
 
+      // https://kenwheeler.github.io/slick/
+
       $(carousel).slick({
         pauseOnHover: false,
         slidesToShow: 2,
