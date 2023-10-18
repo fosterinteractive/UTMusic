@@ -4,7 +4,7 @@
       // Suppress DataTables warning alerts
       $.fn.dataTable.ext.errMode = 'none';
       
-      const $tableContainers = $(context).find('.a-table--dataTable').once();
+      const $tableContainers = $(context).find('.a-table--dataTable');
 
       $tableContainers.each(function() {
         const $dataTable = $('table', $(this));
