@@ -264,7 +264,9 @@
 
   {# For each item add to areas array #}
   {% for i in 0..item_count %}
-    {% set new_roles = new_roles|merge([content.field_people_role_new[i]['#plain_text']]) %}
+    {% set role_weight = content.field_people_role_new[i]['#entity'].weight.value %}
+
+    {% set new_roles = new_roles|merge([{ 'role': content.field_people_role_new[i]['#plain_text'], 'role_weight': role_weight }]) %}
   {% endfor %}
 {% endif %}
 

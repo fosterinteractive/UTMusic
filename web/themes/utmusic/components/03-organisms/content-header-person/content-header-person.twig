@@ -67,9 +67,9 @@
 
       {% if new_roles or title_suffix_faculty or title_suffix_staff or  title_suffix_library %}
         <div class="o-hero-media{{ variation }}__title-suffix">
-          
+
           {% if new_roles %}
-            {% for role in new_roles %}
+            {% for role in new_roles|sort((a,b) => a.role_weight <=> b.role_weight)|column('role') %}
               <div>{{ role }}</div>
             {% endfor %}
           {% endif %}
