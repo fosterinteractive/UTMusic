@@ -204,41 +204,41 @@
 //   }
 // }
 
-%image-fade-in {
-  animation: 5000ms imageFadeIn cubic-bezier(.17,.67,0,.17);
+%image-fade-out {
+  animation: 5000ms imageFadeOut cubic-bezier(.17,.67,0,.17) 4000ms;
 }
 
 .o-hero-media--carousel__image-slick-carousel .slick-current {
   .m-carousel-img-group__image_1 img {
-    @extend %image-fade-in;
-    // animation-delay: 200ms;
-  }
-  
-  .m-carousel-img-group__image_2 img {
-    @extend %image-fade-in;
+    @extend %image-fade-out;
     animation-delay: 200ms;
   }
   
-  .m-carousel-img-group__image_3 img {
-    @extend %image-fade-in;
+  .m-carousel-img-group__image_2 img {
+    @extend %image-fade-out;
     animation-delay: 400ms;
   }
   
-  .m-carousel-img-group__image_4 img {
-    @extend %image-fade-in;
+  .m-carousel-img-group__image_3 img {
+    @extend %image-fade-out;
     animation-delay: 600ms;
+  }
+  
+  .m-carousel-img-group__image_4 img {
+    @extend %image-fade-out;
+    animation-delay: 800ms;
   }
 }
 
-@keyframes imageFadeIn {
+@keyframes imageFadeOut {
   0% {
-    opacity: 0%;
+    opacity: 100%;
   }
-  20% {
+  75% {
     opacity: 100%;
   }
   100% {
-    opacity: 100%;
+    opacity: 0%;
   }
 }
 
