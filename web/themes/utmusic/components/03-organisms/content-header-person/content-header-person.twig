@@ -69,7 +69,7 @@
         <div class="o-hero-media{{ variation }}__title-suffix">
 
           {% if new_roles %}
-            {% for role in new_roles|sort((a,b) => a.role_weight <=> b.role_weight)|column('role') %}
+            {% for role in new_roles %}
               <div>{{ role }}</div>
             {% endfor %}
           {% endif %}

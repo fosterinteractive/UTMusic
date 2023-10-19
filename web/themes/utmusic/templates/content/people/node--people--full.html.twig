@@ -377,7 +377,7 @@
     pronunciation: content.field_people_pronunciation[0] ? content.field_people_pronunciation,
     prononun: content.field_people_pronouns[0] ? content.field_people_pronouns[0]['#text'],
     areas: areas,
-    new_roles: new_roles,
+    new_roles: new_roles|sort((a,b) => a.role_weight <=> b.role_weight)|column('role'),
     profile_type: content.field_people_profile_type[0] ? content.field_people_profile_type[0]['#markup'],
     education: education,
     background: background,
