@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - block_content.type.no_views_results_behaviour
     - filter.format.fact
     - filter.format.fact_value
     - filter.format.header_summary
@@ -237,6 +238,7 @@ permissions:
   - 'create illustration media'
   - 'create job content'
   - 'create news content'
+  - 'create no_views_results_behaviour block content'
   - 'create page content'
   - 'create people content'
   - 'create program content'
@@ -278,6 +280,8 @@ permissions:
   - 'delete any job content'
   - 'delete any media'
   - 'delete any news content'
+  - 'delete any no_views_results_behaviour block content'
+  - 'delete any no_views_results_behaviour block content revisions'
   - 'delete any page content'
   - 'delete any people content'
   - 'delete any program content'
@@ -345,6 +349,7 @@ permissions:
   - 'edit any illustration media'
   - 'edit any job content'
   - 'edit any news content'
+  - 'edit any no_views_results_behaviour block content'
   - 'edit any page content'
   - 'edit any people content'
   - 'edit any program content'
@@ -408,6 +413,7 @@ permissions:
   - 'rabbit hole administer node'
   - 'replicate entities'
   - 'revert all revisions'
+  - 'revert any no_views_results_behaviour block content revisions'
   - 'revert configuration'
   - 'revert ed_notice revisions'
   - 'revert event revisions'
@@ -440,6 +446,7 @@ permissions:
   - 'use text format table'
   - 'view all media revisions'
   - 'view all revisions'
+  - 'view any no_views_results_behaviour block content history'
   - 'view any unpublished content'
   - 'view any webform submission'
   - 'view config updates report'

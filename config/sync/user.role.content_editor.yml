@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - block_content.type.no_views_results_behaviour
     - filter.format.fact
     - filter.format.fact_value
     - filter.format.header_summary
@@ -48,6 +49,8 @@ dependencies:
     - taxonomy.vocabulary.undergraduate_forms_category
     - workflows.workflow.editorial
   module:
+    - block
+    - block_content
     - content_moderation
     - contextual
     - dropzonejs
@@ -70,6 +73,7 @@ label: 'Content editor'
 weight: 2
 is_admin: null
 permissions:
+  - 'access block library'
   - 'access content overview'
   - 'access contextual links'
   - 'access ed_file entity browser pages'
@@ -77,6 +81,8 @@ permissions:
   - 'access markerio'
   - 'access media overview'
   - 'access taxonomy overview'
+  - 'administer block content'
+  - 'administer blocks'
   - 'administer media'
   - 'administer menu'
   - 'administer menu positions'
@@ -179,6 +185,7 @@ permissions:
   - 'edit any illustration media'
   - 'edit any job content'
   - 'edit any news content'
+  - 'edit any no_views_results_behaviour block content'
   - 'edit any page content'
   - 'edit any people content'
   - 'edit any program content'
@@ -221,6 +228,7 @@ permissions:
   - 'moderated content bulk unpin content'
   - 'moderated content bulk unpublish'
   - 'replicate entities'
+  - 'revert any no_views_results_behaviour block content revisions'
   - 'revert event revisions'
   - 'revert job revisions'
   - 'revert news revisions'
@@ -243,6 +251,7 @@ permissions:
   - 'use text format simple_text'
   - 'use text format table'
   - 'view all media revisions'
+  - 'view any no_views_results_behaviour block content history'
   - 'view any unpublished content'
   - 'view ed_notice revisions'
   - 'view event revisions'
