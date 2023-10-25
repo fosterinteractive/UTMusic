@@ -98,7 +98,17 @@ libraries-override:
       theme:
         css/views_ui.admin.theme.css: /core/themes/claro/css/theme/views_ui.admin.theme.css
 
-  # Use our adminspring css for this library.
+  # Use our adminspring css for these libraries
+  claro/filter:
+    css:
+      component:
+        css/theme/filter.theme.css: css/theme/filter.theme.css
+  
+  claro/media_library.theme:
+    css:
+      theme:
+        css/theme/media-library.css: css/theme/media-library.css
+
   claro/node-form:
     css:
       layout:

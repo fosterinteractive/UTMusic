@@ -43,7 +43,7 @@
 		</tbody>
 	</table>
 {% else %}
-	<div class="a-table-wrapper {{ background }} {{ borders }} {{ mobile_table_display }}">
+	<div class="a-table-wrapper {{ background }} {{ borders }} {{ mobile_table_display }}{% if unpublished %} paragraph--unpublished{% endif %}">
 		{{ table }}
 	</div>
 {% endif %}

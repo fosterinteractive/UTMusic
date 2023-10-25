@@ -72,16 +72,31 @@ function utmusic_preprocess_page(&$variables) {
   $variables['site_youtube'] = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_youtube') && !$custom_site_settings->get('field_site_youtube')->isEmpty() ? $custom_site_settings->get('field_site_youtube')->getString() : NULL;
   // Site Instagram URL.
   $variables['site_instagram'] = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_instagram') && !$custom_site_settings->get('field_site_instagram')->isEmpty() ? $custom_site_settings->get('field_site_instagram')->getString() : NULL;
+
+  $logged_in = $variables['logged_in'] ?? NULL;
+  if ($logged_in == TRUE) {
+    $variables['#attached']['library'][] = 'utmusic/paragraphs.unpublished';
+  }
 }
 
 /**
  * Implements hook_preprocess_paragraph().
  */
 function utmusic_preprocess_paragraph(array &$variables) {
+  $active_theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
   $paragraph = $variables['paragraph'];
   $pid = $paragraph->id();
   $paragraph_type = $paragraph->getType();
   $paragraph_view_mode = $variables['view_mode'];
+
+  // Determine if the unpublished class should be added to the paragraph. We set
+  // the class of adminspring on the preview view mode so we need to make sure
+  // we set it on the default paragraph and avoid setting it 2 times on
+  // adminspring.
+  $variables['unpublished'] = FALSE;
+  if (!$paragraph->isPublished() && $active_theme != 'adminspring') {
+    $variables['unpublished'] = TRUE;
+  }
 
   if ($paragraph_view_mode == 'default') {
     if ($paragraph_type == 'accordion_item') {
@@ -420,6 +435,14 @@ function utmusic_preprocess_views_view_unformatted(array &$variables) {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_toolbar().
+ */
+function utmusic_preprocess_toolbar(&$variables) {
+  $variables['#attached']['library'][] = 'utmusic/toolbar';
+}
+
 
 /**
  * Renders a view.

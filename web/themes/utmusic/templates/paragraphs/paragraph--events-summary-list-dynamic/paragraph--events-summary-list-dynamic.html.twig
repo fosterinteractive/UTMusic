@@ -36,12 +36,12 @@
  * @ingroup themeable
  */
 #}
-
 {% set events_status = content.field_events_status[0] ? content.field_events_status[0]['#markup'] %}
 
 {% if events_status == 'past' %}
   {% include "@organisms/content-views/_view.twig" 
     with {
+      unpublished: unpublished,
       attributes: attributes,
       content: content.events_summary_list_past,
     } only
@@ -49,6 +49,7 @@
 {% else %}
   {% include "@organisms/content-views/_view.twig" 
     with {
+      unpublished: unpublished,
       attributes: attributes,
       content: content.events_summary_list_upcoming,
     } only

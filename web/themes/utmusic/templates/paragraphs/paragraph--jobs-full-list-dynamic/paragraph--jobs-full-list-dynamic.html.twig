@@ -36,11 +36,10 @@
  * @ingroup themeable
  */
 #}
-
-
 {% include "@organisms/content-views/_view.twig" 
   with {
-    directory: 'themes/utmusic',
+    unpublished: unpublished,
+    directory: directory,
     content: drupal_view('jobs_full_list', 'block_full_list'),
   } only
 %}

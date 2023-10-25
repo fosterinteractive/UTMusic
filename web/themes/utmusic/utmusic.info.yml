@@ -49,6 +49,10 @@ libraries-override:
     css:
       theme:
         css/paragraphs.admin.css: false
+  paragraphs/drupal.paragraphs.unpublished:
+    css:
+      theme:
+        css/paragraphs.unpublished.css: css/paragraphs.unpublished.css
   user/drupal.user:
     css:
       component:

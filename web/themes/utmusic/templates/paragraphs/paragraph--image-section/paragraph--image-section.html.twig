@@ -68,14 +68,11 @@
   {% endif %}
 
   {% set image_bg_path = file_url(content.field_image_section_image[0]['#media'].field_ed_image_image.entity.fileuri) %}
-
-
 {% endif %}
 
-
-
 {% include "@molecules/image/image.twig" with {
-    directory: 'themes/utmusic',
+    unpublished: unpublished,
+    directory: directory,
     image: image,
     variation: content.field_image_section_variation[0] ? content.field_image_section_variation[0]['#markup'],
     image_bg_path: image_bg_path,

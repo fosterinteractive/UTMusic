@@ -11,7 +11,7 @@
 
 {% endif %}
 
-<div role="navigation" class="m-sliding-door-menu-wrapper{{ variation }} {% if sb_demo %}sb_demo{% endif %}">
+<div role="navigation" class="m-sliding-door-menu-wrapper{{ variation }}{% if unpublished %} paragraph--unpublished{% endif %}{% if sb_demo %} sb_demo{% endif %}">
   {% if sliding_menu_items_links %}
     <div class='m-sliding-door-menu-desktop-links'>
       {% for item in sliding_menu_items_links %}

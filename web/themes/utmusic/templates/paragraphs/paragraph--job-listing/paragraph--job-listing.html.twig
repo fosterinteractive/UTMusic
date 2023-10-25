@@ -36,10 +36,9 @@
  * @ingroup themeable
  */
 #}
-
-
 {% include "@organisms/content-views/_view.twig"
   with {
+    unpublished: unpublished,
     attributes: attributes,
     content: content.job_listing_block,
   } only

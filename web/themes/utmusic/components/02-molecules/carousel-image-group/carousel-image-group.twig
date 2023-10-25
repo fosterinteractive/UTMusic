@@ -11,7 +11,7 @@
 
 {% endif %}
 
-<div class="m-carousel-img-group{{ variation }}">
+<div class="m-carousel-img-group{{ variation }}{% if unpublished %} paragraph--unpublished{% endif %}">
   
   {% if image_1 %}
     <div class="m-carousel-img-group{{ variation }}__image_1">

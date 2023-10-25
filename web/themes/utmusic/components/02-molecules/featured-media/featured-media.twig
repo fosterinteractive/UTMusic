@@ -11,8 +11,7 @@
 
 {% endif %}
 
-
-<div class="m-featured-media">
+<div class="m-featured-media{% if unpublished %} paragraph--unpublished{% endif %}">
   {% if title %}
     <div class="m-featured-media__title">
       {% include "@atoms/text/headings/heading.twig" with {

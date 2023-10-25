@@ -2,7 +2,7 @@
 {% set title_appearance = title_appearance|default('h3') %}
 {% set title_html_element = title_html_element|default('h3') %}
 
-<div class="m-fact-item {% if not illustration %}m-fact-item--text{% endif %}">
+<div class="m-fact-item{% if not illustration %} m-fact-item--text{% endif %}{% if unpublished %} paragraph--unpublished{% endif %}">
   {% if illustration %}
     <div class="m-fact-item__illustration">
       <div class="m-fact-item__image-illustration-bg"></div>

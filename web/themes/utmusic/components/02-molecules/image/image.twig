@@ -25,16 +25,16 @@
 {% set html_element = caption ? 'figure' : 'div' %}
 
 {% if image %}
-  <div class="m-image">
+  <div class="m-image{% if unpublished %} paragraph--unpublished{% endif %}">
     {% if variation == '--paralax' %}
-      <div class="m-image{{variation}}__image" style="background-image:url('{{ image_bg_path }}')">
+      <div class="m-image{{ variation }}__image" style="background-image:url('{{ image_bg_path }}')">
       </div>
     {% else %}
       <{{ html_element }} class="m-image__image">
         {{ image }}
 
         {% if caption %}
-          <figcaption class="m-image{{caption_position}}__caption">
+          <figcaption class="m-image{{ caption_position }}__caption">
             {{ caption }}
           </figcaption>
         {% endif %}

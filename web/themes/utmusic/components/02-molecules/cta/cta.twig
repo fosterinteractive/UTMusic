@@ -12,7 +12,7 @@
 
 {% endif %}
 
-<div class="m-cta {% if variation %}m-cta{{ variation }}{% endif %}">
+<div class="m-cta{% if variation %} m-cta{{ variation }}{% endif %}{% if unpublished %} paragraph--unpublished{% endif %}">
 
   <div class="m-cta{{ variation }}__main-wrapper">
     <div class="m-cta{{ variation }}__main-wrapper__background">

@@ -36,7 +36,6 @@
  * @ingroup themeable
  */
 #}
-
 {% set audio_items_count = content.field_soundcloud_track['#items'].getIterator()|length - 1 %}
 
 {% set audio_items = [] %}
@@ -49,8 +48,8 @@
   %}
 {% endfor %}
 
-
 {% include "@atoms/audio/audio.twig" with {
+    unpublished: unpublished,
     title: content.field_soundcloud_title[0] ? content.field_soundcloud_title[0]['#text'],
     description: content.field_soundcloud_summary[0] ? content.field_soundcloud_summary,
     audio: audio_items,

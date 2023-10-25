@@ -36,7 +36,6 @@
  * @ingroup themeable
  */
 #}
-
 {% set variation = content.field_button_variation[0] ? content.field_button_variation[0]['#markup'] %}
 {% set variation = variation == 'null' ? false : variation %}
 
@@ -44,6 +43,7 @@
 {% set target = target == 'null' ? false : target %}
 
 {% include "@atoms/button/button.twig" with {
+    unpublished: unpublished,
     directory: directory,
     variation: variation,
     alignment: content.field_button_alignment[0] ? content.field_button_alignment[0]['#markup'],

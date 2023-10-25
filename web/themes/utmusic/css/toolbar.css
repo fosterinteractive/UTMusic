@@ -1,0 +1,23 @@
+/**
+ * @file
+ * Styles for the admin toolbar to fix bleeding of our frontend theme.
+ *
+ * When you are logged in and the toolbar is displayed on a frontend page the
+ * styles from out frontend them will affect the toolbar so icons will appear
+ * bigger or margin and padding are missing. This file is used to fix these
+ * issues.
+ */
+.toolbar .toolbar-icon.toolbar-handle:before,
+.toolbar .toolbar-icon:before {
+  width: 20px !important;
+}
+
+#admin-toolbar-search-tab .m-form-element--search {
+  margin-top: 5px !important;
+  padding-right: 16px !important;
+  padding-left: 16px !important;
+}
+
+.toolbar-bar .toolbar-icon-environment:before {
+  background-image: url(/modules/contrib/environment_indicator/images/env-bebebe.svg) !important;
+}
