@@ -687,9 +687,9 @@ content:
             reset: false
             condition: value
             grouping: AND
-            values_set: 1
+            values_set: 3
             value: ''
-            values: {  }
+            values: faculty
             value_form:
               -
                 value: faculty
