@@ -24,11 +24,6 @@ toolbar:
     theme:
       css/toolbar.css: {}
 
-paragraphs.unpublished:
-  css:
-    theme:
-      css/paragraphs.unpublished.css: {}
-
 # typekit:
 #   header: true
 #   js:

@@ -22,25 +22,23 @@ libraries-override:
   system/base:
     css:
       component:
-        /core/themes/stable/css/system/components/align.module.css: false
-        /core/themes/stable/css/system/components/container-inline.module.css: false
-        /core/themes/stable/css/system/components/fieldgroup.module.css: false
-        /core/themes/stable/css/system/components/clearfix.module.css: false
-        /core/themes/stable/css/system/components/details.module.css: false
-        /core/themes/stable/css/system/components/item-list.module.css: false
-        /core/themes/stable/css/system/components/nowrap.module.css: false
-        /core/themes/stable/css/system/components/position-container.module.css: false
-        /core/themes/stable/css/system/components/progress.module.css: false
-        /core/themes/stable/css/system/components/reset-appearance.module.css: false
-        /core/themes/stable/css/system/components/resize.module.css: false
-        /core/themes/stable/css/system/components/sticky-header.module.css: false
-        /core/themes/stable/css/system/components/system-status-counter.css: false
-        /core/themes/stable/css/system/components/system-status-report-counters.css: false
-        /core/themes/stable/css/system/components/system-status-report-general-info.css: false
-        /core/themes/stable/css/system/components/tabledrag.module.css: false
-        /core/themes/stable/css/system/components/tablesort.module.css: false
-        /core/themes/stable/css/system/components/tree-child.module.css: false
-        /core/modules/filter/css/filter.caption.css: false
+        css/components/align.module.css: false
+        css/components/container-inline.module.css: false
+        css/components/fieldgroup.module.css: false
+        css/components/clearfix.module.css: false
+        css/components/details.module.css: false
+        css/components/nowrap.module.css: false
+        css/components/position-container.module.css: false
+        css/components/progress.module.css: false
+        css/components/reset-appearance.module.css: false
+        css/components/resize.module.css: false
+        css/components/sticky-header.module.css: false
+        css/components/system-status-counter.css: false
+        css/components/system-status-report-counters.css: false
+        css/components/system-status-report-general-info.css: false
+        css/components/tabledrag.module.css: false
+        css/components/tablesort.module.css: false
+        css/components/tree-child.module.css: false
   environment_indicator/drupal.environment_indicator:
     css:
       component:
