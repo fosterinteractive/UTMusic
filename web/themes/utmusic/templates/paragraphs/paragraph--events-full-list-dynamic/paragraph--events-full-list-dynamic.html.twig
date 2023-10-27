@@ -36,13 +36,12 @@
  * @ingroup themeable
  */
 #}
-
-
 {% set events_status = content.field_events_full_list_status[0] ? content.field_events_full_list_status[0]['#markup'] %}
 
 {% if events_status == 'past' %}
   {% include "@organisms/content-views/_view.twig" 
     with {
+      unpublished: unpublished,
       attributes: attributes,
       content: drupal_view('events_full_list', 'past_events_full_list'),
     } only
@@ -50,6 +49,7 @@
 {% else %}
   {% include "@organisms/content-views/_view.twig" 
     with {
+      unpublished: unpublished,
       attributes: attributes,
       content: drupal_view('events_full_list', 'upcoming_events_full_list'),
     } only

@@ -36,9 +36,9 @@
  * @ingroup themeable
  */
 #}
-
 {% include "@molecules/quote/quote.twig" with {
-    directory: 'themes/utmusic',
+    unpublished: unpublished,
+    directory: directory,
     variation: content.field_quote_variation[0] ? content.field_quote_variation[0]['#markup'],
     image_main: content.field_quote_image_main[0] ? content.field_quote_image_main,
     image_small: content.field_quote_image_small[0] ? content.field_quote_image_small,

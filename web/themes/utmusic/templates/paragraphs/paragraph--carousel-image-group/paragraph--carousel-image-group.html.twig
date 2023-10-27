@@ -42,6 +42,7 @@
 {% set image_4 = content.field_carousel_group_image4[0] ? content.field_carousel_group_image4 %}
 
 {% include "@molecules/carousel-image-group/carousel-image-group.twig" with {
+    unpublished: unpublished,
     image_1: image_1,
     image_2: image_2,
     image_3: image_3,

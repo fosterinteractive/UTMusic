@@ -12,7 +12,7 @@
 {% endif %}
 
 {# url is coming for title #}
-<div class="m-research{{ variation }}">
+<div class="m-research{{ variation }}{% if unpublished %} paragraph--unpublished{% endif %}">
   <div class="m-research__content">
     {# Title #}
     {% if title %}

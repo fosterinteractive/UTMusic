@@ -15,7 +15,7 @@
 {% set text_size = text_size|default('normal') %}
 
 {% if text %}
-  <blockquote class="m-quote{{ variation }}">
+  <blockquote class="m-quote{{ variation }}{% if unpublished %} paragraph--unpublished{% endif %}">
     {% if image_main and variation == '--image' %}
       <div class="m-quote{{ variation }}__images">
         <div class="m-quote{{ variation }}__image-main">
@@ -67,8 +67,6 @@
           </cite>
         {% endif %}
 
-        
-
         {% if url and label %}
           {% include '@atoms/button/button.twig' with {
               directory: directory,
@@ -89,4 +87,3 @@
       
   </blockquote>
 {% endif %}
-

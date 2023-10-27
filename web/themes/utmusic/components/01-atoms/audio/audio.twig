@@ -11,7 +11,7 @@
 
 {% endif %}
 
-<div class="m-audio{{ variation }}">
+<div class="m-audio{{ variation }}{% if unpublished %} paragraph--unpublished{% endif %}">
   {% if title %}
     <div class="m-audio__title">
       {% include "@atoms/text/headings/heading.twig" with {

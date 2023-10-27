@@ -36,27 +36,21 @@
  * @ingroup themeable
  */
 #}
-
 {% if content.field_people_full_list_role[0] %}
   {% set list_role =  content.field_people_full_list_role[0]['#markup'] %}
 {% endif %}
 
 {% if list_role == 'faculty' %}
-  {% include "@organisms/content-views/_view.twig"
-    with {
-      content: drupal_view('people_full_list', 'faculty_full_list'),
-    } only
-  %}
+  {% set display = 'faculty_full_list' %}
 {% elseif list_role == 'staff' %}
-  {% include "@organisms/content-views/_view.twig"
-    with {
-      content: drupal_view('people_full_list', 'staff_full_list'),
-    } only
-  %}
+  {% set display = 'staff_full_list' %}
 {% elseif list_role == 'library' %}
-  {% include "@organisms/content-views/_view.twig"
-    with {
-      content: drupal_view('people_full_list', 'library_full_list'),
-    } only
-  %}
+  {% set display = 'library_full_list' %}
 {% endif %}
+
+{% include "@organisms/content-views/_view.twig"
+  with {
+    unpublished: unpublished,
+    content: drupal_view('people_full_list', display),
+  } only
+%}

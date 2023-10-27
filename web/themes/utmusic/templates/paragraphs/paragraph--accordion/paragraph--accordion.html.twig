@@ -36,6 +36,9 @@
  * @ingroup themeable
  */
 #}
+{{ attach_library('utmusic/accordion') }}
+{{ attach_library('utmusic/tippyjs') }}
+{{ attach_library('utmusic/tooltip') }}
 
 {% set accordion_items = [] %}
 
@@ -48,14 +51,11 @@
 {% endif %}
 
 {% include "@molecules/accordion/accordion.twig" with {
-    directory: 'themes/utmusic',
+    unpublished: unpublished,
+    directory: directory,
     title: content.field_accordion_title[0] ? content.field_accordion_title[0]['#text'],
     summary: content.field_accordion_summary[0] ? content.field_accordion_summary,
     items: accordion_items,
     expand_button_label: "Expand All"|t,
   }
 %}
-
-{{ attach_library('utmusic/accordion') }}
-{{ attach_library('utmusic/tippyjs') }}
-{{ attach_library('utmusic/tooltip') }}

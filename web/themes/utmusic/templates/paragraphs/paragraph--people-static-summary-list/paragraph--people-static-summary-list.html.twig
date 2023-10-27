@@ -36,7 +36,7 @@
  * @ingroup themeable
  */
 #}
-
+{{ attach_library('utmusic/listing-full-people') }}
 
 {# Get people #}
 {% set people = [] %}
@@ -49,12 +49,11 @@
 {% endif %}
 
 {% include "@organisms/listing/listing.twig" with {
-    directory: 'themes/utmusic',
+    unpublished: unpublished,
+    directory: directory,
     variation: 'people',
     listing_col_layout: 'l-flex--4col',
     listing_items: people,
     title: content.field_people_summary_title[0] ? content.field_people_summary_title[0]['#text']
   } only
 %} 
-
-{{ attach_library('utmusic/listing-full-people') }}

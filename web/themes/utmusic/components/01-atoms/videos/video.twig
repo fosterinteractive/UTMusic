@@ -24,8 +24,7 @@
 
 {% endif %}
 
-
-<div class="m-video">
+<div class="m-video{% if unpublished %} paragraph--unpublished{% endif %}">
   {% if video %}
     <div class="m-video__video">
       {% if video_type == 'embed' %}

@@ -11,7 +11,7 @@
 
 {% endif %}
 
-<div class="m-inline-menu{{ variation }}">
+<div class="m-inline-menu{{ variation }}{% if unpublished %} paragraph--unpublished{% endif %}">
   <div class="m-inline-menu{{ variation }}__text">
   
     {% if title %}

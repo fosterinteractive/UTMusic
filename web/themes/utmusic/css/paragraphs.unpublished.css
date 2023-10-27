@@ -1,0 +1,26 @@
+.paragraph--unpublished {
+  position: relative;
+  outline: 1px solid red !important;
+  opacity: 55%;
+  min-height: 35px;
+}
+
+.paragraph--unpublished:hover {
+  opacity: 75%;
+}
+
+.paragraph--unpublished::after {
+  content: 'Unpublished';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  background-color: #fff4f4;
+  border-bottom: 1px solid red;
+  border-left: 1px solid red;
+  color: #000000;
+  font-family: Monospace, Sans-Serif !important;
+  line-height: 25px !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+}

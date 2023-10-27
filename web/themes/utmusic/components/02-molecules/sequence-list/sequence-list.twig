@@ -11,7 +11,7 @@
 
 {% endif %}
 
-<div class="m-sequence-list">
+<div class="m-sequence-list{% if unpublished %} paragraph--unpublished{% endif %}">
   {% if sequence_items %}
     <div class="m-sequence-list__items">
       {% for item in sequence_items %}

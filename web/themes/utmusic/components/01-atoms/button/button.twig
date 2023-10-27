@@ -31,6 +31,10 @@
 {# Component can be either <a> (default) or <button> #}
 {% set html_element = html_element|default('a') %}
 
+{% if unpublished %}
+<div class="paragraph--unpublished">
+{% endif %}
+
 {% if width %}<div class="a-button--{{ width }}">{% endif %}
   <{{ html_element }}
     
@@ -97,3 +101,7 @@
 
   </{{ html_element }}>
 {% if width %}</div>{% endif %}
+
+{% if unpublished %}
+</div>
+{% endif %}

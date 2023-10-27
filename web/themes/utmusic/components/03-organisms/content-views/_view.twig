@@ -32,11 +32,12 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    paragraph.bundle|clean_class
-  ]
-%}
-{# <div{{ attributes.addClass(classes) }}> #}
-  {{ content }}
-{# </div> #}
+{% if unpublished %}
+  <div class="paragraph--unpublished">
+{% endif %}
+
+{{ content }}
+
+{% if unpublished %}
+  </div>
+{% endif %}

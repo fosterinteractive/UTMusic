@@ -40,6 +40,7 @@
 {% set appearance = content.field_section_title_appearance[0] ? content.field_section_title_appearance[0]['#markup'] %}
 
 {% include "@atoms/text/headings/heading.twig" with {
+    unpublished: unpublished,
     html_element: html_element,
     appearance: appearance,
     alignment: content.field_section_title_alignment[0] ? content.field_section_title_alignment[0]['#markup'],

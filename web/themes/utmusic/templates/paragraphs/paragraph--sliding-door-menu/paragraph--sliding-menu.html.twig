@@ -36,6 +36,7 @@
  * @ingroup themeable
  */
 #}
+{{ attach_library('utmusic/sliding-door-menu') }}
 
 {# Get items #}
 {% set sliding_menu_items = [] %}
@@ -43,7 +44,6 @@
 
 {% if content.field_sliding_menu_items[0] %}
   {% set count = content.field_sliding_menu_items['#items'].getIterator()|length -1 %}
-
 
   {% for i in 0..count %}
     {% set sliding_menu_items = sliding_menu_items|merge([content.field_sliding_menu_items[i]]) %}
@@ -58,10 +58,9 @@
 {% endif %}
 
 {% include "@molecules/sliding-door-menu/sliding-door-menu.twig" with {
-    directory: 'themes/utmusic',
+    unpublished: unpublished,
+    directory: directory,
     sliding_menu_items: sliding_menu_items,
     sliding_menu_items_links: sliding_menu_items_links,
   }
 %}
-
-{{ attach_library('utmusic/sliding-door-menu') }}

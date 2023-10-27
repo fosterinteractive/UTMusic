@@ -18,7 +18,7 @@
   {% set aria_label_items = title|default('Featured media'|t)%} 
 {% endif %}
  
-<div class="o-listing{{ variation }}">
+<div class="o-listing{{ variation }}{% if unpublished %} paragraph--unpublished{% endif %}">
   {% if title %}
     <div class="o-listing__header">
       {% if title %}

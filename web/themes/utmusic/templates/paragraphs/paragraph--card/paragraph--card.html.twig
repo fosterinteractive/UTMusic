@@ -36,6 +36,8 @@
  * @ingroup themeable
  */
 #}
+{{ attach_library('utmusic/card') }}
+
 {# Check if there is an image #}
 {# {% if content.field_card_image[0] %} #}
   {# Get image path, alt and image style field #}
@@ -71,7 +73,6 @@
   {% endfor %}
 {% endif %}
 
-
 {% set variation = content.field_card_variation[0] ? content.field_card_variation[0]['#markup'] %}
 
 {% set illustration_file_type = content.field_card_illustration[0] ? content.field_card_illustration[0]['#media'].field_media_image.entity.filemime.value %}
@@ -87,9 +88,9 @@
 {% set link_url = content.field_card_button_url[0] ? content.field_card_button_url[0]['#url'] %}
 {% set aria_label = content.field_card_button_aria_label[0] ? content.field_card_button_aria_label[0]['#context'].value %}
 
-
 {% include "@molecules/card/card.twig" with {
-    directory: 'themes/utmusic',
+    unpublished: unpublished,
+    directory: directory,
     variation: variation,
     illustration: illustration,
     illustration_file_type: illustration_file_type,
@@ -105,5 +106,3 @@
     aria_label: aria_label,
   }
 %}
-
-{{ attach_library('utmusic/card') }}
