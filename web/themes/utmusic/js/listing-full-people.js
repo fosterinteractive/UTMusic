@@ -1,9 +1,9 @@
 const setSizeImagePlaceholder = (context) => {
-  let firstImageHeight = context.querySelector('.m-listing-item--people .m-listing-item--people__img img');
+  const firstImageHeight = context.querySelector('.m-listing-item--people .m-listing-item--people__img img');
   let placeholdersArray = context.querySelectorAll('.m-listing-item--people .m-listing-item--people__img-illustration');
 
   placeholdersArray.forEach( placeholder => {
-    placeholder.style.height = firstImageHeight ? firstImageHeight.height + "px": '300px';
+    placeholder.style.height = firstImageHeight ? firstImageHeight.clientHeight + "px": '300px';
   });
 }
 
