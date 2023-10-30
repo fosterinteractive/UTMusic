@@ -16,7 +16,7 @@
     {% if credits and years %}
       <div class="m-curriculum__totals">
 
-        <div class="m-curriculum__credits">{{} credits }}</div>
+        <div class="m-curriculum__credits">{{ credits }}</div>
 
         <div class="m-curriculum__years">Total Credits over {{ years }} years</div>
 
@@ -44,7 +44,7 @@
           html_element: 'a',
           url: btn_url,
           aria_label: btn_aria_label,
-          target: btn_target
+          target: btn_target,
         } only
       %} 
     </div>
