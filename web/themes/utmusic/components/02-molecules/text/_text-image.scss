@@ -31,9 +31,13 @@
 
 figcaption {
   @extend %a-type--small;
-  line-height: 1.5;
 
   color: var(--c-figcaptions);
   margin-top: rem(10px);
   margin-bottom: 1.5rem;
+}
+
+// if there is any caption for image and the alignment is "center" for 2col/3col layout 
+.l-section-vertical-alignment--center .m-image__top-padding {
+  padding-top: var(--spacer);
 }
