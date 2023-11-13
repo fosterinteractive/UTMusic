@@ -4,9 +4,15 @@
 ***************************************************************************
 **************************************************************************/
 
-$spacing-small: calc(var(--spacer) * 2);
-$spacing-medium: calc(var(--spacer) * 3);
-$spacing-large: calc(var(--spacer) * 6);
+$spacing-small: var(--spacer);
+$spacing-medium: calc(var(--spacer) * 2);
+$spacing-large: calc(var(--spacer) * 3);
+
+@include breakpoint($bp-tablet) {
+  $spacing-small: calc(var(--spacer) * 2);
+  $spacing-medium: calc(var(--spacer) * 3);
+  $spacing-large: calc(var(--spacer) * 6);
+}
 
 .l-section-spacing-top--small {
 
