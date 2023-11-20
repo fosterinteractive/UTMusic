@@ -23,7 +23,7 @@
   @include breakpoint(1px $bp-tablet-small) {
     text-wrap: wrap;
     overflow-wrap: break-word;
-    word-break: break-all;
+    // word-break: break-all;
 
     .m-menu-priority-plus__link {
       min-width: rem(130px);
