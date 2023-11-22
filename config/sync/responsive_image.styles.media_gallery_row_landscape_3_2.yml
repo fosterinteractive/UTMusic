@@ -1,0 +1,29 @@
+uuid: 8f0aa2ea-072e-4349-b170-62633e0b15d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.landscape_3_2_1000_70
+    - image.style.landscape_3_2_1200
+    - image.style.landscape_3_2_200
+    - image.style.landscape_3_2_400
+    - image.style.landscape_3_2_600
+    - image.style.landscape_3_2_860
+id: media_gallery_row_landscape_3_2
+label: 'Media Gallery Row Landscape 3:2'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width:1170px) 443px, (min-width:600px) calc(33.3vw - 40px),  calc(100vw - 40px)'
+      sizes_image_styles:
+        - landscape_3_2_1000_70
+        - landscape_3_2_1200
+        - landscape_3_2_200
+        - landscape_3_2_400
+        - landscape_3_2_600
+        - landscape_3_2_860
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: landscape_3_2_600

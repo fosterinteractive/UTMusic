@@ -1,0 +1,27 @@
+uuid: f2f204e8-05a0-4d3b-9b81-f0254b66d246
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.landscape_4_3_1000_70
+    - image.style.landscape_4_3_200
+    - image.style.landscape_4_3_400
+    - image.style.landscape_4_3_600
+    - image.style.landscape_4_3_900
+id: media_gallery_small_landscape_4_3
+label: 'Media Gallery Small Landscape 4:3'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width:1370px) 438px, (min-width:600px) 29.5vw,  calc(50vw - 20px)'
+      sizes_image_styles:
+        - landscape_4_3_1000_70
+        - landscape_4_3_200
+        - landscape_4_3_400
+        - landscape_4_3_600
+        - landscape_4_3_900
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: landscape_4_3_600

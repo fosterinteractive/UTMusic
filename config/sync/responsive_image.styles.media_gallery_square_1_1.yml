@@ -1,0 +1,31 @@
+uuid: 776a46ee-db8a-4e6f-9d20-790e6bb2cfa0
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.square_1_1_1000_70
+    - image.style.square_1_1_1200
+    - image.style.square_1_1_1500
+    - image.style.square_1_1_1800
+    - image.style.square_1_1_400
+    - image.style.square_1_1_600
+    - image.style.square_1_1_900
+id: media_gallery_square_1_1
+label: 'Media Gallery Square 1:1'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width:1170px) 910px, (min-width:600px) 60.5vw,  calc(100vw - 40px)'
+      sizes_image_styles:
+        - square_1_1_1000_70
+        - square_1_1_1200
+        - square_1_1_1500
+        - square_1_1_1800
+        - square_1_1_400
+        - square_1_1_600
+        - square_1_1_900
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: square_1_1_1000_70
