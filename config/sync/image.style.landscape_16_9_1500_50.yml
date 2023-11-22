@@ -1,0 +1,23 @@
+uuid: 82ac7d98-8d1d-4e6c-8dea-33f0b231c184
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_style_quality
+name: landscape_16_9_1500_50
+label: 'Landscape 16:9 - (1500 @ 50%)'
+effects:
+  9634a444-4113-4ebb-9e9e-feef88edaf10:
+    uuid: 9634a444-4113-4ebb-9e9e-feef88edaf10
+    id: image_style_quality
+    weight: 1
+    data:
+      quality: 50
+  e11ec3a6-f9e6-4128-bf9a-a77fb0e3e0d5:
+    uuid: e11ec3a6-f9e6-4128-bf9a-a77fb0e3e0d5
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1500
+      height: 844
+      anchor: center-center

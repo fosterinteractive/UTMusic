@@ -1,0 +1,23 @@
+uuid: 807c0a71-da37-4d08-a9c7-967e26983925
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_style_quality
+name: landscape_16_9_1800_45
+label: 'Landscape 16:9 - (1800 @ 45%)'
+effects:
+  ffba8403-a99e-40f4-90fc-93a0083ad348:
+    uuid: ffba8403-a99e-40f4-90fc-93a0083ad348
+    id: image_style_quality
+    weight: 1
+    data:
+      quality: 45
+  bdf113c4-bf95-4259-9f3c-8a3188446dfc:
+    uuid: bdf113c4-bf95-4259-9f3c-8a3188446dfc
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1800
+      height: 1012
+      anchor: center-center
