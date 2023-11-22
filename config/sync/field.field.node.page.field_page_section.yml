@@ -20,6 +20,7 @@ dependencies:
     - paragraphs.paragraphs_type.image_section
     - paragraphs.paragraphs_type.job_listing
     - paragraphs.paragraphs_type.jobs_full_list_dynamic
+    - paragraphs.paragraphs_type.media_gallery_row
     - paragraphs.paragraphs_type.message
     - paragraphs.paragraphs_type.news_featured_item
     - paragraphs.paragraphs_type.news_full_list_dynamic
@@ -81,6 +82,7 @@ settings:
       job_listing: job_listing
       file_resources_full_list_dynamic: file_resources_full_list_dynamic
       carousel_quote: carousel_quote
+      media_gallery_row: media_gallery_row
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -148,6 +150,9 @@ settings:
         enabled: true
       jobs_full_list_dynamic:
         weight: -56
+        enabled: true
+      media_gallery_row:
+        weight: 65
         enabled: true
       message:
         weight: -77
