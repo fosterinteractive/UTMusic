@@ -62,6 +62,7 @@
     "drupal-attribute": "^1.0.2",
     "jquery": "^3.6.3",
     "js-yaml-loader": "^1.2.2",
+    "magnific-popup": "^1.1.0",
     "node-sass-glob-importer": "^5.3.2",
     "postinstall": "^0.8.0",
     "priority-nav": "1.0.13",

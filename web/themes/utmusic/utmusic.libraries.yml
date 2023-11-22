@@ -150,6 +150,14 @@ mmenu:
     js/libraries/mmenu/mmenu.js: {}
     js/libraries/mmenu.config.js: {}
 
+magnific-popup:
+  js:
+    js/libraries/magnific-popup/dist/jquery.magnific-popup.min.js: { minified: true }
+    js/magnific-popup.config.js: {}
+  css:
+    theme:
+      js/libraries/magnific-popup/dist/magnific-popup.css: {}
+
 priority-nav:
   js:
     js/libraries/priority-nav/dist/priority-nav.min.js: { minified: true }

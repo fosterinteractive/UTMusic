@@ -18,3 +18,4 @@ rm -rf ./js/libraries/priority-nav
 cp -r ./node_modules/priority-nav ./js/libraries/priority-nav
 rm -rf ./js/libraries/slick-carousel
 cp -r ./node_modules/slick-carousel ./js/libraries/slick-carousel
+cp -r ./node_modules/magnific-popup ./js/libraries/magnific-popup
