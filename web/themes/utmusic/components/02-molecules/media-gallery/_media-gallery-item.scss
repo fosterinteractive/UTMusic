@@ -184,3 +184,14 @@
     }
   }
 }
+
+// Big Media Gallery Component - vertical flex
+.m-image-grid-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer);
+}
+
+.m-image-grid-wrapper__title h2 {
+  margin-bottom: 0;
+}
