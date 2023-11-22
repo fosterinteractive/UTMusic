@@ -1,0 +1,14 @@
+<div class="m-image-grid-wrapper">
+  {% if sb_demo %}
+    {% for item in content %}
+      {% include "@molecules/media-gallery/media-gallery-item.twig" with {
+          variation: item.variation,
+          sb_demo: item.sb_demo,
+          items: item.items,
+        } only 
+      %}
+    {% endfor %}
+  {% else %}
+    {{ content }}
+  {% endif %}
+</div>

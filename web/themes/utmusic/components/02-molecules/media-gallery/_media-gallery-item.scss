@@ -1,0 +1,186 @@
+.m-image-grid__row {
+  position: relative;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.2s;
+  border-radius: rem(10px);
+  
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 0.9;
+    box-shadow: var(--shadow--small);
+  }
+
+  img,
+  picture {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.mfp-figure {
+  figcaption {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+%m-image-grid-core {
+  display: grid;
+  grid-gap: rem(21px);
+}
+
+// Image stacked on the Left.
+.m-image-grid--left {
+  @extend %m-image-grid-core;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "lefttop righttop"
+  "bottom bottom";
+
+  @include breakpoint($bp-tablet-small) {
+    grid-template-columns: 32.5fr 67.5fr;
+    grid-template-areas: 
+      "lefttop  right"
+      "leftbottom right";
+  }
+}
+
+.m-image-grid__row-1--left {
+  grid-area: lefttop;
+
+  @include breakpoint($bp-tablet-small) {
+    grid-area: lefttop;
+  }
+}
+
+.m-image-grid__row-2--left {
+  grid-area: righttop;
+
+  @include breakpoint($bp-tablet-small) {
+    grid-area: leftbottom;
+  }
+}
+
+.m-image-grid__row-3--left {
+  grid-area: bottom;
+  
+  @include breakpoint($bp-tablet-small) {
+    grid-area: right;
+  }
+}
+
+
+// Image stacked on the Right.
+.m-image-grid--right {
+  @extend %m-image-grid-core;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "top top"
+  "leftbottom rightbottom";
+
+  @include breakpoint($bp-tablet-small) {
+    grid-template-columns: 67.5fr 32.5fr;
+    grid-template-areas: 
+      "left righttop"
+      "left rightbottom";
+  }
+}
+
+.m-image-grid__row-1--right {
+  grid-area: top;
+
+  @include breakpoint($bp-tablet-small) {
+    grid-area: righttop;
+  }
+}
+
+.m-image-grid__row-2--right {
+  grid-area: leftbottom;
+
+  @include breakpoint($bp-tablet-small) {
+    grid-area: rightbottom;
+  }
+}
+
+.m-image-grid__row-3--right {
+  grid-area: rightbottom;
+
+  @include breakpoint($bp-tablet-small) {
+    grid-area: left;
+  }
+}
+
+// Image Row.
+.m-image-grid--row {
+  @extend %m-image-grid-core;
+
+  @include breakpoint($bp-tablet-small) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Video.
+%video-wrapper-core {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+.m-image-grid__video-wrapper--landscape_16_9 {
+  @extend %video-wrapper-core;
+
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.m-image-grid__video-wrapper--square_1_1 {
+  @extend %video-wrapper-core;
+
+  padding-top: 100%; /* 1:1 aspect ratio */
+}
+
+.m-image-grid__video-wrapper--landscape_3_2 {
+  @extend %video-wrapper-core;
+
+  padding-top: 66.66%; /* 2/3 = 0.6666 or 66.66% */
+}
+
+.m-image-grid__video-wrapper--landscape_4_3 {
+  @extend %video-wrapper-core;
+
+  padding-top: 75%; /* 3/4 = 0.75 or 75% */
+}
+
+.m-image-grid__video-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This will crop the image to cover the container, preserving its aspect ratio */
+  object-position: center; /* This will center the image within the container */
+}
+
+.m-image-grid__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: rem(68px);
+  height: rem(48px);
+}
+
+// Pop-up.
+.m-image-grid__row-popup,
+.m-image-grid__video-wrapper {
+  &:focus {
+    img {
+      border: rem(4px) solid palette(blue, 300);
+      transition: border 0.1s;
+    }
+  }
+}
