@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.listing_item_library
+    - field.field.node.people.feeds_item
     - field.field.node.people.field_page_admin_help_seo
     - field.field.node.people.field_page_admin_help_social
     - field.field.node.people.field_page_meta_description
@@ -104,6 +105,7 @@ content:
     weight: 3
     region: content
 hidden:
+  feeds_item: true
   field_page_admin_help_seo: true
   field_page_admin_help_social: true
   field_page_meta_description: true

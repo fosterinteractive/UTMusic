@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.event.feeds_item
     - field.field.node.event.field_even_location_link_map
     - field.field.node.event.field_event_area
     - field.field.node.event.field_event_audience
@@ -312,6 +313,7 @@ content:
     weight: 0
     region: content
 hidden:
+  feeds_item: true
   field_page_admin_help_seo: true
   field_page_admin_help_social: true
   search_api_excerpt: true
