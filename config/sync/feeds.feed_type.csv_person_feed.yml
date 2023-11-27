@@ -1,0 +1,365 @@
+uuid: 5ac981c3-f9ed-4871-a3a1-682abc59f0d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.people.feeds_item
+    - field.field.node.people.field_people_activities
+    - field.field.node.people.field_people_area
+    - field.field.node.people.field_people_background
+    - field.field.node.people.field_people_creative_works
+    - field.field.node.people.field_people_custom_content
+    - field.field.node.people.field_people_education
+    - field.field.node.people.field_people_email
+    - field.field.node.people.field_people_faculty_position
+    - field.field.node.people.field_people_instrument
+    - field.field.node.people.field_people_job_title
+    - field.field.node.people.field_people_job_title_library
+    - field.field.node.people.field_people_job_title_staff
+    - field.field.node.people.field_people_last_name
+    - field.field.node.people.field_people_name
+    - field.field.node.people.field_people_phone
+    - field.field.node.people.field_people_profile_type
+    - field.field.node.people.field_people_pronouns
+    - field.field.node.people.field_people_research_profile
+    - field.field.node.people.field_people_role
+    - field.field.node.people.field_people_role_new
+    - field.field.node.people.field_people_staff_position
+    - field.field.node.people.field_people_teaching
+    - field.field.node.people.field_people_website
+    - node.type.people
+  module:
+    - node
+label: 'CSV Person Feed'
+id: csv_person_feed
+description: ''
+help: ''
+import_period: 3600
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: csv
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: people
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  first_name:
+    value: 'First Name'
+    label: 'First Name'
+    machine_name: first_name
+    type: csv
+  last_name:
+    value: 'Last Name'
+    label: 'Last Name'
+    machine_name: last_name
+    type: csv
+  pronouns:
+    value: Pronouns
+    label: Pronouns
+    machine_name: pronouns
+    type: csv
+  email:
+    value: Email
+    label: Email
+    machine_name: email
+    type: csv
+  phone:
+    value: Phone
+    label: Phone
+    machine_name: phone
+    type: csv
+  discoverresearch_profile:
+    value: 'DiscoverResearch Profile'
+    label: 'DiscoverResearch Profile'
+    machine_name: discoverresearch_profile
+    type: csv
+  personal_website:
+    value: 'Personal Website'
+    label: 'Personal Website'
+    machine_name: personal_website
+    type: csv
+  category:
+    value: Category
+    label: Category
+    machine_name: category
+    type: csv
+  id:
+    value: id
+    label: id
+    machine_name: id
+    type: csv
+  role:
+    value: Role
+    label: Role
+    machine_name: role
+    type: csv
+  faculty_position:
+    value: 'Faculty Position'
+    label: 'Faculty Position'
+    machine_name: faculty_position
+    type: csv
+  faculty_job_title:
+    value: 'Faculty Job Title'
+    label: 'Faculty Job Title'
+    machine_name: faculty_job_title
+    type: csv
+  instrument:
+    value: Instrument
+    label: Instrument
+    machine_name: instrument
+    type: csv
+  area_of_study:
+    value: 'Area of Study'
+    label: 'Area of Study'
+    machine_name: area_of_study
+    type: csv
+  librarians_library_staff_job_title:
+    value: 'Librarians & Library Staff Job Title'
+    label: 'Librarians & Library Staff Job Title'
+    machine_name: librarians_library_staff_job_title
+    type: csv
+  profile_type:
+    value: 'Profile Type'
+    label: 'Profile Type'
+    machine_name: profile_type
+    type: csv
+  education:
+    value: Education
+    label: Education
+    machine_name: education
+    type: csv
+  biography:
+    value: Biography
+    label: Biography
+    machine_name: biography
+    type: csv
+  professional_activities:
+    value: 'Professional Activities'
+    label: 'Professional Activities'
+    machine_name: professional_activities
+    type: csv
+  teaching:
+    value: Teaching
+    label: Teaching
+    machine_name: teaching
+    type: csv
+  scholarly_creative_works:
+    value: 'Scholarly & Creative Works'
+    label: 'Scholarly & Creative Works'
+    machine_name: scholarly_creative_works
+    type: csv
+  main_content:
+    value: 'Main Content'
+    label: 'Main Content'
+    machine_name: main_content
+    type: csv
+  staff_position:
+    value: 'Staff Position'
+    label: 'Staff Position'
+    machine_name: staff_position
+    type: csv
+  staff_job_title:
+    value: 'Staff Job Title'
+    label: 'Staff Job Title'
+    machine_name: staff_job_title
+    type: csv
+mappings:
+  -
+    target: field_people_name
+    map:
+      value: first_name
+    settings:
+      language: ''
+      format: simple_text
+  -
+    target: field_people_last_name
+    map:
+      value: last_name
+    settings:
+      language: ''
+      format: simple_text
+  -
+    target: field_people_pronouns
+    map:
+      value: pronouns
+    settings:
+      language: ''
+      format: simple_text
+  -
+    target: field_people_email
+    map:
+      value: email
+    settings:
+      language: null
+      defuse: false
+    unique: {  }
+  -
+    target: field_people_phone
+    map:
+      value: phone
+    settings:
+      language: null
+  -
+    target: field_people_research_profile
+    map:
+      uri: discoverresearch_profile
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_people_website
+    map:
+      uri: personal_website
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_people_role
+    map:
+      value: category
+    settings:
+      language: null
+  -
+    target: feeds_item
+    map:
+      url: ''
+      guid: id
+    settings: {  }
+    unique:
+      guid: 1
+  -
+    target: field_people_role_new
+    map:
+      target_id: role
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: people_role
+  -
+    target: field_people_faculty_position
+    map:
+      target_id: faculty_position
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: faculty_roles
+  -
+    target: field_people_job_title
+    map:
+      target_id: faculty_job_title
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: faculty_job_titles
+  -
+    target: field_people_instrument
+    map:
+      target_id: instrument
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: instrument
+  -
+    target: field_people_area
+    map:
+      target_id: area_of_study
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: news_area_of_study
+  -
+    target: field_people_job_title_library
+    map:
+      target_id: librarians_library_staff_job_title
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: librarians_library_staff_job_tit
+  -
+    target: field_people_profile_type
+    map:
+      value: profile_type
+    settings:
+      language: null
+  -
+    target: field_people_education
+    map:
+      value: education
+    settings:
+      language: ''
+      format: rich_text
+  -
+    target: field_people_background
+    map:
+      value: biography
+    settings:
+      language: ''
+      format: rich_text
+  -
+    target: field_people_activities
+    map:
+      value: professional_activities
+    settings:
+      language: ''
+      format: rich_text
+  -
+    target: field_people_teaching
+    map:
+      value: teaching
+    settings:
+      language: ''
+      format: rich_text
+  -
+    target: field_people_creative_works
+    map:
+      value: scholarly_creative_works
+    settings:
+      language: ''
+      format: rich_text
+  -
+    target: field_people_custom_content
+    map:
+      value: main_content
+    settings:
+      language: ''
+      format: rich_text
+  -
+    target: field_people_staff_position
+    map:
+      target_id: staff_position
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: staff_roles
+  -
+    target: field_people_job_title_staff
+    map:
+      target_id: staff_job_title
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: staff_job_titles

@@ -1,0 +1,311 @@
+uuid: df6dc5fb-74ae-4351-be37-d88ec5ca5dfb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.feeds_item
+    - field.field.node.event.field_even_location_link_map
+    - field.field.node.event.field_event_area
+    - field.field.node.event.field_event_audience
+    - field.field.node.event.field_event_body
+    - field.field.node.event.field_event_button_a11y
+    - field.field.node.event.field_event_button_label
+    - field.field.node.event.field_event_button_url
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_location
+    - field.field.node.event.field_event_location_long_desc
+    - field.field.node.event.field_event_location_settings
+    - field.field.node.event.field_event_location_short_title
+    - field.field.node.event.field_event_price
+    - field.field.node.event.field_event_promote
+    - field.field.node.event.field_event_summary
+    - field.field.node.event.field_event_title
+    - field.field.node.event.field_event_type
+    - field.field.node.event.field_events_ensembles_choirs
+    - node.type.event
+  module:
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers: {  }
+label: 'CSV Event Feed'
+id: csv_event_feed
+description: ''
+help: ''
+import_period: 3600
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: csv
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: event
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  title:
+    value: Title
+    label: Title
+    machine_name: title
+    type: csv
+  location_settings:
+    value: 'Location Settings'
+    label: 'Location Settings'
+    machine_name: location_settings
+    type: csv
+  location_short_title:
+    value: 'Location Short Title'
+    label: 'Location Short Title'
+    machine_name: location_short_title
+    type: csv
+  location_long_description:
+    value: 'Location Long Description'
+    label: 'Location Long Description'
+    machine_name: location_long_description
+    type: csv
+  link_google_map:
+    value: 'Link Google Map'
+    label: 'Link Google Map'
+    machine_name: link_google_map
+    type: csv
+  price:
+    value: Price
+    label: Price
+    machine_name: price
+    type: csv
+  summary_text:
+    value: 'Summary Text'
+    label: 'Summary Text'
+    machine_name: summary_text
+    type: csv
+  event_type:
+    value: 'Event Type'
+    label: 'Event Type'
+    machine_name: event_type
+    type: csv
+  area_of_study:
+    value: 'Area of Study'
+    label: 'Area of Study'
+    machine_name: area_of_study
+    type: csv
+  ensembles_choirs:
+    value: 'Ensembles & Choirs'
+    label: 'Ensembles & Choirs'
+    machine_name: ensembles_choirs
+    type: csv
+  audience:
+    value: Audience
+    label: Audience
+    machine_name: audience
+    type: csv
+  main_content:
+    value: 'Main Content'
+    label: 'Main Content'
+    machine_name: main_content
+    type: csv
+  promote_on:
+    value: 'Promote On'
+    label: 'Promote On'
+    machine_name: promote_on
+    type: csv
+  id:
+    value: id
+    label: id
+    machine_name: id
+    type: csv
+  start_date:
+    value: 'Start date'
+    label: 'Start date'
+    machine_name: start_date
+    type: csv
+  end_date:
+    value: 'End date'
+    label: 'End date'
+    machine_name: end_date
+    type: csv
+  location:
+    value: Location
+    label: Location
+    machine_name: location
+    type: csv
+  event_button_url:
+    value: 'Event Button URL'
+    label: 'Event Button URL'
+    machine_name: event_button_url
+    type: csv
+  event_button_label:
+    value: 'Event Button Label'
+    label: 'Event Button Label'
+    machine_name: event_button_label
+    type: csv
+  event_button_accessibility_label:
+    value: 'Event Button Accessibility Label'
+    label: 'Event Button Accessibility Label'
+    machine_name: event_button_accessibility_label
+    type: csv
+  published:
+    value: Published
+    label: Published
+    machine_name: published
+    type: blank
+mappings:
+  -
+    target: field_event_title
+    map:
+      value: title
+    settings:
+      language: ''
+      format: simple_text
+  -
+    target: field_event_location_settings
+    map:
+      value: location_settings
+    settings:
+      language: null
+  -
+    target: field_event_location_short_title
+    map:
+      value: location_short_title
+    settings:
+      language: null
+      format: plain_text
+  -
+    target: field_event_location_long_desc
+    map:
+      value: location_long_description
+    settings:
+      language: ''
+      format: fact_value
+  -
+    target: field_even_location_link_map
+    map:
+      uri: link_google_map
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_event_price
+    map:
+      value: price
+    settings:
+      language: null
+  -
+    target: field_event_summary
+    map:
+      value: summary_text
+    settings:
+      language: ''
+      format: simple_text
+  -
+    target: field_event_type
+    map:
+      target_id: event_type
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: event_type
+  -
+    target: field_event_area
+    map:
+      target_id: area_of_study
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: news_area_of_study
+  -
+    target: field_events_ensembles_choirs
+    map:
+      target_id: ensembles_choirs
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: ensembles_choirs
+  -
+    target: field_event_audience
+    map:
+      target_id: audience
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: audience
+  -
+    target: field_event_body
+    map:
+      value: main_content
+    settings:
+      language: ''
+      format: rich_text
+  -
+    target: field_event_promote
+    map:
+      target_id: promote_on
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: promoted_on_events
+  -
+    target: feeds_item
+    map:
+      url: ''
+      guid: id
+    settings: {  }
+    unique:
+      guid: 1
+  -
+    target: field_event_date
+    map:
+      value: start_date
+      end_value: end_date
+    settings:
+      language: ''
+      timezone: America/Toronto
+  -
+    target: field_event_location
+    map:
+      target_id: location
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+      autocreate_bundle: location
+  -
+    target: field_event_button_url
+    map:
+      uri: event_button_url
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_event_button_label
+    map:
+      value: event_button_label
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_event_button_a11y
+    map:
+      value: event_button_accessibility_label
+    settings:
+      language: null
+    unique: {  }

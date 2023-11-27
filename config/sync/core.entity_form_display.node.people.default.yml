@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.people.feeds_item
     - field.field.node.people.field_page_admin_help_seo
     - field.field.node.people.field_page_admin_help_social
     - field.field.node.people.field_page_meta_description
@@ -811,6 +812,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  feeds_item: true
   field_people_program: true
   promote: true
   sticky: true
