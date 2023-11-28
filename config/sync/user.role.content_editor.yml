@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - block_content.type.no_views_results_behaviour
+    - feeds.feed_type.csv_event_feed
+    - feeds.feed_type.csv_person_feed
     - filter.format.fact
     - filter.format.fact_value
     - filter.format.header_summary
@@ -55,6 +57,8 @@ dependencies:
     - contextual
     - dropzonejs
     - entity_browser
+    - feeds
+    - field_ui
     - file
     - filter
     - markerio
@@ -77,15 +81,21 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access ed_file entity browser pages'
+  - 'access feed overview'
   - 'access files overview'
   - 'access markerio'
   - 'access media overview'
   - 'access taxonomy overview'
   - 'administer block content'
   - 'administer blocks'
+  - 'administer feeds_feed display'
   - 'administer media'
   - 'administer menu'
   - 'administer menu positions'
+  - 'clear csv_event_feed feeds'
+  - 'clear csv_person_feed feeds'
+  - 'create csv_event_feed feeds'
+  - 'create csv_person_feed feeds'
   - 'create event content'
   - 'create illustration media'
   - 'create job content'
@@ -222,6 +232,10 @@ permissions:
   - 'edit terms in staff_job_titles'
   - 'edit terms in staff_roles'
   - 'edit terms in undergraduate_forms_category'
+  - 'import csv_event_feed feeds'
+  - 'import csv_person_feed feeds'
+  - 'import own csv_event_feed feeds'
+  - 'import own csv_person_feed feeds'
   - 'moderated content bulk archive'
   - 'moderated content bulk pin content'
   - 'moderated content bulk publish'
@@ -236,7 +250,15 @@ permissions:
   - 'revert people revisions'
   - 'revert program revisions'
   - 'revert resources revisions'
+  - 'schedule_import csv_event_feed feeds'
+  - 'schedule_import csv_person_feed feeds'
+  - 'schedule_import own csv_event_feed feeds'
+  - 'schedule_import own csv_person_feed feeds'
   - 'update any media'
+  - 'update csv_event_feed feeds'
+  - 'update csv_person_feed feeds'
+  - 'update own csv_event_feed feeds'
+  - 'update own csv_person_feed feeds'
   - 'use ed_image_bulk_upload bulk upload form'
   - 'use editorial transition archive'
   - 'use editorial transition create_new_draft'
@@ -253,6 +275,8 @@ permissions:
   - 'view all media revisions'
   - 'view any no_views_results_behaviour block content history'
   - 'view any unpublished content'
+  - 'view csv_event_feed feeds'
+  - 'view csv_person_feed feeds'
   - 'view ed_notice revisions'
   - 'view event revisions'
   - 'view event unpublished content'
@@ -261,6 +285,8 @@ permissions:
   - 'view latest version'
   - 'view news revisions'
   - 'view news unpublished content'
+  - 'view own csv_event_feed feeds'
+  - 'view own csv_person_feed feeds'
   - 'view page revisions'
   - 'view page unpublished content'
   - 'view people revisions'
