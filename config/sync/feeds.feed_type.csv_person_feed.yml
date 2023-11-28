@@ -29,7 +29,43 @@ dependencies:
     - field.field.node.people.field_people_website
     - node.type.people
   module:
+    - feeds_tamper
     - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      a5ac715d-e19f-4186-bdf5-93ff82cb5581:
+        separator: '|'
+        limit: null
+        uuid: a5ac715d-e19f-4186-bdf5-93ff82cb5581
+        plugin: explode
+        source: role
+        weight: 0
+        label: Explode
+      eb106894-e879-498e-8c17-659e3af69110:
+        separator: '|'
+        limit: null
+        uuid: eb106894-e879-498e-8c17-659e3af69110
+        plugin: explode
+        source: instrument
+        weight: 0
+        label: Explode
+      6a731645-8bd3-47f9-9a60-c1f0b33bcbd4:
+        separator: '|'
+        limit: null
+        uuid: 6a731645-8bd3-47f9-9a60-c1f0b33bcbd4
+        plugin: explode
+        source: area_of_study
+        weight: 0
+        label: Explode
+      cb61ff59-e7c1-4dc4-a4bb-90d34dab2e14:
+        separator: '|'
+        limit: null
+        uuid: cb61ff59-e7c1-4dc4-a4bb-90d34dab2e14
+        plugin: explode
+        source: category
+        weight: 0
+        label: Explode
 label: 'CSV Person Feed'
 id: csv_person_feed
 description: ''

@@ -28,7 +28,15 @@ dependencies:
     - node
 third_party_settings:
   feeds_tamper:
-    tampers: {  }
+    tampers:
+      29c4a7d0-2ec1-408d-9a22-a857ef2a86cc:
+        separator: '|'
+        limit: null
+        uuid: 29c4a7d0-2ec1-408d-9a22-a857ef2a86cc
+        plugin: explode
+        source: area_of_study
+        weight: 0
+        label: Explode
 label: 'CSV Event Feed'
 id: csv_event_feed
 description: ''
