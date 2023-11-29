@@ -14,9 +14,15 @@
 {% set icon = icon|default('quotes') %}
 {% set text_size = text_size|default('normal') %}
 
+{% if not image_small %}
+  {% set variation = '--image-single'%}
+{% else %}
+  {% set variation = variation %}
+{% endif %}
+
 {% if text %}
   <blockquote class="m-quote{{ variation }}{% if unpublished %} paragraph--unpublished{% endif %}">
-    {% if image_main and variation == '--image' %}
+    {% if image_main and ( variation == '--image' or variation == '--image-single') %}
       <div class="m-quote{{ variation }}__images">
         <div class="m-quote{{ variation }}__image-main">
           {% include "@molecules/image/image.twig" with {
