@@ -8,17 +8,17 @@ dependencies:
 name: image_5_7_400x560
 label: 'Focal Point Crop 5:7 (400x560 @80%)'
 effects:
-  99c72f55-3c7a-46d3-beb5-1fffc7530ddf:
-    uuid: 99c72f55-3c7a-46d3-beb5-1fffc7530ddf
-    id: focal_point_crop
-    weight: -10
-    data:
-      width: 400
-      height: 560
-      crop_type: focal_point
   64cdb08c-7557-45d8-b498-9c057caa8694:
     uuid: 64cdb08c-7557-45d8-b498-9c057caa8694
     id: image_style_quality
     weight: -8
     data:
       quality: 80
+  a469721f-8f17-4e24-aab3-a52699a63daf:
+    uuid: a469721f-8f17-4e24-aab3-a52699a63daf
+    id: focal_point_scale_and_crop
+    weight: -9
+    data:
+      width: 400
+      height: 560
+      crop_type: focal_point

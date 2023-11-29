@@ -7,9 +7,9 @@ dependencies:
 name: image_style_crop_1_1
 label: 'Image Style Crop 13:10'
 effects:
-  53a9d05a-61c1-4afb-8a09-09cfa78de136:
-    uuid: 53a9d05a-61c1-4afb-8a09-09cfa78de136
-    id: focal_point_crop
+  28eb1bdb-5f27-4d38-a38e-7a1dec6a0a0b:
+    uuid: 28eb1bdb-5f27-4d38-a38e-7a1dec6a0a0b
+    id: focal_point_scale_and_crop
     weight: 2
     data:
       width: 507
