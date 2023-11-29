@@ -205,14 +205,14 @@
 // }
 
 %image-fade-in {
-  animation: imageFadeIn 5400ms cubic-bezier(.17,.67,0,.17) 0s;
+  animation: imageFadeIn 5600ms cubic-bezier(.17,.67,0,.17) 0s;
 }
 
 .o-hero-media--carousel__image-slick-carousel .slick-current {
   .m-carousel-img-group__image_1 img {
     opacity: 0;
     @extend %image-fade-in;
-    // animation-delay: 100ms;
+    animation-delay: 50ms;
   }
   
   .m-carousel-img-group__image_2 img {
@@ -220,7 +220,7 @@
 
     @extend %image-fade-in;
     // animation-delay: 400ms;
-    animation-delay: 100ms;
+    animation-delay: 200ms;
   }
   
   .m-carousel-img-group__image_3 img {
@@ -228,7 +228,7 @@
 
     @extend %image-fade-in;
     // animation-delay: 600ms;
-    animation-delay: 200ms;
+    animation-delay: 350ms;
   }
   
   .m-carousel-img-group__image_4 img {
@@ -236,7 +236,7 @@
 
     @extend %image-fade-in;
     // animation-delay: 800ms;
-    animation-delay: 300ms;
+    animation-delay: 500ms;
   }
 }
 
@@ -244,7 +244,7 @@
   0% {
     opacity: 0%;
   }
-  5% {
+  8% {
     opacity: 100%;
   }
   100% {
