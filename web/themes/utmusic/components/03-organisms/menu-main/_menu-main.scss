@@ -14,6 +14,7 @@
   // Third level menu.
   @include root-prop(--menu--level-3-color, palette(blue, 300));
   @include root-prop(--menu--level-2-and-3-color-hover, palette(teal, 750));
+  @include root-prop(--menu--level-2-and-3-color-active, palette(teal, 800));
 
   // Menu panel.
   @include root-prop(--menu-main--panel-background, palette(white));
@@ -179,9 +180,13 @@
 
   &:hover,
   &:focus,
-  &:active,
-  &.is-active {
+  &:active {
     background-color: var(--menu--level-2-and-3-color-hover);
+  }
+  
+  &.is-active {
+    font-weight: 700;
+    background-color: var(--menu--level-2-and-3-color-active);
   }
 }
 
