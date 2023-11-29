@@ -212,7 +212,7 @@
   .m-carousel-img-group__image_1 img {
     opacity: 0;
     @extend %image-fade-in;
-    animation-delay: 50ms;
+    // animation-delay: 50ms;
   }
   
   .m-carousel-img-group__image_2 img {
@@ -220,7 +220,7 @@
 
     @extend %image-fade-in;
     // animation-delay: 400ms;
-    animation-delay: 200ms;
+    animation-delay: 150ms;
   }
   
   .m-carousel-img-group__image_3 img {
@@ -228,7 +228,7 @@
 
     @extend %image-fade-in;
     // animation-delay: 600ms;
-    animation-delay: 350ms;
+    animation-delay: 250ms;
   }
   
   .m-carousel-img-group__image_4 img {
@@ -236,7 +236,7 @@
 
     @extend %image-fade-in;
     // animation-delay: 800ms;
-    animation-delay: 500ms;
+    animation-delay: 400ms;
   }
 }
 
@@ -244,7 +244,7 @@
   0% {
     opacity: 0%;
   }
-  8% {
+  3% {
     opacity: 100%;
   }
   100% {
