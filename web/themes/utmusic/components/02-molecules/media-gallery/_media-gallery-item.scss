@@ -195,3 +195,11 @@
 .m-image-grid-wrapper__title h2 {
   margin-bottom: 0;
 }
+
+
+//admin UI
+.m-image-grid-wrapper .field--name-field-media-gallery-items {
+  display: flex;
+  flex-direction: column;
+  gap: rem(21px);
+}
