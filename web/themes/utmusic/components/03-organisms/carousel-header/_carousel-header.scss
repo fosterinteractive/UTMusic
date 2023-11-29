@@ -152,11 +152,11 @@
 
 // animation
 // set z-index for items in grid 
-@for $i from 1 through 900 {
-  .o-hero-media--carousel__image-slick-carousel .slick-slide:nth-child(#{$i}) {
-    z-index: calc(100 + #{$i}) !important;
-  }
-}
+// @for $i from 1 through 900 {
+//   .o-hero-media--carousel__image-slick-carousel .slick-slide:nth-child(#{$i}) {
+//     z-index: calc(100 + #{$i}) !important;
+//   }
+// }
 
 .o-hero-media--carousel__image-slick-carousel .slick-slide {
   // opacity: 100% !important;
@@ -168,20 +168,20 @@
 }
 
 .o-hero-media--carousel__image-slick-carousel .slick-slide.slick-current {
-  z-index: 1000 !important;
+  // z-index: 1000 !important;
   
   img {
     // opacity: 0%;
   }
 }
 
-.o-hero-media--carousel__image-slick-carousel .slick-slide.slick-active {
-  opacity: 100% !important;
+// .o-hero-media--carousel__image-slick-carousel .slick-slide.slick-active {
+//   opacity: 100% !important;
 
-  img {
-    opacity: 100%;
-  }
-}
+//   img {
+//     opacity: 100%;
+//   }
+// }
 
 .o-hero-media--carousel__image-slick-carousel .slick-slide.slick-current + .slick-slide {
   // opacity: 100% !important;
@@ -204,41 +204,52 @@
 //   }
 // }
 
-%image-fade-out {
-  animation: 5000ms imageFadeOut cubic-bezier(.17,.67,0,.17) 4000ms;
+%image-fade-in {
+  animation: imageFadeIn 5400ms cubic-bezier(.17,.67,0,.17) 0s;
 }
 
 .o-hero-media--carousel__image-slick-carousel .slick-current {
   .m-carousel-img-group__image_1 img {
-    @extend %image-fade-out;
-    animation-delay: 200ms;
+    opacity: 0;
+    @extend %image-fade-in;
+    // animation-delay: 200ms;
+    // animation-delay: 100ms;
   }
   
   .m-carousel-img-group__image_2 img {
-    @extend %image-fade-out;
-    animation-delay: 400ms;
+    opacity: 0;
+
+    @extend %image-fade-in;
+    // animation-delay: 400ms;
+    animation-delay: 100ms;
   }
   
   .m-carousel-img-group__image_3 img {
-    @extend %image-fade-out;
-    animation-delay: 600ms;
+    opacity: 0;
+
+    @extend %image-fade-in;
+    // animation-delay: 600ms;
+    animation-delay: 200ms;
   }
   
   .m-carousel-img-group__image_4 img {
-    @extend %image-fade-out;
-    animation-delay: 800ms;
+    opacity: 0;
+
+    @extend %image-fade-in;
+    // animation-delay: 800ms;
+    animation-delay: 300ms;
   }
 }
 
-@keyframes imageFadeOut {
+@keyframes imageFadeIn {
   0% {
-    opacity: 100%;
+    opacity: 0%;
   }
-  75% {
+  5% {
     opacity: 100%;
   }
   100% {
-    opacity: 0%;
+    opacity: 100%;
   }
 }
 
