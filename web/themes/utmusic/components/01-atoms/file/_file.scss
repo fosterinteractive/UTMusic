@@ -19,9 +19,12 @@
   }
 
   svg {
+    position: static;
     width: rem(32px);
     height: rem(32px);
     margin-right: 0;
+    left: 0;
+    transform: translate(0);
   }
 }
 
