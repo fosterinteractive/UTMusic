@@ -1,0 +1,15 @@
+uuid: 0308fb07-8ec1-41fc-a488-bbbec49314d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.file_resources_full_list_dynamic.field_resources_markup_message
+    - paragraphs.paragraphs_type.file_resources_full_list_dynamic
+id: paragraph.file_resources_full_list_dynamic.default
+targetEntityType: paragraph
+bundle: file_resources_full_list_dynamic
+mode: default
+content: {  }
+hidden:
+  field_resources_markup_message: true
+  search_api_excerpt: true
