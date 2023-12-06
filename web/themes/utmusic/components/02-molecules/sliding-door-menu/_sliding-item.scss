@@ -24,6 +24,7 @@
 
     @include breakpoint($bp-large) {
       filter: saturate(0);
+      transition: filter 0.2s cubic-bezier(.12,.78,.74,.9);
     }
   }
 }
@@ -53,12 +54,17 @@
 
   .a-heading__h5 a {
     color: var(--c-sliding-menu-link);
-    padding-left: var(--spacer);
-    padding-bottom: var(--spacer);
+    padding: var(--spacer);
     transition: display 0.2s cubic-bezier(.12,.78,.74,.9);
+    justify-self: center;
+    align-self: flex-start;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(#000000, 0.2);
 
     svg {
       fill: currentColor;
+      display: none;
     }
 
     &:hover,
@@ -67,9 +73,9 @@
       color: var(--c-sliding-menu-link--active);
       text-decoration: none;
 
-      svg {
-        fill: currentColor;
-      }
+      // svg {
+      //   fill: currentColor;
+      // }
     }
 
     // we would like to have accessible (by keyboard) all other links when hide them for hover on current
