@@ -3,12 +3,21 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.file_resources_full_list_dynamic.field_resources_markup_message
     - paragraphs.paragraphs_type.file_resources_full_list_dynamic
+  module:
+    - markup
 id: paragraph.file_resources_full_list_dynamic.default
 targetEntityType: paragraph
 bundle: file_resources_full_list_dynamic
 mode: default
 content:
+  field_resources_markup_message:
+    type: markup
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     weight: 0

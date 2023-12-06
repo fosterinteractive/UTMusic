@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3055.97 3055.97">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-2);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="1763.4" y1="2307.37" x2="4819.36" y2="2307.37" gradientTransform="translate(6027.03 1369.85) rotate(134.97)" gradientUnits="userSpaceOnUse">
+      <stop offset=".17" stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".24" stop-color="#fff" stop-opacity=".03"/>
+      <stop offset=".35" stop-color="#fff" stop-opacity=".1"/>
+      <stop offset=".47" stop-color="#fff" stop-opacity=".22"/>
+      <stop offset=".62" stop-color="#fff" stop-opacity=".4"/>
+      <stop offset=".77" stop-color="#fff" stop-opacity=".61"/>
+      <stop offset=".93" stop-color="#fff" stop-opacity=".88"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="1763.4" y1="-1042.94" x2="4819.36" y2="-1042.94" gradientTransform="translate(4051.38 -603.56) rotate(134.97) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset=".13" stop-color="#fff"/>
+      <stop offset=".13" stop-color="#fff" stop-opacity="1"/>
+      <stop offset=".26" stop-color="#fff" stop-opacity=".74"/>
+      <stop offset=".39" stop-color="#fff" stop-opacity=".51"/>
+      <stop offset=".51" stop-color="#fff" stop-opacity=".33"/>
+      <stop offset=".62" stop-color="#fff" stop-opacity=".19"/>
+      <stop offset=".72" stop-color="#fff" stop-opacity=".08"/>
+      <stop offset=".82" stop-color="#fff" stop-opacity=".02"/>
+      <stop offset=".89" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path class="cls-1" d="M2607.82,446.92c597.05,596.38,597.6,1563.84,1.23,2160.89-596.38,597.05-1563.84,597.6-2160.89,1.23L2607.82,446.92Z"/>
+  <path class="cls-2" d="M2607.82,446.92c-597.05-596.38-1564.52-595.83-2160.89,1.23-596.38,597.05-595.83,1564.52,1.23,2160.89L2607.82,446.92Z"/>
+</svg>
