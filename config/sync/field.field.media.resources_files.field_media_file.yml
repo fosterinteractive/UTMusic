@@ -32,7 +32,7 @@ entity_type: media
 bundle: resources_files
 label: File
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
