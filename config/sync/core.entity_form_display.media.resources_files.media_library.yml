@@ -6,11 +6,20 @@ dependencies:
     - core.entity_form_mode.media.media_library
     - field.field.media.resources_files.field_media_file
     - media.type.resources_files
+  module:
+    - file
 id: media.resources_files.media_library
 targetEntityType: media
 bundle: resources_files
 mode: media_library
 content:
+  field_media_file:
+    type: file_generic
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0
@@ -21,7 +30,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_media_file: true
   path: true
   revision_log_message: true
   status: true

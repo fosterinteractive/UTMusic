@@ -1,0 +1,52 @@
+uuid: fe448cae-9efc-4827-845b-4eb901ad5669
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_resources_library
+  module:
+    - entity_browser_entity_form
+    - views
+name: file_resources
+label: 'File Resources'
+display: modal
+display_configuration:
+  width: '1500'
+  height: '1000'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  495417a2-0b22-4dc6-bf0d-95df4b4480d7:
+    id: entity_form
+    uuid: 495417a2-0b22-4dc6-bf0d-95df4b4480d7
+    label: 'Resource file'
+    weight: -9
+    settings:
+      submit_text: 'Save entity'
+      entity_type: media
+      bundle: resources_files
+      form_mode: media_library
+  a74a1a2e-5bd0-46f8-a374-f50a0bfdb09e:
+    id: entity_form
+    uuid: a74a1a2e-5bd0-46f8-a374-f50a0bfdb09e
+    label: 'Resource link to form'
+    weight: -8
+    settings:
+      submit_text: 'Save entity'
+      entity_type: media
+      bundle: resources_link_to_form
+      form_mode: media_library
+  852e6ea0-074c-4d2a-a37f-ee6622b70141:
+    id: view
+    uuid: 852e6ea0-074c-4d2a-a37f-ee6622b70141
+    label: 'List of Resources'
+    weight: -10
+    settings:
+      submit_text: 'Select entities'
+      auto_select: false
+      view: media_resources_library
+      view_display: entity_browser_1
