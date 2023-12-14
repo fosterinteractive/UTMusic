@@ -13,7 +13,7 @@ display: modal
 display_configuration:
   width: '1500'
   height: '1000'
-  link_text: 'Select entities'
+  link_text: 'Add New Resources'
   auto_open: false
 selection_display: no_display
 selection_display_configuration: {  }
@@ -26,7 +26,7 @@ widgets:
     label: 'Add Resource (File)'
     weight: -9
     settings:
-      submit_text: 'Save entity'
+      submit_text: 'Save New Resource'
       entity_type: media
       bundle: resources_files
       form_mode: media_library
@@ -36,7 +36,7 @@ widgets:
     label: 'Add Resource (Link to Form)'
     weight: -8
     settings:
-      submit_text: 'Save entity'
+      submit_text: 'Save New Resource'
       entity_type: media
       bundle: resources_link_to_form
       form_mode: media_library
@@ -46,7 +46,7 @@ widgets:
     label: 'Browse Resources'
     weight: -10
     settings:
-      submit_text: 'Select entities'
+      submit_text: 'Add Resources'
       auto_select: false
       view: media_resources_library
       view_display: entity_browser_1
