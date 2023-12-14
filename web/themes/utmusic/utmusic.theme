@@ -685,5 +685,13 @@ function utmusic_preprocess_field(&$variables) {
       }
     }
   }
+
+  if ($variables['element']['#field_name'] == 'field_media_link') {
+    $media_entity = $variables['element']['#object'];
+    if ($media_entity instanceof \Drupal\media\MediaInterface) {
+        $variables['media_name'] = $media_entity->getName();
+    }
+  }
+
 }
 

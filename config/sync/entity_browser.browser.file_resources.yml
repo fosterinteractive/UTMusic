@@ -23,7 +23,7 @@ widgets:
   495417a2-0b22-4dc6-bf0d-95df4b4480d7:
     id: entity_form
     uuid: 495417a2-0b22-4dc6-bf0d-95df4b4480d7
-    label: 'Resource file'
+    label: 'Add Resource (File)'
     weight: -9
     settings:
       submit_text: 'Save entity'
@@ -33,7 +33,7 @@ widgets:
   a74a1a2e-5bd0-46f8-a374-f50a0bfdb09e:
     id: entity_form
     uuid: a74a1a2e-5bd0-46f8-a374-f50a0bfdb09e
-    label: 'Resource link to form'
+    label: 'Add Resource (Link to Form)'
     weight: -8
     settings:
       submit_text: 'Save entity'
@@ -43,7 +43,7 @@ widgets:
   852e6ea0-074c-4d2a-a37f-ee6622b70141:
     id: view
     uuid: 852e6ea0-074c-4d2a-a37f-ee6622b70141
-    label: 'List of Resources'
+    label: 'Browse Resources'
     weight: -10
     settings:
       submit_text: 'Select entities'
