@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "159f5398de3db708d8f7cec92a60eb7c",
+    "content-hash": "f6aa56b8b6413f806615da795ee54a9a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -11794,25 +11794,25 @@
         },
         {
             "name": "fosterinteractive/adminspring-theme",
-            "version": "10.0.13",
+            "version": "10.0.14",
             "source": {
                 "type": "git",
                 "url": "git@github.com:fosterinteractive/adminspring-theme.git",
-                "reference": "6c3a34b40727c50995421dcd1a586063b5bebc45"
+                "reference": "9d9216354a08ad5378c58cb7fddfdf302cccfb0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fosterinteractive/adminspring-theme/zipball/6c3a34b40727c50995421dcd1a586063b5bebc45",
-                "reference": "6c3a34b40727c50995421dcd1a586063b5bebc45",
+                "url": "https://api.github.com/repos/fosterinteractive/adminspring-theme/zipball/9d9216354a08ad5378c58cb7fddfdf302cccfb0f",
+                "reference": "9d9216354a08ad5378c58cb7fddfdf302cccfb0f",
                 "shasum": ""
             },
             "type": "drupal-theme",
             "description": "Admin Content Editor Theme based on Claro",
             "support": {
-                "source": "https://github.com/fosterinteractive/adminspring-theme/tree/10.0.13",
+                "source": "https://github.com/fosterinteractive/adminspring-theme/tree/10.0.14",
                 "issues": "https://github.com/fosterinteractive/adminspring-theme/issues"
             },
-            "time": "2023-12-21T16:25:38+00:00"
+            "time": "2023-12-21T18:53:16+00:00"
         },
         {
             "name": "fosterinteractive/mainspring-profile",
