@@ -80,7 +80,7 @@
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
         "drush/drush": "^10 || ^11",
-        "fosterinteractive/adminspring-theme": "10.0.12",
+        "fosterinteractive/adminspring-theme": "10.0.13",
         "fosterinteractive/mainspring-profile": "10.0.4",
         "mnsami/composer-custom-directory-installer": "^2.0",
         "npm-asset/tippy.js": "6.3.7",
@@ -106,8 +106,8 @@
         "rvtraveller/qs-composer-installer": "^1.2",
         "topfloor/composer-cleanup-vcs-dirs": "^1",
         "drupal/media_library_media_modify_focal_point": "1.0.0-alpha1",
-        "drupal/feeds": "^3.0@beta",
-        "drupal/feeds_tamper": "^2.0@beta"
+        "drupal/feeds": "3.0-beta4",
+        "drupal/feeds_tamper": "2.0-beta3"
     },
     "require-dev": {
         "drupal/coder": "^8.3"
@@ -179,19 +179,18 @@
             "drupal/core": "-p2"
         },
         "patches": {
-            "drupal/layout_paragraphs_restriction": {
-                "3229861 - Layout Paragraphs 2.x compatibility": "https://www.drupal.org/files/issues/2022-10-03/entity_type_bundle_info-3229861-5.patch"
+            "drupal/audiorecorder": {
+                "3316491 - No save in theme 'Gin'": "https://www.drupal.org/files/issues/2023-04-21/audiorecorder-rc1-no-save-in-theme-gin-3316491.patch"
             },
             "drupal/focal_point": {
                 "2906631 - After changing focal point, image doesn't change until you click preview": "https://www.drupal.org/files/issues/2022-06-10/2906631-12_0.patch"
             },
-            "drupal/audiorecorder": {
-                "3316491 - No save in theme 'Gin'": "https://www.drupal.org/files/issues/2023-04-21/audiorecorder-rc1-no-save-in-theme-gin-3316491.patch"
+            "drupal/layout_paragraphs": {
+                "3401176 -Allow to drag and drop nested paragraphs": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/143.patch"
             },
             "drupal/media_entity_link": {
                 "3223918 - PHP8 error validateUriElement() must be static": "https://www.drupal.org/files/issues/2021-07-16/static_function_validateurielement-3223918-02.patch"
-            }
-            ,
+            },
             "drupal/views_autosubmit": {
                 "3354745 - [Drupal 10] Change jQuery/once to drupal core/once": "https://www.drupal.org/files/issues/2023-04-17/3354745-jquery-once_2.patch"
             }

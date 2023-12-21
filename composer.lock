@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa5bdaf277f4de0ed61ff466a3f2a1e3",
+    "content-hash": "159f5398de3db708d8f7cec92a60eb7c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -11794,25 +11794,25 @@
         },
         {
             "name": "fosterinteractive/adminspring-theme",
-            "version": "10.0.12",
+            "version": "10.0.13",
             "source": {
                 "type": "git",
                 "url": "git@github.com:fosterinteractive/adminspring-theme.git",
-                "reference": "441cb401cd6b480b70e56fcbec4e6ee346ab1121"
+                "reference": "6c3a34b40727c50995421dcd1a586063b5bebc45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fosterinteractive/adminspring-theme/zipball/441cb401cd6b480b70e56fcbec4e6ee346ab1121",
-                "reference": "441cb401cd6b480b70e56fcbec4e6ee346ab1121",
+                "url": "https://api.github.com/repos/fosterinteractive/adminspring-theme/zipball/6c3a34b40727c50995421dcd1a586063b5bebc45",
+                "reference": "6c3a34b40727c50995421dcd1a586063b5bebc45",
                 "shasum": ""
             },
             "type": "drupal-theme",
             "description": "Admin Content Editor Theme based on Claro",
             "support": {
-                "source": "https://github.com/fosterinteractive/adminspring-theme/tree/10.0.12",
+                "source": "https://github.com/fosterinteractive/adminspring-theme/tree/10.0.13",
                 "issues": "https://github.com/fosterinteractive/adminspring-theme/issues"
             },
-            "time": "2023-12-19T21:21:51+00:00"
+            "time": "2023-12-21T16:25:38+00:00"
         },
         {
             "name": "fosterinteractive/mainspring-profile",
@@ -18268,10 +18268,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "drupal/feeds": 10,
-        "drupal/feeds_tamper": 10
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
@@ -18279,5 +18276,5 @@
     "platform-overrides": {
         "php": "8.1.13"
     },
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }
