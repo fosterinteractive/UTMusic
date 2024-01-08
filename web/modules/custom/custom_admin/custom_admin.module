@@ -387,8 +387,24 @@ function custom_admin_form_layout_paragraphs_component_form_alter(array &$form, 
   if ($paragraph_type == 'quote') {
     $form['field_quote_image_main']['#states'] = [
       'visible' => [
+        [
+          ':input[name="field_quote_variation"]' => [
+            'value' => 'image',
+          ],
+        ], 
+        [
+          ':input[name="field_quote_variation"]' => [
+            'value' => 'image-single',
+          ],
+        ]
+        
+      ],
+    ];
+
+    $form['field_quote_image_position']['#states'] = [
+      'visible' => [
         ':input[name="field_quote_variation"]' => [
-          'value' => 'image',
+          'value' => 'image-single',
         ],
       ],
     ];

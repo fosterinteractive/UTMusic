@@ -1,25 +1,22 @@
-uuid: 45c2dfff-083c-431b-9b4a-3b1d79219aa2
+uuid: 616d1ec9-7035-43c1-9680-8aeb5bbef728
 langcode: en
 status: true
 dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.field_quote_variation
-field_name: field_quote_variation
+id: paragraph.field_quote_image_position
+field_name: field_quote_image_position
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
-      value: text
-      label: 'Text only'
+      value: left
+      label: 'On the Left'
     -
-      value: image
-      label: 'Pair Images'
-    -
-      value: image-single
-      label: 'Single Image'
+      value: right
+      label: 'On the Right'
   allowed_values_function: ''
 module: options
 locked: false
