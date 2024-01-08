@@ -77,6 +77,10 @@
 .m-quote--image-single {
   @extend %m-quote;
   @extend %m-quote--image;
+
+  &.image--right {
+    flex-direction: row-reverse;
+  }
 }
 
 .m-quote--image-single__images {
