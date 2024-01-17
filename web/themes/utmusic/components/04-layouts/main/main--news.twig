@@ -22,6 +22,12 @@
         } only
       %}
 
+      {% if moderation %}
+        <div class="l-main__moderation">
+          {{ moderation }}
+        </div>
+      {% endif %}
+
       <div class="l-section-bg l-section--[8] l-section-spacing-top--medium l-section-spacing-bottom--medium">
         
         {% if variation == "portrait" or variation == "text" %}

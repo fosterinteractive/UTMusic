@@ -53,6 +53,20 @@ function utmusic_preprocess(&$variables, $hook) {
 /**
  * Implements template_preprocess_page().
  */
+function utmusic_preprocess_html(&$variables) {
+  // Check if page is unpublished (under moderation) flow and add class to body.
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    $moderation_state = $node->get('moderation_state')->value;
+    if ($moderation_state != 'published') {
+      $variables['attributes']['class'][] = 'page--moderation-state';
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_page().
+ */
 function utmusic_preprocess_page(&$variables) {
 
   // Load the site name out of configuration.

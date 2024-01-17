@@ -35,6 +35,12 @@
         } only
       %}
 
+      {% if moderation %}
+        <div class="l-main__moderation">
+          {{ moderation }}
+        </div>
+      {% endif %}
+
       {% if content %}
         <div class="l-main--event__content-wrapper l-section-wrapper l-section--[8] theme--white-bg l-section-spacing-top--small l-section-spacing-bottom--small">
           <div class="l-section__zone-1 l-flex">
