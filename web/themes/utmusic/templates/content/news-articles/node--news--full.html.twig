@@ -99,6 +99,7 @@
 {% endif %}
 
 {% include "@layouts/main/main--news.twig" with {
+    moderation: content.content_moderation_control ? content.content_moderation_control,
     social_share: social_share,
     breadcrumbs: breadcrumbs,
     messages: drupal_entity('block', 'messages'),
