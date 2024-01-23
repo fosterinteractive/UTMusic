@@ -182,11 +182,17 @@
             "drupal/audiorecorder": {
                 "3316491 - No save in theme 'Gin'": "https://www.drupal.org/files/issues/2023-04-21/audiorecorder-rc1-no-save-in-theme-gin-3316491.patch"
             },
+            "drupal/core": {
+                "3324225 - Table cell issue in CKEditor5 for Drupal 10": "https://www.drupal.org/files/issues/2023-11-14/ckeditor5-table-cell-3324225-51.drupal10-1-5.patch"
+            },
             "drupal/focal_point": {
                 "2906631 - After changing focal point, image doesn't change until you click preview": "https://www.drupal.org/files/issues/2022-06-10/2906631-12_0.patch"
             },
             "drupal/layout_paragraphs": {
                 "3401176 -Allow to drag and drop nested paragraphs": "https://git.drupalcode.org/project/layout_paragraphs/-/merge_requests/143.patch"
+            },
+            "drupal/media_library_media_modify": {
+                "3388364 - AJAX error within WYSIWYG editor media button": "https://git.drupalcode.org/project/media_library_media_modify/-/merge_requests/46.patch"
             },
             "drupal/media_entity_link": {
                 "3223918 - PHP8 error validateUriElement() must be static": "https://www.drupal.org/files/issues/2021-07-16/static_function_validateurielement-3223918-02.patch"
