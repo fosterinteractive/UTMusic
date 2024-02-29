@@ -71,7 +71,15 @@
       {% if title %}
         <h4>
           <button class="m-accordion-item__label toggle js-accordion-item__toggle" aria-expanded="false" id="{{ accordion__header__id }}" aria-controls="{{ accordion__panel__id }}" >
-            {{ title }}
+            <span>
+              {{ title }} <br>
+
+              {% if subtitle %}
+                <span class="m-accordion-item__subtitle">
+                  {% if prefix_text %}{{ prefix_text }}{% endif %}{{ subtitle }}
+                </span>
+              {% endif %}
+            </span>
 
             {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
               directory: directory,
@@ -90,12 +98,6 @@
             %}
           </button>
         </h4>
-      {% endif %}
-
-      {% if subtitle %}
-        <span class="m-accordion-item__subtitle">
-          {% if prefix_text %}{{ prefix_text }}{% endif %}{{ subtitle }}
-        </span>
       {% endif %}
     </div>
   {% endif %}
