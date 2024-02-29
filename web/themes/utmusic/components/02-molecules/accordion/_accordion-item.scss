@@ -81,6 +81,7 @@
 .m-accordion-item__subtitle {
   @extend %a-type--small;
   color: var(--c-accordion-item-text);
+  font-weight: 400;
 }
 
 .m-accordion-item__header-wrapper {
