@@ -80,8 +80,8 @@
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
         "drush/drush": "^10 || ^11",
-        "fosterinteractive/adminspring-theme": "10.0.14",
-        "fosterinteractive/mainspring-profile": "10.0.4",
+        "fosterinteractive/adminspring-theme": "10.0.16",
+        "fosterinteractive/mainspring-profile": "10.1.0",
         "mnsami/composer-custom-directory-installer": "^2.0",
         "npm-asset/tippy.js": "6.3.7",
         "oomphinc/composer-installers-extender": "^2.0",
@@ -97,7 +97,6 @@
         "drupal/media_entity_link": "2.0.0",
         "drupal/media_file_delete": "1.3.0",
         "drupal/menu_item_extras": "3.0.2",
-        "drupal/moderated_content_bulk_publish": "2.0.21 as 3.0.0-beta6",
         "drupal/rabbit_hole": "2.0.0-alpha5",
         "drupal/smart_date": "4.0.3",
         "drupal/smart_trim": "2.1.0",
@@ -179,11 +178,11 @@
             "drupal/core": "-p2"
         },
         "patches": {
-            "drupal/audiorecorder": {
-                "3316491 - No save in theme 'Gin'": "https://www.drupal.org/files/issues/2023-04-21/audiorecorder-rc1-no-save-in-theme-gin-3316491.patch"
-            },
             "drupal/core": {
                 "3324225 - Table cell issue in CKEditor5 for Drupal 10": "https://www.drupal.org/files/issues/2023-11-14/ckeditor5-table-cell-3324225-51.drupal10-1-5.patch"
+            },
+            "drupal/audiorecorder": {
+                "3316491 - No save in theme 'Gin'": "https://www.drupal.org/files/issues/2023-04-21/audiorecorder-rc1-no-save-in-theme-gin-3316491.patch"
             },
             "drupal/focal_point": {
                 "2906631 - After changing focal point, image doesn't change until you click preview": "https://www.drupal.org/files/issues/2022-06-10/2906631-12_0.patch"

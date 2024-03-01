@@ -20,7 +20,7 @@ libraries-override:
     css:
       component:
         css/components/ajax-progress.module.css: /core/themes/claro/css/components/ajax-progress.module.css
-        css/components/autocomplete-loading.module.css: /core/themes/claro/css/components/autocomplete-loading.module.css
+        css/components/autocomplete-loading.module.css: /themes/adminspring-theme/css/components/autocomplete-loading.module.css
         css/components/system-status-counter.css: /core/themes/claro/css/components/system-status-counter.css
         css/components/system-status-report-counters.css: /core/themes/claro/css/components/system-status-report-counters.css
         css/components/system-status-report-general-info.css: /core/themes/claro/css/components/system-status-report-general-info.css
