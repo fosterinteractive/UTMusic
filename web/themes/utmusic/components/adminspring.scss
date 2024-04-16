@@ -31,3 +31,17 @@
 .adminspring-preview .o-hero-media__tabs {
   display: none;
 }
+
+// Remove the 'About text formats' help text.
+.filter-help {
+  display: none;
+}
+
+// preview for the card component with alignment--stretch.
+.adminspring-preview .l-section-vertical-alignment--stretch .utmusic-paragraph-wrapper {
+  height: 100%;
+
+  > div[class^='m-card'] {
+    height: 100%;
+  }
+}
