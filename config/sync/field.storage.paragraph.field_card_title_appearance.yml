@@ -12,20 +12,20 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: h5
-      label: 'Extra Small (h5)'
-    -
-      value: h4
-      label: 'Small (h4)'
-    -
-      value: h3
-      label: 'Medium (h3)'
+      value: h1
+      label: 'Extra Large (h1)'
     -
       value: h2
       label: 'Large (h2)'
     -
-      value: h1
-      label: 'Extra Large (h1)'
+      value: h3
+      label: 'Medium (h3)'
+    -
+      value: h4
+      label: 'Small (h4)'
+    -
+      value: h5
+      label: 'Extra Small (h5)'
   allowed_values_function: ''
 module: options
 locked: false

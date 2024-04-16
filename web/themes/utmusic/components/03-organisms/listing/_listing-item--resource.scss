@@ -53,6 +53,7 @@
 
     .remove-button,
     .edit-button {
+      display: inline-block;
       background-repeat: no-repeat;
       background-position: center;
       background-size: 0.75rem;
@@ -64,6 +65,8 @@
       cursor: pointer;
       border: none;
       box-shadow: 0 1px 2px 0 1px 2px rgba(0,0,0,0.25);
+      min-height: unset;
+      padding: 0;
     }
 
     .remove-button {
