@@ -92,9 +92,8 @@ full_2_col:
       label: 'Vertical Alignment'
       multiple: false
       required: true
-      default: 'none'
+      default: 'top'
       options:
-        'none': 'None'
         'top': 'Top'
         'center': 'Center'
         'stretch': 'Stretch'
@@ -162,9 +161,8 @@ full_3_col:
       label: 'Vertical Alignment'
       multiple: false
       required: true
-      default: 'none'
+      default: 'top'
       options:
-        'none': 'None'
         'top': 'Top'
         'center': 'Center'
         'stretch': 'Stretch'
@@ -233,9 +231,8 @@ full_4_col:
       label: 'Vertical Alignment'
       multiple: false
       required: true
-      default: 'none'
+      default: 'top'
       options:
-        'none': 'None'
         'top': 'Top'
         'center': 'Center'
         'stretch': 'Stretch'
@@ -319,9 +316,9 @@ full_grid_2col:
       label: 'Vertical Alignment'
       multiple: false
       required: true
-      default: 'none'
+      default: 'top'
       options:
-        'none': 'None'
+        'top': 'Top'
         'stretch': 'Stretch'
         'center': 'Center'
       description: 'Alignment across columns (not all components can stretch in height)'
@@ -398,9 +395,9 @@ full_grid_3col:
       label: 'Vertical Alignment'
       multiple: false
       required: true
-      default: 'none'
+      default: 'top'
       options:
-        'none': 'None'
+        'top': 'Top'
         'stretch': 'Stretch'
         'center': 'Center'
       description: 'Alignment across columns (not all components can stretch in height)'
@@ -476,9 +473,9 @@ full_grid_4col:
       label: 'Vertical Alignment'
       multiple: false
       required: true
-      default: 'none'
+      default: 'top'
       options:
-        'none': 'None'
+        'top': 'Top'
         'stretch': 'Stretch'
         'center': 'Center'
       description: 'Alignment across columns (not all components can stretch in height)'

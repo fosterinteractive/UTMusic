@@ -45,3 +45,23 @@
     height: 100%;
   }
 }
+
+.lpb-dialog .lpb-component-list__item a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.lpb-dialog .lpb-component-list__item img {
+  width: auto;
+  max-width: 98%;
+  max-height: rem(375px);
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.lpb-dialog .lpb-component-list__item span {
+  margin-top: rem(15px);
+}
