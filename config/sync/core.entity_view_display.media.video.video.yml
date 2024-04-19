@@ -15,7 +15,7 @@ dependencies:
     - field.field.media.video.field_video_related_program
     - media.type.video
   module:
-    - media
+    - oembed_lazyload
 _core:
   default_config_hash: T0x781P0znYqkTGZddw1Z4PqGM5i-21nCF1IYRGMf-s
 id: media.video.video
@@ -24,13 +24,13 @@ bundle: video
 mode: video
 content:
   field_ed_video_oembed_video:
-    type: oembed
+    type: lazyload_oembed
     label: hidden
     settings:
       max_width: 0
       max_height: 0
-      loading:
-        attribute: eager
+      strategy: intersection_observer
+      intersection_observer_margin: ''
     third_party_settings: {  }
     weight: 1
     region: content
