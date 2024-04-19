@@ -16,7 +16,8 @@ dependencies:
     - media.type.video
   module:
     - layout_builder
-    - media
+    - oembed_lazyload
+    - oembed_lazyload_youtube
 third_party_settings:
   layout_builder:
     enabled: false
@@ -29,14 +30,21 @@ bundle: video
 mode: carousel
 content:
   field_ed_video_oembed_video:
-    type: oembed
+    type: lazyload_oembed
     label: hidden
     settings:
       max_width: 0
       max_height: 0
-      loading:
-        attribute: eager
-    third_party_settings: {  }
+      strategy: intersection_observer
+      intersection_observer_margin: ''
+    third_party_settings:
+      oembed_lazyload_youtube:
+        autoplay: false
+        modestbranding: false
+        enablejsapi: false
+        origin: false
+        hideinfo: false
+        rel: false
     weight: 2
     region: content
   field_ed_video_title:

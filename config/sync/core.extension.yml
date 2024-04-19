@@ -110,6 +110,8 @@ module:
   moderation_sidebar: 0
   mysql: 0
   node: 0
+  oembed_lazyload: 0
+  oembed_lazyload_youtube: 0
   optional_end_date: 0
   options: 0
   page_cache: 0
