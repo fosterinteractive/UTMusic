@@ -1,0 +1,29 @@
+/**
+ * @file
+ *
+ * This file contains custom CSS styles that can be used within the CKEditor.
+ *
+ * These styles allow for a more tailored appearance of the content in the editor.
+ * a bug. e.g. if a paragraph has negative margin but that will mess with
+ * layout builder we could reset that margin here.
+ */
+
+// Base styles
+@import '~breakpoint-sass/stylesheets/breakpoint.scss';
+@import '00-base/**/*.scss';
+
+// Here you can include components that need have styles inside CKEditor
+.ck-editor {
+  @import '01-atoms/**/*.scss';
+  @import '06-utilities/**/*.scss';
+}
+
+
+// styles for lists in CKeditor on admin edit page 
+.ck-content {
+  @extend %s-wysiwyg__typography;
+}
+
+.ck-editor .ck-source-editing-area textarea {
+  overflow: auto;
+}

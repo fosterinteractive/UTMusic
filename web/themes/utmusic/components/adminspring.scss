@@ -65,3 +65,8 @@
 .lpb-dialog .lpb-component-list__item span {
   margin-top: rem(15px);
 }
+
+// Fix for position of entity browser modal.
+.ui-dialog.entity-browser-modal {
+  position: fixed;
+}
