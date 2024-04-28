@@ -41,7 +41,9 @@
   }
 
   .m-logo {
-    @include svg-wrapper(350, 78.5);
+    // @include svg-wrapper(350, 78.5);
+    @include svg-wrapper(381, 93);
+
   }
 }
 

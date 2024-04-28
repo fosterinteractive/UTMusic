@@ -16,6 +16,7 @@ dependencies:
     - media.type.video
   module:
     - oembed_lazyload
+    - oembed_lazyload_youtube
 _core:
   default_config_hash: T0x781P0znYqkTGZddw1Z4PqGM5i-21nCF1IYRGMf-s
 id: media.video.video
@@ -31,7 +32,14 @@ content:
       max_height: 0
       strategy: intersection_observer
       intersection_observer_margin: ''
-    third_party_settings: {  }
+    third_party_settings:
+      oembed_lazyload_youtube:
+        autoplay: false
+        modestbranding: true
+        enablejsapi: false
+        origin: false
+        hideinfo: false
+        rel: true
     weight: 1
     region: content
   field_ed_video_title:

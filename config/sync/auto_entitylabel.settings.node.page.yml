@@ -2,7 +2,7 @@ status: 1
 pattern: '[node:field_page_header:entity:field_header_title_prefix] [node:field_page_header:entity:field_header_title] [node:field_page_header:entity:field_carousel_header_title_prefix] [node:field_page_header:entity:field_carousel_header_title]'
 escape: false
 preserve_titles: false
-save: false
+save: true
 chunk: 50
 dependencies:
   config:
