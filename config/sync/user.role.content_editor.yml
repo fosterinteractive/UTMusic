@@ -56,6 +56,7 @@ dependencies:
     - content_moderation
     - contextual
     - dropzonejs
+    - editoria11y
     - entity_browser
     - feeds
     - field_ui
@@ -242,6 +243,7 @@ permissions:
   - 'import csv_person_feed feeds'
   - 'import own csv_event_feed feeds'
   - 'import own csv_person_feed feeds'
+  - 'mark as hidden in editoria11y'
   - 'moderated content bulk archive'
   - 'moderated content bulk pin content'
   - 'moderated content bulk publish'
@@ -284,6 +286,7 @@ permissions:
   - 'view csv_event_feed feeds'
   - 'view csv_person_feed feeds'
   - 'view ed_notice revisions'
+  - 'view editoria11y checker'
   - 'view event revisions'
   - 'view event unpublished content'
   - 'view job revisions'
