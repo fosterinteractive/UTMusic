@@ -11,7 +11,7 @@ id: paragraph.card.field_card_title_appearance
 field_name: field_card_title_appearance
 entity_type: paragraph
 bundle: card
-label: 'Title Appearance'
+label: Appearance
 description: ''
 required: false
 translatable: false

@@ -11,7 +11,7 @@ id: paragraph.card.field_card_title_html_element
 field_name: field_card_title_html_element
 entity_type: paragraph
 bundle: card
-label: 'Title wrapper [html element]'
+label: 'Heading Level'
 description: ''
 required: false
 translatable: false
