@@ -63,6 +63,7 @@ dependencies:
     - contextual
     - crop
     - dropzonejs
+    - editoria11y
     - embed
     - entity_browser
     - entity_reference_revisions
@@ -155,6 +156,7 @@ permissions:
   - 'administer crop_type labels'
   - 'administer display modes'
   - 'administer dropzonejs settings'
+  - 'administer editoria11y checker'
   - 'administer embed buttons'
   - 'administer entity browsers'
   - 'administer environment indicator settings'
@@ -402,6 +404,9 @@ permissions:
   - 'flood unblock ips'
   - 'import configuration'
   - 'link to any page'
+  - 'manage editoria11y results'
+  - 'mark as hidden in editoria11y'
+  - 'mark as ok in editoria11y'
   - 'merge taxonomy terms'
   - 'moderated content bulk archive'
   - 'moderated content bulk pin content'
@@ -455,6 +460,7 @@ permissions:
   - 'view custom_site_settings config page entity'
   - 'view ed_notice revisions'
   - 'view ed_notice unpublished content'
+  - 'view editoria11y checker'
   - 'view event revisions'
   - 'view event unpublished content'
   - 'view job revisions'

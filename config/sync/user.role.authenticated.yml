@@ -25,6 +25,7 @@ dependencies:
     - file
     - filter
     - google_analytics
+    - markerio
     - media
     - media_entity_download
     - moderation_sidebar
@@ -41,6 +42,7 @@ is_admin: false
 permissions:
   - 'access administration pages'
   - 'access content'
+  - 'access markerio'
   - 'access toolbar'
   - 'create ed_file media'
   - 'create ed_image media'

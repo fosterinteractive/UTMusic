@@ -107,7 +107,8 @@
         "drupal/media_library_media_modify_focal_point": "1.0.0-alpha1",
         "drupal/feeds": "3.0-beta4",
         "drupal/feeds_tamper": "2.0-beta3",
-        "drupal/oembed_lazyload": "^2.0"
+        "drupal/oembed_lazyload": "^2.0",
+        "drupal/editoria11y": "^2.1"
     },
     "require-dev": {
         "drupal/coder": "^8.3"
