@@ -9,9 +9,8 @@ libraries:
   - 'utmusic/global'
 
 # CKEditor stylesheet loads in wysiwyg to give content editors a better experience
-ckeditor_stylesheets:
-  - assets/style.css
-  - ckeditor/ckeditor.css
+ckeditor5-stylesheets:
+  -  dist/ckeditor.css
 
 regions:
   content: Content  # the content region is required

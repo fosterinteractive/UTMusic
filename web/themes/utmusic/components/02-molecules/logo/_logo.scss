@@ -21,3 +21,36 @@
   width: 100%;
   height: auto;
 }
+
+.o-header__logo {
+  @include root-prop(--header-logo-line-color, palette(blue, 300));
+  @include linear-gradient-animation-border(var(--header-logo-line-color), transparent);
+  
+  background-position: center left;
+  background-size: 1px 0%, 1px 100%;
+  padding: 0 0 0 rem(8px);
+  
+  &:focus,
+  &:hover,
+  &:active {
+    background-size: 1px 80%, 1px 100%;
+  
+    svg {
+      opacity: 0.9;
+    }
+  }
+
+  .m-logo {
+    // @include svg-wrapper(350, 78.5);
+    @include svg-wrapper(381, 93);
+
+  }
+}
+
+.m-logo {
+  display: block;
+}
+
+.m-logo__hidden-text {
+  height: 0;
+}

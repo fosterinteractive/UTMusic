@@ -96,10 +96,11 @@
   &:hover,
   &:focus,
   &:active {
-    background: vra(--mm-background-button-hover);
+    background: var(--mm-background-button-hover);
   }
 
   svg {
+    width: rem(20px);
     height: rem(20px);
   }
 }
