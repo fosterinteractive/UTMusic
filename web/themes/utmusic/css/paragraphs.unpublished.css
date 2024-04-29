@@ -10,7 +10,7 @@
 }
 
 .paragraph--unpublished::after {
-  content: 'Unpublished';
+  content: 'Hidden';
   position: absolute;
   top: 0;
   right: 0;
