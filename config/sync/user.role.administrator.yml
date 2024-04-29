@@ -122,6 +122,7 @@ permissions:
   - 'access contextual links'
   - 'access ed_file entity browser pages'
   - 'access environment indicator'
+  - 'access file_resources entity browser pages'
   - 'access files overview'
   - 'access markerio'
   - 'access media overview'
