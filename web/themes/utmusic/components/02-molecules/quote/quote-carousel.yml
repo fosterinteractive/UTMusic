@@ -1,0 +1,43 @@
+
+sb_demo: true
+items:
+  1:
+    variation: 'image'
+    image_main: '<img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3570&q=80" >'
+    image_small: '<img src="https://images.unsplash.com/photo-1525362081669-2b476bb628c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=40" >'
+    icon: quotes
+    text: 'My three years of studying Music at the University of Toronto has provided me with immeasurable experience in Composition. Societies within and outside the music department provided me with the opportunity to transfer the skills I gained from my course into a variety of creative projects and commissions.”'
+    text_size: large
+    source: 'Jane Doe'
+    url: /
+    label: See more studet voices
+  2:
+    variation: 'image'
+    image_main: '<img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3570&q=80" >'
+    image_small: '<img src="https://images.unsplash.com/photo-1525362081669-2b476bb628c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=40" >'
+    icon: quotes
+    text: 'My three years of studying Music at the University of Toronto has provided me with immeasurable experience in Composition. Societies within and outside the music department provided me with the opportunity to transfer the skills I gained from my course into a variety of creative projects and commissions.”'
+    text_size: large
+    source: 'Jane Doe'
+    url: /
+    label: See more studet voices
+  3:
+    variation: 'image'
+    image_main: '<img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3570&q=80" >'
+    image_small: '<img src="https://images.unsplash.com/photo-1525362081669-2b476bb628c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=40" >'
+    icon: quotes
+    text: 'My three years of studying Music at the University of Toronto has provided me with immeasurable experience in Composition. Societies within and outside the music department provided me with the opportunity to transfer the skills I gained from my course into a variety of creative projects and commissions.”'
+    text_size: large
+    source: 'Jane Doe'
+    url: /
+    label: See more studet voices
+  4:
+    variation: 'image'
+    image_main: '<img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3570&q=80" >'
+    image_small: '<img src="https://images.unsplash.com/photo-1525362081669-2b476bb628c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=80" >'
+    icon: quotes
+    text: 'My three years of studying Music at the University of Toronto has provided me with immeasurable experience in Composition. Societies within and outside the music department provided me with the opportunity to transfer the skills I gained from my course into a variety of creative projects and commissions.”'
+    text_size: large
+    source: 'Jane Doe'
+    url: /
+    label: See more studet voices

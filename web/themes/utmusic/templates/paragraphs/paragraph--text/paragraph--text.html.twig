@@ -38,7 +38,7 @@
 #}
 {% include "@molecules/text/text.twig"
   with {
+    unpublished: unpublished,
     body: content.field_text_body[0] ? content.field_text_body,
   } only
 %}
-

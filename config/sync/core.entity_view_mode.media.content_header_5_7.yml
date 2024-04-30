@@ -1,0 +1,10 @@
+uuid: 4e6c5464-b396-4e71-913c-ee465d672e2b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.content_header_5_7
+label: 'Content Header 5:7'
+targetEntityType: media
+cache: true

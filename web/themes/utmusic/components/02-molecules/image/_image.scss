@@ -52,3 +52,15 @@ picture {
     padding-bottom: 300px;
   }
 }
+
+//do not apply rounded corners if image PT used in 100% width layout
+.l-section {
+  .m-image {
+    margin-top: 0;
+    margin-bottom: 0;
+    
+    img {
+      border-radius: unset;
+    }
+  } 
+}

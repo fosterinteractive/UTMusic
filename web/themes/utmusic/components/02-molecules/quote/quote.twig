@@ -14,10 +14,21 @@
 {% set icon = icon|default('quotes') %}
 {% set text_size = text_size|default('normal') %}
 
+{% if not image_small and variation != '--text' %}
+  {% set variation = '--image-single'%}
+{% else %}
+  {% set variation = variation %}
+{% endif %}
+
+{% if not image_position %}
+  {% set position = 'image--left' %}
+{% else %}
+  {% set position = 'image--' ~ image_position %}
+{% endif %}
+
 {% if text %}
-  <blockquote class="m-quote{{ variation }}">
-    
-    {% if image_main and variation == '--image' %}
+  <blockquote class="m-quote{{ variation }} {{position}}{% if unpublished %} paragraph--unpublished{% endif %}">
+    {% if image_main and ( variation == '--image' or variation == '--image-single') %}
       <div class="m-quote{{ variation }}__images">
         <div class="m-quote{{ variation }}__image-main">
           {% include "@molecules/image/image.twig" with {
@@ -35,8 +46,7 @@
           </div>
         {% endif %}
       </div>
-    {% endif %}
-
+    {% endif %}  
 
     {% if text or source or additional_info %}
       <div class="m-quote{{ variation }}__content-wrapper">
@@ -69,8 +79,6 @@
           </cite>
         {% endif %}
 
-        
-
         {% if url and label %}
           {% include '@atoms/button/button.twig' with {
               directory: directory,
@@ -91,4 +99,3 @@
       
   </blockquote>
 {% endif %}
-

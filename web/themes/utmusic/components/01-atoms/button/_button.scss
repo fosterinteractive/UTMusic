@@ -26,7 +26,7 @@
 }
 
 %a-button--small-width {
-  width: fit-content !important;
+  width: fit-content;
 }
 
 // %a-button--small-padding {
@@ -260,6 +260,30 @@
     width: 0.7em;
     height: 0.8em;
   }
+}
+
+.adminspring-preview {
+  .a-button--left {
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  
+  .a-button--center {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .a-button--right {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+.a-button--width-100 {
+  width: 100% !important;
+  text-align: left;
 }
 
 // Text Button appear visually like a-links

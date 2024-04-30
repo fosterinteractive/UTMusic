@@ -1,0 +1,10 @@
+uuid: ad8f4a7d-7438-4c82-b058-fd84a77d42af
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.quote_main_image
+label: 'Quote Main Image'
+targetEntityType: media
+cache: true

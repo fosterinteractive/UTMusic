@@ -7,17 +7,20 @@
       const controlButton = $(context).find('.o-hero-media--carousel__image-button');
       const carousel = $(controlButton).next();
 
+      // https://kenwheeler.github.io/slick/
+
       $(carousel).slick({
         pauseOnHover: false,
-        slidesToShow: 2,
+        slidesToShow: 1,
         infinite: true,
         slidesToScroll: 1,
         arrows: false,
         autoplay: true,
         autoplaySpeed: 5000,
         fade: true,
-        speed: 200,
-        cssEase: 'cubic-bezier(.17,.67,.83,.67)',
+        speed: 600,
+        // cssEase: 'cubic-bezier(.17,.67,.83,.67)',
+        cssEase: 'ease-in-out',
       });
 
       $(controlButton).on('click', () => {

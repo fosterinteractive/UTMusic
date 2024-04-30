@@ -36,7 +36,6 @@
  * @ingroup themeable
  */
 #}
-
 {# Get facts #}
 {% set facts = [] %}
 {% if content.field_fact_group_items[0] %}
@@ -48,7 +47,8 @@
 {% endif %}
 
 {% include "@molecules/fact/fact-group.twig" with {
-    directory: 'themes/utmusic',
+    unpublished: unpublished,
+    directory: directory,
     items: facts,
     variation: content.field_fact_group_items_variation[0] ? content.field_fact_group_items_variation[0]['#markup'],
     color: content.field_facts_group_color[0] ? content.field_facts_group_color[0]['#markup'],

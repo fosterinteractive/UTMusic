@@ -1,0 +1,33 @@
+<div class="m-image-grid-wrapper">
+  {# Title #}
+  {% if title %}
+    <div class="m-image-grid-wrapper__title">
+      {% include "@atoms/text/headings/heading.twig" with {
+          html_element: 'h2',
+          appearance: 'h2',
+          text: title,
+          alignment: 'left',
+        } only
+      %}
+    </div>
+  {% endif %}
+
+  {% if summary  %}
+    <div class="m-image-grid-wrapper__summary">
+      {{ summary }}
+    </div>
+  {% endif %}
+
+  {% if sb_demo %}
+    {% for item in content %}
+      {% include "@molecules/media-gallery/media-gallery-item.twig" with {
+          variation: item.variation,
+          sb_demo: item.sb_demo,
+          items: item.items,
+        } only 
+      %}
+    {% endfor %}
+  {% else %}
+    {{ content }}
+  {% endif %}
+</div>

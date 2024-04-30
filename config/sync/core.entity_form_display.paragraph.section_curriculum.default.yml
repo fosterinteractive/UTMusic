@@ -1,0 +1,25 @@
+uuid: 94b7f93e-e975-4d0b-833c-0c141b487d59
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.section_curriculum
+id: paragraph.section_curriculum.default
+targetEntityType: paragraph
+bundle: section_curriculum
+mode: default
+content:
+  layout_paragraphs_fields:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true

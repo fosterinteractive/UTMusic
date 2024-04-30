@@ -15,6 +15,13 @@ use Drupal\Core\Render\Element;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
+ * Implements hook_page_attachments().
+ */
+function custom_admin_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'custom_admin/custom_admin';
+}
+
+/**
  * Implements template_preprocess_page().
  */
 function custom_admin_preprocess_html(&$variables) {
@@ -25,13 +32,6 @@ function custom_admin_preprocess_html(&$variables) {
       $variables['html_attributes']->addClass('is-loggedin');  
     }
   }
-}
-
-/**
- * Implements hook_page_attachments().
- */
-function custom_admin_page_attachments(array &$attachments) {
-  $attachments['#attached']['library'][] = 'custom_admin/custom_admin';
 }
 
 /**
@@ -316,6 +316,39 @@ function custom_admin_form_layout_paragraphs_component_form_alter(array &$form, 
   $paragraph = $form['#paragraph'];
   $paragraph_type = $paragraph->getType();
 
+  // Carousel Quote paragraph.
+  if ($paragraph_type == 'carousel_quote') {
+    foreach (Element::children($form['field_carousel_quote_item']['widget']) as $key) {
+        // Note that the '$key' corresponds to the index of each quote item.
+        $quoteItem = &$form['field_carousel_quote_item']['widget'][$key]['subform'];
+
+        // Check if the variation field is set and apply the conditional logic to the fields within the quote item.
+        if (isset($quoteItem['field_quote_variation'])) {
+            // Apply conditions to 'field_quote_image_main'
+            $quoteItem['field_quote_image_main']['#states'] = [
+                'visible' => [
+                    [':input[name="field_carousel_quote_item[' . $key . '][subform][field_quote_variation]"]' => ['value' => 'image']],
+                    [':input[name="field_carousel_quote_item[' . $key . '][subform][field_quote_variation]"]' => ['value' => 'image-single']],
+                ],
+            ];
+
+            // Apply conditions to 'field_quote_image_small'
+            $quoteItem['field_quote_image_small']['#states'] = [
+                'visible' => [
+                    [':input[name="field_carousel_quote_item[' . $key . '][subform][field_quote_variation]"]' => ['value' => 'image']],
+                ],
+            ];
+
+            // Apply conditions to 'field_quote_image_position'
+            $quoteItem['field_quote_image_position']['#states'] = [
+                'visible' => [
+                    [':input[name="field_carousel_quote_item[' . $key . '][subform][field_quote_variation]"]' => ['value' => 'image-single']],
+                ],
+            ];
+        }
+    }
+  }
+
   // Dynamic news paragraph.
   if ($paragraph_type == 'news_summary_list_dynamic') {
     // Show field "Other Number of Items" if field "Number of Items" is set
@@ -360,6 +393,16 @@ function custom_admin_form_layout_paragraphs_component_form_alter(array &$form, 
         ],
       ],
     ];
+
+    if (isset($form['field_event_context_area']['widget'])) {
+      // Remove none option from choices.
+      unset($form['field_event_context_area']['widget']['#options']['_none']);
+    }
+
+    if (isset($form['field_events_category']['widget'])) {
+      // Remove none option from choices.
+      unset($form['field_events_category']['widget']['#options']['_none']);
+    }
   }
 
   // Call to action paragraph.
@@ -377,8 +420,24 @@ function custom_admin_form_layout_paragraphs_component_form_alter(array &$form, 
   if ($paragraph_type == 'quote') {
     $form['field_quote_image_main']['#states'] = [
       'visible' => [
+        [
+          ':input[name="field_quote_variation"]' => [
+            'value' => 'image',
+          ],
+        ], 
+        [
+          ':input[name="field_quote_variation"]' => [
+            'value' => 'image-single',
+          ],
+        ]
+        
+      ],
+    ];
+
+    $form['field_quote_image_position']['#states'] = [
+      'visible' => [
         ':input[name="field_quote_variation"]' => [
-          'value' => 'image',
+          'value' => 'image-single',
         ],
       ],
     ];
@@ -461,6 +520,34 @@ function custom_admin_form_node_form_alter(&$form, FormStateInterface $form_stat
   if ($form_id == 'node_people_form' || $form_id == 'node_people_edit_form' ) {
     if (isset($form['field_people_research_profile']['widget'][0]['uri']['#description'])) {
       $form['field_people_research_profile']['widget'][0]['uri']['#description'] = t('Your DiscoverResearch Profile Eg. https://discover.research.utoronto.ca/123-your-name.');
+    }
+
+    if (isset($form['field_people_role_new']['widget'])) {
+      // Remove none option from choices.
+      unset($form['field_people_role_new']['widget']['#options']['_none']);
+    }
+
+    if (isset($form['field_people_program']['widget'])) {
+      // Remove none option from choices.
+      unset($form['field_people_program']['widget']['#options']['_none']);
+    }
+
+    if (isset($form['field_people_instrument']['widget'])) {
+      // Remove none option from choices.
+      unset($form['field_people_instrument']['widget']['#options']['_none']);
+    }
+
+    if (isset($form['field_people_area']['widget'])) {
+      // Remove none option from choices.
+      unset($form['field_people_area']['widget']['#options']['_none']);
+    }
+  }
+
+  // Event edit / add form.
+  if ($form_id == 'node_event_form' || $form_id == 'node_event_edit_form' ) {
+    if (isset($form['field_event_area']['widget'])) {
+      // Remove none option from choices.
+      unset($form['field_event_area']['widget']['#options']['_none']);
     }
   }
 }

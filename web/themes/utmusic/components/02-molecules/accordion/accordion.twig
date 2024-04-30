@@ -1,6 +1,6 @@
 {% set expand_button_label = expand_button_label|default('Expand All'|t) %}
 
-<div class="m-accordion" data-accordion>
+<div class="m-accordion{% if unpublished %} paragraph--unpublished{% endif %}" data-accordion>
   {% if title or summary %}
     <div class="m-accordion-header-wrapper">
       {% if title %}

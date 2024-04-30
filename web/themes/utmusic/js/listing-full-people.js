@@ -1,4 +1,14 @@
+const setSizeImagePlaceholder = (context) => {
+  const firstImageHeight = context.querySelector('.m-listing-item--people .m-listing-item--people__img img');
+  let placeholdersArray = context.querySelectorAll('.m-listing-item--people .m-listing-item--people__img-illustration');
+
+  placeholdersArray.forEach( placeholder => {
+    placeholder.style.height = firstImageHeight ? firstImageHeight.clientHeight + "px": '300px';
+  });
+}
+
 Drupal.behaviors.listingPeople = {
+
   attach(context) {
     // Find all listing items
     const listingItems = context.querySelectorAll('.m-listing-item--people');
@@ -7,11 +17,10 @@ Drupal.behaviors.listingPeople = {
       return;
     }
  
-    let firstImageHeight = context.querySelector('.m-listing-item--people .m-listing-item--people__img img').height;
-    let placeholdersArray = context.querySelectorAll('.m-listing-item--people .m-listing-item--people__img-illustration');
+    setSizeImagePlaceholder(context);
 
-    placeholdersArray.forEach( placeholder => {
-      placeholder.style.height = firstImageHeight ? firstImageHeight + "px": '300px';
+    window.addEventListener('resize', ()=> {
+      setSizeImagePlaceholder(context);
     });
   },
 };

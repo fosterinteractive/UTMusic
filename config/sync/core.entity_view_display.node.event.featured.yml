@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.featured
+    - field.field.node.event.feeds_item
     - field.field.node.event.field_even_location_link_map
     - field.field.node.event.field_event_area
     - field.field.node.event.field_event_audience
@@ -203,6 +204,7 @@ content:
     weight: 10
     region: content
 hidden:
+  feeds_item: true
   field_even_location_link_map: true
   field_event_body: true
   field_event_button_a11y: true

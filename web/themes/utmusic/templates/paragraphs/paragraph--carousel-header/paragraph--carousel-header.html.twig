@@ -79,4 +79,7 @@
   } only
 %}
 
-{{ attach_library('utmusic/slick-carousel') }}
+{# Only attach the library if the view mode is not 'preview' #}
+{% if view_mode != 'preview' %}
+  {{ attach_library('utmusic/carousel-header') }}
+{% endif %}

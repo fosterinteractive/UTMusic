@@ -1,0 +1,23 @@
+uuid: 51b91fe7-7d05-4547-a02e-3ec045e3b13a
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_style_quality
+name: landscape_16_9_900_70
+label: 'Landscape 16:9 - (900 @ 70%)'
+effects:
+  1254a372-2628-4741-95d1-92c0bb244c88:
+    uuid: 1254a372-2628-4741-95d1-92c0bb244c88
+    id: image_style_quality
+    weight: 1
+    data:
+      quality: 70
+  d391fa21-c13e-4df7-8715-7b791a6dcfa1:
+    uuid: d391fa21-c13e-4df7-8715-7b791a6dcfa1
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 900
+      height: 506
+      anchor: center-center

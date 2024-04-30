@@ -22,9 +22,9 @@ bundle: resources
 mode: default
 content:
   content_moderation_control:
-    weight: -20
     settings: {  }
     third_party_settings: {  }
+    weight: -20
     region: content
   field_resources_category:
     type: list_key

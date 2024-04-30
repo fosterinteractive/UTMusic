@@ -1,0 +1,57 @@
+<div class="m-quote__carousel{% if unpublished %} paragraph--unpublished{% endif %}">
+
+  <div class="m-quote__carousel-buttons">
+    <div class="m-quote__carousel-prev-btn">
+      {% include "@atoms/button/button.twig" with {
+        directory: directory,
+        label: label,
+        html_element: 'button',
+        variation: 'icon',
+        icon: 'circle-caret-left',
+        url: '#',
+        aria_label: "Previous"|t,
+        alignment: 'left'
+        } only
+      %}
+    </div>
+
+    <div class="m-quote__carousel-next-btn">
+      {% include "@atoms/button/button.twig" with {
+        directory: directory,
+        label: label,
+        html_element: 'button',
+        variation: 'icon',
+        icon: 'circle-caret-right',
+        url: '#',
+        aria_label: "Next"|t,
+        alignment: 'left'
+        } only
+      %}
+    </div>
+  </div>
+
+  <div class="m-quote__carousel-items">
+    {% for item in items %}
+    <div>
+      {% if sb_demo %}
+        {% include '@molecules/quote/quote.twig' with {
+          variation: item.variation,
+          text: item.text,
+          image_main: item.image_main,
+          image_small: item.image_small,
+          icon: item.icon,
+          text_size: item.text_size,
+          source: item.source,
+          url: item.url,
+          label: item.label,
+          directory: directory,
+          } only 
+        %}
+      {% else %}
+        {{ item }}
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+</div>

@@ -22,7 +22,7 @@ content:
       title: Paragraph
       title_plural: Paragraphs
       edit_mode: closed
-      closed_mode: preview
+      closed_mode: summary
       autocollapse: all
       closed_mode_threshold: 0
       add_mode: dropdown
@@ -45,6 +45,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
 hidden:
   created: true
-  status: true

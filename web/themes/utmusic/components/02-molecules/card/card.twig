@@ -16,7 +16,7 @@
 {% endif %}
 
 {# url is coming for title #}
-<div class="m-card{{ variation }}">
+<div class="m-card{{ variation }}{% if unpublished %} paragraph--unpublished{% endif %}">
   {% if variation == '--illustration' %}
     {% if illustration %}
       <div class="m-card__image-illustration">

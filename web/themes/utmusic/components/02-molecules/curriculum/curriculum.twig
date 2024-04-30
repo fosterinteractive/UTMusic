@@ -1,28 +1,24 @@
-
-
-<div class="m-curriculum">
+<div class="m-curriculum{% if unpublished %} paragraph--unpublished{% endif %}">
 
   {% if title %}
     <div class="m-curriculum__title">
       {% include "@atoms/text/headings/heading.twig" with {
           html_element: 'h2',
           appearance: 'h2',
-          text: title
+          text: title,
         } only
       %}
     </div>
   {% endif %}
-
 
   <div class="m-curriculum__wrapper">
   
     {% if credits and years %}
       <div class="m-curriculum__totals">
 
-        <div class="m-curriculum__credits">{{credits}}</div>
+        <div class="m-curriculum__credits">{{ credits }}</div>
 
-
-        <div class="m-curriculum__years">Total Credits over {{years}} years</div>
+        <div class="m-curriculum__years">Total Credits over {{ years }} years</div>
 
       </div>
     {% endif %}
@@ -32,7 +28,7 @@
 
       <ul>
         {% for item in courses %}
-          <li>{{item}}</li>
+          <li>{{ item }}</li>
         {% endfor %}
       </ul>
     </div>
@@ -48,7 +44,7 @@
           html_element: 'a',
           url: btn_url,
           aria_label: btn_aria_label,
-          target: btn_target
+          target: btn_target,
         } only
       %} 
     </div>

@@ -1,0 +1,54 @@
+
+{% set variation = variation|default('') %}
+
+{% if variation is not empty %}
+
+  {# Add BEM variation '--' prefix if missing #}
+  {% if variation starts with '--' %}
+    {# Do nothing #}
+  {% else %}
+    {% set variation = '--' ~ variation %}
+  {% endif %} 
+
+{% endif %}
+
+{% if unpublished %}
+<div class="paragraph--unpublished">
+{% endif %}
+
+<div class="m-image-grid {% if variation %}m-image-grid{{ variation }}{% endif %} parent-container">
+  {% if sb_demo %}
+    {% for item in items %}
+      <div class="m-image-grid__row {% if variation %}m-image-grid__row-{{ loop.index }}{{ variation }}{% endif %}">
+        {{ item.image }}
+      </div>
+    {% endfor %}
+  {% else %}
+    {% for item in items %}
+      {% if item.thumbnail is defined %}
+        <div class="m-image-grid__row {% if variation %}m-image-grid__row-{{ loop.index }}{{ variation }}{% endif %} m-image-grid__video-wrapper m-image-grid__video-wrapper--{{ image_style }}">
+          <a href="video-{{ item.url }}" class="m-image-grid__row-popup mfp-iframe" role="button" aria-label="Open video: {{ item.name }} in the pop-up" aria-haspopup="true">
+            <img src="{{ item.thumbnail }}" alt="Image Thumbnail for video: {{ item.name }}">
+            {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+              directory: 'themes/utmusic',
+              icon: 'play-button',
+              base_class: 'm-image-grid__play-btn',
+            } only %}
+          </a>
+        </div>
+      {% else %}
+        <div class="m-image-grid__row {% if variation %}m-image-grid__row-{{ loop.index }}{{ variation }}{% endif %} m-image-grid__image-wrapper">
+        {% set file_path = item['#uri'] %}
+        {% set styled_image_url = file_path|image_style('media_gallery_2500_80') %}
+          <a href="{{ file_url(styled_image_url) }}" class="m-image-grid__row-popup" title="{{ item.caption }}" role="button" aria-label="Open image in a larger view" aria-haspopup="true">
+            {{ item }}
+          </a>
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</div>
+
+{% if unpublished %}
+</div>
+{% endif %}

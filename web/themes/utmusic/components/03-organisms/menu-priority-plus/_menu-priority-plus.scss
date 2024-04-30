@@ -19,12 +19,17 @@
   justify-content: flex-end;
 }
 
-// .m-menu-priority-plus__item {
+.m-menu-priority-plus__item.is-active {
+  @include breakpoint(1px $bp-tablet-small) {
+    text-wrap: wrap;
+    overflow-wrap: break-word;
+    // word-break: break-all;
 
-//   &.is-active {
-
-//   }
-// }
+    .m-menu-priority-plus__link {
+      min-width: rem(130px);
+    }
+  }
+}
 
 .m-menu-priority-plus__link {
   @extend %a-type--small;

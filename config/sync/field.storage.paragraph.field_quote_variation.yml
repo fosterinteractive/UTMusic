@@ -16,7 +16,10 @@ settings:
       label: 'Text only'
     -
       value: image
-      label: 'With Image'
+      label: 'Pair Images'
+    -
+      value: image-single
+      label: 'Single Image'
   allowed_values_function: ''
 module: options
 locked: false

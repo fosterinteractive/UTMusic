@@ -1,0 +1,21 @@
+uuid: b59fc420-54ab-42d9-848c-71a99b88e6fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_button_width
+    - paragraphs.paragraphs_type.button
+  module:
+    - options
+id: paragraph.button.field_button_width
+field_name: field_button_width
+entity_type: paragraph
+bundle: button
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

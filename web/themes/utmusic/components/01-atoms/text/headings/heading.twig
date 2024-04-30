@@ -32,6 +32,7 @@
     class="{{ base_class }}{{ appearance }} a-heading--{{ alignment }}
       {% if url %} has-link {% endif %}
       {% if visually_hidden == 'hidden'%} u-visually--hidden{% endif %}
+      {% if unpublished %} paragraph--unpublished{% endif %}
     "
     {% if id and not url %}
     id="{{ id }}"

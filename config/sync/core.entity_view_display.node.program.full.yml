@@ -83,7 +83,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: mode_crop_10_11
+      view_mode: content_header_10_11
       link: false
     third_party_settings: {  }
     weight: 6
@@ -92,7 +92,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: mode_crop_10_13
+      view_mode: content_header_5_7
       link: false
     third_party_settings: {  }
     weight: 7
@@ -101,7 +101,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: news_image_landscape
+      view_mode: content_header
       link: false
     third_party_settings: {  }
     weight: 4

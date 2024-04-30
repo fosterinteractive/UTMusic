@@ -264,7 +264,9 @@
 
   {# For each item add to areas array #}
   {% for i in 0..item_count %}
-    {% set new_roles = new_roles|merge([content.field_people_role_new[i]['#plain_text']]) %}
+    {% set role_weight = content.field_people_role_new[i]['#entity'].weight.value %}
+
+    {% set new_roles = new_roles|merge([{ 'role': content.field_people_role_new[i]['#plain_text'], 'role_weight': role_weight }]) %}
   {% endfor %}
 {% endif %}
 
@@ -358,6 +360,7 @@
 
 {% include "@layouts/main/main--people.twig" with {
     directory: 'themes/utmusic',
+    moderation: content.content_moderation_control ? content.content_moderation_control,
     breadcrumbs: breadcrumbs,
     messages: drupal_entity('block', 'messages'),
     tabs: drupal_entity('block', 'tabs'),
@@ -375,7 +378,7 @@
     pronunciation: content.field_people_pronunciation[0] ? content.field_people_pronunciation,
     prononun: content.field_people_pronouns[0] ? content.field_people_pronouns[0]['#text'],
     areas: areas,
-    new_roles: new_roles,
+    new_roles: new_roles ? new_roles|sort((a,b) => a.role_weight <=> b.role_weight)|column('role'),
     profile_type: content.field_people_profile_type[0] ? content.field_people_profile_type[0]['#markup'],
     education: education,
     background: background,

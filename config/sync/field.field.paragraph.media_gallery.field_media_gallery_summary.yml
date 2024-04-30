@@ -1,0 +1,29 @@
+uuid: b7b23ac2-3e67-4ce6-8b71-27637732477a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_media_gallery_summary
+    - filter.format.rich_text
+    - paragraphs.paragraphs_type.media_gallery
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - rich_text
+id: paragraph.media_gallery.field_media_gallery_summary
+field_name: field_media_gallery_summary
+entity_type: paragraph
+bundle: media_gallery
+label: Summary
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - rich_text
+field_type: text_long

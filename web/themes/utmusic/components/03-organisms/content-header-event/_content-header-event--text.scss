@@ -18,7 +18,7 @@
   z-index: 0;
 
   @include breakpoint($bp-tablet) {
-    flex-direction: row;
+    // flex-direction: row;
     grid-column: col 1/ span 12;
     justify-content: space-between;
     padding-top: 0;
@@ -27,7 +27,7 @@
 
 .o-hero-media--event-text__text {
   @include breakpoint($bp-tablet) {
-    max-width: 50%;
+    width: 50%;
   }
 }
 
@@ -37,7 +37,7 @@
   gap: calc(var(--spacer)/3);
   
   @include breakpoint($bp-tablet) {
-    width: 33%;
+    width: 50%;
   }
 }
 

@@ -7,7 +7,6 @@ module:
   admin_ui_enhancements: 0
   adminspring_theme_negotiator: 0
   allowed_formats: 0
-  anchor_link: 0
   audiorecorder: 0
   audiorecorder_webform_integration: 0
   auto_entitylabel: 0
@@ -17,7 +16,6 @@ module:
   breakpoint: 0
   captcha: 0
   choices: 0
-  ckeditor: 0
   ckeditor5: 0
   components: 0
   composer_deploy: 0
@@ -45,13 +43,15 @@ module:
   dropzonejs_eb_widget: 0
   editor: 0
   editor_advanced_link: 0
+  editoria11y: 0
   embed: 0
   entity_browser: 0
   entity_browser_entity_form: 0
   entity_embed: 0
   entity_reference_revisions: 0
   environment_indicator: 0
-  fakeobjects: 0
+  feeds: 0
+  feeds_tamper: 0
   field: 0
   field_group: 0
   field_ui: 0
@@ -88,11 +88,6 @@ module:
   media: 0
   media_bulk_upload: 0
   media_bulk_upload_dropzonejs: 0
-  media_contextual_crop: 0
-  media_contextual_crop_embed: 0
-  media_contextual_crop_field_formatter: 0
-  media_contextual_crop_fp_adapter: 0
-  media_contextual_crop_iwc_adapter: 0
   media_entity_download: 0
   media_entity_link: 0
   media_entity_svg: 0
@@ -100,6 +95,7 @@ module:
   media_library: 0
   media_library_edit: 0
   media_library_media_modify: 0
+  media_library_media_modify_focal_point: 0
   mega_menu_builder: 0
   menu_block: 0
   menu_breadcrumb: 0
@@ -112,6 +108,8 @@ module:
   moderation_sidebar: 0
   mysql: 0
   node: 0
+  oembed_lazyload: 0
+  oembed_lazyload_youtube: 0
   optional_end_date: 0
   options: 0
   page_cache: 0
@@ -140,6 +138,7 @@ module:
   svg_image: 0
   svg_image_responsive: 0
   system: 0
+  tamper: 0
   taxonomy: 0
   telephone: 0
   template_suggestions_extra: 0
@@ -172,6 +171,7 @@ module:
   pathauto: 1
   views: 10
   paragraphs: 11
+  custom_section_classes: 12
   mainspring: 1000
   vertical_tabs_config: 1001
 theme:

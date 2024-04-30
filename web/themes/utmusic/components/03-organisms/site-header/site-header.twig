@@ -1,16 +1,16 @@
 <header class="o-header">
   <div class="o-header__bottom">
     <div class="o-header__logo">
-      {% include "@molecules/logo/logo.twig"
-        with {
+    
+      {% include "@molecules/logo/logo.twig" with {
           directory: directory,
-          variation: '--image',
-          logo_image_src: 'images/logo.svg',
-          logo_alt: site_name,
+          logo_icon: 'logo-music',
+          logo_icon_size: logo_icon_size,
+          logo_icon_color: logo_icon_size,
+          logo_aria_label: 'university of toronto faculty of music logo',
+
           url: front_page,
-          is_front: is_front,
-          width: 372,
-          height: 91,
+          site_name: site_name,
         } only
       %}
     </div>

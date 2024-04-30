@@ -29,6 +29,6 @@
   }
 
   button {
-    @extend %o-hero-media__info-link;
+    @extend %o-hero-media__info-link !optional;
   }
 }

@@ -1,6 +1,6 @@
 uuid: 2b5f13e5-b280-4314-9fa5-63efa56f312b
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.search_result
@@ -37,9 +37,9 @@ bundle: news
 mode: search_result
 content:
   content_moderation_control:
-    weight: -20
     settings: {  }
     third_party_settings: {  }
+    weight: -20
     region: content
   search_api_excerpt:
     settings: {  }

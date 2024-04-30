@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
+    - field.field.node.event.feeds_item
     - field.field.node.event.field_even_location_link_map
     - field.field.node.event.field_event_area
     - field.field.node.event.field_event_audience
@@ -172,7 +173,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: news_image_landscape
+      view_mode: content_header
       link: false
     third_party_settings: {  }
     weight: 2
@@ -270,6 +271,7 @@ content:
     weight: 14
     region: content
 hidden:
+  feeds_item: true
   field_event_promote: true
   field_event_summary: true
   field_event_summary_image: true

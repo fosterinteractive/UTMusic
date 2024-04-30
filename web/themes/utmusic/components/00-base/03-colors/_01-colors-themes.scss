@@ -142,7 +142,7 @@
 
   //@molecules/sliding-menu
   --c-sliding-menu-link: #{palette(white)};
-  --c-sliding-menu-link--active: #{palette(teal, 700)};
+  --c-sliding-menu-link--active: #{palette(pink, 850)};
 
   // @organisms/listing
   --c-listing-item--border: #{palette(grey, 800)};
@@ -239,6 +239,7 @@
   // @atoms/text
   --c-text: #{palette(white)};
   --c-heading: #{palette(white)};
+  --c-figcaptions: #{palette(white)};
 
 
   //@molecules/featured media
@@ -249,5 +250,9 @@
   //@organisms/listing & listing-item
   --c-events-carousel-title: #{palette(white)};
   --c-events-carousel-border: #{palette(teal, 300)};
+
+  // @molecules/quote
+  --c-quote: #{palette(white)};
+  --c-quote-text-border: #{palette(white)};
 }
 

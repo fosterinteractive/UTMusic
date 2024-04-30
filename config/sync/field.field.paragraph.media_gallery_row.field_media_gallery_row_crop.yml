@@ -1,0 +1,23 @@
+uuid: 4123d27d-c598-4048-8c1a-c6a414702beb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_media_gallery_row_crop
+    - paragraphs.paragraphs_type.media_gallery_row
+  module:
+    - options
+id: paragraph.media_gallery_row.field_media_gallery_row_crop
+field_name: field_media_gallery_row_crop
+entity_type: paragraph
+bundle: media_gallery_row
+label: 'Media Row Crop'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: landscape_16_9
+default_value_callback: ''
+settings: {  }
+field_type: list_string

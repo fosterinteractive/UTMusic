@@ -9,9 +9,8 @@ libraries:
   - 'utmusic/global'
 
 # CKEditor stylesheet loads in wysiwyg to give content editors a better experience
-ckeditor_stylesheets:
-  - assets/style.css
-  - ckeditor/ckeditor.css
+ckeditor5-stylesheets:
+  -  dist/ckeditor.css
 
 regions:
   content: Content  # the content region is required
@@ -19,28 +18,6 @@ regions:
 
 # Remove unwanted system stylesheets
 libraries-override:
-  system/base:
-    css:
-      component:
-        /core/themes/stable/css/system/components/align.module.css: false
-        /core/themes/stable/css/system/components/container-inline.module.css: false
-        /core/themes/stable/css/system/components/fieldgroup.module.css: false
-        /core/themes/stable/css/system/components/clearfix.module.css: false
-        /core/themes/stable/css/system/components/details.module.css: false
-        /core/themes/stable/css/system/components/item-list.module.css: false
-        /core/themes/stable/css/system/components/nowrap.module.css: false
-        /core/themes/stable/css/system/components/position-container.module.css: false
-        /core/themes/stable/css/system/components/progress.module.css: false
-        /core/themes/stable/css/system/components/reset-appearance.module.css: false
-        /core/themes/stable/css/system/components/resize.module.css: false
-        /core/themes/stable/css/system/components/sticky-header.module.css: false
-        /core/themes/stable/css/system/components/system-status-counter.css: false
-        /core/themes/stable/css/system/components/system-status-report-counters.css: false
-        /core/themes/stable/css/system/components/system-status-report-general-info.css: false
-        /core/themes/stable/css/system/components/tabledrag.module.css: false
-        /core/themes/stable/css/system/components/tablesort.module.css: false
-        /core/themes/stable/css/system/components/tree-child.module.css: false
-        /core/modules/filter/css/filter.caption.css: false
   environment_indicator/drupal.environment_indicator:
     css:
       component:
@@ -49,6 +26,10 @@ libraries-override:
     css:
       theme:
         css/paragraphs.admin.css: false
+  paragraphs/drupal.paragraphs.unpublished:
+    css:
+      theme:
+        css/paragraphs.unpublished.css: css/paragraphs.unpublished.css
   user/drupal.user:
     css:
       component:

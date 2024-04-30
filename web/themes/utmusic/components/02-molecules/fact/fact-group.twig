@@ -9,8 +9,12 @@
 
 {% endif %}
 
+{% if unpublished %}
+<div class="paragraph--unpublished">
+{% endif %}
+
 {% if items %}
-  <div class="m-fact-group{{variation}} {{color}} l-flex--3col">
+  <div class="m-fact-group{{ variation }} {{ color }} l-flex--3col">
       {% for item in items %}
         {% if sb_demo %} 
           {% include '@molecules/fact/fact-item.twig' with {
@@ -26,4 +30,8 @@
         {% endif %}
       {% endfor %}
   </div>
+{% endif %}
+
+{% if unpublished %}
+</div>
 {% endif %}

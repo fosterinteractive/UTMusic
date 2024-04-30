@@ -138,7 +138,7 @@ content:
     region: content
     settings:
       media_types: {  }
-      form_mode: crop_widget_mode
+      form_mode: default
       check_selected: false
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: false
@@ -173,6 +173,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
 hidden:
   created: true
-  status: true

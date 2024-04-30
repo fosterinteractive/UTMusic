@@ -1,0 +1,24 @@
+uuid: 03cf2ff1-088a-4268-a05d-0890808cd59d
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+    - image_style_quality
+name: image_10_11_400x440
+label: 'Focal Point Crop 10:11 (400x440 @80%)'
+effects:
+  88239f39-3b3a-4c4a-84bb-46dfc3d8434a:
+    uuid: 88239f39-3b3a-4c4a-84bb-46dfc3d8434a
+    id: image_style_quality
+    weight: -9
+    data:
+      quality: 80
+  adf0892e-0534-4c65-8ae7-ba1ee7b48c86:
+    uuid: adf0892e-0534-4c65-8ae7-ba1ee7b48c86
+    id: focal_point_scale_and_crop
+    weight: -10
+    data:
+      width: 400
+      height: 440
+      crop_type: focal_point

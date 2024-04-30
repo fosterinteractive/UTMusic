@@ -119,7 +119,7 @@
     
   </div>
 
-  {% if variation == "--landscape" or variation == "--video" %}
+  {% if (variation == "--landscape" or variation == "--video") and social_share %}
     <div class="o-hero-media__social">
       {{ social_share }}
     </div>

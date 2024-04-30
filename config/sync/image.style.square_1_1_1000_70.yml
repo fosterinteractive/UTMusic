@@ -1,0 +1,23 @@
+uuid: a572ab05-4a6b-4e55-8a30-eb9016fc967d
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_style_quality
+name: square_1_1_1000_70
+label: 'Square 1:1 - (1000 @ 70%)'
+effects:
+  71bb447f-3e67-4e6c-b24a-2afe549b6299:
+    uuid: 71bb447f-3e67-4e6c-b24a-2afe549b6299
+    id: image_style_quality
+    weight: 1
+    data:
+      quality: 70
+  54dc78b9-a914-47d0-b68c-58e7afbf20f8:
+    uuid: 54dc78b9-a914-47d0-b68c-58e7afbf20f8
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1000
+      height: 1000
+      anchor: center-center

@@ -16,11 +16,12 @@ id: paragraph.section_title.field_section_title_text
 field_name: field_section_title_text
 entity_type: paragraph
 bundle: section_title
-label: 'Title Text'
+label: Title
 description: ''
 required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text

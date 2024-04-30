@@ -21,7 +21,7 @@
     height: 100%;
 
     .m-sliding-item__link {
-      transition:  0.2s cubic-bezier(.12,.78,.74,.9);
+      transition: flex-basis 0.2s cubic-bezier(.12,.78,.74,.9);
     }
   }
 }
@@ -29,7 +29,7 @@
 .m-sliding-door-menu .m-sliding-item {
   @include breakpoint($bp-tablet) {
     position: absolute;
-    transition:  0.2s cubic-bezier(.12,.78,.74,.9);
+    transition: clip-path 0.2s cubic-bezier(.12,.78,.74,.9);
 
     .m-sliding-item__link {
       display: none;

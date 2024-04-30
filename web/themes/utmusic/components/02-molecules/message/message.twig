@@ -13,7 +13,7 @@
 
 {% set message_icon_size = 'small' %}
 
-<div class="m-message{{ variation }}">
+<div class="m-message{{ variation }}{% if unpublished %} paragraph--unpublished{% endif %}">
   {% if message_icon %}
     <div class="m-message{{ variation }}__icon">
       {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {

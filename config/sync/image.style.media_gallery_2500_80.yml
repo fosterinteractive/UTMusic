@@ -1,0 +1,23 @@
+uuid: b251a52d-606a-4c57-8e54-860ba131b7f1
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_style_quality
+name: media_gallery_2500_80
+label: 'Media Gallery (2500 @ 80%)'
+effects:
+  88280226-e912-47af-848d-2744dd95b2ee:
+    uuid: 88280226-e912-47af-848d-2744dd95b2ee
+    id: image_style_quality
+    weight: 1
+    data:
+      quality: 80
+  f8247fd9-1a26-41ab-8046-6cb4f78665f7:
+    uuid: f8247fd9-1a26-41ab-8046-6cb4f78665f7
+    id: image_scale
+    weight: 2
+    data:
+      width: 2500
+      height: null
+      upscale: false

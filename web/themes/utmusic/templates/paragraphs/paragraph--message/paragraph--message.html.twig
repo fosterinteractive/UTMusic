@@ -42,9 +42,9 @@
 {% set icon_file_type = content.field_message_icon[0] ? content.field_message_icon[0]['#media'].field_media_image.entity.filemime.value %}
 {% set icon = content.field_message_icon[0] ? content.field_message_icon %}
 
-
 {% include "@molecules/message/message.twig" with {
-    directory: 'themes/utmusic',
+    unpublished: unpublished,
+    directory: directory,
     variation: variation,
     title: content.field_message_title[0] ? content.field_message_title[0]['#text'],
     text: content.field_message_text[0] ? content.field_message_text,

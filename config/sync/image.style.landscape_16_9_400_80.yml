@@ -1,0 +1,23 @@
+uuid: 2a3eba5b-77b0-43ef-ad6c-63a1670c502b
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_style_quality
+name: landscape_16_9_400_80
+label: 'Landscape 16:9 - (400 @ 80%)'
+effects:
+  cc804d0b-33ff-4c23-b986-65417e7e1d79:
+    uuid: cc804d0b-33ff-4c23-b986-65417e7e1d79
+    id: image_style_quality
+    weight: 1
+    data:
+      quality: 80
+  4cdf817e-7f2d-4048-84dc-664e968c6d62:
+    uuid: 4cdf817e-7f2d-4048-84dc-664e968c6d62
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 400
+      height: 225
+      anchor: center-center

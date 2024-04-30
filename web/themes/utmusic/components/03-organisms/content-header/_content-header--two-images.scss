@@ -18,21 +18,23 @@
   @extend %o-hero-media__bg-decoration;
 }
 
-%two-images-layout {
-  display: flex;
-  flex-direction: column;
-  gap: calc(var(--spacer) * 0.5);
-  padding: var(--spacer) 0;
+%image-wrapper-layout {
+  grid-column: col 1 / span 12;
+  grid-row: 5 / span 4;
 
   @include breakpoint($bp-tablet) {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    grid-template-rows: var(--spacer) repeat(3, auto) var(--spacer) var(--spacer) var(--spacer);
-    gap: rem(10px);
-    padding: 0;
+    grid-column: col 7 / span 6;
+    grid-row: 3 / span 5;
   }
 }
 
+%image-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: calc(var(--spacer) * 0.33);
+  padding: var(--spacer) 0;
+}
 
 // Top-Bottom Variation 
 .o-hero-media--top-bottom {
@@ -44,15 +46,8 @@
 }
 
 .o-hero-media--top-bottom__image {
-  @extend %two-images-layout; 
-
-  grid-row: 5 / span 4;
-  grid-column: col 1 / span 12;
-
-  @include breakpoint($bp-tablet) {
-    grid-row: 3/ span 5;
-    grid-column: 8 / span 6;
-  }
+  @extend %image-wrapper-layout;
+  @extend %image-layout;
 }
 
 .o-hero-media--top-bottom__text-wrapper {
@@ -60,11 +55,14 @@
 }
 
 .o-hero-media--top-bottom__image-short {
-  grid-row: 1 / span 4;
+  grid-column: 1;
+  grid-row: 1 / span 3;
 }
 
 .o-hero-media--top-bottom__image-tall {
-  grid-row: 2 / span 6;
+  grid-column: 2;
+  grid-row: 1 / span 4;
+  align-self: end;
 }
 
 .o-hero-media--top-bottom__breadcrumbs {
@@ -81,16 +79,8 @@
 }
 
 .o-hero-media--bottom-top__image {
-  @extend %two-images-layout;
-  grid-template-columns: 1.2fr 1fr; 
-
-  grid-row: 5 / span 4;
-  grid-column: col 1 / span 12;
-
-  @include breakpoint($bp-tablet) {
-    grid-row: 3/ span 5;
-    grid-column: 8 / span 6;
-  }
+  @extend %image-wrapper-layout;
+  @extend %image-layout;
 }
 
 .o-hero-media--bottom-top__text-wrapper {
@@ -98,13 +88,14 @@
 }
 
 .o-hero-media--bottom-top__image-tall {
-  grid-row: 2/ span 6;
   grid-column: 1;
+  grid-row: 1 / span 4;
+  align-self: end;
 }
 
 .o-hero-media--bottom-top__image-short {
-  grid-row: 1 / span 5;
   grid-column: 2;
+  grid-row: 1 / span 3;
 }
 
 .o-hero-media--bottom-top__breadcrumbs {

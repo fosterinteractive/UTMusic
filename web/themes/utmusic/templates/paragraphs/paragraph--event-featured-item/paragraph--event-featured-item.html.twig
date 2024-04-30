@@ -36,8 +36,15 @@
  * @ingroup themeable
  */
 #}
+{% if content.event_featured_item['#view'].total_rows < 1 and view_mode != 'preview' %}
+  {% set content_view = false %}
+{% else %}
+  {% set content_view  = content.event_featured_item %}
+{% endif %}
+
 {% include "@organisms/content-views/_view.twig" with {
+    unpublished: unpublished,
     attributes: attributes,
-    content: content.event_featured_item,
+    content: content_view,
   } only
 %}

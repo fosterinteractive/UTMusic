@@ -1,0 +1,23 @@
+uuid: 0bbac5e3-2703-40d9-94f9-6746409d7f89
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_media_gallery_row_layout
+    - paragraphs.paragraphs_type.media_gallery_row
+  module:
+    - options
+id: paragraph.media_gallery_row.field_media_gallery_row_layout
+field_name: field_media_gallery_row_layout
+entity_type: paragraph
+bundle: media_gallery_row
+label: 'Variations of Layout'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: left
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,24 +1,18 @@
 @use 'sass:math';
 @use "sass:list";
 
-.m-quote--image {
-  @extend %m-quote;
+%m-quote--image {
   display: flex;
   flex-direction: column;
   gap: var(--spacer);
-
-
+  
   @include breakpoint($bp-tablet) {
     flex-direction: row;
     gap: calc(var(--spacer) * 2);
   }
 }
 
-.m-quote--image__images {
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  grid-template-rows: repeat(4, auto);
-
+%m-quote--image__images {
   @include breakpoint($bp-tablet) {
     width: 50%;
     min-width: 50%;
@@ -29,8 +23,22 @@
   }
 }
 
+
+.m-quote--image {
+  @extend %m-quote;
+  @extend %m-quote--image;
+}
+
+.m-quote--image__images {
+  @extend %m-quote--image__images;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
 .m-quote--image__image-main {
-  grid-column: col 2/ span 4;
+  grid-column: 2 / span 4;
   grid-row: 1 / span 3;
 
   @include breakpoint($bp-tablet) {
@@ -39,8 +47,8 @@
 }
 
 .m-quote--image__image-small {
-  grid-column: col 1/ span 2;
-  grid-row: 3/ span 2;
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 2;
   z-index: 1;
 }
 
@@ -58,13 +66,48 @@
 
   @include breakpoint($bp-tablet) {
     width: calc(50% - calc(var(--spacer) * 2 ));
-
   }
 }
 
 .m-quote--image__source {
   @extend %m-quote--source;
 }
+
+//single big image
+.m-quote--image-single {
+  @extend %m-quote;
+  @extend %m-quote--image;
+
+  &.image--right {
+    flex-direction: row-reverse;
+  }
+}
+
+.m-quote--image-single__images {
+  @extend %m-quote--image__images;
+}
+
+.m-quote--image-single__illustration {
+  @extend %m-quote--illustration;
+}
+
+.m-quote--image-single__illustration-bg {
+  @extend %m-card__image-illustration-bg;
+}
+
+.m-quote--image-single__content-wrapper {
+  @extend %m-quote--content-wrapper;
+
+  @include breakpoint($bp-tablet) {
+    width: calc(50% - calc(var(--spacer) * 2 ));
+  }
+}
+
+.m-quote--image-single__source {
+  @extend %m-quote--source;
+}
+
+
 
 // admin UI
 .m-quote--image .contextual .trigger {

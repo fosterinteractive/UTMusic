@@ -20,7 +20,7 @@ libraries-override:
     css:
       component:
         css/components/ajax-progress.module.css: /core/themes/claro/css/components/ajax-progress.module.css
-        css/components/autocomplete-loading.module.css: /core/themes/claro/css/components/autocomplete-loading.module.css
+        css/components/autocomplete-loading.module.css: /themes/adminspring-theme/css/components/autocomplete-loading.module.css
         css/components/system-status-counter.css: /core/themes/claro/css/components/system-status-counter.css
         css/components/system-status-report-counters.css: /core/themes/claro/css/components/system-status-report-counters.css
         css/components/system-status-report-general-info.css: /core/themes/claro/css/components/system-status-report-general-info.css
@@ -98,7 +98,17 @@ libraries-override:
       theme:
         css/views_ui.admin.theme.css: /core/themes/claro/css/theme/views_ui.admin.theme.css
 
-  # Use our adminspring css for this library.
+  # Use our adminspring css for these libraries
+  claro/filter:
+    css:
+      component:
+        css/theme/filter.theme.css: css/theme/filter.theme.css
+  
+  claro/media_library.theme:
+    css:
+      theme:
+        css/theme/media-library.css: css/theme/media-library.css
+
   claro/node-form:
     css:
       layout:
@@ -116,7 +126,9 @@ libraries-override:
       component:
         css/components/button.css: css/components/button.css
         css/components/form.css: css/components/form.css
+        css/components/form--checkbox-radio.css: css/components/form--checkbox-radio.css
         css/components/form--text.css: css/components/form--text.css
+        css/components/form--select.css: css/components/form--select.css
 
   layout_paragraphs/layout_select:
     css:

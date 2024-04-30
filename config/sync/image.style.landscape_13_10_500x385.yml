@@ -1,0 +1,24 @@
+uuid: 481ad35f-b16b-4d27-b995-3d6343c0bc54
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+    - image_style_quality
+name: landscape_13_10_500x385
+label: 'Landscape 13:10 (500x385 @80%)'
+effects:
+  c0c85260-fe03-4caa-983e-fd028965ed64:
+    uuid: c0c85260-fe03-4caa-983e-fd028965ed64
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 500
+      height: 385
+      crop_type: focal_point
+  bf61b548-05f8-4abc-90aa-e98dd6ae7721:
+    uuid: bf61b548-05f8-4abc-90aa-e98dd6ae7721
+    id: image_style_quality
+    weight: 2
+    data:
+      quality: 80

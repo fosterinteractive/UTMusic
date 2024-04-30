@@ -53,6 +53,20 @@ function utmusic_preprocess(&$variables, $hook) {
 /**
  * Implements template_preprocess_page().
  */
+function utmusic_preprocess_html(&$variables) {
+  // Check if page is unpublished (under moderation) flow and add class to body.
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    $moderation_state = $node->get('moderation_state')->value;
+    if ($moderation_state != 'published') {
+      $variables['attributes']['class'][] = 'page--moderation-state';
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_page().
+ */
 function utmusic_preprocess_page(&$variables) {
 
   // Load the site name out of configuration.
@@ -72,15 +86,31 @@ function utmusic_preprocess_page(&$variables) {
   $variables['site_youtube'] = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_youtube') && !$custom_site_settings->get('field_site_youtube')->isEmpty() ? $custom_site_settings->get('field_site_youtube')->getString() : NULL;
   // Site Instagram URL.
   $variables['site_instagram'] = !empty($custom_site_settings) && $custom_site_settings->hasField('field_site_instagram') && !$custom_site_settings->get('field_site_instagram')->isEmpty() ? $custom_site_settings->get('field_site_instagram')->getString() : NULL;
+
+  $logged_in = $variables['logged_in'] ?? NULL;
+  if ($logged_in == TRUE) {
+    $variables['#attached']['library'][] = 'utmusic/paragraphs.unpublished';
+  }
 }
 
 /**
  * Implements hook_preprocess_paragraph().
  */
 function utmusic_preprocess_paragraph(array &$variables) {
+  $active_theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
   $paragraph = $variables['paragraph'];
+  $pid = $paragraph->id();
   $paragraph_type = $paragraph->getType();
   $paragraph_view_mode = $variables['view_mode'];
+
+  // Determine if the unpublished class should be added to the paragraph. We set
+  // the class of adminspring on the preview view mode so we need to make sure
+  // we set it on the default paragraph and avoid setting it 2 times on
+  // adminspring.
+  $variables['unpublished'] = FALSE;
+  if (!$paragraph->isPublished() && $active_theme != 'adminspring') {
+    $variables['unpublished'] = TRUE;
+  }
 
   if ($paragraph_view_mode == 'default') {
     if ($paragraph_type == 'accordion_item') {
@@ -161,8 +191,8 @@ function utmusic_preprocess_paragraph(array &$variables) {
         'title' => null,
         'contextual' => [
           'category1' => 'field_program_full_list_stream',
+          'category2' => 'field_program_full_list_type',
         ],
-        'program_type' => 'field_program_full_list_type',
         'show_filter' => 'field_program_full_list_show_fil',
         'number_items' => null,
         'number_other_items' => null,
@@ -204,27 +234,6 @@ function utmusic_preprocess_paragraph(array &$variables) {
       $number_items = $number_items_value;
     }
 
-    // Check if the value for program_type is defined 
-    if (isset($field_mapping[$type]['program_type'])) {
-      $program_types = '';
-
-      // Get value of field "program_type"
-      $contextual_type = $paragraph->hasField($field_mapping[$type]['program_type']) && !$paragraph->{$field_mapping[$type]['program_type']}->isEmpty() ? $paragraph->{$field_mapping[$type]['program_type']} : '';
-
-      $type_args = 'all';
-      $program_type_ids = '';
-      if (!empty($contextual_type)) {
-        foreach ($contextual_type as $filter_type) {
-          $id = $filter_type->get('target_id')->getValue();
-          $program_type_ids .= $id . '+';
-        }
-
-        $type_args = substr($program_type_ids, 0, -1);
-      }
-
-      $program_types =  $type_args;
-    }
-
     // Set the contextual filters. These filters are setup to be the 1st
     // argument on the view and multiple fields (taxonomies) are combined.
     $categories = [];
@@ -242,12 +251,7 @@ function utmusic_preprocess_paragraph(array &$variables) {
         }
         $arg = substr($category_ids, 0, -1);
       // if the contextual filters are empty
-      } else {
-        // Check if the program_types is set
-        if (isset($program_types)){
-          $arg = $program_types;
-        }
-      }
+      } 
 
       $categories[$field_type] = $arg;
     }
@@ -289,16 +293,16 @@ function utmusic_preprocess_paragraph(array &$variables) {
         $status = $paragraph->hasField($field_mapping[$type]['status']) && !$paragraph->{$field_mapping[$type]['status']}->isEmpty() ? $paragraph->{$field_mapping[$type]['status']}->value : NULL;
 
         if ($status == 'upcoming') {
-          $variables['content']['events_summary_list_upcoming'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_upcoming', $number_items, $categories, $dynamic_title, $offset);
+          $variables['content']['events_summary_list_upcoming'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_upcoming', $number_items, $categories, $dynamic_title, $offset, NULL, NULL, NULL, NULL, NULL, NULL, 'paragraph:' . $pid);
         } else {
-          $variables['content']['events_summary_list_past'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_past', $number_items, $categories,  $dynamic_title, $offset);
+          $variables['content']['events_summary_list_past'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_past', $number_items, $categories,  $dynamic_title, $offset, NULL, NULL, NULL, NULL, NULL, NULL, 'paragraph:' . $pid);
         }
       }
       elseif ($paragraph_type == 'event_featured_item') {
         $variables['content']['event_featured_item'] = utmusic_return_rendered_view('events_full_list', 'events_featured_item', null , $categories, $dynamic_title, $offset);
       }
       elseif ($paragraph_type == 'programs_full_list_dynamic') {
-        $variables['content']['programs_full_list_dynamic'] = utmusic_return_rendered_view('programs_full_list', 'programs_full_list', null , $categories, null, null, $program_types, $show_filter);
+        $variables['content']['programs_full_list_dynamic'] = utmusic_return_rendered_view('programs_full_list', 'programs_full_list', null , $categories, null, null, $show_filter);
       }
       elseif ($paragraph_type == 'job_listing') {
         $variables['content']['job_listing_block'] = utmusic_return_rendered_view('jobs_full_list', 'job_listing_block', $number_items , $categories, null, $offset, null, null);
@@ -447,11 +451,19 @@ function utmusic_preprocess_views_view_unformatted(array &$variables) {
 }
 
 /**
+ * Implements hook_preprocess_toolbar().
+ */
+function utmusic_preprocess_toolbar(&$variables) {
+  $variables['#attached']['library'][] = 'utmusic/toolbar';
+}
+
+
+/**
  * Renders a view.
  *
  * used to render a view allowing us to pass contextual arguments to the view.
  */
-function utmusic_return_rendered_view($view, $display, $items = NULL, $categories = [], $title = NULL, $offset = NULL, $layout = NULL, $button_url = NULL, $button_label = NULL, $button_a11y = NULL, $program_types = NULL, $show_filter = NULL) {
+function utmusic_return_rendered_view($view, $display, $items = NULL, $categories = [], $title = NULL, $offset = NULL, $layout = NULL, $button_url = NULL, $button_label = NULL, $button_a11y = NULL, $show_filter = NULL, $cache_key = NULL) {
   $args = [];
 
   if (isset($categories['promote'])) {
@@ -473,7 +485,6 @@ function utmusic_return_rendered_view($view, $display, $items = NULL, $categorie
     $button_url,
     $button_label,
     $button_a11y,
-    $program_types,
     $show_filter
   ]);
   
@@ -486,6 +497,10 @@ function utmusic_return_rendered_view($view, $display, $items = NULL, $categorie
   
   // Render filtered view.
   $render_view = $filtered_view->render();
+
+  if ($cache_key) {
+    $render_view['#cache']['keys'][] = $cache_key;
+  }
 
   return $render_view;
 }
@@ -518,6 +533,18 @@ function utmusic_get_node_from_route() {
   }
 
   return $node;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function utmusic_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $active_theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
+  // Add the adminspring overrides to the forms that use the adminspring theme.
+  if ($active_theme == 'adminspring') {
+    // Ad the css variable colors to the form.
+    $form['#attached']['library'][] = 'utmusic/adminspring';
+  }
 }
 
 /**
@@ -672,4 +699,13 @@ function utmusic_preprocess_field(&$variables) {
       }
     }
   }
+
+  if ($variables['element']['#field_name'] == 'field_media_link') {
+    $media_entity = $variables['element']['#object'];
+    if ($media_entity instanceof \Drupal\media\MediaInterface) {
+        $variables['media_name'] = $media_entity->getName();
+    }
+  }
+
 }
+

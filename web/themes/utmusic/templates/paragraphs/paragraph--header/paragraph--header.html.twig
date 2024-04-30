@@ -36,7 +36,6 @@
  * @ingroup themeable
  */
 #}
-
 {# Get breadcrumbs block #}
 {% set breadcrumbs = drupal_entity('block', 'menu_breadcrumbs') %}
 
@@ -46,18 +45,15 @@
 {% endif %}
     
 {% include "@organisms/content-header/content-header.twig" with {
-    directory: 'themes/utmusic',
+    directory: directory,
     breadcrumbs: breadcrumbs,
     tabs: tabs,
     messages: messages,
     is_front: is_front,
-
     variation: content.field_header_style[0] ? content.field_header_style[0]['#markup'],
-
     title_prefix: content.field_header_title_prefix[0] ? content.field_header_title_prefix[0]['#text'],
     title: content.field_header_title[0] ? content.field_header_title[0],
     summary: content.field_header_summary[0] ? content.field_header_summary,
-
     video: content.field_header_video[0] ? content.field_header_video,
     image_portrait: content.field_header_image_portrait[0] ? content.field_header_image_portrait,
     image_landscape: content.field_header_image_landscape[0] ? content.field_header_image_landscape,

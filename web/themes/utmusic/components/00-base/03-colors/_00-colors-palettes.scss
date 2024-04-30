@@ -37,6 +37,7 @@ $palettes: (
     300: hsl(193.25deg, 100%, 31.96%),  // #007FA3
     700: hsl(197deg, 75%, 68%),         // #6FC7EA
     750: rgba(111, 199, 234, 0.28),     // #6FC7EA with opacity
+    800: rgba(111, 199, 234, 0.1),     // #6fc7ea1a with opacity
     1000: hsl(192deg, 100%, 97%),       // #F0FCFF
   ),
   'pink': (
@@ -92,4 +93,4 @@ $palettes: (
 );
 
 /// Debug Colors
-$debug-colors: rgb(0, 0, 160), rgb(160, 0, 0), rgb(0, 160, 0) !global;
+$debug-colors: rgb(0, 0, 160), rgb(160, 0, 0), rgb(0, 160, 0);

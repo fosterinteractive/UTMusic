@@ -9,6 +9,9 @@
 }
 
 .m-accordion__btn-toggle {
+  border-radius: rem(50px);
+  padding: rem(5px) rem(10px);
+  overflow: hidden;
   margin-left: auto;
   margin-bottom: calc(var(--spacer)*0.5);
 }

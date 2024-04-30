@@ -24,12 +24,8 @@
     width: 100%;
   }
 
-  > *:first-child {
-    margin-top: 0;
-  }
-
-  > *:last-child {
-    margin-bottom: 0;
+  .a-button {
+    width: fit-content;
   }
 
   .lpb-btn--add {

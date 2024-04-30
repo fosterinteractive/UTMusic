@@ -1,0 +1,29 @@
+uuid: 00f53218-56c0-4d56-bc3b-61eab651f308
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_people_summary_title
+    - filter.format.plain_text
+    - paragraphs.paragraphs_type.people_static_summary_list
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
+id: paragraph.people_static_summary_list.field_people_summary_title
+field_name: field_people_summary_title
+entity_type: paragraph
+bundle: people_static_summary_list
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text

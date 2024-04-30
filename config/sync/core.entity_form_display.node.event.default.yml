@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.event.feeds_item
     - field.field.node.event.field_even_location_link_map
     - field.field.node.event.field_event_area
     - field.field.node.event.field_event_audience
@@ -345,7 +346,7 @@ content:
     region: content
     settings:
       media_types: {  }
-      form_mode: crop_widget_mode
+      form_mode: default
       check_selected: true
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: false
@@ -357,7 +358,7 @@ content:
     region: content
     settings:
       media_types: {  }
-      form_mode: crop_widget_mode
+      form_mode: default
       check_selected: false
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: true
@@ -388,7 +389,7 @@ content:
     region: content
     settings:
       media_types: {  }
-      form_mode: contextual_crop_portrait
+      form_mode: default
       check_selected: false
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: true
@@ -700,6 +701,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  feeds_item: true
   field_event_featured_media_pick: true
   field_show_related_events: true
   promote: true

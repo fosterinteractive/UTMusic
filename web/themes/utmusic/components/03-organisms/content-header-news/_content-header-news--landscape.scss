@@ -1,6 +1,7 @@
 // Landscape Variation
 .o-hero-media--landscape {
   @extend %o-hero-media-core;
+  margin-bottom: calc(var(--spacer)*2);
 }
 
 .o-hero-media--landscape__image {

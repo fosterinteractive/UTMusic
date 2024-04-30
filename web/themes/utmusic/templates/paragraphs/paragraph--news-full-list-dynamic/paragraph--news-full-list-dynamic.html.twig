@@ -38,6 +38,7 @@
 #}
 {% include "@organisms/content-views/_view.twig"
   with {
+    unpublished: unpublished,
     content: drupal_view('news_full_list'),
   } only
 %}

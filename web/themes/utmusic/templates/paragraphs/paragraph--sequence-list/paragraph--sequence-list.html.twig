@@ -36,7 +36,6 @@
  * @ingroup themeable
  */
 #}
-
 {% set sequence_items = [] %}
 
 {% if content.field_sequence_list_items[0] %}
@@ -48,6 +47,7 @@
 {% endif %}
 
 {% include "@molecules/sequence-list/sequence-list.twig" with {
+    unpublished: unpublished,
     sequence_items: sequence_items,
   } only
 %}

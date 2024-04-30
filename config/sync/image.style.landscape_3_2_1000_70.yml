@@ -1,0 +1,23 @@
+uuid: a33fcf68-2d84-4568-9177-0082d7a702a0
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_style_quality
+name: landscape_3_2_1000_70
+label: 'Landscape 3:2 - (1000 @ 70%)'
+effects:
+  6eba6a8e-b0c1-4950-a8d1-bdd0afbadb25:
+    uuid: 6eba6a8e-b0c1-4950-a8d1-bdd0afbadb25
+    id: image_style_quality
+    weight: 1
+    data:
+      quality: 70
+  63070c5e-6f09-4697-8cc8-c93200bf3135:
+    uuid: 63070c5e-6f09-4697-8cc8-c93200bf3135
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1000
+      height: 666
+      anchor: center-center

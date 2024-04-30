@@ -1,0 +1,25 @@
+uuid: 21fed92e-2b3e-4aa9-8271-1f37dc4f32a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.carousel_quote.field_carousel_quote_item
+    - paragraphs.paragraphs_type.carousel_quote
+  module:
+    - entity_reference_revisions
+id: paragraph.carousel_quote.default
+targetEntityType: paragraph
+bundle: carousel_quote
+mode: default
+content:
+  field_carousel_quote_item:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

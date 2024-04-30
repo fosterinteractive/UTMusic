@@ -237,6 +237,7 @@
 {% include "@layouts/main/main--event.twig" with {
     directory: 'themes/utmusic',
     social_share: social_share,
+    moderation: content.content_moderation_control ? content.content_moderation_control,
     breadcrumbs: breadcrumbs,
     messages: drupal_entity('block', 'messages'),
     tabs: drupal_entity('block', 'tabs'),

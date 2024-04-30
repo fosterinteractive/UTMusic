@@ -36,27 +36,26 @@
  * @ingroup themeable
  */
 #}
+{{ attach_library('utmusic/featured-media')}}
 
 {% set featured_media_items = [] %}
-
 {% if content.field_featured_media_items[0] %}
   {% set featured_media_items_count = content.field_featured_media_items['#items'].getIterator()|length - 1 %}
 
   {% for i in 0..featured_media_items_count %}
     {# if there is no video - do not merge this item #}
     {% if content.field_featured_media_items[i] %}
-      {% set label =  content.field_featured_media_items['#items'][i].entity.label %}
+      {% set label =  content.field_featured_media_items['#items'][i].entity.field_ed_video_title.value %}
       {% set featured_media_items = featured_media_items|merge([{ "caption": label, 'video_type': 'embed', 'video': content.field_featured_media_items[i] }]) %}
     {% endif %}
   {% endfor %}
 {% endif %}
 
 {% include "@molecules/featured-media/featured-media.twig" with {
-    directory: 'themes/utmusic',
+    unpublished: unpublished,
+    directory: directory,
     title: content.field_featured_media_title[0] ? content.field_featured_media_title[0]['#text'],
     featured_media_items: featured_media_items,
     number_items: featured_media_items_count,
   } only
 %}
-
-{{ attach_library('utmusic/featured-media')}}

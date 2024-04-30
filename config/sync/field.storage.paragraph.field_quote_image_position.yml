@@ -1,0 +1,27 @@
+uuid: 616d1ec9-7035-43c1-9680-8aeb5bbef728
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_quote_image_position
+field_name: field_quote_image_position
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: left
+      label: 'On the Left'
+    -
+      value: right
+      label: 'On the Right'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

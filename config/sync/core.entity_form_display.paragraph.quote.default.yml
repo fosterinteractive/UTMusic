@@ -8,6 +8,7 @@ dependencies:
     - field.field.paragraph.quote.field_quote_button_target
     - field.field.paragraph.quote.field_quote_button_url
     - field.field.paragraph.quote.field_quote_image_main
+    - field.field.paragraph.quote.field_quote_image_position
     - field.field.paragraph.quote.field_quote_image_small
     - field.field.paragraph.quote.field_quote_more_info
     - field.field.paragraph.quote.field_quote_source_name
@@ -102,11 +103,17 @@ content:
     region: content
     settings:
       media_types: {  }
-      form_mode: contextual_card
+      form_mode: default
       check_selected: false
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: true
       no_edit_on_create: false
+    third_party_settings: {  }
+  field_quote_image_position:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_quote_image_small:
     type: media_library_media_modify_widget
@@ -114,7 +121,7 @@ content:
     region: content
     settings:
       media_types: {  }
-      form_mode: context_crop_header_10_11
+      form_mode: default
       check_selected: false
       replace_checkbox_by_order_indicator: false
       multi_edit_on_create: true
@@ -144,7 +151,7 @@ content:
         hide_guidelines: '1'
   field_quote_text:
     type: text_textarea
-    weight: 3
+    weight: 4
     region: content
     settings:
       rows: 5
@@ -159,6 +166,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
 hidden:
   created: true
-  status: true

@@ -1,0 +1,24 @@
+uuid: 36a5c78b-97b8-4906-b2e0-163092a7bef6
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+    - image_style_quality
+name: landscape_13_10_600x462
+label: 'Landscape 13:10 (600x462 @80%)'
+effects:
+  37b2f8f4-fb16-4cf5-92d8-203f9a1c0636:
+    uuid: 37b2f8f4-fb16-4cf5-92d8-203f9a1c0636
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 462
+      crop_type: focal_point
+  f1038c79-ffab-4f96-a579-682ddfc08aff:
+    uuid: f1038c79-ffab-4f96-a579-682ddfc08aff
+    id: image_style_quality
+    weight: 2
+    data:
+      quality: 80

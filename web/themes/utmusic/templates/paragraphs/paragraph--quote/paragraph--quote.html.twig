@@ -36,12 +36,13 @@
  * @ingroup themeable
  */
 #}
-
 {% include "@molecules/quote/quote.twig" with {
-    directory: 'themes/utmusic',
+    unpublished: unpublished,
+    directory: directory,
     variation: content.field_quote_variation[0] ? content.field_quote_variation[0]['#markup'],
     image_main: content.field_quote_image_main[0] ? content.field_quote_image_main,
     image_small: content.field_quote_image_small[0] ? content.field_quote_image_small,
+    image_position: content.field_quote_image_position[0] ? content.field_quote_image_position[0]['#markup'],
     icon: 'quotes',
     text: content.field_quote_text[0] ? content.field_quote_text,
     additional_info: content.field_quote_more_info[0] ? content.field_quote_more_info,

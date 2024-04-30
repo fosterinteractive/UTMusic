@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.listing_item
+    - field.field.node.people.feeds_item
     - field.field.node.people.field_page_admin_help_seo
     - field.field.node.people.field_page_admin_help_social
     - field.field.node.people.field_page_meta_description
@@ -55,7 +56,7 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_people_area:
     type: entity_reference_label
@@ -63,7 +64,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_people_faculty_position:
     type: entity_reference_label
@@ -71,7 +72,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_people_image:
     type: entity_reference_entity_view
@@ -80,7 +81,7 @@ content:
       view_mode: people_listing
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_people_instrument:
     type: entity_reference_label
@@ -88,7 +89,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_people_job_title:
     type: entity_reference_label
@@ -96,38 +97,31 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_people_last_name:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_people_name:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
-    region: content
-  field_people_program:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 8
+    weight: 1
     region: content
   field_people_role:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
 hidden:
+  feeds_item: true
   field_page_admin_help_seo: true
   field_page_admin_help_social: true
   field_page_meta_description: true
@@ -145,6 +139,7 @@ hidden:
   field_people_job_title_staff: true
   field_people_phone: true
   field_people_profile_type: true
+  field_people_program: true
   field_people_pronouns: true
   field_people_pronunciation: true
   field_people_research_profile: true

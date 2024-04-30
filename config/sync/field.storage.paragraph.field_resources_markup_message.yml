@@ -1,0 +1,19 @@
+uuid: 5a61841d-3e09-4cea-bc52-be57197a6b5a
+langcode: en
+status: true
+dependencies:
+  module:
+    - markup
+    - paragraphs
+id: paragraph.field_resources_markup_message
+field_name: field_resources_markup_message
+entity_type: paragraph
+type: markup
+settings: {  }
+module: markup
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,24 @@
+uuid: 2b78066b-b4cc-4283-86a8-a68264b088ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_resources_markup_message
+    - paragraphs.paragraphs_type.file_resources_full_list_dynamic
+  module:
+    - markup
+id: paragraph.file_resources_full_list_dynamic.field_resources_markup_message
+field_name: field_resources_markup_message
+entity_type: paragraph
+bundle: file_resources_full_list_dynamic
+label: 'Markup Message'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  markup:
+    value: '<p>Displays a list of all available resources both for uploaded files and referenced external forms.</p>'
+    format: rich_text_w_images
+field_type: markup

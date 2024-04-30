@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.button
     - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.carousel_quote
     - paragraphs.paragraphs_type.cta
     - paragraphs.paragraphs_type.event_featured_item
     - paragraphs.paragraphs_type.events_full_list_dynamic
@@ -19,10 +20,12 @@ dependencies:
     - paragraphs.paragraphs_type.image_section
     - paragraphs.paragraphs_type.job_listing
     - paragraphs.paragraphs_type.jobs_full_list_dynamic
+    - paragraphs.paragraphs_type.media_gallery
     - paragraphs.paragraphs_type.message
     - paragraphs.paragraphs_type.news_featured_item
     - paragraphs.paragraphs_type.news_full_list_dynamic
     - paragraphs.paragraphs_type.news_summary_list_dynamic
+    - paragraphs.paragraphs_type.people_static_summary_list
     - paragraphs.paragraphs_type.programs_full_list_dynamic
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.research
@@ -74,16 +77,19 @@ settings:
       event_featured_item: event_featured_item
       programs_full_list_dynamic: programs_full_list_dynamic
       faculty_full_list_dynamic: faculty_full_list_dynamic
+      people_static_summary_list: people_static_summary_list
       jobs_full_list_dynamic: jobs_full_list_dynamic
       job_listing: job_listing
       file_resources_full_list_dynamic: file_resources_full_list_dynamic
+      carousel_quote: carousel_quote
+      media_gallery: media_gallery
     negate: 0
     target_bundles_drag_drop:
       accordion:
         weight: -70
         enabled: true
       accordion_item:
-        weight: -45
+        weight: -46
         enabled: false
       button:
         weight: -78
@@ -92,16 +98,19 @@ settings:
         weight: -74
         enabled: true
       carousel_header:
-        weight: -49
+        weight: -50
         enabled: false
       carousel_image_group:
-        weight: -48
+        weight: -49
         enabled: false
+      carousel_quote:
+        weight: -43
+        enabled: true
       cta:
         weight: -75
         enabled: true
       curriculum:
-        weight: -44
+        weight: -45
         enabled: false
       event_featured_item:
         weight: -60
@@ -125,10 +134,10 @@ settings:
         weight: -69
         enabled: true
       file_resources_full_list_dynamic:
-        weight: -55
+        weight: -54
         enabled: true
       header:
-        weight: -50
+        weight: -51
         enabled: false
       image_section:
         weight: -79
@@ -137,11 +146,17 @@ settings:
         weight: -53
         enabled: false
       job_listing:
-        weight: -56
+        weight: -55
         enabled: true
       jobs_full_list_dynamic:
-        weight: -57
+        weight: -56
         enabled: true
+      media_gallery:
+        weight: 66
+        enabled: true
+      media_gallery_row:
+        weight: 65
+        enabled: false
       message:
         weight: -77
         enabled: true
@@ -154,9 +169,9 @@ settings:
       news_summary_list_dynamic:
         weight: -64
         enabled: true
-      poster:
-        weight: -52
-        enabled: false
+      people_static_summary_list:
+        weight: -57
+        enabled: true
       programs_full_list_dynamic:
         weight: -59
         enabled: true
@@ -170,13 +185,13 @@ settings:
         weight: -83
         enabled: true
       section_curriculum:
-        weight: -43
+        weight: -44
         enabled: false
       section_title:
         weight: -82
         enabled: true
       sequence_item:
-        weight: -47
+        weight: -48
         enabled: false
       sequence_list:
         weight: -71
@@ -185,10 +200,7 @@ settings:
         weight: -68
         enabled: true
       sliding_menu_item:
-        weight: -46
-        enabled: false
-      soundcloud:
-        weight: -54
+        weight: -47
         enabled: false
       tables:
         weight: -67
@@ -200,6 +212,6 @@ settings:
         weight: -80
         enabled: true
       video:
-        weight: -51
+        weight: -52
         enabled: false
 field_type: entity_reference_revisions

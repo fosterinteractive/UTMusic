@@ -6,7 +6,7 @@ dependencies:
     - focal_point
     - image_style_quality
 name: content_header_1024_670_80
-label: 'Content Header (1024/670 @80%)'
+label: 'Content Header (1024/670 @85%)'
 effects:
   58a92ee0-ba51-4ce7-8f28-404733c740db:
     uuid: 58a92ee0-ba51-4ce7-8f28-404733c740db
@@ -21,4 +21,4 @@ effects:
     id: image_style_quality
     weight: 2
     data:
-      quality: 80
+      quality: 85

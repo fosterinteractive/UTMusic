@@ -31,68 +31,77 @@
 {# Component can be either <a> (default) or <button> #}
 {% set html_element = html_element|default('a') %}
 
-<{{ html_element }}
-  
-  {# href for <a> #}
-  {% if url and html_element == 'a' %}
-    href="{{ url }}"
-  {% endif %}
+{% if unpublished %}
+<div class="paragraph--unpublished">
+{% endif %}
 
-  {% if id %}
-    id="{{ id }}"
-  {% endif %}
-
-  {% if target %}
-    target="{{ target }}"
-  {% endif %}
-
-  {# Class #}
-  class="{{ base_class }}{{ variation }} {{ extra_classes }} a-button--{{ alignment }} {% if external_link %}a-button--external-link{% endif %}"
-
-  {% if data_attribute %}
-    {{ data_attribute|raw }}
-  {% endif %}
-
-  {# Optional Arial Label for ambigious links "read more" with a Heading near it in the DOM #}
-  {% if aria_label %}
-    aria-label="{{ aria_label }}"
-  {% endif %} 
-
-  {# Optional Arial Label by for amigious links like "read more" with a Heading near it in the DOM #}
-  {% if aria_labelledby %}
-    aria-labelledby="{{ aria_labelledby }}"
-  {% endif %}> 
-  {# Close Tag  <a> or <button> #}
-
-  {# If variation is --icon left attach svg icon before label #}
-  {% if variation == '--icon-left' %}
-    {% if icon %}
-      {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
-        directory: directory,
-        icon: icon,
-        base_class: 'a-button' ~ variation ~ '__icon',
-      } only %}
+{% if width %}<div class="a-button--{{ width }}">{% endif %}
+  <{{ html_element }}
+    
+    {# href for <a> #}
+    {% if url and html_element == 'a' %}
+      href="{{ url }}"
     {% endif %}
-  {% endif %}
 
-  {# --icon variation is the button + icon without visible text. Label is visually hidden #}
-  {% if variation != '--icon' %}
-    {{ label }}
-  {% else %} 
-    <span class="u-visually--hidden">{{ label }}</span>
-  {% endif %}
+    {% if id %}
+      id="{{ id }}"
+    {% endif %}
 
-  {# If variation is --icon or --icon-right attach svg icon before label #}
-  {% if variation == '--icon-right' or variation == '--icon' or variation == '--secondary' or variation == '' %}
-    {% if icon %}
-      {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+    {% if target %}
+      target="{{ target }}"
+    {% endif %}
+
+    {# Class #}
+    class="{{ base_class }}{{ variation }} {{ extra_classes }} a-button--{{ alignment }} {% if external_link %}a-button--external-link{% endif %}"
+
+    {% if data_attribute %}
+      {{ data_attribute|raw }}
+    {% endif %}
+
+    {# Optional Arial Label for ambigious links "read more" with a Heading near it in the DOM #}
+    {% if aria_label %}
+      aria-label="{{ aria_label }}"
+    {% endif %} 
+
+    {# Optional Arial Label by for amigious links like "read more" with a Heading near it in the DOM #}
+    {% if aria_labelledby %}
+      aria-labelledby="{{ aria_labelledby }}"
+    {% endif %}> 
+    {# Close Tag  <a> or <button> #}
+
+    {# If variation is --icon left attach svg icon before label #}
+    {% if variation == '--icon-left' %}
+      {% if icon %}
+        {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
           directory: directory,
           icon: icon,
           base_class: 'a-button' ~ variation ~ '__icon',
-        } only
-      %}
+        } only %}
+      {% endif %}
     {% endif %}
-  {% endif %}
 
-</{{ html_element }}>
+    {# --icon variation is the button + icon without visible text. Label is visually hidden #}
+    {% if variation != '--icon' %}
+      {{ label }}
+    {% else %} 
+      <span class="u-visually--hidden">{{ label }}</span>
+    {% endif %}
 
+    {# If variation is --icon or --icon-right attach svg icon before label #}
+    {% if variation == '--icon-right' or variation == '--icon' or variation == '--secondary' or variation == '' %}
+      {% if icon %}
+        {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+            directory: directory,
+            icon: icon,
+            base_class: 'a-button' ~ variation ~ '__icon',
+          } only
+        %}
+      {% endif %}
+    {% endif %}
+
+  </{{ html_element }}>
+{% if width %}</div>{% endif %}
+
+{% if unpublished %}
+</div>
+{% endif %}

@@ -16,6 +16,7 @@ dependencies:
     - media.type.video
   module:
     - field_group
+    - media
 third_party_settings:
   field_group:
     group_related_content:
@@ -43,7 +44,7 @@ bundle: video
 mode: media_library
 content:
   field_ed_video_oembed_video:
-    type: string_textfield
+    type: oembed_textfield
     weight: 1
     region: content
     settings:

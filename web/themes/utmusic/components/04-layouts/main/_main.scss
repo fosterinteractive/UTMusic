@@ -113,3 +113,34 @@
   }
 }
 // End Person Variation
+
+
+/****************************************************
+ * Moderation State Form.
+ * Pin it at the bottom of the viewport
+ ****************************************************/
+ body.page--moderation-state {
+  padding-bottom: rem(308px);
+
+  @include breakpoint($bp-tablet-small) {
+    padding-bottom: rem(216px);
+  }
+
+  @include breakpoint($bp-tablet) {
+    padding-bottom: rem(216px);
+  }
+
+  @include breakpoint($bp-large) {
+    padding-bottom: rem(130px);
+  }
+ }
+
+.l-main__moderation,
+.content-moderation-entity-moderation-form {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+}

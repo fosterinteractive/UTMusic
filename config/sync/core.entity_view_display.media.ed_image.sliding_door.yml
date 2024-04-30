@@ -10,7 +10,7 @@ dependencies:
     - field.field.media.ed_image.field_img_related_area
     - field.field.media.ed_image.field_img_related_people
     - field.field.media.ed_image.field_img_related_program
-    - image.style.crop_style_sliding_door
+    - image.style.sliding_door_9_4_1170x520
     - media.type.ed_image
   module:
     - layout_builder
@@ -31,13 +31,13 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: crop_style_sliding_door
+      image_style: sliding_door_9_4_1170x520
+      image_loading:
+        attribute: lazy
       svg_attributes:
         width: null
         height: null
       svg_render_as_image: true
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content

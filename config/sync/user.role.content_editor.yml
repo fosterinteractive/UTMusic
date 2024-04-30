@@ -3,6 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - block_content.type.no_views_results_behaviour
+    - feeds.feed_type.csv_event_feed
+    - feeds.feed_type.csv_person_feed
     - filter.format.fact
     - filter.format.fact_value
     - filter.format.header_summary
@@ -14,6 +17,7 @@ dependencies:
     - media.type.ed_image
     - media.type.illustration
     - media.type.resources_files
+    - media.type.resources_link_to_form
     - media.type.video
     - node.type.ed_notice
     - node.type.event
@@ -48,19 +52,26 @@ dependencies:
     - taxonomy.vocabulary.undergraduate_forms_category
     - workflows.workflow.editorial
   module:
+    - block
+    - block_content
     - content_moderation
     - contextual
     - dropzonejs
+    - editoria11y
     - entity_browser
+    - feeds
+    - field_ui
     - file
     - filter
     - markerio
     - media
     - media_bulk_upload
+    - menu_position
     - moderated_content_bulk_publish
     - node
     - path
     - replicate_ui
+    - system
     - taxonomy
     - unpublished_node_permissions
 id: content_editor
@@ -68,14 +79,29 @@ label: 'Content editor'
 weight: 2
 is_admin: null
 permissions:
+  - 'access block library'
   - 'access content overview'
   - 'access contextual links'
   - 'access ed_file entity browser pages'
+  - 'access feed overview'
+  - 'access file_resources entity browser pages'
   - 'access files overview'
   - 'access markerio'
   - 'access media overview'
   - 'access taxonomy overview'
+  - 'administer block content'
+  - 'administer blocks'
+  - 'administer entity browsers'
+  - 'administer feeds_feed display'
   - 'administer media'
+  - 'administer menu'
+  - 'administer menu positions'
+  - 'clear csv_event_feed feeds'
+  - 'clear csv_person_feed feeds'
+  - 'clear own csv_event_feed feeds'
+  - 'clear own csv_person_feed feeds'
+  - 'create csv_event_feed feeds'
+  - 'create csv_person_feed feeds'
   - 'create event content'
   - 'create illustration media'
   - 'create job content'
@@ -85,6 +111,7 @@ permissions:
   - 'create program content'
   - 'create resources content'
   - 'create resources_files media'
+  - 'create resources_link_to_form media'
   - 'create terms in audience'
   - 'create terms in degree_title'
   - 'create terms in ed_news_category'
@@ -123,11 +150,18 @@ permissions:
   - 'delete any program content'
   - 'delete any resources content'
   - 'delete any resources_files media'
+  - 'delete any resources_files media revisions'
+  - 'delete any resources_link_to_form media'
+  - 'delete any resources_link_to_form media revisions'
   - 'delete any video media'
+  - 'delete csv_event_feed feeds'
+  - 'delete csv_person_feed feeds'
   - 'delete event revisions'
   - 'delete job revisions'
   - 'delete media'
   - 'delete news revisions'
+  - 'delete own csv_event_feed feeds'
+  - 'delete own csv_person_feed feeds'
   - 'delete own ed_file media'
   - 'delete own ed_image media'
   - 'delete own event content'
@@ -140,6 +174,7 @@ permissions:
   - 'delete own program content'
   - 'delete own resources content'
   - 'delete own resources_files media'
+  - 'delete own resources_link_to_form media'
   - 'delete own video media'
   - 'delete page revisions'
   - 'delete people revisions'
@@ -175,11 +210,13 @@ permissions:
   - 'edit any illustration media'
   - 'edit any job content'
   - 'edit any news content'
+  - 'edit any no_views_results_behaviour block content'
   - 'edit any page content'
   - 'edit any people content'
   - 'edit any program content'
   - 'edit any resources content'
   - 'edit any resources_files media'
+  - 'edit any resources_link_to_form media'
   - 'edit any video media'
   - 'edit own illustration media'
   - 'edit own job content'
@@ -188,6 +225,7 @@ permissions:
   - 'edit own program content'
   - 'edit own resources content'
   - 'edit own resources_files media'
+  - 'edit own resources_link_to_form media'
   - 'edit terms in audience'
   - 'edit terms in degree_title'
   - 'edit terms in ed_news_category'
@@ -211,12 +249,18 @@ permissions:
   - 'edit terms in staff_job_titles'
   - 'edit terms in staff_roles'
   - 'edit terms in undergraduate_forms_category'
+  - 'import csv_event_feed feeds'
+  - 'import csv_person_feed feeds'
+  - 'import own csv_event_feed feeds'
+  - 'import own csv_person_feed feeds'
+  - 'mark as hidden in editoria11y'
   - 'moderated content bulk archive'
   - 'moderated content bulk pin content'
   - 'moderated content bulk publish'
   - 'moderated content bulk unpin content'
   - 'moderated content bulk unpublish'
   - 'replicate entities'
+  - 'revert any no_views_results_behaviour block content revisions'
   - 'revert event revisions'
   - 'revert job revisions'
   - 'revert news revisions'
@@ -224,7 +268,15 @@ permissions:
   - 'revert people revisions'
   - 'revert program revisions'
   - 'revert resources revisions'
+  - 'schedule_import csv_event_feed feeds'
+  - 'schedule_import csv_person_feed feeds'
+  - 'schedule_import own csv_event_feed feeds'
+  - 'schedule_import own csv_person_feed feeds'
   - 'update any media'
+  - 'update csv_event_feed feeds'
+  - 'update csv_person_feed feeds'
+  - 'update own csv_event_feed feeds'
+  - 'update own csv_person_feed feeds'
   - 'use ed_image_bulk_upload bulk upload form'
   - 'use editorial transition archive'
   - 'use editorial transition create_new_draft'
@@ -239,8 +291,14 @@ permissions:
   - 'use text format simple_text'
   - 'use text format table'
   - 'view all media revisions'
+  - 'view any no_views_results_behaviour block content history'
+  - 'view any resources_files media revisions'
+  - 'view any resources_link_to_form media revisions'
   - 'view any unpublished content'
+  - 'view csv_event_feed feeds'
+  - 'view csv_person_feed feeds'
   - 'view ed_notice revisions'
+  - 'view editoria11y checker'
   - 'view event revisions'
   - 'view event unpublished content'
   - 'view job revisions'
@@ -248,6 +306,8 @@ permissions:
   - 'view latest version'
   - 'view news revisions'
   - 'view news unpublished content'
+  - 'view own csv_event_feed feeds'
+  - 'view own csv_person_feed feeds'
   - 'view page revisions'
   - 'view page unpublished content'
   - 'view people revisions'

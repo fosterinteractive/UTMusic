@@ -1,0 +1,13 @@
+variation: 'left'
+sb_demo: 'true'
+
+items:
+  0:
+    image: <img src="https://picsum.photos/1200/800"/>
+    caption: 'Accordion Item Body'
+  1:
+    image: <img src="https://picsum.photos/1200/800"/>
+    caption: 'Accordion Item Body'
+  2:
+    image: <img src="https://picsum.photos/1200/800"/>
+    caption: 'Accordion Item Body'   

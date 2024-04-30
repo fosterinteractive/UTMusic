@@ -1,0 +1,10 @@
+uuid: da56792d-8594-44ba-941f-c4298875e86f
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.quote_small_image
+label: 'Quote Small Image'
+targetEntityType: media
+cache: true

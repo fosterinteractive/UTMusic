@@ -36,7 +36,6 @@
  * @ingroup themeable
  */
 #}
-
 {# Get courses #}
 {% set courses = [] %}
 {% if content.field_curriculum_course[0] %}
@@ -47,9 +46,9 @@
   {% endfor %}
 {% endif %}
 
-
 {% include "@molecules/curriculum/curriculum.twig" with {
-    directory: 'themes/utmusic',
+    unpublished: unpublished,
+    directory: directory,
     title: content.field_curriculum_title[0] ? content.field_curriculum_title[0]['#plain_text'],
     credits: content.field_curriculum_credits[0] ? content.field_curriculum_credits[0]['#markup'],
     years: content.field_curriculum_years[0] ? content.field_curriculum_years[0]['#markup'],

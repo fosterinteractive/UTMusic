@@ -1,0 +1,74 @@
+uuid: 5fd3ada7-493d-427f-a29e-e9538d722249
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.job.field_job_body
+    - field.field.node.job.field_job_category
+    - field.field.node.job.field_job_closing_date
+    - field.field.node.job.field_job_title
+    - field.field.node.job.field_page_admin_help_seo
+    - field.field.node.job.field_page_admin_help_social
+    - field.field.node.job.field_page_meta_description
+    - field.field.node.job.field_page_meta_image
+    - field.field.node.job.field_page_meta_title
+    - node.type.job
+  module:
+    - datetime
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.job.search_result
+targetEntityType: node
+bundle: job
+mode: search_result
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_job_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_job_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_job_closing_date:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: America/Toronto
+      date_format: 'F d, Y'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_job_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_page_admin_help_seo: true
+  field_page_admin_help_social: true
+  field_page_meta_description: true
+  field_page_meta_image: true
+  field_page_meta_title: true
+  links: true
+  search_api_excerpt: true

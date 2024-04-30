@@ -1,0 +1,33 @@
+uuid: 90e0f514-06ae-4e5b-b964-b3564735d7be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.people_static_summary_list.field_people_summary_person
+    - field.field.paragraph.people_static_summary_list.field_people_summary_title
+    - paragraphs.paragraphs_type.people_static_summary_list
+  module:
+    - text
+id: paragraph.people_static_summary_list.default
+targetEntityType: paragraph
+bundle: people_static_summary_list
+mode: default
+content:
+  field_people_summary_person:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: listing_item
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_people_summary_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true
