@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - block_content.type.no_views_results_behaviour
+    - feeds.feed_type.csv_event_feed
+    - feeds.feed_type.csv_person_feed
     - filter.format.fact
     - filter.format.fact_value
     - filter.format.header_summary
@@ -12,9 +14,11 @@ dependencies:
     - filter.format.rich_text_w_images
     - filter.format.simple_text
     - filter.format.table
+    - filter.format.webform_default
     - media.type.ed_file
     - media.type.ed_image
     - media.type.illustration
+    - media.type.link
     - media.type.resources_files
     - media.type.resources_link_to_form
     - media.type.video
@@ -41,6 +45,7 @@ dependencies:
     - taxonomy.vocabulary.librarians_library_staff_job_tit
     - taxonomy.vocabulary.location
     - taxonomy.vocabulary.news_area_of_study
+    - taxonomy.vocabulary.people_role
     - taxonomy.vocabulary.program_stream
     - taxonomy.vocabulary.program_type
     - taxonomy.vocabulary.programs_list
@@ -56,11 +61,13 @@ dependencies:
     - block
     - block_content
     - captcha
+    - conditional_fields
     - config
     - config_pages
     - config_split
     - config_update_ui
     - content_moderation
+    - content_moderation_notifications
     - contextual
     - crop
     - dropzonejs
@@ -69,6 +76,8 @@ dependencies:
     - entity_browser
     - entity_reference_revisions
     - environment_indicator
+    - feeds
+    - feeds_tamper
     - field_ui
     - field_validation
     - file
@@ -96,6 +105,7 @@ dependencies:
     - rabbit_hole
     - recaptcha
     - redirect
+    - redirect_404
     - replicate_ui
     - responsive_image
     - role_delegation
@@ -107,6 +117,7 @@ dependencies:
     - term_merge
     - ultimate_cron
     - unpublished_node_permissions
+    - update
     - video_embed_field
     - views_ui
     - webform
@@ -123,6 +134,7 @@ permissions:
   - 'access contextual links'
   - 'access ed_file entity browser pages'
   - 'access environment indicator'
+  - 'access feed overview'
   - 'access file_resources entity browser pages'
   - 'access files overview'
   - 'access markerio'
@@ -152,6 +164,7 @@ permissions:
   - 'administer config_pages types'
   - 'administer config_pages_type labels'
   - 'administer configuration split'
+  - 'administer content moderation notifications'
   - 'administer content types'
   - 'administer crop'
   - 'administer crop types'
@@ -162,6 +175,11 @@ permissions:
   - 'administer embed buttons'
   - 'administer entity browsers'
   - 'administer environment indicator settings'
+  - 'administer feeds'
+  - 'administer feeds_feed display'
+  - 'administer feeds_feed fields'
+  - 'administer feeds_feed form display'
+  - 'administer feeds_tamper'
   - 'administer field validation rule set'
   - 'administer filters'
   - 'administer flood unblock'
@@ -232,15 +250,23 @@ permissions:
   - 'assign administrator role'
   - 'assign all roles'
   - 'assign content_editor role'
+  - 'assign site_manager role'
   - 'bypass node access'
   - 'cancel account'
   - 'change own username'
+  - 'clear csv_event_feed feeds'
+  - 'clear csv_person_feed feeds'
+  - 'clear own csv_event_feed feeds'
+  - 'clear own csv_person_feed feeds'
   - 'configure any layout'
   - 'create and edit custom blocks'
+  - 'create csv_event_feed feeds'
+  - 'create csv_person_feed feeds'
   - 'create ed_notice content'
   - 'create event content'
   - 'create illustration media'
   - 'create job content'
+  - 'create link media'
   - 'create news content'
   - 'create no_views_results_behaviour block content'
   - 'create page content'
@@ -264,6 +290,7 @@ permissions:
   - 'create terms in librarians_library_staff_job_tit'
   - 'create terms in location'
   - 'create terms in news_area_of_study'
+  - 'create terms in people_role'
   - 'create terms in program_stream'
   - 'create terms in program_type'
   - 'create terms in programs_list'
@@ -283,6 +310,7 @@ permissions:
   - 'delete any file'
   - 'delete any illustration media'
   - 'delete any job content'
+  - 'delete any link media'
   - 'delete any media'
   - 'delete any news content'
   - 'delete any no_views_results_behaviour block content'
@@ -296,14 +324,19 @@ permissions:
   - 'delete any video media'
   - 'delete any webform'
   - 'delete any webform submission'
+  - 'delete conditional fields'
   - 'delete config_pages entity'
   - 'delete configuration'
+  - 'delete csv_event_feed feeds'
+  - 'delete csv_person_feed feeds'
   - 'delete ed_notice revisions'
   - 'delete event revisions'
   - 'delete job revisions'
   - 'delete media'
   - 'delete news revisions'
   - 'delete orphan revisions'
+  - 'delete own csv_event_feed feeds'
+  - 'delete own csv_person_feed feeds'
   - 'delete own ed_file media'
   - 'delete own ed_image media'
   - 'delete own ed_notice content'
@@ -311,6 +344,7 @@ permissions:
   - 'delete own files'
   - 'delete own illustration media'
   - 'delete own job content'
+  - 'delete own link media'
   - 'delete own news content'
   - 'delete own page content'
   - 'delete own people content'
@@ -340,6 +374,7 @@ permissions:
   - 'delete terms in librarians_library_staff_job_tit'
   - 'delete terms in location'
   - 'delete terms in news_area_of_study'
+  - 'delete terms in people_role'
   - 'delete terms in program_stream'
   - 'delete terms in program_type'
   - 'delete terms in programs_list'
@@ -355,6 +390,7 @@ permissions:
   - 'edit any event content'
   - 'edit any illustration media'
   - 'edit any job content'
+  - 'edit any link media'
   - 'edit any news content'
   - 'edit any no_views_results_behaviour block content'
   - 'edit any page content'
@@ -367,11 +403,13 @@ permissions:
   - 'edit any webform'
   - 'edit any webform submission'
   - 'edit behavior plugin settings'
+  - 'edit conditional fields'
   - 'edit config_pages entity'
   - 'edit custom_site_settings config page entity'
   - 'edit own ed_notice content'
   - 'edit own illustration media'
   - 'edit own job content'
+  - 'edit own link media'
   - 'edit own page content'
   - 'edit own people content'
   - 'edit own program content'
@@ -395,6 +433,7 @@ permissions:
   - 'edit terms in librarians_library_staff_job_tit'
   - 'edit terms in location'
   - 'edit terms in news_area_of_study'
+  - 'edit terms in people_role'
   - 'edit terms in program_stream'
   - 'edit terms in program_type'
   - 'edit terms in programs_list'
@@ -409,7 +448,12 @@ permissions:
   - 'edit webform variants'
   - 'export configuration'
   - 'flood unblock ips'
+  - 'ignore 404 requests'
   - 'import configuration'
+  - 'import csv_event_feed feeds'
+  - 'import csv_person_feed feeds'
+  - 'import own csv_event_feed feeds'
+  - 'import own csv_person_feed feeds'
   - 'link to any page'
   - 'manage editoria11y results'
   - 'mark as hidden in editoria11y'
@@ -436,10 +480,24 @@ permissions:
   - 'revert program revisions'
   - 'revert resources revisions'
   - 'run cron jobs'
+  - 'schedule_import csv_event_feed feeds'
+  - 'schedule_import csv_person_feed feeds'
+  - 'schedule_import own csv_event_feed feeds'
+  - 'schedule_import own csv_person_feed feeds'
   - 'select account cancellation method'
   - 'skip CAPTCHA'
   - 'synchronize configuration'
+  - 'tamper csv_event_feed'
+  - 'tamper csv_person_feed'
+  - 'unlock csv_event_feed feeds'
+  - 'unlock csv_person_feed feeds'
+  - 'unlock own csv_event_feed feeds'
+  - 'unlock own csv_person_feed feeds'
   - 'update any media'
+  - 'update csv_event_feed feeds'
+  - 'update csv_person_feed feeds'
+  - 'update own csv_event_feed feeds'
+  - 'update own csv_person_feed feeds'
   - 'use PHP for google analytics tracking visibility'
   - 'use admin toolbar search'
   - 'use ed_image_bulk_upload bulk upload form'
@@ -456,14 +514,18 @@ permissions:
   - 'use text format rich_text_w_images'
   - 'use text format simple_text'
   - 'use text format table'
+  - 'use text format webform_default'
   - 'view all media revisions'
   - 'view all revisions'
   - 'view any no_views_results_behaviour block content history'
   - 'view any unpublished content'
   - 'view any webform submission'
+  - 'view conditional fields'
   - 'view config updates report'
   - 'view config_pages entity'
   - 'view cron jobs'
+  - 'view csv_event_feed feeds'
+  - 'view csv_person_feed feeds'
   - 'view custom_site_settings config page entity'
   - 'view ed_notice revisions'
   - 'view ed_notice unpublished content'
@@ -475,6 +537,8 @@ permissions:
   - 'view latest version'
   - 'view news revisions'
   - 'view news unpublished content'
+  - 'view own csv_event_feed feeds'
+  - 'view own csv_person_feed feeds'
   - 'view own webform submission'
   - 'view page revisions'
   - 'view page unpublished content'
@@ -485,4 +549,5 @@ permissions:
   - 'view resources revisions'
   - 'view resources unpublished content'
   - 'view unpublished paragraphs'
+  - 'view update notifications'
   - 'view user email addresses'
