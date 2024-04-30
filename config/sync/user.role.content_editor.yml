@@ -24,6 +24,7 @@ dependencies:
     - node.type.people
     - workflows.workflow.editorial
   module:
+    - admin_toolbar_search
     - content_moderation
     - contextual
     - dropzonejs
@@ -46,7 +47,7 @@ dependencies:
     - unpublished_node_permissions
 id: content_editor
 label: 'Content editor'
-weight: 2
+weight: -8
 is_admin: null
 permissions:
   - 'access content'
@@ -86,6 +87,7 @@ permissions:
   - 'delete any file'
   - 'delete any illustration media'
   - 'delete any link media'
+  - 'delete any media'
   - 'delete any news content'
   - 'delete any people content'
   - 'delete any resources_files media'
@@ -150,11 +152,13 @@ permissions:
   - 'schedule_import csv_person_feed feeds'
   - 'schedule_import own csv_event_feed feeds'
   - 'schedule_import own csv_person_feed feeds'
+  - 'update any media'
   - 'update csv_event_feed feeds'
   - 'update csv_person_feed feeds'
   - 'update media'
   - 'update own csv_event_feed feeds'
   - 'update own csv_person_feed feeds'
+  - 'use admin toolbar search'
   - 'use ed_image_bulk_upload bulk upload form'
   - 'use editorial transition archive'
   - 'use editorial transition create_new_draft'
