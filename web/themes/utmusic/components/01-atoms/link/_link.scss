@@ -8,7 +8,7 @@
     position: relative;
     text-decoration: underline;
     text-decoration-color: var(--c-link-decoration);
-    text-decoration-thickness: 1px; 
+    text-decoration-thickness: 0.1em; 
     color: var(--c-link);
     transition: color 0.2s ease-in-out, text-decoration-color 0.1s ease-in-out;
   }
@@ -16,8 +16,8 @@
   &:hover,
   &:focus,
   &:active {
-    background-color: palette(grey, 1000);
-    text-decoration-color: var(--c-link-decoration--active);
+    text-decoration: none;
+    background-color: var(--c-link-background--active);
     color: var(--c-link--active);
   }
 }
@@ -32,7 +32,7 @@
 
     display: inline-block;
     margin-left: 4px;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAxNiAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkuMTQyODYgMS42NDI4NkM5LjE0Mjg2IDEuMDExNzkgOS42NTM1NyAwLjUgMTAuMjg1NyAwLjVIMTQuODI1QzE1LjAxMDcgMC41IDE1LjE2MDcgMC41MzA3MTQgMTUuMjkyOSAwLjU4Njc4NkMxNS4zOTY0IDAuNjQyMTQzIDE1LjU1MzYgMC43MjM5MjkgMTUuNjY0MyAwLjgzMjE0M0MxNS42NjQzIDAuODMzOTI5IDE1LjY2NDMgMC44MzU3MTQgMTUuNjY3OSAwLjgzNzE0M0MxNS44ODkzIDEuMDU5MjkgMTUuOTY3OSAxLjM0OTI5IDE2IDEuNjM5MjlDMTYgMS42NDA3MSAxNiAxLjY0MTc5IDE2IDEuNjQyODZWNi4yMTQyOUMxNiA2Ljg0NjQzIDE1LjQ4OTMgNy4zNTcxNCAxNC44NTcxIDcuMzU3MTRDMTQuMjI1IDcuMzU3MTQgMTMuNzE0MyA2Ljg0NjQzIDEzLjcxNDMgNi4yMTQyOVY0LjQwMzU3TDcuNjY0MjkgMTAuNDVDNy4yMTc4NiAxMC44OTY0IDYuNDk2NDMgMTAuODk2NCA2LjA1IDEwLjQ1QzUuNjAzNTcgMTAuMDAzNiA1LjYwMzU3IDkuMjgyMTQgNi4wNSA4LjgzNTcxTDEyLjA5NjQgMi43ODU3MUgxMC4yODU3QzkuNjUzNTcgMi43ODU3MSA5LjE0Mjg2IDIuMjczOTMgOS4xNDI4NiAxLjY0Mjg2Wk0wIDMuOTI4NTdDMCAyLjY2NjA3IDEuMDIzMjEgMS42NDI4NiAyLjI4NTcxIDEuNjQyODZINS43MTQyOUM2LjM0NjQzIDEuNjQyODYgNi44NTcxNCAyLjE1NDY0IDYuODU3MTQgMi43ODU3MUM2Ljg1NzE0IDMuNDE3ODYgNi4zNDY0MyAzLjkyODU3IDUuNzE0MjkgMy45Mjg1N0gyLjI4NTcxVjE0LjIxNDNIMTIuNTcxNFYxMC43ODU3QzEyLjU3MTQgMTAuMTUzNiAxMy4wODIxIDkuNjQyODYgMTMuNzE0MyA5LjY0Mjg2QzE0LjM0NjQgOS42NDI4NiAxNC44NTcxIDEwLjE1MzYgMTQuODU3MSAxMC43ODU3VjE0LjIxNDNDMTQuODU3MSAxNS40NzUgMTMuODMyMSAxNi41IDEyLjU3MTQgMTYuNUgyLjI4NTcxQzEuMDIzMjEgMTYuNSAwIDE1LjQ3NSAwIDE0LjIxNDNWMy45Mjg1N1oiIGZpbGw9IiMxRTM3NjUiLz4KPC9zdmc+Cg==');
+    background-image: var(--c-link-icon-external);
     color: var(--c-link-icon-external);
     background-repeat: no-repeat;
     background-size: contain;
