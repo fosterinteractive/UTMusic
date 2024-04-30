@@ -16,6 +16,7 @@ dependencies:
     - media.type.ed_image
     - media.type.illustration
     - media.type.resources_files
+    - media.type.resources_link_to_form
     - media.type.video
     - node.type.ed_notice
     - node.type.event
@@ -156,7 +157,6 @@ permissions:
   - 'administer crop types'
   - 'administer crop_type labels'
   - 'administer display modes'
-  - 'administer dropzonejs settings'
   - 'administer editoria11y checker'
   - 'administer embed buttons'
   - 'administer entity browsers'
@@ -247,6 +247,7 @@ permissions:
   - 'create program content'
   - 'create resources content'
   - 'create resources_files media'
+  - 'create resources_link_to_form media'
   - 'create terms in audience'
   - 'create terms in degree_title'
   - 'create terms in ed_news_category'
@@ -290,6 +291,9 @@ permissions:
   - 'delete any program content'
   - 'delete any resources content'
   - 'delete any resources_files media'
+  - 'delete any resources_files media revisions'
+  - 'delete any resources_link_to_form media'
+  - 'delete any resources_link_to_form media revisions'
   - 'delete any video media'
   - 'delete any webform'
   - 'delete any webform submission'
@@ -314,6 +318,7 @@ permissions:
   - 'delete own program content'
   - 'delete own resources content'
   - 'delete own resources_files media'
+  - 'delete own resources_link_to_form media'
   - 'delete own video media'
   - 'delete own webform'
   - 'delete own webform submission'
@@ -358,6 +363,7 @@ permissions:
   - 'edit any program content'
   - 'edit any resources content'
   - 'edit any resources_files media'
+  - 'edit any resources_link_to_form media'
   - 'edit any video media'
   - 'edit any webform'
   - 'edit any webform submission'
@@ -372,6 +378,7 @@ permissions:
   - 'edit own program content'
   - 'edit own resources content'
   - 'edit own resources_files media'
+  - 'edit own resources_link_to_form media'
   - 'edit own webform'
   - 'edit own webform submission'
   - 'edit terms in audience'
@@ -453,6 +460,8 @@ permissions:
   - 'view all media revisions'
   - 'view all revisions'
   - 'view any no_views_results_behaviour block content history'
+  - 'view any resources_files media revisions'
+  - 'view any resources_link_to_form media revisions'
   - 'view any unpublished content'
   - 'view any webform submission'
   - 'view config updates report'
