@@ -1,0 +1,14 @@
+<?php
+/**
+ * @file
+ * Installation hooks for Custom Section Classes module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function custom_section_classes_install() {
+  // Assign a weight 1 higher than layout_section_classes to ensure that this
+  // module runs after layout_section_classes.
+  module_set_weight('custom_section_classes', 1);
+}

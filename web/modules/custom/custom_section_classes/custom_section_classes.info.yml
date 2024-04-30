@@ -1,0 +1,8 @@
+name: Custom Section Classes
+description: Used for altering the Layout Section Classes module.
+package: Custom
+core_version_requirement: ^9 || ^10
+type: module
+version: '1.0.0'
+dependencies:
+  - layout_section_classes:layout_section_classes

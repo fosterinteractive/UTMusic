@@ -19,6 +19,6 @@ default_value: {  }
 default_value_callback: ''
 settings:
   markup:
-    value: '<p><strong>Displays a list of all available resources both for uploaded files and referenced external forms.</strong></p>'
+    value: '<p>Displays a list of all available resources both for uploaded files and referenced external forms.</p>'
     format: rich_text_w_images
 field_type: markup
