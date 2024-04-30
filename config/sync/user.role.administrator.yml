@@ -157,6 +157,7 @@ permissions:
   - 'administer crop types'
   - 'administer crop_type labels'
   - 'administer display modes'
+  - 'administer dropzonejs settings'
   - 'administer editoria11y checker'
   - 'administer embed buttons'
   - 'administer entity browsers'
