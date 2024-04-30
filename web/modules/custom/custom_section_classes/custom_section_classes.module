@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Module file.
+ */
+
+use Drupal\custom_section_classes\CustomLayout;
+use Drupal\layout_section_classes\ClassyLayout;
+
+/**
+ * Implements hook_layouts_alter().
+ */
+function custom_section_classes_layout_alter(&$definitions) {
+  /** @var \Drupal\layout_section_classes\ClassyLayout[] $definitions */
+  foreach ($definitions as &$definition) {
+    if ($definition->get('class') === ClassyLayout::class && $definition->get('classes') !== NULL) {
+      $definition->setClass(CustomLayout::class);
+    }
+  }
+
+}

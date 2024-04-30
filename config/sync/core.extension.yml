@@ -171,6 +171,7 @@ module:
   pathauto: 1
   views: 10
   paragraphs: 11
+  custom_section_classes: 12
   mainspring: 1000
   vertical_tabs_config: 1001
 theme:
