@@ -11,8 +11,8 @@ editor: ckeditor5
 settings:
   toolbar:
     items:
-      - style
       - heading
+      - style
       - insertTable
       - bold
       - italic
