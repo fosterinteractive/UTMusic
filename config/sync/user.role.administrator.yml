@@ -462,7 +462,6 @@ permissions:
   - 'view all revisions'
   - 'view any no_views_results_behaviour block content history'
   - 'view any resources_files media revisions'
-  - 'view any resources_link_to_form media revisions'
   - 'view any unpublished content'
   - 'view any webform submission'
   - 'view config updates report'
