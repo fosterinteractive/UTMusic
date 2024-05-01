@@ -11,6 +11,7 @@ editor: ckeditor5
 settings:
   toolbar:
     items:
+      - heading
       - style
       - '|'
       - bold
@@ -19,7 +20,6 @@ settings:
       - subscript
       - removeFormat
       - '|'
-      - alignment
       - '|'
       - link
       - '|'
@@ -32,7 +32,6 @@ settings:
       - horizontalLine
       - '|'
       - sourceEditing
-      - heading
       - '|'
   plugins:
     ckeditor5_alignment:
