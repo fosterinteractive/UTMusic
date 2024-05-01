@@ -21,6 +21,7 @@ dependencies:
     - media.type.video
     - node.type.event
     - node.type.news
+    - node.type.page
     - node.type.people
     - workflows.workflow.editorial
   module:
@@ -108,6 +109,7 @@ permissions:
   - 'dropzone upload files'
   - 'edit any event content'
   - 'edit any news content'
+  - 'edit any page content'
   - 'edit any people content'
   - 'edit own ed_file media'
   - 'edit own ed_image media'
