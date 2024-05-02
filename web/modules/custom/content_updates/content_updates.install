@@ -7,7 +7,7 @@ use Drupal\paragraphs\Entity\Paragraph;
 /**
  * Removes 'center' alignment from section titles.
  */
-function content_updates_update_10001() {
+function content_updates_update_10002() {
   $paragraphs = \Drupal::entityTypeManager()
     ->getStorage('paragraph')
     ->loadByProperties(['type' => 'section_title']);
