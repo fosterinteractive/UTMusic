@@ -73,7 +73,6 @@
   &:hover,
   &:focus,
   &:active {
-    // background-color: var(--c-accordion-expand-button-bg);
     background-color: var(--c-accordion-focus-bg);
     border: rem(1px) solid palette(blue);
   }
