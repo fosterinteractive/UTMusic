@@ -1,0 +1,5 @@
+name: Content Updates
+type: module
+description: 'Provides updates to content.'
+package: Custom
+core_version_requirement: ^10

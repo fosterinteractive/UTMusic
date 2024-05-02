@@ -15,9 +15,6 @@ settings:
       value: left
       label: Left
     -
-      value: center
-      label: Center
-    -
       value: right
       label: Right
   allowed_values_function: ''

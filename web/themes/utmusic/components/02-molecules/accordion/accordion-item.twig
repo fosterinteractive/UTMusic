@@ -69,7 +69,7 @@
       {% endif %}
 
       {% if title %}
-        <h4>
+        <{{ title_html_element|default('h3') }}>
           <button class="m-accordion-item__label toggle js-accordion-item__toggle" aria-expanded="false" id="{{ accordion__header__id }}" aria-controls="{{ accordion__panel__id }}" >
             <span>
               {{ title }} <br>
