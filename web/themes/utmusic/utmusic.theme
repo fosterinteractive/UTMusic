@@ -579,8 +579,8 @@ function utmusic_form_views_exposed_form_alter(&$form, FormStateInterface $form_
 
     if (isset($form[$field])) {
       $limited_args = [];
-      if (isset($view->args[3]) && $view->args[3] !== 'all') {
-        $limited_args = explode("+", $view->args[3]);
+      if (isset($view->args[1]) && $view->args[1] !== 'all') {
+        $limited_args = explode("+", $view->args[1]);
       }
 
       $filtered_options = ["All" => "- Any -"];
@@ -603,7 +603,7 @@ function utmusic_form_views_exposed_form_alter(&$form, FormStateInterface $form_
           }
         }
       }
-      
+
       $filter_display = $view->args[4] ?? NULL;
 
       if ($filter_display == 'hide-filter') {
