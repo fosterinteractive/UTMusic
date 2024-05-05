@@ -72,3 +72,43 @@
   word-break: normal;
   word-wrap: break-word;
 }
+
+
+/* styles for paragraphs layout icon */
+.paragraphs-config-classes-section-layout--icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  font-size: 1.5rem;
+  color: var(--color-white);
+  gap: 35px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.paragraphs-config-classes-section-layout--icon-wrapper .icon-option-wrapper {
+  max-width: 150px;
+  width: 15%;
+  cursor: pointer;
+}
+
+.paragraphs-config-classes-section-layout--icon-wrapper img {
+  transition: scale 0.3s ease, box-shadow 0.3s ease;
+  scale: 0.9;
+}
+
+.paragraphs-config-classes-section-layout--icon-wrapper span {
+  color: #003ecc;
+  font-size: 14px;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+}
+
+.paragraphs-config-classes-section-layout--icon-wrapper .icon-option-wrapper:hover img,
+.paragraphs-config-classes-section-layout--icon-wrapper .icon-option-wrapper.selected img {
+  scale: 1;
+  box-shadow: 0 0 0 2px var(--color-white), 0 0 0 5px var(--color-focus);
+}
