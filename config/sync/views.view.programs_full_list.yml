@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.listing_item
     - node.type.program
+    - taxonomy.vocabulary.program_stream
     - taxonomy.vocabulary.program_type
   module:
     - node
@@ -258,11 +259,16 @@ display:
             sort_order: asc
             number_of_records: 0
             format: default_summary
-          specify_validation: false
+          specify_validation: true
           validate:
-            type: none
+            type: 'entity:taxonomy_term'
             fail: 'not found'
-          validate_options: {  }
+          validate_options:
+            bundles:
+              program_stream: program_stream
+            access: false
+            operation: view
+            multiple: 1
           break_phrase: true
           not: false
         field_program_type_target_id:
@@ -293,11 +299,16 @@ display:
             sort_order: asc
             number_of_records: 0
             format: default_summary
-          specify_validation: false
+          specify_validation: true
           validate:
-            type: none
+            type: 'entity:taxonomy_term'
             fail: 'not found'
-          validate_options: {  }
+          validate_options:
+            bundles:
+              program_type: program_type
+            access: false
+            operation: view
+            multiple: 1
           break_phrase: true
           not: false
       filters:
