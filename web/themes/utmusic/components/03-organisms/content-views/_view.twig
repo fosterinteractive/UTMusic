@@ -36,7 +36,13 @@
   <div class="paragraph--unpublished">
 {% endif %}
 
-{{ content }}
+{% if hide_exposed %}
+  <div class="hide-exposed-form">
+    {{ content }}
+  </div>
+{% else %}
+  {{ content }}
+{% endif %}
 
 {% if unpublished %}
   </div>

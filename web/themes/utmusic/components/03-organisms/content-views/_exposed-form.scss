@@ -33,3 +33,7 @@
   width: 1px !important;
   overflow: hidden;
 }
+
+.hide-exposed-form .m-exposed-form__wrapper {
+  display: none;
+}
