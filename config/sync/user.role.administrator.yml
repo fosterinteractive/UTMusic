@@ -103,6 +103,7 @@ dependencies:
     - path
     - pathauto
     - rabbit_hole
+    - rebuild_cache_access
     - recaptcha
     - redirect
     - redirect_404
@@ -467,6 +468,7 @@ permissions:
   - 'never autoplay videos'
   - 'notify of path changes'
   - 'rabbit hole administer node'
+  - 'rebuild cache access'
   - 'replicate entities'
   - 'revert all revisions'
   - 'revert any no_views_results_behaviour block content revisions'

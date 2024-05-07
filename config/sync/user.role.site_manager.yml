@@ -77,6 +77,7 @@ dependencies:
     - paragraphs_admin
     - path
     - rabbit_hole
+    - rebuild_cache_access
     - redirect
     - system
     - taxonomy
@@ -301,6 +302,7 @@ permissions:
   - 'moderated content bulk unpin content'
   - 'moderated content bulk unpublish'
   - 'rabbit hole bypass node'
+  - 'rebuild cache access'
   - 'revert all revisions'
   - 'revert any no_views_results_behaviour block content revisions'
   - 'revert event revisions'
