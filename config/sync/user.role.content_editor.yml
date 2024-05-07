@@ -23,6 +23,8 @@ dependencies:
     - node.type.news
     - node.type.page
     - node.type.people
+    - node.type.program
+    - node.type.resources
     - workflows.workflow.editorial
   module:
     - admin_toolbar_search
@@ -42,6 +44,7 @@ dependencies:
     - moderated_content_bulk_publish
     - node
     - path
+    - rebuild_cache_access
     - replicate_ui
     - system
     - toolbar
@@ -136,6 +139,7 @@ permissions:
   - 'moderated content bulk publish'
   - 'moderated content bulk unpin content'
   - 'moderated content bulk unpublish'
+  - 'rebuild cache access'
   - 'replicate entities'
   - 'revert event revisions'
   - 'revert news revisions'
