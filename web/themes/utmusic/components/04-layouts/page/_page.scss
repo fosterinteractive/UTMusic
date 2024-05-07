@@ -47,6 +47,15 @@
   .contextual-region {
     position: inherit;
   }
+
+  .toolbar-horizontal & {
+    top: rem(39px);
+  }
+
+  .toolbar-tray-open & {
+    top: rem(79px);
+
+  }
 }
 
 .l-page__footer {
