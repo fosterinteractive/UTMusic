@@ -100,6 +100,7 @@ module:
   mega_menu_builder: 0
   menu_block: 0
   menu_breadcrumb: 0
+  menu_firstchild: 0
   menu_item_extras: 0
   menu_position: 0
   menu_ui: 0

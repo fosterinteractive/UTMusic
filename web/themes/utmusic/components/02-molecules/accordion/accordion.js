@@ -30,22 +30,12 @@ Drupal.behaviors.accordion = {
       collapse(item, button, panel);
 
       button.addEventListener('click', () => {
-        // Close all other items
-        items.forEach((another_item) => {
-          if (item == another_item) {
-            return;
-          }
-          const button = another_item.querySelector('.js-accordion-item__toggle');
-          const panel = another_item.querySelector('.js-accordion-item__panel');
-
-          // Hide all accordion content sections if JavaScript is enabled.
-          collapse(another_item, button, panel);
-        });
-
         // Toggle the item's state.
-        return button.getAttribute('aria-expanded') === 'true'
-          ? collapse(item, button, panel)
-          : expand(item, button, panel);
+        if (button.getAttribute('aria-expanded') === 'true') {
+          collapse(item, button, panel);
+        } else {
+          expand(item, button, panel);
+        }
       });
     });
 
@@ -55,12 +45,12 @@ Drupal.behaviors.accordion = {
       return;
     }
 
-    expandButtons.forEach( expandButton => {
+    expandButtons.forEach(expandButton => {
       // Get all items relevant to the control.
       const allAccordionItems = expandButton.closest('.m-accordion').querySelectorAll('.js-accordion-item');
 
       // Add click listener on the parent 
-      expandButton.addEventListener('click', (e) => {
+      expandButton.addEventListener('click', () => {
         let expandButtonState = expandButton.getAttribute('aria-expanded');
 
         // Iterate over items
@@ -75,12 +65,8 @@ Drupal.behaviors.accordion = {
           }
         });
 
-        //Change the state for button
-        if (expandButtonState === 'true') {
-          expandButton.setAttribute('aria-expanded', 'false');
-        } else {
-          expandButton.setAttribute('aria-expanded', 'true');
-        }
+        // Change the state for button
+        expandButton.setAttribute('aria-expanded', expandButtonState === 'true' ? 'false' : 'true');
       });
 
     });

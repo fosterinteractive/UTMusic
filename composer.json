@@ -108,7 +108,8 @@
         "drupal/feeds": "3.0-beta4",
         "drupal/feeds_tamper": "2.0-beta3",
         "drupal/oembed_lazyload": "^2.0",
-        "drupal/editoria11y": "^2.1"
+        "drupal/editoria11y": "^2.1",
+        "drupal/menu_firstchild": "^2.1"
     },
     "require-dev": {
         "drupal/coder": "^8.3"
