@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1fa1251c1801a954ca290c7a7215809c",
+    "content-hash": "39bb9c237cc2feab73da5d657c426435",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7613,6 +7613,63 @@
             "homepage": "https://www.drupal.org/project/menu_breadcrumb",
             "support": {
                 "source": "https://git.drupalcode.org/project/menu_breadcrumb"
+            }
+        },
+        {
+            "name": "drupal/menu_firstchild",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/menu_firstchild.git",
+                "reference": "2.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/menu_firstchild-2.1.0.zip",
+                "reference": "2.1.0",
+                "shasum": "5ef4e4812f367be5f78ad18d6593087528a684c6"
+            },
+            "require": {
+                "drupal/core": "^9.5 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.1.0",
+                    "datestamp": "1698600490",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Bart Vanhoutte",
+                    "homepage": "https://www.drupal.org/user/410199",
+                    "email": "bart@croquemonsieur.be"
+                },
+                {
+                    "name": "Bart Vanhoutte",
+                    "homepage": "https://www.drupal.org/user/1133754"
+                },
+                {
+                    "name": "pingevt",
+                    "homepage": "https://www.drupal.org/user/411339"
+                }
+            ],
+            "description": "A Drupal module that allows creating a menu item without a path that instead will link to it's first viewable child menu item.",
+            "homepage": "http://drupal.org/project/menu_firstchild",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/menu_firstchild",
+                "issues": "http://drupal.org/project/issues/menu_firstchild"
             }
         },
         {
