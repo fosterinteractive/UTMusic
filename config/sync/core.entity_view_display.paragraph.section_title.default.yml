@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.section_title.field_section_title_alignment
+    - field.field.paragraph.section_title.field_section_title_anchor_tag
     - field.field.paragraph.section_title.field_section_title_appearance
     - field.field.paragraph.section_title.field_section_title_html_element
     - field.field.paragraph.section_title.field_section_title_text
@@ -22,6 +23,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_section_title_anchor_tag:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_section_title_appearance:
     type: list_key
