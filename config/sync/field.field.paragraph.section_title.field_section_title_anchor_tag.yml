@@ -1,14 +1,14 @@
-uuid: 3bea19f3-0eb7-498a-b14c-d85e3d32386c
+uuid: a149590a-1265-4320-a7ca-1c3189b55b6d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_accordion_item_anchor_tag
-    - paragraphs.paragraphs_type.accordion_item
-id: paragraph.accordion_item.field_accordion_item_anchor_tag
-field_name: field_accordion_item_anchor_tag
+    - field.storage.paragraph.field_section_title_anchor_tag
+    - paragraphs.paragraphs_type.section_title
+id: paragraph.section_title.field_section_title_anchor_tag
+field_name: field_section_title_anchor_tag
 entity_type: paragraph
-bundle: accordion_item
+bundle: section_title
 label: 'Anchor Tag'
 description: 'Use lower case and dashes (eg. my-section-tag). All text will be transformed to lowered case. Must be unique on this page.'
 required: false

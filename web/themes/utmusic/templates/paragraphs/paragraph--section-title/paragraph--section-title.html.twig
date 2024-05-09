@@ -36,10 +36,16 @@
  * @ingroup themeable
  */
 #}
+
+{{ attach_library('utmusic/copy-links') }}
+{{ attach_library('utmusic/tippyjs') }}
+{{ attach_library('utmusic/tooltip') }}
+
 {% set html_element = content.field_section_title_html_element[0] ? content.field_section_title_html_element[0]['#markup'] %}
 {% set appearance = content.field_section_title_appearance[0] ? content.field_section_title_appearance[0]['#markup'] %}
 
 {% include "@atoms/text/headings/heading.twig" with {
+    directory: directory,
     unpublished: unpublished,
     html_element: html_element,
     appearance: appearance,
@@ -48,5 +54,9 @@
     url: false,
     icon: false,
     id: id,
+    is_admin: is_admin,
+    anchor_id: content.field_section_title_anchor_tag[0] ? content.field_section_title_anchor_tag[0]['#context']['value'],
+    absolute_path: absolute_path,
+    relative_path: relative_path,
   } only
 %}

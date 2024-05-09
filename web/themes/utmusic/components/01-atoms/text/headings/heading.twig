@@ -1,6 +1,70 @@
+
+{% if anchor_id %}
+  {# Create a unique ID for each title item #}
+  {% set unique_id = random('1234567890') ~ random('1234567890') ~ random('1234567890') ~ random('1234567890') %}
+  {% set title__tooltip__id = 'title__tooltip-' ~ unique_id %}
+
+  {% set title_id = "anchor-" ~ anchor_id|lower|replace({' ':'-', '(':'', ')':''}) %}
+
+  {% if absolute_path %}
+    {% set absolute_link = absolute_path ~ '#' ~ title_id %}
+  {% endif %}
+
+  {% if relative_path %}
+    {% set relative_link = relative_path ~ '#' ~ title_id %} 
+  {% endif %}
+{% endif %}
+
+{# If loggedin user/admin #}
+{% if is_admin == 1 %}
+  {# if the absolute or relative links exists  #}
+  {% if absolute_link or relative_link %}
+    <div class="m-item__copy-links">
+      {% if absolute_link %}
+
+        <div class="m-item__copy-link">
+          <button aria-labelledby="{{ title__tooltip__id }}--absolute" class="m-item__copy-btn is-absolute data-trigger" data-template="{{ title__tooltip__id }}--absolute" type="button">
+            {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                directory: directory,
+                icon: 'envelope',
+                base_class: 'a-button--icon__icon',
+              } only
+            %}
+          </button>
+
+          <div class="visually-hidden" id="{{ title__tooltip__id }}--absolute">
+            <p>{{ 'Copy absolute link to clipboard for '|t }}{{ title }}</p>
+          </div>
+
+          <span class="u-visually--hidden is-absolute-text">{{ absolute_link }}</span>
+        </div>              
+      {% endif %}
+
+      {% if relative_link %}
+        <div class="m-item__copy-link">
+          <button aria-labelledby="{{ title__tooltip__id }}--relative" class="m-item__copy-btn is-relative data-trigger" data-template="{{ title__tooltip__id }}--relative" type="button">
+            {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
+                directory: directory,
+                icon: 'link-simple',
+                base_class: 'a-button--icon__icon',
+              } only
+            %}
+          </button>
+
+          <div class="visually-hidden" id="{{ title__tooltip__id }}--relative">
+            <p>{{ 'Copy relative link to clipboard for '|t }}{{ title }}</p>
+          </div>
+
+          <span class="u-visually--hidden is-relative-text">{{ relative_link }}</span>
+        </div>  
+      {% endif %}
+    </div>
+  {% endif %}
+{% endif %}
+
+
 {# If no actual heading text was passed along, this component should not render. #}
 {% if text %}
-  
   {# Set base class for this element of a-heading other components may extend the base class 
   if they have unique title styles. Eg. a-title #}
   {% set base_class = base_class|default('a-heading') %}
