@@ -24,6 +24,7 @@ dependencies:
     - node.type.news
     - node.type.page
     - node.type.people
+    - node.type.program
     - node.type.resources
     - workflows.workflow.editorial
   module:
@@ -119,6 +120,7 @@ permissions:
   - 'edit any news content'
   - 'edit any page content'
   - 'edit any people content'
+  - 'edit any program content'
   - 'edit any resources content'
   - 'edit own ed_file media'
   - 'edit own ed_image media'
@@ -148,6 +150,7 @@ permissions:
   - 'revert news revisions'
   - 'revert page revisions'
   - 'revert people revisions'
+  - 'revert program revisions'
   - 'revert resources revisions'
   - 'schedule_import csv_event_feed feeds'
   - 'schedule_import csv_person_feed feeds'
@@ -194,5 +197,6 @@ permissions:
   - 'view page unpublished content'
   - 'view people revisions'
   - 'view people unpublished content'
+  - 'view program revisions'
   - 'view resources revisions'
   - 'view resources unpublished content'
