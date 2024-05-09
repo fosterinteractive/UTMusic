@@ -20,10 +20,10 @@ dependencies:
     - media.type.resources_link_to_form
     - media.type.video
     - node.type.event
+    - node.type.job
     - node.type.news
     - node.type.page
     - node.type.people
-    - node.type.program
     - node.type.resources
     - workflows.workflow.editorial
   module:
@@ -77,6 +77,7 @@ permissions:
   - 'create ed_image media'
   - 'create event content'
   - 'create illustration media'
+  - 'create job content'
   - 'create link media'
   - 'create media'
   - 'create news content'
@@ -86,17 +87,14 @@ permissions:
   - 'create url aliases'
   - 'create video media'
   - 'delete any event content'
+  - 'delete any job content'
   - 'delete any media'
   - 'delete any news content'
   - 'delete any people content'
-  - 'delete any program content'
-  - 'delete any resources content'
-  - 'delete any resources_files media'
-  - 'delete any resources_link_to_form media'
-  - 'delete any video media'
   - 'delete csv_event_feed feeds'
   - 'delete csv_person_feed feeds'
   - 'delete event revisions'
+  - 'delete job revisions'
   - 'delete media'
   - 'delete news revisions'
   - 'delete own csv_event_feed feeds'
@@ -106,6 +104,7 @@ permissions:
   - 'delete own event content'
   - 'delete own files'
   - 'delete own illustration media'
+  - 'delete own job content'
   - 'delete own link media'
   - 'delete own news content'
   - 'delete own people content'
@@ -116,13 +115,16 @@ permissions:
   - 'download media'
   - 'dropzone upload files'
   - 'edit any event content'
+  - 'edit any job content'
   - 'edit any news content'
   - 'edit any page content'
   - 'edit any people content'
+  - 'edit any resources content'
   - 'edit own ed_file media'
   - 'edit own ed_image media'
   - 'edit own event content'
   - 'edit own illustration media'
+  - 'edit own job content'
   - 'edit own link media'
   - 'edit own news content'
   - 'edit own people content'
@@ -142,8 +144,11 @@ permissions:
   - 'rebuild cache access'
   - 'replicate entities'
   - 'revert event revisions'
+  - 'revert job revisions'
   - 'revert news revisions'
+  - 'revert page revisions'
   - 'revert people revisions'
+  - 'revert resources revisions'
   - 'schedule_import csv_event_feed feeds'
   - 'schedule_import csv_person_feed feeds'
   - 'schedule_import own csv_event_feed feeds'
@@ -175,6 +180,8 @@ permissions:
   - 'view editoria11y checker'
   - 'view event revisions'
   - 'view event unpublished content'
+  - 'view job revisions'
+  - 'view job unpublished content'
   - 'view latest version'
   - 'view media'
   - 'view news revisions'
@@ -183,5 +190,9 @@ permissions:
   - 'view own csv_person_feed feeds'
   - 'view own unpublished content'
   - 'view own unpublished media'
+  - 'view page revisions'
+  - 'view page unpublished content'
   - 'view people revisions'
   - 'view people unpublished content'
+  - 'view resources revisions'
+  - 'view resources unpublished content'
