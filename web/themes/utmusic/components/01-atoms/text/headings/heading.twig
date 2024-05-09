@@ -1,14 +1,17 @@
-{# If no actual heading text was passed along, this component should not render. #}
 
 {% if anchor_id %}
-  {% set accordion_id = "anchor-" ~ anchor_id|lower|replace({' ':'-', '(':'', ')':''}) %}
+  {# Create a unique ID for each title item #}
+  {% set unique_id = random('1234567890') ~ random('1234567890') ~ random('1234567890') ~ random('1234567890') %}
+  {% set title__tooltip__id = 'title__tooltip-' ~ unique_id %}
+
+  {% set title_id = "anchor-" ~ anchor_id|lower|replace({' ':'-', '(':'', ')':''}) %}
 
   {% if absolute_path %}
-    {% set absolute_link = absolute_path ~ '#' ~ accordion_id %}
+    {% set absolute_link = absolute_path ~ '#' ~ title_id %}
   {% endif %}
 
   {% if relative_path %}
-    {% set relative_link = relative_path ~ '#' ~ accordion_id %} 
+    {% set relative_link = relative_path ~ '#' ~ title_id %} 
   {% endif %}
 {% endif %}
 
@@ -20,7 +23,7 @@
       {% if absolute_link %}
 
         <div class="m-item__copy-link">
-          <button aria-labelledby="{{ accordion__tooltip__id }}--absolute" class="m-item__copy-btn is-absolute data-trigger" data-template="{{ accordion__tooltip__id }}--absolute" type="button">
+          <button aria-labelledby="{{ title__tooltip__id }}--absolute" class="m-item__copy-btn is-absolute data-trigger" data-template="{{ title__tooltip__id }}--absolute" type="button">
             {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
                 directory: directory,
                 icon: 'envelope',
@@ -29,7 +32,7 @@
             %}
           </button>
 
-          <div class="visually-hidden" id="{{ accordion__tooltip__id }}--absolute">
+          <div class="visually-hidden" id="{{ title__tooltip__id }}--absolute">
             <p>{{ 'Copy absolute link to clipboard for '|t }}{{ title }}</p>
           </div>
 
@@ -39,7 +42,7 @@
 
       {% if relative_link %}
         <div class="m-item__copy-link">
-          <button aria-labelledby="{{ accordion__tooltip__id }}--relative" class="m-item__copy-btn is-relative data-trigger" data-template="{{ accordion__tooltip__id }}--relative" type="button">
+          <button aria-labelledby="{{ title__tooltip__id }}--relative" class="m-item__copy-btn is-relative data-trigger" data-template="{{ title__tooltip__id }}--relative" type="button">
             {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
                 directory: directory,
                 icon: 'link-simple',
@@ -48,7 +51,7 @@
             %}
           </button>
 
-          <div class="visually-hidden" id="{{ accordion__tooltip__id }}--relative">
+          <div class="visually-hidden" id="{{ title__tooltip__id }}--relative">
             <p>{{ 'Copy relative link to clipboard for '|t }}{{ title }}</p>
           </div>
 
@@ -60,6 +63,7 @@
 {% endif %}
 
 
+{# If no actual heading text was passed along, this component should not render. #}
 {% if text %}
   {# Set base class for this element of a-heading other components may extend the base class 
   if they have unique title styles. Eg. a-title #}
