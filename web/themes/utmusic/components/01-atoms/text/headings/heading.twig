@@ -5,6 +5,7 @@
   {% set title__tooltip__id = 'title__tooltip-' ~ unique_id %}
 
   {% set title_id = "anchor-" ~ anchor_id|lower|replace({' ':'-', '(':'', ')':''}) %}
+  {% set id = anchor_id %}
 
   {% if absolute_path %}
     {% set absolute_link = absolute_path ~ '#' ~ title_id %}
