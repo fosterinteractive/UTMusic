@@ -1,0 +1,29 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.05" y="0.05" width="99.9" height="99.9" fill="white"/>
+<rect x="0.05" y="0.05" width="99.9" height="99.9" stroke="black" stroke-width="0.1"/>
+<g clip-path="url(#clip0_1_226)">
+<rect x="5" width="6" height="100" fill="#FF0808" fill-opacity="0.1"/>
+<rect x="13" width="5" height="100" fill="#FF0808" fill-opacity="0.1"/>
+<rect x="20" width="6" height="100" fill="#FF0808" fill-opacity="0.1"/>
+<rect x="28" width="6" height="100" fill="#FF0808" fill-opacity="0.1"/>
+<rect x="36" width="5" height="100" fill="#FF0808" fill-opacity="0.1"/>
+<rect x="43" width="6" height="100" fill="#FF0808" fill-opacity="0.1"/>
+<rect x="51" width="6" height="100" fill="#FF0808" fill-opacity="0.1"/>
+<rect x="59" width="5" height="100" fill="#FF0808" fill-opacity="0.1"/>
+<rect x="66" width="6" height="100" fill="#FF0808" fill-opacity="0.1"/>
+<rect x="74" width="6" height="100" fill="#FF0808" fill-opacity="0.1"/>
+<rect x="82" width="5" height="100" fill="#FF0808" fill-opacity="0.1"/>
+<rect x="89" width="6" height="100" fill="#FF0808" fill-opacity="0.1"/>
+</g>
+<g clip-path="url(#clip1_1_226)">
+<path d="M72 10H28V89H72V10Z" fill="black" fill-opacity="0.313726"/>
+</g>
+<defs>
+<clipPath id="clip0_1_226">
+<rect width="90" height="100" fill="white" transform="translate(5)"/>
+</clipPath>
+<clipPath id="clip1_1_226">
+<rect width="44" height="79" fill="white" transform="translate(28 10)"/>
+</clipPath>
+</defs>
+</svg>

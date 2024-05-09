@@ -3,10 +3,6 @@ custom_admin:
   css:
     theme:
       css/custom_admin.css: { every_page: 1 }
-  # js:
-  #   js/icon-replacement.js: {}
-  dependencies:
-    # - custom_admin/icon_replacement
 
 icon_replacement:
   version: 1.0

@@ -20,25 +20,6 @@ use Symfony\Component\Yaml\Yaml;
  */
 function custom_admin_page_attachments(array &$attachments) {
   $attachments['#attached']['library'][] = 'custom_admin/custom_admin';
-  // $attachments['#attached']['library'][] = 'custom_admin/icon_replacement';
-}
-
-
-function custom_admin_get_icon_mappings() {
-  $module_handler = \Drupal::moduleHandler();
-  $module_path = $module_handler->getModule('custom_admin')->getPath();
-  $file_path = $module_path . '/config/icon_mapping.yml';
-
-  $file_system = \Drupal::service('file_system');
-  $real_path = $file_system->realpath($file_path);
-
-  if (file_exists($real_path)) {
-    $content = file_get_contents($real_path);
-    $mappings = Yaml::parse($content);
-    return $mappings;
-  }
-
-  return [];
 }
 
 /**
@@ -585,20 +566,35 @@ function custom_admin_field_group_form_process(array &$element, &$group, &$compl
       ]]
     ];
   }
-
 }
 
+function custom_admin_get_icon_mappings() {
+  $module_handler = \Drupal::moduleHandler();
+  $module_path = $module_handler->getModule('custom_admin')->getPath();
+  $file_path = $module_path . '/config/icon_mapping.yml';
+
+  $file_system = \Drupal::service('file_system');
+  $real_path = $file_system->realpath($file_path);
+
+  if (file_exists($real_path)) {
+    $content = file_get_contents($real_path);
+    $mappings = Yaml::parse($content);
+    return $mappings;
+  }
+
+  return [];
+}
 
 /**
  * Implements hook_form_alter().
  */
 function custom_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   
-  // if ($form_id == 'layout_paragraphs_component_form') {
+  if ($form_id == 'layout_paragraphs_component_form') {
     $icon_mappings = custom_admin_get_icon_mappings();
     $form['#attached']['drupalSettings']['custom_admin']['iconMappings'] = $icon_mappings;
     $form['#attached']['library'][] = 'custom_admin/icon_replacement';
-  // }
+  }
 
   // Check if the form_id matches the desired form
   if ($form_id == 'menu_link_content_main_form') {

@@ -1,0 +1,70 @@
+icon_mappings:
+  "[6]":
+    icon: "six_columns.svg"
+    name: "[6] of 12 columns Wide"
+  "[8]":
+    icon: "eight_columns.svg"
+    name: "[8] of 12 columns Wide"
+  "[10]":
+    icon: "ten_columns.svg"
+    name: "[10] of 12 columns Wide"
+  "[12]":
+    icon: "twelve_columns.svg"
+    name: "[12] of 12 columns Wide"
+  "none":
+    icon: "stretch_wide.svg"
+    name: "Stretch 100% wide"
+  "[3|8]":
+    icon: "three_eight_columns.svg"
+    name: "[3|8] of 12 columns Wide"
+  "[3|9]":
+    icon: "three_nine_columns.svg"
+    name: "[3|9] of 12 columns Wide"
+  "[4|6]":
+    icon: "four_six_columns.svg"
+    name: "[4|6] of 12 columns Wide"
+  "[4|7]":
+    icon: "four_seven_columns.svg"
+    name: "[4|7] of 12 columns Wide"
+  "[4|8]":
+    icon: "four_eight_columns.svg"
+    name: "[4|8] of 12 columns Wide"
+  "[5|5]":
+    icon: "five_five_columns.svg"
+    name: "[5|5] of 12 columns Wide"
+  "[5|6]":
+    icon: "five_six_columns.svg"
+    name: "[5|6] of 12 columns Wide"
+  "[5|7]":
+    icon: "five_seven_columns.svg"
+    name: "[5|7] of 12 columns Wide"
+  "[6|4]":
+    icon: "six_four_columns.svg"
+    name: "[6|4] of 12 columns Wide"
+  "[6|5]":
+    icon: "six_five_columns.svg"
+    name: "[6|5] of 12 columns Wide"
+  "[6|6]":
+    icon: "six_six_columns.svg"
+    name: "[6|6] of 12 columns Wide"
+  "[7|4]":
+    icon: "seven_four_columns.svg"
+    name: "[7|4] of 12 columns Wide"
+  "[7|5]":
+    icon: "seven_five_columns.svg"
+    name: "[7|5] of 12 columns Wide"
+  "[8|3]":
+    icon: "eight_three_columns.svg"
+    name: "[8|3] of 12 columns Wide"
+  "[8|4]":
+    icon: "eight_four_columns.svg"
+    name: "[8|4] of 12 columns Wide"
+  "[9|3]":
+    icon: "nine_three_columns.svg"
+    name: "[9|3] of 12 columns Wide"
+  "[4|4|4]":
+    icon: "four_four_four_columns.svg"
+    name: "[4|4|4] of 12 columns Wide"
+  "[3|3|3|3]":
+    icon: "three_three_three_three_columns.svg"
+    name: "[3|3|3|3] of 12 columns Wide"
