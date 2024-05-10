@@ -1,3 +1,8 @@
+/**
+ * This JavaScript script adds icons to select elements in a form layout_paragraphs_component_form instead of Content Width select.
+ * see web/themes/utmusic/utmusic.layouts.yml 'icon_mapping'
+ */
+
 (function (Drupal) {
   Drupal.behaviors.addIconsToSelect = {
     attach: function (context, settings) {
@@ -15,7 +20,7 @@
         // Extract the value of the selected layout type
         var layoutType = checkedRadio.value;
         // Access icon mappings specific to the chosen layout type from the settings object
-        var iconMappings = settings.custom_admin.iconMappings.icon_mappings[layoutType] || {};
+        var iconMappings = settings.custom_admin.iconMappings[layoutType].classes.section_layout || {};
         var iconContainer = document.querySelector('.paragraphs-config-classes-section-layout--icon-wrapper');
 
         if (!iconContainer) {
@@ -28,9 +33,10 @@
         if (iconContainer.children.length === 0) {
           Array.from(selectElement.options).forEach(option => {
 
-            let iconData = iconMappings[option.value] || { icon: 'default.svg', name: 'Default name' };
-            let iconSrc = '/themes/utmusic/images/sections/' + iconData.icon;
-            let iconName = iconData.name;
+            // Get icon data for the option value.
+            let iconData = iconMappings.icon_mapping[option.value];
+            let iconSrc = '/themes/utmusic/images/sections/' + iconData;
+            let iconName = iconMappings.options[option.value];
 
             let iconWrapper = document.createElement('div');
             iconWrapper.className = 'icon-option-wrapper';

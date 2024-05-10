@@ -569,17 +569,30 @@ function custom_admin_field_group_form_process(array &$element, &$group, &$compl
 }
 
 function custom_admin_get_icon_mappings() {
-  $module_handler = \Drupal::moduleHandler();
-  $module_path = $module_handler->getModule('custom_admin')->getPath();
-  $file_path = $module_path . '/config/icon_mapping.yml';
+  $theme_handler = \Drupal::service('theme_handler');
 
-  $file_system = \Drupal::service('file_system');
-  $real_path = $file_system->realpath($file_path);
+  // Check if the theme handler service is available
+  if ($theme_handler) {
+    $theme = $theme_handler->getTheme('utmusic');
+    if ($theme) {
+      $theme_path = $theme->getPath();
+      $file_path = $theme_path . '/utmusic.layouts.yml';
 
-  if (file_exists($real_path)) {
-    $content = file_get_contents($real_path);
-    $mappings = Yaml::parse($content);
-    return $mappings;
+      $file_system = \Drupal::service('file_system');
+      $real_path = $file_system->realpath($file_path);
+
+      if (file_exists($real_path)) {
+        $content = file_get_contents($real_path);
+        $mappings = Yaml::parse($content);
+        return $mappings;
+      } else {
+        drupal_set_message('Icon mappings file not found.', 'error');
+      }
+    } else {
+      drupal_set_message('Theme utmusic not found.', 'error');
+    }
+  } else {
+    drupal_set_message('Theme handler service is not available.', 'error');
   }
 
   return [];
