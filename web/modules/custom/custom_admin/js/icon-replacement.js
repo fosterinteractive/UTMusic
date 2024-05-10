@@ -26,7 +26,6 @@
 
         // If the container does not exist, create it and insert it into the DOM after the select element
         if (iconContainer.children.length === 0) {
-          console.log('Test2');
           Array.from(selectElement.options).forEach(option => {
 
             let iconData = iconMappings[option.value] || { icon: 'default.svg', name: 'Default name' };
@@ -66,7 +65,6 @@
         }
 
         function updateIcons() {
-          console.log('Test');
           let selectedValue = selectElement.value;
           document.querySelectorAll('.icon-option-wrapper').forEach(wrapper => {
             wrapper.classList.toggle('selected', wrapper.dataset.value === selectedValue);
