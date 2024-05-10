@@ -3,3 +3,11 @@ custom_admin:
   css:
     theme:
       css/custom_admin.css: { every_page: 1 }
+
+icon_replacement:
+  version: 1.0
+  js:
+    js/icon-replacement.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
