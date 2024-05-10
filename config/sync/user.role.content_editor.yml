@@ -28,7 +28,6 @@ dependencies:
     - node.type.resources
     - workflows.workflow.editorial
   module:
-    - admin_toolbar_search
     - content_moderation
     - contextual
     - dropzonejs
@@ -65,7 +64,6 @@ permissions:
   - 'access markerio'
   - 'access media overview'
   - 'access toolbar'
-  - 'administer entity browsers'
   - 'administer feeds_feed display'
   - 'administer media'
   - 'clear csv_event_feed feeds'
@@ -115,13 +113,20 @@ permissions:
   - 'delete people revisions'
   - 'download media'
   - 'dropzone upload files'
+  - 'edit any ed_file media'
+  - 'edit any ed_image media'
   - 'edit any event content'
+  - 'edit any illustration media'
   - 'edit any job content'
+  - 'edit any link media'
   - 'edit any news content'
   - 'edit any page content'
   - 'edit any people content'
   - 'edit any program content'
   - 'edit any resources content'
+  - 'edit any resources_files media'
+  - 'edit any resources_link_to_form media'
+  - 'edit any video media'
   - 'edit own ed_file media'
   - 'edit own ed_image media'
   - 'edit own event content'
@@ -162,7 +167,6 @@ permissions:
   - 'update media'
   - 'update own csv_event_feed feeds'
   - 'update own csv_person_feed feeds'
-  - 'use admin toolbar search'
   - 'use ed_image_bulk_upload bulk upload form'
   - 'use editorial transition archive'
   - 'use editorial transition create_new_draft'
