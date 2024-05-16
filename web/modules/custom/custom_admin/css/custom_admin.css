@@ -130,13 +130,16 @@ div.paragraphs-config-classes-section-theme--icon-wrapper {
 }
 
 .paragraphs-config-classes-section-theme--icon-wrapper .background-color-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px;
   border: 1px solid #f0f0f0;
-  font-size: 18px;
+  font-size: 22px;
 
   @media (min-width: 769px) {
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 25px;
+    line-height: 30px;
   }
 }
 
