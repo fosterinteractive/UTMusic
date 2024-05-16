@@ -163,7 +163,6 @@ permissions:
   - 'create url aliases'
   - 'create video media'
   - 'create webform'
-  - 'delete all revisions'
   - 'delete any ed_file media'
   - 'delete any ed_image media'
   - 'delete any file'
