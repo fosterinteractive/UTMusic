@@ -111,7 +111,6 @@ permissions:
   - 'administer feeds_feed display'
   - 'administer media'
   - 'administer menu positions'
-  - 'administer nodes'
   - 'administer paragraphs'
   - 'administer redirects'
   - 'administer taxonomy'
