@@ -114,7 +114,6 @@ permissions:
   - 'administer paragraphs'
   - 'administer redirects'
   - 'administer taxonomy'
-  - 'bypass node access'
   - 'clear csv_event_feed feeds'
   - 'clear csv_person_feed feeds'
   - 'clear own csv_event_feed feeds'
