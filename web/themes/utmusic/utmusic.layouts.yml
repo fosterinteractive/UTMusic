@@ -11,12 +11,11 @@ full_1_col:
       required: true
       default: '[12]'
       options:
-        '[4]': 'Extra Narrow'
         '[6]': 'Narrow'
         '[8]': 'Medium'
         '[10]': 'Wide'
         '[12]': 'Extra Wide'
-        'none': 'Stretch 100% wide'
+        'none': 'Full Width'
       icon_mapping:
         '[6]': "1col/six_columns.svg"
         '[8]': "1col/eight_columns.svg"
@@ -81,7 +80,7 @@ full_2_col:
         '[3|8]': 'Wide (27%/73%)'
         '[3|9]': 'Extra Wide (25%/75%)'
         '[4|6]': 'Wide (40%/60%)'
-        '[4|7]': 'Extra Wide (36%/64%)'
+        '[4|7]': 'Wide (36%/64%)'
         '[4|8]': 'Extra Wide (33%/67%)' 
         '[5|5]': 'Wide (50%/50%)' 
         '[5|6]': 'Wide (45%/55%)' 
@@ -90,7 +89,7 @@ full_2_col:
         '[6|5]': 'Wide (55%/45%)' 
         '[6|6]': 'Extra Wide (50%/50%)' 
         '[7|4]': 'Wide (64%/36%)' 
-        '[7|5]': 'Wide (58%/42%)' 
+        '[7|5]': 'Extra Wide (58%/42%)' 
         '[8|3]': 'Wide (73%/27%)' 
         '[8|4]': 'Extra Wide (67%/33%)' 
         '[9|3]': 'Extra Wide (75%/25%)'
@@ -335,10 +334,10 @@ full_grid_2col:
       required: true
       default: '[10]'
       options:
-        '[6]': 'Narrow'
-        '[8]': 'Medium'
-        '[10]': 'Wide'
-        '[12]': 'Extra Wide'
+        '[6]': 'Narrow (50%/50%)'
+        '[8]': 'Medium (50%/50%)'
+        '[10]': 'Wide (50%/50%)'
+        '[12]': 'Extra Wide (50%/50%)'
       icon_mapping:
         "[6]": "grid2col/six_columns.svg"
         "[8]": "grid2col/eight_columns.svg"
@@ -420,9 +419,9 @@ full_grid_3col:
       required: true
       default: '[10]'
       options:
-        '[8]': 'Medium'
-        '[10]': 'Wide'
-        '[12]': 'Extra Wide'
+        '[8]': 'Medium (33%/33%/33%)'
+        '[10]': 'Wide (33%/33%/33%)'
+        '[12]': 'Extra Wide (33%/33%/33%)'
       icon_mapping:
         "[8]": "grid3col/eight_columns.svg"
         "[10]": "grid3col/ten_columns.svg"
@@ -503,8 +502,8 @@ full_grid_4col:
       required: true
       default: '[10]'
       options:
-        '[10]': 'Wide'
-        '[12]': 'Extra Wide'
+        '[10]': 'Wide (25%/25%/25%/25%)'
+        '[12]': 'Extra Wide (25%/25%/25%/25%)'
       icon_mapping:
         "[10]": "grid4col/ten_columns.svg"
         "[12]": "grid4col/twelve_columns.svg"
