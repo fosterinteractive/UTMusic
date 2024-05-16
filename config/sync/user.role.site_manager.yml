@@ -79,6 +79,7 @@ dependencies:
     - rabbit_hole
     - rebuild_cache_access
     - redirect
+    - replicate_ui
     - system
     - taxonomy
     - term_merge
@@ -107,7 +108,6 @@ permissions:
   - 'access webform overview'
   - 'administer block content'
   - 'administer blocks'
-  - 'administer entity browsers'
   - 'administer feeds_feed display'
   - 'administer media'
   - 'administer menu positions'
@@ -279,6 +279,7 @@ permissions:
   - 'moderated content bulk unpublish'
   - 'rabbit hole bypass node'
   - 'rebuild cache access'
+  - 'replicate entities'
   - 'revert all revisions'
   - 'revert any no_views_results_behaviour block content revisions'
   - 'revert event revisions'

@@ -31,8 +31,6 @@ dependencies:
     - dropzonejs
     - editoria11y
     - entity_browser
-    - feeds
-    - field_ui
     - file
     - filter
     - markerio
@@ -61,7 +59,6 @@ permissions:
   - 'access markerio'
   - 'access media overview'
   - 'access toolbar'
-  - 'administer feeds_feed display'
   - 'administer media'
   - 'create ed_file media'
   - 'create ed_image media'
