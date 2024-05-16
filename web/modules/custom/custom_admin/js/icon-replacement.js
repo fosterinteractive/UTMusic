@@ -127,7 +127,7 @@
         themeDiv.className = 'background-color-wrapper theme--' + themeValue;
 
         const themeText = document.createElement('span');
-        themeText.textContent = 'Example Text';
+        themeText.textContent = 'Aa';
         themeText.className = 'background-color__text';
 
         const label = document.createElement('span');
