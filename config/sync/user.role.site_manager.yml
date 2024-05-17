@@ -85,6 +85,7 @@ dependencies:
     - term_merge
     - toolbar
     - unpublished_node_permissions
+    - update
     - webform
 id: site_manager
 label: 'Site Manager'
@@ -110,6 +111,7 @@ permissions:
   - 'administer blocks'
   - 'administer feeds_feed display'
   - 'administer media'
+  - 'administer menu'
   - 'administer menu positions'
   - 'administer paragraphs'
   - 'administer redirects'
@@ -344,3 +346,4 @@ permissions:
   - 'view resources revisions'
   - 'view resources unpublished content'
   - 'view unpublished paragraphs'
+  - 'view update notifications'
