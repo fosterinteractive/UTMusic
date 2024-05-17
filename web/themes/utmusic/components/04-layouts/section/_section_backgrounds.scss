@@ -19,7 +19,7 @@
 
 .theme--dark-blue-bg {
   .l-section__background,
-  &.background-color-wrapper {
+  &.paragraphs-config__background-color {
     @extend %l-section__background;
     background-image: url('../images/noise.svg'), url('../images/texture-left.svg');
     background-color: palette(black, 200);
@@ -37,7 +37,7 @@
   @extend %theme--blue-light;
 
   .l-section__background,
-  &.background-color-wrapper {
+  &.paragraphs-config__background-color {
     @extend %l-section__background;
     background-image: url('../images/noise.svg'), url('../images/texture-right.svg');
     background-color: #A6DCF2;
@@ -52,7 +52,7 @@
   @extend %theme--blue-light;
 
   .l-section__background,
-  &.background-color-wrapper {
+  &.paragraphs-config__background-color {
     @extend %l-section__background;
     background-image: url('../images/noise.svg'), url('../images/texture-left.svg');
     background-color: #A6DCF2;
@@ -67,7 +67,7 @@
   @extend %theme--blue-light;
 
   .l-section__background,
-  &.background-color-wrapper {
+  &.paragraphs-config__background-color {
     @extend %l-section__background;
     background-image: url('../images/noise.svg'), url('../images/texture-both.svg');
     background-color: #A6DCF2;

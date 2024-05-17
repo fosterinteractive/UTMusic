@@ -2,7 +2,7 @@ _core:
   default_config_hash: AtIAto7dhVLb5ebfx-6vKlm48k7s4hTFQQU2U-atmjA
 determine_menu: true
 disable_admin_page: true
-append_current_page: true
+append_current_page: false
 current_page_as_link: false
 stop_on_first_match: false
 append_member_page: false
@@ -11,6 +11,7 @@ remove_home: false
 add_home: true
 front_title: 0
 exclude_empty_url: false
+exclude_disabled_menu_items: false
 derived_active_trail: false
 menu_breadcrumb_menus:
   main:
@@ -18,12 +19,27 @@ menu_breadcrumb_menus:
     weight: -10
     taxattach: 0
     langhandle: 0
+  account:
+    enabled: 0
+    weight: 0
+    taxattach: 0
+    langhandle: 0
   admin:
     enabled: 0
     weight: 0
     taxattach: 0
     langhandle: 0
+  devel:
+    enabled: 0
+    weight: 0
+    taxattach: 0
+    langhandle: 0
   footer:
+    enabled: 0
+    weight: 0
+    taxattach: 0
+    langhandle: 0
+  footer-shortcuts:
     enabled: 0
     weight: 0
     taxattach: 0
@@ -34,16 +50,6 @@ menu_breadcrumb_menus:
     taxattach: 0
     langhandle: 0
   tools:
-    enabled: 0
-    weight: 0
-    taxattach: 0
-    langhandle: 0
-  account:
-    enabled: 0
-    weight: 0
-    taxattach: 0
-    langhandle: 0
-  workbench:
     enabled: 0
     weight: 0
     taxattach: 0
