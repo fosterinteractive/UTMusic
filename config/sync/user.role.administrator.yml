@@ -128,6 +128,7 @@ label: Administrator
 weight: -6
 is_admin: null
 permissions:
+  - 'access administration pages'
   - 'access any webform configuration'
   - 'access block library'
   - 'access config_pages overview'
