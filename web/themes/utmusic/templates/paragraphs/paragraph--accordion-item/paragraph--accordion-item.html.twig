@@ -36,6 +36,7 @@
  * @ingroup themeable
  */
 #}
+
 {% include "@molecules/accordion/accordion-item.twig" with {
     directory: directory,
     anchor_id: content.field_accordion_item_anchor_tag[0] ? content.field_accordion_item_anchor_tag[0]['#context']['value'],
@@ -44,6 +45,7 @@
     content: content.field_accordion_item_content[0] ? content.field_accordion_item_content,
     is_admin: is_admin,
     absolute_path: absolute_path,
-    relative_path: relative_path
+    relative_path: relative_path,
+    title_html_element: paragraph.parentEntity.field_accord_title_html_element.0.value ? paragraph.parentEntity.field_accord_title_html_element.0.value
   }
 %}

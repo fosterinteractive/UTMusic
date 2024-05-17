@@ -1,0 +1,348 @@
+uuid: 7ad1830b-7cd0-4241-a7ee-17dbb5f1fc9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.no_views_results_behaviour
+    - feeds.feed_type.csv_event_feed
+    - feeds.feed_type.csv_person_feed
+    - filter.format.fact
+    - filter.format.fact_value
+    - filter.format.header_summary
+    - filter.format.raw_html
+    - filter.format.rich_text
+    - filter.format.rich_text_w_images
+    - filter.format.simple_text
+    - filter.format.table
+    - media.type.ed_file
+    - media.type.ed_image
+    - media.type.illustration
+    - media.type.link
+    - media.type.resources_files
+    - media.type.resources_link_to_form
+    - media.type.video
+    - node.type.event
+    - node.type.job
+    - node.type.news
+    - node.type.page
+    - node.type.people
+    - node.type.program
+    - node.type.resources
+    - taxonomy.vocabulary.audience
+    - taxonomy.vocabulary.degree_title
+    - taxonomy.vocabulary.ed_news_category
+    - taxonomy.vocabulary.ed_profile_type
+    - taxonomy.vocabulary.ed_promote_content
+    - taxonomy.vocabulary.ensembles_choirs
+    - taxonomy.vocabulary.event_type
+    - taxonomy.vocabulary.faculty_job_titles
+    - taxonomy.vocabulary.faculty_roles
+    - taxonomy.vocabulary.instrument
+    - taxonomy.vocabulary.job_category
+    - taxonomy.vocabulary.juries_forms_category
+    - taxonomy.vocabulary.librarians_library_staff_job_tit
+    - taxonomy.vocabulary.location
+    - taxonomy.vocabulary.news_area_of_study
+    - taxonomy.vocabulary.people_role
+    - taxonomy.vocabulary.program_stream
+    - taxonomy.vocabulary.program_type
+    - taxonomy.vocabulary.programs_list
+    - taxonomy.vocabulary.promote_on_news
+    - taxonomy.vocabulary.promoted_on_events
+    - taxonomy.vocabulary.staff_job_titles
+    - taxonomy.vocabulary.staff_roles
+    - taxonomy.vocabulary.undergraduate_forms_category
+    - workflows.workflow.editorial
+  module:
+    - admin_toolbar_search
+    - block
+    - block_content
+    - content_moderation
+    - contextual
+    - dropzonejs
+    - editoria11y
+    - entity_browser
+    - feeds
+    - field_ui
+    - file
+    - filter
+    - markerio
+    - media
+    - media_bulk_upload
+    - media_entity_download
+    - menu_position
+    - moderated_content_bulk_publish
+    - node
+    - paragraphs
+    - path
+    - rabbit_hole
+    - rebuild_cache_access
+    - redirect
+    - replicate_ui
+    - system
+    - taxonomy
+    - term_merge
+    - toolbar
+    - unpublished_node_permissions
+    - update
+    - webform
+id: site_manager
+label: 'Site Manager'
+weight: -7
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access block library'
+  - 'access content'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access ed_file entity browser pages'
+  - 'access feed overview'
+  - 'access file_resources entity browser pages'
+  - 'access files overview'
+  - 'access markerio'
+  - 'access media overview'
+  - 'access own webform configuration'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'access webform help'
+  - 'access webform overview'
+  - 'administer block content'
+  - 'administer blocks'
+  - 'administer feeds_feed display'
+  - 'administer media'
+  - 'administer menu'
+  - 'administer menu positions'
+  - 'administer redirects'
+  - 'administer taxonomy'
+  - 'clear csv_event_feed feeds'
+  - 'clear csv_person_feed feeds'
+  - 'clear own csv_event_feed feeds'
+  - 'clear own csv_person_feed feeds'
+  - 'create csv_event_feed feeds'
+  - 'create csv_person_feed feeds'
+  - 'create ed_file media'
+  - 'create ed_image media'
+  - 'create event content'
+  - 'create illustration media'
+  - 'create job content'
+  - 'create link media'
+  - 'create media'
+  - 'create news content'
+  - 'create page content'
+  - 'create people content'
+  - 'create program content'
+  - 'create resources content'
+  - 'create resources_files media'
+  - 'create resources_link_to_form media'
+  - 'create terms in audience'
+  - 'create terms in degree_title'
+  - 'create terms in ed_news_category'
+  - 'create terms in ed_profile_type'
+  - 'create terms in ed_promote_content'
+  - 'create terms in ensembles_choirs'
+  - 'create terms in event_type'
+  - 'create terms in faculty_job_titles'
+  - 'create terms in faculty_roles'
+  - 'create terms in instrument'
+  - 'create terms in job_category'
+  - 'create terms in juries_forms_category'
+  - 'create terms in librarians_library_staff_job_tit'
+  - 'create terms in location'
+  - 'create terms in news_area_of_study'
+  - 'create terms in people_role'
+  - 'create terms in program_stream'
+  - 'create terms in program_type'
+  - 'create terms in programs_list'
+  - 'create terms in promote_on_news'
+  - 'create terms in promoted_on_events'
+  - 'create terms in staff_job_titles'
+  - 'create terms in staff_roles'
+  - 'create terms in undergraduate_forms_category'
+  - 'create url aliases'
+  - 'create video media'
+  - 'create webform'
+  - 'delete any ed_file media'
+  - 'delete any ed_image media'
+  - 'delete any file'
+  - 'delete any illustration media'
+  - 'delete any link media'
+  - 'delete any media'
+  - 'delete any resources_files media'
+  - 'delete any resources_link_to_form media'
+  - 'delete any video media'
+  - 'delete csv_event_feed feeds'
+  - 'delete csv_person_feed feeds'
+  - 'delete media'
+  - 'delete own csv_event_feed feeds'
+  - 'delete own csv_person_feed feeds'
+  - 'delete own ed_file media'
+  - 'delete own ed_image media'
+  - 'delete own files'
+  - 'delete own illustration media'
+  - 'delete own link media'
+  - 'delete own resources_files media'
+  - 'delete own resources_link_to_form media'
+  - 'delete own video media'
+  - 'delete own webform'
+  - 'delete own webform submission'
+  - 'delete terms in audience'
+  - 'delete terms in degree_title'
+  - 'delete terms in ed_news_category'
+  - 'delete terms in ed_profile_type'
+  - 'delete terms in ed_promote_content'
+  - 'delete terms in ensembles_choirs'
+  - 'delete terms in event_type'
+  - 'delete terms in faculty_job_titles'
+  - 'delete terms in faculty_roles'
+  - 'delete terms in instrument'
+  - 'delete terms in job_category'
+  - 'delete terms in juries_forms_category'
+  - 'delete terms in librarians_library_staff_job_tit'
+  - 'delete terms in location'
+  - 'delete terms in news_area_of_study'
+  - 'delete terms in people_role'
+  - 'delete terms in program_stream'
+  - 'delete terms in program_type'
+  - 'delete terms in programs_list'
+  - 'delete terms in promote_on_news'
+  - 'delete terms in promoted_on_events'
+  - 'delete terms in staff_job_titles'
+  - 'delete terms in staff_roles'
+  - 'delete terms in undergraduate_forms_category'
+  - 'download media'
+  - 'dropzone upload files'
+  - 'edit any ed_file media'
+  - 'edit any ed_image media'
+  - 'edit any event content'
+  - 'edit any illustration media'
+  - 'edit any job content'
+  - 'edit any link media'
+  - 'edit any news content'
+  - 'edit any no_views_results_behaviour block content'
+  - 'edit any page content'
+  - 'edit any people content'
+  - 'edit any program content'
+  - 'edit any resources content'
+  - 'edit any resources_files media'
+  - 'edit any resources_link_to_form media'
+  - 'edit any video media'
+  - 'edit own ed_file media'
+  - 'edit own ed_image media'
+  - 'edit own event content'
+  - 'edit own illustration media'
+  - 'edit own job content'
+  - 'edit own link media'
+  - 'edit own news content'
+  - 'edit own page content'
+  - 'edit own people content'
+  - 'edit own program content'
+  - 'edit own resources content'
+  - 'edit own resources_files media'
+  - 'edit own resources_link_to_form media'
+  - 'edit own video media'
+  - 'edit own webform'
+  - 'edit own webform submission'
+  - 'edit terms in audience'
+  - 'edit terms in degree_title'
+  - 'edit terms in ed_news_category'
+  - 'edit terms in ed_profile_type'
+  - 'edit terms in ed_promote_content'
+  - 'edit terms in ensembles_choirs'
+  - 'edit terms in event_type'
+  - 'edit terms in faculty_job_titles'
+  - 'edit terms in faculty_roles'
+  - 'edit terms in instrument'
+  - 'edit terms in job_category'
+  - 'edit terms in juries_forms_category'
+  - 'edit terms in librarians_library_staff_job_tit'
+  - 'edit terms in location'
+  - 'edit terms in news_area_of_study'
+  - 'edit terms in people_role'
+  - 'edit terms in program_stream'
+  - 'edit terms in program_type'
+  - 'edit terms in programs_list'
+  - 'edit terms in promote_on_news'
+  - 'edit terms in promoted_on_events'
+  - 'edit terms in staff_job_titles'
+  - 'edit terms in staff_roles'
+  - 'edit terms in undergraduate_forms_category'
+  - 'import csv_event_feed feeds'
+  - 'import csv_person_feed feeds'
+  - 'import own csv_event_feed feeds'
+  - 'import own csv_person_feed feeds'
+  - 'mark as hidden in editoria11y'
+  - 'merge taxonomy terms'
+  - 'moderated content bulk archive'
+  - 'moderated content bulk pin content'
+  - 'moderated content bulk publish'
+  - 'moderated content bulk unpin content'
+  - 'moderated content bulk unpublish'
+  - 'rabbit hole bypass node'
+  - 'rebuild cache access'
+  - 'replicate entities'
+  - 'revert all revisions'
+  - 'revert any no_views_results_behaviour block content revisions'
+  - 'revert event revisions'
+  - 'revert job revisions'
+  - 'revert news revisions'
+  - 'revert page revisions'
+  - 'revert people revisions'
+  - 'revert program revisions'
+  - 'revert resources revisions'
+  - 'schedule_import csv_event_feed feeds'
+  - 'schedule_import csv_person_feed feeds'
+  - 'schedule_import own csv_event_feed feeds'
+  - 'schedule_import own csv_person_feed feeds'
+  - 'update any media'
+  - 'update csv_event_feed feeds'
+  - 'update csv_person_feed feeds'
+  - 'update media'
+  - 'update own csv_event_feed feeds'
+  - 'update own csv_person_feed feeds'
+  - 'use admin toolbar search'
+  - 'use ed_image_bulk_upload bulk upload form'
+  - 'use editorial transition archive'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish'
+  - 'use editorial transition restore'
+  - 'use editorial transition restore_to_draft'
+  - 'use text format fact'
+  - 'use text format fact_value'
+  - 'use text format header_summary'
+  - 'use text format raw_html'
+  - 'use text format rich_text'
+  - 'use text format rich_text_w_images'
+  - 'use text format simple_text'
+  - 'use text format table'
+  - 'view all media revisions'
+  - 'view all revisions'
+  - 'view any no_views_results_behaviour block content history'
+  - 'view any unpublished content'
+  - 'view any webform submission'
+  - 'view csv_event_feed feeds'
+  - 'view csv_person_feed feeds'
+  - 'view editoria11y checker'
+  - 'view event revisions'
+  - 'view event unpublished content'
+  - 'view job revisions'
+  - 'view job unpublished content'
+  - 'view latest version'
+  - 'view media'
+  - 'view news revisions'
+  - 'view news unpublished content'
+  - 'view own csv_event_feed feeds'
+  - 'view own csv_person_feed feeds'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view own webform submission'
+  - 'view page revisions'
+  - 'view page unpublished content'
+  - 'view people revisions'
+  - 'view people unpublished content'
+  - 'view program revisions'
+  - 'view program unpublished content'
+  - 'view resources revisions'
+  - 'view resources unpublished content'
+  - 'view unpublished paragraphs'
+  - 'view update notifications'

@@ -25,11 +25,11 @@
       {% if is_admin == 1 %}
         {# if the absolute or relative links exists  #}
         {% if absolute_link or relative_link %}
-          <div class="m-accordion-item__copy-links">
+          <div class="m-item__copy-links">
             {% if absolute_link %}
 
-              <div class="m-accordion-item__copy-link">
-                <button aria-labelledby="{{ accordion__tooltip__id }}--absolute" class="m-accordion-item__copy-btn is-absolute data-trigger" data-template="{{ accordion__tooltip__id }}--absolute" type="button">
+              <div class="m-item__copy-link">
+                <button aria-labelledby="{{ accordion__tooltip__id }}--absolute" class="m-item__copy-btn is-absolute data-trigger" data-template="{{ accordion__tooltip__id }}--absolute" type="button">
                   {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
                       directory: directory,
                       icon: 'envelope',
@@ -47,8 +47,8 @@
             {% endif %}
 
             {% if relative_link %}
-              <div class="m-accordion-item__copy-link">
-                <button aria-labelledby="{{ accordion__tooltip__id }}--relative" class="m-accordion-item__copy-btn is-relative data-trigger" data-template="{{ accordion__tooltip__id }}--relative" type="button">
+              <div class="m-item__copy-link">
+                <button aria-labelledby="{{ accordion__tooltip__id }}--relative" class="m-item__copy-btn is-relative data-trigger" data-template="{{ accordion__tooltip__id }}--relative" type="button">
                   {% include "@atoms/icon/icon-sprite/icon-sprite.twig" with {
                       directory: directory,
                       icon: 'link-simple',
@@ -69,7 +69,7 @@
       {% endif %}
 
       {% if title %}
-        <h4>
+        <{{ title_html_element|default('h3') }}>
           <button class="m-accordion-item__label toggle js-accordion-item__toggle" aria-expanded="false" id="{{ accordion__header__id }}" aria-controls="{{ accordion__panel__id }}" >
             <span>
               {{ title }} <br>

@@ -1,0 +1,21 @@
+<?php
+
+use Drupal\node\Entity\Node;
+use Drupal\paragraphs\Entity\Paragraph;
+
+
+/**
+ * Removes 'center' alignment from section titles.
+ */
+function content_updates_update_10003() {
+  $paragraphs = \Drupal::entityTypeManager()
+    ->getStorage('paragraph')
+    ->loadByProperties(['type' => 'section_title']);
+
+  foreach ($paragraphs as $paragraph) {
+    if ($paragraph->get('field_section_title_alignment')->value === 'center') {
+      $paragraph->set('field_section_title_alignment', 'left'); // Update to 'left' or another value
+      $paragraph->save();
+    }
+  }
+}

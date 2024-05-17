@@ -108,7 +108,9 @@
         "drupal/feeds": "3.0-beta4",
         "drupal/feeds_tamper": "2.0-beta3",
         "drupal/oembed_lazyload": "^2.0",
-        "drupal/editoria11y": "^2.1"
+        "drupal/editoria11y": "^2.1",
+        "drupal/menu_firstchild": "^2.1",
+        "drupal/rebuild_cache_access": "^1.9"
     },
     "require-dev": {
         "drupal/coder": "^8.3"
@@ -181,7 +183,10 @@
         },
         "patches": {
             "drupal/core": {
-                "3324225 - Table cell issue in CKEditor5 for Drupal 10": "https://www.drupal.org/files/issues/2023-11-14/ckeditor5-table-cell-3324225-51.drupal10-1-5.patch"
+                "3356667 - Error: Cannot read properties of undefined (reading 'settings') with dialog.position.js": "https://www.drupal.org/files/issues/2023-04-26/dialog.position-3356667-2.patch",
+                "3324225 - Table cell issue in CKEditor5 for Drupal 10": "https://www.drupal.org/files/issues/2023-11-14/ckeditor5-table-cell-3324225-51.drupal10-1-5.patch",
+                "3358586 - RuntimeException: Adding non-existent permissions to a role is not allowed": "https://www.drupal.org/files/issues/2023-09-14/3358586-11.patch",
+                "2877953 - HtmlEscapedText object to string conversion error" : "https://www.drupal.org/files/issues/2022-08-31/2877953-34-htmlescapedtext_to_string.patch"
             },
             "drupal/audiorecorder": {
                 "3316491 - No save in theme 'Gin'": "https://www.drupal.org/files/issues/2023-04-21/audiorecorder-rc1-no-save-in-theme-gin-3316491.patch"

@@ -113,7 +113,7 @@ function utmusic_preprocess_paragraph(array &$variables) {
   }
 
   if ($paragraph_view_mode == 'default') {
-    if ($paragraph_type == 'accordion_item') {
+    if ($paragraph_type == 'accordion_item' || $paragraph_type == 'section_title') {
       $host = \Drupal::request()->getSchemeAndHttpHost();
       $current_path = \Drupal::service('path.current')->getPath();
       $current_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
@@ -129,7 +129,7 @@ function utmusic_preprocess_paragraph(array &$variables) {
     'events_summary_list_dynamic' => ['type' => 'event'],
     'news_featured_item' => ['type' => 'news_featured'],
     'event_featured_item' => ['type' => 'event_featured'],
-    'programs_full_list_dynamic' => ['type' => 'program_full'],
+    // 'programs_full_list_dynamic' => ['type' => 'program_full'],
     'job_listing' => ['type' => 'job_listing']
   ];
 
@@ -187,18 +187,18 @@ function utmusic_preprocess_paragraph(array &$variables) {
         'number_other_items' => null,
         'offset' => 'field_event_offset',
       ],
-      'program_full' => [
-        'title' => null,
-        'contextual' => [
-          'category1' => 'field_program_full_list_stream',
-          'category2' => 'field_program_full_list_type',
-        ],
-        'show_filter' => 'field_program_full_list_show_fil',
-        'number_items' => null,
-        'number_other_items' => null,
-        'offset' => null,
-        'status' => null,
-      ],
+      // 'program_full' => [
+      //   'title' => null,
+      //   'contextual' => [
+      //     'category1' => 'field_program_full_list_stream',
+      //     'category2' => 'field_program_full_list_type',
+      //   ],
+      //   'show_filter' => 'field_program_full_list_show_fil',
+      //   'number_items' => null,
+      //   'number_other_items' => null,
+      //   'offset' => null,
+      //   'status' => null,
+      // ],
       'job_listing' => [
         'title' => null,
         'contextual' => [
@@ -301,9 +301,9 @@ function utmusic_preprocess_paragraph(array &$variables) {
       elseif ($paragraph_type == 'event_featured_item') {
         $variables['content']['event_featured_item'] = utmusic_return_rendered_view('events_full_list', 'events_featured_item', null , $categories, $dynamic_title, $offset);
       }
-      elseif ($paragraph_type == 'programs_full_list_dynamic') {
-        $variables['content']['programs_full_list_dynamic'] = utmusic_return_rendered_view('programs_full_list', 'programs_full_list', null , $categories, null, null, $show_filter);
-      }
+      // elseif ($paragraph_type == 'programs_full_list_dynamic') {
+      //   $variables['content']['programs_full_list_dynamic'] = utmusic_return_rendered_view('programs_full_list', 'programs_full_list', null , $categories, null, null, $show_filter);
+      // }
       elseif ($paragraph_type == 'job_listing') {
         $variables['content']['job_listing_block'] = utmusic_return_rendered_view('jobs_full_list', 'job_listing_block', $number_items , $categories, null, $offset, null, null);
       }
@@ -579,8 +579,8 @@ function utmusic_form_views_exposed_form_alter(&$form, FormStateInterface $form_
 
     if (isset($form[$field])) {
       $limited_args = [];
-      if (isset($view->args[3]) && $view->args[3] !== 'all') {
-        $limited_args = explode("+", $view->args[3]);
+      if (isset($view->args[1]) && $view->args[1] !== 'all') {
+        $limited_args = explode(",", $view->args[1]);
       }
 
       $filtered_options = ["All" => "- Any -"];
@@ -603,8 +603,8 @@ function utmusic_form_views_exposed_form_alter(&$form, FormStateInterface $form_
           }
         }
       }
-      
-      $filter_display = $view->args[4] ?? NULL;
+
+      $filter_display = $view->args[2] ?? NULL;
 
       if ($filter_display == 'hide-filter') {
         $form[$field]['#access'] = FALSE;

@@ -1,5 +1,5 @@
 // Admin links
-.m-accordion-item__copy-links {
+.m-item__copy-links {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -7,11 +7,11 @@
   margin-left: rem(-30px);
 }
 
-.m-accordion-item__copy-link {
+.m-item__copy-link {
   margin-right: 10px;
 }
 
-.m-accordion-item__copy-btn {
+.m-item__copy-btn {
   background-color: palette(teal, 1000);
   border-radius: rem(5px);
   padding: rem(6px);  
@@ -73,7 +73,7 @@
   &:hover,
   &:focus,
   &:active {
-    background-color: var(--c-accordion-expand-button-bg);
+    background-color: var(--c-accordion-focus-bg);
     border: rem(1px) solid palette(blue);
   }
 }
@@ -99,7 +99,6 @@
 }
 
 .m-accordion-item__content[aria-hidden="false"] {
-  display: block;
   border-bottom: rem(1px) solid var(--c-accordion-item-border);
 }
 
@@ -113,7 +112,7 @@
 }
 
 .m-accordion-item__label[aria-expanded="true"] {
-  background-color: var(--c-accordion-expand-button-bg);
+  background-color: var(--c-accordion-focus-bg);
   border: rem(1px) solid palette(blue);
 
   .accordion-item__toggle-plus {

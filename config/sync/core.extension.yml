@@ -30,6 +30,7 @@ module:
   config_update_ui: 0
   content_moderation: 0
   content_moderation_notifications: 0
+  content_updates: 0
   contextual: 0
   crop: 0
   ctools: 0
@@ -99,6 +100,7 @@ module:
   mega_menu_builder: 0
   menu_block: 0
   menu_breadcrumb: 0
+  menu_firstchild: 0
   menu_item_extras: 0
   menu_position: 0
   menu_ui: 0
@@ -120,6 +122,7 @@ module:
   phpass: 0
   priority_plus_menu: 0
   rabbit_hole: 0
+  rebuild_cache_access: 0
   recaptcha: 0
   redirect: 0
   redirect_404: 0

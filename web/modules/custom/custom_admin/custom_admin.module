@@ -13,6 +13,7 @@
 
 use Drupal\Core\Render\Element;
 use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\Yaml\Yaml;
 
 /**
  * Implements hook_page_attachments().
@@ -565,14 +566,48 @@ function custom_admin_field_group_form_process(array &$element, &$group, &$compl
       ]]
     ];
   }
-
 }
 
+function custom_admin_get_icon_mappings() {
+  $theme_handler = \Drupal::service('theme_handler');
+
+  // Check if the theme handler service is available
+  if ($theme_handler) {
+    $theme = $theme_handler->getTheme('utmusic');
+    if ($theme) {
+      $theme_path = $theme->getPath();
+      $file_path = $theme_path . '/utmusic.layouts.yml';
+
+      $file_system = \Drupal::service('file_system');
+      $real_path = $file_system->realpath($file_path);
+
+      if (file_exists($real_path)) {
+        $content = file_get_contents($real_path);
+        $mappings = Yaml::parse($content);
+        return $mappings;
+      } else {
+        drupal_set_message('Icon mappings file not found.', 'error');
+      }
+    } else {
+      drupal_set_message('Theme utmusic not found.', 'error');
+    }
+  } else {
+    drupal_set_message('Theme handler service is not available.', 'error');
+  }
+
+  return [];
+}
 
 /**
  * Implements hook_form_alter().
  */
 function custom_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  
+  if ($form_id == 'layout_paragraphs_component_form') {
+    $icon_mappings = custom_admin_get_icon_mappings();
+    $form['#attached']['drupalSettings']['custom_admin']['iconMappings'] = $icon_mappings;
+    $form['#attached']['library'][] = 'custom_admin/icon_replacement';
+  }
 
   // Check if the form_id matches the desired form
   if ($form_id == 'menu_link_content_main_form') {

@@ -27,19 +27,3 @@
     listing_items: items,
   } only
 %}
-
-
-{# variation: 'events-condensed', #}
-
-{# {% set items = [] %}
-{% for row in rows %}
-  {% set items = items|merge([row.content]) %}
-{% endfor %}
-
-{% include "@organisms/listing/listing.twig"
-  with {
-    directory: 'themes/utmusic',
-    variation: 'news',
-    listing_items: items,
-  } only
-%} #}

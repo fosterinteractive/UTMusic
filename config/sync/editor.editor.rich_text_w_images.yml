@@ -11,6 +11,7 @@ editor: ckeditor5
 settings:
   toolbar:
     items:
+      - heading
       - style
       - '|'
       - bold
@@ -19,7 +20,6 @@ settings:
       - subscript
       - removeFormat
       - '|'
-      - alignment
       - '|'
       - link
       - '|'
@@ -33,15 +33,14 @@ settings:
       - '|'
       - sourceEditing
       - '|'
-      - heading
       - insertTable
       - underline
       - horizontalLine
   plugins:
     ckeditor5_alignment:
       enabled_alignments:
-        - left
         - center
+        - left
         - right
     ckeditor5_heading:
       enabled_headings:
@@ -118,8 +117,6 @@ settings:
     linkit_extension:
       linkit_enabled: true
       linkit_profile: default
-    media_contextual_crop_embed_MCCE:
-      view_mode: default
     media_media:
       allow_view_mode_override: false
 image_upload:

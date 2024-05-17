@@ -49,12 +49,12 @@
   --c-figcaptions: #{palette(grey, 400)};
 
   // @atoms/link
-  --c-link: #{palette(teal, 300)};
+  --c-link: #{palette(blue)};
   --c-link--active: #{palette(blue)};
-  --c-link-decoration: #{palette(teal, 300)};
+  --c-link-decoration: #{palette(blue)};
   --c-link-decoration--active: #{palette(blue)};
-  // --c-link-icon-external, url('./svg/svg-art/external-link-square-alt.svg')};
-  // --c-link-background--active, rgba(#{palette(grey, 400), 0.15)};
+  --c-link-background--active: #{palette(grey, 1000)};
+  --c-link-icon-external: url('/themes/utmusic/images/icons/external_link.svg');
 
   // @atoms/lists
   --c-list-bullet: #{palette(blue, 900)};
@@ -83,6 +83,7 @@
   --c-accordion-item-border: #{palette(teal, 700)};
   --c-accordion-item-text: #{palette(grey, 300)};
   --c-accordion-expand-button-bg: #{palette(teal, 1000)};
+  --c-accordion-focus-bg: #{palette(teal, 1000)};
   --c-accordion-expand-button-text: #{palette(blue, 300)};
 
 
@@ -218,6 +219,7 @@
 
   //@molecules/accordion
   --c-accordion-expand-button-bg: #{palette(white)};
+  --c-accordion-focus-bg: #{palette(white)};
   
   // @organisms/listing
   --c-listing-item--border: #{palette(teal, 700)};
@@ -241,6 +243,14 @@
   --c-heading: #{palette(white)};
   --c-figcaptions: #{palette(white)};
 
+  // a-link
+  --c-link: #{palette(white)};
+  --c-link--active: #{palette(white)};
+  --c-link-decoration: #{palette(white)};
+  --c-link-decoration--active: #{palette(white)};
+  --c-link-background--active: #{palette(blue)};
+  --c-link-icon-external: url('/themes/utmusic/images/icons/external_link-white.svg');
+
 
   //@molecules/featured media
   --c-featured-media-title: #{palette(white)};
@@ -254,5 +264,9 @@
   // @molecules/quote
   --c-quote: #{palette(white)};
   --c-quote-text-border: #{palette(white)};
+
+  // @molecules/Accordion
+  --c-accordion-item-label: #{palette(white)};
+  --c-accordion-focus-bg: #{palette(blue, 300)};
 }
 

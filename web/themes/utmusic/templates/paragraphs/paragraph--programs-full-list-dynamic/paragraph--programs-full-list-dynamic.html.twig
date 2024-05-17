@@ -36,10 +36,42 @@
  * @ingroup themeable
  */
 #}
+
+{% set program_full_list_type = NULL %}
+
+{% if content.field_program_full_list_type[0] %}
+  {# Get number of items #}
+  {% set item_count = paragraph.field_program_full_list_type.value|length %}
+
+  {# For each item add to program_full_list_type string - Eg. 3 terms will get commas for or filters "12,34,64" #}
+  {% for i in 0..item_count - 1 %}
+    {% set term_id = paragraph.field_program_full_list_type[i].value['target_id'] %}
+    {% set program_full_list_type = program_full_list_type ~ term_id %}
+    {% if not loop.last %}
+      {% set program_full_list_type = program_full_list_type ~ ',' %} 
+    {% endif %}
+  {% endfor %}
+{% else %}
+  {% set program_full_list_type = 'all' %}
+{% endif %}
+
+{% if content.field_program_full_list_stream[0] %}
+  {% set program_full_list_stream = content.field_program_full_list_stream[0]['#plain_text'] %}
+{% else %}
+  {% set program_full_list_stream = 'all' %}
+{% endif %}
+
+{% set filter_display = not paragraph.field_program_full_list_show_fil.isEmpty() ? paragraph.field_program_full_list_show_fil.value : 'enable-filter' %}
+
+{% if filter_display == 'hide-filter' %}
+  {% set hide_exposed = true %}
+{% endif %}
+
+{% set view_content = drupal_view('programs_full_list', 'programs_full_list', program_full_list_stream, program_full_list_type, filter_display) %}
+
 {% include "@organisms/content-views/_view.twig"
   with {
-    unpublished: unpublished,
-    attributes: attributes,
-    content: content.programs_full_list_dynamic,
+    hide_exposed: hide_exposed,
+    content: view_content,
   } only
 %}
