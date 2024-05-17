@@ -74,7 +74,6 @@ dependencies:
     - moderated_content_bulk_publish
     - node
     - paragraphs
-    - paragraphs_admin
     - path
     - rabbit_hole
     - rebuild_cache_access
@@ -114,7 +113,6 @@ permissions:
   - 'administer media'
   - 'administer menu'
   - 'administer menu positions'
-  - 'administer paragraphs'
   - 'administer redirects'
   - 'administer taxonomy'
   - 'clear csv_event_feed feeds'
