@@ -1,6 +1,6 @@
 /**
  * This JavaScript script adds icons to select elements in a form layout_paragraphs_component_form instead of Content Width select and Background Color select.
- * see web/themes/music/music.layouts.yml 'icon_mapping'
+ * see web/themes/utmusic/utmusic.layouts.yml 'icon_mapping'
  */
 
 (function (Drupal) {
