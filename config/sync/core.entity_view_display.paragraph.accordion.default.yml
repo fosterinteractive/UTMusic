@@ -3,18 +3,27 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.accordion.field_accord_title_html_element
     - field.field.paragraph.accordion.field_accordion_items
     - field.field.paragraph.accordion.field_accordion_summary
     - field.field.paragraph.accordion.field_accordion_title
     - paragraphs.paragraphs_type.accordion
   module:
     - entity_reference_revisions
+    - options
     - text
 id: paragraph.accordion.default
 targetEntityType: paragraph
 bundle: accordion
 mode: default
 content:
+  field_accord_title_html_element:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_accordion_items:
     type: entity_reference_revisions_entity_view
     label: above

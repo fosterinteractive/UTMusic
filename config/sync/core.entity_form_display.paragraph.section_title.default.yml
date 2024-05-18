@@ -28,7 +28,7 @@ third_party_settings:
         show_empty_fields: false
         id: ''
         open: false
-        description: 'Use to create a link to this page that automatically scroll to this component'
+        description: 'Use to create a link to this page that automatically scroll to this component.'
         required_fields: true
 id: paragraph.section_title.default
 targetEntityType: paragraph
