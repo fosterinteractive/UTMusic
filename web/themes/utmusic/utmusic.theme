@@ -457,6 +457,17 @@ function utmusic_preprocess_toolbar(&$variables) {
   $variables['#attached']['library'][] = 'utmusic/toolbar';
 }
 
+/**
+ * implements hook_preprocess_breadcrumb().
+ */
+function utmusic_preprocess_breadcrumb(&$variables) {
+  $node = utmusic_get_node_from_route();
+  if ($node) {
+    $variables['#cache']['tags'][] = 'node:' . $node->id();
+  }
+  
+  $variables['#cache']['contexts'][] = 'url';
+} 
 
 /**
  * Renders a view.
