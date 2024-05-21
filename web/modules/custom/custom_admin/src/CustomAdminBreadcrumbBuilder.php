@@ -149,7 +149,7 @@ class CustomAdminBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     // If this does not have a menu breadcrumb then build a custom breadcrumb.
     else {
       $links[] = Link::createFromRoute($this->t('Home'), '<front>');
-      $links[] = Link::createFromRoute($node->label(), '<none>');
+      // $links[] = Link::createFromRoute($node->label(), '<none>');
 
       $breadcrumb = new Breadcrumb();
       $breadcrumb->addCacheableDependency($node);
