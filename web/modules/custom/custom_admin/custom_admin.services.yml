@@ -1,0 +1,7 @@
+services:
+
+  custom_admin.custom_admin_breadcrumb:
+    class: Drupal\custom_admin\CustomAdminBreadcrumbBuilder
+    arguments: ['@config.factory', '@plugin.manager.menu.link', '@menu_breadcrumb.breadcrumb.default', '@router.route_provider', '@entity_type.manager']
+    tags:
+    - { name: breadcrumb_builder, priority: 1020 }
