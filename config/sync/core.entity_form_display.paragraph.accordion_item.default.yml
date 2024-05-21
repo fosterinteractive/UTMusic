@@ -10,7 +10,25 @@ dependencies:
     - paragraphs.paragraphs_type.accordion_item
   module:
     - allowed_formats
+    - field_group
     - text
+third_party_settings:
+  field_group:
+    group_accordion_anchor:
+      children:
+        - field_accordion_item_anchor_tag
+      label: 'Anchor / Jump Link'
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: 'Use to create a link to this page that automatically scroll to this component'
+        required_fields: true
 id: paragraph.accordion_item.default
 targetEntityType: paragraph
 bundle: accordion_item
@@ -18,7 +36,7 @@ mode: default
 content:
   field_accordion_item_anchor_tag:
     type: string_textfield
-    weight: 3
+    weight: 4
     region: content
     settings:
       size: 60

@@ -4,13 +4,32 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.section_title.field_section_title_alignment
+    - field.field.paragraph.section_title.field_section_title_anchor_tag
     - field.field.paragraph.section_title.field_section_title_appearance
     - field.field.paragraph.section_title.field_section_title_html_element
     - field.field.paragraph.section_title.field_section_title_text
     - paragraphs.paragraphs_type.section_title
   module:
     - allowed_formats
+    - field_group
     - text
+third_party_settings:
+  field_group:
+    group_title_anchor_jump_link:
+      children:
+        - field_section_title_anchor_tag
+      label: 'Anchor / Jump Link'
+      region: content
+      parent_name: ''
+      weight: 5
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: 'Use to create a link to this page that automatically scroll to this component.'
+        required_fields: true
 id: paragraph.section_title.default
 targetEntityType: paragraph
 bundle: section_title
@@ -21,6 +40,14 @@ content:
     weight: 3
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_section_title_anchor_tag:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_section_title_appearance:
     type: options_select

@@ -1,5 +1,5 @@
 // Admin links
-.m-accordion-item__copy-links {
+.m-item__copy-links {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -7,11 +7,11 @@
   margin-left: rem(-30px);
 }
 
-.m-accordion-item__copy-link {
+.m-item__copy-link {
   margin-right: 10px;
 }
 
-.m-accordion-item__copy-btn {
+.m-item__copy-btn {
   background-color: palette(teal, 1000);
   border-radius: rem(5px);
   padding: rem(6px);  

@@ -10,7 +10,7 @@ field_name: field_accordion_item_anchor_tag
 entity_type: paragraph
 bundle: accordion_item
 label: 'Anchor Tag'
-description: 'Use lower case and dashes (eg. accordion-tag). All text will be transformed to lowered case. The prefix "anchor-" will appended and all spaces will be converted to ''-''. <b>Must</b> be unique.'
+description: 'Use lower case and dashes (eg. my-section-tag). All text will be transformed to lowered case. Must be unique on this page.'
 required: false
 translatable: false
 default_value: {  }

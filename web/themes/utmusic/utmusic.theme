@@ -113,7 +113,7 @@ function utmusic_preprocess_paragraph(array &$variables) {
   }
 
   if ($paragraph_view_mode == 'default') {
-    if ($paragraph_type == 'accordion_item') {
+    if ($paragraph_type == 'accordion_item' || $paragraph_type == 'section_title') {
       $host = \Drupal::request()->getSchemeAndHttpHost();
       $current_path = \Drupal::service('path.current')->getPath();
       $current_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);

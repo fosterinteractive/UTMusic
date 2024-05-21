@@ -11,11 +11,17 @@ full_1_col:
       required: true
       default: '[12]'
       options:
-        '[6]': '[6] of 12 columns Wide'
-        '[8]': '[8] of 12 columns Wide'
-        '[10]': '[10] of 12 columns Wide'
-        '[12]': '[12] of 12 columns Wide'
-        'none': 'Stretch 100% wide'
+        '[6]': 'Narrow'
+        '[8]': 'Medium'
+        '[10]': 'Wide'
+        '[12]': 'Extra Wide'
+        'none': 'Full Width'
+      icon_mapping:
+        '[6]': "sections/1col/six_columns.svg"
+        '[8]': "sections/1col/eight_columns.svg"
+        '[10]': "sections/1col/ten_columns.svg"
+        '[12]': "sections/1col/twelve_columns.svg"
+        'none': "sections/1col/stretch_wide.svg"
       description: 'Select the width for this section.'
     theme:
       label: 'Background Color'
@@ -39,6 +45,11 @@ full_1_col:
         'small': 'Small'
         'medium': 'Medium'
         'large': 'Large'
+      icon_mapping:
+        'none': "spacing_top/no_space.svg"
+        'small': "spacing_top/small_space.svg"
+        'medium': "spacing_top/medium_space.svg"
+        'large': "spacing_top/large_space.svg"
       description: 'Select the vertical spacing at the top of the section'
     spacing_bottom:
       label: 'Vertical Bottom Spacing'
@@ -50,6 +61,11 @@ full_1_col:
         'small': 'Small'
         'medium': 'Medium'
         'large': 'Large'
+      icon_mapping:
+        'none': "spacing_bottom/no_space.svg"
+        'small': "spacing_bottom/small_space.svg"
+        'medium': "spacing_bottom/medium_space.svg"
+        'large': "spacing_bottom/large_space.svg"
       description: 'Select the vertical spacing at the bottom of the section'
   default_region: zone1
   icon_map:
@@ -71,22 +87,39 @@ full_2_col:
       required: true
       default: '[4|8]'
       options:
-        '[3|8]': '[3|8] of 12 columns Wide'
-        '[3|9]': '[3|9] of 12 columns Wide'
-        '[4|6]': '[4|6] of 12 columns Wide'
-        '[4|7]': '[4|7] of 12 columns Wide'
-        '[4|8]': '[4|8] of 12 columns Wide' 
-        '[5|5]': '[5|5] of 12 columns Wide' 
-        '[5|6]': '[5|6] of 12 columns Wide' 
-        '[5|7]': '[5|7] of 12 columns Wide' 
-        '[6|4]': '[6|4] of 12 columns Wide' 
-        '[6|5]': '[6|5] of 12 columns Wide' 
-        '[6|6]': '[6|6] of 12 columns Wide' 
-        '[7|4]': '[7|4] of 12 columns Wide' 
-        '[7|5]': '[7|5] of 12 columns Wide' 
-        '[8|3]': '[8|3] of 12 columns Wide' 
-        '[8|4]': '[8|4] of 12 columns Wide' 
-        '[9|3]': '[9|3] of 12 columns Wide'
+        '[3|8]': 'Wide (27%/73%)'
+        '[3|9]': 'Extra Wide (25%/75%)'
+        '[4|6]': 'Wide (40%/60%)'
+        '[4|7]': 'Wide (36%/64%)'
+        '[4|8]': 'Extra Wide (33%/67%)' 
+        '[5|5]': 'Wide (50%/50%)' 
+        '[5|6]': 'Wide (45%/55%)' 
+        '[5|7]': 'Extra Wide (42%/58%)' 
+        '[6|4]': 'Wide (60%/40%)' 
+        '[6|5]': 'Wide (55%/45%)' 
+        '[6|6]': 'Extra Wide (50%/50%)' 
+        '[7|4]': 'Wide (64%/36%)' 
+        '[7|5]': 'Extra Wide (58%/42%)' 
+        '[8|3]': 'Wide (73%/27%)' 
+        '[8|4]': 'Extra Wide (67%/33%)' 
+        '[9|3]': 'Extra Wide (75%/25%)'
+      icon_mapping:
+        "[3|8]": "sections/2col/three_eight_columns.svg"
+        "[3|9]": "sections/2col/three_nine_columns.svg"
+        "[4|6]": "sections/2col/four_six_columns.svg"
+        "[4|7]": "sections/2col/four_seven_columns.svg"
+        "[4|8]": "sections/2col/four_eight_columns.svg"
+        "[5|5]": "sections/2col/five_five_columns.svg"
+        "[5|6]": "sections/2col/five_six_columns.svg"
+        "[5|7]": "sections/2col/five_seven_columns.svg"
+        "[6|4]": "sections/2col/six_four_columns.svg"
+        "[6|5]": "sections/2col/six_five_columns.svg"
+        "[6|6]": "sections/2col/six_six_columns.svg"
+        "[7|4]": "sections/2col/seven_four_columns.svg"
+        "[7|5]": "sections/2col/seven_five_columns.svg"
+        "[8|3]": "sections/2col/eight_three_columns.svg"
+        "[8|4]": "sections/2col/eight_four_columns.svg"
+        "[9|3]": "sections/2col/nine_three_columns.svg"
       description: 'Select the width for this section.'
     vertical_alignment:
       label: 'Vertical Alignment'
@@ -97,6 +130,10 @@ full_2_col:
         'top': 'Top'
         'center': 'Center'
         'stretch': 'Stretch'
+      icon_mapping:
+        'top': "vertical_alignment/2col/top.svg"
+        'center': "vertical_alignment/2col/center.svg"
+        'stretch': "vertical_alignment/2col/stretch.svg"
       description: 'Alignment across columns (not all components can stretch in height)'
     theme:
       label: 'Background Color'
@@ -120,6 +157,11 @@ full_2_col:
         'small': 'Small'
         'medium': 'Medium'
         'large': 'Large'
+      icon_mapping:
+        'none': "spacing_top/no_space.svg"
+        'small': "spacing_top/small_space.svg"
+        'medium': "spacing_top/medium_space.svg"
+        'large': "spacing_top/large_space.svg"
       description: 'Select the vertical spacing at the top of the section'
     spacing_bottom:
       label: 'Vertical Bottom Spacing'
@@ -131,6 +173,11 @@ full_2_col:
         'small': 'Small'
         'medium': 'Medium'
         'large': 'Large'
+      icon_mapping:
+        'none': "spacing_bottom/no_space.svg"
+        'small': "spacing_bottom/small_space.svg"
+        'medium': "spacing_bottom/medium_space.svg"
+        'large': "spacing_bottom/large_space.svg"
       description: 'Select the vertical spacing at the bottom of the section'
   default_region: zone1
   icon_map:
@@ -155,7 +202,9 @@ full_3_col:
       required: true
       default: '[4|4|4]'
       options:
-        '[4|4|4]': '[4|4|4] of 12 columns Wide'
+        '[4|4|4]': 'Extra Wide (33%/33%/33%)'
+      icon_mapping:
+        "[4|4|4]": "sections/3col/four_four_four_columns.svg"
       description: 'Select the width for this section.'
     vertical_alignment:
       label: 'Vertical Alignment'
@@ -166,6 +215,10 @@ full_3_col:
         'top': 'Top'
         'center': 'Center'
         'stretch': 'Stretch'
+      icon_mapping:
+        'top': "vertical_alignment/3col/top.svg"
+        'center': "vertical_alignment/3col/center.svg"
+        'stretch': "vertical_alignment/3col/stretch.svg"
       description: 'Alignment across columns (not all components can stretch in height)'
     theme:
       label: 'Background Color'
@@ -189,6 +242,11 @@ full_3_col:
         'small': 'Small'
         'medium': 'Medium'
         'large': 'Large'
+      icon_mapping:
+        'none': "spacing_top/no_space.svg"
+        'small': "spacing_top/small_space.svg"
+        'medium': "spacing_top/medium_space.svg"
+        'large': "spacing_top/large_space.svg"
       description: 'Select the vertical spacing at the top of the section'
     spacing_bottom:
       label: 'Vertical Bottom Spacing'
@@ -200,6 +258,11 @@ full_3_col:
         'small': 'Small'
         'medium': 'Medium'
         'large': 'Large'
+      icon_mapping:
+        'none': "spacing_bottom/no_space.svg"
+        'small': "spacing_bottom/small_space.svg"
+        'medium': "spacing_bottom/medium_space.svg"
+        'large': "spacing_bottom/large_space.svg"
       description: 'Select the vertical spacing at the bottom of the section'
   default_region: zone1
   icon_map:
@@ -225,7 +288,9 @@ full_4_col:
       required: true
       default: '[3|3|3|3]'
       options:
-        '[3|3|3|3]': '[3|3|3|3] of 12 columns Wide'
+        '[3|3|3|3]': 'Extra Wide (25%/25%/25%/25%)'
+      icon_mapping:
+        "[3|3|3|3]": "sections/4col/three_three_three_three_columns.svg"
       description: 'Select the width for this section.'
     vertical_alignment:
       label: 'Vertical Alignment'
@@ -236,6 +301,10 @@ full_4_col:
         'top': 'Top'
         'center': 'Center'
         'stretch': 'Stretch'
+      icon_mapping:
+        'top': "vertical_alignment/4col/top.svg"
+        'center': "vertical_alignment/4col/center.svg"
+        'stretch': "vertical_alignment/4col/stretch.svg"
       description: 'Alignment across columns (not all components can stretch in height)'
     theme:
       label: 'Background Color'
@@ -259,6 +328,11 @@ full_4_col:
         'small': 'Small'
         'medium': 'Medium'
         'large': 'Large'
+      icon_mapping:
+        'none': "spacing_top/no_space.svg"
+        'small': "spacing_top/small_space.svg"
+        'medium': "spacing_top/medium_space.svg"
+        'large': "spacing_top/large_space.svg"
       description: 'Select the vertical spacing at the top of the section'
     spacing_bottom:
       label: 'Vertical Bottom Spacing'
@@ -270,6 +344,11 @@ full_4_col:
         'small': 'Small'
         'medium': 'Medium'
         'large': 'Large'
+      icon_mapping:
+        'none': "spacing_bottom/no_space.svg"
+        'small': "spacing_bottom/small_space.svg"
+        'medium': "spacing_bottom/medium_space.svg"
+        'large': "spacing_bottom/large_space.svg"
       description: 'Select the vertical spacing at the bottom of the section'
   default_region: zone1
   icon_map:
@@ -307,10 +386,15 @@ full_grid_2col:
       required: true
       default: '[10]'
       options:
-        '[6]': '[6] of 12 columns Wide'
-        '[8]': '[8] of 12 columns Wide'
-        '[10]': '[10] of 12 columns Wide'
-        '[12]': '[12] of 12 columns Wide'
+        '[6]': 'Narrow (50%/50%)'
+        '[8]': 'Medium (50%/50%)'
+        '[10]': 'Wide (50%/50%)'
+        '[12]': 'Extra Wide (50%/50%)'
+      icon_mapping:
+        "[6]": "sections/grid2col/six_columns.svg"
+        "[8]": "sections/grid2col/eight_columns.svg"
+        "[10]": "sections/grid2col/ten_columns.svg"
+        "[12]": "sections/grid2col/twelve_columns.svg"
       description: 'Select the outer width for this section.'
     vertical_alignment:
       label: 'Vertical Alignment'
@@ -321,6 +405,10 @@ full_grid_2col:
         'top': 'Top'
         'stretch': 'Stretch'
         'center': 'Center'
+      icon_mapping:
+        'top': "vertical_alignment/2col/top.svg"
+        'center': "vertical_alignment/2col/center.svg"
+        'stretch': "vertical_alignment/2col/stretch.svg"
       description: 'Alignment across columns (not all components can stretch in height)'
     theme:
       label: 'Background Color'
@@ -344,6 +432,11 @@ full_grid_2col:
         'small': 'Small'
         'medium': 'Medium'
         'large': 'Large'
+      icon_mapping:
+        'none': "spacing_top/no_space.svg"
+        'small': "spacing_top/small_space.svg"
+        'medium': "spacing_top/medium_space.svg"
+        'large': "spacing_top/large_space.svg"
       description: 'Select the vertical spacing at the top of the section'
     spacing_bottom:
       label: 'Vertical Bottom Spacing'
@@ -355,6 +448,11 @@ full_grid_2col:
         'small': 'Small'
         'medium': 'Medium'
         'large': 'Large'
+      icon_mapping:
+        'none': "spacing_bottom/no_space.svg"
+        'small': "spacing_bottom/small_space.svg"
+        'medium': "spacing_bottom/medium_space.svg"
+        'large': "spacing_bottom/large_space.svg"
       description: 'Select the vertical spacing at the bottom of the section'
   default_region: zone1
   icon_map:
@@ -387,9 +485,13 @@ full_grid_3col:
       required: true
       default: '[10]'
       options:
-        '[8]': '[8] of 12 columns Wide'
-        '[10]': '[10] of 12 columns Wide'
-        '[12]': '[12] of 12 columns Wide'
+        '[8]': 'Medium (33%/33%/33%)'
+        '[10]': 'Wide (33%/33%/33%)'
+        '[12]': 'Extra Wide (33%/33%/33%)'
+      icon_mapping:
+        "[8]": "sections/grid3col/eight_columns.svg"
+        "[10]": "sections/grid3col/ten_columns.svg"
+        "[12]": "sections/grid3col/twelve_columns.svg"
       description: 'Select the outer width for this section.'
     vertical_alignment:
       label: 'Vertical Alignment'
@@ -400,6 +502,10 @@ full_grid_3col:
         'top': 'Top'
         'stretch': 'Stretch'
         'center': 'Center'
+      icon_mapping:
+        'top': "vertical_alignment/3col/top.svg"
+        'center': "vertical_alignment/3col/center.svg"
+        'stretch': "vertical_alignment/3col/stretch.svg"
       description: 'Alignment across columns (not all components can stretch in height)'
     theme:
       label: 'Background Color'
@@ -423,6 +529,11 @@ full_grid_3col:
         'small': 'Small'
         'medium': 'Medium'
         'large': 'Large'
+      icon_mapping:
+        'none': "spacing_top/no_space.svg"
+        'small': "spacing_top/small_space.svg"
+        'medium': "spacing_top/medium_space.svg"
+        'large': "spacing_top/large_space.svg"
       description: 'Select the vertical spacing at the top of the section'
     spacing_bottom:
       label: 'Vertical Bottom Spacing'
@@ -434,6 +545,11 @@ full_grid_3col:
         'small': 'Small'
         'medium': 'Medium'
         'large': 'Large'
+      icon_mapping:
+        'none': "spacing_bottom/no_space.svg"
+        'small': "spacing_bottom/small_space.svg"
+        'medium': "spacing_bottom/medium_space.svg"
+        'large': "spacing_bottom/large_space.svg"
       description: 'Select the vertical spacing at the bottom of the section'
   default_region: zone1
   icon_map:
@@ -443,7 +559,6 @@ full_grid_3col:
   regions:
     zone1:
       label: Zone 1
-
 
 full_grid_4col:
   label: 'Grid 4 Columns'
@@ -466,8 +581,11 @@ full_grid_4col:
       required: true
       default: '[10]'
       options:
-        '[10]': '[10] of 12 columns Wide'
-        '[12]': '[12] of 12 columns Wide'
+        '[10]': 'Wide (25%/25%/25%/25%)'
+        '[12]': 'Extra Wide (25%/25%/25%/25%)'
+      icon_mapping:
+        "[10]": "sections/grid4col/ten_columns.svg"
+        "[12]": "sections/grid4col/twelve_columns.svg"
       description: 'Select the outer width for this section.'
     vertical_alignment:
       label: 'Vertical Alignment'
@@ -478,6 +596,10 @@ full_grid_4col:
         'top': 'Top'
         'stretch': 'Stretch'
         'center': 'Center'
+      icon_mapping:
+        'top': "vertical_alignment/4col/top.svg"
+        'center': "vertical_alignment/4col/center.svg"
+        'stretch': "vertical_alignment/4col/stretch.svg"
       description: 'Alignment across columns (not all components can stretch in height)'
     theme:
       label: 'Background Color'
@@ -501,6 +623,11 @@ full_grid_4col:
         'small': 'Small'
         'medium': 'Medium'
         'large': 'Large'
+      icon_mapping:
+        'none': "spacing_top/no_space.svg"
+        'small': "spacing_top/small_space.svg"
+        'medium': "spacing_top/medium_space.svg"
+        'large': "spacing_top/large_space.svg"
       description: 'Select the vertical spacing at the top of the section'
     spacing_bottom:
       label: 'Vertical Bottom Spacing'
@@ -512,6 +639,11 @@ full_grid_4col:
         'small': 'Small'
         'medium': 'Medium'
         'large': 'Large'
+      icon_mapping:
+        'none': "spacing_bottom/no_space.svg"
+        'small': "spacing_bottom/small_space.svg"
+        'medium': "spacing_bottom/medium_space.svg"
+        'large': "spacing_bottom/large_space.svg"
       description: 'Select the vertical spacing at the bottom of the section'
   default_region: zone1
   icon_map:

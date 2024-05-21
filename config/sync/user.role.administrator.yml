@@ -128,6 +128,7 @@ label: Administrator
 weight: -6
 is_admin: null
 permissions:
+  - 'access administration pages'
   - 'access any webform configuration'
   - 'access block library'
   - 'access config_pages overview'
@@ -180,6 +181,7 @@ permissions:
   - 'administer feeds_feed display'
   - 'administer feeds_feed fields'
   - 'administer feeds_feed form display'
+  - 'administer feeds_feed_type labels'
   - 'administer feeds_tamper'
   - 'administer field validation rule set'
   - 'administer filters'
@@ -508,6 +510,7 @@ permissions:
   - 'use editorial transition publish'
   - 'use editorial transition restore'
   - 'use editorial transition restore_to_draft'
+  - 'use moderation sidebar'
   - 'use text format fact'
   - 'use text format fact_value'
   - 'use text format header_summary'

@@ -12,7 +12,9 @@ dependencies:
     - media.type.ed_file
     - media.type.ed_image
     - media.type.illustration
+    - media.type.link
     - media.type.resources_files
+    - media.type.resources_link_to_form
     - media.type.video
     - node.type.event
     - node.type.job
@@ -28,7 +30,6 @@ dependencies:
     - markerio
     - media
     - media_entity_download
-    - moderation_sidebar
     - node
     - rabbit_hole
     - system
@@ -40,32 +41,45 @@ label: 'Authenticated user'
 weight: -9
 is_admin: false
 permissions:
-  - 'access administration pages'
   - 'access content'
   - 'access markerio'
+  - 'access media overview'
   - 'access toolbar'
   - 'create ed_file media'
   - 'create ed_image media'
+  - 'create illustration media'
+  - 'create link media'
   - 'create media'
+  - 'create resources_files media'
+  - 'create resources_link_to_form media'
+  - 'create video media'
   - 'delete media'
+  - 'delete own ed_file media'
+  - 'delete own ed_image media'
   - 'delete own files'
+  - 'delete own illustration media'
+  - 'delete own link media'
+  - 'delete own resources_files media'
+  - 'delete own resources_link_to_form media'
+  - 'delete own video media'
   - 'download media'
   - 'edit own ed_file media'
   - 'edit own ed_image media'
   - 'edit own event content'
   - 'edit own illustration media'
   - 'edit own job content'
+  - 'edit own link media'
   - 'edit own news content'
   - 'edit own page content'
   - 'edit own people content'
   - 'edit own program content'
   - 'edit own resources content'
   - 'edit own resources_files media'
+  - 'edit own resources_link_to_form media'
   - 'edit own video media'
   - 'opt-in or out of google analytics tracking'
   - 'rabbit hole bypass node'
   - 'update media'
-  - 'use moderation sidebar'
   - 'use text format fact'
   - 'use text format fact_value'
   - 'use text format header_summary'
