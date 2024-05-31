@@ -2,8 +2,9 @@
   margin-top: var(--spacer);
 
   @include breakpoint($bp-tablet) {
-    width: 66%;
     margin: var(--spacer) auto 0;
+    max-width: rem(900px);
+    width: 100%;
   }
 }
 
@@ -120,6 +121,7 @@ svg.m-pager__btn-next-icon {
   margin-bottom: ru(1);
   margin-left: ru(0.25);
   width: 100%;
+  gap: rem(15px);
 
   @include breakpoint($bp-phone-large) {
     margin-right: ru(0.5);
@@ -136,10 +138,10 @@ svg.m-pager__btn-next-icon {
 
 .m-pager__items {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: var(--spacer);
+  gap: rem(10px);
 
   @include breakpoint($bp-tablet-small) {
     flex-wrap: wrap;
@@ -150,9 +152,10 @@ svg.m-pager__btn-next-icon {
   display: block;
   margin-right: ru(0.1);
   margin-left: ru(0.1);
-  padding: ru(0.25) ru(0.75);
+  padding: rem(5px) rem(17px);
   min-width: ru(1.5);
   text-align: center;
+  line-height: 1;
 }
 
 // Styles for pages.
@@ -169,7 +172,7 @@ svg.m-pager__btn-next-icon {
   &:active {
     background-color: var(--c-pager--item-bg--hover);
     color: var(--c-pager--item-text--hover);
-    text-decoration: underline;
+    // text-decoration: underline;
     box-shadow: 0px rem(4px) rem(10px) rgba(62, 19, 77, 0.09);
   }
 }
