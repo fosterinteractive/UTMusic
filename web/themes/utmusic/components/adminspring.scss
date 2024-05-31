@@ -144,4 +144,40 @@
       }
     }
   }
-}  
+}
+
+// fields in one line for Field group.
+%core-adminspring_grid {
+  @include breakpoint($bp-tablet) {
+    .details-wrapper {
+      display: grid;
+      align-items: flex-end;
+      column-gap: rem(20px);
+    }
+    
+    .form-item .form-element {
+      min-width: 100%;
+      width: 100%
+    }
+  }
+}
+
+.adminspring_grid--2col {
+  @extend %core-adminspring_grid;
+
+  .details-wrapper {
+    @include breakpoint($bp-tablet) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+.adminspring_grid--3col {
+  @extend %core-adminspring_grid;
+
+  .details-wrapper {
+    @include breakpoint($bp-tablet) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}

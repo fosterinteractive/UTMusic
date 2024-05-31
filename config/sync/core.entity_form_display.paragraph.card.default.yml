@@ -36,7 +36,7 @@ third_party_settings:
       weight: 3
       format_type: details
       format_settings:
-        classes: ''
+        classes: adminspring_grid--3col
         show_empty_fields: false
         id: ''
         open: true

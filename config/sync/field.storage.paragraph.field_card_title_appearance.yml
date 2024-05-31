@@ -13,19 +13,19 @@ settings:
   allowed_values:
     -
       value: h1
-      label: 'Extra Large (h1)'
+      label: 'Extra Large (H1 Size)'
     -
       value: h2
-      label: 'Large (h2)'
+      label: 'Large (H2 Size)'
     -
       value: h3
-      label: 'Medium (h3)'
+      label: 'Medium (H3 Size)'
     -
       value: h4
-      label: 'Small (h4)'
+      label: 'Small (H4 Size)'
     -
       value: h5
-      label: 'Extra Small (h5)'
+      label: 'Extra Small (H5 Size)'
   allowed_values_function: ''
 module: options
 locked: false

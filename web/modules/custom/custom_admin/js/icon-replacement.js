@@ -13,8 +13,6 @@
       const spacingTopSelect = document.querySelector("[id^='edit-layout-paragraphs-config-classes-spacing-top']", context);
       const spacingBottomSelect = document.querySelector("[id^='edit-layout-paragraphs-config-classes-spacing-bottom']", context);
 
-      console.log(settings);
-
       /**
        * Create a wrapper for the custom options.
        * @param {Element} selectElement - The original select element.
