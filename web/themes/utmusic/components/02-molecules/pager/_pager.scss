@@ -3,7 +3,7 @@
 
   @include breakpoint($bp-tablet) {
     margin: var(--spacer) auto 0;
-    max-width: rem(900px);
+    max-width: rem(750px);
     width: 100%;
   }
 }
@@ -16,7 +16,7 @@
   margin-bottom: ru(1);
   padding-bottom: ru(0.5);
 
-  @include breakpoint($bp-tablet-small) {
+  @include breakpoint($bp-tablet) {
     flex-wrap: nowrap;
   }
 }
@@ -46,7 +46,7 @@
   justify-content: flex-start;
   order: 2;
 
-  @include breakpoint($bp-tablet-small) {
+  @include breakpoint($bp-tablet) {
     order: 1;
   }
 }
@@ -66,12 +66,11 @@
   justify-content: center;
   align-items: center;
   border-radius: rem(7px);
-  width: rem(60px);
-  height: rem(40px);
+  width: rem(50px);
+  height: rem(30px);
   border-radius: rem(50px);
 
   svg {
-    // height: rem(25px);
     max-height: 100%;
     fill: var(--c-pager--btn-svg);
   }
@@ -101,11 +100,11 @@ svg.m-pager__btn-next-icon {
 }
 
 .m-pager__btn-first {
-  margin-right: ru(0.75);
+  margin-right: ru(0.5);
 }
 
 .m-pager__btn-last {
-  margin-left: ru(0.75);
+  margin-left: ru(0.5);
 }
 
 // Pages List. Will Shrink, but not grow. On small screens
@@ -114,24 +113,18 @@ svg.m-pager__btn-next-icon {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  // align-items: self-end;
   order: 1;
   flex-shrink: 1;
-  margin-right: ru(0.25);
   margin-bottom: ru(1);
-  margin-left: ru(0.25);
   width: 100%;
-  gap: rem(15px);
-
-  @include breakpoint($bp-phone-large) {
-    margin-right: ru(0.5);
-    margin-left: ru(0.5);
-  }
-
-  @include breakpoint($bp-tablet-small) {
+  gap: rem(10px);
+  
+  @include breakpoint($bp-tablet) {
     flex-wrap: wrap;
     order: 2;
     margin-bottom: 0;
+    margin-right: ru(0.5);
+    margin-left: ru(0.5);
     width: auto;
   }
 }
@@ -141,9 +134,10 @@ svg.m-pager__btn-next-icon {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: rem(10px);
+  gap: rem(5px);
 
-  @include breakpoint($bp-tablet-small) {
+  @include breakpoint($bp-tablet) {
+    gap: rem(10px);
     flex-wrap: wrap;
   }
 }
