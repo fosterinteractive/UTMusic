@@ -609,6 +609,13 @@ function custom_admin_form_alter(&$form, FormStateInterface $form_state, $form_i
     $form['#attached']['library'][] = 'custom_admin/icon_replacement';
   }
 
+  // Hide unnecessary menu fields for Main Menu, Footer Menu, and Header Shortcuts.
+  if ($form_id == 'menu_link_content_footer_form' || $form_id == 'menu_link_content_header-shortcuts_form' || $form_id == 'menu_link_content_main_form' || strpos($form_id, 'menu_link_content') !== FALSE) {
+    $form['menu_parent']['#access'] = FALSE;
+    $form['weight']['#access'] = FALSE;
+    $form['expanded']['#access'] = FALSE;
+  }
+
   // Check if the form_id matches the desired form
   if ($form_id == 'menu_link_content_main_form') {
 
@@ -626,11 +633,6 @@ function custom_admin_form_alter(&$form, FormStateInterface $form_state, $form_i
     foreach ($fields_to_modify as $field) {
       $form[$field]['#states'] = $visibility_condition;
     }
-
-    // Hidden unnecessary menu fields
-    $form['menu_parent']['#access'] = FALSE;
-    $form['weight']['#access'] = FALSE;
-    $form['expanded']['#access'] = FALSE;
   
     // Hiding fields depending on item menu level.
     // Get the menu link content entity and parent ID
