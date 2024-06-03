@@ -14,6 +14,9 @@
 use Drupal\Core\Render\Element;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\Yaml\Yaml;
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\display\DisplayPluginBase;
+
 
 /**
  * Implements hook_page_attachments().
@@ -676,5 +679,22 @@ function custom_admin_form_alter(&$form, FormStateInterface $form_state, $form_i
       }
     }
     // End Hiding fields depending on item menu level.
+  }
+}
+
+/**
+ * This module implements a hook to globally override the pager settings for all views.
+ * Specifically, it sets the pager to display 5 items per page for any view that uses a pager.
+ */
+function custom_admin_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
+  // Check if the view has a pager.
+  if ($view->display_handler instanceof DisplayPluginBase && $view->display_handler->getOption('pager')) {
+    // Override the pager settings.
+    $view->display_handler->setOption('pager', [
+      'type' => 'full',
+      'options' => [
+        'quantity' => 5,
+      ],
+    ]);
   }
 }
