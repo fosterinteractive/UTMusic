@@ -1,0 +1,16 @@
+uuid: 802fa916-ee7f-4191-af6b-c5210df8b852
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.quote_small_image_10_11_300x330
+id: quote_small_image
+label: 'Quote Small Image'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: quote_small_image_10_11_300x330
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: quote_small_image_10_11_300x330

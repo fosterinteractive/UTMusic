@@ -1,0 +1,16 @@
+uuid: 482ea29e-14d8-45ed-96a2-562daf23c91c
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.sliding_door_9_4_1170x520
+id: sliding_door
+label: 'Sliding Door'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: sliding_door_9_4_1170x520
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: sliding_door_9_4_1170x520

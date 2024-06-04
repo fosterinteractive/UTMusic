@@ -10,11 +10,11 @@ dependencies:
     - field.field.media.ed_image.field_img_related_area
     - field.field.media.ed_image.field_img_related_people
     - field.field.media.ed_image.field_img_related_program
-    - image.style.quote_small_image_10_11_300x330
     - media.type.ed_image
+    - responsive_image.styles.quote_small_image
   module:
     - layout_builder
-    - svg_image
+    - svg_image_responsive
 third_party_settings:
   layout_builder:
     enabled: false
@@ -27,11 +27,11 @@ bundle: ed_image
 mode: quote_small_image
 content:
   field_ed_image_image:
-    type: image
+    type: responsive_image
     label: hidden
     settings:
+      responsive_image_style: quote_small_image
       image_link: ''
-      image_style: quote_small_image_10_11_300x330
       image_loading:
         attribute: lazy
       svg_attributes:

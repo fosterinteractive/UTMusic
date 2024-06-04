@@ -10,11 +10,11 @@ dependencies:
     - field.field.media.ed_image.field_img_related_area
     - field.field.media.ed_image.field_img_related_people
     - field.field.media.ed_image.field_img_related_program
-    - image.style.square_1_1_1200
     - media.type.ed_image
+    - responsive_image.styles.square_cta
   module:
     - layout_builder
-    - svg_image
+    - svg_image_responsive
 third_party_settings:
   layout_builder:
     enabled: false
@@ -27,11 +27,11 @@ bundle: ed_image
 mode: news_image_portrait
 content:
   field_ed_image_image:
-    type: image
+    type: responsive_image
     label: hidden
     settings:
+      responsive_image_style: square_cta
       image_link: ''
-      image_style: square_1_1_1200
       image_loading:
         attribute: lazy
       svg_attributes:
