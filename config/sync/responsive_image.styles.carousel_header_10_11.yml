@@ -8,11 +8,8 @@ id: carousel_header_10_11
 label: 'Carousel Header 10x11'
 image_style_mappings:
   -
-    image_mapping_type: sizes
-    image_mapping:
-      sizes: '(min-width:768px) 280px, 50vw.'
-      sizes_image_styles:
-        - image_10_11_400x440
+    image_mapping_type: image_style
+    image_mapping: image_10_11_400x440
     breakpoint_id: responsive_image.viewport_sizing
     multiplier: 1x
 breakpoint_group: responsive_image
