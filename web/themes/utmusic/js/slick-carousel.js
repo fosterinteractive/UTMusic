@@ -11,6 +11,7 @@
 
       $(carousel).slick({
         pauseOnHover: false,
+        pauseOnFocus: false,
         slidesToShow: 1,
         infinite: true,
         slidesToScroll: 1,

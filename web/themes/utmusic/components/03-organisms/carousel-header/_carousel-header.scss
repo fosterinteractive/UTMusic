@@ -208,6 +208,10 @@
   animation: imageFadeIn 5600ms cubic-bezier(.17,.67,0,.17) 0s;
 }
 
+.o-hero-media--carousel__image-slick-carousel .m-carousel-img-group img {
+  will-change: opacity;
+}
+
 .o-hero-media--carousel__image-slick-carousel .slick-current {
   .m-carousel-img-group__image_1 img {
     opacity: 0;
