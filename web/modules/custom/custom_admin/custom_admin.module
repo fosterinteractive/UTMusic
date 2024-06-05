@@ -683,10 +683,21 @@ function custom_admin_form_alter(&$form, FormStateInterface $form_state, $form_i
 }
 
 /**
- * This module implements a hook to globally override the pager settings for all views.
+ * This hook to globally override the pager settings for all views.
  * Specifically, it sets the pager to display 5 items per page for any view that uses a pager.
  */
 function custom_admin_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
+  // Define an array of view IDs that should be excluded from the global pager setting.
+  $excluded_views = [
+    // 'example_view_id',
+    // Add more view IDs as needed.
+  ];
+
+  // Check if the current view ID is in the excluded list.
+  if (in_array($view->id(), $excluded_views)) {
+    return;
+  }
+
   // Check if the view has a pager.
   if ($view->display_handler instanceof DisplayPluginBase && $view->display_handler->getOption('pager')) {
     // Override the pager settings.

@@ -29,4 +29,11 @@
  * @see template_preprocess_pager()
  */
 #}
+
+{# 
+  The quantity of pager links can be changed in the custom_admin.module.
+  Specifically, look for the custom_admin_views_pre_view() function in custom_admin.module and modify the 'quantity' option.
+  You can also add view IDs that should be excluded from the global pager setting by updating the $excluded_views array in the same function.
+#}
+
 {% include "@molecules/pager/pager.twig" %}
