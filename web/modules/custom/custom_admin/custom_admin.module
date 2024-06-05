@@ -683,7 +683,7 @@ function custom_admin_form_alter(&$form, FormStateInterface $form_state, $form_i
 }
 
 /**
- * This module implements a hook to globally override the pager settings for all views.
+ * This hook to globally override the pager settings for all views.
  * Specifically, it sets the pager to display 5 items per page for any view that uses a pager.
  */
 function custom_admin_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
