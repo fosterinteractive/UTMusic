@@ -19,9 +19,11 @@
         autoplay: true,
         autoplaySpeed: 5000,
         fade: true,
-        speed: 600,
-        // cssEase: 'cubic-bezier(.17,.67,.83,.67)',
-        cssEase: 'ease-in-out',
+        speed: 400,
+        centerMode: true,
+        // cssEase: 'linear',
+        cssEase: 'cubic-bezier(.17,.67,.83,.67)',
+        // cssEase: 'ease-in-out',
       });
 
       $(controlButton).on('click', () => {
