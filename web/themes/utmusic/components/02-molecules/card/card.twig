@@ -106,7 +106,7 @@
 
   {% if link_url and link_label %}
     <div class="m-card{{ variation }}__link">
-        {% include "@atoms/text/headings/heading.twig" with {
+        {# {% include "@atoms/text/headings/heading.twig" with {
             html_element: 'div',
             appearance: 'h5',
             text: link_label,
@@ -115,9 +115,9 @@
             aria_label: aria_label,
             directory: directory,
           } only
-        %}
+        %} #}
 
-        {# {% include '@atoms/button/button.twig' with {
+        {% include '@atoms/button/button.twig' with {
             directory: directory,
             base_class: 'a-button',
             label: link_label,
@@ -127,7 +127,7 @@
             aria_label: aria_label,
             alignment: 'left',
           } only
-        %}  #}
+        %} 
     </div>
   {% endif %}
 </div>

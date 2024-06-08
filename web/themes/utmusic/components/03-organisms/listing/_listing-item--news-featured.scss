@@ -101,6 +101,6 @@
 .m-listing-item--news-featured__tags {
   @extend %m-listing-item__tags;
   @extend %a-type--xsmall;
-  color: var(--c-listing-item--date);
+  color: var(--c-listing-item--tag);
 }
 

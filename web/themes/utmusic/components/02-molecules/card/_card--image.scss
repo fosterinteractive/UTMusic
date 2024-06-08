@@ -33,22 +33,26 @@
 
 
 .m-card--image__link {
-  .a-heading__h5 a {
-    color: palette(blue);
+  // .a-heading__h5 a {
+  //   color: palette(blue);
 
-    svg {
-      color: palette(teal, 300);
-    }
+  //   svg {
+  //     color: palette(teal, 300);
+  //   }
 
-    &:hover,
-    &:focus,
-    &:active {
-      color: palette(teal, 300);
-      text-decoration: none;
+  //   &:hover,
+  //   &:focus,
+  //   &:active {
+  //     color: palette(teal, 300);
+  //     text-decoration: none;
       
-      svg {
-        color: palette(blue);
-      }
-    }
+  //     svg {
+  //       color: palette(blue);
+  //     }
+  //   }
+  // }
+
+  .a-button--secondary {
+    padding-left: 0;
   }
 }

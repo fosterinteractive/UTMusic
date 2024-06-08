@@ -10,6 +10,9 @@
 %theme--light-bg,
 .theme--light-bg,
 .adminspring-theme {
+
+  // label
+  --c-label: #{palette(blue, 300)};
   
   // @atoms/button
   --c-button: #{palette(blue, 300)};
@@ -117,6 +120,8 @@
   --c-card--illustration-bg: #{palette(teal, 700)};
   --c-card-link: #{palette(blue, 300)};
   --c-card-link--active: #{palette(teal, 300)};
+  --c-tag: #{palette(grey, 300)};
+
 
   //@molecules/message
   --c-message-blue-bg: #{palette(white)};
@@ -147,7 +152,7 @@
 
   // @organisms/listing
   --c-listing-item--border: #{palette(grey, 800)};
-  --c-listing-item--date: #{palette(grey, 400)};
+  --c-listing-item--tag: #{palette(grey, 400)};
 
   //@organisms/listing/listing-item-featured
   --c-news-featured-title:  #{palette(teal, 300)};
@@ -224,13 +229,30 @@
   
   // @organisms/listing
   --c-listing-item--border: #{palette(teal, 700)};
-  --c-listing-item--date: #{palette(grey, 400)};
+  --c-listing-item--tag: #{palette(grey, 400)};
 }
 
 .theme--dark-blue-bg {
   @extend %theme--light-bg;
 
+  // label
+  --c-label: #{palette(teal, 1000)};
+
+  // @atoms/text
   --c-text: #{palette(white)};
+
+  --c-heading: #{palette(white)};
+  --c-heading-decoration: #{palette(white)};
+  --c-heading-main-title: #{palette(white)};
+  --c-heading-prefix: #{palette(white)};
+  --c-heading-prefix-decoration: #{palette(white)};
+  --c-heading-summary: #{palette(white)};
+  --c-heading-credentials: #{palette(white)};
+
+  --c-heading-link: #{palette(white)};
+  --c-heading-link--active: #{palette(teal, 700)};
+  --c-heading-link-icon: #{palette(white)};
+  --c-heading-link-icon--active: #{palette(teal, 700)};
 
   //@atoms/button
   --c-button-text--secondary: #{palette(white)};
@@ -243,6 +265,8 @@
   --c-text: #{palette(white)};
   --c-heading: #{palette(white)};
   --c-figcaptions: #{palette(white)};
+
+  
 
   // a-link
   --c-link: #{palette(white)};
@@ -258,9 +282,16 @@
   --c-heading-decoration: #{palette(teal, 700)};
   --c-video-caption: #{palette(white)};
 
+  //@organisms/listing/listing-item-featured
+  --c-news-featured-title:  #{palette(white)};
+  --c-events-featured-title: #{palette(white)};
+
   //@organisms/listing & listing-item
   --c-events-carousel-title: #{palette(white)};
   --c-events-carousel-border: #{palette(teal, 300)};
+  --c-listing-item--tag: #{palette(grey, 900)};
+  --c-people-title: #{palette(white)};
+  --c-people-title--active: #{palette(teal, 700)};
 
   // @molecules/quote
   --c-quote: #{palette(white)};
@@ -269,5 +300,12 @@
   // @molecules/Accordion
   --c-accordion-item-label: #{palette(white)};
   --c-accordion-focus-bg: #{palette(blue, 300)};
+
+  --c-tag: #{palette(grey, 900)};
+
+  //pager
+  --c-pager--item-text: #{palette(teal, 700)};
+  --c-pager--btn-svg: #{palette(teal, 700)};
+  --c-pager--btn-svg--disabled: #{palette(grey, 400)};
 }
 

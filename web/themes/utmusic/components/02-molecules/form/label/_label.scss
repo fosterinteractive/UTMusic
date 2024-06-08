@@ -9,8 +9,7 @@
   @extend %a-type--xsmall;
   display: inline-block;
   margin-bottom: ru(0.25);
-  color: palette(blue, 300);
-  // color: var(--c-text);
+  color: var(--c-label);
   text-transform: uppercase;
   font-weight: bold;
 

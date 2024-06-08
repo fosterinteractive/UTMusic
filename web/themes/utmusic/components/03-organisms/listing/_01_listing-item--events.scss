@@ -48,6 +48,6 @@
 
 .m-listing-item--events__category {
   @extend %a-type--xsmall;
-  color: palette(grey, 300);
+  color: var(--c-tag);
   font-weight: 700;
 }

@@ -52,7 +52,7 @@
   display: flex;
   gap: calc(var(--spacer) * 0.1);
   align-items: center;
-  color: var(--c-listing-item--date);
+  color: var(--c-listing-item--tag);
 
   svg {
     color: var(--c-heading-link);
@@ -62,4 +62,3 @@
     height: rem(20px);
   }
 }
-
