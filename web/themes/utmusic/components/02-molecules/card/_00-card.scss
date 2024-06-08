@@ -26,10 +26,10 @@
 .m-card__title {
   @extend %overlay-link-card;
 
-  color: var(--c-card-title);
+  // color: var(--c-card-title);
 
   h2, h3, span {
-    color: var(--c-card-title);
+    // color: var(--c-card-title);
     margin-bottom: 0;
     display: inline-block;
   }
@@ -80,7 +80,7 @@
 
 .m-card__tags {
   @extend %a-type--xsmall;
-  color: palette(grey, 300);
+  color: var(--c-tag);
 }
 
 .m-card__tags-pipe {

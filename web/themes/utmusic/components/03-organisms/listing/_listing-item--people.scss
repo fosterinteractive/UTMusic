@@ -36,7 +36,7 @@
 .m-listing-item--people__tags {
   @extend %m-listing-item__tags;
   @extend %a-type--xxsmall;
-  color: palette(grey, 400);
+  color: var(--c-listing-item--tag);
   text-transform: uppercase;
 }
 

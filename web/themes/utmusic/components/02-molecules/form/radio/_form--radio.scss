@@ -2,7 +2,7 @@
 // // @link https://moderncss.dev/pure-css-custom-styled-radio-buttons/
 
 :root {
-  @include root-prop(--input-radio-color, palette(blue, 300));
+  @include root-prop(--input-radio-color, palette(white));
   @include root-prop(--checkmark-color, palette(white));
 }
 

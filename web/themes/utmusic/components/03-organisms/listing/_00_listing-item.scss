@@ -78,6 +78,6 @@
 %m-listing-item__date,
 .m-listing-item__date {
   @extend %a-type--xsmall;
-  color: var(--c-listing-item--date);
+  color: var(--c-listing-item--tag);
   margin-left: rem(1px);
 }

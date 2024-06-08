@@ -15,7 +15,7 @@
 
   &.has-img {
     @include breakpoint($bp-tablet) {
-      padding: calc(var(--spacer) * 0.5) calc(var(--spacer) * 0.5) calc(var(--spacer) * 0.5) calc(var(--spacer) * 1.5)  ;
+      padding: calc(var(--spacer) * 0.5) calc(var(--spacer) * 0.5) calc(var(--spacer) * 0.5) calc(var(--spacer) * 1.5);
     }
   }
 }
