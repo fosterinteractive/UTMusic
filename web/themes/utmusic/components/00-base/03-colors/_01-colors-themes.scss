@@ -142,6 +142,7 @@
   --c-sequence-title: #{palette(teal, 300)};
   --c-sequence-bg: #{palette(teal, 1000)};
   --c-sequence-vertical-line: #{palette(grey, 900)};
+  --c-sequence-text: #{palette(blue, 300)};
 
   //@molecules/cta
   --c-cta-text: #{palette(blue, 300)};
@@ -296,6 +297,9 @@
   // @molecules/quote
   --c-quote: #{palette(white)};
   --c-quote-text-border: #{palette(white)};
+
+  //@molecules/sequence
+  --c-sequence-title: #{palette(white)};
 
   // @molecules/Accordion
   --c-accordion-item-label: #{palette(white)};
