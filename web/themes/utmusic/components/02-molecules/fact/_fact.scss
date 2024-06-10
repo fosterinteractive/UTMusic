@@ -171,6 +171,10 @@
     padding-left: calc(var(--spacer)*0.65);
   }
 
+  .m-fact-item__value {
+    width: 100%;
+  }
+
 
   .m-fact-item__illustration {
     @extend %m-card__image-illustration;
