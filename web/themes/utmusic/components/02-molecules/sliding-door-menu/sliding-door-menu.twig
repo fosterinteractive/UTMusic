@@ -21,7 +21,7 @@
               html_element: 'h3',
               appearance: 'h5',
               text: item.label,
-              id: 'link-' ~ item.label|replace({' ': ''})|lower,
+              id: 'link-' ~ item.label|replace({' ': ''})|lower ~ '-' ~ item.link_id,
               url: item.url,
               alignment: 'left',
               aria_label: item.aria_label,
