@@ -280,14 +280,14 @@ function utmusic_preprocess_paragraph(array &$variables) {
         $appearance = $paragraph->hasField($field_mapping[$type]['appearance']) && !$paragraph->{$field_mapping[$type]['appearance']}->isEmpty() ? $paragraph->{$field_mapping[$type]['appearance']}->value : NULL;
 
         if ($appearance == 'listing-item') {
-          $variables['content']['news_summary_list'] = utmusic_return_rendered_view('news_full_list', 'news_summary_list_images', $number_items, $categories,  $dynamic_title, $offset, $layout, $button_url, $button_label, $button_a11y);
+          $variables['content']['news_summary_list'] = utmusic_return_rendered_view('news_full_list', 'news_summary_list_images', $number_items, $categories,  $dynamic_title, $offset, $layout, $button_url, $button_label, $button_a11y, null, null, 'paragraph:' . $pid);
         } else {
-          $variables['content']['news_summary_list'] = utmusic_return_rendered_view('news_full_list', 'news_summary_list', $number_items, $categories,  $dynamic_title, $offset, $layout, $button_url, $button_label, $button_a11y);
+          $variables['content']['news_summary_list'] = utmusic_return_rendered_view('news_full_list', 'news_summary_list', $number_items, $categories,  $dynamic_title, $offset, $layout, $button_url, $button_label, $button_a11y, null, null, 'paragraph:' . $pid);
         }
 
       }
       elseif ($paragraph_type == 'news_featured_item') {
-        $variables['content']['news_featured_item'] = utmusic_return_rendered_view('news_full_list', 'news_featured_item', null , $categories,  $dynamic_title, $offset);
+        $variables['content']['news_featured_item'] = utmusic_return_rendered_view('news_full_list', 'news_featured_item', null , $categories,  $dynamic_title, $offset, null, null, null, null, null, 'paragraph:' . $pid);
       }
       elseif ($paragraph_type == 'events_summary_list_dynamic') {
         $status = $paragraph->hasField($field_mapping[$type]['status']) && !$paragraph->{$field_mapping[$type]['status']}->isEmpty() ? $paragraph->{$field_mapping[$type]['status']}->value : NULL;
@@ -299,13 +299,13 @@ function utmusic_preprocess_paragraph(array &$variables) {
         }
       }
       elseif ($paragraph_type == 'event_featured_item') {
-        $variables['content']['event_featured_item'] = utmusic_return_rendered_view('events_full_list', 'events_featured_item', null , $categories, $dynamic_title, $offset);
+        $variables['content']['event_featured_item'] = utmusic_return_rendered_view('events_full_list', 'events_featured_item', null , $categories, $dynamic_title, $offset, null, null, null, null, null, 'paragraph:' . $pid);
       }
       // elseif ($paragraph_type == 'programs_full_list_dynamic') {
       //   $variables['content']['programs_full_list_dynamic'] = utmusic_return_rendered_view('programs_full_list', 'programs_full_list', null , $categories, null, null, $show_filter);
       // }
       elseif ($paragraph_type == 'job_listing') {
-        $variables['content']['job_listing_block'] = utmusic_return_rendered_view('jobs_full_list', 'job_listing_block', $number_items , $categories, null, $offset);
+        $variables['content']['job_listing_block'] = utmusic_return_rendered_view('jobs_full_list', 'job_listing_block', $number_items , $categories, null, $offset, null, null, null, null, null, 'paragraph:' . $pid);
       }
     }
   }
