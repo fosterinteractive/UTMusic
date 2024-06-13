@@ -293,9 +293,9 @@ function utmusic_preprocess_paragraph(array &$variables) {
         $status = $paragraph->hasField($field_mapping[$type]['status']) && !$paragraph->{$field_mapping[$type]['status']}->isEmpty() ? $paragraph->{$field_mapping[$type]['status']}->value : NULL;
 
         if ($status == 'upcoming') {
-          $variables['content']['events_summary_list_upcoming'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_upcoming', $number_items, $categories, $dynamic_title, $offset, NULL, NULL, NULL, NULL, NULL, NULL, 'paragraph:' . $pid);
+          $variables['content']['events_summary_list_upcoming'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_upcoming', $number_items, $categories, $dynamic_title, $offset, NULL, NULL, NULL, NULL, NULL, 'paragraph:' . $pid);
         } else {
-          $variables['content']['events_summary_list_past'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_past', $number_items, $categories,  $dynamic_title, $offset, NULL, NULL, NULL, NULL, NULL, NULL, 'paragraph:' . $pid);
+          $variables['content']['events_summary_list_past'] = utmusic_return_rendered_view('events_full_list', 'events_summary_list_past', $number_items, $categories,  $dynamic_title, $offset, NULL, NULL, NULL, NULL, NULL, 'paragraph:' . $pid);
         }
       }
       elseif ($paragraph_type == 'event_featured_item') {
@@ -305,7 +305,7 @@ function utmusic_preprocess_paragraph(array &$variables) {
       //   $variables['content']['programs_full_list_dynamic'] = utmusic_return_rendered_view('programs_full_list', 'programs_full_list', null , $categories, null, null, $show_filter);
       // }
       elseif ($paragraph_type == 'job_listing') {
-        $variables['content']['job_listing_block'] = utmusic_return_rendered_view('jobs_full_list', 'job_listing_block', $number_items , $categories, null, $offset, null, null);
+        $variables['content']['job_listing_block'] = utmusic_return_rendered_view('jobs_full_list', 'job_listing_block', $number_items , $categories, null, $offset);
       }
     }
   }
@@ -509,8 +509,11 @@ function utmusic_return_rendered_view($view, $display, $items = NULL, $categorie
   // Render filtered view.
   $render_view = $filtered_view->render();
 
+  // Add the cache key, which will most likley be a paragraph id to keep the
+  // cache's unique.
   if ($cache_key) {
     $render_view['#cache']['keys'][] = $cache_key;
+    $render_view['#cache']['tags'][] = $cache_key;
   }
 
   return $render_view;
