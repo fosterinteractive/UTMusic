@@ -111,46 +111,13 @@ display:
             format: rich_text
           tokenize: false
       sorts:
-        created:
-          id: created
-          table: node_field_data
-          field: created
+        field_program_header_title_value:
+          id: field_program_header_title_value
+          table: node__field_program_header_title
+          field: field_program_header_title_value
           relationship: none
           group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: created
-          plugin_id: date
-          order: ASC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
-          granularity: second
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: standard
-          order: ASC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
-        nid:
-          id: nid
-          table: node_field_data
-          field: nid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: nid
+          admin_label: 'Program Title'
           plugin_id: standard
           order: ASC
           expose:
