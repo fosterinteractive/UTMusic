@@ -7,6 +7,8 @@
   font-size: rem(50px);
   font-weight: 800;
   line-height: 1;
+  width: 50%;
+  word-wrap: break-word;
 
   sup {
     top: -1.5em;
@@ -132,6 +134,8 @@
   .m-fact-item__description-wrapper {
     display: flex;
     align-items: flex-start;
+    width: 50%;
+    word-break: break-word;
   }
 
   .m-fact-item__main {
@@ -165,6 +169,10 @@
     gap: calc(var(--spacer)*0.9);
     border-left: rem(3px) solid transparent;
     padding-left: calc(var(--spacer)*0.65);
+  }
+
+  .m-fact-item__value {
+    width: 100%;
   }
 
 
