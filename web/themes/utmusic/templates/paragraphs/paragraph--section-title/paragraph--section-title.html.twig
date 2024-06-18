@@ -37,9 +37,11 @@
  */
 #}
 
-{{ attach_library('utmusic/copy-links') }}
-{{ attach_library('utmusic/tippyjs') }}
-{{ attach_library('utmusic/tooltip') }}
+{% if is_admin == 1 %}
+  {{ attach_library('utmusic/copy-links') }}
+  {{ attach_library('utmusic/tippyjs') }}
+  {{ attach_library('utmusic/tooltip') }}
+{% endif %}
 
 {% set html_element = content.field_section_title_html_element[0] ? content.field_section_title_html_element[0]['#markup'] %}
 {% set appearance = content.field_section_title_appearance[0] ? content.field_section_title_appearance[0]['#markup'] %}

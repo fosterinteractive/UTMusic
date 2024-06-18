@@ -37,9 +37,12 @@
  */
 #}
 {{ attach_library('utmusic/accordion') }}
-{{ attach_library('utmusic/copy-links') }}
-{{ attach_library('utmusic/tippyjs') }}
-{{ attach_library('utmusic/tooltip') }}
+
+{% if is_admin == 1 %}
+  {{ attach_library('utmusic/copy-links') }}
+  {{ attach_library('utmusic/tippyjs') }}
+  {{ attach_library('utmusic/tooltip') }}
+{% endif %}
 
 {% set accordion_items = [] %}
 
