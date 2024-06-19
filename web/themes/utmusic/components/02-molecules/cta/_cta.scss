@@ -46,6 +46,11 @@
   }
 }
 
+.m-cta--center {
+  text-align: center;
+  align-items: center;
+}
+
 .m-cta__description {
   color: var(--c-cta-text);
 }
@@ -111,7 +116,7 @@
 
 // Text Variation 
 .m-cta--text__main-wrapper {
-  @extend %m-cta__main-wrapper
+  @extend %m-cta__main-wrapper;
 }
 
 .m-cta--text__main {

@@ -1,6 +1,11 @@
 {% set variation = variation|default('image') %}
 {% set theme = theme|default('theme--pink') %}
 
+{% if variation == 'text' and alignment == 'center' %}
+  {% set alignment = 'm-cta--' ~ alignment %}
+  {% set heading_alignment = 'center' %}
+{% endif %}
+
 {% if variation is not empty %}
 
   {# Add BEM variation '--' prefix if missing #}
@@ -12,14 +17,15 @@
 
 {% endif %}
 
-<div class="m-cta{% if variation %} m-cta{{ variation }}{% endif %}{% if unpublished %} paragraph--unpublished{% endif %}">
+
+<div class="m-cta{% if variation %} m-cta{{ variation }}{% endif %} {% if unpublished %}  paragraph--unpublished{% endif %}">
 
   <div class="m-cta{{ variation }}__main-wrapper">
     <div class="m-cta{{ variation }}__main-wrapper__background">
       {# placeholder for background #}
     </div>
 
-    <div class="m-cta__main {% if variation %}m-cta{{ variation }}__main{% endif %} {{ theme }}">
+    <div class="m-cta__main {% if variation %}m-cta{{ variation }}__main{% endif %} {{ theme }} {{ alignment }}">
       <div class="m-cta__main-text-wrapper">
         {# Title #}
         {% if title %}
@@ -29,7 +35,7 @@
                 appearance: 'h2',
                 text: title,
                 id: id,
-                alignment: 'left',
+                alignment: heading_alignment|default('left'),
                 directory: directory,
               } only
             %}

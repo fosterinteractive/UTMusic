@@ -96,5 +96,6 @@
     date_string: content.field_news_date[0] ? content.field_news_date[0]['#markup'],
     areas_study: areas_study,
     news_categories: news_categories,
+    summary: content.field_news_summary_text[0] ? content.field_news_summary_text[0]['#output']['#text'],
   } only
 %}

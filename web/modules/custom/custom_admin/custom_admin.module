@@ -418,6 +418,14 @@ function custom_admin_form_layout_paragraphs_component_form_alter(array &$form, 
         ],
       ],
     ];
+
+    $form['field_cta_text_alignment']['#states'] = [
+      'visible' => [
+        ':input[name="field_cta_variation"]' => [
+          'value' => 'text',
+        ],
+      ],
+    ];
   }
 
   // Quote paragraph.

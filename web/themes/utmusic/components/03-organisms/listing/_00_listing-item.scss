@@ -59,9 +59,22 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: calc(var(--spacer) * 0.2);
+  gap: rem(4px);
   padding-bottom: calc(var(--spacer) * 2/3);
   border-bottom: rem(1px) solid var(--c-listing-item--border);
+}
+
+%m-listing-item__summary,
+.m-listing-item__summary {
+  @extend %a-type--xsmall;
+  color: var(--c-listing-item--summary);
+
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* start showing ellipsis when 3rd line is reached */
+  white-space: pre-wrap; /* let the text wrap preserving spaces */
+  margin-top: rem(10px);
 }
 
 .m-listing-item__title h3 {

@@ -13,6 +13,7 @@ dependencies:
     - field.field.paragraph.cta.field_cta_secondary_btn_target
     - field.field.paragraph.cta.field_cta_secondary_btn_url
     - field.field.paragraph.cta.field_cta_text
+    - field.field.paragraph.cta.field_cta_text_alignment
     - field.field.paragraph.cta.field_cta_title
     - field.field.paragraph.cta.field_cta_variation
     - paragraphs.paragraphs_type.cta
@@ -39,7 +40,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_cta_primary_button_label:
     type: text_default
@@ -53,7 +54,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_cta_primary_button_url:
     type: link
@@ -106,6 +107,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_cta_text_alignment:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_cta_title:
     type: text_default

@@ -1,0 +1,23 @@
+uuid: 321461e0-d6e8-4091-8b48-46d6db45fa7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_text_alignment
+    - paragraphs.paragraphs_type.cta
+  module:
+    - options
+id: paragraph.cta.field_cta_text_alignment
+field_name: field_cta_text_alignment
+entity_type: paragraph
+bundle: cta
+label: 'Text Alignment'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: left
+default_value_callback: ''
+settings: {  }
+field_type: list_string

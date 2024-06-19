@@ -43,6 +43,7 @@ dependencies:
     - layout_builder
     - options
     - smart_date
+    - smart_trim
     - text
     - user
 third_party_settings:
@@ -131,9 +132,27 @@ content:
     weight: 10
     region: content
   field_event_summary:
-    type: text_default
+    type: smart_trim
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 600
+      trim_type: chars
+      trim_suffix: ''
+      wrap_output: false
+      wrap_class: trimmed
+      more:
+        display_link: false
+        target_blank: false
+        link_trim_only: false
+        class: more-link
+        text: More
+        aria_label: 'Read more about [node:title]'
+        token_browser: ''
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+        replace_tokens: false
     third_party_settings: {  }
     weight: 2
     region: content

@@ -53,7 +53,9 @@
       </div>
     {% endif %}
 
-
+    {% if summary %}
+      <div class="m-listing-item{{ variation }}__summary">{{ summary }}</div>
+    {% endif %}
 
         {# {% if text %}
       <div class="m-listing-item{{ variation }}__text" data-dotdotdot="elipsis">

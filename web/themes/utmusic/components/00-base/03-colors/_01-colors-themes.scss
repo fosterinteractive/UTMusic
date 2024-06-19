@@ -154,6 +154,7 @@
   // @organisms/listing
   --c-listing-item--border: #{palette(grey, 800)};
   --c-listing-item--tag: #{palette(grey, 400)};
+  --c-listing-item--summary: #{palette(grey, 300)};
 
   //@organisms/listing/listing-item-featured
   --c-news-featured-title:  #{palette(teal, 300)};
@@ -267,8 +268,6 @@
   --c-heading: #{palette(white)};
   --c-figcaptions: #{palette(white)};
 
-  
-
   // a-link
   --c-link: #{palette(white)};
   --c-link--active: #{palette(white)};
@@ -288,6 +287,8 @@
   --c-events-featured-title: #{palette(white)};
 
   //@organisms/listing & listing-item
+  --c-listing-item--summary: #{palette(grey, 900)};
+
   --c-events-carousel-title: #{palette(white)};
   --c-events-carousel-border: #{palette(teal, 300)};
   --c-listing-item--tag: #{palette(grey, 900)};

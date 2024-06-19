@@ -27,6 +27,7 @@ dependencies:
   module:
     - datetime
     - layout_builder
+    - smart_trim
     - text
     - user
 third_party_settings:
@@ -39,9 +40,9 @@ bundle: news
 mode: listing_item_condensed
 content:
   content_moderation_control:
-    weight: -20
     settings: {  }
     third_party_settings: {  }
+    weight: 0
     region: content
   field_news_area_study:
     type: entity_reference_label
@@ -49,7 +50,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_news_category:
     type: entity_reference_label
@@ -57,7 +58,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_news_date:
     type: datetime_custom
@@ -66,14 +67,39 @@ content:
       timezone_override: America/Toronto
       date_format: 'M j, Y'
     third_party_settings: {  }
-    weight: 1
+    weight: 2
+    region: content
+  field_news_summary_text:
+    type: smart_trim
+    label: hidden
+    settings:
+      trim_length: 600
+      trim_type: chars
+      trim_suffix: ''
+      wrap_output: false
+      wrap_class: trimmed
+      more:
+        display_link: false
+        target_blank: false
+        link_trim_only: false
+        class: more-link
+        text: More
+        aria_label: 'Read more about [node:title]'
+        token_browser: ''
+      summary_handler: full
+      trim_options:
+        text: true
+        trim_zero: false
+        replace_tokens: false
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_news_title:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   field_news_body: true
@@ -85,7 +111,6 @@ hidden:
   field_news_header_video: true
   field_news_image: true
   field_news_promote: true
-  field_news_summary_text: true
   field_page_admin_help_seo: true
   field_page_admin_help_social: true
   field_page_meta_description: true

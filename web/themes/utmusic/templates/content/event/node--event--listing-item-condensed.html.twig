@@ -169,5 +169,6 @@
     event_type: content.field_event_type[0] ? content.field_event_type[0]['#plain_text'],
     ensemble: content.field_events_ensembles_choirs[0] ? content.field_events_ensembles_choirs[0]['#plain_text'],
     areas: areas,
+    summary: content.field_event_summary[0] ? content.field_event_summary[0]['#output']['#text'],
   } only
 %}
