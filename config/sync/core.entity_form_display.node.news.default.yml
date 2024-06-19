@@ -328,7 +328,7 @@ content:
       media_library_edit:
         show_edit: '1'
   field_news_promote:
-    type: options_select
+    type: options_buttons
     weight: 29
     region: content
     settings: {  }
