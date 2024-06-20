@@ -1,7 +1,9 @@
 uuid: 79f43570-4755-4651-ac4d-929e5498802f
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - emptyparagraphkiller
 name: 'Header Summary'
 format: header_summary
 weight: -8
@@ -15,3 +17,9 @@ filters:
       allowed_html: ''
       filter_html_help: true
       filter_html_nofollow: false
+  emptyparagraphkiller:
+    id: emptyparagraphkiller
+    provider: emptyparagraphkiller
+    status: true
+    weight: 0
+    settings: {  }

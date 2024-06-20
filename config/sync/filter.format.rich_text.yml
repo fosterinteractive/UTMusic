@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - editor
+    - emptyparagraphkiller
     - entity_embed
     - linkit
 _core:
@@ -89,3 +90,9 @@ filters:
     weight: -50
     settings:
       title: true
+  emptyparagraphkiller:
+    id: emptyparagraphkiller
+    provider: emptyparagraphkiller
+    status: true
+    weight: 0
+    settings: {  }

@@ -1,7 +1,9 @@
 uuid: dfedf824-cb16-4622-895e-838015a45735
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - emptyparagraphkiller
 name: Table
 format: table
 weight: 0
@@ -15,3 +17,9 @@ filters:
       allowed_html: '<span class="a-table--dark-blue-text a-table--blue-text a-table--one-line-text">'
       filter_html_help: true
       filter_html_nofollow: false
+  emptyparagraphkiller:
+    id: emptyparagraphkiller
+    provider: emptyparagraphkiller
+    status: true
+    weight: 0
+    settings: {  }

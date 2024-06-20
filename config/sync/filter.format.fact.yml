@@ -1,7 +1,9 @@
 uuid: 3a068921-1d6b-4c65-95fb-5ea1fd7d829e
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - emptyparagraphkiller
 name: Fact
 format: fact
 weight: 0
@@ -15,3 +17,9 @@ filters:
       allowed_html: '<br> <p class="a-type--small a-type--large a-type--xlarge"> <sub> <sup>'
       filter_html_help: true
       filter_html_nofollow: false
+  emptyparagraphkiller:
+    id: emptyparagraphkiller
+    provider: emptyparagraphkiller
+    status: true
+    weight: 0
+    settings: {  }

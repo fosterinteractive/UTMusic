@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - emptyparagraphkiller
     - linkit
 _core:
   default_config_hash: RmO1jIHyjCygkWuSM_OtNLOvfN-PNkzczOvKwOyccv0
@@ -33,3 +34,9 @@ filters:
     weight: 0
     settings:
       title: true
+  emptyparagraphkiller:
+    id: emptyparagraphkiller
+    provider: emptyparagraphkiller
+    status: true
+    weight: 0
+    settings: {  }

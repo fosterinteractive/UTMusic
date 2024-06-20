@@ -1,7 +1,9 @@
 uuid: 817e0db6-f201-4d8e-9f53-55edd97fad2d
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - emptyparagraphkiller
 name: 'Fact Value'
 format: fact_value
 weight: 0
@@ -15,3 +17,9 @@ filters:
       allowed_html: '<br> <p> <sub> <sup>'
       filter_html_help: true
       filter_html_nofollow: false
+  emptyparagraphkiller:
+    id: emptyparagraphkiller
+    provider: emptyparagraphkiller
+    status: true
+    weight: 0
+    settings: {  }

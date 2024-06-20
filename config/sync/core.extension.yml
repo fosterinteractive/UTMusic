@@ -46,6 +46,7 @@ module:
   editor_advanced_link: 0
   editoria11y: 0
   embed: 0
+  emptyparagraphkiller: 0
   entity_browser: 0
   entity_browser_entity_form: 0
   entity_embed: 0

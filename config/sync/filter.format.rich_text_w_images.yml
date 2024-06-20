@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - editor
+    - emptyparagraphkiller
     - entity_embed
     - linkit
     - media
@@ -99,3 +100,9 @@ filters:
         default: default
       allowed_media_types:
         ed_image: ed_image
+  emptyparagraphkiller:
+    id: emptyparagraphkiller
+    provider: emptyparagraphkiller
+    status: true
+    weight: 0
+    settings: {  }
