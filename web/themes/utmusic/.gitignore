@@ -108,3 +108,6 @@ typings/
 
 # System
 .DS_Store
+
+# Compiled stylesheets
+dist
