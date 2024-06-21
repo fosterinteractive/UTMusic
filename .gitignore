@@ -1,4 +1,12 @@
-
+###
+### GitHub repository .gitignore section
+###
+web/themes/utmusic/dist
+web/themes/utmusic/js/libraries/*
+!web/themes/utmusic/js/libraries/.gitkeep
+# This distinction is only important when using this
+# repository as a custom upstream. The .gitignore file
+# is not modified in the GitHub PR workflow.
 
 ###
 ### Pantheon site .gitignore section

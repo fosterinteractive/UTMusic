@@ -88,6 +88,15 @@
 {% set link_url = content.field_card_button_url[0] ? content.field_card_button_url[0]['#url'] %}
 {% set aria_label = content.field_card_button_aria_label[0] ? content.field_card_button_aria_label[0]['#context'].value %}
 
+
+{% if link_url %}
+  {% if content.field_card_button_format[0] %}
+    {% set button_format = content.field_card_button_format[0] ? content.field_card_button_format[0]['#markup'] %}
+  {% else %}
+    {% set button_format = 'button' %}
+  {% endif %}
+{% endif %}
+
 {% include "@molecules/card/card.twig" with {
     unpublished: unpublished,
     directory: directory,
@@ -104,5 +113,6 @@
     link_label: link_label,
     link_url: link_url,
     aria_label: aria_label,
+    button_format: button_format,
   }
 %}

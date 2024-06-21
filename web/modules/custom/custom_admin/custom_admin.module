@@ -162,155 +162,82 @@ function custom_admin_field_widget_complete_form_alter(&$field_widget_complete_f
         ];
       }
 
-      // Carousel Card 1 field in page header.
-      if (isset($elements[$key]['subform']['field_carousel_header_card1'])) {
-        $elements[$key]['subform']['field_carousel_header_card1']['#states'] = [
-          'visible' => [
-            ':input[name="' . $parents[0] . '[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
-              'value' => 'cards_3',
+      // Define the fields to be checked.
+      $fields = [
+        'field_carousel_header_card1',
+        'field_carousel_header_card2',
+        'field_carousel_header_card3',
+      ];
+
+      foreach ($fields as $field) {
+        if (isset($elements[$key]['subform'][$field])) {
+          $elements[$key]['subform'][$field]['#states'] = [
+            'visible' => [
+              ':input[name="' . $parents[0] . '[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
+                'value' => 'cards_3',
+              ],
             ],
-          ],
-        ];
+          ];
+        }
       }
 
-      // Carousel Card 2 field in page header.
-      if (isset($elements[$key]['subform']['field_carousel_header_card2'])) {
-        $elements[$key]['subform']['field_carousel_header_card2']['#states'] = [
-          'visible' => [
-            ':input[name="' . $parents[0] . '[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
-              'value' => 'cards_3',
-            ],
-          ],
-        ];
-      }
+    }
+  }
 
-      // Carousel Card 3 field in page header.
-      if (isset($elements[$key]['subform']['field_carousel_header_card3'])) {
-        $elements[$key]['subform']['field_carousel_header_card3']['#states'] = [
-          'visible' => [
-            ':input[name="' . $parents[0] . '[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
-              'value' => 'cards_3',
-            ],
-          ],
-        ];
-      }
-
-      // Carousel Card 3 field in page header.
-      if (isset($elements[$key]['subform']['field_carousel_header_card3'])) {
-        $elements[$key]['subform']['field_carousel_header_card3']['#states'] = [
-          'visible' => [
-            ':input[name="' . $parents[0] . '[' . $key . '][subform][field_carousel_header_sec_layout]"]' => [
-              'value' => 'cards_3',
-            ],
-          ],
-        ];
-      }
+  $carousel_fields = [
+    'field_carousel_header_card1',
+    'field_carousel_header_card2',
+    'field_carousel_header_card3',
+  ];
   
+  foreach ($carousel_fields as $carousel_field) {
+    if (
+      $field_definition->getType() == 'entity_reference_revisions' &&
+      $field_definition->getName() == $carousel_field
+    ) {
+  
+      $parents = $field_widget_complete_form['#parents'];
+      foreach (Element::children($elements) as $key) {
+  
+        // Define the subfields to be checked within each carousel card.
+        $subfields = [
+          'field_card_illustration' => 'illustration',
+          'field_card_image' => 'image',
+        ];
+  
+        foreach ($subfields as $subfield => $value) {
+          if (isset($elements[$key]['subform'][$subfield])) {
+            $elements[$key]['subform'][$subfield]['#states'] = [
+              'visible' => [
+                ':input[name="field_page_header[' . $parents[1] . '][subform][' . $carousel_field . '][' . $key . '][subform][field_card_variation]"]' => [
+                  'value' => $value,
+                ],
+              ],
+            ];
+          }
+        }
+  
+        // Additional logic for button fields
+        $button_fields = [
+          'field_card_button_label' => 'button',
+          'field_card_button_aria_label' => 'button',
+          'field_card_button_url' => '_none',
+        ];
+  
+        foreach ($button_fields as $button_field => $value) {
+          if (isset($elements[$key]['subform'][$button_field])) {
+            $elements[$key]['subform'][$button_field]['#states'] = [
+              ($button_field == 'field_card_button_url' ? '!visible' : 'visible') => [
+                ':input[name="field_page_header[' . $parents[1] . '][subform][' . $carousel_field . '][' . $key . '][subform][field_card_button_format]"]' => [
+                  'value' => $value,
+                ],
+              ],
+            ];
+          }
+        }
+      }
     }
   }
-
-  // Carousel header card 1.
-  if (
-    $field_definition->getType() == 'entity_reference_revisions' &&
-    $field_definition->getName() == 'field_carousel_header_card1'
-  ) {
-
-    $parents = $field_widget_complete_form['#parents'];
-    foreach (Element::children($elements) as $key) {
-      
-      // Illustration field in card 1.
-      if (isset($elements[$key]['subform']['field_card_illustration'])) {
-        $elements[$key]['subform']['field_card_illustration']['#states'] = [
-          'visible' => [
-            ':input[name="field_page_header[' . $parents[1] . '][subform][field_carousel_header_card1][' . $key . '][subform][field_card_variation]"]' => [
-              'value' => 'illustration',
-            ],
-          ],
-        ];
-      }
-
-      // Image field in card 1.
-      if (isset($elements[$key]['subform']['field_card_image'])) {
-        $elements[$key]['subform']['field_card_image']['#states'] = [
-          'visible' => [
-            ':input[name="field_page_header[' . $parents[1] . '][subform][field_carousel_header_card1][' . $key . '][subform][field_card_variation]"]' => [
-              'value' => 'image',
-            ],
-          ],
-        ];
-      }
-
-    }
-  }
-
-  // Carousel header card 2.
-  if (
-    $field_definition->getType() == 'entity_reference_revisions' &&
-    $field_definition->getName() == 'field_carousel_header_card2'
-  ) {
-
-    $parents = $field_widget_complete_form['#parents'];
-    foreach (Element::children($elements) as $key) {
-      
-      // Illustration field in card 2.
-      if (isset($elements[$key]['subform']['field_card_illustration'])) {
-        $elements[$key]['subform']['field_card_illustration']['#states'] = [
-          'visible' => [
-            ':input[name="field_page_header[' . $parents[1] . '][subform][field_carousel_header_card2][' . $key . '][subform][field_card_variation]"]' => [
-              'value' => 'illustration',
-            ],
-          ],
-        ];
-      }
-
-      // Image field in card 2.
-      if (isset($elements[$key]['subform']['field_card_image'])) {
-        $elements[$key]['subform']['field_card_image']['#states'] = [
-          'visible' => [
-            ':input[name="field_page_header[' . $parents[1] . '][subform][field_carousel_header_card2][' . $key . '][subform][field_card_variation]"]' => [
-              'value' => 'image',
-            ],
-          ],
-        ];
-      }
-
-    }
-  }
-
-  // Carousel header card 3.
-  if (
-    $field_definition->getType() == 'entity_reference_revisions' &&
-    $field_definition->getName() == 'field_carousel_header_card3'
-  ) {
-
-    $parents = $field_widget_complete_form['#parents'];
-    foreach (Element::children($elements) as $key) {
-      
-      // Illustration field in card 3.
-      if (isset($elements[$key]['subform']['field_card_illustration'])) {
-        $elements[$key]['subform']['field_card_illustration']['#states'] = [
-          'visible' => [
-            ':input[name="field_page_header[' . $parents[1] . '][subform][field_carousel_header_card3][' . $key . '][subform][field_card_variation]"]' => [
-              'value' => 'illustration',
-            ],
-          ],
-        ];
-      }
-
-      // Image field in card 3.
-      if (isset($elements[$key]['subform']['field_card_image'])) {
-        $elements[$key]['subform']['field_card_image']['#states'] = [
-          'visible' => [
-            ':input[name="field_page_header[' . $parents[1] . '][subform][field_carousel_header_card3][' . $key . '][subform][field_card_variation]"]' => [
-              'value' => 'image',
-            ],
-          ],
-        ];
-      }
-
-    }
-  }
-
 }
 
 /**

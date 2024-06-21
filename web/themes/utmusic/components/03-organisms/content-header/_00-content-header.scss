@@ -76,8 +76,8 @@
   position: relative;
   display: inline-block;
   margin-bottom: calc(var(--spacer) / 2);
-  // text-transform: uppercase;
   color: var(--c-heading-prefix);
+  margin-left: rem(18px);
 
   &::before {
     position: absolute;
