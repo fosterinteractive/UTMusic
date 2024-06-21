@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.card.field_card_button_aria_label
+    - field.field.paragraph.card.field_card_button_format
     - field.field.paragraph.card.field_card_button_label
     - field.field.paragraph.card.field_card_button_url
     - field.field.paragraph.card.field_card_categories
@@ -44,6 +45,7 @@ third_party_settings:
         required_fields: true
     group_button:
       children:
+        - field_card_button_format
         - field_card_button_label
         - field_card_button_url
         - field_card_button_aria_label
@@ -81,15 +83,21 @@ mode: default
 content:
   field_card_button_aria_label:
     type: string_textfield
-    weight: 11
+    weight: 15
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_card_button_format:
+    type: options_select
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_card_button_label:
     type: text_textfield
-    weight: 9
+    weight: 13
     region: content
     settings:
       size: 60
@@ -100,7 +108,7 @@ content:
         hide_guidelines: '1'
   field_card_button_url:
     type: link_default
-    weight: 10
+    weight: 14
     region: content
     settings:
       placeholder_url: ''

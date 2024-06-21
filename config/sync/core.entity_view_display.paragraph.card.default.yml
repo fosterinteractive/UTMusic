@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.card.field_card_button_aria_label
+    - field.field.paragraph.card.field_card_button_format
     - field.field.paragraph.card.field_card_button_label
     - field.field.paragraph.card.field_card_button_url
     - field.field.paragraph.card.field_card_categories
@@ -31,6 +32,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 7
+    region: content
+  field_card_button_format:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
     region: content
   field_card_button_label:
     type: text_default

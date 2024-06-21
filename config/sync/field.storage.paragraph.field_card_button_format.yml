@@ -1,0 +1,27 @@
+uuid: 54df142b-bb30-46e3-a3c5-cd62354b41d2
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_card_button_format
+field_name: field_card_button_format
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: button
+      label: 'Button (default)'
+    -
+      value: title_link
+      label: 'Title link'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

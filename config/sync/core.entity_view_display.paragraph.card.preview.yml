@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.card.field_card_button_aria_label
+    - field.field.paragraph.card.field_card_button_format
     - field.field.paragraph.card.field_card_button_label
     - field.field.paragraph.card.field_card_button_url
     - field.field.paragraph.card.field_card_categories
@@ -119,4 +120,5 @@ content:
     weight: 0
     region: content
 hidden:
+  field_card_button_format: true
   search_api_excerpt: true

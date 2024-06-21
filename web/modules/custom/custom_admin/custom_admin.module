@@ -518,6 +518,30 @@ function custom_admin_form_layout_paragraphs_component_form_alter(array &$form, 
         ],
       ],
     ];
+
+    $form['field_card_button_label']['#states'] = [
+      'visible' => [
+        ':input[name="field_card_button_format"]' => [
+          'value' => 'button',
+        ],
+      ],
+    ];
+
+    $form['field_card_button_aria_label']['#states'] = [
+      'visible' => [
+        ':input[name="field_card_button_format"]' => [
+          'value' => 'button',
+        ],
+      ],
+    ];
+
+    $form['field_card_button_url']['#states'] = [
+      '!visible' => [
+        ':input[name="field_card_button_format"]' => [
+          'value' => '_none',
+        ],
+      ],
+    ];
   }
 
 }
@@ -691,8 +715,8 @@ function custom_admin_form_alter(&$form, FormStateInterface $form_state, $form_i
 }
 
 /**
- * This hook to globally override the pager settings for all views.
- * Specifically, it sets the pager to display 5 items per page for any view that uses a pager.
+ * Implements hook_views_pre_view() to globally override the pager settings for all views.
+ * Specifically, it sets the number of pager links visible for any view that uses a pager.
  */
 function custom_admin_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
   // Define an array of view IDs that should be excluded from the global pager setting.
@@ -708,12 +732,16 @@ function custom_admin_views_pre_view(ViewExecutable $view, $display_id, array &$
 
   // Check if the view has a pager.
   if ($view->display_handler instanceof DisplayPluginBase && $view->display_handler->getOption('pager')) {
-    // Override the pager settings.
+    // Get the current pager options.
+    $pager_options = $view->display_handler->getOption('pager')['options'];
+    
+    // Override only the 'quantity' option, keeping the other pager options unchanged.
+    $pager_options['quantity'] = 5;
+
+    // Set the updated pager options back to the view.
     $view->display_handler->setOption('pager', [
       'type' => 'full',
-      'options' => [
-        'quantity' => 5,
-      ],
+      'options' => $pager_options,
     ]);
   }
 }
