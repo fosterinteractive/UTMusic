@@ -71,23 +71,23 @@
 
 // Core image title-prefix.
 %o-hero-media__title-prefix-core {
-  // @extend %a-type--xsmall;
+  @extend %a-type--xsmall;
   
-  // position: relative;
-  // display: inline-block;
-  // margin-bottom: calc(var(--spacer) / 2);
-  // color: var(--c-heading-prefix);
-  // margin-left: rem(18px);
+  position: relative;
+  display: inline-block;
+  margin-bottom: calc(var(--spacer) / 2);
+  color: var(--c-heading-prefix);
+  margin-left: rem(18px);
 
-  // &::before {
-  //   position: absolute;
-  //   display: block;
-  //   left: -15px;
-  //   width: 3px;
-  //   height: 100%;
-  //   background-color: var(--c-heading-prefix-decoration);
-  //   content: '';
-  // }
+  &::before {
+    position: absolute;
+    display: block;
+    left: -15px;
+    width: 3px;
+    height: 100%;
+    background-color: var(--c-heading-prefix-decoration);
+    content: '';
+  }
 }
 
 .o-hero-media__title-prefix {
