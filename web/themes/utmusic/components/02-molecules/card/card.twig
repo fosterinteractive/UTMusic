@@ -67,13 +67,13 @@
   <div class="m-card{{ variation }}__main">
     {# Title #}
     {% if title %}
-      {% set link_url_on_title = link_label ? false : link_url %}
+      {% set link_url_on_title = button_format == 'title_link' ? false : link_url %}
       <div class="m-card{{ variation }}__title">
         {% include "@atoms/text/headings/heading.twig" with {
             html_element: title_html_element,
             appearance: title_appearance,
             text: title,
-            url: link_url_on_title,
+            url: link_url,
             id: id,
             alignment: 'left',
             directory: directory,
@@ -104,9 +104,9 @@
     {% endif %}
   </div>
 
-  {% if link_url and link_label %}
+  {% if link_url and link_label and button_format == 'button' %}
     <div class="m-card{{ variation }}__link">
-        {# {% include "@atoms/text/headings/heading.twig" with {
+        {% include "@atoms/text/headings/heading.twig" with {
             html_element: 'div',
             appearance: 'h5',
             text: link_label,
@@ -115,9 +115,9 @@
             aria_label: aria_label,
             directory: directory,
           } only
-        %} #}
+        %}
 
-        {% include '@atoms/button/button.twig' with {
+        {# {% include '@atoms/button/button.twig' with {
             directory: directory,
             base_class: 'a-button',
             label: link_label,
@@ -127,7 +127,7 @@
             aria_label: aria_label,
             alignment: 'left',
           } only
-        %} 
+        %}  #}
     </div>
   {% endif %}
 </div>
