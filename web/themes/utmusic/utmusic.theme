@@ -398,6 +398,10 @@ function utmusic_preprocess_node(array &$variables) {
 }
 
 
+function utmusic_preprocess_views_view(array &$variables) {
+  // Add a variable to indicate if the current user is not authenticated (anonymous).
+  $variables['is_anonymous'] = \Drupal::currentUser()->isAnonymous();
+}
 
 /**
  * Implements hook_preprocess_views().

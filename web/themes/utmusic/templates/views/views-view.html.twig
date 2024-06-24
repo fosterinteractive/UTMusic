@@ -37,6 +37,13 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
+
+{% set display_names = ['news_featured_item', 'events_summary_list_past', 'events_summary_list_upcoming', 'events_featured_item'] %}
+
+{% if view.current_display in display_names and rows is empty and is_anonymous %}
+  {% set empty = '' %}
+{% endif %}
+
 <div{{ attributes.addClass(classes) }}>
   {#  a11y aria for announcements after applying exposed filters  #}
   <div class="offscreen" aria-live='polite'></div>
