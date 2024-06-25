@@ -5,16 +5,36 @@ use Drupal\paragraphs\Entity\Paragraph;
 
 
 /**
- * Removes 'center' alignment from section titles.
+ * Implements hook_update_N().
  */
-function content_updates_update_10005() {
-  $paragraphs = \Drupal::entityTypeManager()
-    ->getStorage('paragraph')
-    ->loadByProperties(['type' => 'section_title']);
+function content_updates_update_10014() {
+  // Query to get all paragraph entities of type 'card'.
+  $query = \Drupal::entityQuery('paragraph')
+    ->condition('type', 'card')
+    ->accessCheck(FALSE);
+  $ids = $query->execute();
 
-  foreach ($paragraphs as $paragraph) {
-    if ($paragraph->get('field_section_title_alignment')->value === 'center') {
-      $paragraph->set('field_section_title_alignment', 'left'); // Update to 'left' or another value
+  foreach ($ids as $id) {
+    // Load the paragraph entity.
+    $paragraph = \Drupal\paragraphs\Entity\Paragraph::load($id);
+
+    if ($paragraph) {
+      $field_card_button_url = $paragraph->get('field_card_button_url')->getString();
+      $field_card_button_label = $paragraph->get('field_card_button_label')->getString();
+      $field_card_button_format = '';
+
+      if (!empty($field_card_button_url) && !empty($field_card_button_label)) {
+        $field_card_button_format = 'button';
+      }
+      elseif (!empty($field_card_button_url)) {
+        $field_card_button_format = 'title_link';
+      }
+      else {
+        $field_card_button_format = '_none';
+      }
+
+      // Update the field_card_button_format field.
+      $paragraph->set('field_card_button_format', $field_card_button_format);
       $paragraph->save();
     }
   }

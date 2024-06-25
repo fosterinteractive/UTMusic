@@ -67,13 +67,13 @@
   <div class="m-card{{ variation }}__main">
     {# Title #}
     {% if title %}
-      {% set link_url_on_title = button_format == 'title_link' ? false : link_url %}
+      {% set link_url_on_title = button_format == 'title_link' ? link_url : false %}
       <div class="m-card{{ variation }}__title">
         {% include "@atoms/text/headings/heading.twig" with {
             html_element: title_html_element,
             appearance: title_appearance,
             text: title,
-            url: link_url,
+            url: link_url_on_title,
             id: id,
             alignment: 'left',
             directory: directory,
