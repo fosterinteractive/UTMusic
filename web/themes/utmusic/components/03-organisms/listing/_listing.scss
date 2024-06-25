@@ -4,7 +4,7 @@
 // Add bottom spacing to the last item or button in the layout
 %o-listing,
 .o-listing {
-  margin-top: var(--spacer);
+  // margin-top: var(--spacer);
   margin-bottom: var(--spacer);
 }
 
