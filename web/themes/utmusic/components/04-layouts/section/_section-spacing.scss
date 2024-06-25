@@ -8,12 +8,21 @@ $spacing-small: calc(var(--spacer) * 2);
 $spacing-medium: calc(var(--spacer) * 3);
 $spacing-large: calc(var(--spacer) * 4);
 
+// Reset padding if no child elements
+%reset-padding {
+  &:not(:has(div)) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
 .l-section-spacing-top--small {
 
   .l-section__zone-1,
   .l-section__zone-2,
   .l-section__zone-3,
   .l-section__zone-4 {
+    @extend %reset-padding;
     padding-top: $spacing-small;
   }
 }
@@ -23,6 +32,7 @@ $spacing-large: calc(var(--spacer) * 4);
   .l-section__zone-2,
   .l-section__zone-3,
   .l-section__zone-4 {
+    @extend %reset-padding;
     padding-bottom: $spacing-small;
   }
 }
@@ -32,6 +42,7 @@ $spacing-large: calc(var(--spacer) * 4);
   .l-section__zone-2,
   .l-section__zone-3,
   .l-section__zone-4 {
+    @extend %reset-padding;
     padding-top: $spacing-medium;
   }
 }
@@ -41,6 +52,7 @@ $spacing-large: calc(var(--spacer) * 4);
   .l-section__zone-2,
   .l-section__zone-3,
   .l-section__zone-4 {
+    @extend %reset-padding;
     padding-bottom: $spacing-medium;
   }
 }
@@ -50,6 +62,7 @@ $spacing-large: calc(var(--spacer) * 4);
   .l-section__zone-2,
   .l-section__zone-3,
   .l-section__zone-4 {
+    @extend %reset-padding;
     padding-top: $spacing-large;
   }
 }
@@ -59,6 +72,7 @@ $spacing-large: calc(var(--spacer) * 4);
   .l-section__zone-2,
   .l-section__zone-3,
   .l-section__zone-4 {
+    @extend %reset-padding;
     padding-bottom: $spacing-large;
   }
 }

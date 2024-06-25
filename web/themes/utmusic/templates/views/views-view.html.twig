@@ -41,48 +41,57 @@
 {# list of display names that should not display empty message when user is anonymous #}
 {% set display_names = ['news_featured_item', 'news_summary_list_images', 'news_summary_list', 'events_summary_list_past', 'events_summary_list_upcoming', 'events_featured_item'] %}
 
-{% if view.current_display in display_names and rows is empty and is_anonymous %}
-  {% set empty = '' %}
+{% if view.current_display in display_names and rows is empty %}
+    {% set empty_explanation = '<p>(Empty lists are hidden from site visitors)</p>' %}
+  {% if is_anonymous %}
+    {% set hide_view = TRUE %}
+  {% endif %}
 {% endif %}
 
-<div{{ attributes.addClass(classes) }}>
-  {#  a11y aria for announcements after applying exposed filters  #}
-  <div class="offscreen" aria-live='polite'></div>
-  
-  {{ title_prefix }}
-  {{ title }}
-  {{ title_suffix }}
+{% if not hide_view %}
+  <div{{ attributes.addClass(classes) }}>
+    {#  a11y aria for announcements after applying exposed filters  #}
+    <div class="offscreen" aria-live='polite'></div>
+    
+    {{ title_prefix }}
+    {{ title }}
+    {{ title_suffix }}
 
-  {% if header %}
-    <header>
-      {{ header }}
-    </header>
-  {% endif %}
+    {% if header %}
+      <header>
+        {{ header }}
+      </header>
+    {% endif %}
 
-  {{ exposed }}
+    {{ exposed }}
 
-  {{ attachment_before }}
+    {{ attachment_before }}
 
-  {% if rows -%}
-    {{ rows }}
-  {% elseif empty -%}
-  
-   {#  a11y aria for announcements after applying exposed filters  #}
-    <div aria-live='polite'>
-      {{ empty }}
-    </div>
-  {% endif %}
+    {% if rows -%}
+      {{ rows }}
+    {% elseif empty -%}
+    
+    {#  a11y aria for announcements after applying exposed filters  #}
+      <div aria-live='polite'>
+        {{ empty }}
 
-  {{ pager }}
+        {% if empty_explanation %}
+          {{ empty_explanation|raw }}
+        {% endif %}
+      </div>
+    {% endif %}
 
-  {{ attachment_after }}
-  {{ more }}
+    {{ pager }}
 
-  {% if footer %}
-    <footer>
-      {{ footer }}
-    </footer>
-  {% endif %}
+    {{ attachment_after }}
+    {{ more }}
 
-  {{ feed_icons }}
-</div>
+    {% if footer %}
+      <footer>
+        {{ footer }}
+      </footer>
+    {% endif %}
+
+    {{ feed_icons }}
+  </div>
+{% endif %}
