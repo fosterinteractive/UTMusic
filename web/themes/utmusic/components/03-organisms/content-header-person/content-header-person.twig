@@ -81,7 +81,12 @@
           </p>
         </div>
       {% endif %}
-      
+
+      {% if ensembles_choirs %}
+        <div class="o-hero-media{{ variation }}__ensembles_choirs">
+          <p>{{ ensembles_choirs|join(', ') }}</p>
+        </div>
+      {% endif %}
 
       {% if areas %}
         <div class="o-hero-media{{variation}}__tags">

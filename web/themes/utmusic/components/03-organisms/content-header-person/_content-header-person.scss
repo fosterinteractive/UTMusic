@@ -37,6 +37,10 @@
   @extend %o-hero-media__title-prefix-core;
 }
 
+.o-hero-media--person__ensembles_choirs p {
+  color: var(--c-heading-summary);
+}
+
 .o-hero-media__pronoun {
   @extend %a-type--xmedium,;
   color: palette(blue, 300);
