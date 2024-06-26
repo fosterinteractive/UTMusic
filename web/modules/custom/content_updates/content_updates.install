@@ -7,7 +7,7 @@ use Drupal\paragraphs\Entity\Paragraph;
 /**
  * Implements hook_update_N().
  */
-function content_updates_update_10014() {
+function content_updates_update_10015() {
   // Query to get all paragraph entities of type 'card'.
   $query = \Drupal::entityQuery('paragraph')
     ->condition('type', 'card')
