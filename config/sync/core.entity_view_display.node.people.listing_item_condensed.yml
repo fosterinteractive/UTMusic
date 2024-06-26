@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.people.field_people_education
     - field.field.node.people.field_people_email
     - field.field.node.people.field_people_enable_media
+    - field.field.node.people.field_people_ensembles_choirs
     - field.field.node.people.field_people_faculty_position
     - field.field.node.people.field_people_featured_media
     - field.field.node.people.field_people_image
@@ -143,6 +144,7 @@ hidden:
   field_people_education: true
   field_people_email: true
   field_people_enable_media: true
+  field_people_ensembles_choirs: true
   field_people_featured_media: true
   field_people_instrument: true
   field_people_phone: true

@@ -108,6 +108,23 @@
   {% endfor %}
 {% endif %}
 
+{# Set string of instruments from array #}
+{% if content.field_people_ensembles_choirs[0] %}
+  {% set ensembles_choirs = [] %}
+
+  {# Get number of items #}
+  {% if content.field_people_ensembles_choirs['#items'].getIterator() %}
+    {% set item_count = content.field_people_ensembles_choirs['#items'].getIterator()|length - 1 %}
+  {% endif %}
+
+  {# For each item add to instruments array #}
+  {% for i in 0..item_count %}
+    {% set ensembles_choirs = ensembles_choirs|merge([content.field_people_ensembles_choirs[i]['#plain_text']]) %}
+  {% endfor %}
+
+  
+{% endif %}
+
 {# Set string of job titles from array #}
 {% if content.field_people_job_title[0] %}
   {% set job_titles_arr = [] %}
@@ -389,6 +406,7 @@
     media_display: media_display,
     featured_media: featured_media,
     number_items: feature_media_list_type == 'manual' ? media_count : auto_number_items_media,
+    ensembles_choirs: ensembles_choirs|join(', '),
   }
 %}
 {{ attach_library('utmusic/carousel-media') }}

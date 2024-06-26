@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.people.field_people_education
     - field.field.node.people.field_people_email
     - field.field.node.people.field_people_enable_media
+    - field.field.node.people.field_people_ensembles_choirs
     - field.field.node.people.field_people_faculty_position
     - field.field.node.people.field_people_featured_media
     - field.field.node.people.field_people_image
@@ -91,6 +92,7 @@ third_party_settings:
         - field_people_staff_position
         - field_people_job_title_staff
         - field_people_job_title_library
+        - field_people_ensembles_choirs
       label: Categories
       region: content
       parent_name: ''
@@ -150,7 +152,7 @@ third_party_settings:
       label: 'Search Engines & Social Share (Advanced)'
       region: content
       parent_name: ''
-      weight: 4
+      weight: 5
       format_type: details
       format_settings:
         classes: ''
@@ -195,7 +197,7 @@ third_party_settings:
       label: 'Programs List'
       region: hidden
       parent_name: ''
-      weight: 15
+      weight: 18
       format_type: details
       format_settings:
         classes: ''
@@ -211,7 +213,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -338,7 +340,7 @@ content:
             selector: ''
   field_people_creative_works:
     type: text_textarea
-    weight: 27
+    weight: 28
     region: content
     settings:
       rows: 5
@@ -368,7 +370,7 @@ content:
             selector: ''
   field_people_custom_content:
     type: text_textarea
-    weight: 28
+    weight: 29
     region: content
     settings:
       rows: 5
@@ -439,6 +441,13 @@ content:
     weight: 29
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_people_ensembles_choirs:
+    type: choices_widget
+    weight: 26
+    region: content
+    settings:
+      configuration_options: ''
     third_party_settings: {  }
   field_people_faculty_position:
     type: options_select
@@ -724,7 +733,7 @@ content:
             selector: ''
   field_people_teaching:
     type: text_textarea
-    weight: 26
+    weight: 27
     region: content
     settings:
       rows: 5
@@ -762,19 +771,19 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   revision_log:
     type: hide_revision_field_log_widget
-    weight: 11
+    weight: 12
     region: content
     settings:
       rows: 5
@@ -785,20 +794,20 @@ content:
       allow_user_settings: true
     third_party_settings: {  }
   simple_sitemap:
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 8
+    weight: 9
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
@@ -807,7 +816,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
