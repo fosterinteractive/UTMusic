@@ -448,7 +448,24 @@ content:
     region: content
     settings:
       configuration_options: ''
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        31caed49-de68-48e3-9172-5e92e131c51d:
+          entity_type: node
+          bundle: people
+          dependee: field_people_role
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 3
+            value: ''
+            values: faculty
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_people_faculty_position:
     type: options_select
     weight: 19
