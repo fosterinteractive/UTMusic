@@ -46,15 +46,9 @@
   }
 
   h2 a, h3 a, span a {
-    color: var(--c-card-title) !important;
-    
     span {
       padding: 0;
     }
-  }
-
-  svg {
-    fill: var(--c-card-title) !important;
   }
 }
   
@@ -72,20 +66,12 @@
   }
 
   .a-heading__h5 a {
-    color: palette(blue);
-
-    svg {
-      color: palette(teal, 300);
-    }
-
     &:hover,
     &:focus,
     &:active {
-      color: palette(teal, 300);
       
       svg {
         transform: translateX(0);
-        color: palette(blue);
       }
     }
   }

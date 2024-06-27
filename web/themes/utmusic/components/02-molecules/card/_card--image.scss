@@ -18,16 +18,10 @@
     display: inline-block;
   }
 
-  h2 a, h3 a, span a {
-    color: var(--c-card-title) !important;
-    
+  h2 a, h3 a, span a {    
     span {
       padding: 0;
     }
-  }
-
-  svg {
-    fill: var(--c-card-title) !important;
   }
 }
 
