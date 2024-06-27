@@ -42,7 +42,7 @@
 {% set display_names = ['news_featured_item', 'news_summary_list_images', 'news_summary_list', 'events_summary_list_past', 'events_summary_list_upcoming', 'events_featured_item'] %}
 
 {% if view.current_display in display_names and rows is empty %}
-    {% set empty_explanation = '<p>(Empty lists are hidden from site visitors)</p>' %}
+    {% set empty_explanation = '<p style="font-style: italic;">Note: Empty lists are hidden from site visitors.</p>' %}
   {% if is_anonymous %}
     {% set hide_view = TRUE %}
   {% endif %}
