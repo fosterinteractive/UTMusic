@@ -190,6 +190,10 @@
   
       {% if content.field_people_faculty_position[0] %}
         {% set position_faculty = content.field_people_faculty_position[0]['#plain_text'] %}
+
+        {% if content.field_people_faculty_position[0]['#plain_text'] == 'Instructors' %}
+          {% set show_ensembles_choirs = ensembles_choirs|join(', ') %}
+        {% endif %}
       {% endif %}
 
       {% if job_titles_arr %}
@@ -406,7 +410,7 @@
     media_display: media_display,
     featured_media: featured_media,
     number_items: feature_media_list_type == 'manual' ? media_count : auto_number_items_media,
-    ensembles_choirs: ensembles_choirs|join(', '),
+    ensembles_choirs: show_ensembles_choirs,
   }
 %}
 {{ attach_library('utmusic/carousel-media') }}
