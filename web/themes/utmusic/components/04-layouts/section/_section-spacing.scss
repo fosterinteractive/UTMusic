@@ -10,7 +10,7 @@ $spacing-large: calc(var(--spacer) * 4);
 
 // Reset padding if no child elements
 %reset-padding {
-  &:not(:has(div)) {
+  &:not(:has(aside, article, footer, header, nav, section, h1, h2, h3, h4, h5, h6, p, ul, ol, li, table, thead, tbody, tfoot, tr, th, td, a, img, video, audio, canvas, form, input, textarea, button, select, option, iframe, object, embed)) {
     padding-top: 0;
     padding-bottom: 0;
   }
