@@ -183,3 +183,9 @@
     }
   }
 }
+
+// prevent the CKEditor dropdown from being cut off.
+.ck-dropdown__panel {
+  max-height: max(275px);
+  overflow: scroll;
+}
