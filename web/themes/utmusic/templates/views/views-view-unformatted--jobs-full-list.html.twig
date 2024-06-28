@@ -15,17 +15,24 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
-{% set items = [] %}
+{# {% set items = [] %}
 {% for row in rows %}
   {% set closing_date = row.content['#node'].field_job_closing_date.value ? (row.content['#node'].field_job_closing_date.value ~ '+00:00')|date('U') %}
   {% set current_date = date().getTimestamp %}
 
   {% if closing_date and closing_date < current_date %}
-    {# Do not include item with expired date  #}
+
   {% else %}
     {% set items = items|merge([row.content]) %}
   {% endif %}
+{% endfor %} #}
+
+
+{% set items = [] %}
+{% for row in rows %}
+  {% set items = items|merge([row.content]) %}
 {% endfor %}
+
 
 {% include "@molecules/accordion/accordion.twig" with {
     directory: 'themes/utmusic',
