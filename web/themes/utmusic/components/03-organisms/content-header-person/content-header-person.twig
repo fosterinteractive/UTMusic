@@ -84,10 +84,8 @@
             {% if title_suffix_faculty and title_suffix_library %}{{- ','}} {% endif %}
 
             {% if title_suffix_library %}{{ title_suffix_library }}{% endif %}
-
-            {% if ensembles_choirs and (title_suffix_staff or title_suffix_faculty or title_suffix_library) %}{{- ','}} {% endif %}
             
-            {% if ensembles_choirs %}{{ ensembles_choirs }}{% endif %}
+            <br>{% if ensembles_choirs %}{{ ensembles_choirs }}{% endif %}
           </p>
         </div>
       {% endif %}
