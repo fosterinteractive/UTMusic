@@ -87,7 +87,7 @@
   {# Set default icon for headings with links #}
   {# check out - if type of url is external from Drupal #}
   {% if url.external %}
-    {% set icon = icon|default('external_link') %}
+    {% set icon = icon|default('external_link_without_fill') %}
   {% else %}
     {% set icon = icon|default('link-chevron') %}
   {% endif %}
