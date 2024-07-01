@@ -19,7 +19,7 @@
 
 {# Set default icon all icon variations #}
 {% if external_link %}
-  {% set icon = icon|default('external_link') %}
+  {% set icon = icon|default('external_link_without_fill') %}
 {% else %}
   {% if variation == '--icon-left' %}
     {% set icon = icon|default('arrow-right') %}
