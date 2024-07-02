@@ -13,13 +13,13 @@ settings:
   allowed_values:
     -
       value: h1
-      label: 'Heading 1 Size'
+      label: 'Extra Large (H1 Size)'
     -
       value: h2
-      label: 'Heading 2 Size'
+      label: 'Large (H2 Size)'
     -
       value: h3
-      label: 'Heading 3 Size'
+      label: 'Medium (H3 Size)'
   allowed_values_function: ''
 module: options
 locked: false

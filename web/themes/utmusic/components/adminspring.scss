@@ -146,8 +146,11 @@
   }
 }
 
+
 // fields in one line for Field group.
-%core-adminspring_grid {
+
+// group - Details
+%core-details-wrapper-adminspring_grid {
   @include breakpoint($bp-tablet) {
     .details-wrapper {
       display: grid;
@@ -164,8 +167,8 @@
   }
 }
 
-.adminspring_grid--2col {
-  @extend %core-adminspring_grid;
+.adminspring_grid--2col.field-group-details {
+  @extend %core-details-wrapper-adminspring_grid;
 
   .details-wrapper {
     @include breakpoint($bp-tablet) {
@@ -174,8 +177,8 @@
   }
 }
 
-.adminspring_grid--3col {
-  @extend %core-adminspring_grid;
+.adminspring_grid--3col.field-group-details {
+  @extend %core-details-wrapper-adminspring_grid;
 
   .details-wrapper {
     @include breakpoint($bp-tablet) {
@@ -183,6 +186,33 @@
     }
   }
 }
+
+// group - HTML element
+%core-html-element-adminspring_grid {
+  @include breakpoint($bp-tablet) {
+    display: grid;
+    align-items: flex-end;
+    column-gap: rem(20px);
+    margin-top: 0;
+    margin-bottom: 0;
+    
+    .form-item .form-element {
+      min-width: 100%;
+      width: 100%
+    }
+  }
+}
+
+.adminspring_grid--2col.field-group-html-element {
+  @extend %core-html-element-adminspring_grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.adminspring_grid--3col.field-group-html-element {
+  @extend %core-html-element-adminspring_grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 
 // prevent the CKEditor dropdown from being cut off.
 .ck-dropdown__panel {
