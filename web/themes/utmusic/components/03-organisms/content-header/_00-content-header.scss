@@ -78,6 +78,10 @@
   margin-bottom: calc(var(--spacer) / 2);
   color: var(--c-heading-prefix);
   margin-left: rem(18px);
+  
+  @include breakpoint($bp-full-nav) {
+    margin-left: 0;
+  }
 
   &::before {
     position: absolute;

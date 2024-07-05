@@ -1,0 +1,29 @@
+uuid: b7cd4e1a-eb80-42ab-a66c-0f32a9fa4da9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_ensembles_choirs
+    - node.type.people
+    - taxonomy.vocabulary.ensembles_choirs
+id: node.people.field_people_ensembles_choirs
+field_name: field_people_ensembles_choirs
+entity_type: node
+bundle: people
+label: 'Ensembles & Choirs'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ensembles_choirs: ensembles_choirs
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

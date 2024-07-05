@@ -21,7 +21,7 @@ third_party_settings:
       label: 'Anchor / Jump Link'
       region: content
       parent_name: ''
-      weight: 5
+      weight: 4
       format_type: details
       format_settings:
         classes: ''
@@ -30,6 +30,23 @@ third_party_settings:
         open: false
         description: 'Use to create a link to this page that automatically scroll to this component.'
         required_fields: true
+    group_title_settings:
+      children:
+        - field_section_title_html_element
+        - field_section_title_appearance
+        - field_section_title_alignment
+      label: 'Title Settings'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        classes: adminspring_grid--3col
+        show_empty_fields: false
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
 id: paragraph.section_title.default
 targetEntityType: paragraph
 bundle: section_title
@@ -37,7 +54,7 @@ mode: default
 content:
   field_section_title_alignment:
     type: options_select
-    weight: 3
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -51,13 +68,13 @@ content:
     third_party_settings: {  }
   field_section_title_appearance:
     type: options_select
-    weight: 2
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_section_title_html_element:
     type: options_select
-    weight: 1
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -74,7 +91,7 @@ content:
         hide_guidelines: '1'
   status:
     type: boolean_checkbox
-    weight: 4
+    weight: 3
     region: content
     settings:
       display_label: true

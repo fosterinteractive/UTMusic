@@ -26,26 +26,15 @@
 .m-card__title {
   @extend %overlay-link-card;
 
-  // color: var(--c-card-title);
-
   h2, h3, span {
-    // color: var(--c-card-title);
     margin-bottom: 0;
     display: inline-block;
   }
 
   a {
-    color: var(--c-card-title) !important;
-
-    svg {
-      fill: currentColor !important;
-    }
-
     &:hover,
     &:focus,
     &:active {
-      color: var(--c-card-title--active);
-
       .a-heading__last-word {
         text-decoration: underline;
       }
@@ -70,12 +59,7 @@
   @extend %u-remove-child--margin-top-bottom;
   @extend %a-type--small;
 
-  color: var(--c-card-text);
   flex-grow: 1;
-
-  p {
-    color: var(--c-card-text);
-  }
 }
 
 .m-card__tags {

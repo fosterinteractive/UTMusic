@@ -12,7 +12,7 @@ field_name: field_section_title_html_element
 entity_type: paragraph
 bundle: section_title
 label: 'Heading Level'
-description: 'HTML Element'
+description: ''
 required: true
 translatable: false
 default_value:

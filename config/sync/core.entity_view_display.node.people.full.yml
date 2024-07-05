@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.people.field_people_education
     - field.field.node.people.field_people_email
     - field.field.node.people.field_people_enable_media
+    - field.field.node.people.field_people_ensembles_choirs
     - field.field.node.people.field_people_faculty_position
     - field.field.node.people.field_people_featured_media
     - field.field.node.people.field_people_image
@@ -116,6 +117,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 26
+    region: content
+  field_people_ensembles_choirs:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 29
     region: content
   field_people_faculty_position:
     type: entity_reference_label

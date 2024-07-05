@@ -1,3 +1,5 @@
+{# image_main, image_small, image_position #}
+
 {% set variation = variation|default('') %}
 
 {% if variation is not empty %}
@@ -30,14 +32,16 @@
   <blockquote class="m-quote{{ variation }} {{position}}{% if unpublished %} paragraph--unpublished{% endif %}">
     {% if image_main and ( variation == '--image' or variation == '--image-single') %}
       <div class="m-quote{{ variation }}__images">
-        <div class="m-quote{{ variation }}__image-main">
-          {% include "@molecules/image/image.twig" with {
-              image: image_main,
-            } only
-          %}
-        </div>
+        {% if image_main %}
+          <div class="m-quote{{ variation }}__image-main">
+            {% include "@molecules/image/image.twig" with {
+                image: image_main,
+              } only
+            %}
+          </div>
+        {% endif %}
 
-        {% if image_small %}
+        {% if image_small and variation == '--image'%}
           <div class="m-quote{{ variation }}__image-small">
             {% include "@molecules/image/image.twig" with {
                 image: image_small,
