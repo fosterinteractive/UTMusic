@@ -13,10 +13,17 @@
   }
 }
 
+.m-menu-priority-plus {
+  grid-row: 1;
+  grid-column: col 1 / span 12;
+  width: 100%;
+}
+
 .m-menu-priority-plus__menu {
   display: flex;
   align-items: stretch;
   justify-content: flex-end;
+  margin-left: calc(var(--spacer) * -0.5);
 }
 
 .m-menu-priority-plus__item.is-active {
@@ -149,7 +156,7 @@
   position: absolute;
   top: calc(100% + 1px);
   right: 0;
-  width: 100vw;
+  width: 90vw;
   min-width: 160px;
   text-align: left;
   z-index: 3;
