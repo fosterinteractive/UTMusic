@@ -8,7 +8,7 @@ dependencies:
     - field.field.paragraph.media_gallery_row.field_media_gallery_row_media
     - paragraphs.paragraphs_type.media_gallery_row
   module:
-    - media_library
+    - media_library_media_modify
 id: paragraph.media_gallery_row.default
 targetEntityType: paragraph
 bundle: media_gallery_row
@@ -27,11 +27,16 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_media_gallery_row_media:
-    type: media_library_widget
+    type: media_library_media_modify_widget
     weight: 2
     region: content
     settings:
       media_types: {  }
+      form_mode: default
+      check_selected: false
+      replace_checkbox_by_order_indicator: false
+      multi_edit_on_create: false
+      no_edit_on_create: false
     third_party_settings: {  }
 hidden:
   created: true
