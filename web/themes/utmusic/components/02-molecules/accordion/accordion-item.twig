@@ -22,7 +22,8 @@
   {% if title or subtitle %}
     <div class="m-accordion-item__header-wrapper">
       {# If loggedin user/admin #}
-      {% if is_admin == 1 %}
+      {% if user_roles[0] == 'authenticated' %}
+
         {# if the absolute or relative links exists  #}
         {% if absolute_link or relative_link %}
           <div class="m-item__copy-links">

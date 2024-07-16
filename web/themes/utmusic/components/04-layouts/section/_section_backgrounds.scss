@@ -17,6 +17,15 @@
   }
 }
 
+%l-section__background--full-width { // for full width sections
+  display: grid;
+
+  .l-section__zone,
+  .l-section__background {
+    grid-column: 1 / -1;
+  }
+}
+
 .theme--dark-blue-bg {
   .l-section__background,
   &.paragraphs-config__background-color {
@@ -31,6 +40,10 @@
       background-position: center, 70% 50%;
     }
   }
+
+  &.l-section { // for full width sections
+    @extend %l-section__background--full-width;
+  } 
 }
 
 .theme--blue-right-bg {
@@ -46,6 +59,10 @@
       background-position: center, 30% center; 
     }
   }
+
+  &.l-section { // for full width sections
+    @extend %l-section__background--full-width;
+  } 
 }
 
 .theme--blue-left-bg {
@@ -61,6 +78,10 @@
       background-position: center, 60% center; 
     }
   }
+
+  &.l-section { // for full width sections
+    @extend %l-section__background--full-width;
+  } 
 }
 
 .theme--blue-both-bg {
@@ -77,4 +98,8 @@
       background-position: center, center; 
     }
   }
+
+  &.l-section { // for full width sections
+    @extend %l-section__background--full-width;
+  } 
 }
