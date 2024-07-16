@@ -37,7 +37,7 @@
  */
 #}
 
-{% if is_admin == 1 %}
+{% if user_roles[0] == 'authenticated' %}
   {{ attach_library('utmusic/copy-links') }}
   {{ attach_library('utmusic/tippyjs') }}
   {{ attach_library('utmusic/tooltip') }}
