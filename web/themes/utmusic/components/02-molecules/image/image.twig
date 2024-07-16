@@ -25,7 +25,7 @@
 {% set html_element = caption ? 'figure' : 'div' %}
 
 {% if image %}
-  <div class="m-image{% if unpublished %} paragraph--unpublished{% endif %}{% if caption %} m-image__top-padding{% endif %}">
+  <div class="m-image{% if unpublished %} paragraph--unpublished{% endif %}{% if caption and (variation != '--paralax') %} m-image__top-padding{% endif %}">
     {% if variation == '--paralax' %}
       <div class="m-image{{ variation }}__image" style="background-image:url('{{ image_bg_path }}')">
       </div>

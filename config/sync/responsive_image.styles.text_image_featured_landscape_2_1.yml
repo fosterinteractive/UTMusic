@@ -22,7 +22,7 @@ image_style_mappings:
   -
     image_mapping_type: sizes
     image_mapping:
-      sizes: '(min-width:1280px) 600px, (min-width:900px) calc(50vw - 40px), calc(100vw - 40px)'
+      sizes: '(min-width:1169px) 1169px, (min-width:900px) calc(100vw - 60px), calc(100vw - 60px)'
       sizes_image_styles:
         - landscape_2_1_1200
         - landscape_2_1_1500
