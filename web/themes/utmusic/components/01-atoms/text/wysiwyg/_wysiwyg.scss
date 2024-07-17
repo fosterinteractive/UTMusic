@@ -47,7 +47,8 @@
 
 %s-wysiwyg,
 .s-wysiwyg,
-.cke_editable { // sass-lint:disable-line class-name-format
+.cke_editable,
+.text-formatted { // sass-lint:disable-line class-name-format
   @extend %s-wysiwyg__typography;
   // @extend %s-wysiwyg__image;
 
