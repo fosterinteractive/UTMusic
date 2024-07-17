@@ -4,11 +4,10 @@
 }
 
 %m-fact-item__value {
-  font-size: rem(50px);
   font-weight: 800;
   line-height: 1;
-  width: 50%;
   word-wrap: break-word;
+  white-space: nowrap;
 
   sup {
     top: -1.5em;
@@ -22,6 +21,16 @@
   p {
     color: palette(blue, 300);
   }
+}
+
+.m-fact-item__value--medium,
+.m-fact-item__value--medium p {
+  @include rfs(35px);
+}
+
+.m-fact-item__value--large,
+.m-fact-item__value--large p {
+  @include rfs(45px);
 }
 
 %m-fact-group {
@@ -100,8 +109,9 @@
     padding: var(--spacer) calc(var(--spacer)*0.8);
     border-radius: rem(12px);
     justify-content: space-between;
-    gap: calc(var(--spacer)*2);
+    gap: calc(var(--spacer)*1.25);
     box-shadow: 0 rem(15px) rem(30px) 0 rgba(62, 19, 77, 0.09);
+    background-color: palette(white);
 
     &.m-fact-item--text {
       justify-content: center;
@@ -111,6 +121,14 @@
         padding-top: 0;
       }
     } 
+  }
+
+  .m-fact-item__description {
+    text-align: right;
+
+    @include breakpoint($bp-tablet-small $bp-large) {
+      text-align: left;
+    }
   }
   
   .m-fact-item__illustration {
@@ -134,18 +152,23 @@
   .m-fact-item__description-wrapper {
     display: flex;
     align-items: flex-start;
-    width: 50%;
     word-break: break-word;
   }
 
   .m-fact-item__main {
     display: flex;
-    // justify-content: space-between;
-    gap: var(--spacer);
+    justify-content: space-between;
+    gap: ru(0.75);
     align-items: flex-end;
     width: 100%;
     border-top: rem(1px) solid palette(grey, 800);
     padding-top: var(--spacer);
+
+    @include breakpoint($bp-tablet-small $bp-large) {
+      gap: var(--spacer);
+      align-items: flex-start;
+      flex-direction: column;
+    }
   }
 }
 
@@ -159,7 +182,7 @@
   padding: var(--spacer);
 
   @include breakpoint($bp-tablet) {
-    padding: calc(var(--spacer)*2) calc(var(--spacer)*2.5);
+    padding: calc(var(--spacer)*1.5) calc(var(--spacer)*1.75);
   }
 
   //line Variation
@@ -197,7 +220,6 @@
   .m-fact-item__main {
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
     gap: calc(var(--spacer)*0.8);
   }
 }

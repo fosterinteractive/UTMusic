@@ -1,0 +1,23 @@
+uuid: f9a7ec44-e4e4-44c1-abb0-0c20c756f2f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fact_group_columns
+    - paragraphs.paragraphs_type.fact_group
+  module:
+    - options
+id: paragraph.fact_group.field_fact_group_columns
+field_name: field_fact_group_columns
+entity_type: paragraph
+bundle: fact_group
+label: 'Number of Columns'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '3'
+default_value_callback: ''
+settings: {  }
+field_type: list_string
