@@ -39,3 +39,20 @@ function content_updates_update_10015() {
     }
   }
 }
+
+/**
+ * Update fact_group paragraph type.
+ */
+function content_updates_update_10016() {
+  $entity_type_manager = \Drupal::entityTypeManager();
+  $storage = $entity_type_manager->getStorage('paragraph');
+  $entities = $storage->loadByProperties(['type' => 'fact_group']);
+
+  foreach ($entities as $entity) {
+    $entity->set('field_fact_group_columns', '3');
+    $entity->set('field_fact_group_font_size', 'large');
+    $entity->save();
+  }
+
+  return t('Updated fact_group paragraph type.');
+}

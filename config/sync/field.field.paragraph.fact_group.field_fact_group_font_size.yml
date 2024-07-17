@@ -1,0 +1,23 @@
+uuid: c0894c73-4827-4580-b6ae-511da67c0b80
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fact_group_font_size
+    - paragraphs.paragraphs_type.fact_group
+  module:
+    - options
+id: paragraph.fact_group.field_fact_group_font_size
+field_name: field_fact_group_font_size
+entity_type: paragraph
+bundle: fact_group
+label: 'Fact Value Font Size'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: large
+default_value_callback: ''
+settings: {  }
+field_type: list_string

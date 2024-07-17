@@ -14,7 +14,7 @@
 {% endif %}
 
 {% if items %}
-  <div class="m-fact-group{{ variation }} {{ color }} l-flex--3col">
+  <div class="m-fact-group{{ variation }} {{ color }} l-grid--{{ columns }}col">
       {% for item in items %}
         {% if sb_demo %} 
           {% include '@molecules/fact/fact-item.twig' with {

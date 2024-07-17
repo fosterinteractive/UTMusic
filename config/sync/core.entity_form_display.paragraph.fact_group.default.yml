@@ -3,17 +3,57 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.fact_group.field_fact_group_columns
+    - field.field.paragraph.fact_group.field_fact_group_font_size
     - field.field.paragraph.fact_group.field_fact_group_items
     - field.field.paragraph.fact_group.field_fact_group_items_variation
     - field.field.paragraph.fact_group.field_facts_group_color
     - paragraphs.paragraphs_type.fact_group
   module:
+    - field_group
     - paragraphs
+third_party_settings:
+  field_group:
+    group_fact_appearance_settings:
+      children:
+        - field_fact_group_items_variation
+        - field_facts_group_color
+        - field_fact_group_columns
+        - field_fact_group_font_size
+      label: 'Appearance Settings'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: adminspring_grid--3col
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        required_fields: true
 id: paragraph.fact_group.default
 targetEntityType: paragraph
 bundle: fact_group
 mode: default
 content:
+  field_fact_group_columns:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_fact_group_font_size:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_fact_group_items:
     type: paragraphs
     weight: 2
@@ -35,13 +75,13 @@ content:
     third_party_settings: {  }
   field_fact_group_items_variation:
     type: options_select
-    weight: 0
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   field_facts_group_color:
     type: options_select
-    weight: 1
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }

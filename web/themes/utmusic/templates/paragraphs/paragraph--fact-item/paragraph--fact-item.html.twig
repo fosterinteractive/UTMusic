@@ -45,6 +45,11 @@
 {% set value = content.field_fact_item_value[0] ? content.field_fact_item_value %}
 {% set description = content.field_fact_item_description[0] ? content.field_fact_item_description %}
 
+{% if paragraph.parentEntity.field_fact_group_font_size.0.value %}
+  {% set fact_value_font_size = paragraph.parentEntity.field_fact_group_font_size.0.value %}
+{% else %}
+  {% set fact_value_font_size = 'large' %}
+{% endif %}
 
 {% include "@molecules/fact/fact-item.twig" with {
     directory: 'themes/utmusic',
@@ -52,5 +57,6 @@
     illustration: illustration,
     value: value,
     description: description,
+    fact_value_font_size: fact_value_font_size,
   }
 %}

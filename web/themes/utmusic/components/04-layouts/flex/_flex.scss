@@ -169,3 +169,62 @@
     }
   }
 }
+
+
+// Grid
+
+%l-grid__core {
+  display: grid;
+  gap: var(--spacer);
+
+  > * {
+    width: 100%;
+  }
+}
+
+%l-grid,
+.l-grid,
+.l-grid--1col {
+  @extend %l-grid__core;
+
+  grid-template-columns: 1fr;
+}
+
+%l-grid--2col,
+.l-grid--2col {
+  @extend %l-grid__core;
+  
+  @include breakpoint ($bp-tablet-small) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint ($bp-full-nav) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+%l-grid--3col,
+.l-grid--3col {
+  @extend %l-grid__core;
+
+  @include breakpoint ($bp-tablet-small) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include breakpoint ($bp-full-nav) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+%l-grid--4col,
+.l-grid--4col {
+  @extend %l-grid__core;
+
+  @include breakpoint ($bp-tablet-small) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint ($bp-full-nav) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
