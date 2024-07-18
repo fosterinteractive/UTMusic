@@ -65,6 +65,8 @@
   // @atoms/table
   --c-table-background: #{palette(teal, 1000)};
   --c-table-text: #{palette(grey, 300)};
+  --c-table-notice-highlight: #{palette(blue, 300)};
+  --c-table-tags: palette(teal, 300);
 
   // @atoms/text
   --c-text: #{palette(grey, 300)};
@@ -235,6 +237,11 @@
 
 .theme--dark-blue-bg {
   @extend %theme--light-bg;
+
+  --c-table-background: #{palette(blue)};
+  --c-table-text: #{palette(white)};
+  --c-table-notice-highlight: #{palette(yellow, 600)};
+  --c-table-tags: #{palette(teal, 300)};
 
   // label
   --c-label: #{palette(teal, 1000)};
