@@ -19,10 +19,6 @@
   @extend %m-listing-item__date;
 }
 
-.m-listing-item--news-condensed__title .a-heading__h3 a {
-  color: palette(blue, 300);
-}
-
 .m-listing-item--news-condensed__summary {
   @extend %m-listing-item__summary;
 }

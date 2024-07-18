@@ -62,6 +62,12 @@ td {
 %a-table__tr,
 tr {
 
+  &:nth-child(even) {
+    .a-table--background & {
+      background-color: var(--c-table-background-even);
+    }
+  }
+
   &:nth-child(odd) {
     .a-table--background & {
       background-color: var(--c-table-background);
@@ -93,12 +99,14 @@ tr {
 }
 
 // text editor style.
+// Style notice-highlight.
 .a-table--dark-blue-text {
-  color: palette(blue, 300);
+  color: var(--c-table-notice-highlight);
 }
 
+// Style tags.
 .a-table--blue-text {
-  color: palette(teal, 300);
+  color: var(--c-table-tags);
 }
 
 .a-table--one-line-text {
