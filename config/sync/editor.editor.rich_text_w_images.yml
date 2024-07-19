@@ -105,6 +105,15 @@ settings:
         -
           label: 'P (x Large)'
           element: '<p class="a-type--xlarge">'
+        -
+          label: 'Notice Highlight'
+          element: '<span class="a-table--dark-blue-text">'
+        -
+          label: 'Tags / Small Prefix'
+          element: '<span class="a-table--blue-text">'
+        -
+          label: 'One line text'
+          element: '<span class="a-table--one-line-text">'
     editor_advanced_link_link:
       enabled_attributes:
         - aria-label
