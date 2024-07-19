@@ -36,7 +36,8 @@ table {
   color: var(--c-table-text);
   
   // borders variation.
-  .a-table--borders & {
+  .a-table--borders &,
+  .m-accordion-item__content & {
     border-bottom: 1px solid palette(grey, 900);
   }
 }
@@ -76,6 +77,7 @@ tr {
 }
 
 // background variation.
+%a-table--background,
 .a-table--background {
   .thead {
     background-color: var(--c-table-background);
@@ -91,6 +93,14 @@ tr {
         background-color: transparent;
       }
     }
+  }
+}
+
+.m-accordion-item__content {
+  @extend %a-table--background;
+
+  .s-wysiwyg {
+    overflow-x: auto;
   }
 }
 

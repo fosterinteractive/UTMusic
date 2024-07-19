@@ -220,11 +220,7 @@
   overflow: scroll;
 }
 
-// Update the label for the form item & hide the submit button.
-.form-item__label {
-  @extend %m-label;
-}
-
+// Hide the submit button.
 .views-exposed-form__item--actions {
   display: none;
 }
