@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.page.field_page_section
     - node.type.page
   module:
+    - entity_reference_revisions
     - layout_builder
     - user
 third_party_settings:
@@ -24,18 +25,30 @@ targetEntityType: node
 bundle: page
 mode: search_index
 content:
-  content_moderation_control:
-    weight: -20
-    settings: {  }
+  field_page_header:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
+    weight: 0
+    region: content
+  field_page_section:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
+  content_moderation_control: true
   field_page_admin_help_seo: true
   field_page_admin_help_social: true
-  field_page_header: true
   field_page_meta_description: true
   field_page_meta_image: true
   field_page_meta_title: true
-  field_page_section: true
   links: true
   search_api_excerpt: true

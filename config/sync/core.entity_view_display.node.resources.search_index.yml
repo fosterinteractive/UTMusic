@@ -17,7 +17,6 @@ dependencies:
     - options
     - text
     - user
-    - webform
 third_party_settings:
   layout_builder:
     enabled: false
@@ -27,11 +26,6 @@ targetEntityType: node
 bundle: resources
 mode: search_index
 content:
-  content_moderation_control:
-    settings: {  }
-    third_party_settings: {  }
-    weight: -20
-    region: content
   field_resources_category:
     type: list_key
     label: hidden
@@ -46,16 +40,6 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  field_resources_form:
-    type: webform_entity_reference_link
-    label: hidden
-    settings:
-      label: 'Go to [webform:title] webform'
-      dialog: ''
-      attributes: {  }
-    third_party_settings: {  }
-    weight: 7
-    region: content
   field_resources_item:
     type: entity_reference_entity_view
     label: hidden
@@ -63,7 +47,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 8
+    weight: 6
     region: content
   field_resources_juries_cat:
     type: entity_reference_label
@@ -94,4 +78,6 @@ content:
     weight: 1
     region: content
 hidden:
+  content_moderation_control: true
+  field_resources_form: true
   search_api_excerpt: true

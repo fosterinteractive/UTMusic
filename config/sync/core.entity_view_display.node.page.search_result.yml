@@ -24,17 +24,13 @@ targetEntityType: node
 bundle: page
 mode: search_result
 content:
-  content_moderation_control:
-    weight: -20
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   search_api_excerpt:
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  content_moderation_control: true
   field_page_admin_help_seo: true
   field_page_admin_help_social: true
   field_page_header: true

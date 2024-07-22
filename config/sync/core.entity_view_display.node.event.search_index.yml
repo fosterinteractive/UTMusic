@@ -40,7 +40,9 @@ dependencies:
     - field.field.node.event.field_show_related_events
     - node.type.event
   module:
+    - datetime_range
     - layout_builder
+    - options
     - text
     - user
 third_party_settings:
@@ -52,10 +54,21 @@ targetEntityType: node
 bundle: event
 mode: search_index
 content:
-  content_moderation_control:
-    settings: {  }
+  field_event_area:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: -20
+    weight: 2
+    region: content
+  field_event_audience:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_event_body:
     type: text_default
@@ -64,32 +77,77 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_event_date:
+    type: daterange_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_event_location:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_event_location_long_desc:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_event_location_short_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_event_price:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_event_summary:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_event_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
 hidden:
+  content_moderation_control: true
   feeds_item: true
   field_even_location_link_map: true
-  field_event_area: true
-  field_event_audience: true
   field_event_button_a11y: true
   field_event_button_label: true
   field_event_button_target: true
   field_event_button_url: true
-  field_event_date: true
   field_event_featured_media: true
   field_event_featured_media_pick: true
   field_event_header_image_landsca: true
   field_event_header_image_portra: true
   field_event_header_variation: true
-  field_event_location: true
-  field_event_location_long_desc: true
   field_event_location_settings: true
-  field_event_location_short_title: true
-  field_event_price: true
   field_event_promote: true
   field_event_related_events: true
   field_event_related_pick: true
-  field_event_summary: true
   field_event_summary_image: true
-  field_event_title: true
   field_event_type: true
   field_events_ensembles_choirs: true
   field_page_admin_help_seo: true
