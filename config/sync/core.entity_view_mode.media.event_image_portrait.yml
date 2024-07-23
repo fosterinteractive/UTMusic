@@ -1,0 +1,10 @@
+uuid: 3ae8bbd4-3d1b-4db7-b502-aa4c8fc5a4ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.event_image_portrait
+label: 'Event Image Portrait'
+targetEntityType: media
+cache: true

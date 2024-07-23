@@ -153,6 +153,15 @@ content:
     third_party_settings: {  }
     weight: 11
     region: content
+  field_event_summary_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: event_image_portrait
+      link: false
+    third_party_settings: {  }
+    weight: 12
+    region: content
   field_event_title:
     type: text_default
     label: hidden
@@ -193,7 +202,6 @@ hidden:
   field_event_promote: true
   field_event_related_events: true
   field_event_related_pick: true
-  field_event_summary_image: true
   field_page_admin_help_seo: true
   field_page_admin_help_social: true
   field_page_meta_description: true

@@ -1,5 +1,8 @@
 .m-listing-item--events-condensed {
   @extend %m-listing-item;
+
+  container-name: event-card;
+  container-type: inline-size;
     
   display: flex;
   flex-direction: column;
@@ -66,3 +69,14 @@
 .m-listing-item--events-condensed__summary {
   @extend %m-listing-item__summary;
 }
+
+.m-listing-item--events-condensed__img {
+  display: none;
+
+  @container event-card (min-width: 525px) {
+    display: block;
+    width: 75%;
+    max-width: rem(265px);
+  }
+}
+
