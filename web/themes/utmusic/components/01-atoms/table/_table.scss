@@ -36,7 +36,8 @@ table {
   color: var(--c-table-text);
   
   // borders variation.
-  .a-table--borders & {
+  .a-table--borders &,
+  .m-accordion-item__content & {
     border-bottom: 1px solid palette(grey, 900);
   }
 }
@@ -62,6 +63,12 @@ td {
 %a-table__tr,
 tr {
 
+  &:nth-child(even) {
+    .a-table--background & {
+      background-color: var(--c-table-background-even);
+    }
+  }
+
   &:nth-child(odd) {
     .a-table--background & {
       background-color: var(--c-table-background);
@@ -70,6 +77,7 @@ tr {
 }
 
 // background variation.
+%a-table--background,
 .a-table--background {
   .thead {
     background-color: var(--c-table-background);
@@ -88,17 +96,27 @@ tr {
   }
 }
 
+.m-accordion-item__content {
+  @extend %a-table--background;
+
+  .s-wysiwyg {
+    overflow-x: auto;
+  }
+}
+
 .a-table--scroll {
   overflow-x: auto;
 }
 
 // text editor style.
+// Style notice-highlight.
 .a-table--dark-blue-text {
-  color: palette(blue, 300);
+  color: var(--c-table-notice-highlight);
 }
 
+// Style tags.
 .a-table--blue-text {
-  color: palette(teal, 300);
+  color: var(--c-table-tags);
 }
 
 .a-table--one-line-text {

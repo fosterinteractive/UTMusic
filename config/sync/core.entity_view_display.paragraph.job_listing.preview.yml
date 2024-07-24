@@ -1,6 +1,6 @@
 uuid: dc7ec5b3-0326-4a71-a995-24adac7753e4
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview

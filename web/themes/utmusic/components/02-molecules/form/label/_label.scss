@@ -28,3 +28,10 @@
     color: palette(red);
   }
 }
+
+// Update the label for the form item.
+.adminspring-preview {
+  .form-item__label {
+    @extend %m-label;
+  }
+}

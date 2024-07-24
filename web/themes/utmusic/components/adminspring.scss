@@ -219,3 +219,8 @@
   max-height: max(275px);
   overflow: scroll;
 }
+
+// Hide the submit button.
+.views-exposed-form__item--actions {
+  display: none;
+}

@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.fact_group.field_fact_group_columns
+    - field.field.paragraph.fact_group.field_fact_group_font_size
     - field.field.paragraph.fact_group.field_fact_group_items
     - field.field.paragraph.fact_group.field_fact_group_items_variation
     - field.field.paragraph.fact_group.field_facts_group_color
@@ -15,6 +17,20 @@ targetEntityType: paragraph
 bundle: fact_group
 mode: default
 content:
+  field_fact_group_columns:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_fact_group_font_size:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_fact_group_items:
     type: entity_reference_revisions_entity_view
     label: hidden

@@ -25,7 +25,10 @@ dependencies:
     - field.field.node.news.field_page_meta_title
     - node.type.news
   module:
+    - entity_reference_revisions
     - layout_builder
+    - smart_trim
+    - text
     - user
 third_party_settings:
   layout_builder:
@@ -36,26 +39,62 @@ targetEntityType: node
 bundle: news
 mode: search_index
 content:
-  content_moderation_control:
-    weight: -20
+  field_news_body:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_news_header_title_prefix:
+    type: text_default
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 2
+    region: content
+  field_news_summary_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_news_title:
+    type: smart_trim
+    label: hidden
+    settings:
+      trim_length: 600
+      trim_type: chars
+      trim_suffix: ''
+      wrap_output: false
+      wrap_class: trimmed
+      more:
+        display_link: false
+        target_blank: false
+        link_trim_only: false
+        class: more-link
+        text: More
+        aria_label: 'Read more about [node:title]'
+      summary_handler: full
+      trim_options: {  }
+    third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
+  content_moderation_control: true
   field_news_area_study: true
-  field_news_body: true
   field_news_category: true
   field_news_date: true
   field_news_header_author: true
   field_news_header_image_landscap: true
   field_news_header_image_portrait: true
-  field_news_header_title_prefix: true
   field_news_header_variation: true
   field_news_header_video: true
   field_news_image: true
   field_news_promote: true
-  field_news_summary_text: true
-  field_news_title: true
   field_page_admin_help_seo: true
   field_page_admin_help_social: true
   field_page_meta_description: true

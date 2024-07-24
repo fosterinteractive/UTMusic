@@ -17,10 +17,10 @@
     </div>
   {% endif %}
 
-  <div class="m-fact-item__main">
+  <div class="m-fact-item__main m-fact-item__main--{{ fact_value_font_size }}">
 
     {% if value %}
-      <div class="m-fact-item__value">
+      <div class="m-fact-item__value m-fact-item__value--{{ fact_value_font_size }}">
         {{ value }}
       </div>
     {% endif %}

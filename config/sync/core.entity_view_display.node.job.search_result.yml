@@ -28,17 +28,12 @@ targetEntityType: node
 bundle: job
 mode: search_result
 content:
-  content_moderation_control:
-    settings: {  }
-    third_party_settings: {  }
-    weight: -20
-    region: content
   field_job_body:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_job_category:
     type: entity_reference_label
@@ -46,7 +41,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_job_closing_date:
     type: datetime_custom
@@ -55,16 +50,11 @@ content:
       timezone_override: America/Toronto
       date_format: 'F d, Y'
     third_party_settings: {  }
-    weight: 1
-    region: content
-  field_job_title:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  content_moderation_control: true
+  field_job_title: true
   field_page_admin_help_seo: true
   field_page_admin_help_social: true
   field_page_meta_description: true

@@ -65,6 +65,11 @@
  *
  * @see template_preprocess_node()
 #}
+
+{% if content.field_event_summary_image[0] %}
+  {% set image = content.field_event_summary_image %}
+{% endif %}
+
 {# Set string of areas of specialization from array #}
 {% if content.field_event_area[0] %}
   {% set areas = [] %}
@@ -170,5 +175,6 @@
     ensemble: content.field_events_ensembles_choirs[0] ? content.field_events_ensembles_choirs[0]['#plain_text'],
     areas: areas,
     summary: content.field_event_summary[0] ? content.field_event_summary[0]['#output']['#text'],
+    image: image,
   } only
 %}

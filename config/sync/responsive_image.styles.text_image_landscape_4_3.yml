@@ -20,7 +20,7 @@ image_style_mappings:
   -
     image_mapping_type: sizes
     image_mapping:
-      sizes: '(min-width:1280px) 280px, (min-width:600px) 20vw, calc(100vw - 40px)'
+      sizes: '(min-width:1169px) 1169px, (min-width:900px) calc(100vw - 60px), calc(100vw - 60px)'
       sizes_image_styles:
         - landscape_4_3_1200
         - landscape_4_3_1500

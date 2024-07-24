@@ -50,10 +50,10 @@ settings:
     ckeditor5_style:
       styles:
         -
-          label: 'Color dark-blue'
+          label: 'Notice Highlight'
           element: '<span class="a-table--dark-blue-text">'
         -
-          label: 'Color blue'
+          label: 'Tags / Small Prefix'
           element: '<span class="a-table--blue-text">'
         -
           label: 'One line text'

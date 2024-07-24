@@ -1,9 +1,11 @@
 uuid: 721e69af-ba2e-4c4e-8ccf-25ab35510ec5
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.fact_group.field_fact_group_columns
+    - field.field.paragraph.fact_group.field_fact_group_font_size
     - field.field.paragraph.fact_group.field_fact_group_items
     - field.field.paragraph.fact_group.field_fact_group_items_variation
     - field.field.paragraph.fact_group.field_facts_group_color
@@ -45,4 +47,6 @@ content:
     weight: 2
     region: content
 hidden:
+  field_fact_group_columns: true
+  field_fact_group_font_size: true
   search_api_excerpt: true
