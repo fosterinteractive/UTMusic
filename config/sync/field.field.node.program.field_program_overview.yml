@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.button
     - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.carousel_quote
     - paragraphs.paragraphs_type.cta
     - paragraphs.paragraphs_type.image_section
     - paragraphs.paragraphs_type.quote
@@ -38,6 +39,7 @@ settings:
       card: card
       cta: cta
       image_section: image_section
+      carousel_quote: carousel_quote
       quote: quote
       section: section
       section_title: section_title
@@ -65,9 +67,15 @@ settings:
       carousel_image_group:
         weight: 36
         enabled: false
+      carousel_quote:
+        weight: 50
+        enabled: true
       cta:
         weight: 37
         enabled: true
+      curriculum:
+        weight: 52
+        enabled: false
       event_featured_item:
         weight: 40
         enabled: false
@@ -77,8 +85,20 @@ settings:
       events_summary_list_dynamic:
         weight: 39
         enabled: false
+      fact_group:
+        weight: 56
+        enabled: false
+      fact_item:
+        weight: 57
+        enabled: false
+      faculty_full_list_dynamic:
+        weight: 58
+        enabled: false
       featured_media:
         weight: 41
+        enabled: false
+      file_resources_full_list_dynamic:
+        weight: 60
         enabled: false
       header:
         weight: 42
@@ -88,6 +108,18 @@ settings:
         enabled: true
       inline_menu:
         weight: 44
+        enabled: false
+      job_listing:
+        weight: 65
+        enabled: false
+      jobs_full_list_dynamic:
+        weight: 64
+        enabled: false
+      media_gallery:
+        weight: 66
+        enabled: false
+      media_gallery_row:
+        weight: 67
         enabled: false
       message:
         weight: 45
@@ -101,15 +133,24 @@ settings:
       news_summary_list_dynamic:
         weight: 48
         enabled: false
-      poster:
-        weight: 49
+      people_static_summary_list:
+        weight: 72
+        enabled: false
+      programs_full_list_dynamic:
+        weight: 73
         enabled: false
       quote:
         weight: 50
         enabled: true
+      research:
+        weight: 75
+        enabled: false
       section:
         weight: 51
         enabled: true
+      section_curriculum:
+        weight: 77
+        enabled: false
       section_title:
         weight: 52
         enabled: true
@@ -125,8 +166,8 @@ settings:
       sliding_menu_item:
         weight: 56
         enabled: false
-      soundcloud:
-        weight: 57
+      tables:
+        weight: 83
         enabled: false
       text:
         weight: 58
