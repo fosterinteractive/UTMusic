@@ -11,6 +11,7 @@ dependencies:
     - paragraphs.paragraphs_type.carousel_quote
     - paragraphs.paragraphs_type.cta
     - paragraphs.paragraphs_type.image_section
+    - paragraphs.paragraphs_type.message
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.section_title
@@ -39,6 +40,7 @@ settings:
       card: card
       cta: cta
       image_section: image_section
+      message: message
       carousel_quote: carousel_quote
       quote: quote
       section: section
@@ -123,7 +125,7 @@ settings:
         enabled: false
       message:
         weight: 45
-        enabled: false
+        enabled: true
       news_featured_item:
         weight: 46
         enabled: false

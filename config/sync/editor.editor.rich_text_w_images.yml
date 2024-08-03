@@ -114,6 +114,9 @@ settings:
         -
           label: 'One line text'
           element: '<span class="a-table--one-line-text">'
+        -
+          label: Button
+          element: '<a class="a-button-equal">'
     editor_advanced_link_link:
       enabled_attributes:
         - aria-label

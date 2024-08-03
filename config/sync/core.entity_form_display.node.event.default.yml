@@ -599,10 +599,11 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_events_ensembles_choirs:
-    type: options_select
+    type: choices_widget
     weight: 41
     region: content
-    settings: {  }
+    settings:
+      configuration_options: ''
     third_party_settings: {  }
   field_page_admin_help_seo:
     type: markup

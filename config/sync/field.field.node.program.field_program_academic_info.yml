@@ -12,6 +12,7 @@ dependencies:
     - paragraphs.paragraphs_type.cta
     - paragraphs.paragraphs_type.curriculum
     - paragraphs.paragraphs_type.image_section
+    - paragraphs.paragraphs_type.message
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.section_curriculum
     - paragraphs.paragraphs_type.section_title
@@ -46,6 +47,7 @@ settings:
       video: video
       accordion: accordion
       cta: cta
+      message: message
       carousel_quote: carousel_quote
     negate: 0
     target_bundles_drag_drop:
@@ -123,7 +125,7 @@ settings:
         enabled: false
       message:
         weight: -48
-        enabled: false
+        enabled: true
       news_featured_item:
         weight: -46
         enabled: false

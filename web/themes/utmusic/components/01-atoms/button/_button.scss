@@ -25,6 +25,10 @@
   padding: rem(4px) rem(40px) rem(4px) rem(20px);
 }
 
+%a-button--padding-equal {
+  padding: rem(4px) rem(20px);
+}
+
 %a-button--small-width {
   width: fit-content;
 }
@@ -136,6 +140,15 @@
   @extend %a-button--padding;
   @extend %a-button;
   @extend %a-button--small-width;
+}
+
+%a-button-equal,
+.a-button-equal {
+  @extend %a-button--core;
+  @extend %a-button--padding-equal;
+  @extend %a-button;
+  @extend %a-button--small-width;
+  @extend %a-button-t;
 }
 
 .a-button {
