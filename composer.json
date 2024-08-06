@@ -112,7 +112,8 @@
         "drupal/menu_firstchild": "^2.1",
         "drupal/rebuild_cache_access": "^1.9",
         "drupal/minifyhtml": "^2.0",
-        "drupal/emptyparagraphkiller": "^2.0"
+        "drupal/emptyparagraphkiller": "^2.0",
+        "fosterinteractive/mega_menu_builder": "1.0.3 as 1.0.2"
     },
     "require-dev": {
         "drupal/coder": "^8.3"

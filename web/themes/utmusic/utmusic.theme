@@ -680,7 +680,7 @@ function utmusic_preprocess_menu(&$variables) {
         }
       }
 
-      $columns_data = $mega_menu_builder->build($item, $cols);
+      $columns_data = $mega_menu_builder->build($item, $cols, ['multiplier' => 1]);
       // Add the mega menu columns data to the level 1 item.
       $items[$level1_menu_id]['columns_data'] = $columns_data;
     }
